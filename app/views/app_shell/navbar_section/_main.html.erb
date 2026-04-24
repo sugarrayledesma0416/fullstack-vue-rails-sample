@@ -1,0 +1,32 @@
+<nav class="ns-responsive  ns-navbar-program-v2" aria-label="Program navigation">
+  <%= render 'app_shell/navbar_program/compact_menu_button_v2' %>
+
+  <ul
+    class="c-menubar  c-menubar--program  js-nav-system  js-main-menubar"
+    id="main-menubar">
+
+    <li class="c-menu  c-menu--program  js-nav-system__item">
+      <%= render 'app_shell/navbar_section/courses_link_v2', section: section %>
+    </li>
+
+    <li class="c-menu  c-menu--program  js-nav-system__item">
+      <%= render 'app_shell/navbar_section/content_menu_v2', section: section %>
+    </li>
+
+    <% if section && section.non_zero? %>
+      <li class="c-menu  c-menu--program  js-nav-system__item">
+        <%= render 'app_shell/navbar_section/grades_menu_v2', section: section %>
+      </li>
+    <% end %>
+
+    <li class="c-menu  c-menu--program  js-nav-system__item">
+      <%= render 'app_shell/navbar_section/learning_tools_menu_v2', section: section %>
+    </li>
+
+    <% if section && section.non_zero? %>
+      <li class="c-menu  c-menu--program  js-nav-system__item">
+        <%= render 'app_shell/navbar_section/communication_menu_v2', section: section %>
+      </li>
+    <% end %>
+  </ul>
+</nav>

@@ -1,0 +1,9 @@
+@import 'music/library/v1/base/main';
+
+.ns-activity {
+  @import 'activity_footer';
+  @import 'activity_language';
+  @import 'header';
+  @import 'workset';
+  @import 'activity_context';
+}

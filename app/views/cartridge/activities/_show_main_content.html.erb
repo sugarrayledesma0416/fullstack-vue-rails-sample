@@ -1,0 +1,23 @@
+<% if @activity %>
+<div id="activity_wrapper" class="c-activity-wrapper">
+  <div id="main_content">
+    <div class="c-activity-info  c-mobile-tabs-view__reference-content  js-activity-info">
+      <%= render(
+            'activities/activity_context',
+            activity: @activity,
+            attempt: @attempt,
+            attempt_track: @attempt_track,
+            classwork: @classwork,
+            instructor_feedback: nil,
+            score: nil,
+            section: current_section,
+            workset: @workset
+          ) %>
+    </div>
+    <div class="c-activity-content" role="main" id="activity_shell" lang="<%= @activity.language %>"  aria-labelledby="questions-label">
+      <span id="questions-label" class="u-no-visual" lang="en">Questions</span>
+      <%= render 'activities/activity_body' %>
+    </div>
+  </div>
+</div>
+<% end -%>

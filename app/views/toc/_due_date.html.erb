@@ -1,0 +1,20 @@
+<% show_due_date = due_date_handler.activity_is_assigned? && due_date_handler.due_date_released? %>
+<% portfolio_enabled = defined?(portfolio_enabled) && portfolio_enabled %>
+<% if show_due_date || portfolio_enabled %>
+    <% due_date = show_due_date ? due_date_handler.due_date_info(attempt_status) : '' %>
+  
+    <div id='<%="toc_activity_due_date_#{due_date_handler.assignment_id}"%>'
+         class='toc_activity_due_date
+                <%= 'u-txt-bold' if due_date.casecmp('today').zero? %>'>
+      <% if portfolio_enabled %>
+        <%= link_to(
+            feature_icon('icons/toc-portfolio', ['c-embedded-icon--md']),
+            'javascript://',
+            class: 'js-tooltip-auto  u-mar-rt-4  u-cursor-default  u-float-lt',
+            title: 'Export to Portfolio available'
+          )
+        %>
+      <% end %>
+      <%= due_date %>
+    </div>
+<% end %>

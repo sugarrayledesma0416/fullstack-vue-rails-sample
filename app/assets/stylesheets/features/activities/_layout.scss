@@ -1,0 +1,16 @@
+@import 'music/library/v1/base/main';
+/* ============================================== *
+
+   Activity Layout
+
+ * ============================================== */
+
+
+/* 
+  Keep the site footer close to the bottom of the page or past it.
+  This replaces the JS code in activty_shell.js that used to set
+  dynamic bottom-padding on the activity shell.
+  */
+[id="main_content"] {
+  min-height: 80vh;
+}

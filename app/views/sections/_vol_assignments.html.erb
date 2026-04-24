@@ -1,0 +1,50 @@
+<div class="c-panel  c-panel--dashboard  c-panel--assignments">
+  <div class="c-panel__header">
+    <h2 class="c-heading--dashboard-panel" id="a11y-assignment-heading">
+      <%= feature_icon('music/icons/student-dashboard/file', ['c-embedded-icon--lg'] ) %>
+      Assignments
+    </h2>
+  </div>
+  <div class="c-panel__body">
+    <div class="c-tabset  js-tabs">
+      <div class="c-tabset__tabs  js-tab-buttons"
+           role="tablist"
+           aria-labelledby="a11y-assignment-heading">
+        <a href=""
+           class="c-tabset__tab  js-tab-button  js-future-tab-button  <%= test_class('due-date') %>"
+           data-content-target="js-future-tab"
+           role="tab"
+           aria-controls="a11y-due-date-panel-future-tab"
+           aria-selected="true">
+          Due Dates
+        </a>
+        <a href=""
+           class="c-tabset__tab  js-tab-button  js-past-tab-button  <%= test_class('previous-due-date') %>"
+           data-content-target="js-past-tab"
+           role="tab"
+           aria-controls="a11y-due-date-panel-past-tab"
+           aria-selected="false">
+          Previous Due Dates
+          <span class="c-due-count">
+            (<%= @presenter.incomplete_due_dates_count %>)
+          </span>
+        </a>
+      </div>
+      <div class="c-tabset__content  js-tab  js-past-tab"
+           role="tabpanel"
+           data-past-summaries-url="<%= @presenter.past_assignment_summaries_url %>"
+           id="a11y-due-date-panel-past-tab">
+      </div> <!-- /c-tabset__content -->
+      <div class="c-tabset__content  js-tab  js-future-tab"
+           role="tabpanel"
+           id="a11y-due-date-panel-future-tab">
+        <%= render 'due_date_tabs',
+            assignment_summaries: @presenter.future_assignment_summaries,
+            presenter: @presenter %>
+      </div> <!-- /c-tabset__content -->
+      <div class="u-dis-flex  flex-justify-ctr">
+        <button class="c-no-button  js-toggle-due-date-list"  role="button">Show more due dates</button>
+      </div>
+    </div> <!-- /c-tabset-->
+  </div> <!-- /c-panel__body -->
+</div>

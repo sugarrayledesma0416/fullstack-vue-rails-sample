@@ -1,0 +1,121 @@
+<%
+  content_for(:css_head, stylesheet_link_tag("ai/grading_sets"))
+%>
+
+<div
+  id="grading_style_form_container"
+  class="<%= presenter.ai_grading_available? ? 'ns-ai-grading-sets' : nil %>">
+  <%= form_for(
+    :instructor,
+    url: instructor_grading_style_path(current_program),
+    html: {
+      method: :put,
+      name: 'grading_style_form',
+      id: 'grading_style_form'
+    }
+  ) do |form| %>
+    <h3>How would you like to grade?</h3>
+    <div id="grading_style_options">
+      <div class="grading_style_forms  ns-music-v1">
+        <%= form.radio_button(
+              :grading_style,
+              'student_by_student',
+              class: 'grading_style',
+              checked: (presenter.grading_style == 'student_by_student')
+            ) %>
+        <%= form.label(
+              :grading_style_student_by_student,
+              'Student by student',
+              class: 'u-pad-rt-16'
+            ) %>
+        <% unless presenter.hide_question_by_question_input? %>
+          <% if presenter.q_by_q_disabled? %>
+            <span title="<%= presenter.q_by_q_disabled_msg %>">
+            <% end %>
+            <%= form.radio_button(
+                :grading_style,
+                'question_by_question',
+                class: 'grading_style',
+                checked: (presenter.grading_style == 'question_by_question' && !presenter.q_by_q_disabled?),
+                disabled: presenter.q_by_q_disabled?
+              ) %>
+            <%= form.label(
+                  :grading_style_question_by_question,
+                  'Question by question',
+                  class: 'u-pad-rt-16'
+                ) %>
+            <% if presenter.q_by_q_disabled? %>
+              <%= feature_icon("music/icons/flash-banners/icon-info-blue",
+                ["c-embedded-icon--sm  u-mar-rt-8"]) %>
+            </span>
+          <% end %>
+        <% end %>
+        <% unless presenter.activity.smart_book? || current_user.cartridge? %>
+          <% if presenter.activity.group_chat? %>
+            <span title="Group Chats can only be graded student by student.">
+            <% end %>
+            <%= form.radio_button(
+          :grading_style,
+          'spotcheck',
+          class: ['grading_style', test_class('spotcheck-button')],
+          checked: (presenter.grading_style == 'spotcheck'),
+          disabled: presenter.activity.group_chat?
+        ) %>
+            <%= form.label(
+          :grading_style_spotcheck,
+          'Spotcheck Student Work',
+          class: 'u-pad-rt-16'
+        ) %>
+            <% if presenter.activity.group_chat? %>
+              <%= feature_icon("music/icons/flash-banners/icon-info-blue",
+        ["c-embedded-icon--sm"]) %>
+            </span>
+          <% end %>
+          <br>
+        <% end %>
+        <% if presenter.grading_method == 'mixed' && presenter.instructor_graded? %>
+          <div class="auto_graded">
+            <%= form.check_box(:show_auto_graded_questions, class: 'grading_style') %>
+            <%= form.label :show_auto_graded_questions, 'Show auto-graded questions?' %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <!-- /#grading_style_options -->
+    <% if presenter.ai_grading_available? %>
+      <h3 class="u-mar-top-10">
+        Use AI-assisted feedback?
+        <span class="ns-music-v1  js-tooltip-auto  <%= test_class('ai-feedback-tooltip') %>" 
+              title="Artificial intelligence will suggest feedback to students' work which can be edited or removed by you.
+                     This is an experimental feature. We welcome your feedback!"
+              style="vertical-align: text-bottom;">
+          <%= feature_icon('music/icons/flash-banners/icon-info-blue', ['c-embedded-icon--md'] ) %>
+        </span>
+      </h3>
+      <div class="u-mar-top-10">
+        <%= form.radio_button(
+              :enable_ai_grading_suggestions,
+              'false',
+              class: ['grading_style'],
+              checked: !presenter.ai_grading_suggestions_enabled?,
+            ) %>
+        <%= form.label(
+              :enable_ai_grading_suggestions_false,
+              'No',
+              class: 'u-pad-rt-16  u-mar-lt-5  u-txt-plain  u-txt-14'
+            ) %>
+        <%= form.radio_button(
+              :enable_ai_grading_suggestions,
+              'true',
+              class: ['grading_style'],
+              checked: presenter.ai_grading_suggestions_enabled?,
+            ) %>
+        <%= form.label(
+              :enable_ai_grading_suggestions_true,
+              'Yes',
+              class: 'u-pad-rt-16  u-mar-lt-5  u-txt-plain  u-txt-14'
+            ) %>
+      </div>
+    <% end %>
+  <% end %>
+</div>

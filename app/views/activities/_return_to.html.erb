@@ -1,0 +1,25 @@
+<nav id="return_to" class="u-dis-inline">
+  <% if @return_url && (!@is_popup || @question_bank) -%>
+    <% if supersite_junior? %>
+      <%= link_to(
+          safe_local_uri(@return_url),
+          'data-page-element' => 'activity_return_link',
+          class: "activity-return-link  js-activity_return_link  #{test_class('activity-return-link')}",
+          lang: 'en'
+        ) do %>
+        <%= feature_icon('music/features/jr/activity-shell/icons/icon-left_arrow', ['activity-return-link__icon']) %>
+        <span class="activity-return-link__text">return</span>
+      <% end %>
+    <% else %>
+      <%= link_to(
+          vhl_return_to_sanitizer(@return_url),
+          'data-page-element' => 'activity_return_link',
+          class: "js-activity_return_link  #{test_class('activity-return-link')} u-pad-rt-8",
+          lang: 'en'
+        ) do %>
+        <%= Music::Components.icon(variant: 'return', text: @return_label, classes: ['c-embedded-icon--md', 'u-txt-16']) %>
+      <% end %>
+    <% end %>
+  <% end -%>
+</nav>
+

@@ -1,0 +1,31 @@
+<div class="ns-music-v1">
+  <% if smartbook_response.all_correct? %>
+    <div class="correct">All Correct</div>
+  <% else %>
+    <div class="incorrect"><%= smartbook_response.incorrect_response_count %> incorrect</div>
+  <% end %>
+  <table class="c-table">
+    <tbody>
+      <thead>
+        <tr class="c-header-row">
+          <th class="bold">Prompt</th>
+          <th class="bold">Correct Answer</th>
+          <th class="bold">Student Answer</th>
+        </tr>
+      </thead>
+      <% question.response_parser.entries.each.with_index(1) do |entry, index| %>
+        <tr class="c-row <%= test_class('matching-response') %>">
+          <td class="matching_prompt">
+            <%= "#{index}. #{entry[:prompt]}" %>
+          </td>
+          <td class="matching_correct_answer">
+            <%= entry[:response] %>
+          </td>
+          <td class="matching_student_answer">
+            <%= entry[:student_response] %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

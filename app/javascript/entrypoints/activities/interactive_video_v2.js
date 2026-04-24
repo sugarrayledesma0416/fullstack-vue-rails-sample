@@ -1,0 +1,1 @@
+import 'mae/app/javascript/src/features/interactive_video_v2/index.js';

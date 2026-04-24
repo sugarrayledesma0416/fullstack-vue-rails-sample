@@ -1,0 +1,830 @@
+# Vistas
+:40:
+  :settings:
+    - :type  : 'link'
+      :label : 'Spanish Dictionary'
+      :link  : 'http://www.wordreference.com/enes/'
+    - :type  : 'link'
+      :label : 'VHL Dictionary'
+      :link  : 'http://www.vistasonline.com/media/shockwave/dictionary.htm'
+    - :type  : 'link'
+      :label : 'Grammar Reference'
+      :link  : 'http://www.vistasonline.com/media/shockwave/GrammarTerms.htm'
+    - :type  : 'link'
+      :label : 'Verb Wheel'
+      :link  : 'http://www.vistasonline.com/media/shockwave/VerbWheel.htm'
+  :vtext:
+    :url: '//vtext-cdn.vhlcentral.com/vtext_vistas4e_m3/ebook/book.html'
+  :pronto:
+
+# Protagonistas 1e
+:44:
+  :settings:
+    - :type  : 'link'
+      :label : 'Spanish Dictionary'
+      :link  : 'http://www.wordreference.com/enes/'
+    - :type  : 'link'
+      :label : 'VHL Online Dictionary'
+      :link  : 'http://www.vistasonline.com/media/shockwave/dictionary.htm'
+    - :type  : 'link'
+      :label : 'Grammar Reference'
+      :link  : 'http://www.vistasonline.com/media/shockwave/GrammarTerms.htm'
+    - :type  : 'link'
+      :label : 'Verb Wheel'
+      :link  : 'http://www.vistasonline.com/media/shockwave/VerbWheel.htm'
+  :vtext:
+    :url: '//vtext-cdn.vhlcentral.com/vtext_protagonistas_m3/book.html'
+
+# Vistas ?
+:47:
+  :settings:
+    - :type  : 'link'
+      :label : 'Spanish Dictionary'
+      :link  : 'http://www.wordreference.com/enes/'
+    - :type  : 'link'
+      :label : 'VHL Dictionary'
+      :link  : 'http://www.vistasonline.com/media/shockwave/dictionary.htm'
+    - :type  : 'link'
+      :label : 'Grammar Reference'
+      :link  : 'http://www.vistasonline.com/media/shockwave/GrammarTerms.htm'
+    - :type  : 'link'
+      :label : 'Verb Wheel'
+      :link  : 'http://www.vistasonline.com/media/shockwave/VerbWheel.htm'
+  :vtext:
+    :url: '//vtext-cdn.vhlcentral.com/vtext_vistas4e_m3/ebook/book.html'
+
+# Panorama
+:48:
+  :settings:
+    - :type  : 'link'
+      :label : 'Spanish Dictionary'
+      :link  : 'http://www.wordreference.com/enes/'
+    - :type  : 'link'
+      :label : 'VHL Dictionary'
+      :link  : 'http://www.vistasonline.com/media/shockwave/dictionary.htm'
+    - :type  : 'link'
+      :label : 'Grammar Reference'
+      :link  : 'http://www.vistasonline.com/media/shockwave/GrammarTerms.htm'
+    - :type  : 'link'
+      :label : 'Verb Wheel'
+      :link  : 'http://www.vistasonline.com/media/shockwave/VerbWheel.htm'
+  :vtext:
+    :url: '//vtext-cdn.vhlcentral.com/vtext_panorama4e_m3/ebook/pan4e_new.html'
+  :pronto:
+
+# Panorama ?
+:49:
+  :settings:
+    - :type  : 'link'
+      :label : 'Spanish Dictionary'
+      :link  : 'http://www.wordreference.com/enes/'
+    - :type  : 'link'
+      :label : 'VHL Dictionary'
+      :link  : 'http://www.vistasonline.com/media/shockwave/dictionary.htm'
+    - :type  : 'link'
+      :label : 'Grammar Reference'
+      :link  : 'http://www.vistasonline.com/media/shockwave/GrammarTerms.htm'
+    - :type  : 'link'
+      :label : 'Verb Wheel'
+      :link  : 'http://www.vistasonline.com/media/shockwave/VerbWheel.htm'
+  :vtext:
+    :url: '//vtext-cdn.vhlcentral.com/vtext_panorama4e_m3/ebook/pan4e_new.html'
+  :pronto:
+
+# Sag Mal
+:51:
+  :settings:
+    - :type  : 'link'
+      :label : 'German Dictionary'
+      :link  : 'http://www.wordreference.com/ende/'
+    - :type  : 'link'
+      :label : 'My Vocabulary'
+      :link  : '/51/vocab_words'
+  :vocab_words:
+  :vtext:
+    :url: '//vtext-cdn.vhlcentral.com/vtext_sagmal1e/ebook/book.html'
+
+# Aventuras
+:53:
+  :settings:
+    - :type  : 'link'
+      :label : 'Spanish Dictionary'
+      :link  : 'http://www.wordreference.com/enes/'
+    - :type  : 'link'
+      :label : 'Grammar Reference'
+      :link  : 'http://www.vistasonline.com/media/shockwave/GrammarTerms.htm'
+    - :type  : 'link'
+      :label : 'Verb Wheel'
+      :link  : 'http://www.vistasonline.com/media/shockwave/VerbWheel.htm'
+  :vtext:
+    :url: '//vtext-cdn.vhlcentral.com/vtext_aventuras4e/ebook/book.html'
+
+# Promenades
+:52:
+  :settings:
+    - :type  : 'link'
+      :label : 'French Dictionary'
+      :link  : 'http://www.wordreference.com/enfr/'
+  :vtext:
+    :url: '//vtext-cdn.vhlcentral.com/vtext_promenades2e/book.html'
+
+# Descubre, Level 3
+:54:
+  :settings:
+    - :type  : 'link'
+      :label : 'Spanish Dictionary'
+      :link  : 'http://www.wordreference.com/enes/'
+    - :type  : 'link'
+      :label : 'Grammar Reference'
+      :link  : 'http://www.vistasonline.com/media/shockwave/GrammarTerms.htm'
+    - :type  : 'link'
+      :label : 'Verb Wheel'
+      :link  : 'http://www.vistasonline.com/media/shockwave/VerbWheel.htm'
+    - :type  : 'link'
+      :label : 'My Vocabulary'
+      :link  : '/54/vocab_words'
+  :vocab_words:
+  :vtext:
+    :url: '//vtext-cdn.vhlcentral.com/vtext_descubre2ev3/ebook/book.html'
+  :teacher_vtext:
+    :url: '//vtext-cdn.vhlcentral.com/te_vtext_descubre_2e_v3/book.html'
+
+# Enlaces
+:55:
+  :settings:
+    - :type  : 'link'
+      :label : 'Spanish Dictionary'
+      :link  : 'http://www.wordreference.com/enes/'
+  :vtext:
+    :url: '//vtext-cdn.vhlcentral.com/vtext_enlaces1e/ebook/book.html'
+
+# Descubre, Level 1
+:56:
+  :settings:
+    - :type  : 'link'
+      :label : 'Spanish Dictionary'
+      :link  : 'http://www.wordreference.com/enes/'
+    - :type  : 'link'
+      :label : 'Grammar Reference'
+      :link  : 'http://www.vistasonline.com/media/shockwave/GrammarTerms.htm'
+    - :type  : 'link'
+      :label : 'Verb Wheel'
+      :link  : 'http://www.vistasonline.com/media/shockwave/VerbWheel.htm'
+    - :type  : 'link'
+      :label : 'My Vocabulary'
+      :link  : '/56/vocab_words'
+  :vocab_words:
+  :vtext:
+    :url: '//vtext-cdn.vhlcentral.com/vtext_descubre2ev1/ebook/book.html'
+  :teacher_vtext:
+    :url: '//vtext-cdn.vhlcentral.com/te_vtext_descubre_2e_v1/book.html'
+
+# Descubre, Level 2
+:57:
+  :settings:
+    - :type  : 'link'
+      :label : 'Spanish Dictionary'
+      :link  : 'http://www.wordreference.com/enes/'
+    - :type  : 'link'
+      :label : 'Grammar Reference'
+      :link  : 'http://www.vistasonline.com/media/shockwave/GrammarTerms.htm'
+    - :type  : 'link'
+      :label : 'Verb Wheel'
+      :link  : 'http://www.vistasonline.com/media/shockwave/VerbWheel.htm'
+    - :type  : 'link'
+      :label : 'My Vocabulary'
+      :link  : '/57/vocab_words'
+  :vocab_words:
+  :vtext:
+    :url: '//vtext-cdn.vhlcentral.com/vtext_descubre2ev2/ebook/book.html'
+  :teacher_vtext:
+    :url: '//vtext-cdn.vhlcentral.com/te_vtext_descubre_2e_v2/book.html'
+
+# Revista
+:58:
+  :settings:
+    - :type  : 'link'
+      :label : 'Spanish Dictionary'
+      :link  : 'http://www.wordreference.com/enes/'
+    - :type  : 'link'
+      :label : 'Grammar Reference'
+      :link  : 'http://www.vistasonline.com/media/shockwave/GrammarTerms.htm'
+    - :type  : 'link'
+      :label : 'Verb Wheel'
+      :link  : 'http://www.vistasonline.com/media/shockwave/VerbWheel.htm'
+
+# Mosaik, Level 1
+:59:
+  :settings:
+    - :type  : 'link'
+      :label : 'German Dictionary'
+      :link  : 'http://www.wordreference.com/ende/'
+    - :type  : 'link'
+      :label : 'My Vocabulary'
+      :link  : '/59/vocab_words'
+  :vocab_words:
+  :vtext:
+    :url: '//vtext-cdn.vhlcentral.com/vtext_mosaik1ev1/ebook/book.html'
+  :teacher_vtext:
+    :url: '//vtext-cdn.vhlcentral.com/te_vtext_mosaik1e_v1/book.html'
+
+# AP* Spanish
+:60:
+  :settings:
+    - :type  : 'link'
+      :label : 'Spanish Dictionary'
+      :link  : 'http://www.wordreference.com/enes/'
+    - :type  : 'link'
+      :label : 'My Vocabulary'
+      :link  : '/60/vocab_words'
+  :vocab_words:
+
+# Temas
+:61:
+  :settings:
+    - :type  : 'link'
+      :label : 'Spanish Dictionary'
+      :link  : 'http://www.wordreference.com/enes/'
+    - :type  : 'link'
+      :label : 'My Vocabulary'
+      :link  : '/61/vocab_words'
+  :vtext:
+    :url: '//vtext-cdn.vhlcentral.com/vtext_temas1e/ebook/book.html'
+  :vocab_words:
+
+# Mosaik, Level 2
+:62:
+  :settings:
+    - :type  : 'link'
+      :label : 'German Dictionary'
+      :link  : 'http://www.wordreference.com/ende/'
+    - :type  : 'link'
+      :label : 'My Vocabulary'
+      :link  : '/62/vocab_words'
+  :vocab_words:
+  :vtext:
+    :url: '//vtext-cdn.vhlcentral.com/vtext_mosaik1ev2/book.html'
+  :teacher_vtext:
+    :url: '//vtext-cdn.vhlcentral.com/te_vtext_mosaik1e_v2/book.html'
+
+# Mosaik, Level 3
+:63:
+  :settings:
+    - :type  : 'link'
+      :label : 'German Dictionary'
+      :link  : 'http://www.wordreference.com/ende/'
+    - :type  : 'link'
+      :label : 'My Vocabulary'
+      :link  : '/63/vocab_words'
+  :vocab_words:
+  :vtext:
+    :url: '//vtext-cdn.vhlcentral.com/vtext_mosaik1ev3/book.html'
+  :teacher_vtext:
+    :url: '//vtext-cdn.vhlcentral.com/te_vtext_mosaik1e_v3/book.html'
+
+# Descubre 1A
+:65:
+  :settings:
+    - :type  : 'link'
+      :label : 'Spanish Dictionary'
+      :link  : 'http://www.wordreference.com/enes/'
+    - :type  : 'link'
+      :label : 'Grammar Reference'
+      :link  : 'http://www.vistasonline.com/media/shockwave/GrammarTerms.htm'
+    - :type  : 'link'
+      :label : 'Verb Wheel'
+      :link  : 'http://www.vistasonline.com/media/shockwave/VerbWheel.htm'
+    - :type  : 'link'
+      :label : 'My Vocabulary'
+      :link  : '/65/vocab_words'
+  :vocab_words:
+  :vtext:
+    :url: '//vtext-cdn.vhlcentral.com/vtext_descubre2ev1a/ebook/book.html'
+  :teacher_vtext:
+    :url: '//vtext-cdn.vhlcentral.com/te_vtext_descubre_2e_v1/book.html'
+
+# Descubre 1B
+:66:
+  :settings:
+    - :type  : 'link'
+      :label : 'Spanish Dictionary'
+      :link  : 'http://www.wordreference.com/enes/'
+    - :type  : 'link'
+      :label : 'Grammar Reference'
+      :link  : 'http://www.vistasonline.com/media/shockwave/GrammarTerms.htm'
+    - :type  : 'link'
+      :label : 'Verb Wheel'
+      :link  : 'http://www.vistasonline.com/media/shockwave/VerbWheel.htm'
+    - :type  : 'link'
+      :label : 'My Vocabulary'
+      :link  : '/66/vocab_words'
+  :vocab_words:
+  :vtext:
+    :url: '//vtext-cdn.vhlcentral.com/vtext_descubre2ev1b/ebook/book.html'
+  :teacher_vtext:
+    :url: '//vtext-cdn.vhlcentral.com/te_vtext_descubre_2e_v1/book.html'
+
+# Imagina
+:67:
+  :settings:
+    - :type  : 'link'
+      :label : 'Spanish Dictionary'
+      :link  : 'http://www.wordreference.com/enes/'
+    - :type  : 'link'
+      :label : 'Grammar Reference'
+      :link  : 'http://www.vistasonline.com/media/shockwave/GrammarTerms.htm'
+    - :type  : 'link'
+      :label : 'Verb Wheel'
+      :link  : 'http://www.vistasonline.com/media/shockwave/VerbWheel.htm'
+    - :type  : 'link'
+      :label : 'My Vocabulary'
+      :link  : '/67/vocab_words'
+  :vocab_words:
+  :vtext:
+    :url: '//vtext-cdn.vhlcentral.com/vtext_imagina3e/book.html'
+
+# D'Accord, Level 3
+:68:
+  :settings:
+    - :type  : 'link'
+      :label : 'French Dictionary'
+      :link  : 'http://www.wordreference.com/enfr/'
+    - :type  : 'link'
+      :label : 'My Vocabulary'
+      :link  : '/68/vocab_words'
+  :vocab_words:
+  :vtext:
+    :url: '//vtext-cdn.vhlcentral.com/vtext_daccord2ev3/book.html'
+  :teacher_vtext:
+    :url: '//vtext-cdn.vhlcentral.com/te_vtext_daccord_2e_v3/book.html'
+
+# Adelante Uno
+:69:
+  :settings:
+    - :type  : 'link'
+      :label : 'Spanish Dictionary'
+      :link  : 'http://www.wordreference.com/enes/'
+    - :type  : 'link'
+      :label : 'Grammar Reference'
+      :link  : 'http://www.vistasonline.com/media/shockwave/GrammarTerms.htm'
+    - :type  : 'link'
+      :label : 'Verb Wheel'
+      :link  : 'http://www.vistasonline.com/media/shockwave/VerbWheel.htm'
+    - :type  : 'link'
+      :label : 'My Vocabulary'
+      :link  : '/69/vocab_words'
+  :vocab_words:
+
+# Viva
+:70:
+  :settings:
+    - :type  : 'link'
+      :label : 'Spanish Dictionary'
+      :link  : 'http://www.wordreference.com/enes/'
+    - :type  : 'link'
+      :label : 'Grammar Reference'
+      :link  : 'http://www.vistasonline.com/media/shockwave/GrammarTerms.htm'
+    - :type  : 'link'
+      :label : 'Verb Wheel'
+      :link  : 'http://www.vistasonline.com/media/shockwave/VerbWheel.htm'
+    - :type  : 'link'
+      :label : 'My Vocabulary'
+      :link  : '/70/vocab_words'
+  :vocab_words:
+  :vtext:
+    :url: '//vtext-cdn.vhlcentral.com/vtext_viva3e/book.html'
+
+# Espaces
+:71:
+  :settings:
+    - :type  : 'link'
+      :label : 'French Dictionary'
+      :link  : 'http://www.wordreference.com/enfr/'
+    - :type  : 'link'
+      :label : 'My Vocabulary'
+      :link  : '/71/vocab_words'
+  :vocab_words:
+  :vtext:
+    :url: '//vtext-cdn.vhlcentral.com/vtext_espaces3e/book.html'
+
+# D'Accord, Level 1
+:72:
+  :settings:
+    - :type  : 'link'
+      :label : 'French Dictionary'
+      :link  : 'http://www.wordreference.com/enfr/'
+    - :type  : 'link'
+      :label : 'My Vocabulary'
+      :link  : '/72/vocab_words'
+  :vocab_words:
+  :vtext:
+    :url: '//vtext-cdn.vhlcentral.com/vtext_daccord2ev1/book.html'
+  :teacher_vtext:
+    :url: '//vtext-cdn.vhlcentral.com/te_vtext_daccord_2e_v1/book.html'
+
+# D'Accord, Level 2
+:73:
+  :settings:
+    - :type  : 'link'
+      :label : 'French Dictionary'
+      :link  : 'http://www.wordreference.com/enfr/'
+    - :type  : 'link'
+      :label : 'My Vocabulary'
+      :link  : '/73/vocab_words'
+  :vocab_words:
+  :vtext:
+    :url: '//vtext-cdn.vhlcentral.com/vtext_daccord2ev2/book.html'
+  :teacher_vtext:
+    :url: '//vtext-cdn.vhlcentral.com/te_vtext_daccord_2e_v2/book.html'
+
+# Adelante Dos
+:74:
+  :settings:
+    - :type  : 'link'
+      :label : 'Spanish Dictionary'
+      :link  : 'http://www.wordreference.com/enes/'
+    - :type  : 'link'
+      :label : 'Grammar Reference'
+      :link  : 'http://www.vistasonline.com/media/shockwave/GrammarTerms.htm'
+    - :type  : 'link'
+      :label : 'Verb Wheel'
+      :link  : 'http://www.vistasonline.com/media/shockwave/VerbWheel.htm'
+    - :type  : 'link'
+      :label : 'My Vocabulary'
+      :link  : '/74/vocab_words'
+  :vocab_words:
+
+# Adelante Tres
+:75:
+  :settings:
+    - :type  : 'link'
+      :label : 'Spanish Dictionary'
+      :link  : 'http://www.wordreference.com/enes/'
+    - :type  : 'link'
+      :label : 'Grammar Reference'
+      :link  : 'http://www.vistasonline.com/media/shockwave/GrammarTerms.htm'
+    - :type  : 'link'
+      :label : 'Verb Wheel'
+      :link  : 'http://www.vistasonline.com/media/shockwave/VerbWheel.htm'
+    - :type  : 'link'
+      :label : 'My Vocabulary'
+      :link  : '/75/vocab_words'
+  :vocab_words:
+
+# Suena
+:76:
+  :settings:
+    - :type  : 'link'
+      :label : 'Spanish Dictionary'
+      :link  : 'http://www.wordreference.com/enes/'
+    - :type  : 'link'
+      :label : 'Grammar Reference'
+      :link  : 'http://www.vistasonline.com/media/shockwave/GrammarTerms.htm'
+    - :type  : 'link'
+      :label : 'Verb Wheel'
+      :link  : 'http://www.vistasonline.com/media/shockwave/VerbWheel.htm'
+    - :type  : 'link'
+      :label : 'My Vocabulary'
+      :link  : '/76/vocab_words'
+  :vocab_words:
+  :vtext:
+    :url: '//vtext-cdn.vhlcentral.com/vtext_suena3e/book.html'
+
+# Portales
+:79:
+  :settings:
+    - :type  : 'link'
+      :label : 'Dictionary'
+      :link  : 'http://www.wordreference.com/enes/'
+    - :type  : 'link'
+      :label : 'Vocabulary Tools'
+      :link  : '/79/vocab_tools/units'
+  :vocab_tools:
+  :study_center:
+  :vtext:
+    :url: '//vtext-cdn.vhlcentral.com/vtext_portales/book.html'
+  :teacher_vtext:
+    :url: '//vtext-cdn.vhlcentral.com/iae_vtext_portales/book.html'
+  :speech_rec:
+
+# Themes
+:80:
+  :settings:
+    - :type  : 'link'
+      :label : 'Dictionary'
+      :link  : 'http://www.wordreference.com/enfr/'
+    - :type  : 'link'
+      :label : 'My Vocabulary'
+      :link  : '/80/vocab_words'
+  :vocab_words:
+  :vtext:
+    :url: '//vtext-cdn.vhlcentral.com/vtext_themes1e/book.html'
+
+#Taller de escritores, Second Edition
+:81:
+  :settings:
+    - :type  : 'link'
+      :label : 'Dictionary'
+      :link  : 'http://www.wordreference.com/enes/'
+  :vtext:
+    :url: '//vtext-cdn.vhlcentral.com/vtext_taller2e/book.html'
+
+#Sentieri, Second Edition
+:82:
+  :settings:
+    - :type  : 'link'
+      :label : 'Dictionary'
+      :link  : 'http://www.wordreference.com/enit/'
+    - :type  : 'link'
+      :label : 'Vocabulary Tools'
+      :link  : '/82/vocab_tools/units'
+  :vocab_tools:
+  :study_center:
+  :vtext:
+    :url: '//vtext-cdn.vhlcentral.com/vtext_sentieri2e/book.html'
+  :teacher_vtext:
+    :url: '//vtext-cdn.vhlcentral.com/te_vtext_sentieri2e/book.html'
+
+# VISTAS 5e
+:83:
+  :settings:
+    - :type  : 'link'
+      :label : 'Dictionary'
+      :link  : 'http://www.wordreference.com/enes/'
+    - :type  : 'link'
+      :label : 'Vocabulary Tools'
+      :link  : '/83/vocab_tools/units'
+  :vocab_tools:
+  :study_center:
+  :vtext:
+    :url: '//vtext-cdn.vhlcentral.com/vtext_vistas5e/book.html'
+
+#Denk mal!, Second Edition|
+:84:
+  :settings:
+    - :type  : 'link'
+      :label : 'Dictionary'
+      :link  : 'http://www.wordreference.com/ende/'
+    - :type  : 'link'
+      :label : 'Vocabulary Tools'
+      :link  : '/84/vocab_tools/units'
+  :vocab_tools:
+  :study_center:
+  :vtext:
+    :url: '//vtext-cdn.vhlcentral.com/vtext_denkmal2e/book.html'
+  :teacher_vtext:
+    :url: '//vtext-cdn.vhlcentral.com/te_vtext_denkmal2e/book.html'
+
+#Enfoques, Fourth Edition
+:85:
+  :settings:
+    - :type  : 'link'
+      :label : 'Dictionary'
+      :link  : 'http://www.wordreference.com/enes/'
+    - :type  : 'link'
+      :label : 'Vocabulary Tools'
+      :link  : '/85/vocab_tools/units'
+  :vocab_tools:
+  :study_center:
+  :vtext:
+    :url: '//vtext-cdn.vhlcentral.com/vtext_enfoques4e/book.html'
+
+#Facetas, Fourth Edition
+:86:
+  :settings:
+    - :type  : 'link'
+      :label : 'Dictionary'
+      :link  : 'http://www.wordreference.com/enes/'
+    - :type  : 'link'
+      :label : 'Vocabulary Tools'
+      :link  : '/86/vocab_tools/units'
+  :vocab_tools:
+  :study_center:
+  :vtext:
+    :url: '//vtext-cdn.vhlcentral.com/vtext_facetas4e/book.html'
+
+#Imaginez, Third Edition
+:87:
+  :settings:
+    - :type  : 'link'
+      :label : 'Dictionary'
+      :link  : 'http://www.wordreference.com/enfr/'
+    - :type  : 'link'
+      :label : 'Vocabulary Tools'
+      :link  : '/87/vocab_tools/units'
+  :vocab_tools:
+  :study_center:
+  :vtext:
+    :url: '//vtext-cdn.vhlcentral.com/vtext_imaginez3e/book.html'
+
+#Immagina, Second Edition
+:88:
+  :settings:
+    - :type  : 'link'
+      :label : 'Dictionary'
+      :link  : 'http://www.wordreference.com/enit/'
+    - :type  : 'link'
+      :label : 'Vocabulary Tools'
+      :link  : '/88/vocab_tools/units'
+  :vocab_tools:
+  :study_center:
+  :vtext:
+    :url: '//vtext-cdn.vhlcentral.com/vtext_immagina2e/book.html'
+  :teacher_vtext:
+    :url: '//vtext-cdn.vhlcentral.com/te_vtext_immagina2e/book.html'
+
+#D'accord! (c)2016 Level 1A
+:89:
+  :settings:
+    - :type  : 'link'
+      :label : 'Dictionary'
+      :link  : 'http://www.wordreference.com/enfr/'
+    - :type  : 'link'
+      :label : 'My Vocabulary'
+      :link  : '/89/vocab_words'
+  :vocab_words:
+  :vtext:
+    :url: '//vtext-cdn.vhlcentral.com/vtext_daccord2ev1a/book.html'
+  :teacher_vtext:
+    :url: '//vtext-cdn.vhlcentral.com/te_vtext_daccord1a/book.html'
+
+#D'accord! (c)2016 Level 1B
+:90:
+  :settings:
+    - :type  : 'link'
+      :label : 'Dictionary'
+      :link  : 'http://www.wordreference.com/enfr/'
+    - :type  : 'link'
+      :label : 'My Vocabulary'
+      :link  : '/90/vocab_words'
+  :vocab_words:
+  :vtext:
+    :url: '//vtext-cdn.vhlcentral.com/vtext_daccord2ev1b/book.html'
+  :teacher_vtext:
+    :url: '//vtext-cdn.vhlcentral.com/te_vtext_daccord1b/book.html'
+
+#Intrigas, Second Edition
+:92:
+  :settings:
+    - :type  : 'link'
+      :label : 'Dictionary'
+      :link  : 'http://www.wordreference.com/enes/'
+    - :type  : 'link'
+      :label : 'Vocabulary Tools'
+      :link  : '/92/vocab_tools/units'
+  :vocab_tools:
+  :vtext:
+    :url: '//vtext-cdn.vhlcentral.com/intrigas2e/book.html'
+
+#Sag mal, Second Edition
+:93:
+  :settings:
+    - :type  : 'link'
+      :label : 'Dictionary'
+      :link  : 'http://www.wordreference.com/ende/'
+    - :type  : 'link'
+      :label : 'Vocabulary Tools'
+      :link  : '/93/vocab_tools/units'
+  :vocab_tools:
+  :vtext:
+    :url: '//vtext-cdn.vhlcentral.com/vtext_sagmal2e/book.html'
+
+#Face-à-face, Second Edition
+:94:
+  :settings:
+    - :type  : 'link'
+      :label : 'Dictionary'
+      :link  : 'http://www.wordreference.com/enfr/'
+    - :type  : 'link'
+      :label : 'Vocabulary Tools'
+      :link  : '/94/vocab_tools/units'
+  :vocab_tools:
+  :vtext:
+    :url: '//vtext-cdn.vhlcentral.com/vtext_faceaface2e/book.html'
+
+#A Handbook of Contemporary Spanish Grammar, Second Edition
+:95:
+  :settings:
+    - :type  : 'link'
+      :label : 'Dictionary'
+      :link  : 'http://www.wordreference.com/enes/'
+  :vtext:
+    :url: '//vtext-cdn.vhlcentral.com/vtext_spanishgrammar2e/book.html'
+
+#Descubre 1, (c)2017
+:96:
+  :settings:
+    - :type  : 'link'
+      :label : 'Dictionary'
+      :link  : 'http://www.wordreference.com/enes/'
+    - :type  : 'link'
+      :label : 'My Vocabulary'
+      :link  : '/96/vocab_tools/units'
+  :vocab_tools: 'My Vocabulary'
+  :teacher_vtext:
+    :url: '//vtext-cdn.vhlcentral.com/te_vtext_descubre3ev1_secure_nobanner/book.html'
+  :vtext:
+    :url: '//vtext-cdn.vhlcentral.com/vtext_descubre3ev1/book.html'
+
+#Descubre 2, (c)2017
+:97:
+  :settings:
+    - :type  : 'link'
+      :label : 'Dictionary'
+      :link  : 'http://www.wordreference.com/enes/'
+    - :type  : 'link'
+      :label : 'My Vocabulary'
+      :link  : '/97/vocab_tools/units'
+  :vocab_tools: 'My Vocabulary'
+  :teacher_vtext:
+    :url: '//vtext-cdn.vhlcentral.com/te_vtext_descubre3ev2_secure_nobanner/book.html'
+  :vtext:
+    :url: '//vtext-cdn.vhlcentral.com/vtext_descubre3ev2/book.html'
+
+#Descubre 1A, (c)2017
+:98:
+  :settings:
+    - :type  : 'link'
+      :label : 'Dictionary'
+      :link  : 'http://www.wordreference.com/enes/'
+    - :type  : 'link'
+      :label : 'My Vocabulary'
+      :link  : '/98/vocab_tools/units'
+  :vocab_tools: 'My Vocabulary'
+  :teacher_vtext:
+    :url: '//vtext-cdn.vhlcentral.com/te_vtext_descubre3ev1a_secure_nobanner/book.html'
+  :vtext:
+    :url: '//vtext-cdn.vhlcentral.com/vtext_descubre3ev1a/book.html'
+
+#Descubre 1B, (c)2017
+:99:
+  :settings:
+    - :type  : 'link'
+      :label : 'Dictionary'
+      :link  : 'http://www.wordreference.com/enes/'
+    - :type  : 'link'
+      :label : 'My Vocabulary'
+      :link  : '/99/vocab_tools/units'
+  :vocab_tools: 'My Vocabulary'
+  :teacher_vtext:
+    :url: '//vtext-cdn.vhlcentral.com/te_vtext_descubre3ev1b_secure_nobanner/book.html'
+  :vtext:
+    :url: '//vtext-cdn.vhlcentral.com/vtext_descubre3ev1b/book.html'
+
+#Panorama, Fifth Edition
+:100:
+  :settings:
+    - :type  : 'link'
+      :label : 'Dictionary'
+      :link  : 'http://www.wordreference.com/enes/'
+    - :type  : 'link'
+      :label : 'Vocabulary Tools'
+      :link  : '/100/vocab_tools/units'
+  :vocab_tools:
+  :vtext:
+    :url: '//vtext-cdn.vhlcentral.com/vtext_panorama5e/book.html'
+
+#Descubre 3, (c)2017
+:101:
+  :settings:
+    - :type  : 'link'
+      :label : 'Dictionary'
+      :link  : 'http://www.wordreference.com/enes/'
+    - :type  : 'link'
+      :label : 'My Vocabulary'
+      :link  : '/101/vocab_tools/units'
+  :vocab_tools: 'My Vocabulary'
+  :teacher_vtext:
+    :url: '//vtext-cdn.vhlcentral.com/te_vtext_descubre3ev3_secure_nobanner/book.html'
+  :vtext:
+    :url: '//vtext-cdn.vhlcentral.com/vtext_descubre3ev3/book.html'
+
+#Portails 1, (c)2017
+:102:
+  :settings:
+    - :type  : 'link'
+      :label : 'Dictionary'
+      :link  : 'http://www.wordreference.com/enfr/'
+    - :type  : 'link'
+      :label : 'Vocabulary Tools'
+      :link  : '/102/vocab_tools/units'
+  :vocab_tools:
+  :vtext:
+    :url: '//vtext-cdn.vhlcentral.com/vtext_portails/book.html'
+
+# Portales 2 demo. (remove when demo is over)
+:103:
+  :settings:
+    - :type  : 'link'
+      :label : 'Dictionary'
+      :link  : 'http://www.wordreference.com/enes/'
+    - :type  : 'link'
+      :label : 'Vocabulary Tools'
+      :link  : '/103/vocab_tools/units'
+  :vocab_tools:
+  :study_center:
+  :vtext:
+    :url: '//vtext-cdn.vhlcentral.com/vtext_portales/book.html'
+  :teacher_vtext:
+    :url: '//vtext-cdn.vhlcentral.com/iae_vtext_portales/book.html'
+  :speech_rec:

@@ -1,0 +1,72 @@
+@use 'MusicV3/v3/styles/base' as *;
+
+  .c-roster-empty-wrapper {
+    height: 50dvh;
+  }
+
+  /** This is a temporal style to fix the gradebook 
+      subnav width in the new layout */
+  .c-subnav-wrapper {
+    max-width: 100dvw;
+  }
+
+ .c-interaction-settings-btn {
+    display: none;
+    
+    @include viewport-min(sm) { 
+      display: block;
+    }
+  }
+
+  .c-interaction-settings-item {
+    display: block;
+      @include viewport-min(sm) { 
+        display: none;
+    }
+  }
+
+ .c-table-roster-wrapper {
+  overflow-x: auto;
+  max-width: 90dvw;
+  border-radius: var(--music-space-2);
+
+  @include viewport-min(md) { 
+    max-width: none;
+  }
+
+  .c-table-roster {
+    width: 100%;
+
+    th {
+      text-align: left;
+    }
+    
+    tr:nth-child(even) {
+      background-color: var(--music-gray-50);
+    }
+
+    .c-table-roster__checkbox {
+      &::part(label) {
+        margin-left: rpx(16);
+        color: var(--music-true-gray-900);
+      }
+    }
+  }
+
+  .c-table-roster__email {
+    color: var(--music-util-link);
+    max-width: rpx(180);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  .c-table-v3__last-submission {
+    padding: var(--music-space-1) var(--music-space-6);
+  }
+
+}

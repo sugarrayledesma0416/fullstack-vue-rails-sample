@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<activity activity_type="multiple_choice" title="sample_external_ref" language="es">
+	<dl>instructions_go_here</dl>
+	<external_references>
+		<external_reference>
+			<title>external activity reference</title>
+			<activity id="2008"/>
+		</external_reference>
+		<external_reference>
+			<title>external audio reference</title>
+			<audio id="8"/>
+		</external_reference>
+		<external_reference>
+			<title>external video reference</title>
+			<video id="42"/>
+		</external_reference>
+		<external_reference>
+			<title>external image reference</title>
+			<image id="100501"/>
+		</external_reference>
+	</external_references>
+	<items>
+    <style>
+     <item_numbers>show</item_numbers>
+    </style>
+    <item>
+      <prompt/>
+      <choices>
+        <distractor>Buenas tardes.</distractor>
+        <distractor>Buenos días.</distractor>
+        <distractor>Hola.</distractor>
+        <answer>Regular.</answer>
+      </choices>
+    </item>  
+	</items>
+</activity>

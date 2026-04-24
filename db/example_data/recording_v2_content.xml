@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<activity activity_type="recording_v2" title="Grabar" language="es">
+  <dl>Listen to the questions and give proper answers.</dl>
+  <items>
+    <style>
+  <!--Type WORD or SENTENCE depending on activity prompts.-->
+      <layout>word</layout> 
+  <!--Type EQUALIZE for word prompts or NORMAL for sentence prompts.-->
+      <column_fill>equalize</column_fill> 
+    <!--Type EQUALIZE for word prompts or NORMAL for sentence prompts.-->
+    <row_fill>normal</row_fill> 
+    <!--Type SHOW or HIDE for transcript display.-->   
+    <transcript_display>hide</transcript_display> 
+  <!--Type SHOW or HIDE for compare button display.-->
+      <compare_button_display>show</compare_button_display> 
+    </style>
+    <!--Model is OPTIONAL. If it is not needed delete <model> tags from start to end.-->
+
+  <!--Start items-->
+    <question> 
+      <prompt>
+    <!--Type prompt 1 as given in textbook.-->
+        <body>Esta es una pregunta</body>
+        <audio id="107418"/>
+      </prompt>
+      <answer>
+        <audio id="107370"/>
+      </answer>
+    </question>
+     <question>
+      <prompt>
+        <!--Type prompt 2 as given in textbook.-->
+    <body/>
+        <audio id="107419"/>
+      </prompt>
+      <answer>
+        <audio id="107371"/>
+      </answer>
+    </question>
+    <question>
+      <prompt>
+       <!--Type prompt 3 as given in textbook.-->
+     <body/>
+        <audio id="107420"/>
+      </prompt>
+      <answer>
+        <audio id="107382"/>
+      </answer>
+    </question>
+    <question>
+      <prompt>
+      <!--Type prompt 4 as given in textbook.-->
+    <body/>
+        <audio id="107421"/>
+      </prompt>
+      <answer>
+        <audio id="107393"/>
+      </answer>
+    </question>
+        <question>
+      <prompt>
+       <!--Type prompt 3 as given in textbook.-->
+     <body/>
+        <audio id="107372"/>
+      </prompt>
+      <answer>
+        <audio id="107404"/>
+      </answer>
+    </question>
+    <question>
+      <prompt>
+      <!--Type prompt 4 as given in textbook.-->
+    <body/>
+        <audio id="107373"/>
+      </prompt>
+      <answer>
+        <audio id="107415"/>
+      </answer>
+    </question>
+    <!--To ADD items: copy/paste <question> tags and fill in fields.-->  </items>
+</activity>

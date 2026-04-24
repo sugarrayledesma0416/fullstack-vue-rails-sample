@@ -1,0 +1,135 @@
+.c-activity-footer {
+  margin-top: 2rem;
+
+  @include viewport-min('sm') {
+    .u-mar-sm-lt-auto {
+      margin-left: auto;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+
+    @include theme('supersites-jr') {
+      align-items: center;
+
+      @include viewport-min('md') {
+        justify-content: center;
+      }
+    }
+  }
+
+  &__call-to-action {
+    @include viewport-min('sm') {
+      width: 100%;
+    }
+
+    @include theme('supersites-jr') {
+      align-items: center;
+      display: grid;
+      grid-gap: mod(1.5);
+      grid-template-areas:
+        'status'
+        'actions';
+
+      @include viewport-min('md') {
+        grid-gap: mod(1);
+        grid-template-areas: 'status actions';
+      }
+    }
+  }
+
+  &__status {
+    align-items: center;
+    display: flex;
+    grid-area: status;
+    padding-left: rpx(8);
+    padding-right: rpx(8);
+
+    @include viewport-min('sm') {
+      display: inline-block;
+    }
+
+    @include theme('supersites-jr') {
+      text-align: center;
+      #status {
+        display: inline-block;
+      }
+    }
+  }
+
+  &__actions-container {
+    display: block;
+    grid-area: actions;
+
+    @include viewport-min('sm') {
+      display: inline-block;
+    }
+  }
+
+  &__actions {
+    @include line-layout(mod(1) mod(1.5));
+
+    @include theme('supersites-jr') {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+
+      > .c-button {
+        box-sizing: border-box;
+      }
+
+      @include viewport-min('sm') {
+        flex-direction: row;
+      }
+    }
+  }
+}
+
+.c-button--footer {
+  width: 100%;
+  height: auto;
+  font-weight: 400;
+  border: rpx(1) solid $gray-d;
+  
+  /* Override a bad (old) rule from v1 button: */
+  margin-right: 0;
+
+  @include viewport-min('sm') {
+    width: auto;
+  }
+}
+
+.c-footer__score-content {
+  border-left: rpx(3) solid $black;
+  color: $gray-3;
+  margin: 0;
+  padding: rpx(8) rpx(8) rpx(8);
+
+  @include theme('supersites-jr') {
+    background-color: var(--ui-page-fill-color);
+    border: 0;
+    border-radius: mod(0.5);
+    font-size: var(--font-4);
+    padding: mod(1);
+  }
+}
+
+.c-footer__status {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  @include viewport-min('sm') {
+    flex-direction: row;
+  }
+}
+
+.c-footer__attempts-info {
+  color: $lightest-text;
+}
+
+.portfolio-btn {
+  font-size: rpx(16);
+}

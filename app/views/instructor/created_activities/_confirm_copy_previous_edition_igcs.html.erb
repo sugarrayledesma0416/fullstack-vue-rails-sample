@@ -1,0 +1,19 @@
+<div style="max-width: 500px;" class="u-txt-lt">
+  <div class="u-mar-bot-10  u-bord-bot-1">
+    <h3 class="u-txt-red  u-txt-bold  u-txt-32">Copy Previous Edition Content</h3>
+  </div>
+
+  <div>
+    <p class="u-txt-ctr">
+      You have <%= @presenter.fetch_activity_count_message %> in My Content from <%= @presenter.previous_program_edition.title %>. Would you like to
+      copy your content over to the current edition?
+    </p>
+  </div>
+  <div class="m4-button-group--space-between  u-txt-bold  u-mar-bot-0  u-mar-top-32">
+    <button type="button" class="u-txt-reg  u-txt-upper  u-bg-white  u-bord-solid  u-bord-1  m4-button--round  u-bord-gray-6  u-txt-gray-6  u-pad-8  u-pad-lt-24  u-pad-rt-24  js-modal-close">Cancel</button>
+    <%= button_to 'Copy My Content',
+                  copy_previous_edition_igcs_instructor_my_content_index_path,
+                  method: :post,
+                  class: 'c-button  m4-button--primary  js-modal-confirm' %>
+  </div>
+</div>

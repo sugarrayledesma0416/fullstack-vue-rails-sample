@@ -1,0 +1,16 @@
+<%
+  # Google Classroom Share button attributes
+  base_url = request.base_url
+  gc_post_activity_url = "#{base_url}#{activity_path(activity)}"
+  current_lesson_label = presenter.current_lesson_label
+  activity_list_header = presenter.activity_list_header
+  gc_post_title = "#{current_lesson_label} | #{activity_list_header} | #{activity.title.html_safe}"
+  gc_post_title = strip_tags(gc_post_title)
+%>
+<div 
+  class="g-sharetoclassroom"
+  data-size="24"
+  data-url="<%= gc_post_activity_url %>"
+  data-title="<%= gc_post_title %>"
+>
+</div>

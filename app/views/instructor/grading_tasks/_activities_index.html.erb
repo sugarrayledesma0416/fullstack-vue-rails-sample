@@ -1,0 +1,42 @@
+<div class="ns-music-v1  ns-grading">
+<% if @task_list.empty? %>
+  <div class="no_tasks">
+    <p>Nothing to do</p>
+  </div>
+<% else %>
+  <% task_set = @task_list.task_set(@task_type) -%>
+  <% task_set.sorted_activities.each do |activity| -%>
+    <% when_unique(:lesson_strand, "#{activity.lesson_display_name}|#{activity.lesson_strand_label}") do -%>
+      <h4><%= format_lesson_strand_label(activity) %></h4>
+    <% end -%>
+    <ul class="c-inline-list  activity_grading  u-mar-bot-0">
+    <% when_unique(:activity, activity.id) do %>
+      <li>
+        <% due_date_tag = \
+           "Due date: #{task_set.due_date_for_activity(activity) || 'unassigned'}" -%>
+        <%= link_to(
+          activity.title.html_safe,
+          instructor_grading_styles_path(
+            activity_id: activity.id,
+            program_id: current_program.id,
+            task_type: @task_type
+          ),
+          alt: due_date_tag,
+          class: 'c-activity-grading__link',
+          title: due_date_tag
+        ) %>
+      </li>
+      <li class="icon">
+        <%= format_activity_icon(activity.icon) if activity&.icon&.present? %>
+      </li>
+      <li class="submitted  <%= test_class('submitted-number') %>">
+        <%= format_submitted_count(task_set.submission_counts_for_activity(activity), @task_type) %>
+      </li>
+      <li class="graded">
+        <%= format_grading_count(task_set.number_to_be_graded(activity), @task_type) %>
+      </li>
+    <% end -%>
+    </ul>
+  <% end -%>
+<% end -%>
+</div>

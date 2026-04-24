@@ -1,0 +1,28 @@
+
+<%= render :partial => 'common_header' %>
+
+<div id="grading_tasks">
+<div id="main_content">
+	<div id="grading_tasks_breadcrumbs">
+		<div class="top"></div>
+			<ul>
+				<li>To Do</li>
+			</ul>
+		</div>
+		<div id="grading_tasks_tabs">
+			<span class="leftTab">
+				<%= link_to "Assignments (#{@task_list.activities_to_grade('needs_grading_section')})", instructor_grading_tasks_assignments_path(current_program), :id => 'assignments_tab' %>
+			</span>
+			<span id="review_requests_tab">
+				<span class="leftTab-on"></span>
+				Review requests
+			</span>
+		</div> <!-- /#grading_tasks_tabs -->    
+<div id="grading_tasks_wrapper">    
+
+
+</div> <!-- /#grading_tasks_wrapper -->  
+
+</div> <!-- /#main_content --> 
+
+</div>

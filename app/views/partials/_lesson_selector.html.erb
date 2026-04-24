@@ -1,0 +1,104 @@
+
+  <%
+    content_for(:js_head, javascript_include_tag("lesson_selector.js") )
+  %>
+  <h3 class="u-hidden" id="lesson-selector-label">Lesson Selector</h3>
+  <div class="ns-music-v1  <%= yield :theme_classes %>  ns-toc  c-lesson-selector-wrapper">
+     <div class="c-ls-dropdown  js-ls-dropdown  <%= test_class('ls-dropdown') %>" lang="<%= presenter.program_language %>">
+       <details class="c-ls-dropdown__contents  js-disclosure  <%= test_class('ls-dropdown__contents') %>">
+          <summary class="c-ls-dropdown__current  js-current" lang="en">
+              presenter.dropdown.units.first.lessons.first.text.html_safe
+          </summary>
+
+      <ul class="c-ls-dropdown__list  js-ls-dropdown-list">
+        <% presenter.dropdown.units.each do |unit| %>
+          <% if unit.multi_lesson %>
+            <% if unit.chinese_labels.values.all?(&:present?)  %>
+              <li class="c-ls-dropdown__list-item  c-ls-dropdown--multilesson__header  js-ls-dropdown--multilesson-header  js-ls-dropdown-list-item  <%= test_class('ls-dropdown-list-item') %>">
+                <div class="c-ls-dropdown__list-item-data  c-ls-dropdown__list-item-data--chinese  js-ls-dropdown-list-item-data">
+                  <%= image_tag(unit.icon_filename, alt: '', class: "c-ls-dropdown__list-item-image") %>
+                  <div class="c-ls-dropdown__list-item__chinese">
+                    <p
+                      class="c-ls-dropdown__list-item__chinese-text  u-txt-gray-6"
+                      lang="en">
+                      <%= format_lesson_name_for_screenreader(unit.chinese_labels[:display_name], 'en').html_safe %>
+                    </p>
+                    <p
+                      class="c-ls-dropdown__list-item__chinese-text"
+                      lang="en">
+                      <%= unit.chinese_labels[:english_title] %>
+                    </p>
+                    <p
+                      class="c-ls-dropdown__list-item__chinese-text  c-ls-dropdown__list-item__chinese-text--zh"
+                      lang="zh">
+                      <%= unit.chinese_labels[:chinese_title] %>
+                    </p>
+                    <p
+                      class="c-ls-dropdown__list-item__chinese-text  u-txt-lightest-text"
+                      lang="zh-Latn-pinyin">
+                      <%= unit.chinese_labels[:pinyin_title] %>
+                    </p>
+                  </div>
+                </div>
+              </li>
+            <% else %>
+              <li class="c-ls-dropdown__list-item  c-ls-dropdown--multilesson__header  js-ls-dropdown--multilesson-header  js-ls-dropdown-list-item  <%= test_class('ls-dropdown-list-item') %>">
+                <div class="c-ls-dropdown__list-item-data  js-ls-dropdown-list-item-data">
+                  <%= image_tag(unit.icon_filename, alt: '', class: "c-ls-dropdown__list-item-image") %>
+                  <a href="#" class="c-ls-dropdown__list-item-text  <%= test_class('ls-dropdown__list-item-text') %>"><%= unit.text.html_safe %></a>
+                </div>
+              </li>
+            <% end %>
+            <% unit.lessons.each do |lesson| %>
+              <li class="c-ls-dropdown__list-item  c-ls-dropdown--multilesson__list-item  js-ls-dropdown-list-item  <%= test_class('ls-dropdown-list-item') %>" data-selected="<%= lesson.selected %>">
+                <div class="c-ls-dropdown__list-item-data  js-ls-dropdown-list-item-data" >
+                  <% lesson_language = presenter.program_language %>
+                  <% if lesson.text.downcase === 'news and cultural updates' %>
+                    <% lesson_language = 'en' %>
+                  <% end %>
+                  <%= image_tag(unit.icon_filename, alt: '', class: "c-ls-dropdown__list-item-image u-dis-none") %>
+                  <%= link_to(
+                    format_lesson_name_for_screenreader(lesson.text, lesson_language).html_safe,
+                    lesson.path,
+                    lang: "#{ lesson_language }",
+                    class: "c-ls-dropdown__list-item-text  c-ls-dropdown--multilesson-list-item-text  js-ls-dropdown--multilesson-list-item-text  #{ test_class('ls-dropdown__list-item-text') }",
+                    aria: { current: (lesson.selected ? "page" : nil) }
+                  ) %>
+                </div>
+              </li>
+            <% end %>
+          <% else %>
+            <%# Single lesson unit %>
+            <% unit.lessons.each do |lesson| %>
+              <li class="c-ls-dropdown__list-item  js-ls-dropdown-list-item  <%= test_class('ls-dropdown-list-item') %>" data-selected="<%= lesson.selected %>">
+                <div class="c-ls-dropdown__list-item-data  js-ls-dropdown-list-item-data">
+                  <% lesson_language = presenter.program_language %>
+                  <% if lesson.text.downcase === 'news and cultural updates' %>
+                    <% lesson_language = 'en' %>
+                  <% end %>
+                  <%= image_tag(unit.icon_filename, alt: '', class: "c-ls-dropdown__list-item-image") %>
+                  <%= link_to(
+                    format_lesson_name_for_screenreader(lesson.text, lesson_language).html_safe,
+                    lesson.path,
+                    lang: "#{ lesson_language }",
+                    class: "c-ls-dropdown__list-item-text  #{ test_class('ls-dropdown__list-item-text') }",
+                    aria: { current: (lesson.selected ? "page" : nil) }
+                  ) %>
+                </div>
+              </li>
+            <% end %>
+          <% end %>
+        <% end %>
+        <% # Don't show the toggle if there is no path.
+        # The path is empty when all units/lessons are in the course %>
+        <% if presenter.dropdown.unit_range_toggle_path %>
+          <li class="c-ls-dropdown__list-item  js-ls-dropdown-list-item  <%= test_class('ls-dropdown-list-item') %>">
+            <div class="c-ls-dropdown__list-item-data  c-ls-dropdown--multi-course-button  js-ls-dropdown-list-item-data <%= test_class('ls-units__list-item') %>">
+              <a lang="en" href="<%= presenter.dropdown.unit_range_toggle_path %>" class="c-ls-dropdown__list-item-text"><%= presenter.dropdown.unit_range_label %></a>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+      </details>
+    </div>
+  </div>

@@ -1,0 +1,26 @@
+[
+    {
+        "id": 71,
+        "standard_asset_id": 50,
+        "vendor_asset_guid": "cb57aacb-aab3-4f3f-a096-8e0f9b4632b5",
+        "vendor_standard_guid": "8074E404-7440-11DF-93FA-01FD9CFF4B22"
+    },
+    {
+        "id": 72,
+        "standard_asset_id": 51,
+        "vendor_asset_guid": "3f3f17d6-76e4-45ee-a6d7-95d5677b7668",
+        "vendor_standard_guid": "80CAA02E-7440-11DF-93FA-01FD9CFF4B22"
+    },
+    {
+        "id": 73,
+        "standard_asset_id": 52,
+        "vendor_asset_guid": "9c0e1c83-0cd1-4d90-91aa-2949b2582bc0",
+        "vendor_standard_guid": "80755DA8-7440-11DF-93FA-01FD9CFF4B22"
+    },
+    {
+        "id": 74,
+        "standard_asset_id": 53,
+        "vendor_asset_guid": "241b68dd-1f96-4c19-b45a-62132670c88d",
+        "vendor_standard_guid": "80A6750A-7440-11DF-93FA-01FD9CFF4B22"
+    }
+]

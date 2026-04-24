@@ -1,0 +1,11 @@
+<span data-assignable-count="<%= presenter.assignables_count %>"
+      data-already-assigned-count="<%= presenter.already_assigned_count %>">
+  <%= presenter.assignables_count %>
+</span>
+<span class="singular_assignable_type<%= '  u-hidden' if presenter.assignables_count != 1 %>">
+  <%= presenter.pluralized_assignable_type(1) %>
+</span>
+<span class="plural_assignable_type<%= '  u-hidden' if presenter.assignables_count == 1 %>">
+  <%= presenter.pluralized_assignable_type(2) %>
+</span>
+selected

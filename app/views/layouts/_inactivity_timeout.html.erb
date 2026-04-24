@@ -1,0 +1,16 @@
+<% if inactivity_timeout.enabled_in_selected_school? || inactivity_timeout.enabled_in_any_school? %>
+  <% unless defined? @inactivity_timeout_layout_included %>
+    <% @inactivity_timeout_layout_included = true %>
+    <% inactivity_timeout.update_last_activity_time %>
+
+    <% content_for(:js_head, javascript_packs_with_chunks_tag('inactivity_timeout')) %>
+    <div class="js-vue-timeout-warning"
+      data-current-school-id="<%= inactivity_timeout.school&.id %>"
+      data-enabled-in-selected-school="<%= inactivity_timeout.enabled_in_selected_school? %>"
+      data-enabled-in-any-school="<%= inactivity_timeout.enabled_in_any_school? %>"
+      data-timeout-duration="<%= inactivity_timeout.timeout %>"
+      data-seconds-before-warning="<%= inactivity_timeout.seconds_before_warning %>"
+      data-seconds-between-checks="<%= inactivity_timeout.seconds_between_checks %>"
+    />
+  <% end %>
+<% end %>

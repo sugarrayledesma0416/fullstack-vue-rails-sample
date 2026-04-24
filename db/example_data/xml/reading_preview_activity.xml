@@ -1,0 +1,26 @@
+<activity activity_type="reference_activity" title="sample_reference_activity_title" language="es">
+  <dl>instructions_go_here</dl>
+
+  <items>
+    <reading_preview_group>
+      <reading_preview>
+        <header>En detalle</header>
+        <subheader>Las cataratas del Iguazú</subheader>
+        <image id="142586" />
+        <synopsis>Imagine the impressive and majestic Niagara Falls, the most powerful waterfall in North America. Now, if you can, imagine a waterfall four times as wide and almost twice as tall that caused Eleanor Roosevelt to exclaim "Poor Niagara!" upon seeing it for the first time. Welcome to <b>las cataratas del Iguazú!</b> ...</synopsis>
+      </reading_preview>
+      <reading_preview>
+        <header>Perfil</header>
+        <image id="142705" />
+        <synopsis>One of South America's largest and most fashionable beach resort towns is Uruguay's <b>Punta del Este</b>, a narrow strip of land containing twenty miles of pristine beaches. Its peninsular shape gives it two very different seascapes...</synopsis>
+        <activity id="20992"/>
+      </reading_preview>
+      <reading_preview>
+        <header>El Mundo Hispano</header>
+        <subheader>Destinos populares</subheader>
+        <synopsis>Each country offers different views and tourist options. Most visitors opt to use the numerous catwalks that are available on both sides; however, from the Argentinean side, tourists can get very close to the falls, whereas Brazil provides more panoramic views. If you don't mind getting wet, a jet boat tour is a good choice; those looking for wildlife—such as toucans, ocelots, butterflies, and jaguars—should head for San Martín Island.</synopsis>
+        <activity id="21012"/>
+      </reading_preview>
+    </reading_preview_group>
+  </images>
+</activity>

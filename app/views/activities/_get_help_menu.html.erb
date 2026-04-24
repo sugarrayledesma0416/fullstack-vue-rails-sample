@@ -1,0 +1,59 @@
+<% content_for(:help_request_message_container) do %>
+  <div class="ns-music-v1">
+    <div class="u-pos-rel">
+      <div class="c-flash-banner-group"  ng-show="result_message.is_visible">
+        <div ng-class="{'c-flash-banner--success': result_message.is_success, 'c-flash-banner--error': !result_message.is_success}"
+          class="c-flash-banner" role="alert">
+          <div class="l-media">
+            <div class="l-media__img">
+              <span class="c-flash-banner__icon"
+                ng-class="{'c-flash-banner__icon--success': result_message.is_success, 'c-flash-banner__icon--error': !result_message.is_success}"></span>
+              <span class="u-screen-reader-only" ng-if="result_message.is_success">success</span>
+              <span class="u-screen-reader-only" ng-if="!result_message.is_success">error</span>
+            </div>
+            <div class="l-media__body    <%= test_class('help-request-message') %>" ng-bind="result_message.text">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<% content_for(:js_head, javascript_include_tag('get_help/get_help_app_bootstrap.js')) %>
+
+<%= render partial: 'activities/help_request_setup' %>
+<%
+ # grading set views already load the get help app and controller, and shouldn't have instructor notes
+%>
+<% unless @grading_style %>
+  <% content_for(:angular_tags, "vhl-app=\"instructor_notes_app\" ".html_safe) %>
+  <% unless defined?(DISABLE_HELP_REQUESTS) %>
+  <% content_for(
+    :angular_tags,
+    @angular_controller === 'studentActivityRequestsCtrl' ? 'data-request-user-type="student"' : 'data-request-user-type="instructor"'
+  ) %>
+  <% end %>
+<% end %>
+
+<% unless defined?(DISABLE_HELP_REQUESTS) || (@angular_controller == 'instructorActivityRequestsCtrl') -%>
+  <div class="help_request_wrapper" lang="en">
+
+    <% if @attempt && @attempt.help_requestable? && current_section.course_allows_help_requests? %>
+      <a lang="en" class="c-activate-help  js-help-request-mode  <%= test_class('request-help') %>"
+        href="javascript:void(0)">
+        <%= feature_icon("music/features/activity-shell/icons/icon-warning",
+                           ["c-embedded-icon--md  u-mar-rt-8"]) %>
+        Ask your <%= instructor_label.titleize %>
+      </a>
+    <% end -%>
+    <% if @attempt && @attempt.review_requestable? && current_section.course_allows_review_requests? %>
+      <a lang="en" class="c-activate-help  js-review-request-mode  <%= test_class('request-review') %>"
+        href="javascript:void(0)">
+        Ask your <%= instructor_label.titleize %>
+      </a>
+    <% end -%>
+  </div>
+<% end -%>
+
+<div existing-request ng-repeat="request in existing_requests" respond="respond_request(request)" deny="deny_request(request)" request="request" usermode='user_mode' remove="delete_request(request)" read="read_requests(question_id)"></div>

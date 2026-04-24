@@ -1,0 +1,774 @@
+//= require_self
+//= require components/accent_bar
+//= require components/buttons
+
+/* move to buttons.css once it clears QA */
+.confirm-btns {
+  margin-top:20px;
+}
+
+.confirm-btns .confirm-btn {
+  float:right;
+}
+
+.confirm-btns .confirm-no {
+  margin-right:10px;
+}
+
+/* design and skinning classes */
+/* labels */
+.label-a-style {
+  color:#1B3D6B;
+}
+
+.label-b-style {
+  color:#565656;
+}
+
+.quiet-label {
+  color:#565656;
+  font-weight:normal;
+  font-size:12px;
+  display:block;
+}
+
+.inline-label {
+  display:inline-block;
+  min-width:75px;
+}
+
+/* vertical spacing */
+.vert-space-lg {
+  margin-bottom: 50px;
+}
+
+.vert-space-md {
+  margin-bottom: 20px;
+}
+
+.vert-space-sm {
+  margin-bottom:10px;
+}
+
+.vert-space-lg-t {
+  margin-top: 50px;
+}
+
+.vert-space-md-t {
+  margin-top:20px;
+}
+
+.vert-space-sm-t {
+  margin-top:10px;
+}
+
+/* dividers */
+.divider-3px {
+  border-top: 3px solid #e5e5e5;
+  padding-top: 10px;
+}
+
+/* containers */
+
+.gradient-bg-box {
+  background-image: none;
+  background-color: #FFFFFF;
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#f3f3f3), to(#FFFFFF));
+  background-image: -webkit-linear-gradient(top, #f3f3f3, #FFFFFF);
+  background-image:    -moz-linear-gradient(top, #f3f3f3, #FFFFFF);
+  background-image:     -ms-linear-gradient(top, #f3f3f3, #FFFFFF);
+  background-image:      -o-linear-gradient(top, #f3f3f3, #FFFFFF);
+  border:1px #e5e5e5 solid;
+  padding:20px;
+}
+
+.border-box {
+  border:1px #e5e5e5 solid;
+  padding:20px;
+}
+
+/* Table headers */
+.table-header-a {
+  background-image: none;
+  background-color: #ae1812;
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ae1812), to(#8d1301));
+  background-image: -webkit-linear-gradient(top, #ae1812, #8d1301);
+  background-image:    -moz-linear-gradient(top, #ae1812, #8d1301);
+  background-image:     -ms-linear-gradient(top, #ae1812, #8d1301);
+  background-image:      -o-linear-gradient(top, #ae1812, #8d1301);
+
+}
+
+.table-header-b {
+}
+
+/* Strand Colored Border */
+
+.lesson_spanner, .lesson_link_spanner {
+  padding: 2px 2px 2px 4px;
+  font-size: 11px;
+  color: #000;
+  font-weight: normal;
+}
+
+a.lesson_link_spanner {
+  color: #565656;
+}
+
+.weighted_text {
+  font-weight: bold;
+}
+
+.text_label {
+  color:#565656;
+  display:inline-block;
+  font-weight:bold;
+}
+
+.form_note {
+  color:#959595;
+  display:inline;
+  font-size:10px;
+  font-style:italic;
+  font-weight:normal;
+}
+
+/* disabled link */
+a.disabled {
+  color:#CCC;
+  cursor:pointer;
+}
+a.disabled:hover {
+  text-decoration:none;
+}
+
+
+
+
+/* jQueryUI and jQuery Mobile compatability fix - Feel free to remove this style if you are not using jQuery Mobile */
+.jqueryui .ui-icon {
+  background-color: inherit;
+}
+
+/* Another jQueryUI and jQuery Mobile compatability fix - Feel free to remove this style if you are not using jQuery Mobile */
+.jqueryui .ui-icon-triangle-1-s {
+  background-position: -64px -16px;
+}
+
+
+
+
+
+
+
+/*****Table Component*****/
+.wrap_table {
+  margin-left: 15px;
+  font-size: 11px;
+}
+
+.wrap_table table{
+  width:100%;
+  border-collapse: separate;
+  font-size: 11px;
+  margin: 0;
+}
+
+.wrap_table td {
+  vertical-align: top;
+}
+
+.wrap_table table tr {
+  border-bottom:2px solid #ffffff;
+  background-color: #f5f5f5;
+}
+
+.wrap_table table tr td {
+  border-bottom:2px solid #ffffff;
+}
+
+.wrap_table table th {
+  background: #e7e7e7;
+  font-weight:bold;
+  color: #565656;
+  font-size: 11pt;
+}
+
+.wrap_table table th.toc-section {
+  background: #D9D9D9;
+}
+
+.wrap_table tr.toc-current-course {
+  background: #e7e7e7;
+}
+
+.wrap_table tr.toc-current-course h3 {
+  padding-left: 25px;
+}
+
+.wrap_table  table th.rightside {
+  padding-right:5px;
+  width: 77px;
+  font-size: 12px;
+}
+
+.wrap_table table th.rightside2 {
+  width: 100px;
+  padding-right: 5px;
+  font-size: 12px;
+}
+
+.wrap_table table th.status {
+  font-size: 12px;
+  min-width: 45px;
+  padding-right: 15px;
+}
+
+.wrap_table h3 {
+  font-size:13px;
+  display:inline;
+}
+
+.wrap_table .checkbox_all {
+  display:inline-block;
+  vertical-align:text-bottom;
+  width:13px;
+  height:13px;
+  background-color:#FFF;
+  border:1px solid #c6c6c6;
+  cursor:pointer;
+  margin:0 5px 0 5px;
+}
+
+.student_checkbox, .student_checkbox_all {
+display: inline-block;
+vertical-align: text-bottom;
+width: 13px;
+height: 13px;
+background-color: white;
+border: 1px solid #C6C6C6;
+cursor: pointer;
+margin: 0 10px 0 5px;
+}
+
+.wrap_table .student_checkbox:hover, .student_checkbox_all:hover {
+  border-color:#83a9ba;
+}
+
+.show_check {
+  background:#FFF image-url('../images/toc-check.png') no-repeat;
+}
+.highlight_bg {
+  background-color:#dff09f !important;
+}
+
+/*****End Table Component*****/
+
+
+/*****Generic Checkboxes*****/
+.checkbox{
+  display:inline-block;
+  vertical-align:text-bottom;
+  width:13px;
+  height:13px;
+  background-color:#FFF;
+  border:1px solid #c6c6c6;
+  cursor:pointer;
+  margin:0 10px 0 5px;
+}
+.checkbox_all{
+  display:inline-block;
+  vertical-align:text-bottom;
+  width:13px;
+  height:13px;
+  background-color:#FFF;
+  border:1px solid #c6c6c6;
+  cursor:pointer;
+  margin:0 10px 0 5px;
+}
+.checkbox_program {
+  display:inline-block;
+  vertical-align:text-bottom;
+  width:13px;
+  height:13px;
+  background-color:#FFF;
+  border:1px solid #c6c6c6;
+  cursor:pointer;
+  margin:0 7px 0 8px;
+}
+
+h2.lesson_name .checkbox_all {
+  margin: 0 5px;
+}
+
+/*****datepicker*****/
+
+input.datepicker[disabled] {
+  color: #8e8e8e;
+  font-style: italic;
+}
+
+.course .focus_drop_arrow {
+  top: 9px;
+  left: 10px;
+}
+
+.course .focus_drop_arrow.menu_drop {
+  top: 13px;
+  left: 6px;
+}
+
+.section .focus_drop_arrow {
+  top: 27px;
+  left: 10px;
+}
+.section .focus_drop_arrow.menu_drop {
+  top: 29px;
+  left: 6px;
+}
+.old .focus_drop_arrow.menu_drop {
+  top: 12px;
+  left: 6px;
+}
+.course_header_arrow {
+  background-image: image-url('../images/focus-arrow-small.png');
+  background-repeat:no-repeat;
+  background-position:15px 6px;
+  padding-left:25px !important;
+  cursor:pointer;
+}
+
+.focus_menu_old_table .course_header_arrow {
+  background-image:none
+}
+
+.focus_menu_old_table {
+  clear:both;
+}
+
+
+/* Error Styles */
+.fieldWithErrors input.text,
+.fieldWithErrors textarea.text,
+.fieldWithErrors select,
+.fieldWithErrors input,
+.fieldWithErrors textarea,
+.fieldWithErrors select,
+input.fieldError,
+textarea.fieldError,
+select.fieldError
+{
+  border: 2px solid #CE0C24 !important;
+}
+
+.fieldWithErrors label{
+  color: #ec4040;
+}
+
+/* list_hover_actions */
+
+.set_assignment_date {
+  top:-13px;
+  left:-130px;
+  width:100px;
+  padding:10px;
+}
+
+.set_assign_date {
+  padding-left: 32px;
+  margin-top: 10px;
+}
+
+.show_hover {
+  display:block;
+}
+
+/*helper classes*/
+
+.right {
+  float:right;
+}
+
+.left {
+  float:left;
+}
+
+.hidden {
+  display:none;
+}
+
+.hidden_helper {
+  display: none!important;
+}
+
+.hidden_js_helper, .invisible {
+  visibility: hidden;
+}
+
+/* Assignables Dialog */
+
+.assignables_dialog {
+  overflow:visible !important;
+}
+
+.assignables_dialog label {
+  float:left;
+}
+.as_count {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.dialog_section {
+  margin-bottom: 20px;
+}
+
+.variable_dates {
+  position: relative;
+}
+
+.varies_text {
+  float: left;
+}
+
+.varies_arrow {
+  background: image-url('/images/twostep-arrow.png') top right no-repeat;
+  padding-right: 14px;
+  height: 12px;
+  cursor: pointer;
+}
+
+.varies_arrow_open {
+  background: image-url('/images/twostep-arrow-open.png') top right no-repeat;
+  height: 12px;
+}
+
+.assignments_details {
+  position: absolute;
+  width: 300px;
+  z-index: 1200;
+  overflow: visible;
+  right: 30px;
+  top: 15px;
+  border: 1px solid #999;
+  -moz-box-shadow: 3px 3px 8px #888;
+  -webkit-box-shadow: 3px 3px 8px #888;
+  box-shadow: 3px 3px 8px #888;
+}
+
+.assignments_details table tr {
+  background: #FFFFFF;
+  border-bottom: 2px solid #f5f5f5;
+}
+
+.reassign_container {
+  margin-top: 20px;
+}
+
+.reassign_container .div_row {
+  margin-bottom: 5px;
+  padding: 3px;
+}
+
+.reassign_container label {
+  color: #737373;
+  font-weight: bold;
+  padding-top: 0px;
+  font-size: 12px;
+  line-height: 18px;
+  float: left;
+  text-align: right;
+  clear: both;
+}
+
+.reassign_container .c-group-chat-msg-container {
+  font-size: 15px;
+  margin-top: 16px;
+}
+
+.reassign_container .c-group-minimum, .reassign_container .c-group-maximum {
+  display: flex;
+  margin-bottom: 10px;
+  margin-top: 15px;
+}
+
+label.avail_label, label.grade_label {
+  font-weight: normal;
+  padding: 0;
+  margin: 0 0 0 10px;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.due_time_replaced,
+.answers_replaced {
+  color: #737373;
+  float: left;
+  margin-top: -1px;
+  margin-left: 5px;
+}
+
+.avail_options, .avail_replaced, .avail_date, .grades_replaced, .grades_options, .grades_date, .answers_options, .answers_date {
+  color: #737373;
+  float: left;
+  margin-left: 5px;
+  line-height: 18px;
+}
+
+.wrap_table_dialog {
+  width: 580px;
+  margin: 0 0 10px 0;
+}
+
+/* datetimepicker */
+.ui-timepicker-div .ui-widget-header { margin-bottom: 8px; }
+.ui-timepicker-div dl { text-align: left; }
+.ui-timepicker-div dl dt { height: 25px; margin-bottom: -25px; }
+.ui-timepicker-div dl dd { margin: 0 10px 10px 65px; }
+.ui-timepicker-div td { font-size: 90%; }
+.ui-tpicker-grid-label { background: none; border: none; margin: 0; padding: 0; }
+.date_timepicker {width:145px; display:none;}
+
+/* Flash Notices (PUT ALL FROM LAYOUT.CSS HERE WHEN ALL PAGES HAVE LAYOUT.CSS AJP )*/
+.single_column #main_content {
+  border: 1px solid #ccc;
+  width: 850px;
+}
+
+.single_column #flash_error, .single_column #flash_warning, .single_column #flash_notice {
+  margin: 20px 53px 20px 55px;
+  width: auto;
+  position: relative;
+}
+
+/* Assignable Links */
+
+.set_date_link,
+.set_due_date_link {
+  background: image-url('/images/calendar_icon.png') 88px no-repeat;
+  display: inline-block;
+  font-size: 12px;
+  height: 25px;
+  margin-top: -5px;
+  padding-top: 5px;
+  padding-right: 35px;
+  text-decoration: none;
+  vertical-align: middle;
+}
+
+.activity_set_date_link {
+  background: none;
+  padding-right: 0;
+}
+
+a.set_date_link:hover,
+a.set_due_date_link:hover {
+  background: image-url('/images/calendar_icon_hover.png') 88px no-repeat;
+}
+
+a.activity_set_date_link:hover {
+  background: none;
+}
+
+.set_date_link.disable_link_function {
+  color: #959595;
+}
+
+.disabled-link,
+.disabled-link:hover {
+  color: #959595;
+  text-decoration: none;
+}
+
+/*unassignable activities*/
+
+.unassignable_activity_msg, .unassignable_activity_msg.unassignable_activity_msg_student {
+  padding-top:5px;
+}
+
+.unassignable_activity_msg a.more_info {
+  color:#0083CB;
+  font-size:normal;
+  font-style:normal;
+  margin-left:0;
+}
+
+.unassignable_component, .unassignable_lesson {
+    margin-left:25px !important; /* Override in-line styling. */
+}
+
+.unassignable_activity a,
+.unassignable_activity span.icon {
+  color:#666;
+  float: left;
+  font-style:italic;
+  padding-left: 25px;
+}
+
+.unassignable_activity span.icon {
+  float:left;
+  margin-left: 5px;
+  padding-left: 0px;
+}
+
+/* Datepicker */
+
+input.has_datepicker,
+input.datepicker {
+  background: image-url('/images/input_calendar.png') -2px 0px no-repeat;
+  border: 0;
+  cursor: pointer;
+  width: 200px;
+  padding-left: 10px;
+  padding-top: 7px;
+  padding-bottom: 9px;
+  color: #333;
+  font-weight: normal;
+}
+
+/* Any additional overrides */
+.ui-widget-content a.red-button {
+  color: #FFF;
+}
+
+.ui-widget-content a.red-button,
+.ui-widget-content #additional_links .cancel_link > a {
+  height: auto;
+}
+
+.save_only, .save_new, .save_grade {
+  display: inline-block;
+  float: left;
+  margin: 0px 0px 0px 5px;
+}
+
+/* Assignment Modal Overflow */
+.assignables_dialog.ui-dialog-content {
+  max-height: 400px;
+}
+
+.assignables_wizard .wrap_table_dialog {
+  max-height: 250px;
+  overflow-y: scroll;
+}
+
+/* descriptive hovers for icons */
+
+.hover_tools_explanation,
+.hover_original_answer {
+  background: #FFF;
+  border: 1px solid #959595;
+  color: #737373;
+  left: -125px;
+  padding: 5px;
+  position: absolute;
+  top: -14px;
+  width: 100px;
+  z-index: 5;
+}
+
+
+.hover_tools_arrow {
+  display: block;
+  background: image-url('/images/darrowtop.png') top center no-repeat;
+  height: 14px;
+  position: absolute;
+  right: 0px;
+  top: -13px;
+  width: 112px;
+}
+
+/* Fix for Datepicker displaying whitespace even when it's closed. */
+#ui-datepicker-div.ui-helper-clearfix {
+  display: none;
+}
+
+/* Notifications Dropdown for Activities and Notifications */
+.notifications_link {
+  position: absolute;
+}
+
+.external_activity .notifications_link {
+  right: 30px;
+  top: 0px;
+}
+
+#show_notifications_link {
+  cursor: pointer;
+  display: block;
+  float: left;
+  height: 24px;
+  margin-right: 10px;
+}
+
+#notification_listing {
+  background: #FFF;
+  border: 1px solid #949494;
+  clear: both;
+  color: #565656;
+  float: right;
+  min-height: 50px;
+  padding: 10px 10px 5px;
+  position: absolute;
+  right: 0px;
+  top: 20px;
+  width: 200px;
+  z-index: 2;
+  -webkit-box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.2);
+}
+
+#notification_listing li {
+  padding-bottom: 15px;
+}
+
+/* Modals for Assigning */
+.hide-assigned .submit,
+.assign-hidden .submit {
+  float: right;
+}
+
+.hide-assigned .notice,
+.assign-hidden .notice {
+  background: image-url('/images/icon-exclamation.png') no-repeat;
+  display: inline-block;
+  font-size: 11px;
+  height: 25px;
+  margin: 32px;
+  padding-left: 40px;
+  padding-top: 7px;
+}
+
+.hide-assigned .notice {
+  height: 29px;
+  padding-top: 3px;
+}
+
+
+.hide-assigned .cancel-link,
+.assign-hidden .cancel-link {
+  display: inline-block;
+  float: left;
+  padding-top: 15px;
+}
+
+/* Colored program header bars */
+
+.program-header-bar {
+  background-color:#a20101;
+  color: #FFF;
+}
+
+.neutral-header-bar {
+  background: #d2d2d2;
+}
+
+.program-header-bar.bar-hover:hover, .neutral-header-bar.bar-hover:hover {
+  background-color: #DFF09F;
+  cursor:pointer;
+}
+
+.c-group-minimum-select, .c-group-maximum-select {
+  margin: 0 8px;
+}

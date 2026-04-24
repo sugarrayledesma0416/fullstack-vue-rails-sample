@@ -1,0 +1,19 @@
+require_relative 'config/environment'
+require_relative 'etl/common'
+
+class CourseSource < Source
+  def initialize(ids)
+    @records = ::Course.find(ids.split(','))
+  end
+end
+
+class CourseTransform < Transform
+  def initialize(model)
+    @common_fields = %w(id name start_date end_date)
+    super(model)
+  end
+end
+
+source CourseSource, ENV['COURSE_IDS']
+transform CourseTransform, GradebookEngine::Course
+destination RecordDestination

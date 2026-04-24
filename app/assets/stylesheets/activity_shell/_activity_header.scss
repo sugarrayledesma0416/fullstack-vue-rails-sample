@@ -1,0 +1,59 @@
+@import 'music/library/v1/base/main';
+/* ================================================================== *
+
+Activity Header / Title Area
+
+* =================================================================== */
+
+.c-activity-info {
+  padding-top: 0.5rem;
+}
+
+/* Hide Page Header */
+.activities .page_title {
+  display: none;
+}
+
+/* Just enough for the Account Menu */
+.standard_layout.activities #masthead {
+  height: rpx(20);
+}
+
+.activity-header-container {
+  float: left;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.description-area {
+  max-width: 59.167rem;
+}
+
+[id="ruleset-frame"] {
+  width: rpx(130);
+  float: right;
+}
+
+.c-ruleset-frame{
+  margin-bottom: 0.625rem;
+}
+
+.ns-instructor-created-activity .ui-dialog,
+.ns-instructor-created-activity .ui-tooltip {
+  z-index: 9;
+}
+
+.c-activity-header {
+  .c-view-rubric {
+    margin-bottom: 0.5rem;
+
+    /* override ns-v1 height/width */
+    &.ns-music-v1 {
+      svg {
+        height: 0.5rem;
+        width: auto;
+      }
+    }
+  }
+}

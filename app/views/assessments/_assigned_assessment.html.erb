@@ -1,0 +1,21 @@
+<li id="activity_<%= activity.id %>" class="c-assigned-assessment"
+  aria-labelledby="a11y-assessment-<%= activity.id %>-label" role="group">
+  <div id="a11y-assessment-<%= activity.id %>-label" class="c-assigned-assessment__header">
+    <div class="c-assigned-assessment__date  u-txt-ctr  u-txt-sm-lt">
+      <%= (assignment.nil? ? '' : "Due " + assignment.due_date.strftime("%A, %B #{assignment.due_date.day.ordinalize}") ) %>
+    </div>
+  </div>
+    
+  <div class="l-grid  u-pad-20">
+    <div id="a11y-assessment-<%= activity.id %>-start-label" class="l-col-12  l-col-sm-8  u-mar-bot-16  u-txt-ctr  u-txt-sm-lt">
+      <%= content_tag(:span, class: test_class('assigned-assessment-title')) do %>
+        <%= format_assessment_assignment_title_text(activity) %>
+      <% end %>
+      <div class="u-screen-reader-only">start</div>
+    </div>
+    <div class="l-col-12  l-col-sm-4  u-txt-ctr">
+      <%= link_to "START", section_activity_path(section.id, activity), class: 'c-button c-button--primary',
+                  "aria-labelledby": "a11y-assessment-#{ activity.id }-start-label", "role": "button"%>
+    </div>
+  </div>
+</li>

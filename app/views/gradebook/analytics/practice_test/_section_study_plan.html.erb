@@ -1,0 +1,97 @@
+<table class="c-table  c-table--content  c-table--study-plan  <%= test_class('section-study-plan-table') %>">
+  <caption class="u-screen-reader-only">
+    This table shows the scores for diagnostic activities within the selected lesson
+    for students in your selected section.  It also indicates whether or not a student
+    has visited the review and practice activities for each concept.
+  </caption>
+  <thead>
+    <tr class="concept-type-row">
+      <td colspan="2"></td>
+      <% @section_practice_test_presenter.concepts_list.each do |concept| %>
+        <td colspan="2" class="concept-type <%="#{concept.type}-concept-type" %>">
+          <%= "#{concept.type} #{concept.ref}" %>
+        </td>
+      <% end %>
+    </tr>
+    <tr class="c-header-row">
+      <th scope="col" class="section-analytics-header">
+        Student
+      </th>
+      <th scope="col" class="section-analytics-header">
+        <%= @section_practice_test_presenter.summative_title %>
+      </th>
+      <% @section_practice_test_presenter.concepts_with_formative_activities.each_pair do |concept, activity| %>
+        <th scope="col" class="section-analytics-header  summative-header  u-pad-lt-24">
+          Review
+        </th>
+        <th scope="col" class="section-analytics-header  formative-header  u-pad-lt-24">
+          Practice
+        </th>
+      <% end %>
+    </tr>
+  </thead>
+  <tbody>
+    <% @section_practice_test_presenter.student_rows.each do |student_row| %>
+    <tr class="c-row">
+      <td scope="row" class="student-name">
+        <%= format_individual_student_link(student_row.student_full_name, student_row.student_id, @section_practice_test_presenter.selected_lesson_id) %>
+      </td>
+      <td scope="row">
+        <% if @section_practice_test_presenter.summative_grade_submitted_for(student_row.student) %>
+        <%= link_to(
+              "#{@section_practice_test_presenter.summative_grade_for(student_row.student)}%",
+              instructor_review_work_grade_path(
+                score_id: 0,
+                return_to: request.original_fullpath,
+                section_id: @section_practice_test_presenter.section_id,
+                activity_id: @section_practice_test_presenter.summative_activity&.id,
+                user_id: student_row.student_id
+              ),
+              target: '_blank',
+              class: test_class('student-summative-link')
+            ) %>
+        <% else %>
+        <span class="<%= test_class('student-summative-non-submitted') %>">
+          <%= @section_practice_test_presenter.summative_grade_for(student_row.student) %>
+        </span>
+        <% end %>
+      </td>
+      <% student_row.concept_score_groups.each do |score_group| %>
+        <td scope="row" class="activity-list  c-max-characters">
+          <ul class="c-activity-list  c-plain-list" data-concept-reading-list>
+            <% score_group[:review_readings].each do |reading| %>
+              <li class="<%= reading.html_class_name %>  js-check-truncated-title"
+                  data-activity-title="<%= reading.activity_title %>">
+                <%= Music::Components.icon(variant: 'checkmark') %>
+                <%= reading.activity_title %>
+              </li>
+            <% end %>
+          </ul>
+        </td>
+        <td scope="row">
+          <ul class="c-activity-list  c-plain-list" data-concept-reading-list>
+            <% score_group[:supplemental_readings].each do |reading| %>
+              <li class="<%= reading.html_class_name %>">
+                <%= Music::Components.icon(variant: 'checkmark') %>
+                <% if reading.viewed? %>
+                  <%= link_to(reading.activity_title,
+                        instructor_activity_path(
+                          program_id: reading.supplemental_activity&.program&.id,
+                          id: reading.supplemental_activity&.id,
+                          user_id: reading.user_id
+                        ),
+                        target: '_blank',
+                        class: "user-reading  #{ test_class("supplemental-reading-link") }"
+                      ) %>
+                <% else %>
+                  <%= reading.activity_title %>
+                <% end %>
+              </li>
+            <% end %>
+          </ul>
+        </td>
+      <% end %>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

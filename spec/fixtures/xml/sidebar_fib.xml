@@ -1,0 +1,77 @@
+<activity activity_type="fill_in_the_blanks" title="sample fill in the blanks activity" language="es">
+  <dl>instructions_go_here</dl>
+  <items>
+    <style>
+      <wol_size>words_standard</wol_size>
+      <item_numbers>show</item_numbers>
+    </style>
+    <item sidebar_ref="1">
+      <prompt>Test <wol ref="1"/> with <wol ref="2"/> blanks</prompt>
+      <answers ref="1">
+        <answer>answer text 1</answer>
+      </answers>
+      <answers ref="2">
+        <answer>answer text 2</answer>
+        <answer>another answer 2</answer>
+      </answers>
+    </item>
+  </items>
+
+  <sidebar ref="1">
+    <title>Expresiones útiles</title>
+    <!-- Reference: Phrase Group -->
+    <reference type="phrase_chart">
+      <phrase_group>
+        <header>Talking with hotel personnel</header>
+        <phrase>
+          <foreign>¿En qué puedo servirles?</foreign>
+          <english>How can I help you?</english>
+          <audio id="137819"/>
+        </phrase>
+      </phrase_group>
+    </reference>
+    <!-- Reference: Phrase Group -->
+    <reference type="phrase_chart">
+      <phrase_group>
+        <header>Talking with hotel personnel 2</header>
+        <phrase>
+          <foreign>¿En qué puedo servirles?</foreign>
+          <english>How can I help you?</english>
+          <audio id="137819"/>
+        </phrase>
+      </phrase_group>
+    </reference>
+  </sidebar>
+
+  <sidebar ref="1">
+    <title>Common Reflexive Verbs</title>
+    <!-- Vocab Chart -->
+    <vocab_chart title="Common reflexive verbs" column_hint="2" show_l1_first="false">
+      <vocab_group>
+        <hint>o:ue</hint>
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <translation>to remember</translation>
+          <target>acordarse</target>
+          <annotated_target>abierto</annotated_target>
+          <language>es</language>
+          <image id="136303" />
+          <audio id="137760" />
+        </dictionary_entry>
+      </vocab_group>
+    </vocab_chart>
+    <!-- Reference: Phrase Group -->
+    <reference type="phrase_chart">
+      <phrase_group>
+        <header>Talking with hotel personnel 2</header>
+        <phrase>
+          <foreign>¿En qué puedo servirles?</foreign>
+          <english>How can I help you?</english>
+          <audio id="137819"/>
+        </phrase>
+      </phrase_group>
+    </reference>
+  </sidebar>  
+</activity>

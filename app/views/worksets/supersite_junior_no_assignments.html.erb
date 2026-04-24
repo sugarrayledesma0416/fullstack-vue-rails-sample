@@ -1,0 +1,10 @@
+<% content_for(:navigation) do %>
+  <% render('app_shell/navbar_program/supersite_junior') %>
+<% end %>
+
+<div>All done for now!</div>
+
+<%= link_to(
+      'Go to Dashboard',
+      jr_course_section_path(course_id: @section.course_id, section_id: @section.id)
+    ) %>

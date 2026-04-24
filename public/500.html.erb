@@ -1,0 +1,59 @@
+<% content_for(:body_classes, 'ns-full-width') %>
+<% content_for(:css_head, stylesheet_link_tag('music/features/error_page')) %>
+<% content_for(:js_head, javascript_include_tag('error_page')) %>
+<div class="c-error">
+  <div class="c-error-image" role="img"></div>
+  <h1 class="c-heading--xl  c-heading--xl--txt">SERVER ERROR</h1>
+  <% if @server_error %>
+    <div>
+      <p class="u-txt-ital  u-mar-0  u-txt-gray-6">Error ID: </p>
+      <p class="u-txt-gray-6">rb <%= @server_error.id %> </p>
+    </div>
+  <% end %>
+  <hr/>
+  <h2 class="c-heading--page-title  c-heading--page-title--txt  u-txt-ctr">
+    We're sorry, but something went wrong. <br/> We would like to fix this for you.
+  </h2>
+  <div class="c-button-group  c-button-group--lt  c-button-group--sm  flex-justify-ctr">
+    <% if @server_error %>
+      <button class="c-button  c-button--primary  c-button--width  u-sp  js-button-report">Report Error</button>
+    <% end %>
+    <button class="c-button  c-button--border  c-button--width"><a href="/ua_home">Home</a></button>
+  </div>
+</div>
+<% if @server_error %>
+  <div class="c-modal  c-modal--md  js-modal  js-modal-report  u-hidden">
+    <div role="dialog" aria-label="Dialog with a panel" class="c-modal__box  js-modal-box  js-modal-a11y" >
+      <button class="c-modal__close-button  c-no-button  js-x-close  js-modal-close">
+        <span class="c-icon  c-icon--md  c-icon--close"></span>
+        <span class="u-screen-reader-only">Close dialog</span>
+      </button>
+      <div role="document" class="js-modal-content">
+        <div class="c-panel  c-panel--padded  u-mar-0">
+          <%= form_tag("/server_error_reports/#{@server_error.id}", method: 'put') do %>
+            <div class="c-panel__body">
+              <h3 class="c-heading--md">Report Error</h3>
+              <div class="c-form-item">
+                <label class="c-form-item__label" for="user_comment">what happened? </label>
+                <textarea
+                  id="user_comment"
+                  name="user_comment"
+                  class="c-form-item__textarea  u-width-full"
+                  rows="5"
+                  cols="50"
+                  placeholder="Tell us as much you can."></textarea>
+              </div>
+            </div>
+            <div class="c-panel__footer">
+              <div class="c-button-group  u-mar-0  u-txt-rt">
+                <button type="reset" class="c-button  js-modal-close">Cancel</button>
+                <button type="submit" class="c-button  c-button--primary">Report</button>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <button class="u-screen-reader-only" tabindex="-1">Dialog end</button>
+    </div>
+  </div>
+<% end %>

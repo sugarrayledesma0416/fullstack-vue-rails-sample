@@ -1,0 +1,70 @@
+<!-- vanillify vhlModal jQuery plugin ? -->
+<%= render layout: 'institution_admin/dashboard/modal', locals: { js_class: 'external-item-modal' } do %>
+  <div class="c-modal__body">
+    <h3 class="c-heading--md  js-modal-heading"></h3>
+
+    <form class="js-form-fields">
+      <div class="c-form-item  u-mar-top-24">
+	<label for="title" class="c-form-item__label">Title</label>
+	<input type="text" id="title" class="c-form-item__input  js-title">
+      </div>
+      <div class="c-form-item  u-mar-top-16">
+	<label class="c-form-item__label" for="due_date">Due date</label>
+	<input type="text"
+               name="pretty_due_date"
+               id="pretty_due_date"
+               value="{}"
+               class="c-form-item__input  c-form-item__input--datepicker  js-datepicker  js-due-date"
+               data-widget-classes="c-datepicker"
+               data-min="<%= @course.start_date %>"
+               data-max="<%= @course.end_date %>"
+               data-date="\"<%= Date.today %>\""
+               placeholder="MM-DD-YYYY"
+               autocomplete="off">
+               <input class="js-ruby-date-format  js-due-date-hidden" type="hidden" id="due_date" value="<%= Date.today %>">
+      </div>
+
+      <div class="c-form-item  u-mar-top-16">
+        <label class="c-form-item__label" for="points_possible">Points possible</label>
+        <input type="number" min="1" class="c-form-item__input  c-form-item__input--sm  js-points-possible" id="points_possible">
+      </div>
+
+      <div class="c-form-item-group  u-mar-top-16">
+        <div class="c-form-item">
+          <label class="c-form-item__label" for="lesson_id">Lesson</label>
+          <%= select_tag(:lesson_id, options_for_select(
+            [['Select a Lesson', ''],
+             *@presenter.lessons.map { |lesson| [lesson.name, lesson.id] }]
+          ),
+          { class: 'c-select  js-lesson-id' }) %>
+        </div>
+
+        <div class="c-form-item">
+          <label class="c-form-item__label" for="category_id">Category</label>
+          <%= select_tag(:category_id, options_for_select(
+            [['Select a Category', ''],
+             *@presenter.categories.map { |category| [category.name, category.id] }]
+          ),
+          { class: 'c-select  js-category-id' }) %>
+        </div>
+      </div>
+    </form>
+
+    <div class="c-panel__footer">
+      <div class="c-button-group  u-mar-16  u-txt-rt">
+        <button type="button" class="c-button  c-button--border  js-delete">Delete</button>
+        <button type="button" class="c-button  js-modal-close">Cancel</button>
+        <button type="button"
+                class="c-button  c-button--primary  js-submit  js-submit--add  <%= test_class('add-external-item-submit-button') %>"
+                disabled>
+                Create
+        </button>
+        <button type="button"
+                class="c-button  c-button--primary  js-submit  js-submit--edit  <%= test_class('add-external-item-update-button') %>"
+                disabled>
+                Save
+        </button>
+      </div>
+    </div>
+  </div>
+<% end %>

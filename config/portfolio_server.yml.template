@@ -1,0 +1,15 @@
+development:
+  admin_web_token: <token>
+  domain_url: <url>
+
+test:
+  admin_web_token: <token>
+  domain_url: <url>
+
+qa:
+  admin_web_token: <token>
+  domain_url: <url>
+
+live:
+  admin_web_token: <token>
+  domain_url: <url>

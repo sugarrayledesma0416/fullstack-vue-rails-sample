@@ -1,0 +1,28 @@
+require_relative 'etl/common'
+
+class ActivitySource < Source
+  def initialize(course_ids)
+    @records = ::Assignment.includes(:section).where("sections.course_id in (#{course_ids})")
+      .where("assignable_type != 'ExternalActivity'")
+      .map(&:assignable)
+  end
+end
+
+class ActivityTransform < Transform
+  def initialize(model)
+    @common_fields = %w(id name points_possible grading_method)
+    super(model)
+  end
+
+  def process(record)
+    super(record) do |r|
+      r.name = record.title
+      r.rank = record.concept_rank
+      r.gradeable = record.submittable
+    end
+  end
+end
+
+source ActivitySource, ENV['COURSE_IDS']
+transform ActivityTransform, GradebookEngine::Activity
+destination RecordDestination

@@ -1,0 +1,105 @@
+<table class="c-table  c-table--content  c-table--study-plan  <%= test_class('section-practice-test-table') %>">
+  <caption class="u-screen-reader-only">
+    This table shows score information for diagnostic activities
+    within the selected lesson for students in your selected section.
+  </caption>
+  <thead>
+    <tr class="concept-type-row">
+      <td colspan="2"></td>
+      <% @section_practice_test_presenter.concepts_list.each do |concept| %>
+        <td colspan="3" class="concept-type <%="#{concept.type}-concept-type" %>">
+          <%= "#{concept.type} #{concept.ref}" %>
+        </td>
+      <% end %>
+    </tr>
+    <tr class="c-header-row">
+      <th scope="col" class="section-analytics-header  student-header  u-pad-lt-16">
+        <%= gradebook_practice_test_sort_link(
+              'Student',
+              :name,
+              lesson_id
+            ) %>
+      </th>
+      <th scope="col" class="section-analytics-header  summative-header  <%= test_class('summative-average-header') %>">
+        <%= gradebook_practice_test_sort_link(
+              @section_practice_test_presenter.summative_title,
+              :summative_grade,
+              lesson_id
+            ) %>
+      </th>
+      <% @section_practice_test_presenter
+           .concepts_with_formative_activities.each_pair do |concept, activity| %>
+        <th scope="col"
+            class="section-analytics-header  summative-header  <%= test_class('summative-concept-header') %>">
+          <%= gradebook_practice_test_sort_link(activity.title, :formative, lesson_id, concept) %>
+        </th>
+        <th scope="col"
+            class="section-analytics-header  formative-header">
+          <%= gradebook_practice_test_sort_link(
+                @section_practice_test_presenter.summative_title, :summative, lesson_id, concept) %>
+        </th>
+        <th scope="col"
+            class="section-analytics-header  <%= test_class('score-change-header') %>">
+          <%= gradebook_practice_test_sort_link('Score Change', :change, lesson_id, concept) %>
+        </th>
+      <% end %>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="c-row  section-average">
+      <th scope="row" class="section-average-header  u-pad-lt-16">Section Average</th>
+      <td scope="row"><%= @section_practice_test_presenter.summative_average.round(1) %>%</td>
+      <% @section_practice_test_presenter.section_averages.each do |score| %>
+        <%= format_score_cell(score.average) %>
+        <%= format_score_cell(score.summative_average) %>
+        <%= format_score_change_cell(score.score_change) %>
+      <% end %>
+    </tr>
+    <% @section_practice_test_presenter.student_rows.each do |student_row| %>
+    <tr class="c-row">
+      <td scope="row" class="student-name  u-pad-lt-16">
+        <%= format_individual_student_link(
+              student_row.student_full_name,
+              student_row.student_id,
+              @section_practice_test_presenter.selected_lesson_id
+            ) %>
+      </td>
+      <td scope="row" class="score">
+        <%= @section_practice_test_presenter.summative_grade_for(student_row.student) %>%
+      </td>
+
+      <% student_row.concept_score_groups.each do |concept_scores| %>
+        <%= @score_presenter.display_score(
+              student_row.student_id,
+              concept_scores[:formative][:assignment],
+              concept_scores[:formative][:score]
+            ) do |display_score, score_class| %>
+          <% tag.td do %>
+            <%= content_tag(:span, class: score_class) do %>
+              <%= display_score %>
+            <% end %>
+          <% end %>
+        <% end %>
+        <%= @score_presenter.display_score(
+              student_row.student_id,
+              concept_scores[:summative][:assignment],
+              concept_scores[:summative][:score]
+              ) do |display_score, score_class| %>
+          <% tag.td do %>
+            <%= content_tag(:span, class: score_class) do %>
+              <%= display_score %>
+            <% end %>
+          <% end %>
+        <% end %>
+        <%= tag.td do %>
+          <% @score_presenter.display_score_change(concept_scores[:change]) do |formatted_score, classes| %>
+            <%= tag.div(class: classes) do %>
+              <% formatted_score %>
+            <% end %>
+          <% end %>
+        <% end %>
+      <% end %>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<activity language="es" title="Vocabulary chart: -er verbs" activity_type="learning_engine">
+  <dl>Watch the video and then practice the vocabulary words.</dl>
+  <items>
+    <reference type="video">
+      <video id="138561" />
+    </reference>
+    <listen_and_repeat>
+
+      <dictionary_entry>
+        <id>1</id>
+        <annotated_target>las vacaciones</annotated_target>
+        <translation>vacation</translation>
+        <descriptor></descriptor>
+        <language>es</language>
+        <image id="136798" />
+        <audio id="136827" />
+        <target>las vacaciones</target>
+        <exclusion_entry_ids></exclusion_entry_ids>
+      </dictionary_entry>
+
+      <dictionary_entry>
+        <id>4</id>
+        <annotated_target>ir en automóvil</annotated_target>
+        <translation>to go by car</translation>
+        <descriptor></descriptor>
+        <language>es</language>
+        <image id="136801" />
+        <audio id="136819" />
+        <target>ir en automóvil</target>
+        <exclusion_entry_ids></exclusion_entry_ids>
+      </dictionary_entry>
+
+      <dictionary_entry>
+        <id>7</id>
+        <annotated_target>ir en motocicleta</annotated_target>
+        <translation>to go by motorcycle</translation>
+        <descriptor></descriptor>
+        <language>es</language>
+        <image id="136804" />
+        <audio id="136822" />
+        <target>ir en motocicleta</target>
+        <exclusion_entry_ids></exclusion_entry_ids>
+      </dictionary_entry>
+    </listen_and_repeat>
+
+    <identify>
+
+      <dictionary_entry>
+        <id>2</id>
+        <annotated_target>estar de vacaciones</annotated_target>
+        <translation>to be on vacation</translation>
+        <descriptor></descriptor>
+        <language>es</language>
+        <image id="136799" />
+        <audio id="136816" />
+        <target>estar de vacaciones</target>
+        <exclusion_entry_ids></exclusion_entry_ids>
+      </dictionary_entry>
+
+      <dictionary_entry>
+        <id>5</id>
+        <annotated_target>ir en taxi</annotated_target>
+        <translation>to go by taxi</translation>
+        <descriptor></descriptor>
+        <language>es</language>
+        <image id="136802" />
+        <audio id="136823" />
+        <target>ir en taxi</target>
+        <exclusion_entry_ids></exclusion_entry_ids>
+      </dictionary_entry>
+
+      <dictionary_entry>
+        <id>8</id>
+        <annotated_target>ir en avión</annotated_target>
+        <translation>to go by plane</translation>
+        <descriptor></descriptor>
+        <language>es</language>
+        <image id="136810" />
+        <audio id="136820" />
+        <target>ir en avión</target>
+        <exclusion_entry_ids></exclusion_entry_ids>
+      </dictionary_entry>
+
+    </identify>
+    <say_it>
+
+      <dictionary_entry>
+        <id>3</id>
+        <annotated_target>ir de vacaciones</annotated_target>
+        <translation>to go on vacation</translation>
+        <descriptor></descriptor>
+        <language>es</language>
+        <image id="136800" />
+        <audio id="136817" />
+        <target>ir de vacaciones</target>
+        <exclusion_entry_ids></exclusion_entry_ids>
+      </dictionary_entry>
+
+      <dictionary_entry>
+        <id>6</id>
+        <annotated_target>ir en barco</annotated_target>
+        <translation>to go by boat</translation>
+        <descriptor></descriptor>
+        <language>es</language>
+        <image id="136803" />
+        <audio id="136821" />
+        <target>ir en barco</target>
+        <exclusion_entry_ids></exclusion_entry_ids>
+      </dictionary_entry>
+
+      <dictionary_entry>
+        <id>9</id>
+        <annotated_target>ir en autobús</annotated_target>
+        <translation>to go by bus</translation>
+        <descriptor></descriptor>
+        <language>es</language>
+        <image id="136806" />
+        <audio id="136818" />
+        <target>ir en autobús</target>
+        <exclusion_entry_ids></exclusion_entry_ids>
+      </dictionary_entry>
+
+    </say_it>
+
+
+
+  </items>
+</activity>
+

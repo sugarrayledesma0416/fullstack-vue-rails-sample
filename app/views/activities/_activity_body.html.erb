@@ -1,0 +1,105 @@
+<% if @activity.content_object&.activity_type == 'group_chat'
+    content_for(:js_head, javascript_packs_with_chunks_tag('activities/group_chat'))
+  end %>
+
+<div class="c-activity-body" id="activity_body">
+  <% if controller.class.to_s != "Instructor::ActivitiesController" && @activity_presenter.assessment? && @activity_presenter.requires_interstitial?(session[:unlocked_assessments]) -%>
+    <%= render 'assessment_info', activity_presenter: @activity_presenter %>
+  <% else -%>
+    <% # if timed assessment has timed out when the student returned to the activity,
+       # hide the form. it will be submitted automagically by js
+        activity_form_classes = if @activity_presenter.timed_assessment? && !@activity_presenter.time_left?
+          'hidden'
+        else
+          'js-activity-main-form'
+        end
+
+        # Instructor users not really practicing, they should be able to submit pchat activities.
+        if @attempt_track.practice? && !@attempt.user.instructor?
+          form_url = if current_user.cartridge?
+                       practice_cartridge_section_activity_path(current_section_id, @activity)
+                     elsif spr?
+                       practice_spr_section_activity_path(current_section_id, @activity)
+                     else
+                       practice_section_activity_path(current_section_id, @activity)
+                     end
+          form_parameters = {
+            autocomplete: 'off', id: 'activity_form', method: :get
+          }
+        else
+          if @activity.diagnostic_feedback?
+            form_url = if current_user.cartridge?
+                         diagnostic_feedback_cartridge_section_activity_path(current_section_id, @activity)
+                       elsif spr?
+                         diagnostic_feedback_spr_section_activity_path(current_section_id, @activity)
+                       else
+                         diagnostic_feedback_section_activity_path(current_section_id, @activity)
+                       end
+            form_parameters = {
+              autocomplete: 'off', id: 'activity_form', method: :post, remote: true
+            }
+          else
+            form_url = if current_user.cartridge?
+                         cartridge_section_activity_path(current_section_id, @activity)
+                       elsif spr?
+                         spr_section_activity_path(current_section_id, @activity)
+                       else
+                         section_activity_path(current_section_id, @activity)
+                       end
+            form_parameters = {
+              autocomplete: 'off', id: 'activity_form', method: :post
+            }
+          end
+        end
+
+        if @activity.activity_type == 'composition'
+          form_parameters.merge!(enctype: 'multipart/form-data')
+        end
+
+        form_parameters.merge!(class: "c-activity-form  #{activity_form_classes}")
+    -%>
+
+      <% if @activity_presenter.timed_assessment? %>
+        <%= render 'activities/assessment_auto_submit'%>
+      <% end %>
+
+      <div class="c-chat-activity-container  c-mobile-tabs-view__primary-content  js-pchat-activity-container  js-group-chat-activity-container %>"></div>
+      <div class="c-form  c-form--activity">
+        <!-- Periodic announcements of time remaining: -->
+        <time role="alert" aria-atomic="true" class="js-a11y-time-remaining  u-screen-reader-only"></time>
+        <%= form_for(:activity, url: form_url, html: form_parameters) do |form| %>
+            <% if @activity.content_object.is_a?(MaestroActivityEngine::ActivityContent::Content) %>
+              <div id="testFrame" class="ui-helper-clearfix  c-activity-main  js-activity-main">
+                <% if @activity.activity_type === 'dictionary_flashcards' %>
+                  <%= render 'dictionary_flashcards' %>
+                <% else %>
+                  <%= render(
+                        "maestro_activity_engine/activities/previews/" + @activity.content_object.partial_name,
+                        content_object: @activity.content_object,
+                        activity_id: @activity.id,
+                        read_only_status: @activity.read_only?,
+                        classwork: @classwork,
+                        student_section_config: @activity.ai_virtual_chat? ? current_student_section_ai_config(current_section_id, current_user, activity: @activity).to_json : nil
+                  ) %>
+                <% end %>
+              </div>
+              <div class="sidebar-wrapper  c-mobile-tabs-view__reference-content">
+                <%= render(
+                  partial: 'maestro_activity_engine/activities/partials/sidebar',
+                  collection: @activity.content_object.sidebars,
+                  as: :sidebar
+                ) %>
+              </div>
+              <%= yield :submit_buttons %>
+            <% else -%>
+              <span class="c-mobile-tabs-view__reference-content">Trying to parse activity content resulted in the following error(s):</span>
+              <ul class="c-mobile-tabs-view__reference-content">
+                <% @activity.parse_errors.each do |error| %>
+                  <li><%= error %></li>
+                <% end -%>
+              </ul>
+            <% end -%>
+        <% end -%>
+      </div>
+    <% end -%>
+</div>

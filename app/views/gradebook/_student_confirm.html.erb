@@ -1,0 +1,12 @@
+
+<% target_id = "confirm_#{student[:user].id}" %>
+                  <tr class="<%= cycle("altrow", "") %>" id="student_row_29">
+                    <td class="student_name"> 
+                      <% unless (defined?(display_only) && display_only) %>
+                        <%= hidden_field_tag('select_students[]', student[:user].id, :id => "select_students_#{student[:user].id}") %>
+                      <% end %>
+                      <div id="student_29" class="student_checkbox checkbox show_check"></div>
+                      <span> <%= "<b>#{student[:user].full_name}</b>  #{student[:course].name}: #{student[:section].name}".html_safe %> </span>
+                    </td>
+                  </tr>
+           

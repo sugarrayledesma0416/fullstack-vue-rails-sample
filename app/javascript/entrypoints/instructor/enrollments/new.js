@@ -1,0 +1,1 @@
+import '~/src/views/instructor/enrollments/new/main.js';

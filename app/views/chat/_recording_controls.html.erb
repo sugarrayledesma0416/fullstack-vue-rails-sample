@@ -1,0 +1,38 @@
+<script class="js-chat-activity-recording-controls-template" type="text/x-handlebars-template">
+
+  <!-- Initial recording state -->
+  <div class="js-media-recording-step  js-chat-rec-initial  u-hidden">
+
+    <div class="c-button-group  c-button-group--space-evenly  flex-align-stretch  u-pad-0  u-mar-0">
+      <%= Music::Components.media_button(
+        text: 'Record',
+        variant: 'speak', 
+        classes: ['js-rec-btn'],
+        toggle: :stop, 
+        volume: true) %>
+
+      <div class="c-vertical-line"></div>
+
+      <%= Music::Components.media_button(
+        text: 'Review',
+        variant: 'review', 
+        classes: ['js-review-btn'],
+        toggle: :stop,
+        state: 'disabled') %>
+
+      <%= Music::Components.media_button(
+        text: 'Redo',
+        variant: 'startover', 
+        classes: ['js-redo-rec-btn'],
+        state: 'disabled') %> 
+
+    </div> <!-- / button-group -->
+
+    <p class="c-chat-activity-dis-none-on-sm  u-txt-align-ctr  js-rec-timer">
+      <span class="u-screen-reader-only">Time elapsed:</span>
+      <span class="c-time-elapsed  js-time-elapsed  u-hidden">0:00</span>
+    </p>
+
+  </div> <%# / js-recording-step %>
+
+</script>

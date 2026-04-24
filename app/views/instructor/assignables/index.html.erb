@@ -1,0 +1,52 @@
+<div data-container="assignment_wizard" class="assignables_wizard  ns-music-v1">
+  <%= form_tag(@presenter.update_assignments_path, :method => :put, :class => "ui-helper-clearfix") do -%>
+    <div class='c-message c-message--error u-hidden' id='modal_set_due_date_error_div'>
+      <span class='modal_set_due_date_error_image'></span> Please review and correct any errors.
+    </div>
+
+    <div id="jquery_modal_error_status"
+         class="c-message  c-message--error  u-hidden"
+         data-container="jquery_modal_error_status"
+    >
+    </div>
+
+    <div class="u-hidden  u-mar-bot-12  js-manual-ordered-due-date-warning">
+      <span class="c-flash-banner__icon  c-flash-banner__icon--warning"></span>
+      <span class="u-mar-5"> The selected date has activities that have been manually ordered. </span>
+    </div>
+    <% # TODO Replace the manually-ordered warning with the following. %>
+    <% #      It's breaking the feature spec for some reason. %>
+    <!--
+    <div class="l-media  js-manual-ordered-due-date-warning  u-mar-bot-16  u-hidden">
+      <div class="l-media__img" role="img" aria-label="Alert!">
+        <%= feature_icon('music/icons/icon-warning', ['c-embedded-icon--md']) %>
+      </div>
+      <div class="l-media__body">
+        The date you have selected has been manually ordered.
+      </div>
+    </div>
+    -->
+
+    <div class="l-media  u-hidden  u-mar-bot-16  js-multiple-due-dates-warning">
+      <div class="l-media__img" role="img" aria-label="Alert!">
+        <%= feature_icon('music/icons/icon-warning', ['c-embedded-icon--md']) %>
+      </div>
+      <div class="l-media__body">
+        Changing this due date for individual students will NOT remove any custom due dates.
+        You must select Entire Section for it to apply to all students.
+      </div>
+    </div>
+
+    <%= hidden_field_tag :section_due_dates, @presenter.due_dates_for_sections %>
+
+    <%= render :partial => 'review', :locals => {:presenter => @presenter} %>
+    <%= render :partial => 'reassign', :locals => {:presenter => @presenter} %>
+
+    <%= hidden_field_tag :selected_activities, @presenter.selected_activity_ids %>
+    <%= hidden_field_tag :selected_resources, @presenter.selected_resource_ids %>
+
+    <%= hidden_field_tag :update_type, 'assign' %>
+    <%= hidden_field_tag :source, params[:source] %>
+
+  <% end -%>
+</div>

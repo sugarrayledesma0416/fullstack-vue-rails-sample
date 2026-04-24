@@ -1,0 +1,24 @@
+<activity activity_type="reference_activity" title="sample_reference_activity_title" language="es">
+  <dl>instructions_go_here</dl>
+  <items>
+
+    <imagebank show_dividers="true">
+      <image id="142668" alt_txt="alt_text_here">
+        <header>Lectura</header>
+      </image>
+      <image id="142666" alt_txt="alt_text_here">
+        <header>Escritura</header>
+      </image>
+      <image id="142667" alt_txt="alt_text_here">
+        <header>Escuchar</header>
+      </image>
+      <image id="142665" alt_txt="alt_text_here">
+        <header>En pantalla</header>
+      </image>
+      <image id="142664" alt_txt="alt_text_here">
+        <header>Flash cultura</header>
+      </image>
+    </imagebank>
+
+  </items>
+</activity>

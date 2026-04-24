@@ -1,0 +1,14 @@
+<% content_for(:css_head, stylesheet_link_tag("dashboard")) %>
+<% content_for(:navigation, render(:partial => 'app_shell/navbar_program/main')) %>
+<div class="ns-music-v1">
+  <div class="l-container-fluid">
+    <h1 class="c-heading--page-title  u-txt-orange u-mar-lt-12">Courses</h1>
+
+    <div class="l-stack  l-stack--lg">
+      <%= render 'add_course_button' %>
+      <p class="u-mar-lt-12">
+        You don't have any current courses. Use "Add course" to find the list of courses you can create.
+      </p>
+    </div>
+  </div>
+</div>

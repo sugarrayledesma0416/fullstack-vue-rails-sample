@@ -1,0 +1,25 @@
+{
+  // We deal mostly in page fragments, so these are turned off:
+  "doctype-html5": false,
+  "doctype-first": false,
+  "title-require": true,
+
+  // General standards:
+  "tagname-lowercase": true,
+  "attr-lowercase": true,
+  "attr-value-double-quotes": true,
+  "attr-no-duplication": true,
+  "attr-value-not-empty": false,
+  "id-unique": true,
+  "tag-pair": true,
+  "src-not-empty": true,
+
+  // Our preferences
+  "id-class-value": "hyphen",
+  "spec-char-escape": false,
+  "empty-tag-not-self-closed": true,
+  "inline-script-disabled": true,
+  "inline-style-disabled": true,
+  "space-tab-mixed-disabled": "space",
+  "id-class-ad-disabled": true
+}

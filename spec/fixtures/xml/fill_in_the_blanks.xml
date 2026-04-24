@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<activity activity_type="fill_in_the_blanks" language="es" title="activity title">
+  <dl>Instructions</dl>
+  <items>
+    <style>
+      <wol_size>words_standard</wol_size>
+      <item_numbers>show</item_numbers>
+    </style>
+    <item>
+      <prompt>Test <wol ref="1"/> with <wol ref="2"/> blanks</prompt>
+      <answers ref="1">
+        <answer>answer text 1</answer>
+      </answers>
+      <answers ref="2">
+        <answer>answer text 2</answer>
+        <answer>another answer 2</answer>
+      </answers>
+    </item>
+    <item>
+      <prompt><wol/></prompt>
+      <answers>
+        <answer>answer text 3</answer>
+      </answers>
+    </item>
+    <item>
+      <prompt>How <wol/> you?</prompt>
+      <answers>
+        <answer>answer text 4</answer>
+      </answers>
+    </item>
+    <item>
+      <prompt><image id="1"/>Prompt <wol/> image</prompt>
+      <answers>
+        <answer>answer text 5</answer>
+      </answers>
+    </item>
+  </items>
+</activity>

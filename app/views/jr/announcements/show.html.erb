@@ -1,0 +1,27 @@
+<% content_for(:body_classes, '  ns-communication') %>
+<% content_for(:css_head, stylesheet_link_tag('music/features/communication/main')) %>
+
+<% content_for(
+    :js_head,
+    javascript_packs_with_chunks_tag('jr/announcements/show')
+  ) %>
+
+<% content_for(:navigation) do %>
+  <% render('app_shell/navbar_program/supersite_junior') %>
+<% end %>
+
+<%= render('app_shell/navbar_section/supersite_junior_grownups') %>
+
+<% content_for(:body_classes, '  has-vhl-return-link  ns-announcement-detail') %>
+
+<% content_for(:left_of_page_title) do %>
+  <div class="c-return-link-container">
+    <vhl-return-link href="<%= @return_url %>">Return</vhl-return-link>
+  </div>
+<% end %>
+
+<div class="l-announcement-detail-wrapper">
+  <div class="c-announcement-detail-container">
+    <%= render('common_show') %>
+  </div>
+</div>

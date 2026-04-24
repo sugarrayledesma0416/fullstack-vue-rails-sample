@@ -1,0 +1,18 @@
+<%= form_tag(instructor_search_student_by_path(program_id: current_program),
+              id: 'search_student',
+              method: :get) do %>
+  <sl-input name="search_str" 
+            id="search_str" 
+            placeholder="Search all students" 
+            clearable
+            aria-label="Search students by name, username, or email"
+            role="searchbox"
+            class="js-search-input">
+    <sl-icon class="c-add-student__search-icon" slot="suffix" name="search" aria-hidden="true"></sl-icon>
+  </sl-input>
+
+    <%= hidden_field_tag :return_to, @return_to %>
+    <%= hidden_field_tag :section_id, section.id%>
+<% end %>
+
+

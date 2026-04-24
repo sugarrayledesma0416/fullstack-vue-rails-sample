@@ -1,0 +1,101 @@
+<%
+   lessons            = presenter.lessons
+   strands            = presenter.strands
+   components         = presenter.components
+   categories         = presenter.categories
+   weeks              = presenter.weeks
+   start_date         = presenter.start_date
+   end_date           = presenter.end_date
+   activity_types     = presenter.activity_types
+   content_types      = presenter.content_types
+   previous_sections  = presenter.previous_sections
+  %>
+<div id="lesson_dropdown" style="display: none;">
+  <ul>
+    <li><%= link_to "All lessons", "#", 'data-js-link' => 'quick_change', 'data-js-setting' => 'assignment_filter_lesson_id', 'data-js-value' => '' %></li>
+    <% lessons.each do |lesson| %>
+      <li><%= link_to sanitize(lesson.name, tags: %w[span], attributes: %w[lang]), "#", 'data-js-link' => 'quick_change', 'data-js-setting' => 'assignment_filter_lesson_id', 'data-js-value' => lesson.id.to_s || lessons.first.id.to_s %></li>
+      <% end %>
+  </ul>
+</div>
+
+<div id="strand_dropdown" style="display: none;">
+  <ul>
+    <li><%= link_to "All sections", "#", 'data-js-link' => 'quick_change', 'data-js-setting' => 'assignment_filter_toc_entry_location', 'data-js-value' => '' %></li>
+    <% strands.each do |strand| %>
+      <li><%= link_to sanitize(strand.name, tags: %w[span], attributes: %w[lang]), "#", 'data-js-link' => 'quick_change', 'data-js-setting' => 'assignment_filter_toc_entry_location', 'data-js-value' => strand.location.to_s %></li>
+    <% end %>
+  </ul>
+</div>
+
+<div id="component_dropdown" style="display: none;">
+  <ul>
+    <li><%= link_to "All components", "#", 'data-js-link' => 'quick_change', 'data-js-setting' => 'assignment_filter_component', 'data-js-value' => '' %></li>
+    <% components.each do |component| %>
+      <li><%= link_to component, "#", 'data-js-link' => 'quick_change', 'data-js-setting' => 'assignment_filter_component', 'data-js-value' => component.to_s %></li>
+    <% end %>
+  </ul>
+</div>
+
+<div id="previous_section_dropdown" style="display: none;">
+  <ul>
+    <li><%= link_to "None", "#", :onclick => "VHL.AssignmentCalendar.prev_section_select_value_and_submit('assignment_filter_previous_section_id', '')"  %></li>
+    <% previous_sections.each do |p| %>
+      <li><%= link_to "#{p.course.name} #{p.name}", "#", :onclick => "VHL.AssignmentCalendar.prev_section_select_value_and_submit('assignment_filter_previous_section_id', '#{p.id}')" %></li>
+    <% end %>
+  </ul>
+</div>
+
+<div id="category_dropdown" style="display: none;">
+  <ul>
+    <li><%= link_to "All categories", "#", 'data-js-link' => 'quick_change', 'data-js-setting' => 'assignment_filter_category_id', 'data-js-value' => '' %></li>
+    <% categories.each do |c| %>
+      <li><%= link_to c.name, "#", 'data-js-link' => 'quick_change', 'data-js-setting' => 'assignment_filter_category_id', 'data-js-value' => c.id %></li>
+    <% end %>
+  </ul>
+</div>
+
+<div id="week_dropdown" style="display: none;">
+  <ul>
+    <li><%= link_to "All weeks", "#", 'data-js-link' => 'quick_change', 'data-js-setting' => 'assignment_filter_week', 'data-js-value' => '' %></li>
+      <% weeks.each_with_index do |wk, i| %>
+        <li><%= link_to "Week #{i+1}", "#", 'data-js-link' => 'quick_change', 'data-js-setting' => 'assignment_filter_week', 'data-js-value' => wk %></li>
+      <% end %>
+  </ul>
+</div>
+
+<div id="day_dropdown" style="display: none;">
+  <ul>
+    <li><%= link_to "None", "#", 'data-js-link' => 'quick_change', 'data-js-setting' => 'assignment_filter_day', 'data-js-value' => '' %></li>
+    <% start_date.upto(end_date) do |date| %>
+      <li><%= link_to "#{date.strftime('%a %b %e, %Y')}", "#", 'data-js-link' => 'quick_change', 'data-js-setting' => 'assignment_filter_day', 'data-js-value' => date %></li>
+    <% end %>
+  </ul>
+</div>
+
+<div id="content_type_dropdown" style="display: none;">
+  <ul>
+    <li><%= link_to "Activities", "#", 'data-js-link' => 'quick_change', 'data-js-setting' => 'assignment_filter_content_type', 'data-js-value' => 'Activities' %></li>
+      <% content_types.each do |a| %>
+       <li><%= link_to a[0], "#", 'data-js-link' => 'quick_change', 'data-js-setting' => 'assignment_filter_content_type', 'data-js-value' => a[1] %></li>
+      <% end %>
+  </ul>
+</div>
+
+<div id="activity_type_dropdown" style="display: none;">
+  <ul>
+    <li><%= link_to "All types", "#", 'data-js-link' => 'quick_change', 'data-js-setting' => 'assignment_filter_activity_type', 'data-js-value' => '' %></li>
+      <% activity_types.each do |a| %>
+       <li><%= link_to a[0], "#", 'data-js-link' => 'quick_change', 'data-js-setting' => 'assignment_filter_activity_type', 'data-js-value' => a[1] %></li>
+      <% end %>
+  </ul>
+</div>
+
+<div id="grading_method_dropdown" style="display: none;">
+  <ul>
+    <li><%= link_to "All grading methods", "#", 'data-js-link' => 'quick_change', 'data-js-setting' => 'assignment_filter_grading_method', 'data-js-value' => '' %></li>
+      <% Activity.all_grading_methods.each do |g| %>
+        <li><%= link_to g[0], "#", 'data-js-link' => 'quick_change', 'data-js-setting' => 'assignment_filter_grading_method', 'data-js-value' => g[1] %></li>
+      <% end %>
+  </ul>
+</div>

@@ -1,0 +1,49 @@
+
+div#search_fields_div
+{
+  margin: 2em 1em;
+}
+
+input#submit
+{
+  float: right;  
+}
+
+table#search_fields_table,
+table#search_fields_table th,
+table#search_fields_table td
+{
+  border: 0px;
+}
+
+div#results_div
+{
+  margin: 2em 1em;
+}
+
+table#results_table,
+table#results_table th,
+table#results_table td
+{
+  background: white;
+  padding-right: 1em;
+  border: 0px;
+  vertical-align: top;
+}
+
+table#results_table 
+{
+  border-bottom: 1px solid #ccc;
+}
+
+table#results_table tr.odd td
+{
+  background: #eee;
+}
+
+table#results_table th
+{
+  font-weight: bold;
+}
+
+

@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<activity activity_type="exam" title="Leçon 12B.1, Grammar Quiz 1" assessment_type="exam" language="fr">
+  <dl />
+  <items>
+    <style>
+      <item_numbers>show</item_numbers>
+    </style>
+    <activity activity_type="fill_in_the_blanks" title="Notre calendrier" language="">
+      <dl />
+      <items>
+        <style>
+          <wol_size>words_standard</wol_size>
+          <item_numbers>show</item_numbers>
+          <ruleset punctuation="false" capitalization="false" accents="false" />
+        </style>
+        <reference type="exam">
+          <header>Notre calendrier</header>
+          <body>Andreas and his family are preparing for a party. Fill in the blanks with the future tense of the verbs in parentheses.</body>
+        </reference>
+        <reference type="audio">
+          <audio id="2"/>
+        </reference>
+        <item>
+          <prompt>
+            Papa
+            <wol ref="1" />
+            (acheter) le vin pour la fête ce samedi.
+          </prompt>
+          <answers ref="1">
+            <answer>achètera</answer>
+          </answers>
+        </item>
+        <item>
+          <prompt>
+            Moi, je
+            <wol ref="1" />
+            (chercher) un cadeau pour l'anniversaire de David.
+          </prompt>
+          <answers ref="1">
+            <answer>chercherai</answer>
+          </answers>
+        </item>
+        <item>
+          <prompt>
+            Bernice et Agathe
+            <wol ref="1" />
+            (nettoyer) la salle à manger.
+          </prompt>
+          <answers ref="1">
+            <answer>nettoieront</answer>
+          </answers>
+        </item>
+        <item>
+          <prompt>
+            Marie-Claire, tu
+            <wol ref="1" />
+            (passer) à l'épicerie prendre de la glace.
+          </prompt>
+          <answers ref="1">
+            <answer>passeras</answer>
+          </answers>
+        </item>
+        <item>
+          <prompt>
+            Maman et moi
+            <wol ref="1" />
+            (choisir) la musique.
+          </prompt>
+          <answers ref="1">
+            <answer>choisirons</answer>
+          </answers>
+        </item>
+        <item>
+          <prompt>
+            Agathe et toi
+            <wol ref="1" />
+            (appeler) les invités.
+          </prompt>
+          <answers ref="1">
+            <answer>appellerez</answer>
+          </answers>
+        </item>
+        <item>
+          <prompt>
+            Bernice
+            <wol ref="1" />
+            (payer) les chaises à M. Hobbard après la fête.
+          </prompt>
+          <answers ref="1">
+            <answer>paiera</answer>
+            <answer>payera</answer>
+          </answers>
+        </item>
+        <item>
+          <prompt>
+            Nous
+            <wol ref="1" />
+            (finir) les préparatifs (
+            <i>preparations</i>
+            ) avant  midi.
+          </prompt>
+          <answers ref="1">
+            <answer>finirons</answer>
+          </answers>
+        </item>
+      </items>
+    </activity>
+    <activity activity_type="fill_in_the_blanks" title="Des paresseux" language="">
+      <dl />
+      <items>
+        <style>
+          <wol_size>sentence_standard</wol_size>
+          <item_numbers>show</item_numbers>
+          <ruleset punctuation="false" capitalization="false" accents="false" />
+        </style>
+        <reference type="exam">
+          <header>Des paresseux</header>
+          <body>Christian and his siblings always leave everything for tomorrow. Write Christian's answers to his mother's questions using the futur simple.</body>
+        </reference>
+        <item>
+          <prompt>
+            Tu t'es occupé des courses?
+            <br />
+            <wol />
+          </prompt>
+          <answers>
+            <answer>Je m'occuperai des courses demain.</answer>
+          </answers>
+        </item>
+        <item>
+          <prompt>
+            Anne et toi avez déposé la voiture à la station-service?
+            <br />
+            <wol />
+          </prompt>
+          <answers>
+            <answer>Nous déposerons la voiture 8 la station-service demain.</answer>
+          </answers>
+        </item>
+        <item>
+          <prompt>
+            Anne a répété au stade hier?
+            <br />
+            <wol />
+          </prompt>
+          <answers>
+            <answer>Anne répétera au stade demain.</answer>
+          </answers>
+        </item>
+        <item>
+          <prompt>
+            Tu as écrit un e-mail à oncle Louis?
+            <br />
+            <wol />
+          </prompt>
+          <answers>
+            <answer>J'écrirai un e-mail à oncle Louis demain.</answer>
+          </answers>
+        </item>
+        <item>
+          <prompt>
+            Anne et Tristan ont trouvé les livres à la bibliothèque?
+            <br />
+            <wol />
+          </prompt>
+          <answers>
+            <answer>Anne et Tristan trouveront les livres à la bibliothèque demain.</answer>
+          </answers>
+        </item>
+        <item>
+          <prompt>
+            Tristan a sorti la poubelle?
+            <br />
+            <wol />
+          </prompt>
+          <answers>
+            <answer>Tristan sortira la poubelle demain.</answer>
+          </answers>
+        </item>
+      </items>
+    </activity>
+    <activity activity_type="fill_in_the_blanks" title="Assemblez" language="">
+      <dl />
+      <items>
+        <style>
+          <wol_size>sentence_standard</wol_size>
+          <item_numbers>show</item_numbers>
+          <ruleset punctuation="false" capitalization="false" accents="false" />
+        </style>
+        <reference type="exam">
+          <header>Assemblez</header>
+          <body>Write complete sentences with the futur simple using the cues provided. Make any necessary changes.</body>
+        </reference>
+        <item>
+          <prompt>
+            mes amis et moi / voyager / France
+            <br />
+            <wol />
+          </prompt>
+          <answers>
+            <answer>Mes amis et moi ferons un voyage en France.</answer>
+          </answers>
+        </item>
+        <item>
+          <prompt>
+            Ian et toi / apprendre / français
+            <br />
+            <wol />
+          </prompt>
+          <answers>
+            <answer>Ian et toi apprendrez le français.</answer>
+          </answers>
+        </item>
+        <item>
+          <prompt>
+            tu / ne pas conduire / nouvelle voiture de papa
+            <br />
+            <wol />
+          </prompt>
+          <answers>
+            <answer>Tu ne conduiras pas la nouvelle voiture de papa.</answer>
+          </answers>
+        </item>
+      </items>
+    </activity>
+  </items>
+</activity>

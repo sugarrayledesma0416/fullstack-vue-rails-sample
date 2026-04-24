@@ -1,0 +1,62 @@
+.l-page-title-block {
+  display: none;
+}
+
+.c-page-container .l-container-fluid {
+  /** Override the set padding using utils classes */
+  padding: 0 !important;
+}
+
+.c-dashboard-no-schools {
+  height: 80vh;
+  background-color: $gray-f5;
+
+  &__label {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.c-dashboard-wrapper {
+  min-height: 90vh;
+  margin: 0;
+}
+
+.c-pulser-wrapper {
+  display: none;
+  padding: 3rem;
+
+  .c-pulser--dashboard {
+    width: 12rem;
+    margin: auto;
+  }
+}
+
+.c-course-info-wrapper {
+  padding: 0;
+  height: 100%;
+
+  @include viewport-min(lg) {
+    padding: mod(2) mod(1.5);
+  }
+}
+
+.c-course-content {
+  height: 100%;
+}
+
+.c-wrapper-mobile {
+  @include viewport-max(md) {
+    &.is-visible {
+      display: revert;
+    }
+
+    &.is-hidden {
+      display: none;
+    }
+  }
+}

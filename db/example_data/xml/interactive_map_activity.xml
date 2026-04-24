@@ -1,0 +1,51 @@
+<activity activity_type="interactive_map" language="es">
+  <items>
+    <map>
+      <image id="120144" />
+      <place_name x="513" y="54">
+        <name>San Juan</name>
+        <audio id="140292" />
+      </place_name>
+      <place_name x="69" y="175">
+        <name>Mayanguez</name>
+        <audio id="140285" />
+      </place_name>
+      <place_name x="279" y="265">
+        <name>Ponce</name>
+        <audio id="140286" />
+      </place_name>
+      <place_name x="235" y="56">
+        <name>Arceibo</name>
+        <audio id="140288" />
+      </place_name>
+      <place_name x="708" y="107">
+        <name>Fajardo</name>
+        <audio id="140289" />
+      </place_name>
+      <place_name x="487" y="84">
+        <name>Bayamon</name>
+        <audio id="140290" />
+      </place_name>
+      <point_of_interest x="235" y="56" position="right">
+        <name>Faro en Arecibo</name>
+        <audio id="140283" />
+        <image id="142387" />
+      </point_of_interest>
+      <point_of_interest x="513" y="54" position="left">
+        <name>Playa en San Juan</name>
+        <audio id="140287" />
+        <image id="142393" />
+      </point_of_interest>
+      <point_of_interest x="279" y="265" position="right">
+        <name>Iglesia en Ponce</name>
+        <audio id="140284" />
+        <image id="142391" />
+      </point_of_interest>
+      <point_of_interest x="69" y="175" position="right">
+        <name>Pescadores en Mayagüez</name>
+        <audio id="140291" />
+        <image id="142389" />
+      </point_of_interest>
+    </map>
+  </items>
+</activity>

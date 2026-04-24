@@ -1,0 +1,116 @@
+.student_answer_container {
+  margin-top:15px;
+}
+
+.review_work #student_answers {
+  margin-top:20px;
+}
+
+.partner_grading {
+  color:#565656;
+}
+
+
+/* Containing Divs */
+.user {
+  position: relative;
+}
+
+.partner_container {
+  position: relative;
+}
+
+
+/* Partner Names */
+.user_name,
+.partner_name {
+  display: block;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.focused_user {
+  background-color: #DFEFA3;
+}
+
+
+/* Grading */
+.user_grading,
+.partner_grading {
+}
+
+.partner .partner_name {
+  text-align:right;
+}
+
+.review_separately {
+  float: left;
+  margin-top: 23px;
+  width: 50px;
+}
+
+.review_separate_button {
+  background: url('/images/listen_individually.png') 5px 0px no-repeat;
+  display: block;
+  height: 50px;
+  overflow: hidden;
+  width: 55px;
+  font-size:10px;
+  line-height:12px;
+  text-align:center;
+  padding-top:30px;
+}
+
+.partner_grading .review_separate_button {
+  color:#565656;
+}
+
+.review_separate_button:hover {
+  background: url('/images/listen_individually.png') -39px 0px no-repeat;
+  text-decoration: none;
+}
+
+
+/* Instructor Comments */
+.recorded_comment {
+  width: 100px;
+}
+
+
+/* Video Box Frame */
+.partner_grading div.box-frame {
+  margin-left: 0px;
+  position:relative;
+}
+
+.partner_grading .answer_text {
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+  top: 0px;
+}
+
+
+/* Review work Specifics */
+.rw_activity_container.partner_chat {
+  padding :0px;
+}
+
+
+/* New Changes */
+.student_name {
+  display:none;
+}
+.user_name {
+  width: 163px;
+}
+
+.show_partner_checkbox {
+  display: block;
+  margin-bottom: 5px;
+  position: relative;
+}
+
+.show_partner_checkbox label {
+  font-weight:normal;
+}

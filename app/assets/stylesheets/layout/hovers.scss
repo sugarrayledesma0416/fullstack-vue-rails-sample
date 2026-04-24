@@ -1,0 +1,199 @@
+@import 'music/library/v1/base/main';
+
+/* Tooltips for Disabled Elements */
+.tooltip {
+  background: #FFF;
+  border: 1px solid #CCC;
+  color: #565656;
+  font-size: 11px;
+  height: auto;
+  padding: 5px;
+  text-align: left;
+  width: 250px;
+  z-index: 400000;
+  -moz-box-shadow: 2px 2px 4px 1px rgba(0,0,0,.3);
+  -webkit-box-shadow: 2px 2px 4px 1px rgba(0,0,0,.3);
+  box-shadow: 2px 2px 4px 1px rgba(0,0,0,.3);
+}
+
+/* Tooltip for Gradebook Arrows */
+.gradebook .tooltip {
+  width: 100px;
+}
+
+/* Activity Hovers */
+.results_table_hover {
+  background: #E5F19F;
+  box-shadow: 1px 1px 4px 1px #ccc;
+  color: #565656;
+  left: -215px;
+  z-index: 1;
+  padding: 0px 10px 5px 10px;
+  position:absolute;
+  bottom: -38px;
+  width: 180px;
+  white-space: normal;
+}
+
+.assesment .results_table_hover {
+  bottom: -18px;
+}
+
+.activities_page .results_table_hover {
+  bottom: -22px;
+}
+
+.results_table_hover_arrow {
+  background: url('/images/toc_hover_arrow.png') left 23px no-repeat;
+  display: block;
+  left: 200px;
+  min-height: 80px;
+  position: absolute;
+  bottom: -20px;
+  width: 18px;
+}
+
+.results_table_hover_arrow_left {
+  background: url('/images/toc_hover_arrow_l.png') right 23px no-repeat;
+  display: block;
+  min-height: 80px;
+  position: absolute;
+  right: 200px;
+  bottom: -20px;
+  width: 18px;
+}
+
+.results_table_hover .activity_title {
+  line-height: 1.2em;
+  margin-bottom: 5px;
+  word-wrap: break-word;
+}
+
+.results_table_hover .activity_type {
+  clear: both;
+  font-weight: bold;
+  padding-top: 5px;
+  margin-bottom: 5px;
+}
+
+.results_table_hover .activity_name {
+  margin-bottom: 5px;
+}
+
+.results_table_hover_assign .set_due_date_link {
+  background: url('/images/icon-calendar-new.png') right 2px no-repeat;
+  height: auto;
+  margin-right: 5px;
+  margin-top: 0px;
+  padding-top: 0px;
+  padding-right: 25px;
+  vertical-align: top;
+}
+
+.results_table_hover_assign .set_due_date_link:hover {
+  background: url('/images/icon-calendar-new.png') right -26px no-repeat;
+}
+
+.results_table_hover_assign {
+  background: #EFF7CF;
+  margin: 0px -10px 0px -10px;
+  min-height: 25px;
+  padding: 5px 0px 0px 0px;
+  text-align: right;
+}
+
+.activity-visible {
+  background: #EFF7CF url('/images/dots.png') bottom repeat-x;
+  font-size: 11px;
+  line-height: 11px;
+  margin: 0px;
+  padding: 5px 0px 5px 0px;
+  text-align: right;
+}
+
+/* TOC Activity Visibilty */
+
+.activity-visible a {
+  display: block;
+  font-size: 12px;
+  line-height: 14px;
+  margin-right: 5px;
+  padding-right: 25px;
+}
+
+.activity-visible .make_invisible {
+  background: url('/images/toc-activities-hidden.png') right 1px top 1px no-repeat;
+}
+
+.activity-visible .make_visible {
+  background: url('/images/toc-activities-visible.png') right 1px top 3px no-repeat;
+}
+
+.activity-visible .make_invisible:hover {
+  background-position: right 1px top -18px;
+}
+
+.activity-visible .make_visible:hover {
+  background-position: right 1px top -15px;
+}
+
+/* Specifics for Calendar Hovers */
+.assignment_page .results_table_hover {
+  margin-left: 0px !important;
+  left: 100%;
+  z-index: 400;
+}
+
+.assignment_page .results_table_hover_arrow_left {
+  bottom: -17px;
+}
+
+/* Disabled Links */
+.disable_link_function {
+  color: #969696;
+  cursor: default;
+  font-size: 11px;
+  position: relative;
+}
+
+.disabled_hover_info {
+  background: #FFF;
+  border: 1px solid #959595;
+  -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+  color: #959595;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: normal;
+  left: 100px;
+  line-height: 14px;
+  padding: 5px;
+  position: absolute;
+  text-indent: 0px;
+  top: -5px;
+  width: 100px;
+  z-index: 60;
+}
+
+@include viewport-max(sm) {
+  .activities_page {
+    .results_table_hover {
+      bottom: rpx(40);
+      left: 0;
+
+      .results_table_hover_arrow {
+        bottom: rpx(-48);
+        left: rpx(100);
+        transform: rotate(90deg);
+      }
+    }
+  }
+}
+
+@include viewport-max(lg) {
+  .toc_checkbox_wrapper--hide .results_table_hover--hide {
+    display: none;
+  }
+}
+

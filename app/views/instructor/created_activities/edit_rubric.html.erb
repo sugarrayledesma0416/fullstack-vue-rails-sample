@@ -1,0 +1,87 @@
+<%
+  # A number of the meta tags set in activities/include expect @activity
+  # to be assigned.
+  # @activity isn't assigned in the controller actions that render this view,
+  # but the @created_activity variable is.
+  @activity = @created_activity 
+%>
+<%= render 'activities/include' %>
+<%
+  content_for(:body_classes, '  ns-music-v1  ns-full-width  ns-rubrics-preview')
+  content_for(:js_head, javascript_packs_with_chunks_tag('instructor/created_activities/edit_rubric'))
+  content_for(:css_head, stylesheet_packs_with_chunks_tag('instructor/created_activities/edit_rubric'))
+%>
+<% content_for(:css_head, stylesheet_link_tag('music/features/rubrics/main') ) %>
+
+<script type="text/x-template" id="music_icon_medium_save">
+  <%= Music::Components.icon(variant: 'checkmark', text: 'Save') %>
+</script>
+
+<script type="text/x-template" id="music_icon_edit">
+  <%= Music::Components.icon(variant: 'edit', size: 'sm') %>
+</script>
+
+<script type="text/x-template" id="music_icon_add">
+  <%= Music::Components.icon(variant: 'add', size: 'sm') %>
+</script>
+
+<script type="text/x-template" id="music_icon_delete">
+  <%= Music::Components.icon(variant: 'delete', size: 'sm') %>
+</script>
+
+<script type="text/x-template" id="icon_drag_and_drop">
+  <span class="c-embedded-icon  c-embedded-icon--lg">
+    <%= inline_svg_tag('rubrics/drag_and_drop.svg', class: 'c-svg') %>
+    <span class="u-screen-reader-only">Drag and drop</span>
+  </span>
+</script>
+
+<div id="activity_wrapper" class="c-activity-wrapper  u-bg-gray-f5">
+  <div id="main_content">
+    <div class="l-container-fluid">
+
+      <div class="l-grid">
+        <div
+          class="c-card  assessment-card  l-col-12  u-pad-24  u-bord-radius-6">
+          <div id="activity_shell" role="main">
+            <h2>Rubric</h2>
+            <div
+              class="js-edit-rubric-app"
+              data-activity-id="<%= @created_activity.id %>"
+              data-draft="<%= @created_activity.draft %>"
+              data-rubric-json="<%= @created_activity.rubric.to_json %>"
+              data-lesson-id="<%= @created_activity.lesson_id %>"
+              data-start-unit="<%= @created_activity.lesson.unit.rank %>"
+              data-strand-id="<%= @created_activity.toc_location %>"
+              data-submit-url="<%= instructor_created_activity_path(
+                lesson_id: @created_activity.lesson_id,
+                toc_entry_id: @created_activity.toc_location,
+                program_id: current_program.id,
+                id: @created_activity.id,
+                from_my_content: @from_my_content
+              ) %>"
+              data-return-url="<%= instructor_toc_path(
+                program_id: current_program.id, 
+                start_unit: @created_activity.lesson.unit.rank,
+                display_lesson: @created_activity.lesson_id,
+                toc_location: @created_activity.toc_location
+              ) %>"
+              ></div>
+            <hr>
+            <h2>Preview of the Activity</h2>
+            <div ref="activityBody" class="c-activity-body">
+              <%= render(
+                    'maestro_activity_engine/activities/previews/' + @created_activity.content_object.partial_name,
+                    content_object: @created_activity.content_object,
+                    activity_id: @created_activity.id,
+                    read_only_status: @created_activity.read_only?,
+                    classwork: @classwork,
+                    is_assessment_edit: true
+                  ) %>
+            </div> <!-- activityBody -->
+          </div> <!-- l-col-12 -->
+        </div> <!-- l-grid -->
+      </div> <!-- activity_shell -->
+    </div> <!-- l-container-fluid -->
+  </div> <!-- main_content -->
+</div> <!-- activity_wrapper -->

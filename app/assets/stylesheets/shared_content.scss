@@ -1,0 +1,19 @@
+.ns-shared-content {
+  .c-content-container {
+    align-items: center;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  .c-avatar {
+    align-items: center;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+  }
+}
+
+span.c-svg-icon--lg {
+  pointer-events: none;
+}

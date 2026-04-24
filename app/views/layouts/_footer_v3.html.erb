@@ -1,0 +1,48 @@
+<div class="u-pad-lt-24 u-pad-rt-24 u-pad-top-6 u-dis-flex u-flex-dir-row u-width-full u-align-items-center u-justify-content-space-between u-flex-wrap">
+  <div class="u-dis-flex u-flex-dir-row u-mar-bot-6">
+    <div class="u-mar-rt-8">
+      <music-icon-vhl-logo-v3 size="lg" class="u-fill-red"></music-icon-logo-v3>
+    </div>
+    <div>
+      <a
+        href="https://vistahigherlearning.com/about-us"
+        target="_blank"
+        class="u-txt-widget-red-700 u-txt-12 u-mar-lt-8 u-mar-rt-8"
+      >About Us</a>
+      <a
+        href="https://vistahigherlearning.com/community"
+        target="_blank"
+        class="u-txt-widget-red-700 u-txt-12 u-mar-rt-8"
+      >News &amp; Events</a>
+      <a
+        href="https://vistahigherlearning.com/students/"
+        target="_blank"
+        class="u-txt-widget-red-700 u-txt-12 u-mar-rt-8"
+      >Store</a>
+      <a
+        href="https://vistahigherlearning.com/support/accessibility"
+        target="_blank"
+        class="u-txt-widget-red-700 u-txt-12"
+      >Accessibility</a>
+    </div>
+  </div>
+  <div class="u-txt-12 u-mar-bot-6">
+    <span>&copy; <%= Date.today.year %> Vista Higher Learning, Inc.</span>
+    <span>|</span>
+    <a
+      href="<%= privacy_policy_url %>"
+      target="_blank"
+      class="u-txt-widget-red-700 u-txt-under"
+    >Privacy Policy</a>
+    <span>|</span>
+    <a
+      href="https://www.vhlcentral.com/terms_of_use"
+      target="_blank"
+      class="u-txt-widget-red-700 u-txt-under"
+    >Terms of Use</a>
+  </div>
+</div>
+
+<% if Rails.env.live? || ENV.fetch('ENABLE_ANALYTICS', false) == 'true' %>
+  <%= render partial: 'partials/analytics' %>
+<% end -%>

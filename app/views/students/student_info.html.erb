@@ -1,0 +1,18 @@
+<div class="student_info_popup">
+
+  <h3 class="name"><%= @presenter.student_full_name %></h3>
+
+  <div class="student_portrait"><%= image_tag(@presenter.thumbnail_path, :class => "portrait") %></div>
+
+  <div class="student_courses">
+    <div class="student_course" data-course-name="<%= @presenter.course_name%>" ><%= @presenter.course_name %></div>
+    <div class="student_section" data-section-name="<%= @presenter.section_name %>"><%= @presenter.section_name %></div>
+  </div>
+
+  <div class="access_problems">
+    <% unless @presenter.student.sufficient_access? -%>
+    Enrolled student does not meet course access requirements.
+    <% end -%>
+  </div>
+
+</div>

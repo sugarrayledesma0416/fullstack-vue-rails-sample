@@ -1,0 +1,28 @@
+@use 'music/library/v1/base/main';
+
+.c-foil-panel {
+  background: radial-gradient(circle at 80% -50%, #f8c7b9, #fcdfcd, #faffe5, #e1f6ef);
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.c-foil-panel ul {
+  margin: 0;
+  margin-left: 1em;
+}
+
+:target {
+  animation: highlight 3s ease-in-out;
+}
+@keyframes highlight {
+  from {
+    outline-style: solid;
+    outline-width: .5em;
+    outline-color: rgb(253, 224, 71);
+  }
+  to {
+    outline-style: solid;
+    outline-width: .5em;
+    outline-color: rgb(255, 255, 255);
+  }
+}

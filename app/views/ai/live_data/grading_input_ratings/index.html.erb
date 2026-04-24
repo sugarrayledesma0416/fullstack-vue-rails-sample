@@ -1,0 +1,78 @@
+<% content_for(:body_classes, "  ns-newcsslib   ns-responsive  standard_layout assesment") %>
+<% content_for(:css_head, stylesheet_link_tag("music/features/toc/main") )%>
+
+<div id="main_content" class="ns-music-v1">
+  <div id="modal_box"></div>
+  <div id="toc" class="ns-toc">
+    <div class="frame">
+      <div class="l-grid">
+        <div class="l-col-lg-3">
+          <div class="u-mar-bot-16">
+            <%= render 'partials/lesson_selector', presenter: @presenter %>
+          </div>
+          <div id="topics_list">
+            <%= render('partials/lesson_topics',
+                       presenter: @presenter,
+                       display_lesson: @presenter.display_lesson,
+                       current_strand: @presenter.current_strand,
+                       current_topic: @presenter.current_topic,
+                       start_unit: @presenter.start_unit) -%>
+          </div>
+        </div>
+        <div class="l-col-lg-9">
+          <div class="u-mar-bot-16">
+            <%= link_to(
+                  @presenter.include_rated_inputs? ? 'Hide rated inputs' : 'Show rated inputs',
+                  @presenter.show_hide_rated_inputs_url,
+                  class: 'c-button  c-button-border'
+                ) %>
+          </div>
+          <div id="activities_list" class="<%= test_class('activity-list') %>">
+            <% if @presenter.activities.present? %>
+              <% @presenter.activities.each do |activity| %>
+                <div class="c-box  c-box--bubble-wrap">
+                  <table class="c-table  c-table--activities">
+                    <thead>
+                      <tr class="c-header-row">
+                        <th><%= ActivityLinkPresenter.new(self).instructor_toc_link(activity, @presenter, true) %></th>
+                        <th>Student responses</th>
+                        <th>Grading Suggestions</th>
+                        <th>Overall Comments</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <% @presenter.questions_for_activity(activity).each do |question| %>
+                        <tr class="c-row">
+                          <td>
+                            <%= question[:label] %>
+                          </td>
+                          <td>
+                            <%= question[:student_response_count] %>
+                          </td>
+                          <td>
+                            <%= question[:grading_suggestion_count] %>
+                          </td>
+                          <td>
+                            <%= question[:overall_comment_count] %>
+                          </td>
+                          <td>
+                            <% if question[:rate_question_link].present? %>
+                              <a href="<%= question[:rate_question_link] %>">Rate</a>
+                            <% end %>
+                          </td>
+                        </tr>
+                      <% end %>
+                    </tbody>
+                  </table>
+                </div>
+              <% end %>
+            <% else %>
+              Nothing to rate.
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

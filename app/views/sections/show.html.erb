@@ -1,0 +1,134 @@
+<% content_for(:js_head, javascript_include_tag('student_dashboard/bootstrap')) %>
+<% content_for(:body_classes, "ns-music-v1  ns-student-dashboard") %>
+<% content_for(:css_head, stylesheet_link_tag("music/features/student_dashboard/main")) %>
+
+<% if vista_online_learning? %>
+  <% content_for(:body_classes, " t-vol") %>
+<% else %>
+  <% content_for(:body_classes, " t-supersites") %>
+<% end %>
+
+<% content_for(:navigation) do %>
+  <% if current_user.student? %>
+    <% render('app_shell/navbar_section/main', section: @section) %>
+  <% else %>
+    <% render('partials/instructor_view_of_student_dashboard_warning') %>
+  <% end %>
+<% end %>
+
+<div id="main_content" data-ng-app="student_dashboard_app">
+  <% if @presenter.current_announcement_notifications.present? %>
+    <div class="c-announcements-wrapper  <%= test_class('banner-announcements') %>"
+         role="banner"
+         aria-label="Announcements">
+      <% @presenter.current_announcement_notifications.each_with_index do |notification,index| %>
+        <div class="c-announcement-banner  u-dis-flex  flex-align-ctr" >
+          <span class="c-announcement-banner__header  u-mar-lt-10">
+            <a href='#'>
+              <%= feature_icon('music/icons/student-dashboard/bell', ['c-embedded-icon--lg'] ) %>
+            </a>
+          </span>
+          <% if notification.announcement&.class_cancelled %>
+            <span class="c-tag  c-tag--sm  u-mar-lt-20  u-mar-rt-10  u-txt-ctr">
+              Class cancelled
+            </span>
+          <% end %>
+          <span id="a11y-announcement-text-<%= index %>" class="c-announcement-banner__body">
+            <strong><%= notification.announcement.title %></strong>
+            <span><%= truncate("#{notification.announcement.body}".html_safe, length: 120) %></span>
+            <%= link_to 'Read more',
+              section_notification_path(@presenter.section, notification),
+              'aria-describedby':"a11y-announcement-text-#{index}",
+              "class": "c-announcement-banner__link  u-txt-nowrap" %>
+          </span>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+
+  <div class="l-grid  l-grid--half-gutter">
+    <div class="l-col-12  l-col-lg-8">
+      <% if vista_online_learning? %>
+        <%= render 'vol_assignments' %>
+      <% else %>
+        <%# Supersites %>
+        <%= render 'supersites_assignments' %>
+      <% end %>
+    </div> <!-- /.col-lg-8 -->
+
+    <div class="l-col-12  l-col-lg-4">
+      <div class="l-grid  l-grid--half-gutter">
+        <div class="l-col-12  l-col-md-7  l-col-lg-12">
+          <div class="c-panel  c-panel--dashboard"
+               role="complementary"
+               aria-labelledby="a11y-class-bulletin-titlebar">
+            <%= render 'notifications', list: @presenter.notifications_list %>
+          </div>
+        </div> <!-- /.l-grid > .l-col-md-7 -->
+        <div class="l-col-12  l-col-md-5  l-col-lg-12">
+          <div class="l-grid  l-grid--half-gutter">
+            <div class="l-col-12">
+              <% if @presenter.has_study_center? %>
+                <div class="c-panel  c-panel--dashboard"
+                     role="complementary"
+                     aria-labelledby="a11y-my-study-center-titlebar">
+                  <div class="c-panel__header">
+                    <h2 class="c-heading--dashboard-panel <%= test_class('study-center') %>" id="a11y-my-study-center-titlebar">
+                      <%= feature_icon('music/icons/student-dashboard/books', ['c-embedded-icon--lg'] ) %>
+                      Study Center
+                    </h2>
+                  </div>
+                  <div class="c-panel__body">
+                    <% if current_program.has_vocab_words? && access_guardian.has_vocab_words? %>
+                      <%= link_to 'My Vocabulary', vocab_words_path(current_program, current_section), class: 'u-dis-block  u-txt-under' %>
+                    <% end %>
+                    <% if current_program.has_vocab_tools? && access_guardian.has_vocab_tools? %>
+                      <%= link_to current_program.vocab_tools_label, vocab_tools_units_path(current_program, current_section),
+                          class: 'u-dis-block  u-txt-under' %>
+                    <% end %>
+                    <%= link_to 'Dictionary', current_program.dictionary_path, class: 'u-dis-block  u-txt-under' %>
+                  </div>
+                </div>
+              <% end %>
+            </div> <!-- /l-col-12  u-width-full [1]-->
+            <div class="l-col-12">
+              <div class="c-panel  c-panel--dashboard"
+                   role="complementary"
+                   aria-labelledby="a11y-my-grades-titlebar">
+                <div class="c-panel__header">
+                  <h2 class="c-heading--dashboard-panel <%= test_class('grades') %>" id="a11y-my-grades-titlebar">
+                    <%= feature_icon('music/icons/student-dashboard/score', ['c-embedded-icon--lg'] ) %>
+                    Grades
+                  </h2>
+                </div>
+                <div class="c-panel__body">
+                  <!-- grades content goes here -->
+                  <% cumulative_grade =  @presenter.gradesheet&.cumulative_grade %>
+                  <% if cumulative_grade&.formatted_score && cumulative_grade.due_count && cumulative_grade.due_and_completed_count %>
+                    <%= link_to student_grade_summary_link, class: 'u-dis-block' do %>
+                      <dl class="c-dashboard-grades  u-mar-bot-0">
+                        <dt class="c-dashboard-grades__cumulative  u-txt-bold  u-txt-24">
+                          <%= cumulative_grade.formatted_score %><span class="c-percent">%</span>
+                        </dt>
+                        <dd class="c-dashboard-grades__label">Cumulative</dd>
+                        <dt class="c-dashboard-grades__complete  c-ratio  u-txt-bold  u-txt-20">
+                          <%= cumulative_grade.due_and_completed_count %>/<%= cumulative_grade.due_count %>
+                        </dt>
+                        <dd class="c-dashboard-grades__label">Assignments completed</dd>
+                      </dl>
+                    <% end %>
+                  <% else %>
+                    <div>No grades available.</div>
+                  <% end %>
+                </div>
+              </div> <!-- /l-col-12  u-width-full [1]-->
+            </div> <!-- / .l-col-md-5 > .l-grid -->
+          </div> <!-- /.l-col-md-5 -->
+        </div> <!-- /.col-lg-4 > .l-grid -->
+        <%= link_to 'Accessibility Features',
+        "https://support.vhlcentral.com/hc/en-us/articles/33661741818775-vhlcentral-Platform-Content-Accessibility-Features-Student-Guide",
+        "class": "u-mar-lt-10",
+        "target": "_blank" %>
+      </div> <!-- /.l-grid -->
+    </div> <!-- / grid -->
+  </div><!-- /#main_content -->

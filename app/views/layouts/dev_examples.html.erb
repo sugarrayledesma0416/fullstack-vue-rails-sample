@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      lang="en"
+      <%= yield :html_classes %>>
+  <head>
+    <%= render('partials/google_tag_manager') %>
+    <%= stylesheet_link_tag "music/library/v1/main", media: 'all'  %>
+    <%= yield :js_head %>
+    <%= yield :css_head %>
+  </head>
+
+  <body class="<%= yield :body_classes %>">
+    <%= yield %>
+  </body>
+</html>

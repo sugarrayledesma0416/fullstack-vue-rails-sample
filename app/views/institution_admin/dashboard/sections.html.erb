@@ -1,0 +1,250 @@
+<% content_for(:body_classes, "ns-full-width  ns-admin-dashboard  u-bg-true-gray-500  ns-music-v3") %>
+<% content_for(:css_head, stylesheet_link_tag('music/features/admin_dashboard/main')) %>
+<% content_for(:css_head, stylesheet_link_tag('institution_admin/dashboard/course')) %>
+<% content_for(:css_head, stylesheet_link_tag('institution_admin/dashboard/tooltip')) %>
+<% content_for(:css_head, stylesheet_link_tag('institution_admin/dashboard/modals')) %>
+<% content_for(:css_head, stylesheet_link_tag('institution_admin/dashboard/scrollbar')) %>
+<% content_for(:js_head, javascript_packs_with_chunks_tag('institution_admin/enterprise_sections/edit_modal'))%>
+
+<div class="u-hidden  js-school-id" data-school-id="<%= @presenter.school.id %>"></div>
+<%= render partial: 'action_links', locals: {
+  current_program: @presenter.program,
+  school_id: @presenter.school.id,
+  action_link: institution_admin_courses_current_path(program_id: @presenter.program.id, school_id: @presenter.school.id),
+  text_link: 'Back to Courses'
+} %>
+<%= render 'layouts/flash', { flash: flash } %>
+
+<div class="ns-full-width  u-pad-24  u-bg-true-gray-50  c-enterprise-course__wrapper">
+  <div class="u-dis-block">
+    <h2 class="u-txt-regular  u-txt-true-gray-600  u-mar-bot-12" >
+      <div class="u-dis-flex  u-justify-content-space-between">
+        <div class="u-txt-light <% if @course.closed? %>u-txt-ital<% end %>">
+          <% if @course.closed? %>
+            <div class='c-pill'>Closed</div>
+          <% end %>
+          <%= @course.name %>
+          <% if @course.open? %>
+            <%= link_to edit_institution_admin_course_path(
+                          id: params[:course_id],
+                          program_id: params[:program_id],
+                          school_id: params[:school_id]
+                        ),
+                        class: 'c-button-v3  c-button-v3--primary-clear  c-button-v3--sm' do %>
+              <music-icon-edit-v3 class="u-fill-red-400"></music-icon-edit-v3>
+            <% end %>
+          <% end %>
+        </div>
+        <% unless @sections.blank? %>
+          <div class="u-dis-flex <%= 'u-disabled-REMOVE-LATER' if @course.closed? %>">
+              <%= link_to(
+                new_institution_admin_course_sections_path(
+                  program_id: params[:program_id],
+                  school_id: params[:school_id],
+                  course_id: params[:course_id]
+                ),
+                class: 'c-button-v3  c-button-v3--tertiary-clear  c-button-v3--sm  c-button-v3--hover  u-txt-black  u-txt-nodec'
+              ) do
+            %>
+              <music-icon-plus-v3></music-icon-plus-v3> Section
+            <% end %>
+
+            <ul>
+              <li class="c-menu__item  js-nav-system__item  u-pad-0  u-dis-inline-block"
+                  data-show-sub="false">
+                <%= link_to(
+                      '#',
+                      class: 'c-button-v3  u-pad-top-10  u-pad-bot-10  c-button-v3--primary  c-button-v3--sm  u-txt-white  u-txt-nodec  c-menu__title js-nav-system__link',
+                      aria: {
+                        haspopup: "true",
+                        expanded: "false"
+                      }) do %>
+                          <music-icon-plus-v3 class="u-fill-util-white"></music-icon-plus-v3> Assign
+                <% end %>
+                <div class="c-menu__inner  u-pad-lt-0  u-pad-rt-0  u-mar-rt-20  u-mar-top-5  c-enterprise-section__submenu  js-nav-system__subnav"
+                    role="menu"
+                    data-visually-hidden="true"
+                    theme="theme-dark">
+                  <ul class="u-pad-lt-0">
+                    <li class="c-menu__subitem" role="none">
+                      <%= link_to institution_admin_show_toc_template_path(
+                                    program_id: @presenter.program.id,
+                                    course_id: @course.id,
+                                    section_id: @course.enterprise_section.id
+                                  ),
+                                  class: 'c-enterprise__paragraph u-txt-true-gray-700' do %>
+                        Activities
+                      <% end %>
+                    </li>
+                    <li class="c-menu__subitem" role="none">
+                      <%= link_to institution_admin_assessment_template_path(
+                                    program_id: @presenter.program.id,
+                                    course_id: @course.id,
+                                    section_id: @course.enterprise_section.id
+                                  ),
+                                  class: 'c-enterprise__paragraph u-txt-true-gray-700' do %>
+                        Assessments
+                      <% end %>
+                    </li>
+                    <li class="c-menu__subitem" role="none">
+                      <%= link_to institution_admin_new_assignment_template_path(
+                                    program_id: @presenter.program.id,
+                                    course_id: @course.id,
+                                    section_id: @course.enterprise_section.id
+                                  ),
+                                  class: 'c-enterprise__paragraph u-txt-true-gray-700' do %>
+                        Start Assigning
+                      <% end %>
+                    </li>
+                    <li class="c-menu__subitem" role="none">
+                      <%= link_to institution_admin_assignment_template_path(
+                                    program_id: @presenter.program.id,
+                                    course_id: @course.id,
+                                    section_id: @course.enterprise_section.id
+                                  ),
+                                  class: 'c-enterprise__paragraph u-txt-true-gray-700' do %>
+                        Assignment Calendar
+                      <% end %>
+                    </li>
+                    <li class="c-menu__subitem" role="none">
+                      <a href="<%= institution_admin_assignment_wizard_template_path(
+                        program_id: @presenter.program.id,
+                        section_id: @course.enterprise_section.id
+                      ) %>"
+                        class="c-enterprise__paragraph  u-txt-true-gray-700">
+                        Assignment Wizard
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        <% end %>
+      </div>
+    </h2>
+    <div class="u-dis-flex  u-txt-regular  u-txt-true-gray-900  u-mar-lt-6">
+      <div>
+        <p class="u-pad-top-3"><%= @course.start_date.strftime("%m/%d/%Y") %> - <%= @course.end_date.strftime("%m/%d/%Y") %></p>
+      </div>
+    </div>
+    <% if @sections.blank? %>
+      <%= render 'empty_sections' %>
+    <% else %>
+      <table class="u-width-full  u-border-collapse">
+        <thead>
+        <tr class="u-txt-true-gray-900">
+          <th class="u-txt-ctr  u-pad-8  u-txt-body-2  u-txt-semibold"></th>
+          <th class="u-txt-ctr  u-pad-8  u-txt-body-2  u-txt-semibold">Assignments</th>
+          <th class="u-txt-ctr  u-pad-8  u-txt-body-2  u-txt-semibold">Access Issues</th>
+          <th class="u-txt-ctr  u-pad-8  u-txt-body-2  u-txt-semibold">Enrollment</th>
+          <th class="u-txt-ctr  u-pad-8  u-txt-body-2  u-txt-semibold">Roster</th>
+          <th class=""></th>
+        </tr>
+        </thead>
+        <tbody class="u-bg-white">
+        <% @sections.each do |section| %>
+          <tr class="u-border-bottom  ns-enterprise-border  js-section-row  <%= test_class("section-#{section.id}-row") %>"
+              data-section-data="<%= @presenter.section_edit_modal_data(section) %>">
+            <td class="u-pad-8">
+              <div class="u-pad-8 u-display-flex u-align-items-center">
+                <div class="u-dis-flex u-align-items-center">
+                  <div class="u-mar-lt-16">
+                    <p class="u-mar-3  u-txt-body-2  u-txt-body-1  u-txt-semibold"><%= section.name %></p>
+                    <div class="u-dis-flex">
+                      <% @presenter.section_owners(section).each do |instructor_hash| %>
+                        <div class="u-dis-flex  u-mar-rt-20">
+                          <%= image_tag(instructor_hash[:instructor].avatar_thumb_url, role: 'presentation', class: 'c-avatar', width: 30, height: 30) %>
+                          <div class="u-mar-top-2">
+                            <span class="u-txt-regular  u-txt-nodec  u-mar-3  u-txt-body-2  c-enterprise-tooltip-container">
+                              <a href="mailto:<%= instructor_hash[:instructor].email %>" class="u-txt-black  u-mar-top-2">
+                                <%= instructor_hash[:instructor].full_name %>
+                              </a>
+                              <span class="tooltip-text  u-txt-ctr  u-pad-10  u-txt-regular  u-txt-legal">
+                                <%= instructor_hash[:role] %><br>
+                                <%= instructor_hash[:instructor].email %>
+                              </span>
+                            </span>
+                          </div>
+                        </div>
+                      <% end %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td class="u-pad-8 u-txt-ctr"><%= section.assignments.count %></td>
+            <td class="u-pad-8 u-txt-ctr">
+              <%= @presenter.section_insufficient_access(section.id) %>
+            </td>
+            <td class="u-txt-ctr">
+              <% if section.open_to_students? %>
+                <a class="u-txt-black  u-txt-start  u-txt-nodec  u-txt-bold  u-enterprise__hover"
+                   onclick="$('.js-confirm-close-enrollment-model-<%= section.id %>').vhlModal('open')">
+                  <music-icon-lock-open class="u-mar-bot-10  u-enterprise__hover" size="6">
+                  </music-icon-lock-open>
+                </a>
+              <% else %>
+                <a class="u-txt-black  u-txt-start  u-txt-nodec  u-txt-bold  u-enterprise__hover"
+                   onclick="$('.js-confirm-open-enrollment-model-<%= section.id %>').vhlModal('open')">
+                  <music-icon-lock-closed class="u-mar-bot-10  u-enterprise__hover" size="6">
+                  </music-icon-lock-closed>
+                </a>
+              <% end %>
+            </td>
+            <td class="u-pad-8  u-txt-ctr  u-txt-black"><%= @presenter.enterprise_enrollment_count_with_link(section.id) %></td>
+            <td class="u-dis-flex u-txt-end  u-mar-top-20" style="justify-content: flex-end;">
+              <ul class="c-menubar  js-nav-system">
+                <li class="c-menu__item  js-nav-system__item" style="position: relative;">
+                  <a href="#" aria-haspopup="true" aria-expanded="false" class="c-menu__title  js-nav-system__link">
+                    <span><music-icon-three-dots></music-icon-three-dots></span>
+                  </a>
+                  <ul class="ns-enterprise-menu__inner  c-menu__inner  js-nav-system__subnav  u-bord-radius-16  u-mar-0  u-menu"
+                      role="menu" data-visually-hidden="false">
+                    <% if @course.closed? %>
+                      <li>
+                        <music-bubble-alert-v3 class="info-bubble" variant="info" placement="top">
+                          <span class="u-txt-true-gray-300 u-txt-nodec u-txt-bold" tooltip-target>
+                            Edit
+                          </span>
+                          <span class="u-txt-legal">
+                            Closed course sections cannot be edited.
+                          </span>
+                        </music-bubble-alert-v3>
+                      </li>
+                      <li>
+                        <music-bubble-alert-v3 class="info-bubble" variant="info" placement="top">
+                          <span class="u-txt-true-gray-300 u-txt-nodec u-txt-bold" tooltip-target>
+                            Delete
+                          </span>
+                           <span class="u-txt-legal">
+                            Closed course sections cannot be deleted.
+                          </span>
+                        </music-bubble-alert-v3>
+                      </li>
+                    <% else %>
+                    <li><a class="u-txt-black  u-txt-start  u-txt-nodec  u-txt-bold  <%= "js-edit-section-#{section.id}"%>" href="#">Edit</a></li>
+                      <li>
+                        <a class="u-txt-black  u-txt-start  u-txt-nodec  u-txt-bold
+                                  u-enterprise__hover  <%= test_class("delete-section-#{section.id}") %>"
+                          onclick="$('.js-confirm-destroy-section-model-<%= section.id %>').vhlModal('open')">
+                          Delete
+                        </a>
+                      </li>
+                    <% end %>
+                  </ul>
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <%= render 'confirm_open_enrollment', section: section, school_id: @presenter.school.id %>
+          <%= render 'confirm_close_enrollment', section: section, school_id: @presenter.school.id %>
+          <%= render 'confirm_destroy_section', section: section, school_id: @presenter.school.id %>
+        <% end %>
+        </tbody>
+      </table>
+    <% end %>
+  </div>
+</div>
+<%= render 'breadcrumb', presenter: @presenter, course: @course %>
+<%= render 'section_settings_modal' %>

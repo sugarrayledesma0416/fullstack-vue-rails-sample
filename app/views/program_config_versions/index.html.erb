@@ -1,0 +1,27 @@
+<% content_for(:css_head, stylesheet_link_tag('full_width_content'))%>
+
+<div id="main_content">
+  <div id="full_width_header">
+    <h2><%= @program.title.html_safe %> <span>M3 configuration history</span></h2>
+  </div>
+  <div id="full_width_body">
+    <div>
+      <%- if @program_config_versions.empty? %>
+        There are no M3 configurations for this program.
+      <%- else %>
+        <div>
+          <%= link_to 'Back', program_config_path(@program) %>
+        </div>
+        <div>
+          <%- @program_config_versions.each do |program_config| %>
+            <%= render '/program_configs/program_config_details', program_config: program_config %>
+          <%- end %>
+        </div>
+      <%- end %>
+    </div>
+    <div>
+      <%= link_to 'Back', program_config_path(@program) %>
+    </div>
+  </div>
+</div>
+

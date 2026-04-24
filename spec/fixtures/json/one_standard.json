@@ -1,0 +1,251 @@
+{
+  "links": {
+    "next": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards?fields%5Bstandards%5D=*&offset=10",
+    "last": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards?fields%5Bstandards%5D=*&offset=7400",
+    "self": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards?fields%5Bstandards%5D=*"
+  },
+  "data": [
+    {
+      "relationships": {
+        "breakout_origins": {
+          "data": []
+        },
+        "origins": {
+          "data": []
+        },
+        "replaced_by": {
+          "data": []
+        },
+        "peer_derivatives": {
+          "data": []
+        },
+        "course_standards": {
+          "data": []
+        },
+        "breakouts": {
+          "data": []
+        },
+        "parent": {
+          "data": {
+            "type": "standards",
+            "id": "F919464D-0824-418C-86EA-0A7ED578B548"
+          },
+          "links": {
+            "related": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards/00169BE1-B953-4115-BC34-656E3D1850E5/parent"
+          }
+        },
+        "peers": {
+          "data": []
+        },
+        "children": {
+          "data": []
+        },
+        "topics": {
+          "data": []
+        },
+        "concepts": {
+          "data": []
+        },
+        "ancestors": {
+          "data": [
+            {
+              "type": "standards",
+              "id": "d6ae62e0-61e2-11ed-9202-0e4957e617a9"
+            },
+            {
+              "id": "E14C0B2F-C3A7-4A67-9471-03FA2BD5C95E",
+              "type": "standards"
+            },
+            {
+              "id": "F919464D-0824-418C-86EA-0A7ED578B548",
+              "type": "standards"
+            }
+          ],
+          "links": {
+            "related": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards/00169BE1-B953-4115-BC34-656E3D1850E5/ancestors"
+          }
+        },
+        "crosswalks": {
+          "data": []
+        },
+        "replaces": {
+          "data": []
+        },
+        "related_courses": {
+          "data": []
+        },
+        "contexts": {
+          "data": [
+            {
+              "id": "d6ae62e0-61e2-11ed-9202-0e4957e617a9",
+              "type": "standards"
+            }
+          ],
+          "links": {
+            "related": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards/00169BE1-B953-4115-BC34-656E3D1850E5/contexts"
+          }
+        },
+        "derivatives": {
+          "data": []
+        }
+      },
+      "id": "00169BE1-B953-4115-BC34-656E3D1850E5",
+      "type": "standards",
+      "attributes": {
+        "utilizations": [
+          {
+            "guid": "6A044B04-BF8B-4FBF-BC96-ECA0EAE447A2",
+            "type": "example"
+          }
+        ],
+        "level": 4,
+        "in_list": "N",
+        "has_list": "N",
+        "date_modified_utc": "2022-11-16 19:59:28",
+        "section": {
+          "date_modified_utc": "2022-11-17 02:23:27",
+          "obsolete_year": null,
+          "revision_year": null,
+          "adopt_year": "2020",
+          "descr": "Grades 6-8",
+          "guid": "8B4EE553-5F87-11ED-9202-0E4957E617A9",
+          "label": null,
+          "number": null,
+          "implementation_year": null,
+          "disciplines": {
+            "primary_subject": {
+              "code": "ELD",
+              "guid": "F37B095B-5ED4-11ED-9202-0E4957E617A9",
+              "descr": "English Language Development"
+            }
+          },
+          "seq": 7,
+          "assessment_year": null
+        },
+        "topic_organizer": null,
+        "document": {
+          "source_url": "https://wida.wisc.edu/teach/standards/eld/2020",
+          "revision_year": null,
+          "adopt_year": "2020",
+          "descr": "Language Expectations by WIDA ELD Standard Statements and Grade-Level Cluster",
+          "publication": {
+            "authorities": [
+              {
+                "acronym": null,
+                "descr": "WIDA",
+                "guid": "B2869AF4-11A5-11ED-9063-FE177750DCE7"
+              },
+              {
+                "acronym": null,
+                "descr": "Board of Regents of the University of Wisconsin System",
+                "guid": "4A719B52-5EC6-11ED-9202-0E4957E617A9"
+              }
+            ],
+            "publication_type": "standard",
+            "descr": "WIDA English Language Development Standards Framework",
+            "source_url": "https://wida.wisc.edu/teach/standards/eld/2020",
+            "guid": "50CF8C2F-5EC7-11ED-9202-0E4957E617A9",
+            "regions": [
+              {
+                "code": "US",
+                "type": "country",
+                "guid": "91273AE8-F1B9-11E5-862E-0938DC287387",
+                "descr": "United States of America"
+              }
+            ],
+            "extended_descr": "WIDA: WIDA English Language Development Standards Framework",
+            "acronym": null
+          },
+          "date_modified_utc": "2022-11-18 16:11:31",
+          "obsolete_year": null,
+          "assessment_year": null,
+          "disciplines": {
+            "primary_subject": {
+              "descr": "English Language Development",
+              "guid": "F37B095B-5ED4-11ED-9202-0E4957E617A9",
+              "code": "ELD"
+            }
+          },
+          "guid": "912B82CC-5F82-11ED-9387-F0A169E7CC7F",
+          "implementation_year": null
+        },
+        "status": "active",
+        "standard_type": "extender",
+        "legends": [],
+        "date_deleted_utc": null,
+        "statement": {
+          "addendums": [
+            {
+              "position": "before",
+              "add_context": "Y",
+              "descr": "Develop coherence and cohesion throughout text through…",
+              "seq": 3
+            }
+          ],
+          "combined_descr": "Develop coherence and cohesion throughout text through… Nominalization to condense clauses (it rained year after year=annual floods) or summarize key ideas",
+          "descr": "Nominalization to condense clauses (it rained year after year=annual floods) or summarize key ideas"
+        },
+        "disciplines": {
+          "subjects": [
+            {
+              "guid": "F37B095B-5ED4-11ED-9202-0E4957E617A9",
+              "code": "ELD",
+              "descr": "English Language Development"
+            },
+            {
+              "code": "ESL",
+              "guid": "F1FCD9C6-3B53-11E0-B042-495E9DFF4B22",
+              "descr": "English as Second Language"
+            }
+          ],
+          "genres": [],
+          "ece_domains": [],
+          "strands": []
+        },
+        "number": {
+          "root_enhanced": null,
+          "raw": null,
+          "enhanced": null,
+          "prefix_enhanced": null
+        },
+        "label": "Language Feature",
+        "key_ideas": [],
+        "seq": 55,
+        "guid": "00169BE1-B953-4115-BC34-656E3D1850E5",
+        "education_levels": {
+          "grades": [
+            {
+              "seq": 80,
+              "code": "6",
+              "guid": "F1FA49AE-3B53-11E0-B042-495E9DFF4B22",
+              "descr": "6th Grade"
+            },
+            {
+              "descr": "7th Grade",
+              "guid": "F1FA56F6-3B53-11E0-B042-495E9DFF4B22",
+              "seq": 90,
+              "code": "7"
+            },
+            {
+              "seq": 100,
+              "code": "8",
+              "guid": "F1FA642A-3B53-11E0-B042-495E9DFF4B22",
+              "descr": "8th Grade"
+            }
+          ],
+          "ece_ages": []
+        },
+        "alt_identifiers": [],
+        "captured_by": "AB",
+        "extensions": [],
+        "uri": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards/00169BE1-B953-4115-BC34-656E3D1850E5"
+      }
+    }
+  ],
+  "meta": {
+    "offset": 0,
+    "limit": 10,
+    "took": 143,
+    "count": 1
+  }
+}

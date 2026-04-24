@@ -1,0 +1,96 @@
+<a
+  href="#"
+  aria-controls="learning-tools-subnav"
+  class="c-menu__title  c-menu__title--program  js-nav-system__link
+         <%= main_nav_active('teaching') %>"
+  aria-expanded="false"
+  role="button">
+    Learning tools
+    <span aria-hidden="true">
+      <%= Music::Components.icon(variant: 'caret', classes: ['c-menu__title--icon']) %>
+    </span>
+</a>
+
+<ul
+  class="c-menu__inner  c-menu__inner--program  js-nav-system__subnav"
+  id="learning-tools-subnav">
+
+  <% if access_guardian.has_vtext? %>
+    <li class="js-nav-system__subnav__item">
+      <%# program-nav-v2 is an identifier to reveal new program menu %>
+      <%= vtext_menu_link('program-nav-v2  c-menu__item  c-menu__item--program  js-nav-system__subnav__link') %>
+    </li>
+  <% end %>
+
+  <li class="js-nav-system__subnav__item">
+    <%= link_to main_app.resources_path(current_program, section || 0),
+                class: 'c-menu__item  c-menu__item--program  js-nav-system__subnav__link' do %>
+          <%= render(
+                'app_shell/menu_item',
+                item_icon: 'resources',
+                item_name: 'Resources',
+                item_description: 'Additional learning materials.'
+              ) %>
+    <% end %>
+  </li>
+
+  <% if access_guardian.has_ebook? %>
+    <li class="js-nav-system__subnav__item">
+      <%= link_to main_app.ebooks_path(current_program, current_section),
+                  class: 'c-menu__item  c-menu__item--program  js-nav-system__subnav__link' do %>
+          <%= render(
+                'app_shell/menu_item',
+                item_icon: 'ebook',
+                item_name: ebook_label,
+                item_description: 'Downloadable virtual textbook'
+              ) %>
+      <% end %>
+    </li>
+  <% end %>
+
+  <% if current_program.has_vocab_words? && access_guardian.has_vocab_words? %>
+    <li class="js-nav-system__subnav__item">
+      <%= link_to main_app.vocab_words_path(current_program, current_section),
+                  class: 'c-menu__item  c-menu__item--program  js-nav-system__subnav__link' do %>
+            <%= render(
+                  'app_shell/menu_item',
+                  item_icon: 'vocabulary_tools',
+                  item_name: 'My Vocabulary',
+                  item_description: 'Course vocabulary with interactive flashcards.'
+              ) %>
+      <% end %>
+    </li>
+  <% end %>
+
+  <% if current_program.has_vocab_tools? && access_guardian.has_vocab_tools? %>
+    <li class="js-nav-system__subnav__item">
+      <%= link_to main_app.vocab_tools_units_path(current_program, current_section),
+                  class: 'c-menu__item  c-menu__item--program  js-nav-system__subnav__link' do  %>
+            <%= render(
+                  'app_shell/menu_item',
+                  item_icon: 'vocabulary_tools',
+                  item_name: current_program.vocab_tools_label,
+                  item_description: 'Course vocabulary with interactive flashcards.'
+            ) %>
+      <% end %>
+    </li>
+  <% end %>
+
+  <% if current_program.share_to_portfolio? && access_guardian.has_portfolio? %>
+  <li class="js-nav-system__subnav__item">
+    <%= link_to portfolio_redirect_url,
+                class: 'c-menu__item  c-menu__item--program  js-nav-system__subnav__link',
+                target: '_blank' do  %>
+          <%= render(
+                'app_shell/menu_item',
+                item_icon: 'portfolio_menu',
+                item_name: 'Portfolio',
+                item_description: 'Access to view and edit your Portfolio for this course.'
+          ) %>
+    <% end %>
+  </li>
+  <% end %>
+
+  <%# This is additional vtext links  %>
+  <%= render 'app_shell/additional_content_menu_entries_v2' %>
+</ul>

@@ -1,0 +1,22 @@
+<% if defined? add_icon %>
+  <div data-page-element="ra_new_course_link">
+    <%= link_to(
+          one_roster_instructor_courses_path(current_program),
+          'data-link-type' => 'add course',
+          class: "c-add-link"
+        ) do %>
+          <span aria-hidden="true" class="c-add-link__text">
+            Add
+          </span>
+          <%= Music::Components.icon(variant: 'add', classes: ['c-add-link__icon']) %>
+    <% end -%>
+  </div>
+<% else %>
+  <div data-page-element="ra_new_course_link">
+    <%= link_to Music::Components.button(variant: 'secondary', text: 'ADD COURSE', classes: ['u-bord-2', 'u-bord-gray-d']),
+                one_roster_instructor_courses_path(current_program),
+                class: 'add-course-link',
+                'data-link-type' => 'add course' %>
+  </div>
+  <hr/>
+<% end -%>

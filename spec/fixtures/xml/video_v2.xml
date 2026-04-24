@@ -1,0 +1,29 @@
+<activity language="es" title="Video: El salar de Uyuni" activity_type="video_v2">
+  <title><b>Video</b>: El salar de Uyuni</title>
+  <dl>Haz clic en el ícono <i>play</i> para ver el video.</dl>
+  <items>
+    <thumbnails>
+      <image id="3"/>
+    </thumbnails>
+    <videos>
+      <video_high>
+        <video id="1"/>
+      </video_high>
+      <video_low>
+        <video id="2"/>
+      </video_low>
+    </videos>
+    <subtitles>
+      <xml type="englishcc" id="110823"/>
+      <xml type="othercc" id="110824"/>
+    </subtitles>
+    <video_description/>
+    <player></player>
+    <style>
+      <videowidth>700</videowidth>
+      <videoheight>525</videoheight>
+      <lowres_width>400</lowres_width>
+      <lowres_height>300</lowres_height>
+    </style>
+  </items>
+</activity>

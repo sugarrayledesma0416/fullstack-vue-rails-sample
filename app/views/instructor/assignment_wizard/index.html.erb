@@ -1,0 +1,27 @@
+<script type="text/javascript">
+  var VISTA_ONLINE_LEARNING = <%= vista_online_learning? %>;
+</script>
+<%# content_for(:rollbar_reporting, javascript_include_tag('rollbar')) %>
+<% content_for(:js_head, javascript_include_tag('assignment_wizard_bootstrap')) %>
+<% content_for(:js_head, javascript_include_tag('maestro_activity_engine/d3.v3.min')) %>
+<% content_for(:js_head, javascript_packs_with_chunks_tag('instructor/assignment_wizard/index')) %>
+<% content_for(:css_head, stylesheet_packs_with_chunks_tag('instructor/assignment_wizard/index')) %>
+<% content_for(:body_classes, 'standard_layout') %>
+
+<div class="js-assignment-wizard"></div>
+<div
+  class="js-assignment-wizard-data"
+  data-from-dom="<%= {
+    loading_icon_path: asset_path('/images/loading_32.gif'),
+  }.to_json  %>" >
+
+<% if @in_institution_admin %>
+  <% content_for :meta do %>
+    <meta name="VHL.in_institution_admin" content="true">
+    <meta name="VHL.course_school_id" content="<%= @course.school_id %>"/>
+  <% end %>
+<% else %>
+  <% content_for :meta do %>
+    <meta name="VHL.in_institution_admin" content="false">
+  <% end %>
+<% end %>

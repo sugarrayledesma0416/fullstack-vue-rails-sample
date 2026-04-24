@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<activity activity_type="partner_chat" language="es" title="Las elecciones">
+  <dl>Trabaja con un(a) compañero/a para representar una entrevista entre un(a) reportero/a de la televisión y un(a) político/a que va a ser candidato/a en las próximas elecciones.</dl>
+  <external_references>
+    <external_reference>
+      <title>Vocabulary list</title>
+      <activity id="79365"/>
+    </external_reference>
+  </external_references>
+  <items>
+    <style>
+      <item_numbers>hide</item_numbers>
+    </style>
+    <item/>
+  </items>
+</activity>

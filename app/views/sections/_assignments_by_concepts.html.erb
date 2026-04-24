@@ -1,0 +1,38 @@
+<% assignment_groups.each do |assignment_group| %>
+  <div class="c-strand  is-<%= assignment_group.status %>">
+    <div class="c-strand__title" style="border-left: 0.25rem solid <%= assignment_group.concept_color %>">
+      <% label_parts = assignment_group.link_label.to_s.split(':', 2) %>
+      <% lang_code = label_parts[0].match?(/news and cultural updates/i) ? 'en' : program_language %>
+      <%= link_to(
+            assignment_group.link_label,
+            assignment_group_path(assignment_group, due_date, current_user),
+            class: test_class('strand-group-link'),
+            lang: lang_code
+          ) %>
+    </div>
+    <div class="c-strand__status <%= assignment_group.status %>">
+      <% if assignment_group.complete? %>
+        <span title="Activity Complete" class="c-icon  c-icon--md  c-icon--ok"></span>
+        <span>Complete</span>
+      <% end %>
+    </div>
+  </div>
+  <div class="u-bord-top-2  u-bord-dotted  u-bord-gray-c"></div>
+  <% content_for :next_available_assignment do %>
+    <% if assignment_group.recommended  %>
+      <div class="u-txt-ctr  u-txt-sm-rt  u-mar-bot-8  u-mar-top-16">
+        <%= button_tag(
+              'Start',
+              class: "c-button  c-button--primary  c-button--md  " \
+                     "u-no-width #{test_class('workset-start-button')}",
+              'data-js-workset-path' => assignment_group_path(
+                assignment_group,
+                due_date,
+                current_user
+              )
+            ) %>
+    </div>
+    <% end %>
+  <% end %>
+<% end %>
+<%= content_for :next_available_assignment %>

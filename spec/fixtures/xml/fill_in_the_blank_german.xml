@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<activity activity_type="fill_in_the_blanks" title="Bilden Sie Sätze" language="de">
+    <dl>Write sentences using the cues.</dl>
+    
+    <external_references> 
+<external_reference> 
+<title>Grammar presentation</title> 
+<activity id="40208"/> 
+</external_reference> 
+</external_references>
+    
+  <items>
+      <style>
+                  <!--To specify textbox size, replace "standard" below with "long".-->    
+         <wol_size>sentence_standard</wol_size>
+          <!--Choose to "show" or "hide" item numbers.-->
+    <item_numbers>show</item_numbers>
+      </style>
+
+      <item>
+          <prompt>am Sonntagabend / kochen / wir / Abendessen (<i>dinner</i>)<br /><wol/></prompt>
+          <answers>
+              <answer>Am Sonntagabend kochen wir Abendessen.</answer>
+          </answers>
+      </item>
+
+  </items>
+</activity>

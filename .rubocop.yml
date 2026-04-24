@@ -1,0 +1,70 @@
+plugins:
+  - rubocop-rspec
+  - rubocop-rails
+  - rubocop-capybara
+
+AllCops:
+  DisplayCopNames: true
+  TargetRubyVersion: 3.3
+  TargetRailsVersion: 6.1
+  NewCops: enable
+  Exclude:
+    - 'bin/**/*'
+    - 'config/**/*'
+    - 'db/**/*'
+    - 'lib/demo_data/*'
+    - 'lib/live_data/*'
+    - 'app/lib/active_support_buffered_logger.rb'
+    - 'app/lib/patches/capybara_selenium_driver.rb'
+    - 'lib/tasks/*.rake'
+    - 'node_modules/**/*'
+    - 'script/**/*'
+    - 'vendor/**/*'
+    - 'spec/dummy/**/*'
+
+# Disabling this because it's currently broken, reporting false positives.
+Layout/EmptyLinesAroundArguments:
+  Enabled: false
+
+Layout/LineLength:
+  Max: 100
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*_spec.rb'
+
+# Exclude Rspec specs because we can easily have more than 3 levels of nesting
+# of describe, context, and it blocks.
+Metrics/BlockNesting:
+  Exclude:
+    - 'spec/**/*'
+
+Naming/PredicatePrefix:
+  ForbiddenPrefixes:
+    - is_
+
+Naming/VariableNumber:
+  EnforcedStyle: snake_case
+
+RSpec/ExampleLength:
+  Max: 19
+  Exclude:
+    - 'spec/features/**/*_spec.rb'
+    - 'spec/requests/**/*_spec.rb'
+
+RSpec/MultipleExpectations:
+  Exclude:
+    - 'spec/features/**/*_spec.rb'
+    - 'spec/requests/**/*.rb'
+
+RSpec/NestedGroups:
+  Max: 5
+
+Style/AccessModifierDeclarations:
+  EnforcedStyle: inline
+
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false

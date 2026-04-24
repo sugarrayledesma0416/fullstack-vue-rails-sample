@@ -1,0 +1,8 @@
+<div class="u-pad-32  u-txt-default-size  my-content-empty">
+  <h3 class="u-txt-24  u-txt-ctr">No Content Created</h3>
+  <p class="u-txt-ctr">Get started by generating some instructor-created activities.</p>
+
+  <% if @presenter.can_edit_course_library? %>
+    <%= render 'partials/new_activity_create_links', presenter: @presenter.new_activity_link_presenter(self) %>
+  <% end %>
+</div>

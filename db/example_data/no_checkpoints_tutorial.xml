@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<activity language="es" title="Learning Engine Tutorial: The present progressive" activity_type="learning_engine">
+  <dl>Example Learning Engine Activity Direction Line</dl>
+  <items>
+    <reference type="image">
+      <image id="138152" />
+    </reference>
+
+    <tutorial>
+      <video id="119438">
+        <subtitles>
+          <foreign_subtitles id="119605"/>
+          <english_subtitles id="119604"/>
+        </subtitles>
+      </video>
+    </tutorial>
+
+    <category_matching>
+      <item>
+        <categories>
+          <category ref="1">Masculino</category>
+          <category ref="2">Femenino</category>
+        </categories>
+        <prompts>
+          <prompt answer_ref="1">video</prompt>
+          <prompt answer_ref="2">escuela</prompt>
+          <prompt answer_ref="2">lección</prompt>
+          <prompt answer_ref="1">conductor</prompt>
+          <prompt answer_ref="1">problema</prompt>
+          <prompt answer_ref="2">nacionalidad</prompt>
+          <prompt answer_ref="1">hombre</prompt>
+          <prompt answer_ref="2">mujer</prompt>
+        </prompts>
+      </item>
+    </category_matching>
+  </items>
+</activity>
+
+

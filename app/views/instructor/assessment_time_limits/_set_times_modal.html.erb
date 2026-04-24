@@ -1,0 +1,110 @@
+<div class="ns-music-v1  ns-assessment-timer">
+  <%= form_tag '', remote: true, class: 'c-modal  u-hidden  js-modal  js-modal-set-times  js-time-limits-form' do %>
+    <div role="dialog" class="c-modal__box  c-panel-wrapper--scrollable  js-modal-box">
+
+      <div role="document" class="c-panel  c-panel--padded  c-panel--scrollable  u-mar-0  js-modal-content">
+        <div class="c-panel__header">
+          <h3 class="c-heading--md">Set individual time limits</h3>
+          <button class="c-modal__close-button  c-no-button  js-x-close  js-modal-close">
+            <span class="c-icon  c-icon--md  c-icon--close"></span>
+            <span class="u-screen-reader-only">Close dialog</span>
+          </button>
+        </div>
+        <div class="c-panel__body">
+
+          <div class="l-container-fluid">
+            <div class="l-grid  u-bord-bot-1  u-bord-gray-e  u-mar-bot-16">
+              <div class="l-col-2  u-mar-lt-16">
+                <span class="u-txt-bold  u-pad-rt-8  u-pad-bot-8">Activity</span>
+              </div>
+              <div class="l-col-4  u-bord-rt-1  u-bord-gray-e  u-pad-rt-8
+                          u-pad-bot-8  u-mar-rt-8  js-activity-title">
+                <%= @presenter.activity_title %>
+              </div>
+              <div class="l-col-3">
+                <span class="u-txt-bold  u-pad-rt-8  u-pad-bot-8">Time limit</span>
+              </div>
+              <div class="l-col-3  u-pad-bot-8  js-default-time-limit"
+                   data-default-limit="<%= @presenter.assignment_time_limit %>">
+                <%= @presenter.assignment_time_limit %> min
+              </div>
+            </div>
+          </div>
+
+          <div class="c-message  c-message--error  u-mar-bot-16  u-hidden  js-errors">
+            <div class="c-message__heading">
+              Please review and correct any errors.
+            </div>
+          </div>
+
+          <table class="c-table  c-table--assessment-timer  js-time-limits-table">
+            <thead>
+              <tr class="c-header-row">
+                <th scope="col" class="js-sort-col" data-sort="string" data-sort-multicolumn="0,1">
+                  <button type="button" class="c-no-button  u-txt-gray-3">
+                    Student
+                    <span class="c-icon  c-icon--sort-asc"></span>
+                </th>
+                <th scope="col" class="js-sort-col" data-sort="float" data-sort-multicolumn="1,0">
+                  <button type="button" class="c-no-button  u-txt-gray-3">
+                    Time limit
+                    <span class="c-icon  c-icon--sort-asc"></span>
+                  </button>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @presenter.student_time_limit_index.each do |student| %>
+                <tr class="c-row">
+                  <th scope="row"><%= student[:name] %></th>
+                  <td data-sort-value="<%= student[:time_limit] || 9999 %>">
+                    <div class="c-form-item-group  flex-align-ctr  u-mar-bot-0">
+                      <div class="c-form-item">
+                        <%= label_tag("limit_type_#{student[:user_id]}",
+                                      'Limit Type',
+                                      class: 'u-screen-reader-only') %>
+                        <%= select_tag("limit_type_#{student[:user_id]}",
+                                       options_for_select(
+                                         ['Default', 'Custom', 'Unlimited'], @presenter.select_value(student)
+                                       ),
+                                       include_blank: false,
+                                       class: 'c-select  js-limit-type'
+                                      ) %>
+                      </div>
+                      <span class="c-icon  c-icon--infinity  js-unlimited-icon
+                                   <%= 'u-hidden' unless @presenter.unlimited?(student) %>"></span>
+                      <div class="c-form-item  js-custom-limit  <%= 'u-hidden' unless @presenter.custom?(student) %>">
+                        <%= label_tag("time_limit[#{student[:user_id]}]", 'Custom Time Limit',
+                                       class: 'u-screen-reader-only') %>
+                        <%= text_field_tag("time_limit[#{student[:user_id]}]",
+                                           (student[:time_limit] || ''),
+                                           class: "c-form-item__input    c-form-item__input--sm  u-mar-rt-4
+                                                   js-custom-limit-#{student[:user_id]}") %>
+                        min
+                      </div>
+                    </div>
+                    <div class="c-form-item__error  js-error-<%= student[:user_id] %>"></div>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+
+        </div>
+        <div class="c-panel__footer">
+          <%= hidden_field_tag(:return_to, @return_to) -%>
+          <div class="c-button-group  u-mar-0  u-txt-rt">
+            <button type="button" class="c-button  js-modal-close">Cancel</button>
+            <button type="submit"
+                    data-url="<%= instructor_assessment_update_time_limits_path(
+                                    section_id: params[:section_id], activity_id: params[:activity_id]
+                              ) %>"
+                    class="c-button  c-button--primary  js-submit-form">Save</button>
+          </div>
+        </div>
+      </div>
+
+      <button class="u-screen-reader-only" tabindex="-1">Dialog end</button>
+    </div>
+  <% end %>
+</div>

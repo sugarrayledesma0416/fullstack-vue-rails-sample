@@ -1,0 +1,38 @@
+<% current_program.content_menu_additional_entries.each do |additional_entry| -%>
+  <%
+    # In addition to only displaying entries that have a label and a url,
+    # we want instructors to see both Student and Instructor entries, but the
+    # students to only see the Student entries.
+    # If an entry is an Instructor entry and the user is a student, the 
+    # conditional will evaluate as:
+    # ['Student', 'Student'].include?('Instructor') # Evaluates to false.
+    # For the same entry, but when the user is an instructor:
+    # ['Student', 'Instructor'].include?('Instructor') # Evaluates to true.
+    # Additionally, if the entry has a program_id override, check that the
+    # user has access to vText for that program id.
+  -%>
+  <% if (
+       additional_entry.url.present? && 
+       additional_entry.label.present? &&
+       ['Student', current_user.base_account_type].include?(additional_entry.target_user) &&
+       (
+         additional_entry.program_id.blank? ||
+         access_guardian.has_vtext?(additional_entry.program_id)
+       )
+     ) %>
+    <li class="js-nav-system__subnav__item" role="none">
+      <%= link_to(
+            additional_entry.label,
+            additional_entry.url,
+            class: 'c-menu__item  c-menu__item--program  js-nav-system__subnav__link',
+            role: 'menuitem',
+            'data-link-type' => 'vtext',
+            onclick: format_popup_onclick(
+              height: '720',
+              width: '960',
+              window_name: additional_entry.label
+            )
+          ) %>
+    </li>
+  <% end -%>
+<% end -%>

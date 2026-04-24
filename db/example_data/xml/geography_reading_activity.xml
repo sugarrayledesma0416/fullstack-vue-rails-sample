@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<activity activity_type="reference_activity" title="Geography Reading Activity" language="es" reference_style="geography">
+  <dl></dl>
+  <items>
+    <headline level="1">El país en cifras</headline>
+    <paragraph>
+      <attention>Área:</attention> 8.959 km<sup>2</sup> (3.459 millas<sup>2</sup>)
+    </paragraph>
+    <paragraph><i>menor que el área de Connecticut</i></paragraph>
+
+    <paragraph>
+      <attention>Población:</attention> 3.667.084
+    </paragraph>
+    <paragraph><i>Puerto Rico es una de las islas más densamente pobladas del mundo. Más de la mitad de la población vive en San Juan, la capital.</i></paragraph>
+
+    <paragraph>
+      <attention>Capital:</attention> San Juan --- 2.730.000
+    </paragraph>
+    <citation>SOURCE: Pouplation Division, UN Secretariat</citation>
+
+    <paragraph>
+      <attention>Ciudades principales:</attention> Arecibo, Bayamón, Fajardo, Mayagüez, Ponce
+    </paragraph>
+
+    <paragraph>
+      <attention>Moneda:</attention> dólar estadounidense
+    </paragraph>
+
+    <paragraph>
+      <attention>Idiomas:</attention> español(oficial); inglés (oficial)
+    </paragraph>
+    <paragraph><i>Aproximadamente la cuarta parte de la población
+    puertorriqueña habla inglés, pero en las zonas
+    turísticas este porcentaje es mucho más alto. El uso
+    del inglés es obligatorio para documentos federales.</i>
+    </paragraph>
+
+    <imagebank>
+      <image id="140396" alt_text="Bandera de Puerto Rico">
+        <caption>Bandera de Puerto Rico</caption>
+      </image>
+    </imagebank>
+
+    <headline level="2">Puertorriquenos celebres</headline>
+    <paragraph>
+      <attention>Raúl Juliá,</attention> actor (1940–1994)
+    </paragraph>
+    <paragraph>
+      <attention>Roberto Clemente,</attention> beisbolista (1934-1972)
+    </paragraph>
+    <paragraph>
+      <attention>Julia de Burgos,</attention> escritora (1914-1953)
+    </paragraph>
+    <paragraph>
+      <attention>Julia de Burgos,</attention> escritora (1914-1953)
+    </paragraph>
+    <paragraph>
+      <attention>Benicio del Toro,</attention> actor y productor (1967-)
+    </paragraph>
+    <paragraph>
+      <attention>Rosie Pérez,</attention> actriz y bailarina (1964-)
+    </paragraph>
+    <paragraph>
+      <attention>José Rivera,</attention> dramaturgo y guionista (1955-)
+    </paragraph>
+
+    <headline level="1">¡Increíble pero cierto!</headline>
+    <reference_group background_color="false">
+      <floating_image align="left" id="140397">
+        <caption>This is an image caption.</caption>
+      </floating_image>
+      <paragraph>
+        El río Camuy es el tercer río subterráneo más
+        largo del mundo y tiene el sistema de cuevas
+        más grande del hemisferio occidental.
+        La Cueva de los Tres Pueblos es una gigantesca
+        bóveda, tan grande que toda la fortaleza del
+        Morro puede caber en su interior.
+      </paragraph>
+    </reference_group>
+
+    <gloss_list>
+      <gloss target="menor">less</gloss>
+      <gloss target="pobladas">populated</gloss>
+      <gloss target="río subterráneo">underground river</gloss>
+      <gloss target="más largo">longest</gloss>
+      <gloss target="cuevas">caves</gloss>
+      <gloss target="bóveda">vault</gloss>
+      <gloss target="fortaleza">fort</gloss>
+      <gloss target="caber">fit</gloss>
+    </gloss_list>
+
+  </items>
+</activity>

@@ -1,0 +1,21 @@
+.c-column-lt {
+  width: 30%;
+  float: left;
+  padding-right: 16px;
+  text-align: left !important;
+}
+
+.c-column-rt {
+  color: #333 !important;
+  float: right;
+  width: 70%;
+}
+
+.c-owner-row {
+  margin-bottom: 8px !important;
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}

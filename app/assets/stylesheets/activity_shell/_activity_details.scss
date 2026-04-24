@@ -1,0 +1,155 @@
+@import 'music/library/v1/base/main';
+/* ================================================================== *
+    
+    Activity Details
+
+* =================================================================== */
+
+.activity-is-late {
+  background-color:#E84E35;
+  color: #FFF;
+  display: block;
+  float: left;
+  font-size: rpx(11);
+  margin-top: rpx(-2);
+  padding: 0 rpx(4);
+}
+
+#activity_attempts {
+  line-height: 1rem;
+  font-size: 0.75rem;
+  display: inline;
+}
+
+.c-activity-attempts{
+  margin-left: 0;
+}
+
+.what-counts, .notifications_link {
+  color:#1673bf;
+  cursor: pointer;
+  font-size: rpx(11);
+  margin-left: rpx(10);
+}
+
+.activity-details div {
+  margin-bottom: rpx(10);
+}
+
+.activity-details button {
+  float: right;
+}
+
+#activity_strictness {
+  clear: both;
+  font-size: rpx(11);
+  margin-bottom: 0;
+  position: relative;
+  width: 100%;
+}
+
+#activity_strictness li {
+  min-height: rpx(20);
+  margin: rpx(2) 0;
+  padding-left: rpx(10);
+  padding-top: rpx(5);
+  text-indent: 2em;
+}
+
+.active.accents::before {
+  content: url(/images/activity_punct_accentsy.png);
+  margin-right: 0.5em;
+}
+
+.active.capitalization::before {
+  content: url(/images/activity_punct_capsy.png);
+  margin-right: 0.5em;
+}
+
+.active.punctuation::before {
+  content: url(/images/activity_punct_puncty.png);
+  margin-right: 0.5em;
+}
+
+.accents::before {
+  content: url(/images/activity_punct_accentsn.png);
+  margin-right: 0.5em;
+}
+
+.capitalization::before {
+  content: url(/images/activity_punct_capsn.png);
+  margin-right: 0.5em;
+}
+
+.punctuation::before {
+  content: url(/images/activity_punct_punctn.png);
+  margin-right: 0.5em;
+}
+
+.ns-activity .c-activity-title {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: $gray-6;
+  display: inline;
+  margin: 0;
+}
+
+.activity_title_and_icons {
+  margin-bottom: 5px;
+}
+
+[id="direction_line"] {
+  font-size: $font-size-14;
+  color: #676565;
+}
+
+.c-direction-line {
+  min-height: rpx(30);
+  min-width: rpx(250);
+}
+
+#activity_strictness .hover_tools_explanation {
+  top: rpx(69);
+}
+
+.accent_strictness          { left: rpx(-22); }
+.capitalization_strictness  { left:   rpx(8); }
+.punctuation_strictness     { left:  rpx(37); }
+
+
+.cms_activity_id {
+  background-color: $gray-e;
+  clear: both;
+  font-family: monospace;
+  font-size: rpx(11);
+  margin-bottom: rpx(10);
+  padding: rpx(10);
+}
+
+.customStyleSelectBox {
+  background: url(/images/activity_selectdotted.png) no-repeat center left;
+  border: 1px solid transparent;
+  padding: 10px;
+}
+
+.customStyleSelectBoxInner {
+  background: url(/images/activity_selectorarrow.png) no-repeat center right;
+}
+
+div.submission {
+  text-align: right;
+}
+
+a.leftArrow,
+a.rightArrow {
+  background: url(/images/bkgd-programs-arrow.png;) transparent top left no-repeat;
+  display: block;
+  float: left;
+  height: rpx(18);
+  width: rpx(11);
+}
+
+a.rightArrow {
+  background-position: top right;
+  float: right;
+}

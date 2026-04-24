@@ -1,0 +1,129 @@
+{
+  "properties" : {
+    "alignment_id" : {
+      "type" : "integer"
+    },
+    "alignment_status" : {
+      "type" : "keyword"
+    },
+    "ancestors" : {
+      "properties" : {
+        "display_name": {
+          "type": "keyword"
+        },
+        "description" : {
+          "type" : "text"
+        },
+        "issuer": {
+          "type": "keyword"
+        },
+        "label" : {
+          "type" : "text"
+        },
+        "name" : {
+          "type" : "text"
+        },
+        "number" : {
+          "type" : "keyword"
+        },
+        "vendor_guid" : {
+          "type" : "keyword"
+        },
+        "vendor_standard_set_guid" : {
+          "type" : "keyword"
+        }
+      }
+    },
+    "description" : {
+      "type" : "text"
+    },
+    "display_name": {
+      "type": "keyword"
+    },
+    "grade_levels" : {
+      "properties" : {
+        "grade_level" : {
+          "type" : "keyword"
+        }
+      }
+    },
+    "issuer": {
+      "type": "keyword"
+    },
+    "label" : {
+      "type" : "text"
+    },
+    "name" : {
+      "type" : "text"
+    },
+    "number" : {
+      "type" : "keyword",
+      "normalizer": "lowercase_normalizer"
+    },
+    "parent" : {
+      "properties" : {
+        "display_name": {
+          "type": "keyword"
+        },
+        "description" : {
+          "type" : "text"
+        },
+        "issuer": {
+          "type": "keyword"
+        },
+        "label" : {
+          "type" : "text"
+        },
+        "name" : {
+          "type" : "text"
+        },
+        "number" : {
+          "type" : "keyword"
+        },
+        "vendor_guid" : {
+          "type" : "keyword"
+        },
+        "vendor_standard_set_guid" : {
+          "type" : "keyword"
+        }
+      }
+    },
+    "programs" : {
+      "properties" : {
+        "lesson_id" : {
+          "type" : "keyword"
+        },
+        "program_id" : {
+          "type" : "keyword"
+        },
+        "unit_id" : {
+          "type" : "keyword"
+        }
+      }
+    },
+    "searchable": {
+      "type": "boolean"
+    },
+    "standard_asset_domains" : {
+      "type" : "keyword"
+    },
+    "standard_asset_id" : {
+      "type" : "keyword"
+    },
+    "standard_asset_reference_id" : {
+      "type" : "integer"
+    },
+    "standard_asset_reference_type" : {
+      "type" : "keyword"
+    },
+    "standard_asset_subdomains" : {
+      "type" : "keyword"
+    },
+    "vendor_guid" : {
+      "type" : "keyword"
+    },
+    "vendor_standard_set_guid" : {
+      "type" : "keyword"
+    }
+  }
+}

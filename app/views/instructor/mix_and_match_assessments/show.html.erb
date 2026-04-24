@@ -1,0 +1,22 @@
+<div>
+  <style>
+    /* Needed to override assessment-edit view styles that hide the
+       diagnostic references */
+    .c-mix-and-match-activity-body .reference_diagnostic {
+      display: flex;
+    }
+  </style>
+  <h1><%= @activity.title %></h1>
+
+  <div class="js-mix-and-match-media-lookup" data-media-lookup="<%= @activity.media_lookup.to_json %>" />
+  <div class="js-custom-assessment-preview-activity-body  c-activity-body  c-mix-and-match-activity-body"
+       data-content-json="<%= @activity.generate_content_json %>">
+    <%= render(
+          'maestro_activity_engine/activities/previews/' + @activity.content_object.partial_name,
+          content_object: @activity.content_object,
+          activity_id: @activity.id,
+          read_only_status: false,
+          classwork: nil
+        ) %>
+  </div>
+</div>

@@ -1,0 +1,96 @@
+<% content_for(:js_head, javascript_include_tag('calendar_student')) %>
+<% content_for(:body_classes, ' ns-calendar  ns-calendar-student  ns-full-width') %>
+<% content_for(:css_head, stylesheet_link_tag('music/features/assignment_calendar/calendar_component/student/main')) %>
+
+<% event_calendar = calendar_presenter.event_calendar %>
+
+<!-- Mesages -->
+<% content_for :calendar_messages_html do %>
+  <% event_calendar.messages.each do |message| %>
+    <div><%= message %></div>
+  <% end %>
+<% end %>
+
+<!-- Calendar Table Weekday Names Content -->
+<% content_for :week_days_names_html do %>
+  <% event_calendar.days_of_week.each do |day| %>
+    <th class="c-calendar-weekday  js-calendar-weekday" data-js-weekday="<%= day.slice(0,3) %>">
+      <span class="u-screen-reader-only"><%= day %></span>
+      <span class="u-dis-none  u-dis-md-inline-flex" aria-hidden="true"><%= day %></span>
+      <span class="u-dis-md-none" aria-hidden="true"><%= day.slice(0,3) %></span>
+    </th>
+  <% end %>
+<% end %>
+
+<!-- Calendar -->
+<% event_calendar.each_month do |month| %>
+  <!-- Calendar Header -->
+  <div class="c-calendar__header">
+
+    <button class="c-no-button  js-month-change  <%= test_class('prev-month-button') %>"
+            <%= '  disabled' unless event_calendar.prev_year_month %>
+            aria-label="Previous month"
+            data-js-link="show_calendar"
+            data-js-month="<%= event_calendar.prev_year_month %>">
+      <span class="c-icon
+                   c-icon--lg
+                   c-icon--left-arrow
+                   <%= '  is-disabled' unless event_calendar.prev_year_month %>"></span>
+    </button>
+
+    <button class="c-no-button  js-month-change  <%= test_class('next-month-button') %>"
+            <%= '  disabled' unless event_calendar.next_year_month %>
+            aria-label="Next month"
+            data-js-link="show_calendar"
+            data-js-month="<%= event_calendar.next_year_month %>">
+      <span class="c-icon
+                   c-icon--lg
+                   c-icon--right-arrow
+                   <%= '  is-disabled' unless event_calendar.next_year_month %>"></span>
+    </button>
+
+    <h2 class="c-calendar__month-name">
+      <%= "#{Date::MONTHNAMES[month.month].capitalize} #{month.year}" %>
+    </h2>
+
+    <div class="c-calendar-spinner  js-calendar-spinner">
+      <img alt="loading..." src="/images/loading_32.gif" />
+    </div>
+
+  </div> <!-- Calendar Header Ends -->
+
+  <!-- Calendar Table -->
+  <div class="js-calendar_page  <%= test_class('calendar-page') %>"
+       id="<%= month.to_s %>">
+
+    <%= yield :calendar_messages_html %>
+
+    <table class="c-table  u-bord-1  u-bord-gray-d  <%= test_class('calendar') %>">
+
+      <thead>
+        <tr class="c-row">
+          <%= yield :week_days_names_html %>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% prev_day = nil %>
+        <% month.each_week do |week| %>
+          <tr class="c-row  js-calendar-week">
+            <% week.each do |day| -%>
+              <%= render partial: 'calendar/event_calendar_day',
+                        handlers: [:html, :erb],
+                        locals: { event_day: day,
+                                  prev_day: prev_day,
+                                  show_estimates: calendar_presenter.show_estimated_times?,
+                                  assignments_by_date: calendar_presenter.items_by_date[:assignments],
+                                  announcements_by_date: calendar_presenter.items_by_date[:announcements] } %>
+              <% prev_day = day %>
+            <% end %>
+          </tr>
+        <% end %>
+      </tbody>
+
+    </table>
+  </div> <!-- Calendar Table Ends -->
+<% end %>

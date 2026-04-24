@@ -1,0 +1,49 @@
+<%
+  recorded_comment_div = "recorded_comment_for_#{response_id}"
+  recorder_div = "instructor_recorder_#{response_id}"
+  review_div = "instructor_review_#{response_id}"
+  recording_path_field = "file_path_for_recorded_comment_#{response_id}"
+  playback_host = recording_configuration_instance.playback_server_url(recording_path)
+  hosted_in_fms = recording_configuration_instance.fms_server?(playback_host)
+%>
+<!-- Temporary fix for the volume spinner disalignemnt.-->
+<style>
+  .ns-newcsslib .c-volume-spinner {
+    margin: 0px 0px 0px 0px !important;
+  }
+</style>
+<div class="instructor_comment_area  recorded_comment  u-oflow-hid" style="display: none">
+  <div id="<%= recorded_comment_div %>" class="u-bord-0  instructor_player  ns-music-v1  u-pad-rt-0">
+    <div id="<%= recorder_div %>" class='ns-music-v1'>
+      <%= Music::Components.media_button(variant: 'speak',
+                                         text: 'Record',
+                                         volume: true,
+                                         state: :default,
+                                         toggle: :stop,
+                                         classes: [ recorded_comment_div ]) %>
+    </div>
+    <div id="<%= review_div %>" class='ns-music-v1'>
+      <%= Music::Components.media_button(variant: 'review', classes: ['js-review', review_div], state: 'disabled') %>
+    </div>
+  </div>
+</div>
+
+<%= hidden_field_tag recording_path_field, '', 'data-js-container' => 'file_path' %>
+<div data-js-recorder="<%= recorded_comment_div %>"
+  data-js-container="recording_instructor_recorder"
+  data-js-recording-path="<%= Recording.new.generate_file_prefix(recording_type = :instructor) %>"
+  data-js-server-host="<%= recording_configuration_instance.server_host %>"
+  data-js-load-balancer-url="<%= recording_configuration_instance.load_balancer_url %>"
+  data-js-is-new-recording="<%= is_new_recording %>"
+
+  data-js-playback-path="<%= recording_path %>"
+  data-js-playback-url="<%= playback_host %>"
+  data-js-hosted-in-fms="<%= hosted_in_fms %>"
+  data-js-is-playback-and-recorder="true">
+</div>
+<div class="hidden_helper">
+  <div id="dialog-microphone" title="Enable your microphone">
+    <p>Microphone must be enabled in order to record comments. Enable microphone in the browser settings and reload this page.</p>
+  </div>
+</div>
+

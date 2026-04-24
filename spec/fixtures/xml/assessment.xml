@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<activity assessment_type="practice" title="Prueba escrita" language="es" activity_type="exam">
+  <dl>Complete this practice test to review what you have learned in this lesson.</dl>
+  <items>
+    <style>
+      <item_numbers>show</item_numbers>
+    </style>
+    <activity title="Multiple choice activity title" activity_type="multiple_choice">
+      <title>Multiple choice activity title</title>
+      <dl>Multiple choice activity direction line</dl>
+      <items>
+        <style>
+          <item_numbers>show</item_numbers>
+        </style>
+        <reference type="exam">
+          <header>Multiple choice activity header</header>
+          <body>Multiple choice activity body.</body>
+        </reference>
+        <reference type="text">
+          <header></header>
+          <body>This is a text section reference without any header.</body>
+        </reference>
+        <reference type="text">
+          <header>Text reference header with some <i>html</i> formatting.</header>
+          <body>This is a text reference.</body>
+        </reference>
+        <item>
+          <prompt>multiple choice question 1</prompt>
+          <choices>
+            <answer>right answer 1</answer>
+            <distractor>wrong answer 2</distractor>
+            <distractor>wrong answer 3</distractor>
+          </choices>
+        </item>
+        <item>
+          <prompt>multiple choice question 2</prompt>
+          <choices>
+            <distractor>wrong answer 1</distractor>
+            <answer>right answer 2</answer>
+            <distractor>wrong answer 3</distractor>
+          </choices>
+        </item>
+        <item>
+          <prompt>multiple choice question 3</prompt>
+          <choices>
+            <distractor>wrong answer 1</distractor>
+            <distractor>wrong answer 2</distractor>
+            <answer>right answer 3</answer>
+          </choices>
+        </item>
+        <item>
+          <prompt>multiple choice question 4</prompt>
+          <choices>
+            <distractor>wrong answer 1</distractor>
+            <distractor>wrong answer 2</distractor>
+            <answer>right answer 3</answer>
+            <distractor>wrong answer 4</distractor>
+          </choices>
+        </item>
+      </items>
+    </activity>
+    <activity activity_type="drop_down" title="Drop down activity title" language="es">
+      <title>Drop down activity title</title>
+      <dl>Drop down activity direction line</dl>
+      <items>
+        <style>
+          <item_numbers>show</item_numbers>
+        </style>
+        <reference type="exam">
+          <header>Drop down activity header</header>
+          <body>Drop down activity body.</body>
+        </reference>
+        <reference type="audio">
+          <audio id="1"/>
+        </reference>
+        <item>
+          <prompt>Drop down question 1<wol/></prompt>
+          <choices>
+            <answer>answer_1_1</answer>
+            <distractor>answer_1_2</distractor>
+          </choices>
+        </item>
+        <item>
+          <prompt>Drop down question 2<wol ref="1"/> and <wol ref="2"/></prompt>
+          <choices ref="1">
+            <answer>answer_2_1_1</answer>
+            <distractor>answer_2_1_2</distractor>
+          </choices>
+          <choices ref="2">
+            <distractor>answer_2_2_1</distractor>
+            <answer>answer_2_2_2</answer>
+          </choices>
+        </item>
+        <item>
+          <prompt>Drop down question 3<wol/></prompt>
+          <choices>
+            <distractor>answer_3_1</distractor>
+            <answer>answer_3_2</answer>
+            <distractor>answer_3_3</distractor>
+          </choices>
+        </item>
+      </items>
+    </activity>
+    <activity activity_type="fill_in_the_blanks" title="Fill in the blanks activity title" language="es">
+      <title>FIB activity title</title>
+      <dl>FIB activity direction line</dl>
+      <items>
+        <reference type="exam">
+          <header>FIB activity header</header>
+          <body>FIB activity body.</body>
+        </reference>
+        <reference type="audio">
+          <audio id="2"/>
+        </reference>
+        <style>
+          <wol_size>words_small</wol_size>
+          <item_numbers>show</item_numbers>
+        </style>
+        <item>
+          <prompt>Test <wol ref="1"/> with <wol ref="2"/> blanks</prompt>
+          <answers ref="1">
+            <answer>Question 1 answer 1</answer>
+          </answers>
+          <answers ref="2">
+            <answer>Question 1 answer 2</answer>
+          </answers>
+        </item>
+        <item>
+          <prompt>Test question 2: <wol/></prompt>
+          <answers>
+            <answer>Question 2 answer</answer>
+          </answers>
+        </item>
+        <item>
+          <prompt>How <wol/> you?</prompt>
+          <answers>
+            <answer>Question 3 answer</answer>
+          </answers>
+        </item>
+      </items>
+    </activity>
+    <activity activity_type="open_ended" title="Open ended activity title" language="esa">
+      <title>Open ended activity title</title>
+      <dl>Open ended activity direction line</dl>
+      <items>
+        <reference type="exam">
+          <header>Open ended activity header</header>
+          <body>Open ended activity body.</body>
+        </reference>
+        <style>
+          <item_numbers>show</item_numbers>
+          <answer_size>medium</answer_size>
+        </style>
+        <item>
+          <prompt>open ended question 1</prompt>
+        </item>
+        <item>
+          <prompt>open ended question 2</prompt>
+          <sample_answer>optional_sample_answer_text1</sample_answer>
+          <sample_answer>optional_sample_answer_text2</sample_answer>
+        </item>
+        <item>
+          <prompt>open ended question 3</prompt>
+        </item>
+      </items>
+    </activity>
+    <activity activity_type="true_false_enhanced" title="TFE activity title">
+      <title>TFW activity title</title>
+      <dl>TFE activity direction line</dl>
+      <items>
+        <reference type="exam">
+          <header>TFE activity header</header>
+          <body>TFE activity body.</body>
+        </reference>
+        <style>
+          <item_numbers>show</item_numbers>
+          <correction_instruction_in_target_language>true</correction_instruction_in_target_language>
+        </style>
+        <choices>
+          <choice ref="1">Verdadero</choice>
+          <choice ref="2">Falso</choice>
+        </choices>
+        <item>
+          <prompt>TFE question 1</prompt>
+          <answer ref="1"/>
+        </item>
+        <item>
+          <prompt>TFE question 2</prompt>
+          <answer ref="2"/>
+          <sample_answer>TFE question 2, sample answer</sample_answer>
+        </item>
+        <item>
+          <prompt>TFE question 3</prompt>
+          <answer ref="1"/>
+        </item>
+        <item>
+          <prompt>TFE question 4</prompt>
+          <answer ref="2"/>
+          <sample_answer>TFE question 4, sample answer</sample_answer>
+        </item>
+      </items>
+    </activity>
+    <activity activity_type="recording_v2" title="Recording activity title" randomizable="true">
+      <title><b>Recording activity title</b></title>
+      <dl>Recording activity direction line</dl>
+      <items>
+        <reference type="exam">
+          <header><b>Recording activity header</b></header>
+          <body>Recording activity body.</body>
+        </reference>
+        <style>
+          <layout>word</layout>
+          <column_fill>equalize</column_fill>
+          <row_fill>normal</row_fill>
+          <transcript_display>show</transcript_display>
+          <compare_button_display>show</compare_button_display> 
+        </style>
+        <reference type="wordbank">
+          <body sorted="yes">
+            <word>Mucho gusto.</word>
+            <word>Chau.</word>
+            <word>Nada.</word>
+            <word>Lo siento.</word>
+            <word>Bien, gracias.</word>
+            <word>Soy de los Estados Unidos.</word>
+          </body>
+        </reference>
+        <question>
+          <prompt>
+            <body>Recording question 1</body>
+            <audio id="1" transcript="blah"/>
+          </prompt>
+          <answer>
+            <audio id="2"/>
+          </answer>
+        </question>
+        <question>
+          <prompt>
+            <body>Recording question 2</body>
+            <audio id="1"/>
+          </prompt>
+          <answer>
+            <audio id="2"/>
+          </answer>
+        </question>
+        <question>
+          <prompt>
+            <body>Recording question 3</body>
+            <audio id="1"/>
+            <image/>
+          </prompt>
+          <answer>
+            <audio id="2"/>
+          </answer>
+        </question>
+      </items>
+    </activity>
+  </items>
+</activity>

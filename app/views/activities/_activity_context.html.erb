@@ -1,0 +1,75 @@
+<%
+  assignment = if current_user.cartridge?
+                 classwork && classwork.assignment(activity)
+               else
+                 (workset && workset.assignment_by_activity(activity)) ||
+                 (classwork && classwork.assignment(activity))
+               end
+  overdue = if current_user.cartridge?
+              classwork && assignment && classwork.overdue?(activity)
+            else
+              (workset && assignment && workset.overdue?(activity, assignment)) ||
+              (classwork && assignment && classwork.overdue?(activity))
+            end
+  has_deadline = defined? @activity_presenter.assignment.due_date_time
+  student_activity_display_name = unless current_user.cartridge?
+                                    @activity.student_display_title
+                                  end
+%>
+
+<% if @lossless_auth_token.present? %>
+  <% content_for(:js_head) do %>
+  <meta name="VHL.lossless_auth_token" content="<%= @lossless_auth_token %>" />
+  <% end %>
+<% end %>
+
+<% content_for(:js_head,
+               javascript_packs_with_chunks_tag("activities/activity_context")) %>
+<% content_for(
+  :js_head,
+  javascript_packs_with_chunks_tag("activities/audio_play")
+) %>
+
+<div class="ns-music-v1  c-activity-context-wrapper">
+  <%
+  if @rendering_portfolio_artifact
+    dl_partial_family = 'portfolio'
+  else
+    dl_partial_family = supersite_junior? ? 'supersite_junior' : 'default'
+  end
+  %>
+  <%= render "activities/#{dl_partial_family}_activity_context",
+             assignment: assignment,
+             has_deadline: has_deadline,
+             overdue: overdue,
+             student_activity_display_name: student_activity_display_name
+  %>
+
+  <div class="c-speed-control  l-line  l-line--xs  u-hidden  js-toggle-activity-details"
+        id="speed_control"
+        lang="en"
+        name="speed"
+        role="radiogroup"
+        aria-labelledby="speed-control-label"
+        >
+        <span id="speed-control-label" lang="en" class="c-speed-control-activity-label">
+          Speed Control
+        </span>
+    <div class="c-form-item  u-dis-flex  js-speed" data-speed="fast">
+      <input type="radio" class="c-form-item__radio" name="speed" id="speed-fast" aria-describedby="speed-control-label fast-label-speedcontrol">
+      <label class="c-form-item__label  c-speed-control-v2__label" id="fast-label-speedcontrol" tabindex="0" lang="en" for="speed-fast">Fast</label>
+    </div>
+    <div class="c-form-item  u-dis-flex  js-speed" data-speed="medium">
+      <input type="radio" class="c-form-item__radio" name="speed" id="speed-default" aria-describedby="speed-control-label default-label-speedcontrol">
+      <label class="c-form-item__label  c-speed-control-v2__label" id="default-label-speedcontrol" tabindex="0" lang="en" for="speed-default">Default</label>
+    </div>
+    <div class="c-form-item  u-dis-flex  js-speed" data-speed="slow">
+      <input type="radio" class="c-form-item__radio" name="speed" id="speed-slow" aria-describedby="speed-control-label slow-label-speedcontrol">
+      <label class="c-form-item__label  c-speed-control-v2__label" id="slow-label-speedcontrol" tabindex="0" lang="en" for="speed-slow">Slow</label>
+    </div>
+  </div>
+</div>
+
+<% if !show_instructor_notes_link_for?(current_user, params[:controller]) && !spr? %>
+  <%= render 'activities/student_note_controls' %>
+<% end %>

@@ -1,0 +1,252 @@
+<%
+  # If we want to make JS-module code available to all Sprockets JS assets,
+  #   we can add it as a property on `window` in a pack file
+  #   and include the pack in this view so that it is loaded globally
+  #   in the app.
+  #
+  # If the module code is a large bundle and we don't want to load it
+  # everywhere, we can just include the pack in the view(s) that load the assets
+  # that need it.
+  #
+  # As a working example: the `content_for` below, when uncommented, loads a
+  #   pack that imports a function from a JS module in the music engine and adds
+  #   it as part of a `MusicJS` property on `window`. After the pack is loaded,
+  #   you can run
+  #
+  #   `MusicJS.helloWorld('[name goes here]')`
+  #
+  #   in the console to confirm that the method is present and working.
+  #
+  # content_for(:js_head, javascript_packs_with_chunks_tag("hello_world")) %>
+
+<% content_for(:js_head, javascript_packs_with_chunks_tag('inactivity_timeout')) %>
+<% content_for(:js_head, javascript_packs_with_chunks_tag('layouts/common_header')) %>
+<% content_for(:js_head, javascript_packs_with_chunks_tag('music_lib/v2/custom_elements')) %>
+<script src="https://cdn.jsdelivr.net/npm/microsoft-cognitiveservices-speech-sdk@latest/distrib/browser/microsoft.cognitiveservices.speech.sdk.bundle-min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/RecordRTC/5.6.2/RecordRTC.js"></script>
+
+<% if analytics_enabled? && tour_guide_eligible? %>
+  <% content_for(:js_head, javascript_packs_with_chunks_tag('instructor/tour_guide/initializer')) %>
+<% end %>
+
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <meta name="google" value="notranslate" />
+  <%= csrf_meta_tag %>
+
+  <%# This needs to be before all other script tags because it is catching
+      javascript errors on the pages that include the rollbar js here. %>
+  <% if Rails.env.live? || Rails.env.staging? %>
+    <%= yield :rollbar_reporting %>
+  <% end %>
+
+  <title
+    <% if current_program.try(:language_code) %>
+        lang="<%= current_program.language_code %>"
+    <% end %>
+        >
+        <%= head_title %>
+  </title>
+
+  <% unless @meta_description.blank? %>
+    <meta http-equiv="Description" content="<%= @meta_description %>">
+  <% end -%>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <meta name="VHL.program_id" content="<%= current_program.try(:id) || 0 %>"/>
+  <meta name="VHL.program_title" content="<%= current_program.try(:title) || "empty" %>"/>
+  <meta name="VHL.program_language" content="<%= current_program.try(:language_code) || "empty" %>"/>
+  <meta name="VHL.program_accent_bar_enabled" content="<%= accent_bar_enabled? %>"/>
+  <meta
+    name="VHL.program_family"
+    content="<%= supersite_junior? ? 'supersites_jr' : (current_program.try(:family) || 'empty') %>"/>
+  <meta name="VHL.user_id" content="<%= current_user.try(:id) %>"/>
+  <meta name="VHL.user_guid" content="<%= current_user.try(:guid) %>"/>
+  <meta name="VHL.user_type" content="<%= current_user.try(:base_account_type) %>"/>
+  <meta name="VHL.user_gender" content="<%= current_user.try(:gender) %>"/>
+  <meta name="VHL.school_ids" content="<%= current_user_with_schools.try(:school_ids) %>"/>
+  <meta name="VHL.school_guids" content="<%= current_user_with_schools.try(:schools).try(:map, &:guid) %>"/>
+  <meta name="VHL.schools" content="<%= current_user_with_schools.try(:schools).try(:map, &:name) %>"/>
+  <meta name="VHL.current_school" content="<%= current_section.try(:course).try(:school_id) %>"/>
+  <meta name="VHL.course_id" content="<%= current_section.try(:course_id) %>"/>
+  <meta name="VHL.course_guid" content="<%= current_section.try(:course).try(:guid) %>"/>
+  <meta name="VHL.course_name" content="<%= json_escape(current_section.try(:course).try(:name)) %>"/>
+  <meta name="VHL.section_id" content="<%= current_section_id %>"/>
+  <meta name="VHL.section_guid" content="<%= current_section.try(:guid) %>"/>
+  <meta name="VHL.section_name" content="<%= json_escape(current_section.try(:name)) %>"/>
+  <meta name="VHL.section_tz" content="<%= json_escape(current_section.try(:time_zone)) %>"/>
+  <%# section_tz_info returns the database standard name for a timezone for converting timezones in JS %>
+  <meta name="VHL.section_tz_info" content="<%= json_escape(ActiveSupport::TimeZone::MAPPING[current_section.try(:time_zone)]) %>" />
+  <meta name="VHL.enable_arc_logging" content="<%= (defined?(ENABLE_ARC_LOGGING) && ENABLE_ARC_LOGGING) %>">
+  <meta name="VHL.Controller" content="<%= controller_name %>">
+  <meta name="VHL.vista_online_learning" content="<%= vista_online_learning? %>">
+  <meta name="VHL.environment" content="<%= Rails.env %>">
+  <meta name="VHL.disable_chat_on_page" content="<%= @disable_chat_on_page %>">
+  <meta name="VHL.user_full_name" content="<%= current_user.try(:full_name) %>"/>
+
+  <%= yield :meta %>
+
+  <% if defined? layout_version %>
+    <%= stylesheet_link_tag "music/library/v1/main", media: 'all'  %>
+  <% else %>
+    <%# m3 application.css loads both alpha & v1: %>
+    <%= stylesheet_link_tag "application", media: 'all' %>
+  <% end %>
+
+  <% if supersite_junior? %>
+    <%= stylesheet_link_tag "music/features/jr/main", media: 'all'  %>
+  <% end %>
+
+  <%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,700italic,400italic|Inter:400,600,700" %>
+
+  <%#
+    Font tracking request for Fiendstar.
+    This references an empty file, but allows Fonts.com to log usage.
+    The fonts themselves are loaded in music: stylesheets/music/features/jr/theme/fonts/fiendstar.scss
+  %>
+  <% if Rails.env.live? && supersite_junior? %>
+    <%= stylesheet_link_tag "https://fast.fonts.net/lt/1.css?apiType=css&c=c63a9abc-a333-4052-8de7-2a9a98a690b6&fontids=1447292,1447426,1447510,1447568" %>
+  <% end %>
+
+  <%# Feature styles used by nearly all views: %>
+  <%= stylesheet_link_tag "music/features/masthead/main" %>
+  <%= stylesheet_link_tag "music/features/chat/main" %>
+
+  <%# Important: this imports both JS and CSS; the CSS needs to come in before any feature styles (:css_head). %>
+  <%= vite_client_tag %>
+  <%= vite_javascript_tag 'music_v3' %>
+
+  <%= yield :css_head %>
+  <%= stylesheet_link_tag "print", :media => "print" %>
+
+  <%# Datadog Real User Monitoring %>
+  <% if Rails.env.live? %>
+  <script src="https://www.datadoghq-browser-agent.com/us1/v4/datadog-rum.js"
+          type="text/javascript">
+  </script>
+  <script>
+    window.DD_RUM && window.DD_RUM.init({
+      applicationId: '437d22ab-4732-482f-b5b1-b4145f2789b0',
+      clientToken: 'pub136f7b41a579617a2fe507989f9631bc',
+      site: 'datadoghq.com',
+      service: 'm3',
+      env: 'production',
+      version: '<%= M3::VERSION %>',
+      sampleRate: 10,
+      trackInteractions: true,
+      sessionSampleRate: 10,
+      sessionReplaySampleRate: 20,
+      trackUserInteractions: true,
+      trackFrustrations: true,
+      trackResources: true,
+      trackLongTasks: true,
+      defaultPrivacyLevel: 'mask-user-input',
+    });
+
+    window.DD_RUM &&
+    window.DD_RUM.startSessionReplayRecording();
+  </script>
+  <% end %>
+
+  <%# Both of the JS manifest files referenced here load music/application.
+      The difference is in how many other (older) JS files also get included.
+      The v3 layout will use the v1 file for now until we decide to pare it down more
+  %>
+  <% if (defined? layout_version) %>
+    <%= javascript_include_tag 'application-music-v1' %>
+  <% else %>
+    <%= javascript_include_tag 'application' %>
+  <% end %>
+
+  <%= vite_javascript_tag 'shared_ui' %>
+
+  <%# Initialize Chat dependencies %>
+  <% unless @disable_chat_on_page -%>
+    <%= javascript_tag do -%>
+      var pubnub_token = <%= pubnub_token.to_s.html_safe %>;
+      <%= "// chat namespaces" %>
+      VHL.Chat = VHL.Chat || {};
+      VHL.Chat.CONFIG =
+      {
+        <%= "// VHL Messaging Client Wrapper expects type `undefined` if no session is found in the cache" %>
+        <%= "// https://github.com/vhl/dirt-driver-chat#1-initialization" %>
+        session: _.isEmpty(pubnub_token) ? undefined : pubnub_token,
+        partner_chat_cdn: "<%= "#{Rails.configuration.partner_chat_cdn}".html_safe %>",
+        activityId: "<%= @activity.blank? ? "" : "#{@activity.id}" %>",
+        activityType: "<%= @activity.blank? ? "" : "#{@activity.activity_type}" %>",
+        isCompletedPchatView: <%= controller.class == ActivitiesController && student_and_completed_activity? %>,
+        courseId: <%= "#{chat_presenter.chat_course_id_or_undefined}".html_safe %>,
+        enableVideo: <%= params[:enable_video] || "true" %>,
+        loadUI: <%= chat_feature_ui? ? "true" : "false" %>,
+        permissions: <%= chat_presenter.chat_permissions.html_safe %>,
+        pubnub_configured: <%= M3::Application.config.pubnub.present? %>, // Pubnub is an external messaging service
+        roster: <%= "#{chat_client_roster}".html_safe %>,
+        schoolIds: <%= current_user_with_schools.try(:school_ids) %>,
+        sectionId: <%= "#{chat_presenter.chat_section_id}".html_safe %>,
+        tokboxApiKey: "<%= "#{M3::Application.config.tokbox.fetch(:api_key, nil)}" %>", // Tokbox is an external video streaming service
+        userId: <%= current_user.try(:id) %>,
+        instructorUser: <%= current_user.try(:instructor?) %>,
+        currentProgram: <%= current_program.try(:id) || 0 %>,
+        grantsRoster: <%= "#{chat_grants_roster}".html_safe %>
+      }
+    <% end -%>
+  <% end %>
+
+  <%# Setup the multimedia store configuration %>
+  <%= render 'partials/js_multimedia_config' %>
+
+  <% if Rails.env.test? %>
+    <%= javascript_include_tag('chat/spec/chat_config_spec.js') %>
+  <% end %>
+  <!-- / End Partner Chat Stuff -->
+
+  <%= yield :js_head %>
+
+  <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/favicon-194x194.png" sizes="194x194">
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#c4161c">
+  <meta name="apple-mobile-web-app-title" content="VHLCentral">
+  <meta name="application-name" content="VHLCentral">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+
+  <% unless (defined? no_app_shell) && no_app_shell %>
+    <%= content_for(:theme_classes, theme_classes) %>
+  <% end %>
+
+  <% unless (defined?(disable_zendesk_chat) && disable_zendesk_chat) %>
+    <%= render 'partials/zendesk_snippet' %>
+  <% end %>
+
+  <% if Rails.env.test? && Rails.configuration.stub_js_audio %>
+    <%
+      # Some feature specs (like vocab_tools spec) don't want to use real
+      # audio media file so we here we mock the Audio javascript class to not
+      # load the media files. This prevent errors caused by missing files.
+      # Example of error:
+      # ActionController::RoutingError: No route matches [GET] "/79/vocab_tools/foo.mp3"
+    %>
+    <%= javascript_tag do %>
+      var Audio = function() {
+      return {
+      load: function() {},
+      play: function() {},
+      pause: function() {},
+      addEventListener: function() {}
+      };
+      };
+    <% end %>
+  <% end %>

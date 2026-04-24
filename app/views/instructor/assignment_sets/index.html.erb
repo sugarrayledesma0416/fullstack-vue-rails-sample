@@ -1,0 +1,20 @@
+<% content_for(:js_head, javascript_packs_with_chunks_tag('instructor/assignment_sets/index')) %>
+<% content_for(:css_head, stylesheet_packs_with_chunks_tag('instructor/assignment_sets/index')) %>
+
+<%= content_tag(
+      :div,
+      '',
+      class: 'js-assignment-sets-calendar',
+      data: {
+        assignments: @assignments.to_json,
+        'course-start-date' => @section.course_start_date.strftime("%Y-%m-%d"),
+        'course-end-date' => @section.course_end_date.strftime("%Y-%m-%d"),
+        'endpoint-url' => instructor_assignment_sets_path(
+          program_id: current_program.id
+        ),
+        'csv-url' => export_instructor_assignment_sets_path(
+          format: 'csv',
+          program_id: current_program.id
+        )
+      }
+    ) %>

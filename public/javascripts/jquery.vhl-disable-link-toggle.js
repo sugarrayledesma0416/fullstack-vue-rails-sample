@@ -1,0 +1,1 @@
+../../app/assets/javascripts/jquery.vhl-disable-link-toggle.js

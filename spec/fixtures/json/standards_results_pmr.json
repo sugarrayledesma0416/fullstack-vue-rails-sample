@@ -1,0 +1,142 @@
+[
+  {
+    "id": 99,
+    "user_id": null,
+    "section_id": null,
+    "cms_activity_id": 285669,
+    "results_data": {
+      "8e4b78f3-a05d-4e43-ac6f-b1c2dcb7f11e": {
+        "question_label": "question_01",
+        "points_earned": 1,
+        "points_possible": 1
+      },
+      "349552ff-7996-436c-9118-16edf2df8fb2": {
+        "question_label": "question_02",
+        "points_earned": 0,
+        "points_possible": 1
+      },
+      "ad3c1e29-447c-47cf-b89a-fa3d13488b88": {
+        "question_label": "question_03",
+        "points_earned": 1,
+        "points_possible": 1
+      },
+      "64d70de5-89f3-4653-a94c-905336f58f9b": {
+        "question_label": "question_04",
+        "points_earned": 1,
+        "points_possible": 1
+      },
+      "12ac65d6-ac41-4f79-8309-a10888712e3f": {
+        "question_label": "question_05",
+        "points_earned": 0,
+        "points_possible": 1
+      }
+    },
+    "created_at": "2023-03-30T16:23:05-04:00",
+    "updated_at": "2023-03-30T16:23:05-04:00"
+  },
+  {
+    "id": 100,
+    "user_id": null,
+    "section_id": null,
+    "cms_activity_id": 285670,
+    "results_data": {
+      "5f531235-490b-457b-9369-d7e09ca2b190": {
+        "question_label": "question_06",
+        "points_earned": 1,
+        "points_possible": 1
+      },
+      "e1c19962-18ea-4a5b-9675-4df13def5996": {
+        "question_label": "question_07",
+        "points_earned": 1,
+        "points_possible": 1
+      },
+      "7c41dd1b-bd6c-4ab5-9176-19b7f8cfadc0": {
+        "question_label": "question_08",
+        "points_earned": 1,
+        "points_possible": 1
+      },
+      "acec2b30-ccec-445e-b8d9-54460309df00": {
+        "question_label": "question_09",
+        "points_earned": 1,
+        "points_possible": 1
+      },
+      "9a26e3fd-2b26-41f4-94e2-e6c65d01476d": {
+        "question_label": "question_10",
+        "points_earned": 1,
+        "points_possible": 1
+      }
+    },
+    "created_at": "2023-03-30T16:23:05-04:00",
+    "updated_at": "2023-03-30T16:23:05-04:00"
+  },
+  {
+    "id": 101,
+    "user_id": null,
+    "section_id": null,
+    "cms_activity_id": 285671,
+    "results_data": {
+      "6a99b9fd-fd76-4af8-8386-ad2140afa48b": {
+        "question_label": "question_11",
+        "points_earned": 0,
+        "points_possible": 1
+      },
+      "aa0b6a1c-206f-4192-932e-c980dcea572e": {
+        "question_label": "question_12",
+        "points_earned": 1,
+        "points_possible": 1
+      },
+      "eee7ea48-bfdd-4e41-8342-d53b165ce636": {
+        "question_label": "question_13",
+        "points_earned": 10.4,
+        "points_possible": 15
+      },
+      "93e1814e-1935-4591-95a3-d8ff9554c0bb": {
+        "question_label": "question_14",
+        "points_earned": 1,
+        "points_possible": 1
+      },
+      "56a5775a-589f-49d7-a922-506de373c4ba": {
+        "question_label": "question_15",
+        "points_earned": 1,
+        "points_possible": 1
+      }
+    },
+    "created_at": "2023-03-30T16:23:05-04:00",
+    "updated_at": "2023-03-30T16:23:05-04:00"
+  },
+  {
+    "id": 102,
+    "user_id": null,
+    "section_id": null,
+    "cms_activity_id": 285672,
+    "results_data": {
+      "8ba67231-ea4e-43cc-99bd-cc9171c237ed": {
+        "question_label": "question_16",
+        "points_earned": 1,
+        "points_possible": 1
+      },
+      "34b00ac9-37b7-4c1b-b866-be3f71e7cd88": {
+        "question_label": "question_17",
+        "points_earned": 1,
+        "points_possible": 1
+      },
+      "05c950e8-d0fa-47a5-abe1-0d43f0e9aa83": {
+        "question_label": "question_18",
+        "points_earned": 0,
+        "points_possible": 1
+      },
+      "6e3d3807-de76-478f-b51c-171f5f2ab755": {
+        "question_label": "question_19",
+        "points_earned": 1,
+        "points_possible": 1
+      },
+      "5a9c4e7e-75d8-46ae-b8ce-384fbb874480": {
+        "question_label": "question_20",
+        "points_earned": 2.8,
+        "points_possible": 4
+      }
+    },
+    "created_at": "2023-03-30T16:23:05-04:00",
+    "updated_at": "2023-03-30T16:23:05-04:00"
+  }
+]

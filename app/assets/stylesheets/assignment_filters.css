@@ -1,0 +1,125 @@
+#day input.datepicker {
+  background: #FFF url('../images/calendar.gif') no-repeat 87px 7px; 
+  cursor: pointer;
+  width: 100px;
+}
+
+div.edit_summary_sentence{
+  display:inline;
+  float: right;
+  margin-left: 20px;
+}
+
+.filter_set_container h3 {
+  color: #565656;
+  float: left;
+  font-size: 12px;
+  margin-right: 10px;
+  margin-bottom: 0px;
+  width: 125px;
+}
+
+.filter_set_container span {
+  color: #565656;
+  font-size: 12px;
+}
+
+.filter_set_container a {
+  font-size: 12px;
+}
+
+.filter_groups {
+  padding: 15px;
+  position: relative;
+}
+
+.faded {
+  background-color: #FFF;
+  opacity: 0.3;
+}
+
+#properties.focused,
+#location.focused, 
+#previously_assigned.focused {
+  background: url('/images/grad_assign_cal.png') repeat-x;
+}
+
+.filter_set_container hr {
+  border: 1px solid #e0e0e0;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.filter_options {
+  float: left;
+  width: 500px;
+}
+
+.filter_options label {
+  color: #565656;
+  display: inline-block;
+  font-weight: normal;
+  padding: 0px 0px 10px 0px;
+  width: 110px;
+}
+
+.filter_links {
+  bottom: 15px;
+  height: 30px;
+  position: absolute;
+  right: 16px;
+  width: 150px;
+  display: flex;
+  align-items: center;
+}
+
+a.cancel {
+  display: inline;
+  float: right;
+  font-size: 13px;
+  font-weight: normal;
+  margin-right: 30px;
+}
+
+input.red-button {
+  float:right;
+  display: inline;
+}
+
+.disabled_element_wrapper {
+  position: relative;
+  margin: 0;
+  display: inline-block;
+  padding:0;
+}
+
+#day .disabled_element_wrapper {
+  filter: alpha(opacity=60);
+  opacity: 0.6;
+  font-style:italic;
+}
+
+#location,
+#properties,
+#previously_assigned {
+  position: relative;
+}
+
+#location .disabled,
+#properties .disabled,
+#previously_assigned .disabled {
+  height: 45px;
+  position: absolute;
+  width: 830px;
+  z-index: 400;
+}
+
+
+.assignment_page .select_wrapper {
+  background: none;
+}
+
+.ns-assignment-filter .c-select--assignment-filter {
+  max-width: 14rem;
+  height: 1.5rem; 
+}

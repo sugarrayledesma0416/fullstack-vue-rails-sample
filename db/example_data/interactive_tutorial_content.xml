@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<activity language="es" title="Tutorial: Subject pronouns and the verb être" activity_type="interactive_tutorial">
+<title><b>Tutorial</b>: Subject pronouns and the verb <b>être</b></title>
+  <dl>Watch the following tutorial and complete the activities.</dl>
+  <items>
+    <style/>
+    <!-- this is the container for the interactive tutorial video -->
+    <tutorial>
+      <!-- video must be an mp4 for full functionality -->
+      <video id="127765"/>
+      <!-- define the checkpoints for the video -->
+      <checkpoints>
+        <!-- each checkpoint has 4 attributes -->
+        <!-- start = seconds from the beginning of the video -->
+        <!-- end = seconds from the beginning of the video and after start -->
+        <!-- ref = a unique value referring to the checkpoint activity -->
+        <!-- stop = true if the video should stop to display an activity -->
+        <checkpoint start="120" end="130" ref="1" stop="true"/>
+        <checkpoint start="188" end="195" ref="2" stop="true"/>
+        <checkpoint start="210" end="220" ref="3" stop="true"/>
+        <checkpoint start="234" end="244" ref="4" stop="true"/>
+      </checkpoints>
+    </tutorial>
+    <!-- this is a checkpoint activity for a stopping point in the video -->
+    <!-- checkpoint_ref should match a ref value from the checkpoint list -->
+    <!-- acctivity_type can be drop_down or multiple_choice -->
+    <checkpoint_activity activity_type="multiple_choice" checkpoint_ref="1">
+           <dl>Complete each sentence with the correct form of <b>être</b>.</dl>
+           <items>
+               <style/>
+               <item>
+                   <prompt>La acualera se diluye (<i>is diluted</i>)  con agua.</prompt>
+                   <choices>
+                       <answer>cierto</answer>
+                       <distractor>falso</distractor>
+                     </choices>
+                 </item>
+             </items>
+         </checkpoint_activity>
+    <checkpoint_activity activity_type="drop_down" checkpoint_ref="2">
+      <dl>Complete each sentence with the correct form of <b>être</b>.</dl>
+      <items>
+        <style/>
+        <item>
+          <prompt>Elle <wol ref="1"/> de Bordeaux.</prompt>
+          <choices ref="1">
+            <answer>est</answer>
+            <distractor>sommes</distractor>
+          </choices>
+        </item>
+        <item>
+          <prompt>Ils <wol ref="1"/> à l'université.</prompt>
+          <choices ref="1">
+
+            <distractor>es</distractor>
+              <answer>sont</answer>
+          </choices>
+        </item>
+        <item>
+          <prompt>Tu <wol ref="1"/> Véronique?</prompt>
+          <choices ref="1">
+
+            <distractor>êtes</distractor>
+            <answer>es</answer>
+          </choices>
+        </item>
+        <item>
+          <prompt>Vous <wol ref="1"/> à la fac?</prompt>
+          <choices ref="1">
+
+            <distractor>suis</distractor>
+            <answer>êtes</answer>
+          </choices>
+        </item>
+      </items>
+    </checkpoint_activity>
+    <checkpoint_activity activity_type="word_ordering" checkpoint_ref="3">
+       <dl>Here is a direction line</dl>
+       <items>
+           <style/>
+           <item>
+             <final_sentence>Elles voyagent en France, n'est-ce pas?</final_sentence>
+               <prompt>
+                  <wol ref="1"/>
+                  <wol ref="2"/>
+                  <wol ref="3"/>,
+                  <wol ref="4"/>?
+              </prompt>
+               <answers>
+                   <answer wol_ref="2">voyagent</answer>
+                   <answer wol_ref="3">en France</answer>
+                   <answer wol_ref="4">n'est-ce pas</answer>
+                   <answer wol_ref="1">elles</answer>
+                 </answers>
+             </item>
+           <item>
+            <final_sentence>Est-ce que tu détestes le cours d'économie?</final_sentence>
+               <prompt>
+                  <wol ref="1"/>
+                  <wol ref="2"/>
+                  <wol ref="3"/>
+                  <wol ref="4"/>
+                  <wol ref="5"/>
+                  <wol ref="6"/>?
+                </prompt>
+               <answers>
+                   <answer wol_ref="4">le</answer>
+                   <answer wol_ref="6">d'économie</answer>
+                   <answer wol_ref="1">est-ce que</answer>
+                   <answer wol_ref="3">détestes</answer>
+                   <answer wol_ref="5">cours</answer>
+                   <answer wol_ref="2">tu</answer>
+                 </answers>
+             </item>
+           <item>
+            <final_sentence>Vous n'étudiez pas demain, d'accord?</final_sentence>
+               <prompt>
+                <wol ref="1"/>
+                <wol ref="2"/>
+                <wol ref="3"/>
+                <wol ref="4"/>,
+                <wol ref="5"/>?
+              </prompt>
+               <answers>
+                   <answer wol_ref="3">pas</answer>
+                   <answer wol_ref="5">d'accord</answer>
+                   <answer wol_ref="4">demain</answer>
+                   <answer wol_ref="2">n'étudiez</answer>
+                   <answer wol_ref="1">vous</answer>
+                 </answers>
+             </item>
+           <item>
+            <final_sentence>Est-ce qu'on travaille au resto U?</final_sentence>
+               <prompt>
+                  <wol ref="1"/>
+                  <wol ref="2"/>
+                  <wol ref="3"/>
+                  <wol ref="4"/>
+                  <wol ref="5"/>?
+                </prompt>
+               <answers>
+                   <answer wol_ref="2">on</answer>
+                   <answer wol_ref="3">travaille</answer>
+                   <answer wol_ref="5">resto U</answer>
+                   <answer wol_ref="4">au</answer>
+                   <answer wol_ref="1">est-ce qu'</answer>
+                 </answers>
+             </item>
+         </items>
+    </checkpoint_activity>
+    <checkpoint_activity activity_type="category_matching" checkpoint_ref="4">
+       <dl>Here is a direction line</dl>
+       <items>
+           <style/>
+           <item>
+              <categories>
+                  <category ref="1">singular</category>
+                  <category ref="2">plural</category>
+                </categories>
+              <prompts>
+                  <prompt answer_ref="2">animaux</prompt>
+                  <prompt answer_ref="2">amis</prompt>
+                  <prompt answer_ref="2">étudiants</prompt>
+                  <prompt answer_ref="1">objet</prompt>
+                  <prompt answer_ref="1">bureau</prompt>
+                  <prompt answer_ref="1">télévision</prompt>
+                </prompts>
+             </item>
+         </items>
+    </checkpoint_activity>
+    <!-- it can be any standard type -->
+    <activity title="Final Activity Title" activity_type="fill_in_the_blanks">
+      <dl>Complete each sentence with the appropriate form of the verb <b>être</b>.</dl>
+      <items>
+        <style>
+            <wol_size>words_standard</wol_size>
+            <item_numbers>show</item_numbers>
+        </style>
+        <item>
+          <prompt>Je <wol ref="1"/> italienne.</prompt>
+          <answers ref="1">
+            <answer>suis</answer>
+          </answers>
+        </item>
+        <item>
+          <prompt>Vous <wol ref="1"/> acteur.</prompt>
+          <answers ref="1">
+            <answer>êtes</answer>
+          </answers>
+        </item>
+        <item>
+          <prompt>Les professeurs <wol ref="1"/> dans la salle de classe.</prompt>
+          <answers ref="1">
+            <answer>sont</answer>
+          </answers>
+        </item>
+        <item>
+          <prompt>Nous <wol ref="1"/> étudiants à Strasbourg.</prompt>
+          <answers ref="1">
+            <answer>sommes</answer>
+          </answers>
+        </item>
+        <item>
+          <prompt>C'<wol ref="1"/> une grande maison.</prompt>
+          <answers ref="1">
+            <answer>est</answer>
+          </answers>
+        </item>
+        <item>
+          <prompt>Sophie <wol ref="1"/> au restaurant.</prompt>
+          <answers ref="1">
+            <answer>est</answer>
+          </answers>
+        </item>
+        <item>
+          <prompt>Ahmed <wol ref="1"/> musicien.</prompt>
+          <answers ref="1">
+            <answer>est</answer>
+          </answers>
+        </item>
+        <item>
+          <prompt>M. et Mme Robert <wol ref="1"/> de Bruxelles.</prompt>
+          <answers ref="1">
+            <answer>sont</answer>
+          </answers>
+        </item>
+        <item>
+          <prompt><wol ref="1"/>-vous content</prompt>
+          <answers ref="1">
+            <answer>Êtes</answer>
+          </answers>
+        </item>
+        <item>
+          <prompt>Je <wol ref="1"/> à Genève.</prompt>
+          <answers ref="1">
+            <answer>suis</answer>
+          </answers>
+        </item>
+        <item>
+          <prompt>Nous <wol ref="1"/> de Bordeaux.</prompt>
+          <answers ref="1">
+            <answer>sommes</answer>
+          </answers>
+        </item>
+        <item>
+          <prompt>Tu <wol ref="1"/> Jean-Paul?</prompt>
+          <answers ref="1">
+            <answer>es</answer>
+          </answers>
+        </item>
+      </items>
+    </activity>
+  </items>
+</activity>
+

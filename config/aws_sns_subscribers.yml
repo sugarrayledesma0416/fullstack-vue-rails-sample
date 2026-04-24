@@ -1,0 +1,44 @@
+default_delivery_policy: &default_policy
+  healthyRetryPolicy:
+    minDelayTarget: 1
+    maxDelayTarget: 26
+    numRetries: 100
+    numMaxDelayRetries: 0
+    numNoDelayRetries: 0
+    numMinDelayRetries: 10
+    backoffFunction: linear
+  throttlePolicy: {}
+
+aws_sns_topics:
+  - topic_name: enrollment
+    delivery_policy: *default_policy
+  - topic_name: user
+    delivery_policy: *default_policy
+  - topic_name: school
+    delivery_policy: *default_policy
+  - topic_name: school_program_admin_user
+    delivery_policy: *default_policy
+  - topic_name: school_user
+    delivery_policy: *default_policy
+  - topic_name: lti_context_link
+    custom_class: 'Lti::ContextLink'
+    delivery_policy: *default_policy
+  - topic_name: lti_launch
+    custom_class: 'Lti::Launch'
+    delivery_policy: *default_policy
+  - topic_name: lti_platform
+    custom_class: 'Lti::Platform'
+    delivery_policy: *default_policy
+  - topic_name: lti_user_link
+    custom_class: 'Lti::UserLink'
+  - topic_name: one_roster_linked_user
+    custom_class: 'OneRoster::LinkedUser'
+    delivery_policy: *default_policy
+  - topic_name: cartridge_consumer
+    custom_class: 'Cartridge::Consumer'
+    delivery_policy: *default_policy
+  - topic_name: cartridge_user_link
+    custom_class: 'Cartridge::UserLink'
+    delivery_policy: *default_policy
+  - topic_name: school_config
+    delivery_policy: *default_policy

@@ -1,0 +1,108 @@
+<%= render :partial => 'activities/include' %>
+<% content_for(:js_head, javascript_include_tag('ckeditor_basepath_override.js')) if @activity.composition? || @activity.has_composition_activities? %>
+
+<% if @attempt %>
+  <% content_for :activity_status do %>
+    <%= format_footer_score(
+          @score,
+          @results,
+          @activity_presenter.format_rubric_completed_link(points_earned_vs_possible(@score))
+        )
+    %>
+    <%= render :partial => "activities/completion_progress", :locals => { :attempt => @attempt } %>
+  <% end %>
+<% end %>
+
+<% if @activity.activity_type == 'partner_chat' %>
+  <% content_for :hidden_form_fields do %>
+    <div class="temporary_input"> <!-- what is this for? -->
+      <input type="hidden" id="user_id" name="user_id" value="<%= current_user.id %>" />
+      <input type="hidden" id="partner_id" name="partner_id" value="" />
+    </div>
+
+    <input type="hidden" id="user_section_id" name="user_section_id" value="<%= current_section.id %>" />
+    <input type="hidden" id="partner_section_id" name="partner_section_id" value="" />
+    <input type="hidden" id="recording_path" name="recording_path" value="" />
+    <input type="hidden" id="recording_token" name="recording_token" value="" />
+  <% end %>
+<% end %>
+
+<% content_for :submit_buttons do %>
+  <% show_next_activity_button = @workset && !@workset.final_activity?(@attempt.activity) %>
+  <% course = current_user.student? ? @activity_presenter.course : current_focus.course %>
+  <%
+     show_portfolio_button = !@attempt.practice? &&
+                             course&.activity_share_to_portfolio?(@activity.activity_type) &&
+                             access_guardian.has_portfolio?
+  %>
+  <%= render :partial => 'activities/activity_footer', :locals => {:disabled => false,
+                                                                   :complete => true,
+                                                                   :activity_id => @activity.id,
+                                                                   :section_id => current_section.id,
+                                                                   :activity_content => @activity.content_object,
+                                                                   :activity_allows_reference_links => !@activity.assessment?,
+                                                                   :buttons => show_next_activity_button ? 'enable_practice_next_activity' : 'enable_practice',
+                                                                   :return_label =>  @return_label,
+                                                                   :return_url =>  @return_url,
+                                                                   :blank_submission_protection_enabled => false,
+                                                                   :enable_accentbar => true,
+                                                                   :show_portfolio_button => show_portfolio_button } %>
+<% end %>
+
+<%= render :partial => 'activities/show_header_content' %>
+<div class="u-hidden  js-mobile-tabset-container"></div>
+<% if @activity -%>
+  <div id="activity_wrapper" class="c-activity-wrapper">
+    <div id="main_content">
+    <% if current_user.instructor? %>
+      <%= render 'instructor_notes/instructor_action_bar' %>
+    <% end %>
+      <% if @activity.content_object -%>
+        <div class="c-activity-info  c-mobile-tabs-view__reference-content">
+            <%= render  :partial => 'activities/activity_context',
+                :locals => {  :activity => @activity,
+                  :attempt_track => @attempt_track,
+                  :classwork => @classwork,
+                  :attempt => @attempt,
+                  :workset => @workset,
+                  :score => @score,
+                  :instructor_feedback => @instructor_feedback,
+                  :section => current_section} %>
+        </div>
+        <div role="main" id="activity_shell" class="c-activity-content" lang="<%= @activity.language %>">
+          <% if @show_not_enrolled_warning %>
+            <%= render 'activities/not_enrolled_warning' %>
+          <% end %>
+          <div id="activity_body" class="c-activity-body">
+            <%= form_for(:activity, :url => section_activity_path(current_section_id, @activity), :html => { id: 'activity_form',
+                                                                                                             class: 'c-activity-form',
+                                                                                                             method: :post }) do |form| %>
+              <% complete = @attempt.complete? %>
+              <% if @activity.content_object.is_a?(MaestroActivityEngine::ActivityContent::Content) %>
+                <div id="testFrame" class="c-activity-main">
+                  <%  @output_buffer << render(:partial => "maestro_activity_engine/activities/complete/" + @activity.content_object.partial_name,
+                                    :locals => { :content_object => @activity.content_object,
+                                               :activity_id => @activity.id,
+                                               :section => current_section.present? ? current_section : nil,
+                                               :read_only_status => @activity.read_only?,
+                                               :results => @results,
+                                               :attempt => @attempt,
+                                               :attempt_complete => complete,
+                                               :display_score => !@attempt.practice?,
+                                               :classwork => @classwork} ) %>
+                </div>
+                <%= render :partial   => 'maestro_activity_engine/activities/partials/sidebar',
+                           :collection => @activity.content_object.sidebars, :as => :sidebar %>
+                <%=  yield :submit_buttons if @activity.content_object.submittable? %>
+              <% end -%>
+            <% end -%>
+          </div>
+        </div>
+      <% end -%>
+
+      <% if @next_link -%>
+        <%= render(:partial => "next_link", :locals => { :next_link => @next_link} ) %>
+      <% end -%>
+    </div>
+  </div>
+<% end -%>

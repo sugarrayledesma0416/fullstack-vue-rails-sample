@@ -1,0 +1,12 @@
+<label class="ac-no-visual" id="ac-s-by-s-dropdown-label">Students: </label>
+<select class="c-select  js-jump-to" id="student_dropdown_menu" aria-labelledby="ac-s-by-s-dropdown-label">
+
+  <% view_manager.students_to_grade.each_with_index do |student, index| %>
+
+    <%# TODO: Populate the label (2nd arg) properly from saved
+        "Show Student Names" checkbox value, then remove the initial
+    toggle in _grading_sets.js %>
+    <%= render 'dropdown_select_option', question_or_student: student, view_manager: view_manager %>
+  <% end %>
+</select>
+

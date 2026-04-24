@@ -1,0 +1,3 @@
+<% if workset.present? && current_user.student? -%>
+<%= render 'activities/workset', workset: workset, section: current_section, activity: activity %>
+<% end -%>

@@ -1,0 +1,89 @@
+<% content_for(:js_head, javascript_include_tag('dashboard')) %>
+<% content_for(:js_head, javascript_packs_with_chunks_tag("institution_admin/dashboard/configure_view")) %>
+<% content_for(:body_classes, "ns-full-width  ns-admin-dashboard  ns-music-v3") %>
+<% content_for(:css_head, stylesheet_link_tag('music/features/admin_dashboard/main')) %>
+<% content_for(:css_head, stylesheet_link_tag('institution_admin/dashboard/course')) %>
+<%= render 'layouts/flash', { flash: flash  } %>
+<% to_progress = institution_admin_section_metrics_path(params[:program_id], school_id: params[:school_id]) %>
+<% to_courses = institution_admin_courses_current_path(params[:program_id], school_id: params[:school_id]) %>
+<%= render partial: 'action_links', locals: {
+  current_program: @presenter.program,
+  school_id: @presenter.school.id ,
+  action_link: params[:origin] == 'progress' ? to_progress : to_courses,
+  text_link: params[:origin] == 'progress' ? 'Back to Progress' : 'Back to Courses'
+} %>
+<div class="u-pad-24">
+  <h1 class="u-txt-heading-2  c-enterprise__header  u-txt-light  u-txt-true-gray-600">Configure View</h1>
+  <p>Click the toggle to display or hide the course. Changes made will be visible on the <b>Courses</b> and <b>Progress</b> screens.</p>
+  <p>Re-ordering is automatically saved.</p>
+  <p class="u-txt-rt">
+    <button type="button" disabled class="c-button-v3  c-button-v3--primary  js-toggle-courses">Save Changes</button>
+  </p>
+  <table class="u-width-full  u-border-collapse  js-courses-by-school" data-school-id="<%= @school.id %>" role="application">
+    <thead class="u-txt-true-gray-900">
+      <tr>
+        <th class="u-txt-ctr  u-pad-8  u-txt-body-2  u-txt-semibold" width="1px"></th>
+        <th class="u-txt-ctr  u-pad-8  u-txt-body-2  u-txt-semibold"></th>
+        <th class="u-txt-ctr  u-pad-8  u-txt-body-2  u-txt-semibold"></th>
+        <th class="u-txt-ctr  u-pad-8  u-txt-body-2  u-txt-semibold">Weeks</th>
+        <th class="u-txt-ctr  u-pad-8  u-txt-body-2  u-txt-semibold">Sections</th>
+        <th class="u-txt-ctr  u-pad-8  u-txt-body-2  u-txt-semibold">Display</th>
+      </tr>
+    </thead>
+    <tbody class="u-bg-white  c-course-list  js-courses-by-school-target">
+      <% @presenter.courses_by_school_program[params[:program_id].to_i].each do |course|  %>
+        <tr
+          id="js_course_<%= course.id %>"
+          class="js-course-navigation-wrapper u-bord-bot-1  u-bord-true-gray-200  u-pad-10 <%= test_class('course-navigation-wrapper') %> <%= test_class("course-#{course.id}-wrapper") %>"
+          data-course-listing="course_<%= course.id -%>"
+          data-course-id="<%= course.id %>"
+          draggable="true"
+          aria-controls="courseControls"
+        >
+          <td class="u-pad-lt-16  u-pad-top-8">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M2 8.5C2 7.94772 2.44772 7.5 3 7.5H21C21.5523 7.5 22 7.94772 22 8.5C22 9.05228 21.5523 9.5 21 9.5H3C2.44772 9.5 2 9.05228 2 8.5ZM2 15.5C2 14.9477 2.44772 14.5 3 14.5H21C21.5523 14.5 22 14.9477 22 15.5C22 16.0523 21.5523 16.5 21 16.5H3C2.44772 16.5 2 16.0523 2 15.5Z" fill="#1D1D1D"/>
+            </svg>
+          </td>
+          <td class="u-pad-12  u-pad-lt-24">
+            <p class="u-txt-semibold  u-txt-body-1  u-mar-bot-0">
+              <%= course.name %>
+            </p>
+            <p class="u-txt-regular  u-txt-body-2  u-mar-bot-0">
+              <%= course.start_end_date %>
+            </p>
+          </td>
+          <td class="l-simple-grid-v3--1-2">
+            <%= image_tag(course.owner.avatar_thumb_url, role: 'presentation', class: 'c-avatar  u-float-lt', width: 40, height: 40) %>
+            <l-stack-v3 gap="0" class="u-pad-lt-10">
+              <p class="u-txt-semibold  u-txt-body-2  u-line-height-1-1  u-mar-bot-0">
+                <%= course.owner.full_name %>
+              </p>
+              <p class="u-txt-regular  u-txt-body-2  u-line-height-1-1  u-mar-bot-0  u-txt-true-gray-400">
+                Course Owner
+              </p>
+            </l-stack-v3>
+          </td>
+          <td class="u-txt-ctr">
+            <% duration = @presenter.duration_in_weeks_and_days(course)%>
+            <%= duration[:weeks] %>
+          </td>
+          <td class="u-txt-ctr">
+            <%= course.sections.count %>
+          </td>
+          <td class="u-txt-ctr">
+            <music-toggle-v3>
+              <input type="checkbox"
+                      class="js-toggle-show  <%= test_class("toggle-show-#{course.id}") %>  u-dis-none"
+                      value="<%= course.id %>"
+                      <% if !@hidden_courses.include?(course) %>checked<% end %>
+                      id="show_course_<%= course.id %>"/>
+                      <label class="c-label  js-toggle-show-radio" for="show_course_<%= course.id %>">
+                      </label>
+            </music-toggle-v3>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

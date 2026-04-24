@@ -1,0 +1,36 @@
+<%= javascript_include_tag("assignment_rank_list") %>
+
+<div class="reorder-instructor-content">
+  <div class="due-date">
+    Due date: <%= format_date_time(@assignments.first.due_date) %>
+  </div>
+
+  <div class="explanation">
+    Instructor content can be reorder within this due date.
+    Drag and drop to the desired location.
+  </div>
+
+  <div class="content-container">
+    <div id="rank_list_strand_name"></div>
+    <div data-container="assignment_wizard" class="assignables_wizard">
+      <%= form_tag(assignment_rank_lists_update_path, method: :put) do |form| %>
+        <ul id="assignment_rank_list">
+          <% @assignments.each do |assignment| %>
+            <% activity = assignment.assignable %>
+            <% activity_type = activity.instructor_created? ? "instructor-created" : "regular" %>
+            <li id="<%= assignment.id %>" class="<%= activity_type %>">
+              <%= hidden_field_tag 'ranks[]', nil, value: assignment.rank %>
+              <%= hidden_field_tag 'assignment_ids[]', nil, value: assignment.id %>
+              <%= hidden_field_tag 'activity_types[]', nil, value: activity_type %>
+              <%= activity.title %>
+            </li>
+          <% end %>
+        </ul>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="link_savechanges">
+    <%= submit_tag 'save', 'data-button' => 'submit', :onclick => 'return $(this).assignment_wizard("submit");', :class => "red-button prevent-default" %>
+  </div>
+</div>

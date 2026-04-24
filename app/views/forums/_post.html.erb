@@ -1,0 +1,110 @@
+<div class="c-forum-post  js-parent_<%= post.id %>" id="post_id_<%= post.id %>">
+
+  <!-- Part 1/2: Gray panel -->
+  <% unless @presenter.has_unsaved_edits?(post) %>
+    <div class="c-panel  c-panel--forum  js-post-body  js-post-body-<%= post.id %>">
+      <% unless post.deleted? %>
+        <div class="c-panel__header  c-panel__header--forum  js-post-header">
+          <%= render 'forums/post_meta', post: post, post_level_describedby: post_level_describedby %>
+        </div>
+      <% end %>
+
+      <div class="c-panel__body  c-panel__body--forum">
+        <p class="c-forum-post__text">
+          <%= post.text %>
+        </p>
+
+        <% if post.audio_uri && !post.deleted? %>
+          <%= Music::Components.media_button(
+            variant: 'listen',
+            toggle: :stop, 
+            classes: ['js-play-audio-comment']) %>
+          <span class="u-invisible  js-audio-comment-url" data-audio-url="<%= post.audio_uri %>"></span>
+        <% end %>
+      </div> <!-- / c-panel__body -->
+
+      <% unless post.deleted? %>
+        <div class="c-panel__footer  c-panel__footer--forum  js-post-actions  js-post-actions-<%= post.id %>">
+          <button class="c-button  c-button--border  c-forum-reply-button  js-start-reply"
+                  type="button"
+                  aria-describedby="<%= post_level_describedby %>"
+                  data-post-id="<%= post.id %>">Reply</button>
+          <% if post.edited? %>
+            <time datetime="<%= post.edited_at.to_json %>"
+                  class="c-forum-post__edit-date-time  flex-align-self-ctr  u-txt-ital">
+              Edited <%= format_date_time(post.edited_at, :compact_date_and_time) %>
+            </time>
+          <% end %>
+        </div> <!-- / c-panel__footer -->
+      <% end %>
+    </div> <!-- / c-panel--forum -->
+  <% end %>
+  <!-- Part 2/2: Open area -->
+  <div class="c-edit-form-wrapper  js-post-editable">
+    <%= form_for @presenter.edit_for(post),
+      url: forum_forum_post_path(current_program, current_section, @forum, post.id,
+                                 anchor: "post_id_#{post.id}"),
+      html: { id: "edit_post_id_#{post.id}",
+              class: "c-forum-post__edit-form  js-edit-form  js-edit-form-#{post.id}" \
+              "#{ '  u-hidden' unless @presenter.has_unsaved_edits?(post) }"
+            } do |form| %>
+      <%= render(
+            'partials/form_errors',
+            header_message: nil,
+            object: post
+          ) %>
+
+      <div class="c-form-item">
+        <div class="c-panel  c-panel--outline">
+          <div class="c-panel__footer  u-pad-16">
+            <%= render partial: 'forums/audio_controls', locals: { form: form } %>
+            <div role="alert" class="js-empty-input-error  u-txt-red  u-mar-top-16  u-mar-bot-16" ></div>
+            <%= button_tag 'Cancel', type: 'button', class: "c-button  c-no-button  u-pad-10  js-cancel-edit", data: { post_id: post.id } %>
+            <%= form.submit 'Submit', class: 'c-button  c-button--primary' %>
+          </div>
+        </div>
+      </div> <!-- /c-form-item -->
+
+      <input type="hidden" name="file"/>
+      <%= form.hidden_field :audio_path, 'data-audio-path' => "" %>
+
+    <% end %> <!-- / Edit form -->
+  </div>
+
+  <div class="c-reply-form-wrapper">
+    <%= render partial: 'forums/post_reply_modal', locals: { post: post } %>
+  </div> <!-- / c-form-reply-wrapper -->
+
+  <% if node.children.size > 0 %>
+    <div class="c-disclosure  c-disclosure--start  js-disclosure">
+      <button class="c-no-button  c-disclosure__header  u-mar-lt-0  js-disclosure-controller"
+          data-reply-count="<%= node.children.size %>"
+          aria-expanded="false"
+          aria-describedby="<%= post_level_describedby %>"
+          aria-controls="children-of-<%= node.object.id %>">
+        <div class="c-disclosure__marker  c-disclosure__marker--forum"></div>
+        <span class="js-disclosure-controller__text" >
+          <%= "View (#{node.children.size})" %>
+        </span>
+      </button>
+      <div id="children-of-<%= node.object.id %>" class="c-disclosure__body">
+        <div class="c-forum-post__children  js-post-children">
+          <% node.children.each_with_index do |child_node, index| %>
+            <span id=<%= "a11y_level_#{level}_reply_#{index+1}" %>
+                  class="u-screen-reader-only">
+              <%= "for Level #{level}, Reply #{index+1} of #{node.children.size}" %>
+            </span>
+            <%= render 'forums/post',
+                  post: child_node.object,
+                  node: child_node,
+                  level: level+1,
+                  post_level_describedby: "a11y_level_#{level}_reply_#{index+1}" %>
+            <% end %>
+        </div>
+      </div>
+    </div>
+
+
+  <% end %>
+
+</div> <!-- / c-forum-post -->

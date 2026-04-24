@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<activity assessment_type="practice" title="Prueba escrita" language="es" activity_type="exam">
+  <dl>Complete this practice test to review what you have learned in this lesson.</dl>
+  <items>
+    <style>
+      <item_numbers>show</item_numbers>
+    </style>
+    <activity title="Multiple choice activity title" activity_type="multiple_choice">
+      <title><b>Multiple choice activity title</b></title>
+      <dl>Multiple choice activity direction line</dl>
+      <items>
+        <style>
+          <item_numbers>show</item_numbers>
+        </style>
+        <reference type="exam">
+          <header><b>Multiple choice activity header</b></header>
+          <body>Multiple choice activity body.</body>
+        </reference>
+        <reference type="text">
+          <header></header>
+          <body>This is a text section reference without any header.</body>
+        </reference>
+        <reference type="text">
+          <header>Text reference header with some <i>html</i> formatting.</header>
+          <body>This is a text reference.</body>
+        </reference>
+        <item>
+          <prompt>multiple choice question 1</prompt>
+          <choices>
+            <answer>right answer 1</answer>
+            <distractor>wrong answer 2</distractor>
+            <distractor>wrong answer 3</distractor>
+          </choices>
+        </item>
+        <item>
+          <prompt>multiple choice question 2</prompt>
+          <choices>
+            <distractor>wrong answer 1</distractor>
+            <answer>right answer 2</answer>
+            <distractor>wrong answer 3</distractor>
+          </choices>
+        </item>
+      </items>
+    </activity>
+    <activity activity_type="drop_down" title="Drop down activity title" language="es">
+      <title><b>Drop down activity title</b></title>
+      <dl>Drop down activity direction line</dl>
+      <items>
+        <style>
+          <item_numbers>show</item_numbers>
+        </style>
+        <reference type="exam">
+          <header><b>Drop down activity header</b></header>
+          <body>Drop down activity body.</body>
+        </reference>
+        <item>
+          <prompt>Drop down question 1<wol/></prompt>
+          <choices>
+            <answer>answer_1_1</answer>
+            <distractor>answer_1_2</distractor>
+          </choices>
+        </item>
+        <item>
+          <prompt>Drop down question 2<wol ref="1"/> and <wol ref="2"/></prompt>
+          <choices ref="1">
+            <answer>answer_2_1_1</answer>
+            <distractor>answer_2_1_2</distractor>
+          </choices>
+          <choices ref="2">
+            <distractor>answer_2_2_1</distractor>
+            <answer>answer_2_2_2</answer>
+          </choices>
+        </item>
+        <item>
+          <prompt>Drop down question 3<wol/></prompt>
+          <choices>
+            <distractor>answer_3_1</distractor>
+            <answer>answer_3_2</answer>
+            <distractor>answer_3_3</distractor>
+          </choices>
+        </item>
+      </items>
+    </activity>
+  </items>
+</activity>

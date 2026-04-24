@@ -1,0 +1,9 @@
+<% unless undropped_failed_student_count.zero? %>
+  <span>
+    <strong>
+      Re-Enrollment failed for
+      <%= pluralize(undropped_failed_student_count, 'student') %> :
+    </strong>
+  </span>
+<% end %>
+

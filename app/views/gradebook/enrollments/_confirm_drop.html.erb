@@ -1,0 +1,18 @@
+<sl-dialog class="dialog-overview js-confirm-drop-overlay">
+  <span slot="label">Remove Students</span>
+  <p class="js-student-list-label">
+    Are you sure you want to remove the following students from <span class="u-txt-semibold"><%= @course.name %></span>?
+  </p>
+  <ul class="u-mar-bot-24 u-mar-top-24 u-pad-lt-20 js-student-list"></ul>
+  <l-line-v3 slot="footer" class="u-align-items-center u-justify-content-space-between">
+    <button class="c-button-v3 c-button-v3--tertiary js-cancel-drop">Cancel</button>
+    <button 
+      class="c-button-v3 c-button-v3--primary js-confirm-drop" 
+      id="drop_students_submit"
+      name="commit"
+      value="Remove Students"
+      type="submit">
+      Remove Students
+    </button>
+  </l-line-v3>
+</sl-dialog>

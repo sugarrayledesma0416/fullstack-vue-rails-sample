@@ -1,0 +1,17 @@
+<script class="js-mobile-tabs-template" type="text/x-handlebars-template">
+  <div class="ns-music-v1  c-mobile-tabset">
+    <div class="c-tabset">
+      <div class="c-tabset__tabs"
+            role="tablist">
+        {{#each this}}
+          <button type="button" 
+                  class="c-no-button  c-tabset__tab  js-mobile-tab-button  js-mobile-tab-button-{{@key}}"
+                  data-tab-key="{{@key}}"
+                  role="tab">
+                  {{this.name}}
+          </button>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</script>

@@ -1,0 +1,51 @@
+<h4>
+  <span class="lesson_spanner" style="border-left: 4px solid <%= concept_group.background_color %>">
+    <span class="weighted_text"><%= concept_group.lesson_display_name.html_safe %></span> |
+    <%= concept_group.name.html_safe %>
+  </span>
+</h4>
+<ul>
+  <% concept_group.activity_groups.each do |activity_group| -%>
+    <li class="activity_grading">
+      <span data-content-type="activity_title"><%= activity_group.title %></span>
+      <span class="icon"><%= format_activity_icon(activity_group.icon) if activity_group.icon.present? %></span>
+      <div class="scores">
+        <span class="submitted"><%= activity_group.due_date %></span>
+      </div>
+
+      <div class="student_group">
+        <% activity_group.student_groups.each do |student_group| %>
+          <div class="student_request">
+          <% if student_group.request_type == 'request_review' %>
+            <%= link_to(
+              student_group.full_name,
+              instructor_review_work_grade_path(
+                activity_id: activity_group.id,
+                program_id: current_program.id,
+                return_label: 'Return to student requests',
+                return_to: instructor_help_requests_path(current_program),
+                section_id: student_group.section_id,
+                user_id: student_group.id
+              ),
+              class: "student_name_link"
+            ) %>
+          <% else %>
+            <%= link_to(
+              student_group.full_name,
+              instructor_activity_path(
+                current_program,
+                activity_group.activity,
+                user_id: student_group.id,
+                show: 'my-answers'
+              ),
+              class: "student_name_link"
+            ) %>
+
+          <% end %>
+            <span class="request_count"><%= pluralize(student_group.count, 'request') %></span>
+          </div>
+        <% end -%>
+      </div>
+    </li>
+  <% end -%>
+</ul>

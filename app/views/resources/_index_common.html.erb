@@ -1,0 +1,88 @@
+<% content_for(
+      :body_classes,
+      '  standard_layout resources  ns-full-width  ns-resources'
+    ) %>
+
+<% content_for(:js_head, javascript_include_tag("jquery.hoverIntent.minified.js") ) %>
+<% content_for(:js_head, javascript_include_tag('stupidtable.min.js')) %>
+<% content_for(:js_head, javascript_include_tag('resources')) %>
+
+<% content_for(:js_head, javascript_include_tag('assignment_wizard') ) %>
+<% content_for(:js_head, javascript_include_tag('coming_soon')) %>
+
+<% content_for(:css_head, stylesheet_link_tag('music/features/resources/main')) %>
+<% content_for(:css_head, stylesheet_link_tag("add_assignments_dialog.css") ) %>
+
+<%= hidden_field_tag(
+      :show_to_students_link_base_url,
+      update_many_instructor_instructor_resource_settings_path
+    ) %>
+<%= hidden_field_tag(
+      :download_selected_resources_link_base_url,
+      download_multiple_resources_path(current_program.id)
+    ) %>
+
+<% if current_user.instructor? %>
+  <%= hidden_field_tag 'instructor_id', current_user.id %>
+<% elsif current_user.student? -%>
+  <% unless @section && @section.non_zero? %>
+    <% content_for(:body_classes, '  no_section_student') %>
+  <% end %>
+<% end -%>
+
+<%= render 'partials/coming_soon' %>
+
+<%= hidden_field_tag(
+      :is_instructor,
+      current_user.instructor? ? 1 : 0
+    ) %>
+
+<div id="main_content">
+  <div id="modal_box"></div>
+
+  <div class="l-grid  u-bord-top-1  u-bord-gray-d  u-bg-gray-f8">
+    <!-- Left sidebar -->
+    <div class="c-resources-sidebar  l-col-lg-3  l-col-12  u-bord-rt-1  u-bord-gray-d">
+      <!-- a header for mobile and tablet screen containing title and lesson name
+           It toggles filter(sidenav) on click -->
+      <div class="c-resources-header-mobile  u-mar-bot-32  u-bg-white  u-dis-lg-none  js-resource-nav-disclosure">
+        <div class="c-resources-header  c-resources-disclosure-heading">
+          <h2 class="u-txt-24  u-mar-bot-4  u-txt-reg"><%= @page_header %></h2>
+          <div class="u-mar-bot-0  u-txt-16" lang="<%= @presenter.resources_header.to_s.match?(/news and cultural updates/i) ? 'en' : @presenter.program.language_code %>"><%= @presenter.resources_header.html_safe %></div>
+        </div>
+        <span class="c-icon c-icon--xl c-icon--up-arrow c-resources-disclosure-icon  js-resources-disclosure-icon"></span>
+      </div>
+      <!-- /c-resources-header-mobile -->
+
+      <%= render(
+            'resources/index_partials/resources_nav_list',
+            components: @presenter.sorted_components,
+            lessons: @presenter.lessons,
+            presenter: @presenter,
+            units: @presenter.units
+          ) %>
+    </div>
+
+    <!-- Main column -->
+    <div class="c-resource-main-column  l-col-lg-9  l-col-12  u-pad-32">
+
+      <div class="c-resources-header-scroll-fixed  u-bg-gray-f8">
+        <div id="a11y-table-caption" class="c-resources-header  u-dis-none  u-dis-lg-flex">
+          <h1 class="u-txt-24  u-mar-bot-4  u-txt-reg"><%= @page_header %></h1>
+          <div class="u-txt-16  <%= test_class('resources-header') %>">
+            <%= @presenter.resources_header.html_safe %>
+          </div>
+        </div>
+        <%= render 'resources/index_partials/toolbar' %>
+      </div>
+      <div class="js-resources-ajax-container">
+        <%= render(
+              'resources/index_partials/resources_table',
+              presenter: @presenter,
+              return_to: @return_to,
+              sections: @sections
+            ) %>
+      </div>
+    </div> <!-- /end Main column -->
+  </div> <!-- /l-grid -->
+</div>

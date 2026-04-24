@@ -1,0 +1,74 @@
+<%= stylesheet_link_tag('institution_admin/dashboard/course') %>
+
+<div class="ns-music-v3">
+  <div class="c-banner  c-banner--return-from-sample-student">
+    <div class="l-container-fluid  u-bg-util-white">
+      <div class="u-txt-16 u-pad-top-10 u-pad-bot-10">
+        <div class="l-line  l-line--debug  u-justify-content-space-between  u-align-items-center">
+          <div class="l-grid">
+            <div class="u-pad-lt-0">
+              <div class="u-pad-lt-32  u-dis-flex">
+                <%= link_to institution_admin_sections_path(course_id: current_focus.course.id, program_id: current_program.id, school_id: current_focus.course.school.id), class: 'c-button-v3  c-button-v3--primary-clear  c-button-v3--xs  u-pad-0' do %>
+                  <music-icon-arrow rotate="2" class="u-fill-true-gray-900"></music-icon-arrow>
+                  <p class="c-enterprise__paragraph u-txt-true-gray-900 u-mar-0">Return to Course</p>
+                <% end %>
+                <div class="u-mar-lt-32  u-mar-6  u-dis-flex">
+                  <li class="c-menu__item  c-enterprise__menu  js-nav-system__item" data-show-sub="false">
+                    <a href="#"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                      class="c-menu__title  js-nav-system__link">
+                      <span class="c-enterprise__paragraph  u-txt-true-gray-700">
+                        <%= return_bar_presenter.current_course.name %>
+                      </span>
+                      <music-icon-down-arrow size="lg" class="u-mar-bot-8"></music-icon-down-arrow>
+                    </a>
+                    <ul class="c-menu__inner u-mar-top-8  u-pad-lt-0  u-pad-rt-0  u-bord-radius-32  c-enterprise__submenu  js-nav-system__subnav"
+                        role="menu"
+                        data-visually-hidden="true">
+                        <% return_bar_presenter.courses.where.not(id: return_bar_presenter.current_course.id).each do |course| %>
+                          <li class="c-menu__subitem" role="none">
+                            <a href="<%= return_bar_presenter.find_assign_path(params, course) %>">
+                              <span class="c-enterprise__paragraph  u-txt-true-gray-700">
+                                <%= course.name %>
+                              </span>
+                            </a>
+                          </li>
+                        <% end %>
+                    </ul>
+                  </li>
+                </div>
+                <div class="u-mar-lt-8  u-mar-6  u-dis-flex">
+                  <li class="c-menu__item  c-enterprise__menu  js-nav-system__item" data-show-sub="false">
+                    <a href="#"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                      class="c-menu__title  js-nav-system__link">
+                      <span class="c-enterprise__paragraph  u-txt-true-gray-700">
+                        <%= return_bar_presenter.assigning_options(params)[:selected] %>
+                      </span>
+                      <music-icon-down-arrow size="lg" class="u-mar-bot-8"></music-icon-down-arrow>
+                    </a>
+                    <ul class="c-menu__inner u-mar-top-8  u-pad-lt-0  u-pad-rt-0  u-bord-radius-32  c-enterprise__submenu  js-nav-system__subnav"
+                        role="menu"
+                        data-visually-hidden="true">
+                        <% return_bar_presenter.assigning_options(params)[:options].each do |option| %>
+                          <li class="c-menu__subitem" role="none">
+                            <a href="<%= option[1] %>">
+                              <span class="c-enterprise__paragraph  u-txt-true-gray-700">
+                                <%= option[0] %>
+                              </span>
+                            </a>
+                          </li>
+                        <% end %>
+                    </ul>
+                  </li>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

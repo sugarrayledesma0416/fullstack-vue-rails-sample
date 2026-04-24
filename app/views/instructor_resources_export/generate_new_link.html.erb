@@ -1,0 +1,8 @@
+<div class="ns-music-v1">
+  <h1> <%= @program.title%> </h1>
+  <div class="c-box c-box--outlined">
+    <p> Your zip file is being generated and the download link will appear in the export page the next time you select this program.</p>
+  </div>
+  <%= link_to Music::Components.icon(variant: 'arrow-left', text: 'Return to export tool'), index_instructor_resources_export_path, class: 'c-button  c-button--border  u-mar-bot-16'%>
+  <%= link_to Music::Components.icon(variant: 'arrow-left', text: 'Return to export program'), export_instructor_resources_export_path(program_id: @program.id), class: 'c-button  c-button--border  u-mar-bot-16'%>
+</div>

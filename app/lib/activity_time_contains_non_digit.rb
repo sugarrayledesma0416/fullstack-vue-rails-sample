@@ -1,0 +1,2 @@
+class ActivityTimeContainsNonDigit < StandardError
+end

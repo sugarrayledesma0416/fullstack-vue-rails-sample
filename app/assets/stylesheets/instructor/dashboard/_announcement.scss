@@ -1,0 +1,17 @@
+/* Dashboard Announcement */
+
+.c-announcement-container {
+  background-color: $white;
+  border: rpx(1) solid $gray-d;
+  border-left: rpx(12) solid $blue;
+  border-radius: rpx(8);
+  font-size: 16px;
+  position: relative;
+  padding: rpx(24) rpx(64) rpx(24) rpx(36);
+}
+
+.c-announcement-dismiss {
+  top: rpx(24);
+  right: rpx(24);
+  position: absolute;
+}

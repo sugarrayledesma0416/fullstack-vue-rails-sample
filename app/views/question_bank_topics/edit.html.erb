@@ -1,0 +1,35 @@
+<div class="ns-music-v1">
+  <%= form_for(@question_bank_topic,
+               method: 'put',
+               url: {action: 'update', id: @question_bank_topic.id},
+               html: { class: 'main' }) do |form| %>
+               <div class="c-form-item">
+                 <%= form.label :name, "Name", { class: 'c-form-item__label' }  %>
+                 <%= form.text_field :name, { class: 'c-form-item__input', size: '40' } %>
+               </div>
+               <div class="c-form-item  u-pad-top-16">
+                 <%= form.label :language, "Language", { class: 'c-form-item__label' }  %>
+                 <%= form.select :language,
+                                 options_for_select([['english', 'english'],
+                                                     ['french', 'french'],
+                                                     ['german', 'german'],
+                                                     ['italian', 'italian'],
+                                                     ['spanish', 'spanish']],
+                                 @question_bank_topic.language),
+                                 {},
+                                 class: 'c-select' %>
+               </div>
+               <div class="c-form-item  u-pad-top-16">
+                 <%= form.label :level, "Level", { class: 'c-form-item__label' }  %>
+                 <%= form.select :level,
+                                 options_for_select([['intro', 'intro'], ['intermediate', 'intermediate']],
+                                 @question_bank_topic.level),
+                                 {},
+                                 class: 'c-select' %>
+               </div>
+               <div class="c-button-group  u-pad-top-16">
+                 <%= link_to "cancel", question_bank_topics_path, { class: 'c-button  c-button' } %>
+                 <%= form.submit 'Save',  class: 'c-button c-button--primary' %>
+               </div>
+             <% end %>
+</div>

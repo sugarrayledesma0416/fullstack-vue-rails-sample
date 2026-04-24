@@ -1,0 +1,27 @@
+<%= link_to(question_bank_topics_path) do %>
+  <%= Music::Components.icon(
+        variant: 'return',
+        text: 'Return to Question Bank Topics List',
+        classes: ['c-embedded-icon--md', 'u-txt-16']
+      ) %>
+<% end %>
+
+<div class="l-grid  u-mar-bot-16">
+  <div class="l-col-12  u-pad-top-16">
+    <h1 class="c-heading--page-title  u-txt-24">
+      <%= @title %>
+    </h1>
+  </div>
+</div>
+
+<div class="ns-music-v1">
+  <%= form_tag(concepts_csv_question_bank_topics_path, method: :get) do %>
+    <div class="c-form-item">
+      <%= label_tag :program_id, "Enter a single program ID", { class: 'c-form-item__label  u-pad-bot-8' }  %>
+      <%= number_field_tag :program_id, '', { class: 'c-form-item__input', in: 1..999 } %>
+    </div>
+    <div class="c-form-item">
+      <%= submit_tag 'Download Concepts', class: 'c-button  c-button--primary  u-mar-top-16' %>
+    </div>
+  <% end %>
+</div>

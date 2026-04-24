@@ -1,0 +1,46 @@
+# When a line is commented out, the default values should work.
+# Only uncomment if you need to set a different value.
+
+## UA endpoint config
+UA_URL = 'http://dev.ua.vhlcentral.com' # Use https if you have SSL set up.
+
+## Licensing api endpoint config
+MAESTRO_API_SERVER_IP = 'dev.api.vhlcentral.com'
+# MAESTRO_API_PORT= '443' # default is 80
+# MAESTRO_API_PROTOCOL = 'https' # default is http
+# MAESTRO_API_USERNAME = 'other_username' # default is 'maestro'
+# MAESTRO_API_PASSWORD = 'other_password' # default is 'test'
+
+## Submission api endpoint config
+SUBMISSION_API_SERVER_IP = 'dev.submissions.vhlcentral.com'
+# SUBMISSION_API_SERVER_PORT = '443' # defaults to 80
+# SUBMISSION_API_SERVER_PROTOCOL = 'https' # defaults to http
+# SUBMISSION_API_USERNAME = 'other_username' # default is 'maestro'
+# SUBMISSION_API_PASSWORD = 'other_password' # default is 'password'
+
+## AWS Credential config for Boston dev envs
+# If your dev environment is not hosted at AWS, you will need to set the 
+# following to tell aws to authenticate using the credentials stored in
+# ~/.aws/credentials
+# The profile name is the value in square brackets above the access key and
+# secret key id values.
+# aws_dev_profile_name = 'your_profile_name'
+# Radner.use_aws_credentials = true
+# Rails.configuration.s3_activity_profile_name = aws_dev_profile_name
+# Rails.configuration.instructor_media_profile = aws_dev_profile_name
+# Radner.profile_name = aws_dev_profile_name
+
+## CAS config for reverse proxy
+# If routing to your local rails using a reverse proxy vs running passenger,
+# You might need to configure this:
+# For CAS, which uses the url_for controller method to build URLs to
+# send to UA for redirects.  Without explicitly setting the defaults,
+# it tries to guess the hostname, which doesn't play nice when using
+# special hostnames in an /etc/hosts file in conjunction with reverse
+# proxies.
+# Rails.application.configure do
+#   config.action_controller.default_url_options = {
+#     host: 'dev.m3.vhlcentral.com',
+#     port: 80
+#   }
+# end

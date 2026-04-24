@@ -1,0 +1,84 @@
+<% if activities_data.any? %>
+  <tbody>
+    <% activities_data.each do |shared_library_item| %>
+      <% if @content[:view] == 'library'  %>
+        <tr class="activities  c-row  c-shared-content-activity__row">
+          <td data-page-element="my_content_activity_title" class="activity-title">
+            <%= @presenter.activity_link(shared_library_item.activity) %>
+          </td>
+          <td data-page-element="my_content_created_by">
+            <% if (instructor = shared_library_item.source_activity.instructor) %>
+              <%= mail_to(instructor.email, instructor.last_name_first) %>
+            <% end %>
+          </td>
+          <td data-page-element="my_content_approved_by">
+            <% if (admin = shared_library_item.activity.instructor) %>
+              <%= mail_to(admin.email, admin.last_name_first) %>
+            <% end %>
+          </td>
+          <td data-page-element="my_content_activity_type">
+            <%= activity_label(shared_library_item.activity.activity_type) %>
+          </td>
+          <td class="activity-actions" data-page-element="my_content_allow_copy_activity">
+            <div class="u-txt-ctr c-form-item">
+              <%= check_box_tag 'shared_library_activities[]',
+                                shared_library_item.id,
+                                shared_library_item.allow_copy,
+                                class: 'c-form-item__checkbox js-shared-activity-allow-copy',
+                                id: "checkbox_#{shared_library_item.id}" %>
+              <label class="u-mar-top-neg-16 c-form-item__label" for=<%= "checkbox_#{shared_library_item.id}" %> ></label>
+            </div>
+          </td>
+          <td class="activity-actions  u-mar-rt-16" data-page-element="my_content_delete_activity">
+            <div class="u-txt-ctr">
+              <%= link_to Music::Components.icon(variant: 'delete'),
+                institution_admin_content_delete_as_shared_path(@presenter.program.id,
+                                                                school_id: @presenter.school.id,
+                                                                activity_id: shared_library_item.activity.id),
+                                                                title: 'Remove as shared',
+                                                                data: { confirm: 'Instructors will no longer be able to copy the shared activity.' },
+                                                                method: :delete %>
+          </div>
+          </td>
+        </tr>
+      <% elsif @content[:view] == 'queue' && !shared_library_item.source_activity.is_shared_source? %>
+        <tr class="activities  c-row  c-shared-content-activity__row">
+          <td data-page-element="my_content_approve" class="u-dis-flex">
+            <div class="c-button-group  u-mar-auto  u-min-width-small  u-float-lt">
+              <button class="c-button  c-button--primary  u-min-width-small  u-pad-8  js-shared-activity-queue-approve-content"
+                      type="button"
+                      data-program-id="<%= @presenter.program.id %>"
+                      data-school-id="<%= @presenter.school.id %>"
+                      data-source-activity-id="<%= shared_library_item.source_activity.id %>">
+              <%= Music::Components.icon(variant: 'checkmark', invert: true) %>
+            </button>
+            <%= render partial: 'modal_shared_activity_approve_request' %>
+
+            <%=button_to institution_admin_content_deny_as_shared_path(@presenter.program.id,
+                                                                        school_id: @presenter.school.id,
+                                                                        activity_id: shared_library_item.source_activity.id),
+                          method: "delete",
+                          class: 'c-button  c-button--border  u-min-width-small  u-pad-8' do %>
+              <%= Music::Components.icon(variant: 'close', size: 'sm') %>
+            <% end %>
+            </div>
+          </td>
+          <td data-page-element="my_content_activity_title" class="activity-title">
+            <%= @presenter.activity_link(shared_library_item.source_activity) %>
+          </td>
+          <td data-page-element="my_content_created_by">
+            <% if (instructor = shared_library_item.source_activity.instructor) %>
+              <%= mail_to(instructor.email, instructor.last_name_first) %>
+            <% end %>
+          </td>
+          <td data-page-element="my_content_activity_type">
+            <%= activity_label(shared_library_item.source_activity.activity_type) %>
+          </td>
+          <td data-page-element="my_content_created_at">
+            <%= shared_library_item.source_activity.created_at.strftime("%m/%d/%y") %>
+          </td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+<% end %>

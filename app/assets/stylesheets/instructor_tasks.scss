@@ -1,0 +1,321 @@
+@import 'music/library/v1/base/main';
+/* Styling for both the Instructor Grading To Do page and the Instructor Review Requests To Do page.*/
+
+
+/* Page Layout */
+
+.grading_tasks #column_one {
+  width: 300px;
+  float: left;
+  margin: 0 0 0 20px;
+}
+
+.grading_tasks #column_two {
+  width:520px;
+  float: right;
+  margin: 0 20px 0 0;
+}
+
+/* Left Side Navigation */
+
+h3 {
+  font-size: 16px;
+  color: #969696;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+}
+
+#task_categories_wrapper {
+  width: 300px;
+  box-shadow: 3px 3px 5px 1px #AAA;
+  -webkit-box-shadow: 3px 3px 5px 1px #AAA;
+  -moz-box-shadow: 3px 3px 5px 1px #AAA;
+}
+
+#task_categories_wrapper ul {
+  background: url('/images/grading_gradient.png') repeat-y;
+}
+
+/* List of Categories on the Left Side */
+li.task_category {
+  display: block;
+  height: 57px;
+}
+
+li.task_category h3 {
+  display: block;
+  float: left;
+  width: 213px;
+}
+
+li.task_category:hover {
+  background: #DFF09F;
+  color: #565656;
+}
+
+li.task_category a {
+  cursor: pointer;
+  display: block;
+  padding: 20px 0px 0px 25px;
+  height: 36px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #565656;
+  border-bottom: 1px solid #ADADAD;
+}
+
+li.task_category a:hover {
+  color: #565656;
+  text-decoration: none;
+}
+
+li.task_category.expanded,
+li.task_category.expanded a {
+  color: #FFF;
+}
+
+li.task_category.expanded:hover,
+li.task_category.expanded:hover a {
+  color: #565656;
+}
+
+.task_numbers {
+  float: right;
+  padding: 10px 5px 10px 5px;
+  border-left: 1px solid #ADADAD;
+  height: 36px;
+  width: 75px;
+  text-align: center;
+  font-size: 12px;
+  border-bottom: 1px solid #ADADAD;
+}
+
+li.task_category.expanded .task_numbers {
+  border-left: 1px solid #FFF;
+}
+
+li.task_category.expanded:hover .task_numbers {
+  border-left: 1px solid #ADADAD;
+}
+
+.circled {
+  background: url('/images/sdash_circ.png') top center no-repeat;
+  height: 24px;
+  display: block;
+  padding-top: 3px;
+  padding-left: 1px;
+  text-align: center;
+}
+
+li.task_category.expanded .circled {
+  background: url('/images/sdash_circ_w.png') top center no-repeat;
+}
+
+li.task_category.expanded:hover .circled {
+  background: url('/images/sdash_circ.png') top center no-repeat;
+}
+
+.assignments {
+  display: block;
+  font-size: 11px;
+}
+
+/* Main Content */
+
+.instructor_task_header {
+  padding: 10px 0px 10px 12px;
+  height: 18px;
+}
+
+.instructor_task_header h3 {
+  color: #FFF;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.instructor_tasks .lesson_spanner {
+  color: #565656;
+  padding-left:5px;
+}
+
+.instructor_task_activities h4 {
+  margin: 0px;
+  background-color: #E6E6E6;
+  padding: 4px 13px;
+  border-bottom: 2px solid #FFF;
+}
+
+.ns-grading {
+
+  .activity_grading {
+    background-color: $gray-f5;
+    border-bottom: rpx(2) solid $white;
+    padding: rpx(4) rpx(10) rpx(4) rpx(12);
+  }
+}
+
+.scores {
+  float: right;
+  font-size: $font-size-12;
+  margin-right: rpx(5);
+}
+
+.graded {
+  font-size: $font-size-12;
+  width: rpx(90);
+}
+
+.submitted {
+  font-size: $font-size-12;
+  margin-left: auto;
+  width: rpx(90);
+}
+
+.no_tasks {
+  background: #F5F5F5;
+  padding: 4px 0 4px 12px;
+  height:185px;
+}
+
+/* Specific Changes for the Help & Review Request To Do Page. */
+.student_group {
+  margin-left: 15px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.help_request_set_status {
+  margin-top: 20px;
+}
+
+.request_label {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.change_settings {
+  margin-top: 10px;
+}
+
+.request_tasks li.task_category.expanded a,
+.request_tasks li.task_category a {
+  height: 45px;
+  padding-top: 11px;
+}
+
+/* Choose Grading Style Page */
+
+#grading_style_form_container {
+  margin: 0 30px 0 30px;
+  background: #F5F5F5;
+  border: 1px solid #EDEDED;
+  padding: 10px 20px 10px 20px;
+}
+
+#grading_style_options {
+  margin-top: 10px;
+}
+
+#grading_style_options label {
+  font-weight: normal;
+  display: inline;
+  padding: 0;
+  margin: 0 0 0 5px;
+}
+
+.grading_style_forms {
+  display: block;
+  margin-bottom: 5px;
+  width: 550px;
+}
+
+.grading_style_forms .grading_style {
+  display: inline;
+}
+
+input.grading_style:disabled + label {
+  opacity: 0.4;
+}
+
+#start_link {
+  float: right;
+  position: relative;
+  margin-top: -45px;
+  margin-right: 45px;
+}
+
+.preview_text {
+  float: right;
+  margin: 20px 20px 10px 0;
+  font-size: 18px;
+  color: #666;
+  letter-spacing: 1px;
+}
+
+#preview_container {
+  padding: 0px;
+  margin: 20px 30px 50px 30px;
+  border: 5px solid #c3c3c3;
+  background: #d5d5d5 url('/images/grading_preview_grad.png') repeat-x;
+}
+
+.auto_graded {
+  display: block;
+  margin-top: 10px;
+}
+
+/* Activity Preview Style Cascade */
+
+#preview_container .instructions-frame {
+  margin: 10px 0px 0px 10px;
+}
+
+#preview_container .reference_model {
+  padding: 10px 20px;
+}
+
+#preview_container .c-activity-wrapper {
+  background-color: transparent;
+}
+
+#preview_container #main_content textarea {
+  background: #d5d5d5;
+  color: #7b7b7b;
+}
+
+#preview_container #main_content ol.answers {
+  margin-left: 20px;
+}
+
+#preview_container #main_content .reference_model_content {
+  background: transparent;
+}
+
+#preview_container .answer_key_link,
+.grading_styles .help_request_message_container
+#preview_container #return_to {
+  display: none;
+}
+
+#preview_container .c-activity-info {
+  margin: 0 rpx(20);
+}
+
+#preview_container #directions-frame {
+  width: 640px;
+}
+
+/* SuperSite Only Preview Fix */
+body.ssplus_only #preview_container #main_content {
+  border-left: 0px;
+  border-right: 0px;
+  border-bottom: 0px;
+  border-top: 2px solid #c3c3c3;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+body.ssplus_only #preview_container .ssplus_only {
+  margin-top: 25px;
+}

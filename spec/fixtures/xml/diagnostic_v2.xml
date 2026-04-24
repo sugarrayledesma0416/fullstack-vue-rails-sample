@@ -1,0 +1,607 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<activity activity_type="diagnostic_v2" title="Prueba de práctica" assessment_type="practice" language="es">
+  <!--Type a MASTER DL for the entire diagnostic here.-->
+  <dl/>
+  <items>
+    <style>
+      <item_numbers>show</item_numbers>
+      <threshold>70</threshold>
+    </style>
+    <formative_activity id="1" title="Formative Activity" />
+    <!--This section defines each DIAGNOSTIC CONCEPT, such as grammar points. There are 2; copy and paste as needed.-->
+    <diagnostic_concepts>
+      <!--Assign a "ref" ID to the diagnostic concept, ex. 4.1. It will be used to tag answers below.-->
+      <!--The "ref" value will be displayed in a black box. Therefore, don't include it in the TITLE as well.-->
+      <diagnostic_concept ref="1">
+        <!--Insert the title of the concept; supports HTML.-->
+        <title>Greetings vocabulary</title>
+        <vocabulary_link_label>Study the vocabulary</vocabulary_link_label>
+        <supplemental_activities>
+          <external_reference>
+            <title>Practice</title>
+            <activity id="90446"/>
+          </external_reference>
+        </supplemental_activities>
+      </diagnostic_concept>
+      <diagnostic_concept ref="1.1">
+        <title>Nouns and articles</title>
+        <external_references>
+          <external_reference>
+            <title>Review the grammar topic</title>
+            <activity id="70959"/>
+          </external_reference>
+        </external_references>
+        <supplemental_activities>
+          <external_reference>
+            <title>Practice</title>
+            <activity id="90447"/>
+          </external_reference>
+        </supplemental_activities>
+      </diagnostic_concept>
+      <diagnostic_concept ref="1.2">
+        <title>Numbers 0-30</title>
+        <external_references>
+          <external_reference>
+            <title>Review the grammar topic</title>
+            <activity id="70965"/>
+          </external_reference>
+        </external_references>
+        <supplemental_activities>
+          <external_reference>
+            <title>Practice</title>
+            <activity id="90448"/>
+          </external_reference>
+        </supplemental_activities>
+      </diagnostic_concept>
+      <diagnostic_concept ref="1.3">
+        <title>Present tense of <b>ser</b></title>
+        <external_references>
+          <external_reference>
+            <title>Review the grammar topic</title>
+            <activity id="70973"/>
+          </external_reference>
+        </external_references>
+        <supplemental_activities>
+          <external_reference>
+            <title>Practice</title>
+            <activity id="90449"/>
+          </external_reference>
+        </supplemental_activities>
+      </diagnostic_concept>
+      <diagnostic_concept ref="1.4">
+        <title>Telling time</title>
+        <external_references>
+          <external_reference>
+            <title>Review the grammar topic</title>
+            <activity id="70979"/>
+          </external_reference>
+        </external_references>
+        <supplemental_activities>
+          <external_reference>
+            <title>Practice</title>
+            <activity id="90450"/>
+          </external_reference>
+        </supplemental_activities>
+      </diagnostic_concept>
+    </diagnostic_concepts>
+    <activity activity_type="multiple_choice" title="">
+      <dl/>
+      <items>
+        <style>
+          <item_numbers>show</item_numbers>
+        </style>
+        <reference type="diagnostic">
+          <header>Saludar</header>
+          <body>
+            <span lang="en">Select the correct answer to each question.</span>
+          </body>
+        </reference>
+        <item>
+          <prompt>¿Cómo se llama usted?</prompt>
+          <choices concept="1">
+            <distractor>Hasta la vista.</distractor>
+            <answer>Me llamo Ana María.</answer>
+          </choices>
+        </item>
+        <item>
+          <prompt>¿Cómo estás, Juan José?</prompt>
+          <choices concept="1">
+            <answer>No muy bien.</answer>
+            <distractor>No hay de qué.</distractor>
+          </choices>
+        </item>
+        <item>
+          <prompt>¿De dónde eres, Gabriel?</prompt>
+          <choices concept="1">
+            <distractor>De nada.</distractor>
+            <answer>Soy de Quito, Ecuador.</answer>
+          </choices>
+        </item>
+        <item>
+          <prompt>¿Qué tal, Sandra?</prompt>
+          <choices concept="1">
+            <distractor>Lo siento</distractor>
+            <answer>Bien, gracias.</answer>
+          </choices>
+        </item>
+        <item>
+          <prompt>¿Qué hay de nuevo, Carlos?</prompt>
+          <choices concept="1">
+            <distractor>Por favor.</distractor>
+            <answer>Nada.</answer>
+          </choices>
+        </item>
+      </items>
+    </activity>
+    <activity activity_type="fill_in_the_blanks" title="{title of FIB activity}" language="">
+      <dl/>
+      <items>
+        <style>
+          <wol_size>sentence_standard</wol_size>
+          <item_numbers>show</item_numbers>
+          <ruleset punctuation="false" capitalization="false" accents="false"/>
+        </style>
+        <reference type="diagnostic">
+          <header>Completar</header>
+          <body>
+            <span lang="en">Fill in the blanks with the appropriate words or phrases.</span>
+          </body>
+        </reference>
+        <reference type="wordbank">
+          <body sorted="no">
+¿De dónde es usted?
+Encantado.
+Le presento a Ignacio García.
+Muy bien, gracias.
+¿Y usted?
+</body>
+        </reference>
+        <item>
+          <prompt>El gusto es mío. <wol/></prompt>
+          <answers concept="1">
+            <answer>Encantado.</answer>
+          </answers>
+        </item>
+        <item>
+          <prompt>Me llamo Isabel Mora. <wol/></prompt>
+          <answers concept="1">
+            <answer>¿Y usted?</answer>
+          </answers>
+        </item>
+        <item>
+          <prompt>Soy de Miami. <wol/></prompt>
+          <answers concept="1">
+            <answer>¿De dónde es usted?</answer>
+          </answers>
+        </item>
+        <item>
+          <prompt>¿Cómo estás? <wol/></prompt>
+          <answers concept="1">
+            <answer>Muy bien, gracias.</answer>
+          </answers>
+        </item>
+        <item>
+          <prompt>Buenas tardes, señora Romero. <wol/></prompt>
+          <answers concept="1">
+            <answer>Le presento a Ignacio García.</answer>
+          </answers>
+        </item>
+      </items>
+    </activity>
+    <activity activity_type="drop_down" title="{title of multiple choice activity}" language="">
+      <dl/>
+      <items>
+        <style>
+          <item_numbers>show</item_numbers>
+        </style>
+        <reference type="diagnostic">
+          <header>Artículos</header>
+          <body>
+            <span lang="en">Select the correct definite article for each noun.</span>
+          </body>
+        </reference>
+        <item>
+          <prompt><wol ref="1"/> profesoras</prompt>
+          <choices concept="1.1">
+            <distractor>los</distractor>
+            <answer>las</answer>
+            <distractor>la</distractor>
+          </choices>
+        </item>
+        <item>
+          <prompt><wol ref="1"/> autobús</prompt>
+          <choices concept="1.1">
+            <answer>el</answer>
+            <distractor>los</distractor>
+            <distractor>las</distractor>
+          </choices>
+        </item>
+        <item>
+          <prompt><wol ref="1"/> lección</prompt>
+          <choices concept="1.1">
+            <distractor>el</distractor>
+            <distractor>los</distractor>
+            <answer>la</answer>
+          </choices>
+        </item>
+        <item>
+          <prompt><wol ref="1"/> chicas</prompt>
+          <choices concept="1.1">
+            <answer>las</answer>
+            <distractor>la</distractor>
+            <distractor>los</distractor>
+          </choices>
+        </item>
+        <item>
+          <prompt><wol ref="1"/> lápices</prompt>
+          <choices concept="1.1">
+            <distractor>las</distractor>
+            <answer>los</answer>
+            <distractor>el</distractor>
+          </choices>
+        </item>
+      </items>
+    </activity>
+    <activity activity_type="drop_down" title="{title of multiple choice activity}" language="">
+      <dl/>
+      <items>
+        <style>
+          <item_numbers>show</item_numbers>
+        </style>
+        <reference type="diagnostic">
+          <header>Seleccionar</header>
+          <body>
+            <span lang="en">Select the correct indefinite articles.</span>
+          </body>
+        </reference>
+        <item>
+          <prompt>Me llamo Carolina. Yo soy <wol ref="1"/> pasajera.</prompt>
+          <choices concept="1.1">
+            <answer>una</answer>
+            <distractor>un</distractor>
+            <distractor>unas</distractor>
+          </choices>
+        </item>
+        <item>
+          <prompt>Ana y Susana, ¿son ustedes <wol ref="1"/> turistas?</prompt>
+          <choices concept="1.1">
+            <distractor>un</distractor>
+            <distractor>unos</distractor>
+            <answer>unas</answer>
+          </choices>
+        </item>
+        <item>
+          <prompt>Manuel es <wol ref="1"/> conductor de autobús.</prompt>
+          <choices concept="1.1">
+            <distractor>unas</distractor>
+            <answer>un</answer>
+            <distractor>una</distractor>
+          </choices>
+        </item>
+        <item>
+          <prompt>Señora Castillo, ¿hay <wol ref="1"/> problema con las maletas?</prompt>
+          <choices concept="1.1">
+            <distractor>unos</distractor>
+            <answer>un</answer>
+            <distractor>una</distractor>
+          </choices>
+        </item>
+        <item>
+          <prompt>Hay <wol ref="1"/> mapas en la computadora.</prompt>
+          <choices concept="1.1">
+            <distractor>una</distractor>
+            <answer>unos</answer>
+            <distractor>unas</distractor>
+          </choices>
+        </item>
+      </items>
+    </activity>
+    <activity activity_type="drop_down_same" title="{title activity}" language="">
+      <dl/>
+      <items>
+        <style>
+          <item_numbers>show</item_numbers>
+        </style>
+        <reference type="diagnostic">
+          <header>Emparejar</header>
+          <body>
+            <span lang="en">Match the questions with the answers.</span>
+          </body>
+        </reference>
+        <choices>
+          <choice ref="a">No, hay cero fotos.</choice>
+          <choice ref="b">Sí, hay un lápiz.</choice>
+          <choice ref="c">Hay dieciséis diccionarios.</choice>
+          <choice ref="d">Hay veintiún programas.</choice>
+          <choice ref="e">Hay catorce videos.</choice>
+        </choices>
+        <item>
+          <prompt>¿Cuántos diccionarios hay en la escuela? <wol answer_ref="c" concept="1.2"/></prompt>
+        </item>
+        <item>
+          <prompt>¿Cuántos programas hay? <wol answer_ref="d" concept="1.2"/></prompt>
+        </item>
+        <item>
+          <prompt>¿Hay lápices en la maleta? <wol answer_ref="b" concept="1.2"/></prompt>
+        </item>
+        <item>
+          <prompt>¿Cuántos videos hay en la lección? <wol answer_ref="e" concept="1.2"/></prompt>
+        </item>
+        <item>
+          <prompt>¿Hay fotos en el diario? <wol answer_ref="a" concept="1.2"/></prompt>
+        </item>
+      </items>
+    </activity>
+    <activity activity_type="fill_in_the_blanks" title="{title of FIB activity}" language="">
+      <dl/>
+      <items>
+        <style>
+          <wol_size>words_standard</wol_size>
+          <item_numbers>show</item_numbers>
+          <ruleset punctuation="false" capitalization="false" accents="false"/>
+        </style>
+        <reference type="diagnostic">
+          <header>Números</header>
+          <body>
+            <span lang="en">Fill in the blanks with the correct number words.</span>
+          </body>
+        </reference>
+        <reference type="model">
+          <body>
+Hay <b><u>doce </u></b> (12) pasajeros en el autobús.
+</body>
+        </reference>
+        <item>
+          <prompt>Hay <wol ref="1"/> (24) horas en un día.</prompt>
+          <answers ref="1" concept="1.2">
+            <answer>veinticuatro</answer>
+          </answers>
+        </item>
+        <item>
+          <prompt>¿Cuántas escuelas hay? Hay <wol ref="1"/> (30) escuelas.</prompt>
+          <answers ref="1" concept="1.2">
+            <answer>treinta</answer>
+          </answers>
+        </item>
+        <item>
+          <prompt>El número de palabras es <wol ref="1"/> (16).</prompt>
+          <answers ref="1" concept="1.2">
+            <answer>dieciséis</answer>
+          </answers>
+        </item>
+        <item>
+          <prompt>Hay <wol ref="1"/> (29) chicos en la escuela.</prompt>
+          <answers ref="1" concept="1.2">
+            <answer>veintinueve</answer>
+          </answers>
+        </item>
+        <item>
+          <prompt>Los <wol ref="1"/> (7) cuadernos son de la joven.</prompt>
+          <answers ref="1" concept="1.2">
+            <answer>siete</answer>
+          </answers>
+        </item>
+      </items>
+    </activity>
+    <activity activity_type="fill_in_the_blanks" title="{title of FIB activity}" language="">
+      <dl/>
+      <items>
+        <style>
+          <wol_size>words_standard</wol_size>
+          <item_numbers>hide</item_numbers>
+          <ruleset punctuation="false" capitalization="false" accents="false"/>
+        </style>
+        <reference type="diagnostic">
+          <header>Conjugar</header>
+          <body>
+            <span lang="en">Complete the chart with the correct forms of <b>ser</b> in the present tense.</span>
+          </body>
+        </reference>
+        <item>
+          <prompt>
+            <reference type="text">
+              <body>
+                <table class="c-table  c-table--content" data-a11y="true">
+                  <thead>
+                    <tr class="c-header-row">
+                      <th scope="col">infinitive</th>
+                      <th scope="col">ser</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="c-row">
+                      <td>yo</td>
+                      <td>
+                        <wol ref="1"/>
+                      </td>
+                    </tr>
+                    <tr class="c-row">
+                      <td>tú</td>
+                      <td>
+                        <wol ref="2"/>
+                      </td>
+                    </tr>
+                    <tr class="c-row">
+                      <td>ella</td>
+                      <td>
+                        <wol ref="3"/>
+                      </td>
+                    </tr>
+                    <tr class="c-row">
+                      <td>nosotros</td>
+                      <td>
+                        <wol ref="4"/>
+                      </td>
+                    </tr>
+                    <tr class="c-row">
+                      <td>ellos</td>
+                      <td>
+                        <wol ref="5"/>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </body>
+            </reference>
+          </prompt>
+          <answers ref="1" concept="1.3">
+            <answer>soy</answer>
+          </answers>
+          <answers ref="2" concept="1.3">
+            <answer>eres</answer>
+          </answers>
+          <answers ref="3" concept="1.3">
+            <answer>es</answer>
+          </answers>
+          <answers ref="4" concept="1.3">
+            <answer>somos</answer>
+          </answers>
+          <answers ref="5" concept="1.3">
+            <answer>son</answer>
+          </answers>
+        </item>
+      </items>
+    </activity>
+    <activity activity_type="drop_down" title="{title of multiple choice activity}" language="">
+      <dl/>
+      <items>
+        <style>
+          <item_numbers>show</item_numbers>
+        </style>
+        <reference type="diagnostic">
+          <header>Ser</header>
+          <body>
+            <span lang="en">Select the correct verb forms.</span>
+          </body>
+        </reference>
+        <item>
+          <prompt>José Luis <wol ref="1"/> un turista de México.</prompt>
+          <choices concept="1.3">
+            <distractor>son</distractor>
+            <answer>es</answer>
+          </choices>
+        </item>
+        <item>
+          <prompt>Las chicas <wol ref="1"/> estudiantes.</prompt>
+          <choices concept="1.3">
+            <answer>son</answer>
+            <distractor>eres</distractor>
+          </choices>
+        </item>
+        <item>
+          <prompt>Nosotros <wol ref="1"/> los profesores de la escuela.</prompt>
+          <choices concept="1.3">
+            <distractor>son</distractor>
+            <answer>somos</answer>
+          </choices>
+        </item>
+        <item>
+          <prompt>Yo <wol ref="1"/> un conductor de autobús.</prompt>
+          <choices concept="1.3">
+            <distractor>eres</distractor>
+            <answer>soy</answer>
+          </choices>
+        </item>
+        <item>
+          <prompt>Tú <wol ref="1"/> la joven de la conversación.</prompt>
+          <choices concept="1.3">
+            <answer>eres</answer>
+            <distractor>es</distractor>
+          </choices>
+        </item>
+      </items>
+    </activity>
+    <activity activity_type="drop_down_same" title="{title activity}" language="">
+      <dl/>
+      <items>
+        <style>
+          <item_numbers>show</item_numbers>
+        </style>
+        <reference type="diagnostic">
+          <header>¿Qué hora es? </header>
+          <body>
+            <span lang="en">Match the times.</span>
+          </body>
+        </reference>
+        <choices>
+          <choice ref="a">Es el mediodía.</choice>
+          <choice ref="b">Son las cuatro de la mañana.</choice>
+          <choice ref="c">Son las nueve y media de la noche.</choice>
+          <choice ref="d">Son las ocho y cuarto de la mañana.</choice>
+          <choice ref="e">Son las tres y dieciséis de la tarde.</choice>
+        </choices>
+        <item>
+          <prompt>4:00 a.m.  <wol answer_ref="b" concept="1.4"/></prompt>
+        </item>
+        <item>
+          <prompt>12:00 p.m.  <wol answer_ref="a" concept="1.4"/></prompt>
+        </item>
+        <item>
+          <prompt>8:15 a.m.  <wol answer_ref="d" concept="1.4"/></prompt>
+        </item>
+        <item>
+          <prompt>9:30 p.m.  <wol answer_ref="c" concept="1.4"/></prompt>
+        </item>
+        <item>
+          <prompt>3:16 p.m.  <wol answer_ref="e" concept="1.4"/></prompt>
+        </item>
+      </items>
+    </activity>
+    <activity activity_type="fill_in_the_blanks" title="{title of FIB activity}" language="">
+      <dl/>
+      <items>
+        <style>
+          <wol_size>words_standard</wol_size>
+          <item_numbers>show</item_numbers>
+          <ruleset punctuation="false" capitalization="false" accents="false"/>
+        </style>
+        <reference type="diagnostic">
+          <header>La hora</header>
+          <body>
+            <span lang="en">Fill in the blanks with the correct times.</span>
+          </body>
+        </reference>
+        <reference type="model">
+          <body>
+Son las <b><u>siete y veinte</u></b>. (7:20)
+</body>
+        </reference>
+        <item>
+          <prompt>Son las <wol ref="1"/>. (2:00)</prompt>
+          <answers ref="1" concept="1.4">
+            <answer>dos</answer>
+            <answer>dos en punto</answer>
+          </answers>
+        </item>
+        <item>
+          <prompt>Es la <wol ref="1"/>. (1:15)</prompt>
+          <answers ref="1" concept="1.4">
+            <answer>una y quince</answer>
+            <answer>una y cuarto</answer>
+          </answers>
+        </item>
+        <item>
+          <prompt>Son las <wol ref="1"/>. (5:30)</prompt>
+          <answers ref="1" concept="1.4">
+            <answer>cinco y treinta</answer>
+            <answer>cinco y media</answer>
+          </answers>
+        </item>
+        <item>
+          <prompt>Es la <wol ref="1"/>. (12:00)</prompt>
+          <answers ref="1" concept="1.4">
+            <answer>medianoche</answer>
+          </answers>
+        </item>
+        <item>
+          <prompt>Son las <wol ref="1"/>. (10:45)</prompt>
+          <answers ref="1" concept="1.4">
+            <answer>once menos quince</answer>
+            <answer>once menos cuarto</answer>
+            <answer>diez y cuarenta y cinco</answer>
+          </answers>
+        </item>
+      </items>
+    </activity>
+  </items>
+</activity>

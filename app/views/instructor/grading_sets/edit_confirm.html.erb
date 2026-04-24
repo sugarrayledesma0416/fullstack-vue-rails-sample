@@ -1,0 +1,13 @@
+<div id="finish_spotchecking">
+  <%= form_tag(instructor_spotcheck_activity_path(current_program, @grading_set.id), :id => 'grading_form', :class => 'main', :method => :post) do %>
+    <div id="" class="grant_grade" >
+    <%= check_box_tag 'grant_grade','100',false,:style => 'display:inline'%>
+    <%= label_tag 'grant_grade', "Grant 100% for all remaining ungraded student work on this assignment", :class => 'label', :style => 'display:inline'%>
+    </div>
+    <div id="" class="comment" >
+    <%= label("comment", 'comment') -%> 
+    <%= text_area_tag("comment", nil, :size => "50x3") -%>
+    </div>
+  <%= submit_tag "Finish Spotchecking", :class => "red-button" %>
+  <% end -%>
+</div>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<activity activity_type="multi_type" title="8 - Nombres" language="es">
+  <dl>Read these Spanish names. </dl>
+  <external_references>
+    <external_reference>
+      <title>Vocabulary list</title>
+      <activity id="108346"/>
+    </external_reference>
+  </external_references>
+  <items>
+    <style>
+      <item_numbers>hide</item_numbers>
+    </style>
+    <activity activity_type="drop_down_same" title="{title activity}" language="es">
+      <dl/>
+      <items>
+        <style>
+          <item_numbers>hide</item_numbers>
+        </style>
+        <reference type="text">
+          <header/>
+          <body>Indicate whether each name is <b>masculino</b> or <b>feminino</b>.</body>
+        </reference>
+        <choices>
+          <choice ref="f">femenino</choice>
+          <choice ref="m">masculino</choice>
+        </choices>
+        <item>
+          <prompt>
+            <table border="1">
+              <tr>
+                <td>Alejandro</td>
+                <td>
+                  <wol answer_ref="m"/>
+                </td>
+                <td>Carlos</td>
+                <td>
+                  <wol answer_ref="m"/>
+                </td>
+              </tr>
+              <tr>
+                <td>María</td>
+                <td>
+                  <wol answer_ref="f"/>
+                </td>
+                <td>David</td>
+                <td>
+                  <wol answer_ref="m"/>
+                </td>
+              </tr>
+            </table>
+          </prompt>
+        </item>
+      </items>
+    </activity>
+  </items>
+</activity>

@@ -1,0 +1,13 @@
+<% content_for(:js_head, javascript_packs_with_chunks_tag('instructor/focus/selector')) %>
+<% content_for(:js_head, javascript_include_tag('focus')) %>
+<% content_for(:navigation, render(partial: 'app_shell/navbar_program/main')) %>
+<% content_for(:focus, render(partial: 'instructor/focus/show')) %>
+<div class="js-focus-selector"
+     data-sections='<%= @sections.to_json %>'
+     data-course-name="<%= @course_name %>"
+     data-feature-type="<%= @feature_type %>"
+     data-redirect-url="<%=  @redirect_url %>"
+     data-update-focus-url="<%= instructor_focus_url(program_id: params[:program_id]) %>"
+     data-authenticity-token="<%= form_authenticity_token %>" >
+</div>
+

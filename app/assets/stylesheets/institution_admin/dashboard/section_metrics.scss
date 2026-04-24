@@ -1,0 +1,35 @@
+@import 'music/library/v1/base/main';
+
+.ns-music-v1 .l-container-fluid {
+  background-color: var(--music-true-gray-50);
+  padding: 0;
+}
+
+.action-links {
+  margin-left: rpx(-24) !important;
+}
+
+.action-links  hr {
+  border-bottom: rpx(1) solid #D8D8D8 !important;
+  margin: 0 !important;
+}
+
+.action-links .c-enterprise__paragraph {
+  font-family: Inter;
+  font-size: rpx(16);
+  font-style: normal;
+  font-weight: 600;
+  line-height: rpx(24);
+}
+
+.no-course-msg {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  min-height: rpx(300);
+  text-align: center;  
+}
+
+sl-avatar {
+  --size: 1.5rem;
+}

@@ -1,0 +1,125 @@
+<% content_for(:css_head, stylesheet_link_tag('support/course_owner')) %>
+<p>Replace the owner of a course.</p>
+
+<%= link_to("#{UA_URL}/support/user_search/#{@instructor.guid}") do
+  Music::Components.icon(
+    variant: 'return',
+    text: 'Back to user info page',
+    classes: ['u-txt-16', 'u-mar-bot-16']
+  )
+  end %>
+
+<% if @errors.present? %>
+  <div class="c-message  c-message--error  u-mar-bot-16"
+       id="a11y-error-explanation">
+    <h2 class="c-message__heading">
+      <%= pluralize(@errors.count, 'error') %>
+      prevented the change of the owner of the course '<%= @course_name %>'.
+    </h2>
+    <div class="c-message__body">
+      <ul class="c-message__body">
+        <% @errors.each do |error| %>
+          <li><%= error %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+<% end %>
+  
+<div class="l-container-fluid">
+  <div class="l-grid">
+    <div class="l-col-auto">
+      <div class="c-panel  u-bord-2  u-bord-gray-e">
+        <div class="c-panel__header">
+          <h3 class="c-heading--panel  u-txt-upper">Programs</h3>
+        </div>
+        <div class="c-panel__body">
+          <% if @presenter.courses.blank? -%>
+            This instructor has no courses.
+          <% else -%>
+            <% @presenter.courses_by_program.each do |program, courses| %>
+              <details open class="<%= test_class('program') %>" <%= test_attr('id', program.id) %>>
+                <summary class="u-txt-bold <%= test_class('program_title') %>">
+                  <%= program.title %>
+                </summary>
+                <div class="c-box  c-box--plain">
+                  <% courses.each_with_index do |course, course_index| %>
+                    <details open class="<%= 'u-mar-bot-16' if course_index < courses.size - 1 %>  <%= test_class('course') %>" <%= test_attr('id', course.id) %>>
+                    <summary>
+                      <span class="u-txt-bold  <%= test_class('name') %>"><%= course.name %></span> - <%= course.start_date.strftime("%B %d, %Y") %> - <%= course.end_date.strftime("%B %d, %Y") %>
+                    </summary>
+                    <%= form_tag({ action: :update }, { method: :put }) do -%>
+                      <div class="<%= test_class('course_details') %>">
+                        <% if course.sections.empty? %>
+                          <div class="u-mar-lt-16  u-mar-bot-16">0 sections</div>
+                        <% else %>
+                          <div class="u-mar-lt-16"><%= pluralize(course.sections.count, 'section') %>:
+                          <ul class="c-list  u-mar-lt-16">
+                            <% course.sections.each do |section| %>
+                              <li><%= section.name %> - <%= section.schedule %> - <%= pluralize(section.current_students.count, 'student') %></li>
+                            <% end -%>
+                          </ul>
+                          </div>
+                        <% end %>
+                      </div>
+                      <% if @presenter.possible_owners_by_course(course).blank? %>
+                        This course has no possible new owner.
+                      <% else -%>
+                        <div class="l-line  c-form-item">
+                          <%= select_tag(
+                            :new_owner_id,
+                            options_for_select(
+                              @presenter.possible_owners_by_course(course).map do |instructor|
+                                [instructor.full_name, instructor.id]
+                              end.unshift(['Select New Instructor', ''])
+                            ),
+                            class: "c-select  #{test_class('possible_owners') }",
+                            id: "new_owner_id_#{course.id}"
+                          ) %>
+                          <%= submit_tag(
+                            'Change owner',
+                            class: 'c-button  c-button--primary',
+                            disabled: @presenter.possible_owners_by_course(course).blank?
+                          ) %>
+                        </div>
+                      <% end -%>
+                      <%= hidden_field_tag(:course_id, course.id, id: "course_id_#{course.id}") %>
+                    <% end -%>
+                  </details>
+                  <% end %>
+                </div>
+              </details>
+            <% end %>
+          <% end -%>
+        </div>
+      </div>
+    </div>
+    <div class="l-col-5">
+      <div class="c-panel  u-bord-2  u-bord-gray-e">
+        <div class="c-panel__header">
+          <h3 class="c-heading--panel  u-txt-upper">User</h3>
+        </div>
+        <div class="c-panel__body">
+          <div>
+            <div class="c-owner-row">
+              <div class="c-column-lt">User GUID</div>
+              <div class="c-column-rt"><b class="js-modal-program-name <%= test_class('owner_guid') %>"><%= "#{@instructor.guid}" %></b></div>
+            </div>
+            <div class="c-owner-row">
+              <div class="c-column-lt">Username</div>
+              <div class="c-column-rt"><b class="<%= test_class('owner_username') %>"><%= @presenter.instructor_username %></b></div>
+            </div>
+            <div class="c-owner-row">
+              <div class="c-column-lt">First Name</div>
+              <div class="c-column-rt"><b class="<%= test_class('owner_first_name') %>"><%= @instructor.first_name %></b></div>
+            </div>
+            <div class="c-owner-row">
+              <div class="c-column-lt">Last Name</div>
+              <div class="c-column-rt"><b class="<%= test_class('owner_last_name') %>"><%= @instructor.last_name %></b></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

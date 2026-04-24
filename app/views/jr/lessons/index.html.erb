@@ -1,0 +1,102 @@
+<% content_for(:js_head, javascript_packs_with_chunks_tag('jr/lessons/index')) %>
+
+<% content_for(:navigation) do %>
+  <% render('app_shell/navbar_program/supersite_junior') %>
+<% end %>
+
+<% namespace = 'ns-jr-lessons-index' %>
+
+<% content_for(:body_classes, '  has-vhl-return-link') %>
+
+<% content_for(:left_of_page_title) do %>
+  <div class="c-return-link-container">
+    <vhl-return-link
+      class="<%= test_class('return-link-root') %>"
+      href="<%= jr_section_program_content_path(
+                  program_id: current_program.id,
+                  section_id: current_section.id ) %>"
+      linktestclass="<%= test_class('return-link') %>">
+      Return
+    </vhl-return-link>
+  </div>
+<% end %>
+
+<div id="main_content" class="<%= namespace %>">
+  <ul
+    class="c-plain-list  l-<%= namespace %>__lesson-list
+           <%= "l-#{namespace}__multi-tier-lesson-list" if current_program.two_tier? %>">
+    <% current_program.visible_units(current_user.can_view_unreleased_units?).each do |unit| %>
+      <li class="c-<%= namespace %>__lesson-list-item  <%= test_class("unit-id-#{unit.id}") %>">
+        <% lessons = unit.lessons %>
+        <% if lessons.size > 1 %>
+          <div class="c-<%= namespace %>__lesson-image-frame">
+            <% if (media_item = unit.media_item) %>
+              <%= image_tag(
+                media_item.public_filename,
+                alt: media_item.alt_text,
+                class: "c-#{namespace}__lesson-image"
+              ) %>
+            <% else %>
+              <%= image_tag(
+                'jr/icons/lesson_default.svg',
+                'aria-hidden': true,
+                class: "c-#{namespace}__lesson-image"
+              ) %>
+            <% end %>
+
+            <div class="<%= test_class('unit-label') %>">
+              <%= unit.display_name %>
+            </div>
+          </div>
+
+          <ul class="c-plain-list  c-multi-tier-toc-list">
+            <% lessons.each do |lesson| %>
+              <li class="u-sp  c-multi-tier-toc-list-item">
+                <%= link_to(
+                      jr_section_program_lesson_path(
+                        id: lesson.id,
+                        program_id: current_program.id,
+                        section_id: current_section.id
+                      ),
+                      class: "c-button  c-button--jr
+                              c-multi-tier-lesson-link"
+                    ) do %>
+                  <%= lesson.name %>
+                <% end  # /link %>
+              </li>
+            <% end # /each %>
+          </ul>
+        <% else # /multi-tiered lessons %>
+          <%= link_to(
+            jr_section_program_lesson_path(
+              id: lessons.first.id,
+              program_id: current_program.id,
+              section_id: current_section.id
+            ),
+            class: "c-#{namespace}__lesson",
+          ) do %>
+          <span class="c-<%= namespace %>__lesson-image-frame">
+              <% if (media_item = unit.media_item) %>
+                <%= image_tag(
+                  media_item.public_filename,
+                  alt: media_item.alt_text,
+                  class: "c-#{namespace}__lesson-image"
+                ) %>
+              <% else %>
+                <%= image_tag(
+                  'jr/icons/lesson_default.svg',
+                  'aria-hidden': true,
+                  class: "c-#{namespace}__lesson-image"
+                ) %>
+              <% end %>
+            </span>
+            <span class="c-<%= namespace %>__lesson-text  <%= test_class('unit-label') %>">
+              <%= sanitize(unit.display_name, tags: %w[span], attributes: %w[lang]) %>
+            </span>
+          <% end # /link_to %>
+        <% end # /else  %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+

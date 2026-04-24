@@ -1,0 +1,8 @@
+<%= render  :partial => '/instructor/grading_sets/instructor_comment_area',
+            :locals => {:response_id => response_id,
+                        :feedback_item => feedback_item } %>
+
+<%= render  :partial  => 'recordings/question_comment_recorder',
+            :locals   => {  :response_id => response_id,
+                            :recording_path => recording_path,
+                            :is_new_recording => is_new_recording } %>

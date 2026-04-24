@@ -1,0 +1,217 @@
+<activity activity_type="diagnostic" title="title text" language="es">
+	<dl>Master dl</dl>
+  <items>
+    <style>
+      <item_numbers>show</item_numbers>
+    </style>
+	<diagnostic_popup>
+		<image id="1"/>
+	</diagnostic_popup>
+    <diagnostic_concepts>
+      <diagnostic_concept ref="4.1">
+        <title>Present tense of <b><i>ir</i></b></title>
+        <external_references>
+          <external_reference>
+            <title>View the tutorial</title>
+            <activity id="11"/>
+          </external_reference>
+        </external_references>
+        <supplemental_activities>
+          <external_reference>
+            <title>Practice activity</title>
+            <activity id="12"/>
+          </external_reference>
+        </supplemental_activities>
+      </diagnostic_concept>
+      <diagnostic_concept ref="4.2">
+        <title>Stem-changing verbs: <b><i>e -> ie, o -> ue</i></b></title>
+        <external_references>
+          <external_reference>
+            <title>View the tutorial</title>
+            <activity id="21"/>
+          </external_reference>
+        </external_references>
+        <supplemental_activities>
+          <external_reference>
+            <title>Practice activity</title>
+            <activity id="22"/>
+          </external_reference>
+        </supplemental_activities>
+      </diagnostic_concept>
+    </diagnostic_concepts>    
+    <activity activity_type="multiple_choice" title="title text">
+      <dl/>
+      <items>
+        <reference type="diagnostic"><header>multiple-choice dl header text</header><body>multiple-choice dl body text</body></reference>
+        <reference type="audio"><audio spec="open audio" id="2"/></reference>
+        <style>
+          <item_numbers>show</item_numbers>
+        </style>
+        <item>
+          <prompt>prompt_for_question_1</prompt>
+          <choices concept="4.1">
+            <distractor>wrong answer</distractor>
+            <answer>right answer</answer>
+          </choices>
+        </item>
+        <item>
+          <prompt>prompt_for_question_2</prompt>
+          <choices concept="4.1">
+            <answer>right answer</answer>
+            <distractor>wrong answer</distractor>
+          </choices>
+        </item>
+        <item>
+          <prompt>prompt_for_question_3</prompt>
+          <choices concept="4.1,4.2">
+            <answer>right answer</answer>
+            <distractor>wrong answer</distractor>
+          </choices>
+        </item>
+      </items>
+    </activity>
+    <activity activity_type="drop_down" title="sample_drop-down_title">
+      <dl/>
+      <items>
+        <style>
+          <item_numbers>show</item_numbers>
+        </style>
+        <reference type="diagnostic"><header>drop-down dl header text</header><body>drop-down dl body text</body></reference>
+        <reference type="video"><video spec="open video" id="3"/></reference>
+        <item>
+            <prompt>prompt_for_question_1_with_only_one_blank <wol/></prompt>
+            <choices concept="4.2">
+                <answer>right_answer</answer>
+                <distractor>wrong_answer_1</distractor>
+                <distractor>wrong_answer_2</distractor>
+            </choices>
+        </item>
+        <item>
+            <prompt>Multiple <wol ref="1"/> blanks <wol ref="2"/>.</prompt>
+            <choices ref="1" concept="4.2">
+                <distractor>wrong_answer_1</distractor>
+                <distractor>wrong_answer_2</distractor>
+                <answer>right_answer</answer>
+            </choices>
+            <choices ref="2" concept="4.1">
+                <distractor>wrong_answer_1</distractor>
+                <answer>right_answer</answer>
+                <distractor>wrong_answer_2</distractor>
+            </choices>
+        </item>
+      </items>
+    </activity>
+    <activity activity_type="fill_in_the_blanks" title="activity title">
+      <dl/>
+      <items>
+        <style>
+          <wol_size>words_small</wol_size>
+          <item_numbers>show</item_numbers>
+        </style>
+        <reference type="diagnostic"><header>fill-in-the-blanks dl header text</header><body>fill-in-the-blanks dl body text</body></reference>
+        <item>
+          <prompt><image spec="open image" id="1"/><br/>Test <wol ref="1"/> with <wol ref="2"/> blanks</prompt>
+          <answers ref="1" concept="4.1">
+            <answer>answer text</answer>
+          </answers>
+          <answers ref="2" concept="4.2">
+            <answer>answer text</answer>
+            <answer>another answer</answer>
+          </answers>
+        </item>
+        <item>
+          <prompt><wol/></prompt>
+          <answers concept="4.1">
+            <answer>answer text</answer>
+          </answers>
+        </item>
+      </items>
+    </activity>
+    <activity activity_type="drop_down_true_false" title="sample_drop-down_title">
+      <dl/>
+      <items>
+        <style>
+          <item_numbers>show</item_numbers>
+        </style>
+        <reference type="diagnostic"><header>drop-down true/false dl header text</header><body>drop-down true/false dl body text</body></reference>        
+        <item>
+          <prompt><wol/> prompt_for_question_1</prompt>
+          <choices concept="4.2">
+            <distractor>true</distractor>
+            <answer>false</answer>
+          </choices>
+        </item>
+        <item>
+          <prompt><wol/> prompt_for_question_2</prompt>
+          <choices concept="4.1">
+            <answer>true</answer>
+            <distractor>false</distractor>
+          </choices>
+        </item>
+      </items>
+    </activity>    
+    <activity activity_type="drop_down_same" title="sample_drop-down_title">
+      <dl/>
+      <items>
+        <style>
+          <item_numbers>show</item_numbers>
+        </style>
+        <reference type="diagnostic"><header>drop-down same dl header text</header><body>drop-down same dl body text</body></reference>        
+        <choices>
+          <choice ref="a">answer 1</choice>
+          <choice ref="b">answer 2</choice>
+        </choices>
+        <item>
+          <prompt>prompt_for_question_1_with_only_one_blank <wol answer_ref="a" concept="4.2"/><br />and <b>html</b></prompt>
+        </item>
+        <item>
+          <prompt>Multiple <wol answer_ref="a" concept="4.1"/> blanks <wol answer_ref="b" concept="4.1"/>.</prompt>
+        </item>
+      </items>
+    </activity>
+    <activity activity_type="open_ended" title="sample_open_ended_title">
+    	<dl>instructions_go_here</dl>
+    	<items>
+    	  <reference type="diagnostic"><header>dl header text 4</header><body>dl body text 4</body></reference>
+        <style> <!-- style block is optional -->
+          	<item_numbers>show</item_numbers> <!-- optional. default is show -->
+            <answer_size>small</answer_size> <!-- optional. default is medium
+            must be either a number or 'small' (2 rows), 'medium' (5 rows), large (10 rows) -->
+        </style>
+        <item>
+    			<prompt answer_size="medium" concept="4.1">prompt_for_question_1</prompt>
+    		</item>
+    		<item>
+    			<prompt answer_size="1" concept="4.2">prompt_for_question_2</prompt>
+          <sample_answer>optional_sample_answer_text</sample_answer>
+    		</item>
+        <item>
+          <prompt answer_size="11" concept="4.1,4.2">prompt_for_question_3</prompt> <!-- can override size specified in style for any item -->
+        </item>
+    	</items>
+    </activity>
+    <activity activity_type="fill_in_the_blanks" title="activity title" is_bonus="true">
+      <dl/>
+      <items>
+        <style>
+          <wol_size>words_small</wol_size>
+          <item_numbers>show</item_numbers>
+        </style>
+        <reference type="diagnostic"><header>bonus dl header text</header><body>fill-in-the-blanks dl body text</body></reference>
+        <item>
+          <prompt><wol/></prompt>
+          <answers ref="1" concept="4.1">
+            <answer>answer text</answer>
+            <answer>another answer</answer>
+          </answers>
+        </item>
+        <item>
+          <prompt><wol/></prompt>
+          <answers concept="4.1">
+            <answer>answer text</answer>
+          </answers>
+        </item>
+      </items>
+    </activity>
+  </items>
+</activity>

@@ -1,0 +1,52 @@
+{
+  "activities": [
+    {
+      "ExternalLinkContent": {
+        "activity_type": "external_link",
+        "dl": {
+          "node_text": "Write your answer to the prompts below."
+        },
+        "title": "Escribir - External Link",
+        "items": [
+          {
+            "Exam": {
+              "rank": 1,
+              "sidebar_ref": null,
+              "header": {
+                "node_text": "Escribir - Open ended"
+              },
+              "body": {
+                "node_text": "Write your answer to the prompts below."
+              }
+            }
+          },
+          {
+            "Model": {
+              "body": {
+                "node_text": "<article><p>Model reference body</p></article>"
+              },
+              "header": {
+                "node_text": "Model reference header"
+              },
+              "language": "en",
+              "rank": 1,
+              "sidebar_ref": null
+            }
+          },
+          {
+            "Item": {
+              "external_link_url": "https://dummy-url-1.com/",
+              "rank": 2,
+              "sidebar_ref": null,
+              "question_number": 1,
+              "points_possible": 10
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "activity_type": "exam",
+  "language": "es",
+  "title": "Assessment Spec"
+}

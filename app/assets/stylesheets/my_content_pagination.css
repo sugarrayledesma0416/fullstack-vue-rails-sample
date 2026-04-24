@@ -1,0 +1,41 @@
+.c-pagination__container {
+  align-items: center;
+  color: black;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  padding-bottom: 2rem;
+}
+
+.c-pagination__container a,
+.c-pagination__container em {
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  display: inline-flex; 
+  font-size: 1em; 
+  height: 2.5em;
+  justify-content: center;
+  margin: 0 3px; 
+  text-align: center;
+  transition: background-color 0.3s, color 0.3s; 
+  width: 2.5em;
+}
+
+.c-pagination__container em {
+  background-color: black;
+  color: white;
+  font-style: normal;
+}
+
+.c-pagination__container a {
+  background-color: #fff;
+  color: #000;
+  text-decoration: none;
+  vertical-align: middle;
+}
+
+.c-pagination__container a:hover {
+  background-color: black; 
+  color: white;
+}

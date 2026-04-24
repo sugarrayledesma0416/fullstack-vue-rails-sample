@@ -1,0 +1,54 @@
+<div class="c-box  c-box--bubble-wrap">
+  <table class="c-table  c-table--activities  js-table--activities">
+    <thead>
+      <tr class="c-header-row  c-header-row--activities">
+        <th class="c-header-cell  c-col-component">
+          <h3
+            lang="<%= component_language %>"
+            class="c-table--activity__subtitle  toc_location_component">
+            <%= component_name.html_safe %>
+          </h3>
+        </th>
+        <th class="c-header-cell  c-col-status  status">Status</th>
+        <th class="c-header-cell  c-col-due-date  u-txt-rt">Due date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render(
+            '/partials/nothing_assigned_in_component',
+            presenter: presenter,
+            activities: component_activities
+          ) %>
+      <% component_activities.each do |activity| -%>
+      <% due_date_handler = presenter.due_date_info_for(activity.id) %>
+      <tr class="c-row  c-row--activities  js-row--activities
+                  <% unless presenter.access_guardian.can_access_content?(activity, activity.lesson) -%>
+                    unassignable_activity
+                  <% end -%>
+                  <% unless due_date_handler.activity_is_assigned? && due_date_handler.due_date_released? -%>
+                    js-non-assigned-activity
+                  <% end -%>
+                  <%= test_class("activity-id-#{activity.id}") %>">
+        <td class="c-col-activity  toc_location_activity_list_entry  u-pos-rel  js-toc-col-activity" 
+            lang="<%= presenter.program_language %>">
+          <%= render 'toc/activity_info', activity: activity, presenter: presenter %>
+        </td>
+        <td class="c-col-status  completion_status  u-txt-rt  
+                    <%= test_class('attempt-status') %>">
+          <%= format_attempt_status(presenter: presenter, activity: activity) if presenter.attempt_status[activity.id].present? %>
+        </td>
+        <td class="c-col-due-date  u-txt-rt  toc_location_activity_due_date
+                    <%= test_class('activity-due-date') %>" 
+            id="due_date_cell_for_activity_id_<%= activity.id %>">
+            <%= render(
+                  'toc/due_date',
+                  attempt_status: presenter.attempt_status,
+                  due_date_handler: due_date_handler,
+                  portfolio_enabled: presenter.portfolio_enabled?(activity)
+                ) %>
+        </td>
+      </tr>
+      <% end -%>
+    </tbody>
+  </table>
+</div> <!-- /c-box--bubble-wrap -->

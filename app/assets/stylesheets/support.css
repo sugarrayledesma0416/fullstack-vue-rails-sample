@@ -1,0 +1,215 @@
+
+div#passcode_search_progress
+{
+  border-color:#000;
+  width : 400px;
+  padding-right: 1em;
+}
+
+div#search_fields_div
+{
+  margin: 2em 1em;
+}
+
+input#submit
+{
+  float: right;  
+}
+
+table#search_fields_table,
+table#search_fields_table th,
+table#search_fields_table td
+{
+  border: 0px;
+}
+
+div#results_div
+{
+  margin: 2em 1em;
+}
+
+table#results_table,
+table#results_table th,
+table#results_table td
+{
+  background: white;
+  padding-right: 1em;
+  border-style:solid; 
+  border: 2px;
+  text-align:left;
+  width: 400px;
+  vertical-align: top;
+}
+
+table#results_table 
+{
+  border: 2px solid #ccc;
+}
+
+table#results_table tr.odd td
+{
+  background: #eee;
+}
+
+table#results_table th
+{
+  font-weight: bold;
+}
+
+
+table#passcode_deactivate 
+{
+  border: 0px;
+
+}
+
+div#deactivate 
+{
+  min-width : 60px;
+  background-color: #8b0000;
+}
+
+div.red-button {
+	font-weight: bold;
+	text-align: center;
+	color: #fff;
+	background: url(/images/red-button.gif) transparent top left repeat-x;
+	padding: 3px 15px 5px 15px;
+	text-transform: lowercase;
+	font-size: 1.231em;
+	width: auto
+}
+
+div#action_box
+{
+  padding: 10px,10px,10px,10px;
+  min-width : 700px;
+  float : left;
+  color:#fff;
+}
+
+table.form-table {
+  background: white;
+  min-width : 700px;
+}
+
+table.form-table tr td div {
+  color: black;
+}
+
+table.form-table tr td.label-left, td.label-right {
+  width:50%;
+  color: black;
+}
+
+table.form-table tr td div.radio-left,div.radio-right {
+  padding: 5px,5px,5px,5px;
+  float:left;
+}
+
+table.form-table span {
+  padding-left : 5px;
+  font-size : 1.1em;
+  color: black;
+}
+
+table.form-table tr td.comments{
+  padding-left: 50px;
+}
+
+table.form-table tr td.form-buttons div.submit{
+  padding-left: 50px;
+  float:left;
+}
+
+table.form-table tr td.form-buttons input#submit{
+  float:left;
+}
+
+table.form-table tr td.form-buttons div.cancel-button{
+  padding-top: 19px;
+  float:right;
+  width:auto;
+
+}
+
+table.fieldWithErrors {border: 2px solid #ec4040;}
+
+div#merge_left, div#merge_right , div#cancel{
+  padding : 10px,0px,0px,0px;
+  position : relative;
+  top : 0px;
+  float : left;
+  min-width : 100px;
+  min-height : 30px;
+}
+
+#user_search_course_and_sections{
+ border: 1px solid black;
+ margin-top: 0.8em; 
+ padding: 0.5em;
+}
+
+#user_search_course_and_sections .student_program{
+ margin-bottom: 1em;
+ line-height: 1.5em; 
+}
+
+#user_search_course_and_sections .program_title{
+ border-bottom: 1px solid #535353;
+ 
+}
+
+#user_search_course_and_sections .active_section_header,
+#user_search_course_and_sections .closed_sections_header,
+#user_search_course_and_sections .no_sections_header{
+  font-size: 0.9em;
+  padding-top: 0.5em;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+#user_search_course_and_sections .label{
+  font-weight: bold;
+}
+
+#user_search_course_and_sections .instructor_header{
+  font-size: 0.9em;
+  font-weight: bold;
+}
+
+#user_search_course_and_sections .instructor{
+  padding-left: 1em;
+}
+
+#user_search_course_and_sections .instructor{
+}
+
+#user_search_course_and_sections .single,
+#user_search_course_and_sections .single{
+ display: inline; 
+ padding-left: 0px;
+}
+
+#instructor_privileges div.rows{
+  border-bottom: 1px solid gray;
+  margin: 17px;
+  padding-bottom: 8px;
+}
+#instructor_privileges span#delete_link{
+  border: 1px solid #C0C0C0;
+  padding: 0px 5px;
+  margin-left: 12px;
+}
+#instructor_privileges span.disabled{
+  background-color: #ECF1EF;
+}
+
+.destroy_confirm{
+  width:400px;
+}
+
+div.date_time input, div.date_time img{
+  display:inline;
+  margin: 5px;
+}

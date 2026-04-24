@@ -1,0 +1,201 @@
+/*************************************************************/
+/*                   Activity Details Modal                  */
+/*************************************************************/
+
+@import 'music/library/v1/base/main';
+.ns-activity {
+  .c-activity-info-modal {
+    //Fixing: Start assessment modal has z-index: 100, when info modal is opened we need it at the front.
+    z-index: 101;
+
+    &__panel {
+      $max-height-of-modal: 95vh; // see styles for the Modal component.
+
+      max-height: $max-height-of-modal;
+      overflow-x: hidden;
+      overflow-y: auto;
+
+      @include viewport-min('md') {
+        width: mod(33.25);
+        max-width: 100%;
+      }
+    }
+
+    @include theme('supersites-jr') {
+      .c-modal__box {
+        border-radius: 0.5rem;
+      }
+
+      .c-panel__header {
+        background-color: var(--ui-primary-medium);
+
+        @include viewport-min(md) {
+          padding: 1.6rem 3rem;
+        }
+      }
+
+      .c-panel__body {
+        @include viewport-min(md) {
+          padding: 1.6rem 3rem;
+        }
+      }
+
+      .c-heading--modal {
+        --whitespace-for-floating-close-button: 2rem;
+        --modal-heading-size: var(--font-5);
+
+        color: var(--ui-primary-darkest);
+        width: calc(100% - var(--whitespace-for-floating-close-button));
+        overflow-wrap: break-word;
+        font-size: var(--modal-heading-size);
+
+        @include viewport-min(md) {
+          --whitespace-for-floating-close-button: 5rem;
+          --modal-heading-size: var(--font-7);
+        }
+      }
+
+      .c-modal__close-button {
+        top: 1.05rem;
+        right: 1.5rem;
+
+        @include viewport-min(md) {
+          top: 3.2rem;
+          right: 2.5rem;
+        }
+      }
+
+      .c-embedded-icon svg {
+        width: mod(1);
+        height: mod(1);
+        fill: var(--ui-primary-darkest);
+
+        @include viewport-min(md) {
+          width: mod(1.5);
+          height: mod(1.5);
+        }
+      }
+    }
+
+    @include theme('supersites-jr') {
+      .c-activity-info__lesson-and-strand {
+        border-bottom: rpx(1) solid $gray-d;
+        margin-bottom: mod(1.3);
+        padding-bottom: mod(1.3);
+      }
+    }
+
+    &__section {
+      padding-bottom: 1.3rem;
+      border-bottom: rpx(1) solid $gray-d;
+      margin-bottom: 1.3rem;
+
+      @include theme('supersites-jr') {
+        font-size: var(--font-default);
+      }
+
+      &:first-of-type p {
+        line-height: 1;
+      }
+
+      &:last-of-type {
+        padding-bottom: 0;
+        border-bottom: none;
+        margin-bottom: 0;
+      }
+
+      dl {
+        margin-bottom: 0;
+      }
+
+      h3 {
+        color: $lightest-text;
+
+        @include theme('supersites-jr') {
+          color: var(--ui-primary-darker);
+          font-size: var(--font-3);
+        }
+      }
+
+      #vtext_reference {
+        @include theme('supersites-jr') {
+          background-position-y: mod(0.5);
+          font-size: var(--font-3);
+
+          a[href] {
+            color: var(--ui-link-color);
+          }
+        }
+      }
+    }
+
+    &__strand {
+
+      &::before {
+        background-color: var(--stripe-color, $gray-9);
+        bottom: 10%;
+        content: '';
+        left: 0;
+        position: absolute;
+        top: 10%;
+        width: .25rem;
+      }
+    }
+
+    &__due-date {
+      color: $lightest-text;
+      margin-left: .5rem;
+      text-transform: uppercase;
+
+      @include theme('supersites-jr') {
+        color: var(--ui-primary-darker);
+        display: block;
+        font-size: var(--font-3);
+        font-weight: bold;
+        margin-left: 0;
+        text-transform: none;
+      }
+    }
+
+    $helpful-link-bottom-margin: 0.6rem;
+
+    &__helpful-links-list {
+      margin: 0 0 ($helpful-link-bottom-margin * -1) 0;
+      display: flex;
+      flex-wrap: wrap;
+      list-style-type: none;
+    }
+
+    &__helpful-links-list-item {
+      flex-basis: 100%;
+      padding: 0rem 1rem $helpful-link-bottom-margin 0rem;
+      font-size: 0.9rem;
+
+      @include viewport-min('sm') {
+        flex-basis: 50%;
+      }
+
+      @include viewport-min('md') {
+        flex-basis: 33%;
+        flex-grow: 3;
+      }
+
+      a {
+        text-decoration: underline;
+      }
+    }
+
+    &__helpful-link {
+      font-size: var(--font-1, #{$font-size-12});
+      display: inline-block;
+      margin-right: rpx(10);
+      text-transform: uppercase;
+
+      @include theme('supersites-jr') {
+        color: var(--ui-link-color);
+        font-size: var(--font-3);
+        text-transform: none;
+      }
+    }
+  }
+}

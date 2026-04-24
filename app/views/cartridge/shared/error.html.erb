@@ -1,0 +1,17 @@
+<% content_for(:css_head, stylesheet_link_tag('cartridge_error')) %>
+
+<div class="c-message  c-message--error  u-mar-bot-16">
+  <h2 class="c-message__heading  c-heading  u-txt-bold">An Error Occurred</h2>
+</div>
+
+<h2>Technical Details</h2>
+
+<p class="u-txt-16">
+  The information below will be useful to either the administrator of your
+  Learning Management System or VHL Technical support when debugging this
+  error. Please copy and paste it and include it when requesting support.
+</p>
+
+<div class="u-pad-16  u-bg-gray-e">
+  <code class="cartridge_errors"><%= @errors.is_a?(Hash) ? JSON.pretty_generate(@errors) : @errors %></code>
+</div>

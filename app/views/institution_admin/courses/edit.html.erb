@@ -1,0 +1,53 @@
+<% content_for(:js_head, javascript_include_tag('maestro_activity_engine/d3.v3.min')) %>
+<% content_for(:js_head, javascript_include_tag('moment-with-langs.min.js')) %>
+<% content_for(:js_head, javascript_include_tag('twix.min')) %>
+<% content_for(:js_head, javascript_packs_with_chunks_tag('institution_admin/enterprise_courses/edit')) %>
+<% content_for(:css_head, stylesheet_packs_with_chunks_tag('instructor/courses/edit')) %>
+
+<% content_for(:meta) do %>
+  <meta name="VHL.course_school_id" content="<%= @school&.id %>"/>
+<% end %>
+
+<% content_for :meta do %>
+  <meta name="VHL.in_institution_admin" content="true">
+<% end %>
+<div class="u-pad-top-16  u-pad-bot-8">
+  <%= link_to(
+    institution_admin_courses_current_path(
+      program_id: current_program.id,
+      school_id: @school.id
+    ),
+    class: 'c-button-v3  c-button-v3--quaternary  c-button-v3--xs  u-pad-top-8  u-pad-bot-8  u-pad-lt-16  u-pad-rt-16  u-txt-nodec'
+   ) do %>
+      <music-icon-arrow rotate="2" class="u-fill-true-gray-900"></music-icon-arrow>
+      <p class="u-txt-semibold  u-txt-true-gray-900  u-mar-0">Back to Courses</p>
+  <% end %>
+</div>
+
+<!-- Remove the white background by default in enterprise course creation -->
+<% content_for :css_head do %>
+  <style>
+    .c-page-container.js-page-container {
+      background-color: var(--music-true-gray-50);
+    }
+  </style>
+<% end %>
+
+<div class="ns-music-v3">
+  <div class="js-edit-course-wizard"></div>
+  <div class="js-edit-course-wizard-data"
+     data-from-dom="<%= {
+       can_share_to_google_classroom_for_school: @school&.can_share_to_google_classroom?,
+       current_user: current_user.to_json,
+       gradebook_categories: format_screencast_context_link(32, 'Show me how to add a gradebook category to my new course'),
+       has_vocab_tutorials: current_program.has_vocab_tutorials?,
+       institution_supports_chat: @school.has_chat_support_enabled?,
+       is_current_program_supersite_junior: supersite_junior?,
+       is_vol: current_program.vista_online_learning?,
+       language_code: current_program.language_code,
+       loading_icon_path: asset_path('/images/loading_32.gif'),
+       potential_instructors: @potential_instructors.to_json,
+       program_has_audio_transcripts: program_has_audio_transcripts?,
+     }.to_json  %>">
+  </div>
+</div>

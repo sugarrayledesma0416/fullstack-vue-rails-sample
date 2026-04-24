@@ -1,0 +1,159 @@
+<% content_for(:navigation) do %>
+  <% if current_user.student? %>
+    <% render('app_shell/navbar_program/supersite_junior') %>
+  <% else %>
+    <% render('partials/instructor_view_of_student_dashboard_warning') %>
+  <% end %>
+<% end %>
+
+<div id="main_content">
+
+  <div class="l-center-block  l-center-block--44">
+    <h1 id="greeting" class="c-heading  c-heading--greeting  u-txt-ctr">
+      Hi, <%= current_user.first_name %>!
+    </h1>
+
+    <% if @presenter.incomplete_future_groups.empty? %>
+      <% if @presenter.incomplete_due_dates_count == 0 %>
+        <div class="c-homework-status-message  u-txt-ctr">
+          <%= image_tag(
+                'jr/balloons.svg',
+                class: 'u-mar-bot-12',
+                height: 190,
+                width: 190,
+                alt: 'A bunch of colorful balloons'
+              ) %>
+          <div class="u-txt-bold  u-txt-24">Hooray!</div>
+          <div>You have no homework.</div>
+        </div>
+      <% else %>
+        <div class="c-homework-status-message  u-txt-ctr">
+          <%= image_tag(
+                'jr/alarm.svg',
+                class: 'u-mar-bot-12',
+                height: 190,
+                width: 190,
+                alt: 'Alert'
+              ) %>
+            <div class="u-txt-bold  u-txt-24">You have no upcoming homework, but...</div>
+        </div>
+        <div class="c-box  c-box--incomplete-lozenge
+                    <%= test_class('overdue-lozenge') %>">
+          <div class="u-txt-bold  u-txt-incomplete">Oops!</div>
+          <div class="u-dis-flex  u-flex-wrap  
+                      flex-justify-between">
+            <div class="u-txt-black  u-pad-top-12">
+              You have overdue work.
+            </div>
+            <div class="c-box--incomplete__button">
+              <%= render 'progress_go_button', 'aria_label': "Go to overdue assignments" %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% else %>
+      <% if @presenter.incomplete_due_dates_count > 0 %>
+        <div class="c-box  c-box--incomplete-lozenge
+                    u-dis-flex  u-txt-ctr  u-flex-wrap   flex-align-ctr  flex-justify-between
+                    <%= test_class('overdue-lozenge') %>">
+          <div class="u-dis-flex  flex-align-ctr  flex-grow-9">
+            <%= image_tag(
+                  'jr/alarm.svg',
+                  height: 60,
+                  width: 60,
+                  alt: 'Alert'
+                ) %>
+            <div class="u-txt-bold  u-txt-incomplete  flex-grow-9">Overdue Assignments!</div>
+          </div>
+          <div class="c-box--incomplete__button
+                      c-box--incomplete__button-wrapper-sm">
+            <%= render 'progress_go_button', 'aria_label': "Go to overdue assignments" %>
+          </div>
+        </div>
+      <% end %>
+
+      <% @presenter.incomplete_future_groups.each.with_index(1) do |group, index| %>
+        <div class="c-dashboard-lozenge
+                    <%= test_class("lozenge-#{index}") %>">
+          <div class="c-dashboard-lozenge__layout">
+            <%
+              workset_due_date_short = strip_tags(format_date_time(group.due_date,
+                                                  :relative_day_or_short_date))
+              workset_due_date_a11y = strip_tags(format_date_time(group.due_date,
+                                                  :relative_day_or_month_unpadded))
+              is_due_today = group.due_date == Date.today
+              a11y_strand_id = "a11y_strand_label_#{index}"
+              a11y_unit_id = "a11y_unit_label_#{index}"
+              a11y_due_id = "a11y_due_id_#{index}"
+            %>
+
+            <% due_date_class = is_due_today ? 'due-today' : 'due-date' %>
+            <div class="c-dashboard-lozenge__status">
+              <span class="c-tag c-tag--<%= due_date_class %>  <%= test_class('due-date') %>"
+                    id="<%= a11y_due_id %>">
+                <span aria-hidden="true">Due <%= workset_due_date_short %></span>
+                <span class="u-screen-reader-only">Due <%= workset_due_date_a11y %></span>
+              </span>
+            </div>
+
+            <div class="c-dashboard-lozenge__strand">
+              <div class="c-strand-box">
+                <div class="c-strand-box__image-wrapper">
+                  <% if group.concept_media_item %>
+                    <%= image_tag(
+                          group.concept_media_item.public_filename,
+                          alt: group.concept_media_item.alt_text,
+                          class: "c-strand-box__image"
+                          ) %>
+                  <% else %>
+                    <%= image_tag(
+                      'jr/icons/strand_default.svg',
+                      'aria-hidden': true,
+                      class: "c-strand-box__image"
+                    ) %>
+                  <% end %>
+                </div>
+                <div class="c-strand-box__name  <%= test_class('strand-name') %>"
+                     id="<%= a11y_strand_id %>">
+                  <%= group.concept_label.strip_tags.html_decode %>
+                </div>
+              </div> <!-- /c-strand-box -->
+            </div>
+
+            <hr class="c-dashboard-lozenge__divider" />
+
+            <div class="c-dashboard-lozenge__info">
+              <span class="c-dashboard-lozenge__lesson-name  <%= test_class('lesson-name') %>"
+                    id="<%= a11y_unit_id %>">
+                  <%= sanitize(group.lesson_name, tags: %w[span], attributes: %w[lang]) %>
+              </span>
+              <span class="c-dashboard-lozenge__assignment-count  <%= test_class('assignment-count') %>">
+                <%= pluralize(group.incomplete_count, 'assignment') %>
+              </span>
+            </div>
+
+            <div class="c-dashboard-lozenge__action">
+              <span hidden id="a11y_go_to">Go to</span>
+              <span hidden id="a11y_comma">, </span>
+              <%= button_to(
+                    'Go',
+                    assignment_group_path(
+                      group,
+                      group.due_date,
+                      current_user
+                    ),
+                    role: 'link',
+                    class: "c-button  c-button--jr
+                           #{'c-button--jr-primary' if index == 1}  u-no-width",
+                    method: :get,
+                    'aria-labelledby': "a11y_go_to #{a11y_unit_id} a11y_comma #{a11y_strand_id}
+                                       a11y_comma #{a11y_due_id}"
+                  ) %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+

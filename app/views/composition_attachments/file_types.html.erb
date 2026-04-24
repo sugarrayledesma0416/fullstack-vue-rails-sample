@@ -1,0 +1,36 @@
+<% content_for(:body_classes, 'standard_layout file_types') %>
+<% content_for(:css_head) do %>
+  <style>
+    /* Styling for File Types page */
+    .file_types .wrap_table {
+      margin-left: 0px;
+    }
+
+    .allowed_types {
+      font-size: 13px;
+      margin-bottom: 5px;
+    }
+  </style>
+<% end %>
+
+<div id="main_content">
+  <div class="wrap_table">
+    <div class="allowed_types">
+      Allowed file types
+    </div>
+    <table>
+      <tbody>
+        <thead>
+          <th>Extension</th>
+          <th>Description</th>
+        </thead>
+        <% @allowed_file_types.each do |file_type| %>
+          <tr data-file-type-id="file_type_<%= file_type.id %>">
+            <td data-content-type="file_type_extension"><%= file_type.extension_name %></td>
+            <td data-content-type="file_type_description"><%= file_type.extension_description %></td>
+          </tr>
+        <% end -%>
+      </tbody>
+    </table>
+  </div>
+</div>

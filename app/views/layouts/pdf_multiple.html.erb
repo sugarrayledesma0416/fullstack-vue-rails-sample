@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <%= render('partials/google_tag_manager') %>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <%= wicked_pdf_stylesheet_link_tag "pdf_multiple" %>
+  </head>
+  <body>
+    <div id="content">
+      <%= yield %>
+    </div>
+  </body>
+</html>

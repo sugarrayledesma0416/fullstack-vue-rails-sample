@@ -1,0 +1,72 @@
+<%= form_for @presenter.reply_for(post),
+  url: forum_forum_posts_path(current_program, current_section, @forum,
+                              anchor: "post_id_#{post.id}"),
+  html: { id: "reply_to_post_id_#{post.id}",
+          class: "js-reply-form  js-reply-form-#{post.id}" \
+          "#{ '  u-hidden' unless @presenter.has_unsaved_reply?(post) }"
+        } do |form| %>
+
+
+  <div class="c-modal  js-modal-a11y">
+      <div class="c-panel  c-modal__box--forum-post  c-modal__box  u-oflow-auto"
+           aria-labelledby="reply-dialog-heading"
+           role="dialog"
+           aria-modal="true">
+          <div class="c-panel__header  c-forums-post-modal__header">
+            <h2 id="reply-dialog-heading">Reply</h2>
+          </div>
+          <%= render(
+                'partials/form_errors',
+                header_message: nil,
+                object: post
+              ) %>
+          <div class="c-panel__body">
+              <div class="c-author-post-container">
+                <div class="c-author-post  u-pad-bot-10">
+                  <div class="c-author-post__title">
+                    <div class="c-author-post__name">
+                      <%= post.user.full_name %>
+                      <% if post.user.instructor? %>
+                        <span class="c-author-post__designation"> instructor</span>
+                      <% end %>
+                    </div>
+                    <div class="c-author-post__date">
+                      <%= format_date_time(post.created_at, :ordinal_with_zone) %>
+                    </div>
+                    <% if post.edited? %>
+                      <div class="c-author-post__date">
+                        Edited <%= format_date_time(post.edited_at, :ordinal_with_zone) %>
+                      </div>
+                    <% end %>
+                  </div>
+                  <div class="c-author-post__body">
+                    <%= post.text %>
+                  </div>
+                  <% if post.audio_uri %>
+                    <span>
+                      <%= Music::Components.media_button(
+                        variant: 'listen',
+                        toggle: :stop, 
+                        classes: ['u-mar-0  js-play-audio-comment']) %>
+                      <span class="u-invisible  js-audio-comment-url" data-audio-url="<%= post.audio_uri %>"></span>
+                    </span>
+                <% end %>
+                </div>
+              </div>
+              <div class="c-reply-modal">
+                <%= render partial: 'forums/audio_controls', locals: { form: form } %>
+                <div role="alert" class="js-empty-input-error  u-txt-red  u-mar-top-16" ></div>
+              </div>
+          </div>
+          <div class="c-panel__footer  c-forums-post-modal__footer">
+            <%= button_tag 'Cancel', type: 'button', class: "c-button  c-no-button  u-pad-10  js-cancel-reply", data: { post_id: post.id } %>
+            <%= form.submit 'Submit', class: 'c-button  c-button--primary' %>
+          </div>
+      </div>
+  </div>
+
+  <%= form.hidden_field :parent_id %>
+  <input type="hidden" name="file"/>
+  <%= form.hidden_field :audio_path, 'data-audio-path' => "" %>
+
+<% end %> <!-- / Reply form -->

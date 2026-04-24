@@ -1,0 +1,17 @@
+<%
+    content_for(
+      :js_head,
+      javascript_packs_with_chunks_tag('instructor_notes/instructor_notes')
+    )
+
+    content_for(
+      :css_head,
+      stylesheet_packs_with_chunks_tag('instructor_notes/instructor_notes')
+    )
+%>
+
+<input class="js-allows-expanded-notes"
+       type="hidden"
+       data-allows-expanded-notes="<%= @activity_presenter.allows_expanded_notes? %>" />
+
+<%= yield %>

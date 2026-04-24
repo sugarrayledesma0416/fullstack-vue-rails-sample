@@ -1,0 +1,566 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<activity activity_type="study_plan_practice_test" title="Prueba de práctica" assessment_type="practice" language="es">
+  <!--Type a MASTER DL for the entire diagnostic here.-->
+  <dl/>
+  <items>
+    <style>
+      <item_numbers>show</item_numbers>
+      <threshold>70</threshold>
+    </style>
+    <!--This section defines each DIAGNOSTIC CONCEPT, such as grammar points. There are 2; copy and paste as needed.-->
+    <diagnostic_concepts>
+      <!--Assign a "ref" ID to the diagnostic concept, ex. 4.1. It will be used to tag answers below.-->
+      <!--The "ref" value will be displayed in a black box. Therefore, don't include it in the TITLE as well.-->
+      <diagnostic_concept ref="2">
+        <!--Insert the title of the concept; supports HTML.-->
+        <title>School vocabulary</title>
+        <vocabulary_link_label>Study the vocabulary</vocabulary_link_label>
+        <supplemental_activities>
+          <external_reference>
+            <title>Practice</title>
+            <activity id="90451"/>
+          </external_reference>
+        </supplemental_activities>
+      </diagnostic_concept>
+      <diagnostic_concept ref="2.1">
+        <title>Present tense of <b>-ar</b> verbs</title>
+        <external_references>
+          <external_reference>
+            <title>Review the grammar topic</title>
+            <activity id="71068"/>
+          </external_reference>
+        </external_references>
+        <supplemental_activities>
+          <external_reference>
+            <title>Practice</title>
+            <activity id="90452"/>
+          </external_reference>
+        </supplemental_activities>
+      </diagnostic_concept>
+      <diagnostic_concept ref="2.2">
+        <title>Forming questions</title>
+        <external_references>
+          <external_reference>
+            <title>Review the grammar topic</title>
+            <activity id="71071"/>
+          </external_reference>
+        </external_references>
+        <supplemental_activities>
+          <external_reference>
+            <title>Practice</title>
+            <activity id="90453"/>
+          </external_reference>
+        </supplemental_activities>
+      </diagnostic_concept>
+      <diagnostic_concept ref="2.3">
+        <title>Present tense of <b>estar</b></title>
+        <external_references>
+          <external_reference>
+            <title>Review the grammar topic</title>
+            <activity id="71072"/>
+          </external_reference>
+        </external_references>
+        <supplemental_activities>
+          <external_reference>
+            <title>Practice</title>
+            <activity id="90454"/>
+          </external_reference>
+        </supplemental_activities>
+      </diagnostic_concept>
+      <diagnostic_concept ref="2.4">
+        <title>Numbers 31 and higher</title>
+        <external_references>
+          <external_reference>
+            <title>Review the grammar topic</title>
+            <activity id="71073"/>
+          </external_reference>
+        </external_references>
+        <supplemental_activities>
+          <external_reference>
+            <title>Practice</title>
+            <activity id="90455"/>
+          </external_reference>
+        </supplemental_activities>
+      </diagnostic_concept>
+    </diagnostic_concepts>
+    <activity activity_type="drop_down" title="{title of multiple choice activity}" language="">
+      <dl/>
+      <items>
+        <style>
+          <item_numbers>show</item_numbers>
+        </style>
+        <reference type="diagnostic">
+          <header>Seleccionar</header>
+          <body>
+            <span lang="en">Select the best word or phrase to complete each sentence.</span>
+          </body>
+        </reference>
+        <item>
+          <prompt>Luis Fernando compra tres <wol ref="1"/> en la librería.</prompt>
+          <choices concept="2">
+            <distractor>matemáticas</distractor>
+            <distractor>sillas</distractor>
+            <answer>libros</answer>
+          </choices>
+        </item>
+        <item>
+          <prompt>Ana escucha <wol ref="1"/>.</prompt>
+          <choices concept="2">
+            <distractor>el escritorio</distractor>
+            <answer>la radio</answer>
+            <distractor>la química</distractor>
+          </choices>
+        </item>
+        <item>
+          <prompt>Isabel regresa a la <wol ref="1"/> a las cinco.</prompt>
+          <choices concept="2">
+            <distractor>contabilidad</distractor>
+            <answer>residencia estudiantil</answer>
+            <distractor>papelera</distractor>
+          </choices>
+        </item>
+        <item>
+          <prompt>Eduardo y Sandra llegan al <wol ref="1"/>.</prompt>
+          <choices concept="2">
+            <answer>estadio</answer>
+            <distractor>horario</distractor>
+            <distractor>borrador</distractor>
+          </choices>
+        </item>
+        <item>
+          <prompt>La profesora Domínguez enseña con <wol ref="1"/>.</prompt>
+          <choices concept="2">
+            <distractor>ventana y puerta</distractor>
+            <answer>tiza y pizarra</answer>
+            <distractor>reloj y papelera</distractor>
+          </choices>
+        </item>
+      </items>
+    </activity>
+    <activity activity_type="drop_down_same" title="{title activity}" language="">
+      <dl/>
+      <items>
+        <style>
+          <item_numbers>show</item_numbers>
+        </style>
+        <reference type="diagnostic">
+          <header>¿Qué clase?</header>
+          <body>
+            <span lang="en">Match the students with the appropriate courses.</span>
+          </body>
+        </reference>
+        <choices>
+          <choice ref="a">literatura</choice>
+          <choice ref="b">física</choice>
+          <choice ref="c">español</choice>
+          <choice ref="d">arte</choice>
+          <choice ref="e">música</choice>
+        </choices>
+        <item>
+          <prompt>Ignacio y Diego toman la clase de <wol answer_ref="d" concept="2"/> para dibujar a mano.</prompt>
+        </item>
+        <item>
+          <prompt>Carla y Andrea toman la clase de <wol answer_ref="c" concept="2"/> para hablar otra lengua.</prompt>
+        </item>
+        <item>
+          <prompt>Ricardo toma la clase de <wol answer_ref="e" concept="2"/> para cantar.</prompt>
+        </item>
+        <item>
+          <prompt>Rosa y Victoria toman la clase de <wol answer_ref="a" concept="2"/> para hablar de los novelistas.</prompt>
+        </item>
+        <item>
+          <prompt>Julia toma la clase de <wol answer_ref="b" concept="2"/> para estudiar el origen del universo.</prompt>
+        </item>
+      </items>
+    </activity>
+    <activity activity_type="drop_down" title="{title of multiple choice activity}" language="">
+      <dl/>
+      <items>
+        <style>
+          <item_numbers>show</item_numbers>
+        </style>
+        <reference type="diagnostic">
+          <header>Elegir</header>
+          <body>
+            <span lang="en">Select the correct verb forms.</span>
+          </body>
+        </reference>
+        <item>
+          <prompt>Antonio <wol ref="1"/> en la residencia estudiantil los lunes.</prompt>
+          <choices concept="2.1">
+            <distractor>descansan</distractor>
+            <distractor>descansas</distractor>
+            <answer>descansa</answer>
+          </choices>
+        </item>
+        <item>
+          <prompt>Nosotros <wol ref="1"/> mucho.</prompt>
+          <choices concept="2.1">
+            <distractor>viaja</distractor>
+            <answer>viajamos</answer>
+            <distractor>viajan</distractor>
+          </choices>
+        </item>
+        <item>
+          <prompt>José Luis y Rafael <wol ref="1"/> cerca de la casa.</prompt>
+          <choices concept="2.1">
+            <answer>caminan</answer>
+            <distractor>caminas</distractor>
+            <distractor>caminamos</distractor>
+          </choices>
+        </item>
+        <item>
+          <prompt>Tú <wol ref="1"/> a la clase de humanidades con lápiz y papel.</prompt>
+          <choices concept="2.1">
+            <distractor>regreso</distractor>
+            <distractor>regresan</distractor>
+            <answer>regresas</answer>
+          </choices>
+        </item>
+        <item>
+          <prompt>Yo <wol ref="1"/> terminar la tarea de periodismo.</prompt>
+          <choices concept="2.1">
+            <distractor>necesita</distractor>
+            <answer>necesito</answer>
+            <distractor>necesitas</distractor>
+          </choices>
+        </item>
+      </items>
+    </activity>
+    <activity activity_type="fill_in_the_blanks" title="{title of FIB activity}" language="">
+      <dl/>
+      <items>
+        <style>
+          <wol_size>words_standard</wol_size>
+          <item_numbers>show</item_numbers>
+          <ruleset punctuation="false" capitalization="false" accents="false"/>
+        </style>
+        <reference type="diagnostic">
+          <header>Los verbos</header>
+          <body>
+            <span lang="en">Fill in the blanks with the correct verbs.</span>
+          </body>
+        </reference>
+        <reference type="wordbank">
+          <body sorted="yes">
+buscan
+escuchas
+esperamos
+estudia
+miro
+</body>
+        </reference>
+        <item>
+          <prompt>En el laboratorio, tú <wol ref="1"/> la guitarra de la clase de música.</prompt>
+          <answers ref="1" concept="2.1">
+            <answer>escuchas</answer>
+          </answers>
+        </item>
+        <item>
+          <prompt>Camila <wol ref="1"/> en la biblioteca.</prompt>
+          <answers ref="1" concept="2.1">
+            <answer>estudia</answer>
+          </answers>
+        </item>
+        <item>
+          <prompt>Susana y yo <wol ref="1"/> el autobús.</prompt>
+          <answers ref="1" concept="2.1">
+            <answer>esperamos</answer>
+          </answers>
+        </item>
+        <item>
+          <prompt>Rosa María y Paola <wol ref="1"/> una cafetería al lado del estadio.</prompt>
+          <answers ref="1" concept="2.1">
+            <answer>buscan</answer>
+          </answers>
+        </item>
+        <item>
+          <prompt>Yo <wol ref="1"/> el reloj.</prompt>
+          <answers ref="1" concept="2.1">
+            <answer>miro</answer>
+          </answers>
+        </item>
+      </items>
+    </activity>
+    <activity activity_type="multiple_choice" title="{title of multiple choice activity}" language="">
+      <dl/>
+      <items>
+        <style>
+          <item_numbers>show</item_numbers>
+        </style>
+        <reference type="diagnostic">
+          <header>Preguntas</header>
+          <body>
+            <span lang="en">Select the correct type of question for each statement.</span>
+          </body>
+        </reference>
+        <item>
+          <prompt>Catalina baila los sábados en la noche. (<i>intonation</i>)</prompt>
+          <choices concept="2.2">
+            <distractor>Catalina baila los sábados en la noche, ¿no?</distractor>
+            <distractor>¿Baila Catalina los sábados en la noche?</distractor>
+            <answer>¿Catalina baila los sábados en la noche?</answer>
+          </choices>
+        </item>
+        <item>
+          <prompt>Los estudiantes contestan las preguntas. (<i>tag</i>)</prompt>
+          <choices concept="2.2">
+            <distractor>¿Los estudiantes contestan las preguntas?</distractor>
+            <answer>Los estudiantes contestan las preguntas, ¿no?</answer>
+            <distractor>¿Contestan las preguntas los estudiantes?</distractor>
+          </choices>
+        </item>
+        <item>
+          <prompt>Juan Carlos y yo preparamos el horario. (<i>inversion</i>)</prompt>
+          <choices concept="2.2">
+            <answer>¿Preparamos el horario Juan Carlos y yo?</answer>
+            <distractor>Juan Carlos y yo preparamos el horario, ¿verdad?</distractor>
+            <distractor>¿Juan Carlos y yo preparamos el horario?</distractor>
+          </choices>
+        </item>
+        <item>
+          <prompt>Enrique llega a la universidad. (<i>tag</i>)</prompt>
+          <choices concept="2.2">
+            <answer>Enrique llega a la universidad, ¿verdad?</answer>
+            <distractor>¿Enrique llega a la universidad?</distractor>
+            <distractor>¿Llega Enrique a la universidad?</distractor>
+          </choices>
+        </item>
+        <item>
+          <prompt>Silvia y Patricia conversan sobre psicología. (<i>inversion</i>)</prompt>
+          <choices concept="2.2">
+            <distractor>¿Silvia y Patricia conversan sobre psicología?</distractor>
+            <distractor>Silvia y Patricia conversan sobre psicología, ¿no?</distractor>
+            <answer>¿Conversan Silvia y Patricia sobre psicología?</answer>
+          </choices>
+        </item>
+      </items>
+    </activity>
+    <activity activity_type="drop_down_same" title="{title activity}" language="">
+      <dl/>
+      <items>
+        <style>
+          <item_numbers>show</item_numbers>
+        </style>
+        <reference type="diagnostic">
+          <header>Preguntas y respuestas</header>
+          <body>
+            <span lang="en">Match the answers with the questions.</span>
+          </body>
+        </reference>
+        <choices>
+          <choice ref="a">¿Dónde deseas desayunar?</choice>
+          <choice ref="b">¿Cuáles son tus clases favoritas?</choice>
+          <choice ref="c">¿Qué lleva Miguel en la mochila?</choice>
+          <choice ref="d">¿Por qué tomas cursos de historia y de sociología?</choice>
+          <choice ref="e">¿Cuándo tomas clases de música?</choice>
+        </choices>
+        <item>
+          <prompt><wol answer_ref="c" concept="2.2"/>  Lápices, cuadernos y libros.</prompt>
+        </item>
+        <item>
+          <prompt><wol answer_ref="e" concept="2.2"/>  Los jueves a las diez de la mañana.</prompt>
+        </item>
+        <item>
+          <prompt><wol answer_ref="a" concept="2.2"/>  En la cafetería de la universidad.</prompt>
+        </item>
+        <item>
+          <prompt><wol answer_ref="d" concept="2.2"/>  Porque quiero trabajar con la comunidad.</prompt>
+        </item>
+        <item>
+          <prompt><wol answer_ref="b" concept="2.2"/>  Literatura y administración de empresas.</prompt>
+        </item>
+      </items>
+    </activity>
+    <activity activity_type="drop_down" title="{title of multiple choice activity}" language="">
+      <dl/>
+      <items>
+        <style>
+          <item_numbers>show</item_numbers>
+        </style>
+        <reference type="diagnostic">
+          <header>Escoger</header>
+          <body>
+            <span lang="en">Select the correct forms of <b>estar</b>.</span>
+          </body>
+        </reference>
+        <item>
+          <prompt>Mónica y yo <wol ref="1"/> delante de la biblioteca.</prompt>
+          <choices concept="2.3">
+            <distractor>estoy</distractor>
+            <answer>estamos</answer>
+            <distractor>está</distractor>
+          </choices>
+        </item>
+        <item>
+          <prompt>Natalia y Raúl ahora <wol ref="1"/> enfermos.</prompt>
+          <choices concept="2.3">
+            <distractor>está</distractor>
+            <distractor>estás</distractor>
+            <answer>están</answer>
+          </choices>
+        </item>
+        <item>
+          <prompt>¿Cómo <wol ref="1"/> tú, Carmen?</prompt>
+          <choices concept="2.3">
+            <distractor>estoy</distractor>
+            <answer>estás</answer>
+            <distractor>está</distractor>
+          </choices>
+        </item>
+        <item>
+          <prompt>Los miércoles Sebastián <wol ref="1"/> en el estadio.</prompt>
+          <choices concept="2.3">
+            <distractor>estamos</distractor>
+            <answer>está</answer>
+            <distractor>estoy</distractor>
+          </choices>
+        </item>
+        <item>
+          <prompt>Yo <wol ref="1"/> regular.</prompt>
+          <choices concept="2.3">
+            <distractor>estamos</distractor>
+            <distractor>está</distractor>
+            <answer>estoy</answer>
+          </choices>
+        </item>
+      </items>
+    </activity>
+    <activity activity_type="fill_in_the_blanks" title="{title of FIB activity}" language="">
+      <dl/>
+      <items>
+        <style>
+          <wol_size>words_standard</wol_size>
+          <item_numbers>show</item_numbers>
+          <ruleset punctuation="false" capitalization="false" accents="false"/>
+        </style>
+        <reference type="diagnostic">
+          <header>Completar</header>
+          <body>
+            <span lang="en">Fill in the blanks with the correct forms of <b>estar</b> in the present tense.</span>
+          </body>
+        </reference>
+        <item>
+          <prompt>Nosotros <wol ref="1"/> muy bien.</prompt>
+          <answers ref="1" concept="2.3">
+            <answer>estamos</answer>
+          </answers>
+        </item>
+        <item>
+          <prompt>Marcela y Rodrigo <wol ref="1"/> en la clase de química.</prompt>
+          <answers ref="1" concept="2.3">
+            <answer>están</answer>
+          </answers>
+        </item>
+        <item>
+          <prompt>La papelera <wol ref="1"/> a la derecha de la ventana.</prompt>
+          <answers ref="1" concept="2.3">
+            <answer>está</answer>
+          </answers>
+        </item>
+        <item>
+          <prompt>Yo <wol ref="1"/> en el laboratorio de biología.</prompt>
+          <answers ref="1" concept="2.3">
+            <answer>estoy</answer>
+          </answers>
+        </item>
+        <item>
+          <prompt>Tú <wol ref="1"/> lejos de casa, ¿no?</prompt>
+          <answers ref="1" concept="2.3">
+            <answer>estás</answer>
+          </answers>
+        </item>
+      </items>
+    </activity>
+    <activity activity_type="drop_down" title="{title of multiple choice activity}" language="">
+      <dl/>
+      <items>
+        <style>
+          <item_numbers>show</item_numbers>
+        </style>
+        <reference type="diagnostic">
+          <header>Números</header>
+          <body>
+            <span lang="en">Select the correct number words.</span>
+          </body>
+        </reference>
+        <item>
+          <prompt>Julio compra <wol ref="1"/> (50) plumas de colores para dibujar.</prompt>
+          <choices concept="2.4">
+            <distractor>cuarenta</distractor>
+            <answer>cincuenta</answer>
+            <distractor>setenta</distractor>
+          </choices>
+        </item>
+        <item>
+          <prompt>Daniela prepara <wol ref="1"/> (108) clases de arte en un año.</prompt>
+          <choices concept="2.4">
+            <answer>ciento ocho</answer>
+            <distractor>ciento dieciocho</distractor>
+            <distractor>doscientas ocho</distractor>
+          </choices>
+        </item>
+        <item>
+          <prompt>El estadio necesita <wol ref="1"/> (10.650) sillas nuevas.</prompt>
+          <choices concept="2.4">
+            <distractor>mil seiscientas cincuenta</distractor>
+            <answer>diez mil seiscientas cincuenta</answer>
+            <distractor>dos mil setecientas cincuenta</distractor>
+          </choices>
+        </item>
+        <item>
+          <prompt>La cafetería espera <wol ref="1"/> (43) mesas el jueves.</prompt>
+          <choices concept="2.4">
+            <distractor>treinta y tres</distractor>
+            <distractor>setenta y tres</distractor>
+            <answer>cuarenta y tres</answer>
+          </choices>
+        </item>
+        <item>
+          <prompt>Hay <wol ref="1"/> (35.000) estudiantes en el campus de la universidad.</prompt>
+          <choices concept="2.4">
+            <answer>treinta y cinco mil</answer>
+            <distractor>tres mil quinientos</distractor>
+            <distractor>trescientos cincuenta mil</distractor>
+          </choices>
+        </item>
+      </items>
+    </activity>
+    <activity activity_type="drop_down_same" title="{title activity}" language="">
+      <dl/>
+      <items>
+        <style>
+          <item_numbers>show</item_numbers>
+        </style>
+        <reference type="diagnostic">
+          <header>Emparejar</header>
+          <body>
+            <span lang="en">Match the number words with the numerals.</span>
+          </body>
+        </reference>
+        <choices>
+          <choice ref="a">37</choice>
+          <choice ref="b">52</choice>
+          <choice ref="c">476</choice>
+          <choice ref="d">832</choice>
+          <choice ref="e">211.000</choice>
+        </choices>
+        <item>
+          <prompt>En la biblioteca hay ochocientas treinta y dos ventanas.  <wol answer_ref="d" concept="2.4"/></prompt>
+        </item>
+        <item>
+          <prompt>En el salón de música hay cuatrocientos setenta y seis instrumentos.  <wol answer_ref="c" concept="2.4"/></prompt>
+        </item>
+        <item>
+          <prompt>Cincuenta y dos estudiantes desayunan en la cafetería.  <wol answer_ref="b" concept="2.4"/></prompt>
+        </item>
+        <item>
+          <prompt>Hay doscientos once mil libros en la librería.  <wol answer_ref="e" concept="2.4"/></prompt>
+        </item>
+        <item>
+          <prompt>Hay treinta y siete lecciones en el curso.  <wol answer_ref="a" concept="2.4"/></prompt>
+        </item>
+      </items>
+    </activity>
+  </items>
+</activity>

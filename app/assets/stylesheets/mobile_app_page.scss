@@ -1,0 +1,28 @@
+@import 'music/library/v1/base/main';
+
+.app_description {
+  display: inline-block;
+  margin: 0px 15px 20px 15px;
+  width: 350px;
+  vertical-align: top;
+
+  @include theme-opt-in('supersites-jr') {
+    width: auto;
+  }
+}
+
+#full_width_body img {
+  margin-bottom: 10px;
+}
+
+.app_page #full_width_body {
+  text-align: center;
+}
+
+.app_description p {
+  text-align: left;
+}
+
+.tiny-text {
+  font-size: 10px;
+}

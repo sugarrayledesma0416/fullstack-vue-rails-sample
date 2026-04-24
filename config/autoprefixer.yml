@@ -1,0 +1,20 @@
+# Config for autoprefixer-rails
+# IMPORTANT: Run `rake tmp:clear` after changing this config.
+
+cascade: false # don't indent-align prefixed properties
+
+flexbox: no-2009
+
+browsers:
+  # List of browsers for which vendor prefixes should be checked/added/removed.
+  # This list should be kept up to date with our list of supported browsers:
+  - IE >= 10 # Our official support is 11+; this adds support for 2012-era flexbox.
+  - Firefox >= 30
+  - Chrome >= 31
+  - Safari >= 8.1.7
+  # Browsers for which we have no support policy.
+  # These version numbers are tentative, erring towards inclusion.
+  - iOS >= 9      # 2012
+  - Opera >= 11   # 2010
+  - Android >= 4  # 2012
+

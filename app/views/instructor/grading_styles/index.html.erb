@@ -1,0 +1,67 @@
+<% content_for(:js_head, javascript_include_tag('grading_tasks')) %>
+<% content_for(:body_classes, "ns-newcsslib  grading_styles ") %>
+<% content_for(:css_head, stylesheet_link_tag("instructor_tasks")) %>
+<% content_for(:js_head, javascript_packs_with_chunks_tag('instructor/grading_styles/index')) %>
+<% content_for(:css_head, stylesheet_packs_with_chunks_tag('instructor/grading_styles/index')) %>
+
+<%= render 'activities/include' %>
+
+<% content_for(:js_head, javascript_include_tag('get_help/get_help_app_bootstrap.js')) %>
+
+<% content_for(:instructor_notes_angular_tags, "vhl-app=\"instructor_notes_app\" data-ng-controller=\"ActivityNotesCtrl\"".html_safe) %>
+
+<% content_for(:navigation, render('app_shell/navbar_program/main')) %>
+
+<% content_for :meta do %>
+  <meta name="VHL.solo_video_included" content="<%= @activity.includes_solo_video_recording? %>">
+<% end %>
+
+<div id="main_content">
+  <% if @presenter.ai_grading_available? %>
+    <div class="js-grading-modal-app"></div>
+    <div
+      class="js-grading-modal-data"
+      data-from-dom="<%= {
+        activity_id: @activity.id,
+        program_id: @presenter.program.id,
+        section_id: @section.id,
+        ai_feedback_enabled: @presenter.ai_grading_available?,
+        ai_grading_suggestions_enabled: @presenter.ai_grading_suggestions_enabled?,
+        hide_question_by_question_input: @presenter.hide_question_by_question_input?,
+        grading_style: @presenter.grading_style,
+        q_by_q_disabled: @presenter.q_by_q_disabled?,
+        q_by_q_disabled_msg: @presenter.q_by_q_disabled_msg,
+        activity_group_chat: @presenter.activity.group_chat?,
+        smart_book: @presenter.activity.smart_book?,
+        task_type: @presenter.task_type,
+        cartridge: current_user.cartridge?,
+        grading_set_button_text: @presenter.grading_set_button_text
+      }.to_json  %>">
+    </div>
+  <% else %>
+    <%= render 'instructor/grading_styles/grading_styles_form', presenter: @presenter %>
+
+    <div id="start_link">
+      <%= link_to @presenter.grading_set_button_text,
+          instructor_grading_tasks_grade_activity_path(program_id: @presenter.program, activity_id: @activity.id, task_type: @presenter.task_type, return_to: params[:return_to]),
+          title: @presenter.grading_set_button_text,
+          onclick: "$('#grading_style_form').synchronous_submit(); return true;",
+          class: 'c-button  c-button--primary  c-button--low'
+          %>
+    </div>
+  <% end %>
+
+
+  <% if current_user.cartridge? -%>
+    <%= render 'instructor/grading_styles/cartridge_course_settings_modal' %>
+  <% end %>
+
+  <div id="preview_container">
+    <div class="preview_text">ACTIVITY PREVIEW</div>
+    <% if @activity.partner_chat? || @activity.group_chat? || @activity.solo_video_recording? || @activity.multi_type? %>
+      <%= render 'chat_preview' %>
+    <% else %>
+      <%= render 'activities/show_main_content' %>
+    <% end %>
+  </div>
+</div>

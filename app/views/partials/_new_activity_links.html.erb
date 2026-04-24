@@ -1,0 +1,32 @@
+<% content_for(:css_head, stylesheet_link_tag("my_content") )%>
+<% content_for(:js_head, javascript_include_tag("course_library.js") ) %>
+
+<% unless @in_institution_admin %>
+  <% if presenter.can_edit_course_library? %>
+    <div class="l-line__splitter"></div>
+    <div class="l-line  l-line--mid  create-activity-links  u-flex-wrap  u-mar-rt-0">
+      <%= render 'partials/new_activity_create_links', presenter: presenter.new_activity_link_presenter(self) %>
+      <div class="hidden_helper">
+        <div data-container="content_wizard"
+            class="assignables_wizard  js-my-content-container"
+            data-modal="import_content"></div>
+      </div>
+    </div>
+    <div class="hidden_helper">
+      <div data-container="confirm_delete_igc" class="content-import-wizard">
+        <div data-page-element="assigned_activity_confirmation_message" class="hidden_helper">
+          Removing an assigned instructor-created activity will remove it from the course and remove any student attempts from the gradebook. Are you sure you want to remove this activity?
+        </div>
+        <div data-page-element="unassigned_activity_confirmation_message" class="hidden_helper">
+          Are you sure you want to remove this activity from this course?
+        </div>
+        <div id="additional_links" class="ui-helper-clearfix">
+          <div class="cancel_link"><%= link_to 'cancel', '#', 'data-link' => 'cancel', :class => "left" %></div>
+          <div class="link_savechanges"><%= link_to 'ok', '#', 'data-link' => 'ok',
+            class: "red-button prevent-default",
+            method: :delete  %></div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>

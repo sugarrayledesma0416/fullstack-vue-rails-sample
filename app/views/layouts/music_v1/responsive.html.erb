@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  class="<%= '  ns-supersites-jr  ' if ssjr_student? %>  <%= yield :html_classes %>">
+  <head>
+    <%= render('partials/google_tag_manager') %>
+    <%= render(
+          'layouts/common_header',
+          layout_version: 'v1',
+          no_app_shell: @no_app_shell
+        ) %>
+    <% content_for(
+         :js_head,
+         javascript_tag("var AUTH_TOKEN = #{form_authenticity_token.inspect};")
+       ) %>
+    <%= stylesheet_link_tag("music/vendor/jquery-ui/jquery-ui") %>
+
+    <% unless @no_app_shell %>
+      <% if current_user.enterprise_admin? && @no_program_bar %>
+        <%= content_for(:navigation, render('app_shell/navbar_account/main')) %>
+      <% elsif current_user.instructor? %>
+        <%= content_for(:focus, render('instructor/focus/show')) %>
+        <%= content_for(:navigation, render('app_shell/navbar_program/main')) %>
+      <% else %>
+        <% unless @no_section_navigation %>
+          <%= content_for(
+                :navigation,
+                render('app_shell/navbar_section/main', section: current_section)
+              ) %>
+        <% end %>
+      <% end %>
+    <% end %>
+  </head>
+
+  <body class="ns-music-v1  ns-responsive  has-no-page-border  <%= yield :body_classes %>  <%= yield :theme_classes %>">
+    <% unless @no_app_shell %>
+      <% if @no_program_bar %>
+        <div class="ns-masthead  <%= yield :masthead_classes %> <%= yield :theme_classes %>">
+          <%= render 'app_shell/navbar_account/main', flash: flash %>
+        </div>
+      <% else %>
+        <div class="ns-masthead  <%= yield :masthead_classes %> <%= yield :theme_classes %>">
+          <%= render(
+                'app_shell/masthead',
+                course: @course,
+                flash: flash,
+                section: @section,
+                section_header: @section_header
+              ) %>
+        </div>
+      <% end %>
+    <% end %>
+    <div class="ns-music-v3">
+      <div class="c-page-container  js-page-container">
+        <div class="l-container-fluid">
+          <%= render('layouts/music_v1/page_title_block') %>
+          <main aria-labelledby="a11y-page-title">
+            <%= yield %>
+          </main>
+        </div>
+      </div>
+    </div>
+
+    <% unless @no_app_shell || @no_footer %>
+      <%= render 'layouts/music_v1/footer' %>
+    <% end %>
+    <%= render 'layouts/inactivity_timeout' %>
+  </body>
+</html>

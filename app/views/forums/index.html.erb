@@ -1,0 +1,112 @@
+<% content_for(:body_classes, 'ns-forums') %>
+<%= render 'forums/js_config' %>
+<% content_for(:js_head, javascript_include_tag('jquery_common/deletion_modal')) %>
+<% content_for(:js_head, javascript_include_tag('forums')) %>
+<% content_for(:css_head, stylesheet_link_tag("music/features/forums/main")) %>
+
+<% if current_user.instructor? %>
+  <%= hidden_field_tag 'instructor_id', current_user.id %>
+  <%# content_for(:focus, render('instructor/focus/show')) %>
+  <% content_for(:navigation, render('app_shell/navbar_program/main')) %>
+<% elsif current_user.student? %>
+  <% unless current_section && current_section.non_zero? %>
+    <% content_for(:body_classes, ' no_section_student') %>
+  <% end %>
+  <% content_for(:navigation, render('app_shell/navbar_section/main',
+                                      section: current_section)) %>
+<% end %>
+
+<% forums_present = @forum_sections&.any? { |section| @forums[section.id].present? } %>
+<% unless forums_present %>
+  <div class="u-mar-bot-32">
+    <p>
+      Forums enable students and instructors to communicate and share audio recordings
+      and text messages.
+    </p>
+  </div>
+<% end %>
+
+<% if current_user.instructor? && !current_focus.has_atleast_one_actionable_section? %>
+  <%= render 'instructor/partials/no_actionable_course_or_section' %>
+<% else %>
+  <% @forum_sections.each do |section| %>
+    <div class="c-forum-section">
+
+      <% if current_user.instructor? %>
+        <div class="u-mar-lt-10  u-mar-bot-12">
+          <h2 class="c-heading--modal  u-dis-inline-block"><%= section.name %></h2>
+          <span id="a11y-forum-{{section.name}}" class="u-screen-reader-only">
+            Add Forum for <%= section.name %>
+          </span>
+          <span class="u-mar-lt-12">
+            <%# TODO: needs to pass a param to /new so section dropdown can be synced. %>
+            <%= link_to( new_forum_path(current_program, current_section),
+                        "aria-labelledby": "a11y-forum-{{section.name}}") do %>
+              <%= Music::Components.icon(variant: 'add',
+                                          size: 'sm',
+                                          text: 'Add Forum') %>
+            <% end %>
+          </span>
+        </div>
+      <% end %>
+
+      <% if @forums[section.id].present? %>
+        <table class="c-table  c-table--forums">
+          <thead>
+
+            <tr class="c-header-row  c-header-row--forums">
+              <th class="c-table__col-name--forums">Name</th>
+              <th role="none">
+                <span class="u-dis-none">Actions</span>
+              </th>
+              <th class="c-table__col-date--forums">Created on</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @forums[section.id].each do |forum| %>
+
+              <tr class="c-row">
+                <td class="c-table__col-name--forums">                  
+                  <%= link_to(forum.name, forum_path(current_program, current_section, forum.id), class: 'u-txt-under') %>                  
+                  <div class="u-mar-0  u-mar-top-16  u-dis-sm-none">
+                    Created <%= format_date_time(forum.created_at, :short_weekday_month_ordinal) %>
+                  </div>
+                </td>
+                <td class="u-txt-ctr" role="none">
+                  <% if current_user.instructor? &&
+                        current_user.sections.include?(forum.section) %>
+                    <%= link_to(edit_forum_path(current_program, current_section, forum), class: 'u-pad-3  u-txt-nodec') do %>
+                      <%= Music::Components.icon(variant: 'edit') %>
+                    <% end %>
+                    <a href="javascript://"
+                        class="u-pad-3  js-delete-forum-or-post"
+                        data-delete-url="<%= forum_path(current_program, current_section, forum) %>"
+                        data-object-type="forum">
+                        <%= Music::Components.icon(variant: 'delete') %>
+                    </a>
+                  <% end %>
+                </td>
+                <td class="c-table__col-date--forums">
+                  <%= format_date_time(forum.created_at, :short_weekday_month_ordinal) %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+
+      <% else %>
+        <div class="u-bord-top-1  u-bord-gray-e"></div>        
+        <div class="u-mar-lt-10  u-mar-top-12  u-txt-gray-6">
+          <% if current_user.instructor? %>
+            There are no forums for this section.
+          <% else %>
+            There are no forums for your section at this time.
+          <% end %>
+        </div>
+      <% end %>
+
+    </div> <!-- /c-forum-section -->
+  <% end %>
+<% end %>
+
+<%= render 'jquery_common/deletion_modal' %>

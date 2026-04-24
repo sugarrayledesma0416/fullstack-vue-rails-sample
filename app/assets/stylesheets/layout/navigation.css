@@ -1,0 +1,101 @@
+/* Navigation Menu */
+#navigation {
+  position:absolute;
+  top:76px;
+  right:56px;
+}
+
+.no_section_student #navigation {
+  width: 430px;
+}
+
+#navigation li span,
+#navigation li a {
+  display: block;
+  color: #535353;
+  cursor: pointer;
+}
+
+#navigation > li {
+  text-align:center;
+  margin:0 2px;
+}
+
+.subnav li {
+  text-align:left;
+}
+
+.no_subnav,
+.with_subnav {
+  padding-bottom:10px;
+  float:left;
+}
+
+#navigation .current:hover .asubnav,
+#navigation .current:hover .nosubnav,
+#navigation li:hover .asubnav,
+#navigation li:hover .nosubnav {
+  color: #c0161c;
+}
+
+#navigation li {
+  float: left;
+  font-size: 14px;
+  position: relative;
+  min-width:85px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#navigation li.current a,
+#navigation li.current span {
+  color: #c0161c;
+}
+
+/* Bold for Selected */
+li.current .nosubnav,
+li.current .asubnav {
+  font-weight: bold;
+}
+
+/* Navigation Dropdowns */
+.subnav {
+  background-color:#FFFFFF;
+  border:1px solid #EEEEEE;
+  cursor: pointer;
+  margin-top: 0px;
+  padding:5px;
+  position:absolute;
+  top: 25px;
+  z-index:1000;
+  -moz-box-shadow: 2px 2px 4px 1px rgba(0,0,0,.3);
+  -webkit-box-shadow: 2px 2px 4px 1px rgba(0,0,0,.3);
+  box-shadow: 2px 2px 4px 1px rgba(0,0,0,.3);
+}
+
+#navigation .subnav li {
+  float:none;
+  font-size:13px;
+  white-space: nowrap;
+}
+
+#navigation .subnav li a {
+  color: #535353;
+  font-size: 12px;
+  padding: 4px 15px 6px 10px
+}
+
+#navigation  li a:hover {
+  color:#b11d22;
+  text-decoration:none;
+}
+
+#navigation .subnav li a:hover {
+  color:#B11D22;
+  background: transparent;
+}
+
+#navigation .subnav a {
+  background-image: none;
+}

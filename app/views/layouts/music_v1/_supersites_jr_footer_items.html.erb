@@ -1,0 +1,27 @@
+<li class="c-supersite-jr-footer__item  c-supersite-jr-footer__copyright">
+  &copy; <%= Date.today.year %> Vista Higher Learning, Inc.
+</li>
+
+<li aria-hidden="true" class="c-supersite-jr-footer__divider"></li>
+<li >
+  <%= link_to "Terms of Use", 'https://www.vhlcentral.com/terms_of_use',
+      class: "c-supersite-jr-footer__item  c-supersite-jr-footer__link",
+      target: "_blank" %>
+</li>
+
+<li aria-hidden="true" class="c-supersite-jr-footer__divider"></li>
+
+<li>
+  <%= link_to "Privacy Policy", privacy_policy_url,
+      class: "c-supersite-jr-footer__item  c-supersite-jr-footer__link",
+      target: "_blank"  %>
+</li>
+
+<% if @show_tech_support_link -%>
+  <li aria-hidden="true" class="c-supersite-jr-footer__divider"></li>
+  <li>
+    <%= link_to "Support Center", "http://support.vhlcentral.com",
+        class: "c-supersite-jr-footer__item  c-supersite-jr-footer__link",
+        target: "_blank" %>
+  </li>
+<% end -%>

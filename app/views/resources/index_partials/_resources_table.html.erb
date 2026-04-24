@@ -1,0 +1,247 @@
+<div class="c-table-container" role="region" aria-labelledby="a11y-table-caption">
+<span id="a11y-sortable-col-desc"class="u-hidden">Click to Sort.</span>
+<table class="c-table  c-table--resource  js-resource-list"
+       id="resources" data-js-table>
+  <thead>
+
+    <tr class="c-header-row  c-header-row--resource">
+
+      <th scope="col"
+          class="c-table__col-select">
+          <span class="u-screen-reader-only">Select or Unselect Resource</span>
+      </th>
+
+
+      <% unless presenter.filter_by_component? %>
+        <th scope="col"
+            class="c-table__col-component  c-sort-button  js-sort-col"
+            data-sort="string"
+            tabindex="0"
+            aria-describedby="a11y-sortable-col-desc">
+          Component
+          <span aria-hidden="true">
+            <%= feature_icon('music/resources/caret/caret-down',
+                            ['c-embedded-icon--sm', 'c-sort-button__icon']) %>
+          </span>
+        </th>
+      <% end %>
+
+
+      <th scope="col"
+          class="c-table__col-title  c-sort-button  js-sort-col
+                 <%= 'is-active' unless presenter.all_components_selected? %>"
+          data-sort="string"
+          tabindex="0"
+          aria-describedby="a11y-sortable-col-desc">
+          Title
+        <span aria-hidden="true">
+            <%= feature_icon('music/resources/caret/caret-down',
+                            ['c-embedded-icon--sm', 'c-sort-button__icon']) %>
+        </span>
+      </th>
+
+
+      <% if current_user.instructor? %>
+        <th scope="col"
+            class="c-table__col-actions"
+            aria-label="Actions">
+        </th>
+      <% end %>
+
+
+      <% unless presenter.filter_by_lesson? %>
+        <th scope="col"
+            class="c-table__col-lesson  c-sort-button  js-sort-col"
+            data-sort="string"
+            tabindex="0"
+            aria-describedby="a11y-sortable-col-desc">
+          <%= (@presenter.program.two_tier? || @presenter.program.language_code == 'zh') ? 'Unit' : 'Lesson' %>
+          <span aria-hidden="true">
+            <%= feature_icon('music/resources/caret/caret-down',
+                            ['c-embedded-icon--sm', 'c-sort-button__icon']) %>
+          </span>
+        </th>
+      <% end %>
+
+
+      <% if current_user.instructor? %>
+        <th scope="col"
+            class="c-table__col-visibility  c-sort-button  js-sort-col"
+            data-sort="string"
+            tabindex="0"
+            aria-describedby="a11y-sortable-col-desc">
+          Visible to Students
+          <span aria-hidden="true">
+            <%= feature_icon('music/resources/caret/caret-down',
+                            ['c-embedded-icon--sm', 'c-sort-button__icon']) %>
+          </span>
+        </th>
+      <% end %>
+
+    </tr>
+
+  </thead>
+
+  <tbody>
+    <% presenter.sorted_resources.each_with_index do |resource| %>
+
+      <% if current_user.instructor?
+        resource_status_setting = presenter.resource_status_for(resource)
+        resource_visibility = InstructorResourceSetting::FRIENDLY_LABELS[resource_status_setting];
+        buttonEnabled = true;
+
+        if (resource_visibility == "Yes")
+          iconState = "on"
+          resource_visibility_label = "Visible to students"
+        elsif (resource_visibility == "No")
+          iconState = "off"
+          resource_visibility_label = "Hidden from students"
+        else
+          iconState = "off-disabled"
+          buttonEnabled = false;
+          resource_visibility_label = "Never visible to students"
+        end
+      end %>
+
+      <tr id="resource_<%= resource.id.to_s %>" class="c-row  c-row--resource">
+
+        <td class="c-table__col-select  c-resource-hover-wrapper  c-form-item"
+            rel="#resource_<%= resource.id.to_s %>_description">
+          <input type="checkbox"
+            class="c-form-item__checkbox  js-resource-checkbox"
+            id="resource_<%= resource.id.to_s%>_checkbox"/>
+          <label class="c-form-item__label" for="resource_<%= resource.id.to_s%>_checkbox">
+            <span class="u-dis-none  u-dis-md-block">
+              &#x200b;
+              <span class="u-screen-reader-only"><%= resource.title.html_safe %></span>
+            </span>
+            <div class="u-dis-md-none">
+              <div class="u-dis-flex  flex-align-ctr">
+              <%= feature_icon("music/resources/file-type/file-type-#{resource.file_type.downcase}") %>
+              <%= link_to resource.title.html_safe,
+                          download_resource_path(current_program, resource),
+                          class: 'u-mar-lt-5',
+                          id: "resource_link_#{resource.id.to_s}" %>
+              </div>
+            </div>
+          </label>
+          <% if current_user.instructor? %>
+            <%= render 'detailed_descriptions', { resource: resource, presenter: presenter } %>
+          <% end %>
+        </td>
+
+
+        <% unless presenter.filter_by_component? %>
+          <td class="c-table__col-component  u-txt-ital">
+            <span class="u-dis-md-none">Component: </span>
+            <%= resource.resource_component.name.html_safe unless resource.resource_component.blank? %>
+          </td>
+        <% end %>
+
+
+        <th scope="row"
+            class="c-table__col-title  c-hover-wrapper  u-txt-reg
+                   <%= test_class('resource_name') %>">
+
+          <div class="u-dis-xs-none  u-dis-md-block">
+              <div class="u-dis-flex  flex-align-ctr">
+              <%= feature_icon("music/resources/file-type/file-type-#{resource.file_type.downcase}") %>
+              <%= link_to resource.title.html_safe,
+                          download_resource_path(current_program, resource),
+                          class: 'u-mar-lt-5',
+                          id: "resource_link_#{resource.id.to_s}" %>
+            </div>
+          </div>
+        </th>
+
+
+        <% if current_user.instructor? %>
+          <td class="c-table__col-actions">
+            <% if resource.editable_by?(current_user) %>
+              <%= link_to(edit_resource_path(current_program, resource) + "?return_to=" + return_to,
+                          class: 'u-txt-nodec  u-mar-2  u-pad-2',
+                          title: 'Edit resource') do -%>
+                <%= Music::Components.icon(variant: 'edit') -%>
+              <% end -%>
+              <a href="javascript:" class="js-delete-btn  u-txt-nodec  u-mar-2  u-pad-2" title="Delete resource">
+                <%= Music::Components.icon(variant: 'delete') %>
+              </a>
+
+              <div class="c-modal  c-modal--md  u-hidden  js-modal  js-confirm-delete">
+                <div role="dialog" aria-label="Dialog with a panel" class="c-modal__box  js-modal-box">
+                  <button class="c-modal__close-button  c-no-button  js-x-close  js-modal-close">
+                    <span class="c-icon  c-icon--md  c-icon--close"></span>
+                    <span class="u-screen-reader-only">Close dialog</span>
+                  </button>
+                  <div role="document" class="js-modal-content">
+
+                    <div class="c-panel  c-panel--padded  u-mar-0">
+                      <div class="c-panel__header">
+                        <h3 class="c-heading--md">Delete Resource</h3>
+                      </div>
+                      <div class="c-panel__body">
+                        <p>Are you sure you want to delete this resource?</p>
+                      </div>
+                      <div class="c-panel__footer">
+                        <div class="c-button-group  u-mar-0  u-txt-rt">
+                          <button type="button" class="c-button  js-modal-close  <%= test_class('cancel-btn') %>">Cancel</button>
+                          <%= link_to "Delete this resource",
+                                delete_resource_path(current_program, resource, return_to: return_to),
+                                class: 'c-button  c-button--primary  js-main-action',
+                                method: :delete,
+                                title: 'Delete resource' %>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                  <button class="u-screen-reader-only" tabindex="-1">Dialog end</button>
+                </div>
+              </div>
+
+            <% end %>
+          </td>
+        <% end %>
+
+
+        <% unless presenter.filter_by_lesson? %>
+          <td class="c-table__col-lesson">
+            <span class="u-dis-md-none">Lesson </span>
+            <%= sanitize(presenter.lesson_number(resource), tags: %w[span], attributes: %w[lang]) %>
+          </td>
+        <% end %>
+
+
+        <% if current_user.instructor? %>
+          <td class="c-table__col-visibility"
+              id="student_viewable_status_for_resource_<%= resource.id.to_s%>">
+            <% if assistant_role_policy.is_assistant? %>
+              <span class="u-txt-reg"><%= iconState == 'on' ? 'yes' : 'no' %></span>
+            <% else %>
+              <div class="c-form-item">
+                <input type="checkbox"
+                       title="<%= resource_visibility_label %>"
+                       data-resource-id="<%= resource.id.to_s%>"
+                       data-resource-visibility="<%= resource_visibility %>"
+                       id="visibility-<%= resource.id.to_s%>"
+                       class="c-toggle  js-visibility-toggle" <%= 'disabled' unless buttonEnabled %>
+                       <%= 'checked' if iconState == 'on' %>/>
+                <label class="c-label" for="visibility-<%= resource.id.to_s%>">
+                  <span class="u-screen-reader-only  js-visibility-label">
+                    <%= resource_visibility_label %>
+                  </span>
+                </label>
+              </div>
+           <% end %>
+          </td>
+        <% end %>
+
+      </tr>
+    <% end %>
+
+  </tbody>
+</table>
+<div class="u-screen-reader-only  js-resource-table-caption" aria-live="polite"></div>
+</div>
+
+

@@ -1,0 +1,10 @@
+
+<div id="workset_no_assignments_message">
+	<% if @assignment_day == 'overdue' -%>
+    There are no pastdue assignments.
+  <% else -%>
+    There are no uncompleted assignments due on <%= @assignment_day %>.
+  <% end -%>
+</div>
+
+<%= link_to('Go to your Course Home Page', course_section_path(@section.course, @section) ) %>

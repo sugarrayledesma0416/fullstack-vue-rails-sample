@@ -1,0 +1,34 @@
+<div id="focus_menu_container"
+     class="c-course-focus__menu-container  focus_menu_container
+            <%= 'old' if current_focus.course_closed? %>">
+
+    <div class="focus_menu_current_courses">
+      <div id="focus_current_courses_wrapper">
+        <%= render :partial => 'instructor/focus/courses_table', :locals => {
+          :courses_and_sections => courses_and_sections,
+          :focused => focused,
+          :focus_menu_table_css_class => 'focus_menu_current_table',
+          :focus_menu_table_courses_header => 'Current courses'
+        } %>
+      </div>
+    </div><!-- focus_menu_current_courses -->
+
+    <div class="c-course-focus__old-courses  focus_menu_old_courses">
+
+      <div id="focus_old_courses_wrapper" class="ui-helper-clearfix">
+        <div id="focus_old_courses_years" class="focus_old_courses_years ui-helper-clearfix">
+        </div>
+
+        <div id="focus_old_courses_list">
+        </div>
+
+      </div>
+    </div><!-- focus_menu_old_courses -->
+    <div class="c-course-focus__other-options  focus_show_other_courses">
+
+      <%= link_to 'Show older courses', main_app.instructor_old_course_years_path(current_program),
+        {:class => "older_link", :style => current_focused_course_closed ? 'display:none' : '' } %>
+      <%= link_to 'Show current courses', main_app.instructor_old_course_years_path(current_program),
+        {:class => "current_link", :style => current_focused_course_closed ? '' : 'display:none' } %>
+    </div>
+</div><!-- focus_menu_container -->

@@ -1,0 +1,104 @@
+<% event_day_announcements = announcements_by_date.fetch(event_day.date, nil)
+   event_day_assignments = assignments_by_date.fetch(event_day.date, nil)
+%>
+<% if event_day.valid_day? %>
+  <td class="<%= event_day.css_classes %>  c-day-container  u-pad-top-1  js-day"
+      id="<%= event_day.id %>"
+      data-js-weekday="<%= event_day.date.strftime('%a') %>">
+    <div class="c-day">
+      <div class="u-dis-flex  flex-wrap  u-mar-bot-4">
+        <span class="c-day__date"><%= event_day.day %></span>
+      <% if event_day_announcements&.any_class_cancelled == 1 %>
+          <span class="c-tag">
+          Class cancelled
+        </span>
+      <% end %>
+      </div>
+
+      <div data-js-daily="daily">
+
+          <% if event_day_assignments.present? %>
+            <% event_day.category_links.each do |category_link| -%>
+              <% next if category_link&.count_label&.zero? %>
+            <div class="u-mar-lt-20  <%= test_class('day-item') %>">
+                <% if event_day.clickable_category_links? %>
+                  <%= link_to url_for(category_link.url_options),
+                        category_link.html_options.merge('aria-describedby' => 'assignment_date_description') do %>
+                        <span class="u-mar-lt-neg-16  u-dis-md-none">
+                          <%= Music::Components.icon(variant: 'list', size: 'sm') %>
+                        </span>
+                        <span class="u-dis-none  u-dis-md-inline-block  u-txt-under">
+                        <%= category_link.name %> (<strong><%= category_link.count_label %></strong>)
+                        <span>
+                  <% end %>
+                  <span id="assignment_date_description" class="u-screen-reader-only"><%= event_day.date.strftime("%d %B %Y") %></span>
+                <% else %>
+                  <span
+                    class="u-mar-lt-neg-16  u-dis-md-none"
+                    role="link"
+                    tabindex="0"
+                    aria-label="<%= "#{category_link.name} (#{category_link.count_label})" %>">
+                    <%= Music::Components.icon(variant: 'list', size: 'sm') %>
+                  </span>
+                  <span class="u-dis-none  u-dis-md-inline-block">
+                    <%= category_link.name %> (<strong><%= category_link.count_label %></strong>)
+                  </span>
+                <% end %>
+              </div>
+            <% end -%>
+
+            <% event_day.assessment_links.each do |assessment_link| -%>
+              <div class="u-mar-lt-20">
+                <% if assessment_link.display_link? %>
+                  <%= link_to url_for(assessment_link.url_options),
+                    assessment_link.html_options.merge('aria-describedby' => 'assessment_date_description') do %>
+                    <span class="u-dis-none  u-dis-md-inline-block  u-txt-under">
+                      <%= assessment_link.name %>
+                    </span>
+                    <%= Music::Components.icon(variant: 'list', size: 'sm', classes: 'u-mar-lt-neg-16  u-dis-md-none') %>
+                  <% end %>
+                  <span id="assessment_date_description" class="u-screen-reader-only"><%= event_day.date.strftime("%d %B %Y") %></span>
+                <% else %>
+                  <%= content_tag(:span, assessment_link.html_options) do %>
+                    <span class="u-dis-none  u-dis-md-inline-block">
+                      <%= assessment_link.name %>
+                    </span>
+                    <%= Music::Components.icon(variant: 'list', size: 'sm', classes: 'u-mar-lt-neg-16  u-dis-md-none') %>
+                  <% end %>
+                <% end %>
+              </div>
+            <% end -%>
+          <% end %>
+
+          <% if event_day_announcements.present? %>
+            <div class="c-day__item--announcement">
+              <%= link_to(announcement_link_path(event_day_announcements), class:'c-day__item-link--announcement  u-mar-lt-4  u-dis-inline-flex') do %>
+                <%= feature_icon('music/icons/student-dashboard/bell', ['c-embedded-icon--sm'] ) %>
+                <span class='u-dis-none  u-dis-md-inline-block  u-mar-lt-2  u-txt-under'>
+                  <% if event_day_announcements.announcement_count == 1 %>
+                    <%= Announcement.find(event_day_announcements.id).title %>
+                  <% else %>
+                    Announcements (<strong><%= event_day_announcements.announcement_count %></strong>)
+                  <% end %>
+                </span>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+
+      </div>
+      <% if show_estimates && event_day_assignments.present? %>
+        <span class="c-day__assignment-time" data-day-total-time='day-total-time'>
+          <span class="u-screen-reader-only">
+            <%= format_hours_minutes(event_day_assignments.total_time.to_i) %>
+          </span>
+          <span aria-hidden="true">
+            <%= format_hours_minutes(event_day_assignments.total_time.to_i, :short) %>
+          </span>
+        </span>
+      <% end %>
+  </td>
+<% else %>
+  <td class="c-day-container  c-day--beyond-month  js-day">
+  </td>
+<% end %>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<activity activity_type="fill_in_the_blanks" title="3 - Saludos, despedidas y presentaciones" language="es">
+  <dl>Fill in the blanks with the missing words. Then write whether the phrases are <b>saludos</b>, <b>despedidas</b>, or <b>presentaciones</b>.</dl>
+  <external_references>
+    <external_reference>
+      <title>Vocabulary list</title>
+      <activity id="44802"/>
+    </external_reference>
+    <external_reference>
+      <title>Flashcards</title>
+      <activity id="44803"/>
+    </external_reference>
+    <external_reference>
+      <title>Illustration</title>
+      <activity id="44778"/>
+    </external_reference>
+  </external_references>
+  <items>
+    <style>
+      <!--To specify textbox size, replace "standard" below with "smallest", "small", or "double".-->
+      <wol_size>words_standard</wol_size>
+      <item_numbers>hide</item_numbers>
+    </style>
+    <reference type="model">
+      <body>Hola, ¿qué <u><b>tal</b></u>? (<u><b>saludos</b></u>)</body>
+    </reference>
+    <item>
+      <prompt>
+        <table>
+          <tr>
+            <td>1.</td>
+            <td>¿<wol ref="1"/> pasa?</td>
+            <td>(<wol ref="2"/>)</td>
+          </tr>
+          <tr>
+            <td>2.</td>
+            <td><image id="1"/><wol ref="3"/> luego.</td>
+            <td>(<wol ref="4"/>)</td>
+          </tr>
+          <tr>
+            <td>3.</td>
+            <td><wol ref="5"/> gusto.</td>
+            <td>(<wol ref="6"/>)</td>
+          </tr>
+        </table>
+      </prompt>
+      <answers ref="1">
+        <answer>Qué</answer>
+      </answers>
+      <answers ref="2">
+        <answer>saludos</answer>
+        <answer>Saludos</answer>
+        <answer>Saludo</answer>
+        <answer>saludo</answer>
+      </answers>
+      <answers ref="3">
+        <answer>Hasta</answer>
+      </answers>
+      <answers ref="4">
+        <answer>despedidas</answer>
+        <answer>Despedidas</answer>
+        <answer>Despedida</answer>
+        <answer>despedida</answer>
+      </answers>
+      <answers ref="5">
+        <answer>Mucho</answer>
+      </answers>
+      <answers ref="6">
+        <answer>presentaciones</answer>
+        <answer>Presentaciones</answer>
+        <answer>Presentación</answer>
+        <answer>presentación</answer>
+      </answers>
+    </item>
+  </items>
+</activity>

@@ -1,0 +1,14 @@
+<label class="c-form-item__label  u-dis-inline  u-txt-12  u-pad-rt-8 <%= test_class('lesson-selector') %>"
+       for="lesson-select">
+  View By
+</label>
+<%= select(
+      'lesson',
+      'lesson_id',
+      presenter.lessons.collect { |lesson| [ lesson.name, lesson.id ] },
+      { selected: presenter.selected_lesson_id },
+      {
+        data: presenter.set_data,
+        class: 'c-select  js-lesson-select'
+      }
+    ) %>

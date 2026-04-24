@@ -1,0 +1,128 @@
+<div class="js-chat-widget-wrapper  ns-chat  ns-music-v1">
+
+  <div class="c-chat-widget  hide-live-chat-pane  u-hidden  js-chat-widget  <%= test_class("chat-widget") %>">
+
+
+    <div class="c-chat-widget__content  js-panel-container" aria-hidden="true">
+      <div class="c-panel  c-panel--chat  c-panel--roster  js-roster-panel">
+        <div class="c-panel__header  c-panel__header--chat  u-pad-bot-0">
+          <div class="c-header  c-header--chat">
+            <button type="button"
+                    class="c-chat-widget__back-button  c-no-button  c-close-mobile-chat-button  u-hidden  js-close-mobile-chat-button">
+              <span class="c-icon  c-icon--lg  c-icon--caret-left"></span>
+              <span class="u-screen-reader-only">Back from chat.</span>
+            </button>
+            <h2 class="c-heading--chat">Chat</h2>
+            <a href="javascript:void(0)" class="c-chat-widget__close  js-close-chat-btn" role="button" aria-label="Close Chat">
+              <%= Music::Components.icon(variant: 'close') %>
+            </a>
+            <div class="open-av-check-on-roster  u-hidden  js-open-av-check-on-roster">
+              <button class="c-button  c-button--border  js-open-av-check">
+                <span class="c-icon  c-icon--signal"></span>
+                Test your connection
+              </button>
+            </div>
+          </div>
+
+          <div class="c-panel__flush-content  u-bg-gray-d">
+            <div class="c-form-item  u-mar-top-16">
+              <input type="checkbox"
+                     checked
+                     class="c-toggle  js-chat-availability  js-tooltip"
+                     id="chat_availability_roster"
+                     title="Indicate if you are available to participate in Chat"/>
+              <label class="c-label  js-chat-availability-label" for="chat_availability_roster">
+                Available to chat
+              </label>
+            </div>
+          </div>
+        </div> <!-- / panel header -->
+
+        <div class="c-panel__body  c-panel__body--chat">
+          <ol class="c-roster  js-roster  u-hidden">
+          </ol>
+          <% if @activity&.content_object&.activity_type == 'group_chat' %>
+          <div class="u-mar-top-24  u-txt-ctr" lang="en">
+            <div class="u-mar-top-8">
+              <% if @activity_presenter %>
+                Invite <%= @activity_presenter.group_chat_selection_config[:group_minimum] %>-<%= @activity_presenter.group_chat_selection_config[:group_maximum] %> people
+              <% end %>
+            </div>
+            <%= Music::Components.button(text: 'Start Call', variant: 'primary', classes: ['c-button--group-chat-invite  js-group-chat-invite-btn']) %>
+          </div>
+          <% end %>
+        </div> <!-- / panel body -->
+
+      </div> <!-- / roster panel -->
+
+    </div> <!-- / panel container -->
+    <div class="js-chat-video-container  u-hidden" aria-hidden="true">
+      <div id="video-media-chat"  class="u-hidden  c-chat-video-element  js-chat-video-element">
+        <% if @activity&.content_object&.activity_type == 'group_chat' %>
+          <%= render 'maestro_activity_engine/activities/group_chat/video_streams' %>
+        <% else %>
+          <div class="c-video-wrapper-partner" id="partner-video" aria-live="assertive">
+            <div class="c-video-wrapper-me" id="my-video"></div>
+          </div>
+        <% end %>
+        <div id="playback-video" class="u-hidden"></div>
+
+        <!-- TODO: Is there a persistent state for the toggles
+           so that they can be initialized properly? -->
+        <div class="c-splitter  c-chat-video-element__overlay">
+          <div>
+            <button type="button"
+                    title="Mute microphone"
+                    aria-pressed="false"
+                    class="c-circle-button  c-circle-button--xl  c-circle-button--toggle-audio
+                           u-mar-lt-4  u-mar-rt-4  js-toggle-audio">
+              <span class="c-icon  c-icon--toggle-audio c-icon--xl"></span>
+            </button>
+
+            <button type="button"
+                    title="Hide camera"
+                    aria-pressed="false"
+                    class="c-circle-button  c-circle-button--xl  c-circle-button--toggle-video
+                           u-mar-lt-20  u-mar-rt-20  js-toggle-video">
+              <span class="c-icon  c-icon--toggle-video c-icon--xl"></span>
+            </button>
+          </div>
+
+          <div>
+            <button type="button"
+                    title="End call"
+                    class="c-circle-button  c-circle-button--xl  c-circle-button--end-call  u-mar-lt-4  u-mar-rt-4  js-end-call">
+              <span class="c-icon  c-icon--end-call  c-icon--xl"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div> <!-- chat-widget -->
+
+  <div class="c-chat-invitation-wrapper  c-mobile-tabs-view__always-visible-content  js-chat-invitation-wrapper  u-hidden"
+     id="chat-invitation-wrapper"></div>
+
+  <% if current_program && accent_bar_enabled? -%>
+    <div class="u-mar-0  js-accent-bar-container--activity">
+      <%= render 'music/partials/accent_bar_component', language: current_program.language_code %>
+    </div>
+  <% end %>
+
+  <!-- +=========================== Templates: ===========================+ -->
+  <div class="u-hidden">
+    <%= render 'chat/conversation' %>
+    <% if @activity&.content_object&.activity_type == 'group_chat' %>
+      <%= render 'group_chat/conversation' %>
+      <%= render 'group_chat/roster' %>
+    <% else %>
+      <%= render 'chat/roster' %>
+    <% end %>
+    <%= render 'chat/message' %>
+    <%= render 'chat/invitation' %>
+    <%= render 'chat/recording_controls' %>
+  </div>
+  <!-- +=========================== END Templates ===========================+ -->
+
+</div> <!-- ns-chat -->

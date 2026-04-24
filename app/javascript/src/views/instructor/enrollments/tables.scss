@@ -1,0 +1,52 @@
+@use 'MusicV3/v3/styles/base' as *;
+
+
+.c-table-enrollments-wrapper {
+  overflow-x: auto;
+  max-width: 90dvw;
+  border-radius: var(--music-space-2);
+  width: 100%;
+
+  @include viewport-min(md) { 
+    max-width: none;
+  }
+
+  .c-table-enrollments {
+    width: 100%;
+
+    th {
+      text-align: left;
+    }
+    
+    tr:nth-child(even) {
+      background-color: var(--music-gray-50);
+    }
+
+    .c-table-v3__th--name {
+      padding-left: rpx(60);
+    }
+  }
+
+  .c-table-enrollments__name {
+    sl-checkbox::part(label) {
+      margin-inline-start: var(--music-space-4);
+    }
+  }
+
+  .c-table--active-enrollments {
+    font-size: var(--music-font-detail);
+
+    tr:nth-child(even) {
+      background-color: transparent;
+    }
+    
+    th {
+      text-align: left;
+    }
+
+    td {
+      padding: var(--music-space-2) var(--music-space-4) 0  0;
+      vertical-align: top;
+    }
+  }
+}

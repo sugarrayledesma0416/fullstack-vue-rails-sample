@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<activity language="es" title="parse warnings" activity_type="tutorial_grammar">
+  <dl/>
+  <dl_audio id="1"/>
+  <items>
+    <tutorial>
+      <swf id="108119"/>
+    </tutorial>
+  </items>
+</activity>

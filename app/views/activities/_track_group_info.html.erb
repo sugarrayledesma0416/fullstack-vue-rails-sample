@@ -1,0 +1,15 @@
+<%# Otherwise check if there's something provided by learning tracks %>
+<div class="ns-newcsslib  c-chat-activity-dis-none-on-sm  u-pull-right  u-pad-bot-6">
+
+<% if track_group.objective.present? %>
+  <button type="button" class="c-button  c-button--primary  objectives">
+    Objectives
+  </button>
+  <div class="objectives-details" title="Objectives for <%= track_group.name %>">
+    <div>
+      <%= track_group.objective %>
+    </div>
+    <a href="#" class="c-link  close  u-dis-block  u-mar-top-10">close</a>
+  </div>
+<% end %>
+</div>

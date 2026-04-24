@@ -1,0 +1,61 @@
+<a 
+  href="javascript://"
+  aria-haspopup="true"
+  aria-expanded="false"
+  class="c-menu__title  c-menu__title--program  js-nav-system__link <%= test_class('grading-link') %>
+         <%= main_nav_active('grades') %>"
+  id="tour-guide-nav-grades">
+    Grade
+    <span aria-hidden="true">
+      <%= Music::Components.icon(variant: 'caret', classes: ['c-menu__title--icon']) %>
+    </span>
+</a>
+
+<ul 
+  class="c-menu__inner  c-menu__inner--program  js-nav-system__subnav" 
+  role="menu">
+  <li class="js-nav-system__subnav__item" role="none">
+  
+    <%= link_to main_app.instructor_grading_tasks_assignments_path(current_program),
+                class: 'c-menu__item  c-menu__item--program  ' \
+                        'js-nav-system__subnav__link',
+                role: 'menuitem' do %>
+          <%= render( 
+                'app_shell/menu_item',
+                item_icon: 'grading',
+                item_name: 'Grading',
+                item_description: 'Review assignments that need manual grading.'
+              ) %>
+    <% end %>
+  </li>
+
+  <li class="js-nav-system__subnav__item" role="none">
+    <%= link_to gradebook_link,
+                class: 'c-menu__item  c-menu__item--program  ' \
+                        'js-nav-system__subnav__link  js-gradebook-link',
+                role: 'menuitem' do %>
+          <%= render( 
+                'app_shell/menu_item',
+                item_icon: 'gradebook',
+                item_name: 'Gradebook',
+                item_description: 'Manage student grades, late work, and enrollments.'
+              ) %>         
+    <% end %>          
+  </li>
+
+  <% if enable_analytics? && @course %>
+    <li class="js-nav-system__subnav__item" role="none">
+      <%# analytics_overview_link defined in GradebookV2Helper %>
+      <%= link_to analytics_overview_link,
+                  class: 'c-menu__item  c-menu__item--program  js-nav-system__subnav__link',
+                  role: 'menuitem' do %>
+          <%= render( 
+                'app_shell/menu_item',
+                item_icon: 'analytics',
+                item_name: 'Analytics',
+                item_description: 'Review student progress metrics.'
+              ) %>   
+      <% end %>
+    </li>
+  <% end %>
+</ul>

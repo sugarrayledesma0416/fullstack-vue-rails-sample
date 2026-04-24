@@ -1,0 +1,16 @@
+<% if object.errors.present? %>
+  <div class="c-message  c-message--error  u-mar-bot-16 <%= local_assigns[:div_class].presence %>"
+       id="<%= local_assigns[:id].presence || 'a11y-error-explanation' %>">
+    <h2 class="c-message__heading">
+      <%= header_message %>
+    </h2>
+    <div class="c-message__body">
+      <p>There were problems with the following <%= pluralize(object.errors.count, 'field') %>:</p>
+      <ul class="c-message__body">
+        <% object.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+<% end %>

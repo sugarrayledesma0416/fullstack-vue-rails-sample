@@ -1,0 +1,173 @@
+<div class='ns-music-v1  u-mar-6'>
+  <div class='u-mar-24'>
+    <%= link_to 'Content Settings',
+      '#',
+      class: 'c-button  c-button--border  is-navigable',
+      onclick: "$('.js-modal-cartridge-course-settings').vhlModal('open')"
+    %>
+
+    <%= link_to section_student_settings_show_path(
+        program_id: @section.course.program.id,
+        section_id: @section.id
+      ),
+      class: 'c-button  c-button--border  is-navigable',
+      data: { testid: 'student-interaction-settings-link' } do %>
+      Student Interaction Settings
+    <% end %>
+  </div>
+
+  <div class="c-modal  c-modal--md  js-modal  js-modal-cartridge-course-settings  u-hidden">
+    <div role="dialog" aria-label="Dialog with a panel" class="c-modal__box  js-modal-box  u-oflow-y-auto">
+      <button class="c-modal__close-button  c-no-button  js-x-close  js-modal-close">
+        <span class="c-icon  c-icon--md  c-icon--close"></span>
+        <span class="u-screen-reader-only">Close dialog</span>
+      </button>
+      <div role="document" class="js-modal-content">
+        <div class="c-panel  c-panel--padded  u-mar-0">
+          <div class="c-panel__header">
+            <h3 class="c-heading--md">Content Settings</h3>
+          </div>
+          <div class="c-panel__body">
+            <div class="<%= test_class('cartridge-direction-line') %>">
+              <p>These settings apply to all applicable activities.</p>
+            </div>
+            <%= form_tag(cartridge_instructor_section_course_settings_path(@section, task_type: params[:task_type]), method: :put, class: 'js-cartridge-course-settings-form') do -%>
+              <% course = @section.course %>
+              <% category = @section.course.categories.first %>
+              <% scoring_ruleset = @section.course.categories.first.current_scoring_ruleset %>
+              <%= fields_for 'course', course do |course_form| -%>
+                <%= course_form.fields_for category, index: category.id do |category_form| -%>
+                  <div class="u-mar-bot-6">
+                    <h3 class="heading-sm">Attempts Per Activity</h3>
+                    <p>
+                      Students will have the following maximum number of attempts, with some exceptions.
+                      <details>
+                        <summary>See Details</summary>
+                        <div>
+                          <ul class="c-box  c-box-plain">
+                            <lh>The following are always limited to 1 attempt:</lh>
+                            <li>True/false activities</li>
+                            <li>Other multiple choice activities with only 2 choices</li>
+                            <li>Open ended activities</li>
+                            <li>Recording activities</li>
+                            <li>Assessments</li>
+                          </ul>
+                        </div>
+                      </details>
+                    </p>
+                    <%= category_form.select :max_attempts, Category.max_attempt_options_for_select,
+                                             {},
+                                             class: ['c-select', test_class('cartridge-number-attempts')] %>
+                  </div>
+                  <div class="u-mar-bot-6  ">
+                    <h3 class="heading-sm">Grading Strictness</h3>
+                        <%
+                          # Always invert the attributes because the attrs on the server side
+                          # are negative (ignore_accents instead of Accent marks count).
+                          # The wording 'Accent marks count', 'Capitalization counts' and
+                          # 'Punctuation counts' was obtained from the course wizard.
+                          scoring_ruleset.ignore_accents = !scoring_ruleset.ignore_accents
+                          scoring_ruleset.ignore_capitalization = !scoring_ruleset.ignore_capitalization
+                          scoring_ruleset.ignore_punctuation = !scoring_ruleset.ignore_punctuation
+                        %>
+                        <%= category_form.fields_for scoring_ruleset do |score_rule_set_form| %>
+                          <div class="c-form-item-group">
+                            <div class="c-form-item">
+                              <%= score_rule_set_form.check_box :ignore_accents, class: ['c-form-item__checkbox', test_class('cartridge-strictness-accents')] %>
+                              <%= score_rule_set_form.label :ignore_accents, 'Accent marks count', class: 'c-form-item__label' %>
+                            </div>
+                            <div class="c-form-item">
+                                <%= score_rule_set_form.check_box :ignore_capitalization, class: ['c-form-item__checkbox', test_class('cartridge-strictness-capitalization')] %>
+                                <%= score_rule_set_form.label :ignore_capitalization, 'Capitalization counts', class: 'c-form-item__label' %>
+                            </div>
+                            <div class="c-form-item">
+                                <%= score_rule_set_form.check_box :ignore_punctuation, class: ['c-form-item__checkbox', test_class('cartridge-strictness-punctuation')] %>
+                                <%= score_rule_set_form.label :ignore_punctuation, 'Punctuation counts', class: 'c-form-item__label' %>
+                            </div>
+                          </div>
+                        <% end %>
+                  </div>
+                <% end %>
+                <div class="u-mar-bot-6">
+                  <h3 class="heading-sm">Media Settings Defaults</h3>
+                  <p>Changes can be made to students in the <strong>Student Interaction Settings page</strong>.</p>
+                  <table class="c-table  c-table--content  u-section-table" style="width: 75%">
+                    <tr>
+                      <td>Video Subtitles and<br>Closed Captions (CC)</td>
+                      <td><%= @presenter.video_subtitle_languages_display %></td>
+                      <td>
+                        <a href="#" onclick="$('.js-modal-subtitle-sample').vhlModal('open');">See Example</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="u-pad-top-16">Video Transcripts</td>
+                      <td class="u-pad-top-16"><%= @presenter.video_transcript_languages_display %></td>
+                      <td class="u-pad-top-16">
+                        <a href="#" onclick="$('.js-modal-transcript-sample').vhlModal('open');">See Example</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="u-pad-top-16">Audio Transcripts</td>
+                      <td class="u-pad-top-16"><%= @presenter.audio_transcript_display %></td>
+                      <td class="u-pad-top-16">
+                        &nbsp;
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <div>
+                  <div class="c-form-item">
+                    <%= course_form.label :end_date, 'Course end date', class: 'c-form-item__label  u-txt-upper' %>
+                    <%= course_form.text_field :end_date, value: course.end_date.strftime('%m-%d-%Y'), class: ['c-form-item__input  c-form-item__input--datepicker  js-datepicker', test_class('cartridge-course-end-date')], 'data-widget-classes' => 'c-datepicker', style: 'padding: 0; padding-left: 2.5rem' %>
+                  </div>
+                </div>
+              <% end %>
+              <%= hidden_field_tag('activity_id', @activity.id) %>
+            <% end %>
+          </div>
+          <div class="c-panel__footer">
+            <div class="c-button-group  u-mar-0  u-txt-rt">
+              <button type="button" class="c-button  js-modal-close">Cancel</button>
+              <button type="button" class="c-button  c-button--primary  js-main-action" onclick="$('.js-cartridge-course-settings-form').submit();">Save</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="u-screen-reader-only" tabindex="-1">Dialog end</button>
+    </div>
+  </div>
+
+  <div class="c-modal  c-modal--md  js-modal  js-modal-subtitle-sample  u-hidden">
+    <div role="dialog" aria-label="Small modal" class="c-modal__box  js-modal-box  js-modal-a11y">
+      <button class="c-modal__close-button  c-no-button  js-x-close  js-modal-close">
+        <span class="c-icon  c-icon--md  c-icon--close"></span>
+        <span class="u-screen-reader-only">Close dialog</span>
+      </button>
+      <div role="document" class="js-modal-content">
+
+        <div class="c-modal__body">
+          <img src="/images/subtitles-screenshot.jpg" alt="Sample subtitle" class="u-width-full">
+        </div>
+
+      </div>
+      <button class="u-screen-reader-only" tabindex="-1">Dialog end</button>
+    </div>
+  </div>
+
+  <div class="c-modal  c-modal--md  js-modal  js-modal-transcript-sample  u-hidden">
+    <div role="dialog" aria-label="Small modal" class="c-modal__box  js-modal-box  js-modal-a11y">
+      <button class="c-modal__close-button  c-no-button  js-x-close  js-modal-close">
+        <span class="c-icon  c-icon--md  c-icon--close"></span>
+        <span class="u-screen-reader-only">Close dialog</span>
+      </button>
+      <div role="document" class="js-modal-content">
+
+        <div class="c-modal__body">
+          <img src="/images/transcript-screenshot.jpg" alt="Sample transcript" class="u-width-full">
+        </div>
+
+      </div>
+      <button class="u-screen-reader-only" tabindex="-1">Dialog end</button>
+    </div>
+  </div>
+</div>

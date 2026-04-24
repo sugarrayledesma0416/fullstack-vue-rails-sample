@@ -1,0 +1,76 @@
+<activity activity_type="hybrid_reading" language="es" title="foo">
+  <title>Hybrid Reading title</title>
+  <dl>This is the direction line</dl>
+  <rubric id="1" rubric_revision_id="2">
+    <style>
+      <show_score> true </show_score>
+    </style>
+    <header_row>
+      <header_column id="1"> 5 points </header_column>
+      <header_column id="2"> 4 points </header_column>
+      <header_column id="3"> 3 points </header_column>
+    </header_row>
+    <criteria>
+      <title> Content </title>
+      <performance header_id="1">
+        <description> The brochure uses a sufficient amount of lesson vocabulary to describe in detail the suggested activities. </description>
+        <score> 5 </score>
+      </performance>
+      <performance header_id="2">
+        <description> The brochure uses some lesson vocabulary to describe the activities. </description>
+        <score> 4 </score>
+      </performance>
+      <performance header_id="3">
+        <description> The brochure uses little lesson vocabulary, suggests few activities. </description>
+        <score> 3 </score>
+      </performance>
+    </criteria>
+    <criteria>
+      <title> Organization </title>
+      <performance header_id="1">
+        <description> The brochure is well organized and visually engaging, with various attractive visuals. </description>
+        <score> 5 </score>
+      </performance>
+      <performance header_id="2">
+        <description> The brochure is somewhat organized and includes few interesting visuals. </description>
+        <score> 4 </score>
+      </performance>
+      <performance header_id="3">
+        <description> The brochure is not well organized and does not include interesting visuals. </description>
+        <score> 3 </score>
+      </performance>
+    </criteria>
+    <criteria>
+      <title> Accuracy </title>
+      <performance header_id="1">
+        <description> The lesson vocabulary (activities, dates, locations) is used correctly. </description>
+        <score> 5 </score>
+      </performance>
+      <performance header_id="2">
+        <description> The lesson vocabulary (activities, dates, locations) is mostly used correctly. </description>
+        <score>4 </score>
+      </performance>
+      <performance header_id="3">
+        <description> The use of lesson vocabulary is limited (activities, dates, locations) and often incorrect. </description>
+        <score> 3 </score>
+      </performance>
+    </criteria>
+  </rubric>
+  <items>
+    <subheading>This is a subheading</subheading>
+    <paragraph>This is a paragraph.</paragraph>
+    <floating_image id="6" />
+    <reference type="video">
+      <title>This is a video title</title>
+      <video id="5"/>
+      <video type="descriptive" id="2"/>
+      <subtitles>
+	<english_subtitles id='14' />
+        <foreign_subtitles id='3' />
+      </subtitles>
+    </reference>
+    <gloss_list language="de">
+      <gloss target="paragraph">gloss for paragraph</gloss>
+    </gloss_list>
+  </items>
+</activity>

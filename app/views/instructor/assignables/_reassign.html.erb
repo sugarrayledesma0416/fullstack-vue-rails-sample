@@ -1,0 +1,106 @@
+<div
+  data-container="reassign"
+  style="display: <%= presenter.start_on_reassign_step? ? 'block' : 'none' %>;">
+
+  <div class="as_count">
+    <%= render 'selected_count', presenter: presenter %>
+    <% if presenter.any_activities_already_assigned? -%>
+      <%= link_to(
+            'review activities',
+            '#',
+            'data-link' => 'review',
+            class: "prevent-default",
+            onclick: "return $(this).assignment_wizard('review');"
+          ) %>
+    <% end -%>
+  </div>
+
+  <div class="reassign_container ui-helper-clearfix">
+    <%= render 'due_date_selector', presenter: presenter %>
+
+    <div data-container="category" class="div_row ui-helper-clearfix">
+      <%= label_tag(:activity_assignment_category_id, 'Category') %>
+      <%= category_for_assignment(
+            presenter.categories,
+            presenter.focus.program_id,
+            presenter.focus.course
+          ) %>
+    </div>
+
+    <% unless presenter.in_institution_admin? %>
+      <% if presenter.focus.course.allow_individual_assign && !(presenter.group_chat_activities_count > 0) %>
+        <div class="div_row ui-helper-clearfix">
+          <%= label_tag(:activity_assignment_individually_assignable, 'Assign to') %>
+          <%= select_tag(
+            'activity_assignment[individually_assignable]',
+            options_for_select(
+              presenter.individually_assignable_options,
+              presenter.current_individually_assignable_value
+            ),
+            class: 'js-individual-assign-dropdown',
+            disabled: presenter.has_mixed_individually_assignable_status?
+          ) %>
+        </div>
+      <% elsif presenter.focus.course.allow_individual_assign && presenter.group_chat_activities_count > 0 %>
+        <div class="div_row  ui-helper-clearfix">
+          <%= label_tag(
+            :activity_assignment_individually_assignable,
+            'Assign to',
+            class: 'u-mar-top-4'
+          ) %>
+          <span>Entire Section</span>
+          <input
+            type="hidden"
+            name="activity_assignment[individually_assignable]"
+            value="false">
+        </div>
+      <% end %>
+    <% end %>
+
+    <% if presenter.has_assessments? -%>
+      <%= render 'assessment_options', presenter: presenter %>
+    <% end -%>
+
+    <% if presenter.group_chat_activities_count == 1 %>
+      <%= render 'group_chat_options', group_chat_config: presenter.group_chat_config %>
+    <% elsif presenter.group_chat_activities_count > 1 %>
+      <div class="c-group-chat-msg-container">
+        There are multiple <b>Group Chats</b> in this batch. The min and
+        max number of students will become the default. To change
+        these settings, reassign each Group Chat individually.
+      </div>
+    <% end %>
+  </div>
+
+  <% unless assistant_role_policy.is_assistant? %>
+    <div id="additional_links" class="ns-music-v1  ui-helper-clearfix  u-txt-reg">
+      <div class="cancel_link  u-pad-lt-0  u-pad-top-8  u-pad-bot-8  u-float-lt">
+        <%= Music::Components.button(
+          text: 'CANCEL',
+          variant: 'link',
+          classes: ['js-cancel-button', test_class('cancel-reassign')]
+        ) %>
+      </div>
+
+      <div class="link_savechanges">
+        <%= button_tag(
+              'Save and Assign Now',
+              class: 'c-button  c-button--border  u-hidden  ' \
+                     'js-save-and-assign-button',
+              data: {
+                href: instructor_individual_assignments_path(
+                  activity_ids: presenter.activity_ids,
+                  program_id: current_program.id
+                )
+              },
+            ) %>
+
+        <%= Music::Components.button(
+          text: 'save',
+          variant: 'primary',
+          classes: ['prevent-default  js-save-button']
+        ) %>
+      </div>
+    </div>
+  <% end %>
+</div>

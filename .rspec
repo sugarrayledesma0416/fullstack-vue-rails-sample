@@ -1,0 +1,4 @@
+--color
+--require support/vhl_documentation_formatter
+--require rails_helper
+--tag ~@test_debt

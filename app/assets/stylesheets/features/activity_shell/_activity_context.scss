@@ -1,0 +1,193 @@
+.c-activity-context {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    padding-right: 1rem;
+  }
+
+  // &__notifications {}
+
+  &__notification {
+    display: flex;
+    width: 100%;
+    box-shadow: 0 0.15rem 0.25rem rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    margin-top: rpx(20);
+    font-size: rpx(16);
+
+    &--border-radius {
+      border-radius: rpx(2);
+    }
+  }
+
+  &__notification-details {
+    display: flex;
+    width: 100%;
+
+    /**
+     * Suppress the default marker. `list-style: none` works in most browsers,
+     *   but the `summary::-webkit-details-marker` rule is included for those
+     *   in which it doesn't.
+     *
+     * Also, change the cursor to pointer instead of the default text-input
+     *   cursor.
+     */
+    summary {
+      cursor: pointer;
+      list-style: none;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    &[open]{
+      .c-activity-context__notification-summary--icon {
+        transform: rotate(-90deg);
+      }
+    }
+  }
+
+  &__notification-summary{
+    color: $link-color;
+
+    &--icon {
+      transform: rotate(90deg);
+      display: inline-flex;
+      vertical-align: text-bottom;
+      > svg polygon {
+        fill: $link-color; 
+      }
+    }
+  }
+
+  &__notification-icon {
+    display: inline-flex;
+    margin-right: 1rem;
+  }
+
+  &__notification-text {
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  &__headline {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    width: 100%;
+    gap: mod(0.75);
+  }
+
+  &__attempts-info {
+    color: $lightest-text;
+    text-transform: uppercase;
+  }
+
+  &__title {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: mod(1);
+  }
+
+  &__title-text {
+    font-size: var(--font-6, 1.5rem);
+    font-weight: 600;
+    display: inline;
+    margin-bottom: 0;
+    margin-right: mod(0.8);
+
+    @include viewport-min('md') {
+      margin-right: mod(1.5);
+    }
+  }
+
+  &__title-audio-icon {
+    margin-right: mod(0.8);
+
+    @include viewport-min('md') {
+      margin-left: mod(-0.7);
+      margin-right: mod(1.5);
+    }
+  }
+
+  &__title-icons {
+    display: inline-flex;
+    margin: 0.5rem 0rem;
+    align-items: center;
+  }
+
+  &__title-icon {
+    // The icons were designed for the activities' TOC page and the
+    // helper that renders them applies its own styling.  These
+    // lines negate some problematic positioning.
+    // TODO: Write a new helper for the the Activity Context's icons
+    // or remove opinionated CSS from the existing helper.
+    position: relative;
+    top: -0.25rem;
+  }
+
+  &__title-icon .c-embedded-icon svg {
+    width: mod(1.25);
+    height: mod(1.25);
+    line-height: 1.2;
+  }
+
+  &__headline-meta {
+    display: inline-block;
+    padding: 0.2rem rpx(10);
+    background-color: $gray-f5;
+    font-family: monospace;
+    font-size: var(--font-1, 0.8rem);
+    line-height: 1.2;
+    margin-right: 1rem;
+    border-radius: rpx(2);
+  }
+
+  &__late-tag {
+    display: inline-block;
+    margin: 0 0.5rem;
+    padding: 0.25rem 0.7rem 0.3rem;
+    background-color: $light-red;
+    border-radius: rpx(2);
+    color: $white;
+    font-size: var(--font-1, 0.8rem);
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+
+  &__due-date {
+    display: none;
+
+    @include viewport-min('md') {
+      display: inline-block;
+      font-size: var(--font-1, $font-size-14);
+      margin-right: 1rem;
+    }
+  }
+
+  &__due-date-prefix {
+    display: inline-block;
+    margin-right: 0.3rem;
+    font-size: var(--font-1, $font-size-14);
+    font-weight: 100;
+    text-transform: uppercase;
+  }
+  
+  &__directions {
+    flex-basis: 100%; // prevents issue where short directions wont wrap to new line.
+    font-size: var(--font-default);
+  }
+
+  &__directions p {
+    margin-bottom: 0;
+  }
+}

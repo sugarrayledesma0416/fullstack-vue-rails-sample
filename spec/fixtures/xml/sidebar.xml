@@ -1,0 +1,75 @@
+<activity activity_type="reference_activity" title="sample_reference_activity_title" language="es">
+  <dl>instructions_go_here</dl>
+  <items>
+  </items>
+
+  <sidebar ref="1">
+    <title>Expresiones útiles</title>
+    <!-- Reference: Phrase Group -->
+    <reference type="phrase_chart">
+      <phrase_group>
+        <header>Talking with hotel personnel</header>
+        <phrase>
+          <foreign>¿En qué puedo servirles?</foreign>
+          <english>How can I help you?</english>
+          <audio id="137819"/>
+        </phrase>
+      </phrase_group>
+    </reference>
+    <!-- Reference: Phrase Group -->
+    <reference type="phrase_chart">
+      <phrase_group>
+        <header>Talking with hotel personnel 2</header>
+        <phrase>
+          <foreign>¿En qué puedo servirles?</foreign>
+          <english>How can I help you?</english>
+          <audio id="137819"/>
+        </phrase>
+      </phrase_group>
+    </reference>
+  </sidebar>
+
+  <sidebar ref="2">
+    <title>Common Reflexive Verbs</title>
+    <!-- Vocab Chart -->
+    <vocab_chart title="Common reflexive verbs" column_hint="2" show_l1_first="false">
+      <vocab_group>
+        <hint>o:ue</hint>
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <translation>to remember</translation>
+          <target>acordarse</target>
+          <annotated_target>abierto</annotated_target>
+          <language>es</language>
+          <image id="136303" />
+          <audio id="137760" />
+        </dictionary_entry>
+      </vocab_group>
+    </vocab_chart>
+    <!-- Reference: Phrase Group -->
+    <reference type="phrase_chart">
+      <phrase_group>
+        <header>Talking with hotel personnel 2</header>
+        <phrase>
+          <foreign>¿En qué puedo servirles?</foreign>
+          <english>How can I help you?</english>
+          <audio id="137819"/>
+        </phrase>
+      </phrase_group>
+    </reference>
+  </sidebar>
+
+  <sidebar ref="3">
+    <title>Variación Léxica</title>
+    <!-- Regional Variations -->
+    <regional_variations>
+      <paragraph>Items are presented for recognition purposes only.</paragraph>
+      <variant>
+        <word>Buenos días.</word>
+        <variation>Buenas.</variation>
+      </variant>
+    </regional_variations>
+  </sidebar>
+</activity>

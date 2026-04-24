@@ -1,0 +1,5 @@
+<ul>
+<% @student_confirm_info.each do |student| %>
+<%= render :partial => 'student_confirm', :locals => { :student => student} %>
+<% end %>
+</ul>

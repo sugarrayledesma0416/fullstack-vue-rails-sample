@@ -1,0 +1,77 @@
+<% if @activity_type == 'virtual_chat' || @activity_type == 'video_virtual_chat' %>
+  <% content_for :current_user_data do %>
+    <%= hidden_field_tag :user_gender, current_user.gender %>
+    <%= hidden_field_tag :current_user_id, current_user.id %>
+  <% end %>
+<% end %>
+
+<%
+  content_for(:js_head, javascript_include_tag("maestro_activity_engine/recording_v2"))
+  content_for(:js_head, javascript_packs_with_chunks_tag('instructor/created_activities/edit'))
+  content_for(:css_head, stylesheet_packs_with_chunks_tag('instructor/created_activities/edit'))
+  content_for(:css_head, stylesheet_link_tag('custom_assessments/main_temp.css'))
+  content_for(:css_head, stylesheet_link_tag('custom_assessments/icons.css'))
+  content_for(:body_classes, '  ns-music-v1  ns-full-width')
+  content_for(:body_classes, ' standard_layout')
+%>
+
+<%# Generate asset-fingerprinted icons for use in Vue.js: %>
+<script type="text/x-template" id="music_icon_edit">
+  <%= Music::Components.icon(variant: 'edit', size: 'lg') %>
+</script>
+
+<%= render :partial => 'activities/include' %>
+
+<% assignment_groups_data = (
+    current_program.vista_online_learning? &&
+    !@is_assessment_tab) ? {
+      options: InstructorCreatedActivity::ASSIGNMENT_GROUPS,
+      selected: @created_activity.assignment_group || 'Practice',
+    } : nil
+%>
+<div class="js-edit-created-activity-app"></div>
+<div
+  class="js-edit-created-activity-data"
+  data-from-dom="<%= {
+    activity_header: @activity_list_header.html_safe,
+    activity_json: @created_activity.to_json,
+    activity_title: @created_activity.title,
+    activity_type: @activity_type,
+    allows_audio_transcripts: current_program.has_audio_transcripts?,
+    assignment_groups_data: assignment_groups_data,
+    base_dir: 'instructor_created_activities/',
+    cdn_prefix: Rails.application.config.multimedia.recording_v2.cdn_prefix,
+    content_json: @created_activity.content_json,
+    course_allows_audio_transcripts: current_focus.course&.allow_audio_transcripts?,
+    created_activity_references: @created_activity.references.to_json,
+    direction_line: @created_activity.direction_line,
+    from_my_content: @from_my_content,
+    is_assessment_tab: @is_assessment_tab,
+    is_dev: is_dev?,
+    is_draft: @created_activity.draft? || @created_activity.draft.nil?,
+    is_vol: current_program.vista_online_learning?,
+    language: @created_activity.language,
+    media_item_recording_endpoint: Rails.application.config.multimedia.instructor_media_items.recording_endpoint,
+    media_lookup: @created_activity.media_lookup.to_json,
+    program_language: {
+      code: current_program.language_code,
+      name: current_program.language_name
+    }.to_json,
+    question_prompt: @activity_type == 'composition' ? @created_activity.question_prompt : nil,
+    return_label: @return_label,
+    return_url: vhl_return_to_sanitizer(@return_url),
+    submit_url: instructor_created_activity_path(
+      program_id: current_program,
+      page: @page,
+      lesson_id: params[:lesson_id],
+      toc_entry_id: params[:toc_entry_id],
+      id: params[:id]
+    ),
+    video_platform: @created_activity.video_platform,
+    video_url: @created_activity.video_url,
+    lesson_id: params[:lesson_id],
+    strand_id: params[:toc_entry_id],
+    config_name: 'm3_created_activities_builder',
+  }.to_json  %>">
+  <%= render 'accent_bar_chars', current_program: current_program %>
+</div>

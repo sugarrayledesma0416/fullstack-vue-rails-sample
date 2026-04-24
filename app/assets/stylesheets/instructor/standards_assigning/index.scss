@@ -1,0 +1,9 @@
+@import 'music/library/v1/base/main';
+
+/* TODO: Fix the error when the padding is 0 */
+.ns-assess-to-learn {
+  #column_wrapper {
+    padding-top: rpx(1);
+  }
+}
+

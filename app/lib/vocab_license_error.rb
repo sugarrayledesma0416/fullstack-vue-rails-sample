@@ -1,0 +1,2 @@
+class VocabLicenseError < StandardError
+end

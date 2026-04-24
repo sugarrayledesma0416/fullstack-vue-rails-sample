@@ -1,0 +1,12 @@
+<activity activity_type="html_reading" title="sample_html_reading" language="es">
+  <dl>instructions</dl>
+  <items>
+    <reference type="audio">
+      <audio id="2"/>
+    </reference>
+    <html_body>
+      <p>content</p>
+    </html_body>
+  </items>
+</activity>
+

@@ -1,0 +1,12 @@
+if (!$('.js-modal-copy-previous-edition-igcs').length) {
+  $('body').append(
+    "<%= j(render('modal', class_selector: 'js-modal-copy-previous-edition-igcs', aria_label: 'Copy previous igcs'))%>"
+  );
+}
+
+
+$('.js-modal-copy-previous-edition-igcs')
+  .find('.js-modal-content').html("<%= j(render('confirm_copy_previous_edition_igcs')) %>");
+
+$('.js-modal-copy-previous-edition-igcs').vhlModal('init');
+$('.js-modal-copy-previous-edition-igcs').vhlModal('open');

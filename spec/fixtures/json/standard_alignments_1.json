@@ -1,0 +1,128 @@
+[
+    {
+        "id": 43,
+        "standard_asset_id": 22,
+        "vendor_asset_guid": "8e4b78f3-a05d-4e43-ac6f-b1c2dcb7f11e",
+        "vendor_standard_guid": "8074E404-7440-11DF-93FA-01FD9CFF4B22"
+    },
+    {
+        "id": 44,
+        "standard_asset_id": 23,
+        "vendor_asset_guid": "349552ff-7996-436c-9118-16edf2df8fb2",
+        "vendor_standard_guid": "80A6750A-7440-11DF-93FA-01FD9CFF4B22"
+    },
+    {
+        "id": 45,
+        "standard_asset_id": 24,
+        "vendor_asset_guid": "ad3c1e29-447c-47cf-b89a-fa3d13488b88",
+        "vendor_standard_guid": "80755DA8-7440-11DF-93FA-01FD9CFF4B22"
+    },
+    {
+        "id": 46,
+        "standard_asset_id": 25,
+        "vendor_asset_guid": "64d70de5-89f3-4653-a94c-905336f58f9b",
+        "vendor_standard_guid": "80A6750A-7440-11DF-93FA-01FD9CFF4B22"
+    },
+    {
+        "id": 47,
+        "standard_asset_id": 26,
+        "vendor_asset_guid": "12ac65d6-ac41-4f79-8309-a10888712e3f",
+        "vendor_standard_guid": "80A50A12-7440-11DF-93FA-01FD9CFF4B22"
+    },
+    {
+        "id": 48,
+        "standard_asset_id": 27,
+        "vendor_asset_guid": "5f531235-490b-457b-9369-d7e09ca2b190",
+        "vendor_standard_guid": "8074E404-7440-11DF-93FA-01FD9CFF4B22"
+    },
+    {
+        "id": 49,
+        "standard_asset_id": 28,
+        "vendor_asset_guid": "e1c19962-18ea-4a5b-9675-4df13def5996",
+        "vendor_standard_guid": "80A50A12-7440-11DF-93FA-01FD9CFF4B22"
+    },
+    {
+        "id": 50,
+        "standard_asset_id": 29,
+        "vendor_asset_guid": "7c41dd1b-bd6c-4ab5-9176-19b7f8cfadc0",
+        "vendor_standard_guid": "80D60194-7440-11DF-93FA-01FD9CFF4B22"
+    },
+    {
+        "id": 51,
+        "standard_asset_id": 30,
+        "vendor_asset_guid": "acec2b30-ccec-445e-b8d9-54460309df00",
+        "vendor_standard_guid": "8074E404-7440-11DF-93FA-01FD9CFF4B22"
+    },
+    {
+        "id": 52,
+        "standard_asset_id": 31,
+        "vendor_asset_guid": "9a26e3fd-2b26-41f4-94e2-e6c65d01476d",
+        "vendor_standard_guid": "8074E404-7440-11DF-93FA-01FD9CFF4B22"
+    },
+    {
+        "id": 53,
+        "standard_asset_id": 32,
+        "vendor_asset_guid": "6a99b9fd-fd76-4af8-8386-ad2140afa48b",
+        "vendor_standard_guid": "80A50A12-7440-11DF-93FA-01FD9CFF4B22"
+    },
+    {
+        "id": 54,
+        "standard_asset_id": 33,
+        "vendor_asset_guid": "aa0b6a1c-206f-4192-932e-c980dcea572e",
+        "vendor_standard_guid": "80755DA8-7440-11DF-93FA-01FD9CFF4B22"
+    },
+    {
+        "id": 55,
+        "standard_asset_id": 40,
+        "vendor_asset_guid": "eee7ea48-bfdd-4e41-8342-d53b165ce636",
+        "vendor_standard_guid": "80D33112-7440-11DF-93FA-01FD9CFF4B22"
+    },
+    {
+        "id": 56,
+        "standard_asset_id": 34,
+        "vendor_asset_guid": "93e1814e-1935-4591-95a3-d8ff9554c0bb",
+        "vendor_standard_guid": "80D33112-7440-11DF-93FA-01FD9CFF4B22"
+    },
+    {
+        "id": 57,
+        "standard_asset_id": 35,
+        "vendor_asset_guid": "56a5775a-589f-49d7-a922-506de373c4ba",
+        "vendor_standard_guid": "80CF6BE0-7440-11DF-93FA-01FD9CFF4B22"
+    },
+    {
+        "id": 58,
+        "standard_asset_id": 36,
+        "vendor_asset_guid": "8ba67231-ea4e-43cc-99bd-cc9171c237ed",
+        "vendor_standard_guid": "80CF6BE0-7440-11DF-93FA-01FD9CFF4B22"
+    },
+    {
+        "id": 59,
+        "standard_asset_id": 37,
+        "vendor_asset_guid": "34b00ac9-37b7-4c1b-b866-be3f71e7cd88",
+        "vendor_standard_guid": "80C6C378-7440-11DF-93FA-01FD9CFF4B22"
+    },
+    {
+        "id": 60,
+        "standard_asset_id": 38,
+        "vendor_asset_guid": "05c950e8-d0fa-47a5-abe1-0d43f0e9aa83",
+        "vendor_standard_guid": "80CAA02E-7440-11DF-93FA-01FD9CFF4B22"
+    },
+    {
+        "id": 61,
+        "standard_asset_id": 39,
+        "vendor_asset_guid": "6e3d3807-de76-478f-b51c-171f5f2ab755",
+        "vendor_standard_guid": "80CAA02E-7440-11DF-93FA-01FD9CFF4B22"
+    },
+    {
+        "id": 62,
+        "standard_asset_id": 41,
+        "vendor_asset_guid": "5a9c4e7e-75d8-46ae-b8ce-384fbb874480",
+        "vendor_standard_guid": "80CC8146-7440-11DF-93FA-01FD9CFF4B22"
+    },
+    {
+        "id": 63,
+        "standard_asset_id": 42,
+        "vendor_asset_guid": "dfef4f16-1948-4133-9817-c9245fe2d4bb",
+        "vendor_standard_guid": "80CC8146-7440-11DF-93FA-01FD9CFF4B22"
+    }
+]

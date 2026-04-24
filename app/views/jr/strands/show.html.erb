@@ -1,0 +1,26 @@
+<% content_for(:js_head, javascript_packs_with_chunks_tag('jr/strands/show')) %>
+
+<% content_for(:navigation) do %>
+  <% render('app_shell/navbar_program/supersite_junior') %>
+<% end %>
+
+<% content_for(:body_classes, '  has-vhl-return-link') %>
+
+<% content_for(:left_of_page_title) do %>
+  <div class="c-return-link-container">
+    <vhl-return-link
+      class="<%= test_class('return-link-root') %>"
+      href="<%= jr_section_program_lesson_path(
+                  id: @concept.lesson_id,
+                  program_id: current_program.id,
+                  section_id: current_section.id
+                ) %>"
+      linktestclass="<%= test_class('return-link') %>">
+      Return
+    </vhl-return-link>
+  </div>
+<% end %>
+
+<div class="c-activities-toc-jr">
+  <%= render 'toc/activities', presenter: @presenter %>
+</div>

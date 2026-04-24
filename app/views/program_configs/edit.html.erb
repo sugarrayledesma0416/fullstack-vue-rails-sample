@@ -1,0 +1,120 @@
+<% content_for(:body_classes, '  ns-program-config') %>
+
+<% content_for(:css_head, stylesheet_link_tag('full_width_content'))%>
+<% content_for(:css_head, stylesheet_link_tag('program_config')) %>
+<% content_for(:css_head, stylesheet_link_tag('mini-editor')) %>
+
+<% content_for(:js_head, javascript_packs_with_chunks_tag('program_config/edit')) %>
+<% content_for(:js_head, javascript_include_tag("#{MaestroActivityEngine::CDN_CKEDITOR_URL}/core/ckeditor.js") ) %>
+
+<div id="main_content  ns-music-v1">
+  <div id="full_width_header">
+    <h2><%= @program.title.html_safe %> <span>current M3 configuration</span></h2>
+  </div>
+
+  <div id="full_width_body">
+    <%= form_tag(program_config_path(@program), method: :put) do %>
+
+      <div class="js-program-config">
+      </div>
+
+      <div class="c-button-group  c-button-group--rt">
+        <%= submit_tag(
+              'Submit',
+              class: "c-button  c-button--primary  u-no-width  #{test_class('program-config-submit')}"
+            ) %>
+        <%= link_to 'Cancel', "#{UA_URL}/support/programs_configs", class: 'c-button' %>
+      </div>
+    <%- end %>
+  </div>
+
+  <%
+    program_config_descriptions = @program_config.course_setup_descriptions
+    learning_tracks_options = []
+    program_config_descriptions.learning_tracks.options.each_with_index do |option, index|
+      learning_tracks_options[index] = {
+        label: option.label,
+        explanation: option.explanation
+      }
+    end
+
+    mapping_src_lessons_strands = @mapping_presenter.mapping_src_lessons_strands.each do |lesson|
+      lesson[:concepts].each do |concept|
+        concept['selected_lesson'] = @mapping_presenter.destination_for_source_strand[concept[:id]][:lesson_id]
+        concept['strands_for_dest_lesson_array'] = @mapping_presenter.strands_for_dest_lesson_array(concept[:id])
+        concept['selected_strand'] = @mapping_presenter.destination_for_source_strand[concept[:id]][:strand_id]
+      end
+    end
+  %>
+  <div
+    class="js-program-config-data"
+    data-from-dom="<%= {
+      current_settings: @program_config.settings_as_json,
+      content_menu_settings: {
+        content_menu_additional_entries: @program_config&.content_menu_additional_entries,
+        ebook: @program_config.ebook,
+        teacher_vtext_label: @program_config.teacher_vtext_label,
+        teacher_vtext_url: @program_config.teacher_vtext&.url,
+        vocab_tools: @program_config.vocab_tools,
+        vocab_tools_enabled: @program_config.vocab_tools?,
+        vtext_label: @program_config.vtext_label,
+        vtext_type: @program_config.vtext&.type,
+        vtext_url: @program_config.vtext&.url
+      },
+      ai_settings: {
+        grading_suggestions: @program_config.ai_grading_feature_enabled?,
+        program_level: @program_config.ai_program_level,
+      },
+      other_features_settings: {
+        allow_assessments_randomization: @program_config.allow_assessments_randomization?,
+        audio_transcripts: @program_config.audio_transcripts?,
+        hide_activities: @program_config.hide_activities?,
+        hide_assessment: @program_config.hide_assessment?,
+        hide_my_content: @program_config.hide_my_content?,
+        hide_translation: @program_config.hide_translation?,
+        language_code: @program.language_code,
+        question_banks_enabled: @program_config.question_banks_enabled?,
+        practice_test_analytics_enabled: @program_config.practice_test_analytics_enabled?,
+        share_to_portfolio: @program_config.share_to_portfolio?,
+        show_skills_and_refinement_filters: @program_config.show_skills_and_refinement_filters?,
+        pmr_standard_reports_allowed: @program_config.pmr_standard_reports_allowed?,
+        enable_concurrent_enrollment: @program_config.enable_concurrent_enrollment?,
+        speech_rec: @program_config.speech_rec?,
+        study_center: @program_config.study_center?,
+        vocab_definition: @program_config.vocab_definition?,
+        vocab_words: @program_config.vocab_words?
+      },
+      program_mapping_data: {
+        lessons_for_dest_program_array: @mapping_presenter.lessons_for_dest_program_array,
+        mapping_src_programs_array: @mapping_presenter.mapping_src_programs_array,
+        mapping_src_prog_id: @mapping_presenter.mapping_src_prog_id,
+        mapping_src_lessons_strands: mapping_src_lessons_strands
+      },
+      vol_configs: {
+        is_vista_online_learning: @program_config.vista_online_learning?,
+        descriptions: {
+          express_course: program_config_descriptions.express_course,
+          advanced_course: program_config_descriptions.advanced_course,
+          header: program_config_descriptions.learning_tracks.header,
+          general: program_config_descriptions.learning_tracks.general,
+          options_overall: program_config_descriptions.learning_tracks.options_overall
+        },
+        learning_tracks_options: learning_tracks_options
+      },
+      standards_settings: {
+        supported_standard_set_ids: @program_config.grouped_supported_standard_set_ids
+      },
+      standards_settings_data: {
+        standard_sets_array: @presenter.standard_sets,
+        min_grade: @program_config.standards_settings[:min_grade],
+        max_grade: @program_config.standards_settings[:max_grade]
+      },
+      program_id: @program.id,
+      program_title: @program.title,
+      programs_by_title: programs_by_title,
+      previous_edition_program_id: @program_edition&.previous_edition_program_id.to_s,
+      next_edition_program_id: @program_edition&.next_edition_program_id.to_s
+    }.to_json %>">
+  </div>
+</div>
+

@@ -1,0 +1,319 @@
+/* Vista Online Learning Platform */
+@import 'music/library/v1/base/main';
+
+$vol_blue: #0076C0;
+$header-gray: #444;
+$main-background-color: #c8c5c0;
+
+/*
+  color palette:
+
+  */
+
+
+/* Grading Preview */
+.vol.grading_styles #current_strand_name {
+  color: #666;
+}
+
+/* TOC Breadcrumbs */
+.vol.toc #current_strand_name {
+  color: #666;
+}
+
+/* Site background */
+
+.t-vol {
+  background: $gray-f5;
+
+  &.activities {
+    [id="page_container"] {
+      box-shadow: none;
+      background-color: $header-gray;
+    }
+
+    &.workset {
+      background: $main-background-color;
+
+      [id="page_container"] {
+        background-color: transparent;
+      }
+    }
+
+    &.activity_popup {
+      /* move background to div below body */
+      background-image: none;
+
+      .body_bg {
+        background:$main-background-color url('/images/vol/activity-shell-bg-nw.png') repeat-x;
+      }
+    }
+  }
+
+}
+
+.vol {
+  [id="page_container"] {
+    background-color:transparent;
+    border: rpx(2) solid $gray-d;
+    border-top: 0;
+  }
+  .account_tools {
+    background:none;
+  }
+}
+
+
+/* Links */
+
+.vol a, .vol a:link {
+}
+
+/* Button Overrides */
+/* Red Button */
+.vol div.ui-dialog-buttonpane button.ui-button,
+.vol a.red-button,
+.vol span.red-button a,
+.vol input.red-button, .vol button.confirm-btn, .vol button.red-button {
+  background-color: #0076C0;
+  border: 1px solid #0076C0;
+}
+
+.vol a.red-button {
+  height: auto;
+}
+
+/* White Button */
+.vol span.white-button a,
+.vol input.white-button, .vol button.white-button,
+.vol a.white-button, .vol button.white_button, .vol div.ui-dialog-buttonpane button.ui-button.white-button {
+  border: 1px solid #0076C0;
+  background-color:#FFF;
+  color: #0076C0;
+}
+
+
+/* Disabled Button */
+.vol span.disabled-button a,
+.vol input.disabled-button,
+.vol a.disabled-button, .vol button.disabled-button,
+.vol .red-button[disabled="disabled"] {
+  background-color: #ccc;
+  border-color: #ccc;
+  color: #FFF;
+  cursor: default!important;
+}
+
+
+/* Disabled Button Hover*/
+.vol span.disabled-button a:hover,
+.vol input.disabled-button:hover,
+.vol a.disabled-button:hover, .vol button.disabled-button:hover,
+.vol .red-button[disabled="disabled"]:hover {
+  color: #FFF;
+}
+
+
+/* Disabled White Button */
+.vol span.disabled-white a,
+.vol input.disabled-white,
+.vol a.disabled-white {
+  background-color: #FFF;
+  border-color: #ccc;
+  color: #CCC;
+  cursor: default;
+}
+
+
+/* course setup */
+.vol.add-section .course-setup-title,
+.vol.add-course .course-setup-title {
+  color: #FFF;
+}
+
+
+.vol .progress-bar li {
+  color:#8C8C8C;
+
+  &.current {
+    color:#FFF;
+  }
+
+}
+
+.vol .edit-course .progress-bar li.current {
+  background: #C6C6C6;
+  border-color: #C6C6C6;
+}
+
+.vol .edit-section li.current a,
+.vol .edit-course li.current a {
+  color:#2B2B2B;
+}
+
+/* Grading overrides */
+.vol {
+  .category_table_student_preview,
+  .category_table_container,
+  .student_names,
+  .category_object {
+    background: url('/images/category_object_bg_vol.png') 0px 0px repeat-x;
+  }
+}
+
+/* instructor dashboard */
+.vol .program-header-bar.neutral-header-bar {
+  background: #d2d2d2;
+}
+
+.vol .school_classes.open.expanded,
+.vol .course_header .focused,
+.vol .program-header-bar
+{
+  background-color: #F38033;
+}
+
+/*** TODO this calendar icon is also in resources and needs to be dealt with.  ***/
+
+/*** /images/resource_add.png will need to be updated ****/
+
+/*activity shell*/
+
+
+.vol {
+
+  .lesson-header {
+    background:transparent url('/images/vol/vol_workset_bg.png') no-repeat 0 -76px;
+  }
+
+  #toolbar {
+    background-color: #303030;
+    border-color:transparent;
+    margin: 5px -20px 0;
+    padding: 5px 20px 0;
+  }
+
+  .assignment-group {
+    dt {
+      background-color:#fff;
+    }
+    .current, .current.completed {
+      background:transparent url('/images/vol/vol_workset_bg.png') no-repeat 0 0;
+    }
+    .completed {
+      background:transparent url('/images/vol/vol_workset_bg.png') no-repeat -26px 0;
+    }
+  }
+
+  .due-date {
+    float: right;
+  }
+
+  .c-assignment-day {
+    min-height: 65px;
+    width: 500px;
+  }
+
+  .c-assignment-day:last-child {
+    border-bottom: 4px solid #c3c3c3;
+  }
+
+  .assignment-date:last-child .c-assignment-day {
+    border-bottom: none;
+  }
+
+  #slideshow_area {
+    border-bottom:none;
+  }
+
+  #slideshow_previous {
+    background: transparent url('/images/vol/vol_workset-arrows.png') no-repeat 0px 0;
+  }
+
+  #slideshow_next {
+    background: transparent url("/images/vol/vol_workset-arrows.png") no-repeat -15px 0;
+  }
+
+  .group {
+    background: transparent url("/images/vol/vol_workset_bg.png") no-repeat 0 -61px;
+  }
+
+  .group-info {
+    color:#FFF;
+  }
+
+  .group-name {
+    color:#d9d9d9;
+  }
+  .workset_activity_hover {
+    background:#000;
+    &:after {
+      background-position:0 -18px;
+    }
+
+  }
+  #current_strand_name {
+    color:#BCBEC0;
+  }
+
+  // Fineuploader
+  .qq-upload-button {
+    border-color: $vol_blue;
+    color: $vol_blue;
+  }
+
+  #reference_modal .qq-upload-button {
+    background: $vol_blue;
+    color: #FFF;
+
+    &.qq-upload-button-hover {
+      background: $vol_blue;
+    }
+  }
+
+  // IGC: Composition Engine Preview
+  .composition_engine_example {
+    background: url('/images/example_composition_vol.png') no-repeat;
+  }
+
+  /* Jquery dialog boxes */
+
+  /* VOL blue in titlebar */
+  .ui-dialog-titlebar.ui-widget-header {
+    background-color:#394551;
+    margin:0;
+  }
+
+  /* terrifying overrides for close icons. See layout.css and jquery-overrides.css */
+  .ui-dialog .ui-dialog-titlebar .ui-dialog-titlebar-close.ui-state-hover .ui-icon-closethick:hover {
+    background:none;
+  }
+  .ui-dialog .ui-dialog-titlebar .ui-dialog-titlebar-close.ui-state-hover .ui-icon-closethick {
+    background:none;
+  }
+
+  .ui-dialog .ui-dialog-titlebar .ui-dialog-titlebar-close {
+    background: transparent url('/images/dialog_vol.png') 6px 0px no-repeat;
+    border: 0px;
+    border-radius:0;
+
+    &:focus {
+      outline-color: #DFDFDF;
+    }
+  }
+
+  .ui-dialog .ui-dialog-titlebar .ui-dialog-titlebar-close:hover {
+    background-position: -17px 0px;
+  }
+
+  /* box border */
+  .ui-dialog.ui-widget-content {
+    border: 1px solid #394551;
+  }
+
+  /* Resizable icon */
+  .ui-icon-gripsmall-diagonal-se {
+    background-image: url('/images/dialog_vol.png');
+    background-position: -2px -36px;
+  }
+}

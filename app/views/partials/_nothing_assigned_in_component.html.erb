@@ -1,0 +1,11 @@
+<%- if presenter.nothing_assigned?(activities) %>
+<%-
+  colspan = 3
+  if (defined? is_google_share_column) && is_google_share_column
+    colspan = 4
+  end
+%>
+<tr class="u-txtC  u-hidden  <%= test_class('nothing-assigned')%>  js-no-component-assignments-message">
+  <td colspan="<%= colspan %>" class="c-cell  c-col-no-assignments">Nothing Assigned</td>
+</tr>
+<%- end %>

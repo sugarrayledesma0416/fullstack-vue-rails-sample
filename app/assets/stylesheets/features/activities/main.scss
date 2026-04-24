@@ -1,0 +1,14 @@
+@import 'music/library/v1/base/main';
+/* ============================================== *
+
+   Activity styles
+
+   TODO: Move other activity styles in 
+   music/features here.
+
+ * ============================================== */
+
+.ns-activity {
+  @import 'external_content';
+  @import 'layout';
+}

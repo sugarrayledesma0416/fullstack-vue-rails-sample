@@ -1,0 +1,1 @@
+var VISTA_ONLINE_LEARNING = true;

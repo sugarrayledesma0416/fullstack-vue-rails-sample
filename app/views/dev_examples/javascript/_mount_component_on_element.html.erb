@@ -1,0 +1,41 @@
+<% content_for(:js_head, javascript_packs_with_chunks_tag("dev_examples/javascript/mount_component_on_element")) %>
+<details>
+  <summary>
+    <h3>Component mounted on an element</h3>
+    <div class="purpose">
+      <ul>
+        <li>Shows how to add a basic Vue single-file component to a view.</li>
+      </ul>
+    </div>
+  </summary>
+  <div class="details">
+    <p>Here is the component:</p>
+    <%= code_example('app/javascript/src/dev_examples/javascript/mount_component_on_element/ComponentMountedOnElement.vue', 'vue') %>
+    <p>We'll be mounting it on this element - note that none of its content will be rendered, because the component's content will override it:</p>
+    <%= code_example('app/views/dev_examples/javascript/_mount_component_on_element.html.erb', 'erb', heredoc: 'COMPONENT_DIV') %>
+    <p>We start by loading the Javascript:</p>
+    <%= code_example('app/views/dev_examples/javascript/_mount_component_on_element.html.erb', 'erb', line_range: 1..1) %>
+    <p>This refers to the pack defined by this entry point:</p>
+    <%= code_example('app/javascript/packs/dev_examples/javascript/mount_component_on_element.js', 'javascript') %>
+    <p>The entry point is implicitly importing <code>index.js</code> from the given directory, relative to <code>app/javascript/src</code>:</p>
+    <%= code_example('app/javascript/src/dev_examples/javascript/mount_component_on_element/index.js', 'javascript') %>
+    <p>All that's happening here is that
+      <ul>
+        <li>we import the code for the component</li>
+        <li>when the DOM content for the page has loaded, we will
+          <ul>
+            <li>create an instance of the component</li>
+            <li>mount the instance on the element</li>
+          </ul>
+        </li>
+      </ul>
+    </p>
+
+    <p><strong>Result:</strong></p>
+    <div class="live-example">
+      <% # COMPONENT_DIV %>
+      <div id="component_mounted_on_element">Content inside of this div is going to be overridden by the mounted component</div>
+      <% # COMPONENT_DIV %>
+    </div>
+  </div>
+</details>

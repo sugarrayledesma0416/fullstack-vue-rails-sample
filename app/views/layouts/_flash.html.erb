@@ -1,0 +1,38 @@
+<div class="ns-music-v1">
+  <div class="l-container-fluid  u-pos-rel  <%= no_wrap_class_for_flash %>">
+    <div class="c-flash-banner-group js-flash-banner-group" role="alert" aria-live="polite">
+
+      <% flash.each do |key, value| -%>
+
+        <%
+          if is_partial?(key) && value.is_a?(Hash)
+            flash_type = get_flash_type(key)
+          else
+            flash_type = key
+          end
+        %>
+
+        <%# Wrap the flash content in standardized markup: %>
+        <%= render layout: '/layouts/flash_layout',
+                   locals: { key: flash_type, value: value } do %>
+
+          <% if value.is_a?(String) && has_html_tags?(value) -%>
+            <%= sanitize(value) %>
+          <% elsif value.include?('data-remote')%>
+            <%= sanitize_with_data_remote(value) %>
+          <% elsif value.is_a?(String) -%>
+            <%= sanitize(value)%>
+          <% elsif  is_partial?(key) && value.is_a?(Hash) -%>
+            <%= render get_partial_name(value),
+                       get_partial_locals(value).merge(
+                         {type: flash_type}
+                       )
+            %>
+          <% end %>
+
+        <% end %> <%# / render %>
+      <% end -%> <%# / each %>
+
+    </div> <!-- / c-flash-banner-group -->
+  </div> <!-- / l-container-fluid -->
+</div> <!-- / ns-music-v1 -->

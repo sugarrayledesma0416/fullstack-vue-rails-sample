@@ -1,0 +1,327 @@
+#edit_activity_assignment input.has_datepicker{
+  width:100px;
+  cursor:pointer;
+  background:#FFF url('../images/calendar.gif') no-repeat 86px 2px;
+  padding:2px;
+}
+
+#edit_activity_assignment form#edit_activity_assignment {
+  margin : 5px;
+}
+
+#edit_activity_assignment div.activity {
+  height: 100%;
+}
+
+#edit_activity_assignment div.activity_title li.activity_title {
+  margin: 0;
+  list-style-type: none;
+  padding: 0 0 7px;
+}
+
+#edit_activity_assignment dl.activity_assignment_counts {
+  margin-bottom: .5em;
+}
+
+#edit_activity_assignment dl.activity_assignment_counts dt {
+  font-weight: bold;
+  display: inline;
+}
+
+#edit_activity_assignment dl.activity_assignment_counts dt.component_block {
+  display: block;
+}
+
+#edit_activity_assignment dl.activity_assignment_counts dd {
+  font-weight: normal;
+  font-size: 100%;
+  display: inline;
+  padding-left: 7px;
+}
+
+#edit_activity_assignment dl.activity_assignment_counts dd.activity_name {
+  padding-left: 0px;
+}
+
+#edit_activity_assignment div.activity_label,
+#edit_activity_assignment div.course_label,
+#edit_activity_assignment div.sections_label,
+#edit_activity_assignment div.due_date_label,
+#edit_activity_assignment div.category_label,
+#edit_activity_assignment div.assessment_label,
+#edit_activity_assignment div.show_at_date_label,
+#edit_activity_assignment div.show_at_time_label {
+  text-align: right;
+  float: left;
+  width: 25%;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+}
+
+#edit_activity_assignment div.due_date_label label,
+#edit_activity_assignment div.category_label label {
+  text-align: right;
+  padding-right: 0px;
+  white-space: nowrap;
+}
+
+#edit_activity_assignment div.course,
+#edit_activity_assignment div.sections {
+  margin-bottom: 1.5em;
+}
+
+#edit_activity_assignment div.activity_title,
+#edit_activity_assignment div.course_name,
+#edit_activity_assignment div.section_names,
+#edit_activity_assignment div.due_date_input,
+#edit_activity_assignment div.category_input {
+  float: right;
+  width: 70%;
+  text-align: left;
+  padding: 0 5px 5px 5px;
+}
+
+#edit_activity_assignment div.category_input select {
+  margin-bottom: 1em;
+}
+
+#edit_activity_assignment div#assessment_options {
+  margin-top: 20px;
+}
+
+#edit_activity_assignment div.assessment_options_header {
+  text-align: left;
+  font-weight: bold;
+}
+
+#edit_activity_assignment div.assessment_options_buttons {
+  float: right;
+}
+
+#edit_activity_assignment div#show_assessment {
+  margin-left: 0px;
+  padding: 3px;
+}
+
+#edit_activity_assignment span.short_assessment_option {
+  float: left;
+  width: 115px;
+}
+
+#edit_activity_assignment span.show_assessment_option {
+  float: left;
+  vertical-align: bottom;
+  margin-top: 14px;
+}
+
+#edit_activity_assignment div.adjust_due_date_matrix{
+
+}
+
+#edit_activity_assignment div.adjust_due_date_matrix table {
+  margin: 2px;
+  border: 0px solid;
+}
+
+#edit_activity_assignment div.adjust_due_date_matrix table tr.assignment_row{
+  padding: 2px;
+}
+#edit_activity_assignment div.adjust_due_date_matrix table td.activity_title{
+  border: 1px solid #ffffff;
+  background-color: #cccccc;
+  padding: 2px;
+}
+
+#edit_activity_assignment div.adjust_due_date_matrix table th.section_name{
+  border: 1px solid #ffffff;
+  background-color: #cccccc;
+  width: 90px;
+
+}
+
+
+.assignables_wizard {
+  overflow: visible;
+}
+
+.assignables_wizard .modal_set_due_date_error_image {
+  background: url('icon_incorrect.png') 0 0 no-repeat;
+  padding-left: 0px;
+  padding-right: 0px;
+  width: 22px;
+  display: inline-block;
+  height: 16px;
+}
+
+.assignables_wizard .modal_set_due_date_error {
+  color: #c0141d;
+  padding-left: 0px;
+  padding-top: 5px;
+}
+
+.assignables_dialog input.red-button {
+	float: right!important;
+	margin: 0!important;
+	color: #FFF;
+}
+
+.assignment_wizard form {
+  margin-bottom: 18px;
+}
+.assignment_wizard fieldset {
+  margin-bottom: 18px;
+  padding-top: 18px;
+}
+.assignment_wizard fieldset legend {
+  display: block;
+  margin-left: 150px;
+  font-size: 20px;
+  line-height: 1;
+  *margin: 0 0 5px 145px;
+  /* IE6-7 */
+
+  *line-height: 1.5;
+  /* IE6-7 */
+
+  color: #404040;
+}
+
+.assignment_wizard label,
+.assignment_wizard input,
+.assignment_wizard select,
+.assignment_wizard textarea {
+  font-size: 13px;
+  font-weight: normal;
+  line-height: normal;
+}
+.assignment_wizard label {
+  font-weight:bold;
+  padding-top: 6px;
+  font-size: 13px;
+  line-height: 18px;
+  text-align: right;
+  color: #404040;
+  clear:both;
+}
+
+.stacked_label {
+  display:block;
+  text-align:left;
+}
+
+
+.assignment_wizard label, .assignment_wizard input, .assignment_wizard textarea, .assignment_wizard select {
+  margin-top:15px;
+}
+.assignment_wizard input[type=checkbox], .assignment_wizard input[type=radio] {
+  cursor: pointer;
+}
+.assignment_wizard input[type=text],
+.assignment_wizard input[type=password],
+.assignment_wizard select,
+.uneditable-input {
+  padding: 2px;
+  font-size: 13px;
+  line-height: 18px;
+  height: 18px;
+  border: 1px solid #ccc;
+}
+.assignment_wizard select, .assignment_wizard input[type=file] {
+  height: 27px;
+  line-height: 27px;
+}
+
+.uneditable-input {
+  background-color: #eee;
+  display: block;
+  border-color: #ccc;
+}
+:-moz-placeholder {
+  color: #bfbfbf;
+}
+::-webkit-input-placeholder {
+  color: #bfbfbf;
+}
+
+
+.assignment_wizard form div.error {
+  background: #fae5e3;
+  padding: 10px 0;
+  margin: -10px 0 10px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+.assignment_wizard form div.error > label, .assignment_wizard form div.error span.help-inline, .assignment_wizard form div.error span.help-block {
+  color: #9d261d;
+}
+.assignment_wizard form div.error input[type=text], .assignment_wizard form div.error input[type=password], .assignment_wizard form div.error textarea {
+  border-color: #c87872;
+  -webkit-box-shadow: 0 0 3px rgba(171, 41, 32, 0.25);
+  -moz-box-shadow: 0 0 3px rgba(171, 41, 32, 0.25);
+  box-shadow: 0 0 3px rgba(171, 41, 32, 0.25);
+}
+
+.assignment_wizard form div.error .input-prepend span.add-on, .assignment_wizard form div.error .input-append span.add-on {
+  background: #f4c8c5;
+  border-color: #c87872;
+  color: #b9554d;
+}
+
+.show_to_students_link_box,
+.hide_from_students_link_box,
+.download_selected_resources_link_box,
+.set_due_date_link_box {
+	float: left;
+	margin-left: 20px;
+}
+
+.assignables_wizard td b {
+  vertical-align: top;
+}
+
+/* Reorder Instructor Content */
+.reorder-instructor-content {
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+.reorder-instructor-content .due-date {
+  color: #808080;
+  font-weight: bold;
+}
+
+.reorder-instructor-content .explanation {
+  color: #808080;
+  margin: 20px 0px;
+  width: 300px;
+}
+
+.reorder-instructor-content .content-container {
+  border: 1px solid #BBBBBB;
+  margin-bottom: 20px;
+  padding: 5px;
+}
+
+.reorder-instructor-content .regular {
+  background: #F5F5F5;
+  margin: 2px 0px;
+  padding: 5px 10px;
+}
+
+.reorder-instructor-content .instructor-created {
+  background: #E5EFA7 url('/images/draggable-anchor.png') right no-repeat;
+  cursor: pointer;
+  margin: 2px 0px;
+  padding: 5px 25px 5px 10px;
+}
+
+#rank_list_strand_name {
+  color: #808080;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+
+

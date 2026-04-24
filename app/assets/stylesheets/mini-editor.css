@@ -1,0 +1,185 @@
+
+/*********************************************************/
+/*                      MINI EDITOR                      */
+/*********************************************************/
+
+/* Title Controls */
+.ta-editor {
+  background: #FFF;
+  border: 1px solid #d8d8d8;
+  color: #565656;
+  font-size: 100%;
+  height: auto;
+  overflow: auto;
+  padding: 5px;
+  box-shadow: 2px 2px 4px 0px #ddd;
+  -webkit-box-shadow: 2px 2px 4px 0px #ddd;
+  -moz-box-shadow: 2px 2px 4px 0px #ddd;
+}
+
+/* Editor */
+.ta-editor * {
+  color: #565656!important;
+  font-size: 14px;
+}
+
+.ta-editor h1,
+.ta-editor h2 {
+  font-weight: normal;
+}
+
+.ta-editor h1,
+.ta-editor h1 * {
+  font-size: 18px;
+}
+
+.ta-editor h2,
+.ta-editor h2 * {
+  font-size: 16px;
+}
+
+
+/* Toolbars */
+.mini-editor .ta-toolbar {
+  display: none;
+}
+
+.mini-editor .ta-toolbar.focussed {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.ui-dialog .mini-editor .ta-toolbar {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.mini-editor .btn-group {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+/* Button Styles */
+
+.mini-editor .btn-default {
+  background-color: #e5e5e5;
+  border: 1px solid #969696;
+  height: 24px;
+  line-height: 1px;
+  overflow: hidden;
+  padding: 0px 2px;
+  vertical-align: top;
+  width: 23px;
+}
+
+.mini-editor .btn-default.active {
+  background-color: #565656;
+  color: #FFF;
+}
+
+.mini-editor .fa {
+  background: url('/images/mini_editor_icons.png') no-repeat;
+  display: block;
+  height: 22px;
+  width: 17px;
+}
+
+/* Individual Button Images */
+.fa.fa-bold         { background-position:    1px   4px; }
+.fa.fa-italic       { background-position:  -14px   4px; }
+.fa.fa-underline    { background-position:  -31px   4px; }
+.fa.fa-list-ul      { background-position:  -53px   4px; }
+.fa.fa-list-ol      { background-position:  -75px   4px; }
+.fa.fa-align-left   { background-position:  -96px   5px; }
+.fa.fa-align-center { background-position: -115px   5px; }
+.fa.fa-align-right  { background-position: -134px   5px; }
+.fa.fa-undo         { background-position: -154px   5px; }
+.fa.fa-repeat       { background-position: -174px   5px; }
+.fa.fa-ban          { background-position: -192px   5px; }
+
+.active .fa.fa-bold          { background-position:   1px -13px; }
+.active .fa.fa-italic        { background-position: -14px -13px; }
+.active .fa.fa-underline     { background-position: -31px -13px; }
+.active .fa.fa-list-ul       { background-position:  -53px -13px; }
+.active .fa.fa-list-ol       { background-position:  -75px -13px; }
+.active .fa.fa-align-left    { background-position:  -96px -13px; }
+.active .fa.fa-align-center  { background-position: -115px -13px; }
+.active .fa.fa-align-right   { background-position: -134px -13px; }
+.active .fa.fa-undo          { background-position: -154px -13px; }
+.active .fa.fa-repeat        { background-position: -174px -13px; }
+.active .fa.fa-ban           { background-position: -192px -13px; }
+
+/* Lists */
+.ta-editor ul {
+  list-style-type: disc;
+  list-style-position: inside;
+}
+
+.ta-editor ol {
+  list-style-type: decimal;
+  list-style-position: inside;
+}
+
+
+/*********************************************************/
+/*              CREATED CONTENT OVERRIDES                */
+/*********************************************************/
+
+.mini-editor.reference-header .ta-editor,
+.mini-editor.activity-title .ta-editor {
+  max-height: 33px;
+  min-height: 15px;
+}
+
+.mini-editor.direction-line .ta-editor {
+  color: #1B3D6B!important;
+  min-height: 100px;
+}
+
+.mini-editor.question-prompt .ta-editor {
+  height: 100px;
+  max-height: 100px;
+}
+
+.mini-editor.reference-header,
+.mini-editor.reference-body {
+  display: block;
+  float: none;
+}
+
+#reference_modal .reference-form.body {
+  margin-top: 20px;
+}
+
+#attribute_modal .ta-editor,
+#reference_modal .ta-editor {
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+}
+
+#attribute_modal,
+#reference_modal {
+  padding-top: 20px;
+}
+
+#attribute_modal label,
+#reference_modal label {
+  color: #565656;
+}
+
+#reference_modal .mini-editor.reference-header,
+#reference_modal .mini-editor.reference-body {
+  margin: 0px;
+}
+
+.mini-editor.reference-body .ta-editor {
+  min-height: 33px;
+  max-height:100px;
+}
+
+.mini-editor.direction-line .ta-editor {
+  max-height:100px;
+}
+
+

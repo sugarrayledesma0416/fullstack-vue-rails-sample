@@ -1,0 +1,56 @@
+.student_list {
+	font-size: 11px;
+	margin: 0 0 20px 0;
+	border:none;
+	border-bottom:1px dotted #d7dbdf;
+}
+
+.student_list th {
+	background-color: #eee;
+	font-weight: bold;
+	height:20px;
+	vertical-align:text-bottom;
+  padding-top:5px;
+	padding: 2px 9px 3px 0px;
+}
+
+.student_checkbox, .student_checkbox_all{
+  display:inline-block;
+  vertical-align:text-bottom;
+  width:13px;
+  height:13px;
+  background-color:#FFF;
+  border:1px solid #c6c6c6;
+  cursor:pointer;
+  margin:0 10px 0 5px;
+}
+
+.show_check {
+  background:#FFF url(../images/toc-check.png) no-repeat;
+}
+
+.highlight_bg {
+  background-color:#DFF09F;
+}
+
+#course {
+  background-color: #DDDDDD;
+  font-size: 1.2em;
+  margin-bottom: 16px;
+  padding: 10px 27px;
+  text-align: left;
+}
+
+/* For the disabled checkbox (also include disabled attribute): */
+.student_checkbox_disabled {
+  pointer-events: none;
+  border: 0;
+  cursor: default;
+  background-color: #999;
+}
+
+/* For the disabled table row: */
+.disabled_bg {
+  background-color: #ddd;
+}
+

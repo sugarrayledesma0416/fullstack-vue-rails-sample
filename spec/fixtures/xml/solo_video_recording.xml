@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<activity activity_type="solo_video_recording" language="es" title="Solo Video Recording">
+  <!--Enter the proper code in quotes after language attribute: es - Spanish, fr - French, it - Italian, de - German,  en - English.-->
+  <dl>Do This</dl>
+
+  <items>
+    <!-- Empty style specifies the default recording limit of 5 minutes -->
+    <style />
+    <!-- To specify a custom limit:
+    <style>
+      <recording_limit>7</recording_limit>
+    </style>
+    -->
+    <!-- any number of references of the following suppported type can be included -->
+    <reference type="image">
+      <!-- Insert media ID in quotes.-->
+      <image id="3"/>
+    </reference>
+
+    <reference type="audio">
+      <!-- Insert media ID in quotes.-->
+      <audio id="4"/>
+    </reference>
+
+    <reference type="wordbank">
+      <body>wordbank 2</body>
+    </reference>
+
+    <!-- Empty item node uses the default points possible. -->
+    <item />
+    <!-- To specify a custom points possible include:
+    <item>
+      <points_possible>20</points_possible>
+    </item>
+    -->
+  </items>
+</activity>

@@ -1,0 +1,37 @@
+<div data-container="assignments_by_section" style="display: none;" class="assignments_details">
+  <table>
+    <thead>
+      <tr>
+        <th width="15px">&nbsp;</th>	
+        <th><h3>Section</h3></th>
+        <th class="rightside">Due Date</th>
+        <th class="rightside">Category</th>
+        <% if vol_program %>
+          <th class="rightside">Group</th>
+        <% end %>
+      </tr>
+    </thead>
+    <tbody>
+      <% assignable.assignments.each do |assignment| -%>
+        <tr>
+          <td>&nbsp;</td>
+          <td><%= assignment.section_name %></td>
+          <td><%= assignment.due_date %></td>
+          <td><%= assignment.category_name %></td>
+          <% if vol_program %>
+            <td><%= assignment.track_group_name %></td>
+          <% end %>
+        </tr>
+      <% end -%>
+      <% assignable.unassigned_sections.each do |section| -%>
+        <tr data-section='unassigned' >
+          <td>&nbsp;</td>
+          <td><%= section.name %></td>
+          <td> Unassigned </td>
+          <td> Unassigned </td>
+        </tr>
+      <% end -%>
+    </tbody>
+  </table>
+</div>
+

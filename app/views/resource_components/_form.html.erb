@@ -1,0 +1,12 @@
+<%= form_for(@resource_component, :url => {:controller => 'resource_components', :action => action }) do |f|%>
+
+<div>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+</div>
+
+<div>
+  <%= f.submit "Submit", :class => 'red-button'%>
+</div>
+
+<% end %>

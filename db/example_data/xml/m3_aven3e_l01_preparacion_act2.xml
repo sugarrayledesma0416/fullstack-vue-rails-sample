@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<activity activity_type="drop_down" title="¿Lógico o ilógico?" language="es">
+  <dl>Listen to each conversation and indicate whether what you hear is <b>lógico</b> or <b>ilógico.</b></dl>
+  <items>
+    <item>
+      <prompt><wol/></prompt>
+      <choices>
+        <answer>lógico</answer>
+        <distractor>ilógico</distractor>
+      </choices>
+    </item>
+    <item>
+      <prompt>Partly <wol ref="1"/> and partly <wol ref="2"/></prompt>
+      <choices ref="1">
+        <answer>lógico</answer>
+        <distractor>ilógico</distractor>
+      </choices>
+      <choices ref="2">
+        <distractor>lógico</distractor>  
+        <answer>ilógico</answer>
+      </choices>      
+    </item>
+    <item>
+      <prompt><wol/></prompt>
+      <choices>
+        <distractor>lógico</distractor>  
+        <answer>ilógico</answer>
+      </choices>
+    </item>
+  </items>
+</activity>

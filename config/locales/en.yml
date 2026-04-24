@@ -1,0 +1,81 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   'true': 'foo'
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+en:
+  activerecord:
+    attributes:
+      assignment:
+        track_group_id: "Group"
+    errors:
+      # The values :model, :attribute and :value are always available for interpolation
+      # The value :count is available when applicable. Can be used for pluralization.
+      messages:
+        inclusion: "must be included in the list"
+        exclusion: "is reserved"
+        invalid: "is invalid"
+        confirmation: "must match confirmation"
+        accepted: "must be accepted"
+        empty: "must make at least one selection"
+        blank: "is required"
+        too_long: "must have %{count} or fewer characters"
+        too_short: "must be at least %{count} characters"
+        wrong_length: "must be %{count} characters"
+        taken: "has already been used"
+        not_a_number: "must be a number"
+        greater_than: "must be greater than %{count}"
+        greater_than_or_equal_to: "must be greater than or equal to %{count}"
+        equal_to: "must be equal to %{count}"
+        less_than: "must be less than %{count}"
+        less_than_or_equal_to: "must be less than or equal to %{count}"
+        odd: "must be odd"
+        even: "must be even"
+        record_invalid: "Validation failed: %{errors}"
+
+        # Append your own errors here or at the model/attributes scope.
+
+      full_messages:
+        format: "%{attribute} %{message}"
+
+  resources_report:
+    errors:
+      messages:
+        file_not_found: "We couldn't find this file in your resources zip file: %{file_name}"
+        file_not_used: "This file is not being used during resources creation: %{file_name}" 
+        empty_row: "Empty row detected"
+        missing_field: "%{field} value is missing on your csv"
+        numeric_column: "%{field} value must be a number"
+        invalid_characters: "Invalid characters detected: %{characters}"
+        invalid_row_format: "This row is not properly comma-separated formatted"
+        unit_out_of_range: "For this book units values should be within: %{range}"
+        unexpected_error: "Unexpected error: %{message}"
+        invalid_lesson: "Invalid lesson, book structure: %{units_info}"
+        invalid_unit_format: 'Invalid unit format. Must be a number (e.g., "2") or unit.lesson format (e.g., "2.1")'
+        duplicated_path: "This file path is repeated: %{file_name}"

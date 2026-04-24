@@ -1,0 +1,60 @@
+<div class="grid  ns-beta">
+  <div class="col-7">
+    <div class='answer_text'>
+      <div class="student_response_area"
+        id=<%="student_#{group_chat_view_manager.student.id}_partner_chat_container"%>>
+        <%= content_tag(:div, '',
+                        id: group_chat_view_manager.video_container_id,
+                        class: 'js-pchat-video-container',
+                        style: 'width: 480px; height: 270px') %>
+        <%= hidden_field_tag 'recording_file',
+                              partner_chat_recording_url(results.response(question.label)) %>
+      </div>
+    </div>
+  </div> <!-- / main column -->
+
+  <div class="col-5">
+    <div class="c-grading-sidebar  c-grading-sidebar--plain">
+      <% if @presenter.has_rubric? %>
+        <%= render partial: 'instructor/grading_sets/comment_boxes_for_rubric_grading' %>
+        <div class="js-grading-controls-app"
+             data-rubric-column-headers="<%= @presenter.activity.rubric.header_row.header_columns.to_json %>"
+             data-rubric-criterias="<%= @presenter.activity.rubric.criterias_with_ordered_performances.to_json %>"
+             data-view-rubric-link="<%= @presenter.format_rubric_link('View').to_json %>"
+             data-rubric-graded="<%= @presenter.rubric_graded? %>"
+             data-grade-pending="<%= @presenter.grade_pending? %>"
+             data-user-scores="<%= @user_scores_json %>"
+             data-chat-type="true"
+             data-points-possible="<%= group_chat_view_manager.question.points_possible %>">
+        </div>
+      <% else %>
+      <div class="c-multi-user-question">
+        <% # One partner %>
+        <div class="c-multi-user-question__user">
+          <%= render 'instructor/grading_sets/group_chat_grading_form',
+              presenter: presenter,
+              question: question,
+              results: results,
+              original_user: presenter.original_user(student),
+              user: group_chat_view_manager.student,
+              feedback: group_chat_view_manager.feedback_for(group_chat_view_manager.student),
+              recording_path: group_chat_view_manager.recording_path_for(group_chat_view_manager.student) %>
+        </div>
+        <% # The other partners %>
+        <% presenter.teammates.each do |partner_student| %>
+          <div class="c-multi-user-question__user">
+            <%= render 'instructor/grading_sets/group_chat_grading_form',
+                presenter: presenter,
+                question: question,
+                results: results,
+                original_user: presenter.original_user(student),
+                user: partner_student,
+                feedback: group_chat_view_manager.feedback_for(partner_student),
+                recording_path: group_chat_view_manager.recording_path_for(partner_student) %>
+          </div>
+        <% end %>
+      </div> <!-- / .c-multi-user-question -->
+      <% end %>
+    </div> <!-- / .c-grading-sidebar -->
+  </div> <!-- / right column -->
+</div> <!-- / grid -->

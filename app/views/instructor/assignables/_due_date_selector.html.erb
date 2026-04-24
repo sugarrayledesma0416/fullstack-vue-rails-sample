@@ -1,0 +1,10 @@
+<div data-container="due_date" class="div_row ui-helper-clearfix">
+  <%= label_tag(:activity_assignment_due_date, 'Due date') %>
+  <%= text_field_tag('activity_assignment[due_date]', '', :size => 10, :class => 'has_datepicker datepicker', :value => presenter.assignment_due_date) %>
+
+  <% if presenter.any_activities_already_assigned? && presenter.has_preferred_assignment_date? -%>
+      <%= hidden_field_tag :default_assignment_date, "#{presenter.preferred_assignment_date}", 'data-container' => 'default_assignment_date' %>
+      <%= link_to "use #{presenter.preferred_assignment_date}", '#', 'data-link' => 'set_last_assigned_date', :class => "prevent-default use_date", :onclick => "return $(this).assignment_wizard('set_assignment_date');" %>
+  <% end -%>
+</div>
+

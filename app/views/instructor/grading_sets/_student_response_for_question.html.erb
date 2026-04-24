@@ -1,0 +1,237 @@
+<div class="grid">
+  <div class="col-6  <%= @presenter.has_rubric? ? 'col-student-answer' : '' %>">
+    <div
+      id="student_<%= view_manager.student.id %>_<%= view_manager.question.label %>_whole_question"
+      data-helpable-type="whole_question">
+      <div
+        class="answer_text"
+        id="student_<%= view_manager.student.id %>_<%= view_manager.question.label %>"
+        data-helpable-type="student_response">
+        <div class="student_response_area"
+             id="student_<%= view_manager.student.id %>_<%= view_manager.question.label %>_student_response"
+             data-content-type="student_response_area" >
+
+          <% if view_manager.composition_question? && view_manager.has_attachment? %>
+            <div class="c-composition-upload  composition_upload active"
+                 id="student_<%= view_manager.student.id %>_<%= view_manager.question.label %>_attachment"
+                 data-helpable-type="student_response">
+              <div class="c-composition-upload--container composition_grading_container">
+                <div data-container="download_link" class="composition_download">
+                  <%= link_to view_manager.attachment.file_name,
+                              section_composition_attachment_path(current_section, view_manager.attachment),
+                              target: "_blank",
+                              class: "c-link" %>
+                </div>
+                <div data-container="file_size" class="composition_file_size">
+                  (<%= number_to_human_size(view_manager.attachment.file_size) %>)
+                </div>
+              </div>
+            </div>
+          <% end %>
+
+          <% if view_manager.recording_question? %>
+            <% if view_manager.response.present? %>
+              <div class="record_review">
+                <%= render(
+                      'maestro_activity_engine/activities/recording_v2/grading',
+                      attempt: view_manager.attempt,
+                      question: view_manager.question,
+                      results: view_manager.results
+                    )
+                %>
+              </div>
+            <% else %>
+              <span> There is no student answer </span>
+            <% end %>
+          <% elsif view_manager.smartbook_question? %>
+            <%= render(
+              'instructor/grading_sets/smartbook_question',
+              content_object: content_object,
+              view_manager: view_manager
+            )
+          %>
+          <% elsif view_manager.solo_video_recording_question? %>
+            <%= render(
+                  'instructor/grading_sets/solo_video_recording_response_for_question',
+                  view_manager: view_manager,
+                  results: view_manager.results
+                )
+            %>
+          <% elsif view_manager.ai_virtual_chat_question? %>
+            <%= render(
+                  'maestro_activity_engine/activities/ai_virtual_chat/read_only_app_view',
+                  activity: @presenter.activity,
+                  question: view_manager.question,
+                  results: view_manager.results,
+                  grading_options: view_manager.grading_options,
+                  student_section_config: @presenter.activity.ai_virtual_chat? ? current_student_section_ai_config(current_section.id, view_manager.student, activity: @presenter.activity).to_json : nil
+                ) %>
+          <% elsif view_manager.auto_graded_table_question? %>
+              <ul class="auto_graded_question">
+                <%=
+                  format_question(
+                    "table_#{view_manager.question.type}/review",
+                    view_manager.question,
+                    true,
+                    view_manager.attempt.results_for_question(
+                      view_manager.question.label
+                    ),
+                    nil,
+                    false,
+                    content_object: content_object
+                  ) %>
+              </ul>
+          <% else %>
+            <% if view_manager.has_valid_response? %>
+              <%
+                language = current_program.language_code
+                character_list = (AccentBarEnhanced.characters(language) || {}).to_json
+              %>
+              <% if @presenter.ai_grading_feature_enabled? &&
+                    (@presenter.activity.open_ended? || @presenter.activity.composition?) %>
+                <ai-grading-student-name data-student-name="<%= view_manager.student.full_name %>">
+                  <span class="js-froala-toolbar-access-shortcut"></span>
+                </ai-grading-student-name>
+              <% else %>
+                <div class="ns-composition  u-dis-flex  flex-justify-end">
+                  <span
+                    id="shortcut_<%= "student_response_#{view_manager.response_id}_feedback" %>"
+                    name="shortcut_<%= "student_response_#{view_manager.response_id}_feedback" %>"
+                    lang="en"
+                    aria-label=""
+                    class="composition-toolbar-access">
+                    Toolbar Access <span class="js-froala-toolbar-access-shortcut"></span>
+                  </span>
+                </div>
+              <% end %>
+
+              <textarea
+                class="js-grading-editor-textarea
+                       js-text-editor-<%= view_manager.response_id %>
+                       u-mar-bot-32"
+                data-accent-bar-characters="<%= character_list %>"
+                data-accent-bar-language="<%= language %>"
+                name="<%= view_manager.inline_corrections_field %>"
+                autocomplete="off"
+                id="<%= "student_response_#{view_manager.response_id}_feedback" %>">
+                  <%= format_inline_corrections(view_manager.inline_corrections) %>
+              </textarea>
+            <% else %>
+              <% if view_manager.attachment.blank? %>
+                <div class="student_answer_composition_empty"
+                     data-js-composition="response_container">
+                  <span>Student response</span>
+                  <textarea
+                    class="js-grading-editor-textarea
+                           js-text-editor-<%= view_manager.response_id %>
+                           u-mar-bot-32"
+                    data-composition-readonly="true"
+                    disabled="disabled"
+                    name="<%= view_manager.inline_corrections_field %>"
+                    id="<%= "student_response_#{view_manager.response_id}_feedback" %>">
+                    No student response
+                  </textarea>
+                </div>
+              <% end %>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div> <!-- / col-6 -->
+  <div class="col-6  <%= @presenter.has_rubric? ? 'col-rubric-grading' : '' %>">
+    <div class="c-grading-sidebar">
+      <% if @presenter.has_rubric? %>
+        <%= render partial: 'instructor/grading_sets/comment_boxes_for_rubric_grading' %>
+        <div class="js-grading-controls-app"
+             data-rubric-column-headers="<%= @presenter.activity.rubric.header_row.header_columns.to_json %>"
+             data-rubric-criterias="<%= @presenter.activity.rubric.criterias_with_ordered_performances.to_json %>"
+             data-view-rubric-link="<%= @presenter.format_rubric_link('View').to_json %>"
+             data-rubric-graded="<%= @presenter.rubric_graded? %>"
+             data-user-scores="<%= @user_scores_json %>"
+             data-points-possible="<%= view_manager.score_controls_view_manager.points_possible %>"
+             data-grade-pending="<%= @presenter.grade_pending? %>"
+             data-attempt-id="<%= view_manager.attempt.id %>"
+             data-manual-input-name="<%= view_manager.score_controls_view_manager.score_field %>">
+
+        </div>
+      <% end %>
+      <div data-content-type="show_student_response_link"
+           class="original_student_answer"
+           id="show_student_response_link_cke_<%= view_manager.editor_index %>"
+           style="display: <%= view_manager.show_student_response_link? ? '' : 'none' %>">
+        <%= link_to("Show student's original answer", '#',
+                    id: "#{view_manager.question.label}_student_#{view_manager.student.id}_original_response_link",
+                    class: "original_answer_image  c-link",
+                    'data-original-response-selector': "#{view_manager.question.label}_student_#{view_manager.student.id}_student_response",
+                    'data-original-response-label': "#{view_manager.student.full_name} - Question #{view_manager.question_number}") %>
+        <div class="hover_original_answer hidden_helper">
+          View original student answer
+          <div class="original_answer_arrow"></div>
+        </div>
+      </div>
+
+      <% unless @presenter.has_rubric? %>
+      <%= render 'instructor/grading_sets/score_controls',
+                 view_manager: view_manager.score_controls_view_manager,
+                 use_ai_grading_ui: @presenter.ai_grading_feature_enabled? &&
+                                    (@presenter.activity.open_ended? || @presenter.activity.composition?) %>
+
+      <%= render 'instructor/grading_sets/all_instructor_comments',
+                 response_id: view_manager.response_id,
+                 feedback_item: view_manager.feedback_item,
+                 recording_path: view_manager.instructor_comment_recording_path,
+                 is_new_recording: view_manager.is_new_recording %>
+      <% end %>
+    </div>
+  </div> <!-- /col-6 -->
+
+  <%
+    # @Since: June 3, 2024
+    # "col-12" does not explicitly set the width to 100%, so this div did not fill its horizontal
+    # space in some cases. The style attribute is intended as a non-destructive fix until the grid
+    # system is updated.
+  %>
+  <div class="col-12" style="width: 100%;">
+  <% if view_manager.mount_ai_grading_app? %>
+      <div
+        class="ns-music-v1  js-ai-grading-suggestions-app"
+        data-activity-id="<%= view_manager.attempt_activity.id %>"
+        data-ai-grading-suggestions-setting-url="<%= instructor_update_ai_grading_suggestions_setting_path %>"
+        data-grading-suggestions="<%= view_manager.serialized_ai_grading_suggestions.to_json %>"
+        data-grading-suggestion-job="<%= view_manager.serialized_ai_grading_suggestion_job.to_json %>"
+        data-grading-suggestions-hidden-form-elm-name="<%= view_manager.ai_grading_suggestions_hidden_form_elm_name %>"
+        data-feedback-elm-id="<%= view_manager.feedback_elm_id %>"
+        data-overall-comment="<%= view_manager.serialized_ai_overall_comment&.to_json %>"
+        data-overall-comment-elm-id="<%= view_manager.comment_elm_id %>"
+        data-overall-comment-hidden-form-elm-name="<%= view_manager.ai_overall_comment_hidden_form_elm_name %>"
+        data-program-id="<%= view_manager.program.id %>"
+        data-rating-categories="<%= view_manager.serialized_ai_rating_categories.to_json %>"
+        data-rating-details="<%= view_manager.serialized_ai_rating_details&.to_json %>"
+        data-section-id="<%= view_manager.section_attempt.id %>"
+        data-default-rating-category-id="<%= view_manager.ai_rating_default_category %>"
+        data-rating-details-hidden-form-elm-name="<%= view_manager.ai_rating_details_hidden_form_elm_name %>" >
+      </div>
+    <% end %>
+  </div>
+</div> <!-- /grid -->
+
+<div id="<%= "#{view_manager.response_id}_student_response_container" %>"
+      class="openended_fieldset"
+        style="display: none;">
+    <textarea
+      class="openended_readonly  js-grading-student-original-response-textarea"
+      data-composition-readonly="true"
+      id="<%= "#{view_manager.response_id}_student_response" %>">
+      <% if view_manager.response.present? %>
+        <% if view_manager.composition_question? %>
+          <%= view_manager.response.html_safe %>
+        <% else %>
+          <%= simple_format(view_manager.response) %>
+        <% end %>
+      <% end %>
+    </textarea>
+</div>
+
+<div class="original_score_control">
+</div>

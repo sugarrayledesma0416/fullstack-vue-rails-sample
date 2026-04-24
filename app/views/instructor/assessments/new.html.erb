@@ -1,0 +1,12 @@
+<%= render(
+  'instructor/created_activities/assessment_edit',
+  form_url: instructor_create_assessment_path(
+    program_id: current_program.id,
+    lesson_id: @assessment.lesson_id,
+    toc_entry_id: @assessment.toc_location
+  ),
+  created_activity: @assessment,
+  classwork: @classwork,
+  return_url: @return_url,
+  is_popup: @is_popup
+) %>

@@ -1,0 +1,47 @@
+<div class="l-line">
+  <% if @references.present? && @references.last.type != 'audio'%>
+    <div class="c-standard-details-reference  u-width-half  <%= 'u-txt-ctr' if @references.last.type != 'passage' %>">
+      <% @references.each do |reference| %>
+        <div class="u-pad-bot-12">
+          <% if reference.type != "audio" && reference.type != "image" %>
+            <%= render("maestro_activity_engine/activities/references/#{reference.type}", reference: reference, activity_rank: '') %>
+          <% else %>
+            <%= render('maestro_activity_engine/activities/references/media_item', reference: reference, media_type: reference.type, submission_status: :complete) %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+  <div class="c-standard-details-question  <%= (@references.last.present? && @references.last.type != 'audio' ? 'u-width-half' : 'u-width-full') %>">
+    <h1><%= @title %></h1>
+    <% if @references.present? && @references.last.type == "audio" %>
+      <%= render('maestro_activity_engine/activities/references/media_item', reference: @references.last, media_type: @references.last.type, submission_status: :complete) %>
+    <% end %>
+    <h3> <%= "score: #{@attempt.results.standards_results[@question.question_guid.to_s][:points_earned]} / #{@question.points_possible} "%></h3>
+
+    <div>
+      <% if @question.partial_name == "recording" %>
+        <%= render(
+          "maestro_activity_engine/activities/recording_v2/grading",
+          attempt: @attempt,
+          item: @question,
+          question: @question,
+          results: @attempt.results,
+          question_number: @question.question_number,
+        ) %>
+      <% else %>
+        <% partial_name = 'composition' if @question.partial_name == "open_ended" %>
+        <%= render(
+          "maestro_activity_engine/activities/#{partial_name || @question.partial_name}/review",
+          attempt: @attempt,
+          content_object: @activity.content_object,
+          is_read_only: true,
+          item: @question,
+          question: @question,
+          results: @attempt.results,
+          question_number: @question.question_number,
+        ) %>
+      <% end %>
+    </div>
+  </div>
+</div>

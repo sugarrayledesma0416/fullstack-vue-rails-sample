@@ -1,0 +1,62 @@
+<%= render :partial => 'activities/include' %>
+
+<% content_for(:js_head, javascript_include_tag('get_help/get_help_app_bootstrap.js')) %>
+
+<% content_for(:instructor_notes_angular_tags, " vhl-app=\"instructor_notes_app\" data-ng-controller=\"ActivityNotesCtrl\"".html_safe) %>
+
+<%= render partial: 'activities/help_request_setup' %>
+
+<div data-target-var='rails_data' data-from-dom='<%= { :program_id => current_program.id,
+                                                         :activity_id => @activity.id}.to_json %>'>
+</div>
+
+<%= render :partial => 'activities/show_header_content', :locals => { disabled_alerts: @is_popup } %>
+
+<% if @activity -%>
+  <div id="activity_wrapper" class="c-activity-wrapper">
+    <div id="main_content">
+
+      <% if @activity.content_object -%>
+
+        <% if current_user.instructor? %>
+          <%= render 'instructor_notes/instructor_action_bar' %>
+        <% end %>
+
+        <div class="c-activity-info">
+          <%= render  :partial => 'activities/activity_context',
+                      :locals => {  :activity => @activity,
+                                    :attempt_track => @attempt_track,
+                                    :classwork => @classwork,
+                                    :workset => @workset,
+                                    :attempt => @attempt,
+                                    :section => current_section,
+                                    :score => @score,
+                                    :instructor_feedback => nil} %>
+        </div>
+        <div class="c-activity-content" role="main" id="activity_shell" lang="<%= @activity.language %>">
+          <div id="activity_body" class="c-activity-body">
+            <% if @activity.content_object.is_a?(MaestroActivityEngine::ActivityContent::Content) %>
+              <div id="testFrame" class="c-activity-main">
+                <% @output_buffer << render(:partial => "maestro_activity_engine/activities/answer_keys/" + @activity.content_object.partial_name,
+                                            :locals => { :content_object => @activity.content_object, :attempt => @attempt}) %>
+              </div>
+              <% activity_content = @activity.content_object -%>
+              <%= render :partial   => 'maestro_activity_engine/activities/partials/sidebar',
+                         :collection => activity_content.sidebars, :as => :sidebar %>
+            <% else -%>
+              Trying to parse activity content resulted in the following error(s):
+              <ul>
+                <% @activity.parse_errors.each do |error| %>
+                  <li><%= error %></li>
+                <% end -%>
+              </ul>
+            <% end -%>
+        </div>
+      </div>
+      <% end %>
+      <div id="time_out_dialog" title="Inactivity timeout" style="display: none">
+      Do you want to continue working on this activity?
+      </div>
+    </div>
+  </div>
+<% end %>

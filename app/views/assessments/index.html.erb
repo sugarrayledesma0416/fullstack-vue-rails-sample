@@ -1,0 +1,41 @@
+
+<% content_for(:body_classes, "ns-student-assessment") %>
+<% content_for(:css_head, stylesheet_link_tag("music/features/student_assessment/main")) %>
+<% content_for(:js_head, javascript_include_tag('student_assessment/assessment_page')) %>
+
+<% content_for(:navigation, render(:partial => 'app_shell/navbar_section/main', :locals => { :section => @presenter.section, :program => @presenter.program })) %>
+<div class="c-tabset">
+  <div class="c-tabset__tabs  js-tab-buttons"
+        role="tablist"
+        aria-labelledby="a11y-page-title">
+    <%= button_tag "Assigned",
+        class: "c-no-button  c-tabset__tab  js-tab-button  js-assigned-tab-button  #{test_class('assigned-tab')}",
+        data: {tab_content_target: "js-assigned-tab-content"},
+        "role": "tab",
+        "aria-selected": "true" %>
+
+    <%= button_tag "Completed",
+        class: "c-no-button  c-tabset__tab  js-tab-button  js-completed-tab-button  #{test_class('completed-tab')}",
+        data: {tab_content_target: "js-completed-tab-content"},
+        "role": "tab",
+        "aria-selected": "false" %>
+  </div>
+
+  <ul class="c-tabset__content  c-assigned-tab-content  c-plain-list  js-tabset__content  js-assigned-tab-content">
+    <% if @presenter.current_assessments.blank? -%>
+      <p tabindex="0">No assessments have been scheduled.</p>
+    <% else -%> 
+      <% @presenter.sorted_current_assignments.each do |assignment| %>
+        <%= render partial: "assigned_assessment", locals: {activity: assignment.assignable, assignment: assignment, section: @presenter.section } %>
+      <% end -%>
+    <% end -%>
+  </ul>
+
+  <div class="c-tabset__content  c-completed-tab-content  js-tabset__content  js-completed-tab-content" data-page-section="past_assessments"> 
+    <% if @presenter.past_assignments.blank? -%>
+      <p tabindex="0">No completed assessments available.</p>
+    <% else %>
+      <%= render partial: 'past_assessments', locals: { presenter: @presenter } %>
+    <% end -%>
+  </div>
+</div>

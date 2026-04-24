@@ -1,0 +1,118 @@
+{
+  "files": [
+    "./app/**/*.{css,scss}"
+  ],
+  "extends": [
+    "stylelint-config-recommended-scss"
+  ],
+  "plugins": [
+    "stylelint-scss",
+    "stylelint-order"
+  ],
+  "rules": {
+    "alpha-value-notation": "number",
+    "at-rule-no-unknown": null,
+    "scss/at-rule-no-unknown": true,
+    "at-rule-disallowed-list": [
+      [
+        "extend"
+      ],
+      {
+        "message": "Don't use @extend; it can result in unpredictable cascade order changes. Use @include with mixins instead."
+      }
+    ],
+    "custom-property-pattern": "[a-z][a-z0-9-]*",
+    "declaration-block-no-duplicate-properties": [
+      true,
+      {
+        "ignoreProperties": [
+          "border",
+          "margin",
+          "padding"
+        ]
+      }
+    ],
+    "declaration-no-important": true,
+    "function-no-unknown": null,
+    "scss/function-no-unknown": null,
+    "max-empty-lines": 2,
+    "max-nesting-depth": [
+      4,
+      {
+        "ignoreAtRules": [
+          "each",
+          "media",
+          "supports",
+          "include"
+        ],
+        "severity": "warning",
+        "message": "Keep nesting to a minimum. '&' classname extensions don't increase specificity and thus are OK."
+      }
+    ],
+    "order/properties-alphabetical-order": null,
+    "property-no-vendor-prefix": [
+      true,
+      {
+        "ignoreProperties": [
+          "appearance"
+        ]
+      }
+    ],
+    "rule-empty-line-before": [
+      "always-multi-line",
+      {
+        "except": [
+          "first-nested"
+        ],
+        "ignore": [
+          "after-comment"
+        ]
+      }
+    ],
+    "selector-class-pattern": [
+      "(c|l|u|flex|t|theme|ns|is|has|js|test)((-[a-z0-9]+)+)((__[a-z0-9]+)(-[a-z0-9]+)?)?((--[a-z0-9]+)(-[a-z0-9]+)?)?",
+      {
+        "severity": "warning",
+        "resolveNestedSelectors": true
+      }
+    ],
+    "selector-max-specificity": [
+      "0,4,0",
+      {
+        "severity": "warning"
+      }
+    ],
+    "selector-no-qualifying-type": true,
+    "shorthand-property-no-redundant-values": null,
+    "unit-disallowed-list": [
+      [
+        "px",
+        "pt",
+        "in"
+      ],
+      {
+        "severity": "warning",
+        "message": "Don't use 'px', 'pt' or 'in' units. Pixels don't scale with non-default user fontsize prefs. Use rpx() function instead."
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "app/javascript/src/**/*.vue"
+      ],
+      "extends": [
+        "stylelint-config-recommended-vue/scss"
+      ],
+      "rules": {
+        "selector-class-pattern": [
+          "(([a-z0-9]+)+)((__[a-z0-9]+)(-[a-z0-9]+)?)?((--[a-z0-9]+)(-[a-z0-9]+)?)?",
+          {
+            "severity": "error",
+            "resolveNestedSelectors": true
+          }
+        ]
+      }
+    }
+  ]
+}

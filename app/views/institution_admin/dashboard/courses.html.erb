@@ -1,0 +1,64 @@
+<% content_for(:body_classes, "ns-full-width  ns-admin-dashboard  u-bg-true-gray-500  ns-music-v3") %>
+<% content_for(:css_head, stylesheet_link_tag('music/features/admin_dashboard/main')) %>
+<% content_for(:css_head, stylesheet_link_tag('institution_admin/dashboard/modals')) %>
+<% content_for(:css_head, stylesheet_link_tag('institution_admin/dashboard/course')) %>
+<% content_for(
+     :js_head,
+     javascript_packs_with_chunks_tag('institution_admin/dashboard/icons/progressInformation')
+   ) %>
+
+<div class="u-hidden  js-school-id" data-school-id="<%= @presenter.school.id %>"></div>
+<%= render partial: 'action_links', locals: {
+  current_program: @presenter.program,
+  school_id: @presenter.school.id ,
+  action_link: institution_admin_dashboard_path,
+  text_link: 'Back to dashboard'
+} %>
+<%= render 'layouts/flash', { flash: flash } %>
+
+<% if @presenter.courses.blank? && @presenter.courses_non_enterprise.blank? %>
+  <%= render 'empty_courses' %>
+<% else %>
+  <div class="u-pad-24  u-bg-true-gray-50  c-enterprise-course__wrapper">
+    <div class="c-enterprise-course__content">
+      <div class="u-dis-block">
+        <div class="l-line  l-line--debug  u-justify-content-space-between">
+          <div class="u-txt-heading-2  c-enterprise__header  u-mar-bot-12">
+            <%= @presenter.program.title %>
+          </div>
+          <%= link_to new_institution_admin_course_path(
+                        program_id: @presenter.program.id,
+                        school_id: params[:school_id]
+                      ),
+                      class: 'c-button-v3  c-button-v3--primary  c-button-v3--sm  u-txt-white' do %>
+            <music-icon-plus-v3></music-icon-plus-v3> Create Course
+          <% end %>
+        </div>
+        <div class="u-dis-flex  u-mar-lt-6" style="gap: 30px;">
+          <%= render 'course_links' %>
+        </div>
+      </div>
+      <div class="ns-enterprise__dashboard   u-dis-flex  u-mar-top-32">
+        <% if @presenter.course_order.present? %>
+          <% @presenter.courses_by_school_program[params[:program_id].to_i].each do |course| %>
+            <%= render 'course_card', course: course, presenter: @presenter unless @presenter.hidden_course_ids.include?(course.id) %>
+          <% end %>
+        <% else %>
+          <% @presenter.open_courses.each do |course| %>
+            <%= render 'course_card', course: course, presenter: @presenter unless @presenter.hidden_course_ids.include?(course.id) %>
+          <% end %>
+          <% @presenter.closed_courses.each do |course| %>
+            <%= render 'course_card', course: course, presenter: @presenter unless @presenter.hidden_course_ids.include?(course.id) %>
+          <% end %>
+          <% @presenter.open_courses_non_enterprise.each do |course| %>
+            <%= render 'course_card', course: course, presenter: @presenter unless @presenter.hidden_course_ids.include?(course.id) %>
+          <% end %>
+          <% @presenter.closed_courses_non_enterprise.each do |course| %>
+            <%= render 'course_card', course: course, presenter: @presenter unless @presenter.hidden_course_ids.include?(course.id) %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <%= render 'breadcrumb', presenter: @presenter %>
+<% end %>

@@ -1,0 +1,129 @@
+/* Course Wizard Summary PDF Style */
+
+.course_name {
+  color: #969696;
+  font-size: 2em;
+}
+
+.summary_label {
+  color: #565656;
+  display: inline-block;
+  font-weight: bold;
+  line-height: 1.5em;
+  margin-right: 5px;
+  width: 100px;
+}
+
+.summary_info, .summary_lessons, .summary_categories, .last_unit {
+  color: #969696;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.summary_dates {
+  width: 300px;
+}
+
+.fib_feedback {
+  display: inline-block;
+}
+
+.summary_each_category {
+  border-bottom: 2px solid #d7d7d7;
+  font-weight: normal;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+  margin-top: 25px;
+  width: 800px;
+}
+
+.summary_each_category:last-child {
+  border-bottom: 0px;
+}
+
+.summary_category_name {
+  background: #822206 url('/images/grad_red.png') bottom repeat-x;
+  border: 1px solid #dfdfdf;
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-top-right-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-topright: 3px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  color: #FFF;
+  font-weight: bold;
+  margin-right: 10px;
+  padding: 5px;
+  text-align: center;
+  width: 120px;
+}
+
+.summary_category_weight {
+  border-bottom: 1px solid #dfdfdf;
+  border-left: 1px solid #dfdfdf;
+  border-right: 1px solid #dfdfdf;
+  -webkit-border-bottom-right-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius-bottomright: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  color: #969696;
+  font-weight: normal;
+  margin-right: 10px;
+  padding: 5px;
+  text-align: center;
+  width: 120px;
+}
+
+.summary_category_info {
+  display: inline-block;
+  float: left;
+  margin-bottom: 10px;
+  width: 150px;
+}
+
+.pdf_link {
+  float: right;
+  width: 120px;
+}
+
+.category_settings {
+  display: block;
+  width: 610px;
+  margin-left: 170px;
+  margin-bottom: 10px;
+}
+
+.category_setting_title {
+  display: inline-block;
+  float: left;
+  margin-right: 20px;
+  width: 80px;
+}
+
+.category_setting_settings {
+  display: inline-block;
+  float: left;
+  width: 610px;
+  margin-left: 30px;
+}
+
+ul.grading {
+  list-style-type: disc;
+  margin-left: 10px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.ui-helper-clearfix {
+  display: block;
+}
+
+.ui-helper-clearfix:after {
+  clear: both;
+  content: ".";
+  display: block;
+  height: 0px;
+  visibility:hidden;
+}

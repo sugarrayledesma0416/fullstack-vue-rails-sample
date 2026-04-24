@@ -1,0 +1,32 @@
+@import 'music/library/v1/base/main';
+/* ================================================================== *
+
+    Utilities
+
+* =================================================================== */
+
+.clear {
+  clear: both;
+  height: 0;
+  overflow: hidden;
+}
+
+.inline {
+  display: inline;
+}
+
+/* Text only visible to screenreaders */
+.u-no-visual {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.c-activity-form .hidden {
+  display: none;
+}

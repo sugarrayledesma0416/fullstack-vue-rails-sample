@@ -1,0 +1,43 @@
+/* Colors */
+/* Copied from toc lesson_selector */
+
+$school-selector-background: $white;
+$school-selector-hover: $gray-f5;
+$school-selector-selected-fg-hc: $white;
+$school-selector-selected-bg-hc: $gray-6;
+
+.c-school-selector-container {
+  padding: mod(1);
+  
+  @include viewport-min(lg) {
+    padding: 0 0 0 mod(1);
+  }
+}
+
+.c-school-dropdown {
+  background-color: $school-selector-background;
+  width: 100%;
+  height: rpx(66);
+  font-family: inherit;
+  font-size: $font-size-16;
+  color: $gray-3;
+  padding: rpx(16);
+  align-items: center;
+  border: rpx(1) solid $gray-d;
+  text-align: left;
+
+  &:hover {
+    background-color: $school-selector-hover;
+  }
+}
+
+.c-school-dropdown__button.is-open {
+  background-color: $white;
+  color: $gray-3;
+}
+
+.c-school-dropdown__list-item-text {
+  width: 100%;
+  display: inline-block;
+  padding-left: rpx(10);
+}

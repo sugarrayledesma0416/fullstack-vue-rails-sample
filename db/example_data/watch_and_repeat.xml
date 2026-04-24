@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<activity language="es" title="Example Watch and Repeat" activity_type="learning_engine">
+  <dl>Watch the clip, then listen to and repeat each phrase.</dl>
+  <items>
+    <reference type="video">
+      <video id="137867" />
+    </reference>
+    <watch_and_repeat>
+      <repeat_prompt>
+        <image id="137739" />
+        <audio id="137819" />
+        <text>¿En qué puedo servirles?</text>
+      </repeat_prompt>
+      <repeat_prompt>
+        <image id="137745" />
+        <audio id="137813" />
+        <text>Tenemos una reservación.</text>
+      </repeat_prompt>
+      <repeat_prompt>
+        <image id="137739" />
+        <audio id="137790" />
+        <text>¿A nombre de quién?</text>
+      </repeat_prompt>
+      <repeat_prompt>
+        <image id="137741" />
+        <audio id="137820" />
+        <text>¿Quizás López? ¿Tal vez Díaz?</text>
+      </repeat_prompt>
+    </watch_and_repeat>
+  </items>
+</activity>

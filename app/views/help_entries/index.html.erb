@@ -1,0 +1,38 @@
+<% content_for(:body_classes, "standard_layout") %>
+
+  <div>
+    <%= link_to "Create new help entry", new_help_entry_path -%>
+  </div>
+
+  <% if @help_entries.empty? -%>
+  There are no help entries.
+  <% else -%>
+  <table id="notifications" class="large_table">
+    <tr>
+      <th>Page</th>
+      <th>URL</th>
+      <th>Published</th>
+      <th>Created By</th>
+      <th>Created At</th>
+      <th>Updated At</th>
+      <th>&nbsp;</th>
+    </tr>
+  <% @help_entries.each do |help_entry| -%>
+    <tr>
+      <td><%= link_to(help_entry.page, edit_help_entry_path(help_entry) ) %></td>
+      <td><%= help_entry.url %></td>
+      <td><%= "published" if help_entry.published? %></td>
+      <td><%= help_entry.created_by.first_name + " " + help_entry.created_by.last_name  %></td>
+      <td><%= format_date_time(help_entry.created_at, :short) %></td>
+      <td><%= format_date_time(help_entry.updated_at, :standard) %></td>
+      <td><%= link_to(
+                'Delete',
+                { action: 'destroy', id: help_entry.id },
+                data: { confirm: "Are you sure you wish to delete the help entry for #{help_entry.page}?" },
+                method: :delete
+              ) %>
+      </td>
+    </tr>
+  <% end -%>
+  </table>
+  <% end -%>

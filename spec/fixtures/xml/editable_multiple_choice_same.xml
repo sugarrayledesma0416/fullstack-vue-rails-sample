@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<activity assessment_type="practice" title="Prueba escrita" language="es" activity_type="exam">
+  <dl>Complete this practice test to review what you have learned in this lesson.</dl>
+  <items>
+    <style>
+      <item_numbers>show</item_numbers>
+    </style>
+    <activity activity_type="multiple_choice_same" title="title text" language="es">
+      <dl>Instructions</dl>
+      <items>
+        <style>
+          <item_numbers>show</item_numbers>
+        </style>
+        <reference type="exam">
+          <header>Multiple choice activity header</header>
+          <body>Multiple choice activity body.</body>
+        </reference>
+        <choices>
+          <choice ref="1">answer 1</choice>
+          <choice ref="2">answer 2</choice>
+          <choice ref="3">answer 3</choice>
+        </choices>
+        <item>
+          <prompt>prompt_for_question_1</prompt>
+          <answer ref="2"/>
+        </item>
+        <item>
+          <prompt>prompt_for_question_2</prompt>
+          <answer ref="1"/>
+        </item>
+      </items>
+    </activity>
+  </items>
+</activity>

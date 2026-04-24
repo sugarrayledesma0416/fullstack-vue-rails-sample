@@ -1,0 +1,11 @@
+<% if component_name === 'Instructor-created Activities' %>
+  <%-
+    colspan = 4
+    if (defined? is_google_share_column) && is_google_share_column
+      colspan = 5
+    end
+  %>
+  <tr class="u-hidden  js-no-component-content-message">
+    <td colspan="<%= colspan %>" class="c-cell  c-col-no-assignments">There is no content to show</td>
+  </tr>
+<% end %>

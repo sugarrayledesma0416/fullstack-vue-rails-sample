@@ -1,0 +1,48 @@
+<%= content_for(
+      :js_head,
+      javascript_packs_with_chunks_tag('ai/live_data/grading_inputs/index')
+    ) %>
+
+<div class="l-container-fluid">
+  <div class="l-grid">
+    <div class="l-col-auto">
+      <%= form_with(url: @presenter.form_url, method: :get) do |form| -%>
+        <div class="c-form-item-group">
+          <div class="c-form-item">
+            <%= form.label(:rating, 'Activity type', class: 'c-form-item__label') %>
+            <%= form.select(
+              :activity_type,
+              options_for_select(
+                @presenter.options_for_activity_type,
+                selected: params[:activity_type]
+              ),
+              { include_blank: '' },
+              { class: 'c-select' }
+              ) %>
+          </div>
+          <div class="js-ai-live-data-grading-inputs-date-range-controls"
+               data-start-date=<%= @presenter.start_time.strftime('%m/%d/%Y') %>
+               data-end-date=<%= @presenter.end_time.strftime('%m/%d/%Y') %>
+          >
+          </div>
+          <div class="l-line  l-line--xl  c-button-group  c-button-group--lt  c-form-item">
+            <%= form.submit('Search', class: 'c-button  c-button--primary') %>
+            <%= link_to(
+              'Clear Search',
+              @presenter.form_url,
+              class: 'c-button  c-button--secondary'
+              ) %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div
+  class="js-ai-live-data-grading-inputs"
+  data-load-more-url="<%= @presenter.load_more_url %>"
+  data-save-entry-url="<%= @presenter.save_entry_url %>"
+  data-entries="<%= @presenter.entries.to_json %>"
+  >
+</div>

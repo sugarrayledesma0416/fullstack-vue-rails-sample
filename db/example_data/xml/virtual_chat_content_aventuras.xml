@@ -1,0 +1,28 @@
+<activity activity_type="virtual_chat" language="es" title="Preguntas - Virtual chat">
+  <dl>Answer Juan Pablo's questions about your daily habits.</dl>
+  <items>
+    <style>
+      <item_numbers>hide</item_numbers>
+      <avatar><image id="120994"/></avatar>
+    </style>
+    <item>
+      <turns>
+        <turn>
+          <audio id="120989"/>
+        </turn>
+        <turn>
+          <audio id="120990"/>
+        </turn>
+        <turn>
+          <audio id="120991"/>
+        </turn>
+        <turn>
+          <audio id="120992"/>
+        </turn>
+        <turn>
+          <audio id="120993"/>
+        </turn>
+      </turns>
+    </item>
+  </items>
+</activity>

@@ -1,0 +1,97 @@
+table.student_list {
+  border: 0px;
+  padding-bottom :10px;
+  width :100%;
+}
+
+input#upper_button {
+  float: right;
+}
+
+#section_selector {
+  display:inline;
+}
+
+
+form#students_enrollment_confirmation_form .header {
+  padding: 5px;
+  background: none repeat scroll 0 0 #f0f0f0;
+}
+
+form#students_enrollment_confirmation_form .detail {
+  padding: 5px;
+  padding-left : 20px;
+}
+
+
+div.overlay {
+  position: absolute;
+  width :700px;
+  height :900px;
+  display:none;
+  background-image:url('/images/loading_32.gif');
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+  background-position:center;
+  z-index : 200;
+}
+
+div.add_student_header span{
+  font-weight: bold;
+}
+
+#main_content .ui-tabs-panel {
+  padding: 10px 0px;
+}
+
+#student_add_button{
+  float: right;
+}
+
+div.student_search,
+div.add_students {
+  margin-top: 10px;
+}
+
+label.email {
+  color: #959595;
+}
+
+/* Fix for the Student Search Tabs */
+
+.add_students .ui-widget-header {
+  background: none;
+}
+
+.add_students .ui-state-active {
+  border: none;
+  color: #000;
+}
+
+.add_students .ui-state-active a {
+  color: #000;
+}
+
+.add_students .ui-tabs,
+.add_students .ui-tabs-nav {
+  padding: 0px;
+}
+
+.add_students .ui-tabs li a {
+  padding: 0px;
+}
+
+div.block input.email {
+  color: #AAA;
+  padding: 2px;
+}
+
+div.block .red-button {
+  height: 24px;
+  padding: 3px 16px;
+  vertical-align: top;
+}
+
+div.block {
+  height: 30px;
+}

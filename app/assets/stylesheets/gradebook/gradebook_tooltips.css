@@ -1,0 +1,134 @@
+
+/*********************************************************/
+/*           GRADING TOOLTIPS & CLUETIP MODALS           */
+/*********************************************************/
+
+/* Flash Notices */
+#flash_notice #dropped_students #undo_button_form #undo_button{
+  height: 28px;
+  position:relative;
+  top: -5px;
+  right: -10px;
+}
+
+#flash_notice #dropped_students #undo_button_form{
+  float :right;
+  padding: 0;
+  position: relative;
+}
+
+#flash_notice #dropped_students{
+  position:relative;
+  border: 1px solid #FFFFFF;
+}
+
+#flash_notice #dropped_students div{
+  border:0px;
+}
+
+#bulk_grade_change input.number_field_3{
+  width: 40px;
+  }
+
+span.score {
+  float: left;
+  font-size: 11px;
+  margin: 5px 0 0 5px;
+}
+
+.gradebook_form_table label span {font-size: 11px;}
+
+  table#bulk_grade_change{
+    border : 0px solid ;
+  }
+  table#bulk_grade_change tr.button_row td{
+    border : 0px solid ;
+  }
+
+  .score_table {
+    border: 0px;
+    margin: 0 0 10px 0;
+  }
+
+  .score_table td {
+    border: 1px;
+  }
+
+  .score_table th {
+    text-align: center;
+    width: 4em;
+  }
+
+  .score_table td {
+    padding: 3px 8px 3px 0;
+    text-align: center;
+  }
+
+ .score_table td.percent_cell {
+    text-align: left;
+    width: 60px;
+  }
+
+  .score_table td.points_cell {
+    text-align: left;
+    width: 60px;
+  }
+
+  .score_table td.mark_cell {
+    text-align: left;
+    width: 90px;
+  }
+
+  tr#scores .score_table td.row_header {
+    color: #737373;
+    font-weight: bold;
+  }
+
+  .gradebook_form_table.second {
+    margin-top: 10px;
+  }
+
+ .score_table td.row_header {
+    text-align: left;
+    width: 7em;
+  }
+
+  .score_table td.net {
+    border-top: 1px solid #aaa;
+  }
+
+ .score_table td.pending {
+    background: #eee;
+    color: #777;
+  }
+
+
+
+
+.score_adjustment_wrap .score_adjustments {
+  margin: 0px 8px;
+  width: 320px;
+}
+
+td.adjustment_created_at {
+  font-weight: bold;
+  padding-left: 12px;
+}
+
+.modal_history_label {
+  color: #737373;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 3px 8px;
+}
+
+
+/* Student Pop Up */
+.student_info_popup {
+  background: #fff;
+  font-size: 12px;
+  margin: 0;
+  padding: 0px 0 10px 0;
+  text-align: center;
+  float:left;
+}

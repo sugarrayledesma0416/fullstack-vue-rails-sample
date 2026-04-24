@@ -1,0 +1,73 @@
+<% unless defined?(@vchat_js_loaded) %>
+  <% content_for(:css_head, stylesheet_link_tag("maestro_activity_engine/chat_activity")) %>
+  <% content_for(:css_head, stylesheet_link_tag("maestro_activity_engine/virtual_chat")) %>
+  <% content_for(:css_head, stylesheet_link_tag("maestro_activity_engine/recording")) %>
+  <% content_for(:js_head, javascript_include_tag('maestro_activity_engine/bindable')) %>
+  <% content_for(:js_head, javascript_include_tag('maestro_activity_engine/template_handler')) %>
+  <% content_for(:js_head, javascript_include_tag("maestro_activity_engine/#{virtual_chat_partial}/grading")) %>
+  <% content_for(:body_classes, " virtual_chat") %>
+  <% @vchat_js_loaded = true %>
+<% end %>
+
+<% content_for(:css_head, stylesheet_link_tag("grading_virtual_chat")) %>
+<% response_id = presenter.response_id(student, question) %>
+<%
+  content_object = @presenter.activity.content_object
+  # If the activity is an exam, point content_object to the
+  # question instead of the activity.
+  if content_object.activity_type == 'exam'
+    content_object = content_object.activities.detect do |sub_activity|
+      sub_activity.questions.include?(question)
+    end
+  end
+%>
+
+<% student_by_question_id = "user_#{student.id}_#{question.label}" %>
+<% student_gender = content_object.stored_gender(results) %>
+
+<div class="container-fluid">
+  <div class="grid">
+    <div class="col-8">
+      <div id="virtual_chat_<%= student_by_question_id %>"
+        class='js-vchat-container'
+        data-js-stored-gender='<%= student_gender %>'
+        data-js-recording-limit="<%= content_object.recording_limit %>">
+        <%= render "maestro_activity_engine/activities/#{virtual_chat_partial}/grading_view",
+          content_object: content_object,
+          results: results,
+          student_by_question_id: student_by_question_id %>
+      </div> <!-- /chat_container -->
+    </div> <!-- /col-8 -->
+
+    <div class="col-3">
+      <div class="c-grading-sidebar  c-grading-sidebar--plain">
+        <div class="score_controls_container">
+          <%= render(
+                '/instructor/grading_sets/score_controls',
+                view_manager: ScoreControlsViewManager.new(
+                  question,
+                  presenter.feedback[response_id],
+                  results,
+                  response_id,
+                  params
+                )
+              )
+          %>
+        </div> <!-- /score_controls_container -->
+
+        <div class="virtual_instructor_comments">
+          <div class="box-frame-comments ui-helper-clearfix">
+            <%= render  '/instructor/grading_sets/all_instructor_comments',
+                        question: question,
+                        response_id: response_id,
+                        feedback_item: presenter.feedback[response_id],
+                        recording_path: presenter.recording_path(student, question),
+                        is_new_recording: presenter.new_recording?(student, question) %>
+          </div>
+        </div> <!-- /virtual_instructor_comments -->
+      </div> <!-- /c-grading-sidebar -->
+
+    </div> <!-- /col-4 -->
+  </div> <!-- /grid -->
+
+</div> <!-- /container-fluid -->

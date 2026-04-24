@@ -1,0 +1,63 @@
+
+.c-add-link-wrapper {
+  display: none;
+  font-weight: normal;
+  margin-left: auto;
+  text-transform: lowercase;
+  
+  @include viewport-min(md) {
+    display: revert;
+  }
+
+  .c-add-link  {
+    color: $dark-blue;
+    vertical-align: text-bottom;
+
+    .c-add-link__icon {
+      svg {
+        fill: $dark-blue;
+      }
+    }
+
+    .c-add-link__text {
+      display: none;
+    }
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+
+      .c-add-link__icon {
+        svg {
+          fill: $dark-blue;
+        }
+      }
+
+      .c-add-link__text {
+        display: inline;
+      }
+    }
+  }
+}
+
+.c-add-link-wrapper--orange {
+
+  .c-add-link {
+    color: $contrasted-orange;
+
+    .c-add-link__icon {
+      svg {
+        fill: $contrasted-orange;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      .c-add-link__icon {
+        svg {
+          fill: $contrasted-orange;
+        }
+      }
+    }
+  }
+}

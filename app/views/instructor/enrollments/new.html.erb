@@ -1,0 +1,80 @@
+<%= vite_javascript_tag 'entrypoints/instructor/enrollments/new' %>
+
+<l-stack-v3 class="c-add-student-wrapper  js-add-students ">
+  <l-line-v3 align-x="between" class="c-add-student-header">
+    <h1 class="c-add-students__heading">Add Students - 
+      <span class="c-add-students__heading-info"><%= @selected_section.course.name %>, <%= @selected_section.name %></span>
+    </h1>
+    <div>
+      <%= render 'instructor/student/search', { section: @selected_section} %>
+    </div>
+  </l-line-v3>
+  <div class="js-search-results"></div>
+  <div class="js-unenrolled-students">
+    <l-line-v3>
+      <p class="c-add-students__table-heading">
+        Unenrolled students 
+      </p>
+      <% tooltip_message = "Unenrolled students with access to #{@selected_section.course.name}, #{@selected_section.name} at #{@school.name}"%>
+      <sl-tooltip content="<%= tooltip_message %>">
+        <sl-icon
+          name="info-circle"
+          class="u-txt-true-gray-600"
+          library="untitled-ui"></sl-icon>
+      </sl-tooltip>
+    </l-line-v3>
+    <%= form_tag(instructor_enrollments_path(program_id: current_program.id),
+                                                     id: 'students_enrollment_confirmation_form',
+                                                     method: :post) do %>
+      <div class="c-table-enrollments-wrapper  u-mar-top-16">
+        <table 
+          class="c-table-v3 c-table-enrollments  js-table-enrollments">
+          <thead>
+            <tr>
+              <th class="c-table-v3__th  c-table-v3__th--name">Name</th>
+              <th class="c-table-v3__th">Email Address</th>
+            </tr>
+          </thead>
+          <tbody >
+            <% @students.each do |student| %>
+              <tr id='<%="student_#{student.id}"%>' class="js-student-row">
+                <td class="c-table-v3__td  c-table-enrollments__name">
+                  <sl-checkbox
+                    name="selected_student_ids[]"
+                    value="<%= student.id %>"
+                    id="unenrolled_select_students_<%= student.id %>"
+                    class="c-checkbox  js-student-checkbox"
+                    <%= 'checked' if mark_checked(student, @selected_student_ids) %>>
+                      <%= "#{student.last_name}, #{student.first_name}" %>
+                  </sl-checkbox>
+                </td>
+                <td class="c-table-v3__td"><%= student.email %></td>
+              </tr>
+            <% end %>
+            
+          </tbody>
+        </table>
+        <%= hidden_field_tag :selected_section_id, @selected_section_id%>
+        <%= hidden_field_tag :program_id, current_program.id%>
+        <%= hidden_field_tag :return_to, @return_to %>
+      </div>
+    <% end %>
+  </div>
+</l-stack-v3>
+<div class="c-add-student-footer">
+  <l-line-v3 gap="md">
+    <sl-button 
+      class="sl-button-v3  sl-button-v3--tertiary  js-cancel-section-selector"
+      href="<%= @return_to%>">
+      Cancel
+    </sl-button>
+    <sl-button
+      type="button"
+      class="sl-button-v3  sl-button-v3--primary  js-add-student-submit"
+      disabled>
+      Add Students
+    </sl-button>
+  </l-line-v3>
+</div>
+
+<%= render 'instructor/enrollments/confirm', { course: @selected_section.course, section: @selected_section} %>

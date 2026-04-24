@@ -1,0 +1,23 @@
+table.student_details {
+  width: 100%;
+}
+
+table.student_details th{
+  font-weight: bold;
+}
+
+table.student_details td{
+  text-align: left;
+}
+
+table.student_list label {
+  padding: 0px;
+}
+
+.wrap_table {
+  margin-left: 0px;
+}
+
+.wrap_table table th {
+  font-size: 10pt;
+}

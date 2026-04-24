@@ -1,0 +1,30 @@
+<%= render(
+      'partials/form_errors',
+      header_message: nil,
+      object: @prompt
+    ) %>
+
+<%= form_with(model: @prompt, scope: :prompt, url: ai_grading_prompt_path(@prompt)) do |form| %>
+  <%= hidden_field_tag(:prompt_type, params[:prompt_type]) %> 
+
+  <div class="c-form-item">
+    <%= form.check_box :active_for_instructor_grading, { class: 'c-form-item__checkbox'} %>
+    <%= form.label(
+          :active_for_instructor_grading,
+          'Active for instructor grading?',
+          class: 'c-form-item__label'
+        ) %>
+  </div>
+
+  <div><b>Model:</b> <%= @prompt.model %></div>
+  <div><b>Temperature:</b> <%= @prompt.temperature %></div>
+  <div><b>Body</b></div>
+
+  <div><pre><%= @prompt.template_body %></pre></div>
+
+  <div class="c-button-group  c-button-group--lt  u-mar-top-32">
+    <%= link_to "cancel", ai_grading_prompts_path, { class: 'c-button  c-button' } %>
+    <%= form.submit 'Update',  class: 'c-button c-button--primary' %>
+  </div>
+<% end %>
+

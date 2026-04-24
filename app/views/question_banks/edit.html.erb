@@ -1,0 +1,37 @@
+<div class="u-pad-bot-12">
+  <%= link_to(
+    question_bank_topic_question_bank_question_bank_revisions_path(
+      question_bank_topic_id: @topic.id,
+      question_bank_id: @question_bank.id
+    )
+  ) do %>
+  <%= Music::Components.icon(
+    variant: 'return',
+    text: 'Return to Question Bank Revisions',
+    classes: ['c-embedded-icon--md', 'u-txt-16']
+  ) %>
+  <% end %>
+</div>
+
+<div>
+  <div>New Revision for:</div>
+  <div>Question bank: <%= @question_bank.title %></div>
+</div>
+
+<%= render(
+      'partials/form_errors',
+      header_message: nil,
+      object: @question_bank
+    ) %>
+
+<%= form_tag(
+      question_bank_topic_question_bank_path(
+        question_bank_topic_id: @topic.id,
+        id: @question_bank.id
+      ),
+      method: :patch,
+      multipart: true
+    ) do %>
+  <%= render partial: 'upload_file_form' %>
+  <%= submit_tag('Upload', class: 'c-button  c-button--primary') %>
+<% end %>

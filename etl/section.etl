@@ -1,0 +1,33 @@
+require_relative 'etl/common'
+
+class SectionSource < Source
+  def initialize(course_ids)
+    @records = ::Section.where(course_id: course_ids.split(','))
+  end
+end
+
+class SectionTransform < Transform
+  def initialize(model)
+    @common_fields = %w(course_id id name time_zone)
+    super(model)
+  end
+
+  def process(record)
+    def convert_to_standard_time_zone(time_zone)
+      zone = ActiveSupport::TimeZone[time_zone]
+      zone.tzinfo.name
+    end
+
+    super(record) do |r|
+      r.time_zone = convert_to_standard_time_zone(r.time_zone)
+
+      # Convert number of seconds into time string.
+      seconds = record.due_time.seconds_since_midnight
+      r.due_time = Time.at(seconds).utc.strftime('%H:%M:%S')
+    end
+  end
+end
+
+source SectionSource, ENV['COURSE_IDS']
+transform SectionTransform, GradebookEngine::Section
+destination RecordDestination

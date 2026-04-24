@@ -1,0 +1,55 @@
+<div id="prev_next_buttons" class="ns-music-v1">
+
+  <% if @grading_style == Setting::GradingTasks::GradingStyle::SPOTCHECK
+        onclick_check_score = ""
+     else
+        onclick_check_score =  "return VHL.Grading.check_scores('.js-score-field', '#{loop_through}')"
+     end
+  %>
+  <% if @show_finish_spotchecking %>
+
+    <%= hidden_field_tag 'show_finish_spotchecking', @show_finish_spotchecking, :title => 'Finish Spotchecking ...',
+                          :href => instructor_grading_set_edit_confirm_path(current_program, @grading_set) %>
+  <% end %>
+
+  <div class="c-button-group">
+    <% unless @grading_style == Setting::GradingTasks::GradingStyle::SPOTCHECK %>
+      <span class="cancel  u-pad-6  u-float-rt">
+        <%= link_to(
+          'Cancel',
+          main_app.instructor_grading_tasks_assignments_path(current_program),
+          class: 'c-button  c-button--secondary'
+        ) %>
+      </span>
+    <% end %>
+
+    <% unless is_last -%>
+      <span class="exit  u-pad-6  u-float-rt">
+        <%= submit_tag 'Save & Exit', :class => "c-button  c-button--primary", :onclick => onclick_check_score, 'data-button' => 'done' %>
+      </span>
+    <% end -%>
+
+    <% unless is_first -%>
+      <span class="prev  u-pad-6  u-mar-rt-0">
+        <%= submit_tag '< Save & Previous', :class => "c-button  c-button--primary", :onclick =>  onclick_check_score, 'data-button' => 'previous' %>
+      </span>
+    <% end -%>
+
+    <% if is_last -%>
+      <% if @grading_style == Setting::GradingTasks::GradingStyle::SPOTCHECK %>
+        <span class='red-button  u-pad-6  finish_button'>
+          <%= submit_tag 'Save & Done', :class => "c-button  c-button--primary", :onclick => onclick_check_score, 'data-button' => 'done' %>
+        </span>
+      <% else -%>
+        <span class="done  u-pad-6  u-float-rt">
+          <%= submit_tag 'Save & Done', :class => "c-button  c-button--primary", :onclick => onclick_check_score, 'data-button' => 'done' %>
+        </span>
+      <% end -%>
+    <% else -%>
+      <span class="next  u-pad-6">
+        <%= submit_tag 'Save & Next >', :class => "c-button  c-button--primary", :onclick =>  onclick_check_score, 'data-button' => 'next' %>
+      </span>
+    <% end -%>
+  </div>
+
+</div> <!-- /#prev_next_buttons -->

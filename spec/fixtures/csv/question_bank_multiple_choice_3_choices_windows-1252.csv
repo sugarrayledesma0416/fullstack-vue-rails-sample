@@ -1,0 +1,16 @@
+group_topic_id,group_topic_name,bank_name,direction_line,item_type,dl_lang,prompt_lang,choice_lang,prompt,correct_answer,distractor_1,distractor_2
+,University and school,Elegir - Multiple choice,Complete each sentence with the correct option.,mc_3,en,es,es,A Pedro,le gustan los cómics,nos gustan los cómics,me gustan los cómics
+,,,,,,,,Daniel y yo,tomamos el curso de historia este semestre,toman el curso de historia este semestre,tomo el curso de historia este semestre
+,,,,,,,,El curso de sociología,empieza mañana,empiezas mañana,empiezan mañana
+,,,,,,,,Yo siempre,hablo con Carlos al final de la clase,habláis con Carlos al final de la clase,habla con Carlos al final de la clase
+,,,,,,,,Juana,espera el autobús a la universidad,esperas el autobús a la universidad,esperamos el autobús a la universidad
+,,,,,,,,"Gonzalo, Sandra y tú",dibujan caricaturas en la clase de arte,dibujamos caricaturas en la clase de arte,dibujo caricaturas en la clase de arte
+,,,,,,,,Tú,preguntas cuándo es el examen,pregunta cuándo es el examen,preguntan cuándo es el examen
+,,,,,,,,Camilo,trabaja los sábados en la cafetería,trabajas los sábados en la cafetería,trabajamos los sábados en la cafetería
+,,,,,,,,Usted,busca el libro en la biblioteca ,buscáis el libro en la biblioteca,busco el libro en la biblioteca
+,,,,,,,,Mis amigas y yo,estudiamos inglés los martes,estudian inglés los martes,estudias inglés los martes
+,,,,,,,,La profesora,viaja hoy a México,viajan hoy a México,viajas hoy a México
+,,,,,,,,Yo,converso con ella en el salón de clases,conversamos con ella en el salón de clases,conversa con ella en el salón de clases
+,,,,,,,,Tú,esperas que el curso sea interesante,espero que el curso sea interesante,esperan que el curso sea interesante
+,,,,,,,,Vosotras,miráis el documental,miramos el documental,mira el documental
+,,,,,,,,El semestre,termina en dos semanas,terminan en dos semanas,terminamos en dos semanas

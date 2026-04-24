@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<activity activity_type="fill_in_the_blanks" language="es" title="activity title">
+  <dl>Instructions</dl>
+  <items>
+    <style>
+      <wol_size>words_standard</wol_size>
+      <item_numbers>show</item_numbers>
+    </style>
+    <item>
+      <prompt><wol ref="1"/> <wol ref="2"/></prompt>
+      <answers ref="1">
+        <answer>Nada.</answer>
+      </answers>
+      <answers ref="2">
+        <answer>mas</answer>
+      </answers>
+    </item>
+  </items>
+</activity>

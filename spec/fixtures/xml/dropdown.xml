@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<activity activity_type="drop_down" language="es" title="dropdown title">
+  <dl>Listen to each conversation and indicate whether what you hear is <b>lógico</b> or <b>ilógico.</b></dl>
+  <items>
+    <item>
+      <prompt>prompt_for_question_1<wol/></prompt>
+      <choices>
+        <answer>answer_1_1</answer>
+        <distractor>answer_1_2</distractor>
+      </choices>
+    </item>
+    <item>
+      <prompt>prompt <wol ref="1"/> for question <wol ref="2"/></prompt>
+      <choices ref="1">
+        <answer>answer_2_1_1</answer>
+        <distractor>answer_2_1_2</distractor>
+      </choices>
+      <choices ref="2">
+        <distractor>answer_2_2_1</distractor>
+        <answer>answer_2_2_2</answer>
+      </choices>
+    </item>
+    <item>
+      <prompt><wol/></prompt>
+      <choices>
+        <distractor>answer_3_1</distractor>
+        <answer>answer_3_2</answer>
+        <distractor>answer_3_3</distractor>
+      </choices>
+    </item>
+  </items>
+</activity>

@@ -1,0 +1,30 @@
+<div
+  data-container="group_chat_options"
+  class="div_row  ui-helper-clearfix  u-mar-top-16">
+  <div class="u-dis-flex">
+    <%= label_tag(:activity_assignment_group_chat_options, 'Group Chat') %>
+  </div>
+  <div>
+    <div class="ns-music-v1  c-group-minimum  <%= yield :theme_classes %>">
+      <div class="u-mar-top-8">Minimum of </div>
+      <%= select_tag(
+        'activity_assignment[group_minimum]',
+        options_for_select([ 2, 3, 4, 5, 6 ],
+        group_chat_config[:group_minimum]),
+        {:class => 'c-select  c-group-minimum-select  js-group-minimum-selection'}
+      ) %>
+      <div class="u-mar-top-8">students.</div>
+    </div>
+
+    <div class="ns-music-v1  c-group-maximum  <%= yield :theme_classes %>">
+      <div class="u-mar-top-8">Maximum of </div>
+      <%= select_tag(
+        'activity_assignment[group_maximum]',
+        options_for_select([ 2, 3, 4, 5, 6 ],
+        group_chat_config[:group_maximum]),
+        {:class => 'c-select  c-group-maximum-select  js-group-maximum-selection'}
+      ) %>
+      <div class="u-mar-top-8">students.</div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,211 @@
+<% content_for(:body_classes, "ns-full-width  ns-allow-enroll ns-instructor-dashboard")%>
+<% content_for(:css_head, stylesheet_link_tag("music/features/clever/banners")) %>
+<% content_for(:css_head, stylesheet_link_tag("music/features/dashboard/block_enrollment")) %>
+<% content_for(:js_head, javascript_include_tag('jquery.hoverIntent.minified')) %>
+<% content_for(:js_head, javascript_include_tag('dashboard_announcement')) %>
+<% content_for(:js_head, javascript_include_tag('dashboard')) %>
+<% content_for(:focus, render(:partial => 'instructor/focus/show')) %>
+<% content_for(:navigation, render(:partial => 'app_shell/navbar_program/main')) %>
+<% content_for(:css_head, stylesheet_link_tag('instructor/dashboard/main') ) %>
+<% content_for(:js_head, javascript_packs_with_chunks_tag('instructor/dashboard/index') ) %>
+
+<div>
+  <% if @presenter.instructor_schools.empty? %>
+    <div class="c-dashboard-no-schools">
+      <div class="c-dashboard-no-schools__label" >
+        <p>
+          No schools are associated with your account.
+        </p>
+          <%= link_to(
+                'Add a school',
+                ua_host_url(:add_school),
+                class: "c-button  c-button--border  is-navigable"
+              )%>
+      </div>
+    </div>
+  <% else %>
+    <% if @presenter.clever_warning? %>
+      <div class="ns-clever">
+        <div class="f-banner">
+          <div class="f-banner__msg">
+            <%= @presenter.clever_warning_message.html_safe %>
+          </div>
+        </div>
+      </div> <!-- / ns-clever -->
+    <% end %>
+
+    <div class="l-grid  c-dashboard-wrapper">
+      <div class="l-col-12  l-col-md-5  l-col-lg-3  c-courses-wrapper  c-wrapper-mobile  is-hidden  js-wrapper-mobile">
+        <div class="js-column-courses">
+          <div class="c-school-selector-container">
+            <h3 class="u-screen-reader-only" id="school-selector-label">Select a school</h3>
+
+            <% school_selected = @presenter.instructor_schools.first %>
+
+            <div class="c-school-selector-wrapper">
+              <select 
+                class="c-select  c-school-dropdown  js-school-dropdown" 
+                id="student_dropdown_menu" 
+                aria-labelledby="school-selector-label"
+                aria-controls="schoolControls">
+                <% @presenter.instructor_schools.each do |school| -%>
+                <% next if school.district? %>
+                  <option 
+                    value="<%= school.id %>"
+                    data-school-name="<%=school.name %>" 
+                    <%=  current_focus.same_school_as_course?(school) ? 'selected' : ''%>>
+                    <%= hoverize(school.name.shorten(44), school.name) %>
+                  </option>
+                <% end %>
+              </select>
+            </div>
+            <div class="js-assistive-school" role="region" id="schoolControls" aria-live="polite">
+              <span class="u-screen-reader-only  js-assistive-school-msg">No school selected</span>
+            </div>
+          </div>
+          <% @presenter.instructor_schools.each do |school| -%>
+            <div
+              class="u-dis-none  js-courses-by-school"
+              data-school-id="<%= school.id %>">
+              <div <%= "id=active-course-add" if school.id == school_selected.id %> class="c-course-title-wrapper">
+                <h3 class="c-heading--page-title  c-heading--page-title-course">
+                  Courses
+                </h3>
+                <div class="c-add-link-wrapper  c-add-link-wrapper--orange">
+                  <% if course_create_edit_policy.permit?(school) && !@presenter.has_linked_rostering_user? %>
+                    <%= link_to(
+                          instructor_new_course_path(@presenter.program, school),
+                          'data-link-type' => 'add course',
+                          class: "c-add-link #{test_class('course-add-link')}"
+                        ) do %>
+                          <span
+                            aria-hidden="true"
+                            class="c-add-link__text">
+                            Add
+                          </span>
+                          <%= Music::Components.icon(variant: 'add', classes: ['c-add-link__icon']) %>
+                          <span class="u-screen-reader-only">Course</span>
+                    <% end -%>
+                  <% elsif @presenter.has_one_roster_linked_user? && !@presenter.has_lti_roster_linked_user?  %>
+                    <div class="ns-music-v1  u-mar-16">
+                      <%= render 'one_roster/instructor/courses/add_course_button',
+                                  add_icon: true %>
+                    </div>
+                  <% end -%>
+                </div>
+              </div>
+              <nav
+                class="c-course-list-wrapper <%= test_class("school-#{school.id}") %>  <%= test_class("courses-by-school") %>"
+                aria-label="Course navigation"
+                >
+                <% # Don't render the left-nav if the course we're focused on is closed. %>
+                <% if !current_focus.course_editable? && current_focus.same_school_as_course?(school) -%>
+                  <ul class="c-course-list  js-courses-by-school-target">
+                    <%= render 'course_navigation',
+                                course: current_focus.course,
+                                sections: current_focus.sections,
+                                presenter: @presenter,
+                                enable_links: course_create_edit_policy.permit?(school) && !@presenter.has_linked_rostering_user?,
+                                deletion_policy: Policy::Course::Delete.new(current_focus.course, current_focus.sections, current_user) %>
+                  </ul>
+                <% else %>
+                  <% if @presenter.editable_courses_and_sections_by_school(school).present? -%>
+                    <ul class="c-course-list  js-courses-by-school-target">
+                      <% @presenter.editable_courses_and_sections_by_school(school).each do |course, sections| -%>
+                        <%= render 'course_navigation',
+                                    course: course,
+                                    sections: sections,
+                                    presenter: @presenter,
+                                    enable_links: course_create_edit_policy.permit?(school) && !@presenter.has_linked_rostering_user?,
+                                    deletion_policy: Policy::Course::Delete.new(course, sections, current_user) %>
+                      <% end -%>
+                    </ul>
+                  <% elsif course_create_edit_policy.permit?(school) && !@presenter.has_lti_roster_linked_user? -%>
+                    <div class="c-course__no-course--wrapper">
+                      <p class="c-heading--page-title  c-heading--page-title--no-course"> Not sure what to do next? </p>
+                      <p class="c-course__no-courses--link">
+                        Check out our
+                        <%=
+                          link_to(
+                            'How-to Videos',
+                            ua_host_url(:instructor_screencasts),
+                            onclick: format_popup_onclick(width: 755, height: 675)
+                          ) %>
+                      </p>
+                      <% if @presenter.has_one_roster_linked_user? %>
+                        <div class="ns-music-v1  u-mar-16">
+                          <%= render 'one_roster/instructor/courses/add_course_button' %>
+                        </div>
+                      <% elsif course_create_edit_policy.permit?(school) && !@presenter.has_lti_roster_linked_user? %>
+                        <%=
+                          link_to(
+                            instructor_new_course_path(@presenter.program, school),
+                            'data-link-type' => 'add course',
+                            class: "c-button c-button--border  c-course--add-button  is-navigable
+                                    #{test_class('course-add-link')}"
+                          ) do %>
+                            <%= inline_svg_tag("instructor_dashboard/icons/book_course.svg") %>
+                            <span class="u-mar-lt-16"> Add course </span>
+                        <% end -%>
+                      <% end -%>
+                    </div>
+                  <% end -%>
+                <% end -%>
+                <div class="js-assistive-course" role="region" id="courseControls" aria-live="polite">
+                  <span class="u-screen-reader-only  js-assistive-course-msg">No course selected</span>
+                </div>
+              </nav>
+            </div>
+          <% end -%>
+        </div>
+      </div> <!-- / sidebar column -->
+      <div class="l-col-12  l-col-md-7  l-col-lg-9  c-sections-wrapper  c-wrapper-mobile  is-visible  js-wrapper-mobile">
+        <% if @presenter.dashboard_announcement.present? %>
+          <% dashboard_announcement = @presenter.dashboard_announcement %>
+          <div class="ns-dashboard-announcement  ns-music-v1  u-mar-16
+                      <%= test_class('dashboard-announcement') %>">
+            <div
+              data-announcement-id="<%= dashboard_announcement.id %>"
+              class="c-announcement-container  u-hidden  js-dashboard-announcement-notification"
+              aria-hidden="true">
+                <div class="c-announcement-dismiss">
+                  <button class="c-no-button  js-dashboard-announcement
+                                  <%= test_class('dismiss-announcement') %>">
+                    <%= Music::Components.icon(variant: 'close', size: 'md') %>
+                  </button>
+                </div>
+                <h1 class="c-heading--md  u-txt-16  u-txt-upper">
+                  <%= dashboard_announcement.title %>
+                </h1>
+                <p><%= dashboard_announcement.body %></p>
+                <a href="<%= dashboard_announcement.external_url %>">
+                  <%= dashboard_announcement.link_text %>
+                </a>
+            </div>
+          </div>
+        <% end %>
+        <div class="c-pulser-wrapper  js-loading-spinner  <%= test_class('spinner') %>">
+          <div class="c-pulser  c-pulser--dashboard">
+            <span class="c-pulser__element"></span>
+            <span class="c-pulser__element"></span>
+            <span class="c-pulser__element"></span>
+          </div>
+        </div>
+        <div class="c-sections-container  js-dashboard-accordion">
+          <% if current_focus.course.present? %>
+            <%= render partial: 'course', locals: {
+                                          course: current_focus.course,
+                                          sections: current_focus.all_sections_in_course,
+                                          presenter: @presenter,
+                                          enable_links: course_create_edit_policy.permit?(current_focus.course.school) } %>
+          <% else %>
+            <div class="c-sections-wrapper__no-section">
+              <p class="c-heading--page-title  u-txt-bold">No sections yet </p>
+              <p>Before you can create sections you will first have to add a course.
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end -%>
+</div>

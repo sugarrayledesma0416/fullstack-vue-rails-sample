@@ -1,0 +1,30 @@
+<% content_for( :js_head, javascript_include_tag( "jquery.cluetip.js" ) ) %>
+<% content_for( :css_head, stylesheet_link_tag("jquery.cluetip.css") ) %>
+<% content_for(:js_head, javascript_include_tag("assignment_calendar.js") ) %>
+<% content_for( :css_head, stylesheet_link_tag("assignment_filters.css") ) %>
+
+<div id="filters" class="ns-assignment-filter">
+  <% filter = presenter.filter %>
+  <%= form_for([:instructor, filter], :url => instructor_assignment_filter_path(current_program) ) do |f| -%>
+
+    <div id="spinner"><%= image_tag('loading_32.gif') %></div>
+    <div id="current_section_filter_course_id" style='display:none;'>Course,<%= filter.previous_section.course_id if filter.previous_section%></div>
+    <div id="current_section_filter_section_id" style='display:none;'><%= filter.previous_section_id if filter.previous_section_id %></div>
+
+    <%= render :partial => 'instructor/assignment_filters/dropdowns', :locals => {:presenter => presenter} %>
+    <div class="ns-music-v1  filter_set_container" >
+      <%= render :partial => 'instructor/assignment_filters/previously_assigned',
+                 :locals => {:presenter => presenter, :f => f} %>
+      <hr />
+      <%= render :partial => 'instructor/assignment_filters/location',
+                 :locals => { :presenter => presenter, :current_program => current_program,
+                              :f => f} %>
+      <hr />
+      <%= render :partial => 'instructor/assignment_filters/properties',
+                 :locals => {:presenter => presenter, :f => f} %>
+    </div>
+    <div id="assignment_filters_submit">
+      <%= f.submit %>
+    </div>
+  <% end -%>
+</div>

@@ -1,0 +1,126 @@
+@import 'music/library/v1/base/main';
+
+.transcript {
+  display: none;
+  border: rpx(2) solid #55A9C1;
+  z-index: 1000;
+
+  .header {
+    font-weight: bold;
+    background-color: #EFEFEF;
+    padding: rpx(10);
+  }
+
+  .close {
+    cursor: pointer;
+    float: right;
+  }
+}
+
+.actions {
+  background: url("/images/button-close.gif") no-repeat scroll left top transparent;
+  display: block;
+  float: right;
+  font-size: rpx(11);
+  font-weight: bold;
+  height: rpx(12);
+  outline: 0 none;
+  text-indent: -3222em;
+  text-transform: lowercase;
+  width: rpx(12);
+}
+
+details.c-disclosure {
+  margin-left: rpx(16);
+  margin-top: rpx(8);
+
+  // Override a u-txt-nowrap in recording v2 question containers that
+  // shouldn't be applied to the image long-description.
+  white-space: normal !important;
+
+  summary.c-disclosure__header {
+    margin-bottom: rpx(8);
+  }
+
+  .c-dislosure__body .c-panel {
+    border: rpx(1) solid $grey-c;
+  }
+
+  @include theme-opt-in('supersites-jr') {
+    justify-content: center;
+
+    .c-disclosure__header {
+      font-size: var(--font-2);
+
+      @include viewport-min('md') {
+        font-size: var(--font-3);
+      }
+    }
+
+    .c-disclosure__body {
+      text-align: left;
+      margin-top: rpx(16);
+    }
+
+    .c-panel {
+      border: none;
+      border-radius: rpx(25);
+    }
+
+    .c-panel__body {
+      background-color: var(--white);
+      border-radius: rpx(25) rpx(25);
+      box-shadow: mod(0.1) mod(0.1) mod(0.3) rgba(0, 0, 0, 0.3);
+      padding: mod(1.6) mod(3);
+      font-size: var(--font-2);
+
+      @include viewport-min('md') {
+        font-size: var(--font-3);
+      }
+    }
+  }
+}
+
+.c-audio-transcript-container {
+  .c-disclosure {
+    margin-left: rpx(16);
+    margin-top: rpx(8);
+  }
+
+  .c-disclosure__header {
+    font-size: $font-size-16;
+    margin-bottom: rpx(8);
+  }
+
+  .c-disclosure__body h3 {
+    color: $grey-3;
+    font-size: rpx(16);
+    font-weight: bold;
+  }
+
+  @include theme-opt-in('supersites-jr') {
+    .c-disclosure__header {
+      font-size: var(--font-2);
+
+      @include viewport-min('md') {
+        font-size: var(--font-3);
+      }
+    }
+
+    .c-disclosure__body h3 {
+      font-size: var(--font-3);
+
+      @include viewport-min('md') {
+        font-size: var(--font-4);
+      }
+    }
+
+    .c-panel__body {
+      font-size: var(--font-2);
+
+      @include viewport-min('md') {
+        font-size: var(--font-3);
+      }
+    }
+  }
+}

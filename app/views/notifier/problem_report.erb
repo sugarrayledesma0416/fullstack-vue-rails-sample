@@ -1,0 +1,71 @@
+
+Description
+==============
+<% if @help_request.technical_problem? -%>
+  severity_level: <%= @help_request.severity_level %>
+<% end -%>
+<%= @help_request.student_comment %>
+
+
+Submitter
+==============
+  user_id: <%= @help_request.user_id %>
+<% if user = @help_request.user -%>
+  name: <%= user.full_name %>
+  account_type: <%= user.base_account_type %>
+<% else -%>
+  No unarchived user found for user_id.
+<% end -%>
+
+
+Course/Section
+==============
+  section_id: <%= @help_request.section_id %>
+<% if section = @help_request.section -%>
+  section_name: <%= section.name %>
+  section_intructor_id: <%= section.instructor_id %>
+  <% if section.instructor -%>section_instructor_name: <%= section.instructor.full_name %><% end -%>
+  section_course_id: <%= section.course_id %>
+  <% if course = section.course -%>
+  course_name: <%= course.name %>
+  course_owner_id: <%= course.owner_id %>
+  <% if course.owner -%>course_owner_name: <%= course.owner.full_name %><% end -%>
+  course_school_id: <%= course.school_id %>
+  <% if school = course.school -%>course_school: <%= "#{school.name}, #{school.city}, #{school.state} #{school.country_name}" %><% end -%>
+  <% else -%>
+  No unarchived course found for section_course_id.
+  <% end -%>
+<% else -%>
+  No unarchived section found for section_id.
+<% end -%>
+
+
+Content
+==============
+  program_id: <%= @help_request.program_id %>
+  program_title: <%= @help_request.program.title %>
+  activity_id: <%= @help_request.activity_id %>
+  cms_activity_id: <%= @help_request.cms_activity_id %>
+  cms_revision_id: <%= @help_request.cms_revision_id %>
+<% if activity = @help_request.activity -%>
+  location: <%= activity.list_header %>
+  activity_title: <%= activity.title %>
+  activity_type: <%= activity.activity_type %>
+  component: <%= activity.component_name %>
+<% end -%>
+  activity_view: <%= @help_request.activity_state %>
+<% if @help_request.content_problem? -%>
+  selected_item_type: <%= @help_request.helpable_item_type %>
+  selected_item_id: <%= @help_request.helpable_item_id %>
+<% end -%>
+
+
+Environment
+==============
+  browser: <%= @help_request.browser_name %> <%= @help_request.browser_version %>
+  operating_system: <%= @help_request.operating_system %>
+  flash_version: <%= @help_request.flash_version %>
+  ip_address: <%= @help_request.ip_address %>
+  user_agent: <%= @help_request.user_agent_string %>
+  http_referer: <%= @help_request.http_referer %>
+

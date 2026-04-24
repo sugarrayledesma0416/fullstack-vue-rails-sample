@@ -1,0 +1,229 @@
+<activity activity_type="short_clips" language="es" title="Short clips activity">
+  <dl>Answer Juan Pablo's questions about your daily habits.</dl>
+  <items>
+    <reference type="character_list">
+      <character>
+        <image id="700"/>
+        <name>Aguayo</name>
+      </character>
+      <character>
+        <image id="701"/>
+        <name>Diana</name>
+      </character>
+    </reference>
+    <episode_synopsis sidebar_ref="1">Unos cuantos videos de ejemplo</episode_synopsis>
+    <video_clip>
+      <image id="702" />
+      <video id="704" />
+      <transcript>
+        <stage_directions>(Thinking about stage directions)</stage_directions>
+        <stage_directions>(Another stage directions)</stage_directions>
+        <turn>
+          <speaker>311</speaker>
+          <dialog>Not an even field to be on</dialog>
+        </turn>
+        <stage_directions>(Soundsystem, maybe?)</stage_directions>
+      </transcript>
+    </video_clip>
+    <video_clip>
+      <image id="703" />
+      <video id="705" />
+      <transcript>
+        <stage_directions>(Thinking about stage directions) 2</stage_directions>
+        <stage_directions>(Another stage directions) 2</stage_directions>
+        <turn>
+          <speaker>312</speaker>
+          <dialog>Not an even field to be on 2</dialog>
+        </turn>
+        <stage_directions>(Soundsystem, maybe?) 2</stage_directions>
+      </transcript>
+    </video_clip>
+  </items>
+  <sidebar ref="1">
+    <title>Expresiones útiles</title>
+    <reference type="phrase_chart">
+      <phrase_group>
+        <header>Talking with hotel personnel</header>
+        <phrase>
+          <foreign>¿En qué puedo servirles?</foreign>
+          <english>How can I help you?</english>
+          <audio id="137819"/>
+        </phrase>
+        <phrase>
+          <foreign>Tenemos una reservación.</foreign>
+          <english>We have a reservation.</english>
+          <audio id="137813"/>
+        </phrase>
+        <phrase>
+          <foreign>¿A nombre de quién?</foreign>
+          <english>In whose name?</english>
+          <audio id="137790"/>
+        </phrase>
+        <phrase>
+          <foreign>¿Quizás López? ¿Tal vez Díaz?</foreign>
+          <english>Maybe López? Maybe Díaz?</english>
+          <audio id="137820"/>
+        </phrase>
+        <phrase>
+          <foreign>Ahora lo veo, aquí está. Díaz.</foreign>
+          <english>Now I see it. Here it is. Díaz.</english>
+          <audio id="137796"/>
+        </phrase>
+        <phrase>
+          <foreign>Dos habitaciones en el primer piso para seis huéspedes.</foreign>
+          <english>Two rooms on the first floor for six guests.</english>
+          <audio id="137804"/>
+        </phrase>
+        <phrase>
+          <foreign>Aquí están las llaves.</foreign>
+          <english>Here are the keys.</english>
+          <audio id="137800"/>
+        </phrase>
+      </phrase_group>
+      <phrase_group>
+        <header>Describing a hotel</header>
+        <phrase>
+          <foreign>No está nada mal el hotel.</foreign>
+          <english>The hotel isn’t bad at all.</english>
+          <audio id="137801"/>
+        </phrase>
+        <phrase>
+          <foreign>Todo está tan limpio y cómodo.</foreign>
+          <english>Everything is so clean and comfortable.</english>
+          <audio id="137812"/>
+        </phrase>
+        <phrase>
+          <foreign>Es excelente.</foreign>
+          <english>It’s excellent.</english>
+          <audio id="137809"/>
+        </phrase>
+        <phrase>
+          <foreign>Es estupendo.</foreign>
+          <english>It's stupendous.</english>
+          <audio id="137799"/>
+        </phrase>
+        <phrase>
+          <foreign>Es fabuloso.</foreign>
+          <english>It's fabulous.</english>
+          <audio id="137791"/>
+        </phrase>
+        <phrase>
+          <foreign>Es fenomenal.</foreign>
+          <english>It's phenomenal.</english>
+          <audio id="137802"/>
+        </phrase>
+        <phrase>
+          <foreign>Es increíble.</foreign>
+          <english>It's incredible.</english>
+          <audio id="137816"/>
+        </phrase>
+        <phrase>
+          <foreign>Es magnífico.</foreign>
+          <english>It's magnificent.</english>
+          <audio id="137822"/>
+        </phrase>
+        <phrase>
+          <foreign>Es maravilloso.</foreign>
+          <english>It's marvelous.</english>
+          <audio id="137805"/>
+        </phrase>
+        <phrase>
+          <foreign>Es perfecto.</foreign>
+          <english>It's perfect.</english>
+          <audio id="137815"/>
+        </phrase>
+      </phrase_group>
+      <phrase_group>
+        <header>Talking about how you feel</header>
+        <phrase>
+          <foreign>Yo estoy un poco cansado.</foreign>
+          <english>I am a little tired.</english>
+          <audio id="137810"/>
+        </phrase>
+        <phrase>
+          <foreign>Yo estoy un poco cansada.</foreign>
+          <english>I am a little tired.</english>
+          <audio id="137795"/>
+        </phrase>
+        <phrase>
+          <foreign>Estoy confundido.</foreign>
+          <english>I’m confused.</english>
+          <audio id="137818"/>
+        </phrase>
+        <phrase>
+          <foreign>Estoy confundida.</foreign>
+          <english>I’m confused.</english>
+          <audio id="137793"/>
+        </phrase>
+        <phrase>
+          <foreign>Todavía estoy enojada contigo.</foreign>
+          <english>I’m still angry with you.</english>
+          <audio id="137807"/>
+        </phrase>
+        <phrase>
+          <foreign>Todavía estoy enojado contigo.</foreign>
+          <english>I’m still angry with you.</english>
+          <audio id="137823"/>
+        </phrase>
+        <phrase>
+          <foreign>Sigo enojado contigo.</foreign>
+          <english>I’m still angry with you.</english>
+          <audio id="137792"/>
+        </phrase>
+        <phrase>
+          <foreign>Sigo enojada contigo.</foreign>
+          <english>I’m still angry with you.</english>
+          <audio id="137808"/>
+        </phrase>
+      </phrase_group>
+      <phrase_group>
+        <header>Additional vocabulary</header>
+        <phrase>
+          <foreign>el frente frío</foreign>
+          <english>cold front</english>
+          <audio id="137821"/>
+        </phrase>
+        <phrase>
+          <foreign>el frente</foreign>
+          <english>front</english>
+          <audio id="137814"/>
+        </phrase>
+        <phrase>
+          <foreign>es igual</foreign>
+          <english>it’s the same</english>
+          <audio id="137806"/>
+        </phrase>
+        <phrase>
+          <foreign>entonces</foreign>
+          <english>so, then</english>
+          <audio id="137797"/>
+        </phrase>
+        <phrase>
+          <foreign>la crema de afeitar</foreign>
+          <english>shaving cream</english>
+          <audio id="137803"/>
+        </phrase>
+        <phrase>
+          <foreign>el balde</foreign>
+          <english>bucket</english>
+          <audio id="137811"/>
+        </phrase>
+        <phrase>
+          <foreign>afuera</foreign>
+          <english>outside</english>
+          <audio id="137824"/>
+        </phrase>
+        <phrase>
+          <foreign>el grito</foreign>
+          <english>scream</english>
+          <audio id="137798"/>
+        </phrase>
+        <phrase>
+          <foreign>la temporada</foreign>
+          <english>period of time</english>
+          <audio id="137817"/>
+        </phrase>
+      </phrase_group>
+    </reference>
+  </sidebar>
+</activity>

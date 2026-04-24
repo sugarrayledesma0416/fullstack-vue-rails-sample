@@ -1,0 +1,30 @@
+<% content_for(:css_head, stylesheet_link_tag("music/features/gradebook/manage_students/main")) %>
+<% content_for(:js_head, javascript_include_tag('gradepages')) %>
+
+<% content_for(:body_classes, "standard_layout wizard add_students  ns-music-v1  ns-gradebook  ns-manage-students") %>
+
+<div class="u-mar-bot-32  js-section-selector">
+  <%= form_tag(new_instructor_enrollment_path(program_id: current_program.id),
+                                              class: 'no_initial_foucs',
+                                              id: 'students_enrollment_form',
+                                              method: :get) do %>
+    <label for="section_id" class="f-label  u-txt-norm">
+      Select the section to which you want to add a student
+    </label>
+
+    <%  section_list = []
+        @sections.each{ |section| section_list << [section.name, section.id]} %>
+
+    <%= select(:section, :id, section_list,
+               { include_blank: "Select section",
+                 selected: selected_section(@sections,@selected_section) },
+               { class: 'c-select  js-section-select  u-mar-rt-8' }) %>
+    <%= hidden_field_tag :program_id, current_program.id%>
+    <%= hidden_field_tag :section_selector, true %>
+    <%= hidden_field_tag :return_to, @return_to %>
+    <%= submit_tag('Select', class: 'c-button  c-button--primary  js-section-submit', 'data-js-link' => 'select_section') %>
+  <% end %>
+</div>
+
+<%= link_to 'cancel', @return_to, class: 'f-link  f-link--caps' %>
+

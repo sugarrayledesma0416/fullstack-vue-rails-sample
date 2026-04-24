@@ -1,0 +1,91 @@
+<% content_for(:css_head, stylesheet_link_tag("ai/live_data/grading_input_rating_reports")) %>
+
+<div class="c-box  c-box--bubble-wrap  c-foil-panel">
+  <span class="u-txt-bold">Location:</span>
+  <a href="<%= @presenter.lesson_url %>"><%= @presenter.activity.lesson.name %></a>
+  &rarr;
+  <a href="<%= @presenter.strand_url %>"><%= @presenter.activity.lesson_strand_label %></a>
+  &rarr;
+  <%= content_tag(
+    :a,
+    @presenter.activity.title.html_safe,
+    {
+      href: activity_path(@presenter.activity)
+    }
+  ) %>
+  <br>
+  <span class="u-txt-bold">Direction Line:</span> <%= @presenter.activity.direction_line.html_safe %>
+  <br>
+  <span class="u-txt-bold">Question prompt:</span> <%= @presenter.question.html_friendly_prompt %>
+</div>
+
+<% @presenter.inputs.each do |input| %>
+  <div class="c-box  c-box--bubble-wrap  c-foil-panel" id="<%= "input-#{input.id}" %>">
+    <div class="c-box  c-box--bubble-wrap">
+      <div class="u-txt-bold">
+        Student Answer:
+      </div>
+      <div>
+        <%= input.student_response.html_safe %>
+      </div>
+    </div>
+    <% if @presenter.overall_comments_stats_for_input(input).present? %>
+      <% @presenter.overall_comments_stats_for_input(input).each do |overall_comment| %>
+        <div class="c-box  c-box--bubble-wrap  u-mar-bot-4">
+          <div class="u-mar-bot-4">
+            <span class="u-txt-bold">Overall Comment: </span><%= overall_comment.overall_comment %>
+          </div>
+          <div class="u-mar-bot-4">
+            <span class="u-txt-bold">Explanation: </span><%= overall_comment.explanation %>
+          </div>
+          <div class="u-mar-bot-4">
+            <span class="u-txt-bold">Rejected: </span>
+            Rejected <%= pluralize(overall_comment.rejected_count, 'time') %>
+            (Accepted <%= pluralize(overall_comment.accepted_count, 'time') %>).
+          </div>
+          <% if overall_comment.rater_comments.present? %>
+            <div class="u-mar-bot-4">
+              <span class="u-txt-bold">Rater comments:</span>
+              <ul>
+                <% overall_comment.rater_comments.each do |comment| %>
+                  <li>
+                    <%= comment %>
+                  </li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    <% end %>
+    <% if @presenter.grading_suggestions_stats_for_input(input).present? %>
+      <% @presenter.grading_suggestions_stats_for_input(input).each do |grading_suggestion| %>
+        <div class="c-box  c-box--bubble-wrap  u-mar-bot-4">
+          <div class="u-mar-bot-4">
+            <span class="u-txt-bold">Incorrect Text: </span><%= grading_suggestion.incorrect_text %>
+          </div>
+          <div class="u-mar-bot-4">
+            <span class="u-txt-bold">Explanation: </span><%= grading_suggestion.explanation %>
+          </div>
+          <div class="u-mar-bot-4">
+            <span class="u-txt-bold">Rejected:</span>
+            Rejected <%= pluralize(grading_suggestion.rejected_count, 'time') %>
+            (Accepted <%= pluralize(grading_suggestion.accepted_count, 'time') %>).
+          </div>
+          <% if grading_suggestion.rater_comments.present? %>
+            <div class="u-mar-bot-4">
+              <span class="u-txt-bold">Rater comments:</span>
+              <ul>
+                <% grading_suggestion.rater_comments.each do |comment| %>
+                  <li>
+                    <%= comment %>
+                  </li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>

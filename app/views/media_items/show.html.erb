@@ -1,0 +1,10 @@
+<% case @media_item.media_type
+  when 'audio' then -%>
+    <%= render( :partial => 'audio_player', :locals => {:media_item => @media_item} ) %>
+  <% when 'video' then %>
+    <%= render :partial => 'video_player', :locals => {:media_item => @media_item, :record_button_for_question => @record_button_for_question} %>
+  <% when 'image' then %>
+    <%= display_media_item(@media_item) %>
+  <% when 'other' then -%>
+    <a href="<%= @media_item.public_filename %>">Right click to download</a>
+<% end -%>

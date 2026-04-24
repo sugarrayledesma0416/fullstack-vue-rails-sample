@@ -1,0 +1,626 @@
+@import 'music/library/v1/base/main';
+/**********************i***********************************/
+/*                   DIRECTION LINE                      */
+/*********************************************************/
+
+.activity-visibility-message {
+  color: #737373;
+  display: inline-block;
+  font-size: 10px;
+  font-weight: bold;
+  line-height: 14px;
+}
+
+/* Activity Shell Overrides */ 
+.created_activity #activity_shell {
+  min-height: rpx(500);
+}
+
+.created_activity #activity_attempts {
+  margin-left: 20px;
+  width: 100px;
+}
+
+#current_strand_name {
+  padding-top: 0px;
+  margin-bottom: 0px;
+}
+
+#return_to {
+  vertical-align: top;
+}
+
+/* body.vol.activities .instructions-frame is overriding
+ * body.vol.activities .instructions-frame in vol_overrides.scss
+ * No overriding of the .instructions-frame is needed for SS */
+body.vol.activities .instructions-frame,
+.instructions-frame {
+  height: 20px;
+  margin-bottom: 5px;
+  margin-top: 0px;
+}
+
+/* Activity Type in Strand Area */
+.activity-type {
+  color: #ACACAC;
+  display: inline-block;
+  font-size: 14px;
+  margin: 0 auto;
+}
+
+.activity-type div {
+  display: inline-block;
+}
+
+/* Title Area */
+.title-editing-controls {
+  display: inline-block;
+  font-size: 18px;
+  line-height: 20px;
+  margin-bottom: 5px;
+  margin-right: 10px;
+  padding-right: 20px;
+  position: relative;
+  vertical-align: top;
+}
+
+/* Direction Line */
+.direction-line-editing-controls {
+  display: block;
+  font-size: 14px;
+  line-height: 15px;
+  margin-bottom: 5px;
+  padding-right: 20px;
+  position: relative;
+  width: 730px;
+}
+
+/* General Links */
+a.link {
+  border: 1px solid #CCC;
+  display: inline-block;
+  height: 20px;
+  font-size: 12px;
+  padding: 0px;
+  overflow: hidden;
+  text-indent: -999em;
+  width: 20px;
+  vertical-align: top;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+}
+
+input.red-button.disabled {
+  background-color: #ccc;
+  border-color: #ccc;
+  color: #FFF;
+  cursor: default;
+  pointer-events: none;
+}
+
+a.disabled,
+div.disabled {
+  cursor: default;
+  pointer-events: none;
+}
+
+a.disabled {
+  color: #959595;
+}
+
+/* Fixes for Lists */
+ul {
+  list-style-position: inside;
+  list-style-type: disc;
+}
+
+ol {
+  list-style-position: inside;
+}
+
+ol li {
+  padding-left: 0px;
+}
+
+.created_activity ol.answers li ul,
+.created_activity ol.answers li ol,
+.created_activity ol.answers li li {
+  line-height: 20px;
+  margin: 0px;
+  padding: 0px;
+}
+
+ol.answers li {
+  padding-left: 0px;
+}
+
+/* Edit and Delete Icons */
+.edit-icon {
+  background: image-url('IGC_pen_icon.png') no-repeat top right;
+  cursor: pointer;
+  display: inline-block;
+  padding-right: 15px;
+}
+
+.edit-icon.title  { background-position: top 5px right; }
+.edit-icon.dl     { background-position: top 2px right; }
+.edit-icon.prompt { background-position: top 7px right; }
+
+.edit-icon.has-video {
+  display: inline-block;
+  height: 20px;
+  padding-right: 0px;
+  width: 15px;
+}
+
+.delete-icon {
+  background: image-url('IGC_trashcan_icon.png') no-repeat top 1px right 5px;
+  cursor: pointer;
+  display: inline-block;
+  height: 13px;
+  width: 15px;
+}
+
+/*********************************************************/
+/*                       REFERENCES                      */
+/*********************************************************/
+
+.instructor-created-references {
+  border-top: 2px dotted #CCC;
+  padding-top: 10px;
+}
+
+.reference-title {
+  color: #959595;
+  font-size: 11px;
+  margin-bottom: 5px;
+}
+
+/* Links for Adding References */
+.reference-types {
+  padding-bottom: 20px;
+}
+
+.reference-type {
+  background: url('/images/reference-add.png') left 3px no-repeat;
+  color: #1A78C5;
+  display: inline-block;
+  margin-right: 15px;
+  padding-left: 20px;
+}
+
+.reference-item {
+  clear: both;
+  margin-top:10px;
+}
+
+
+/* Edit / Removing References */
+.reference-controls {
+  display: inline-block;
+  float: right;
+  margin-left: 10px;
+  padding-top: 5px;
+  vertical-align: top;
+}
+
+.reference-controls.image {
+  display: block;
+  float: none;
+  margin-left: 0px;
+  text-align: right;
+}
+
+.reference-controls.video {
+  display: block;
+  float: none;
+}
+
+.remove_fields, .edit_fields {
+  cursor: pointer;
+}
+
+/* Modal General */
+.cancel_link {
+  padding-top: 5px;
+}
+
+.reference-save {
+  clear: both;
+  float: right;
+}
+
+.red-button {
+  min-height: 17px;  
+}
+
+.ui-dialog .ui-dialog-title {
+  font-size: 13px;
+  font-weight: normal;
+}
+
+.button_links {
+  height: 25px;
+  margin-top: 30px;
+}
+
+#reference_modal textarea,
+textarea#activity-video-url {
+  max-width: 455px;
+  padding: 5px;
+  resize: vertical;
+}
+
+#reference_modal label {
+  display: inline-block;
+  margin-right: 0px;
+  margin-bottom: 2px;
+  padding-top: 0px;
+}
+
+
+/*********************************************************/
+/*                      TEXT REFERENCE                   */
+/*********************************************************/
+
+/* Text Reference Modal */
+.reference-form {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.reference-form label {
+  display: inline-block;
+  margin-right: 0px;
+  padding: 0px;
+  vertical-align: top;
+  width: 50px;
+}
+
+.reference-form span.optional {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.reference-form.body label {
+  width: 109px;
+}
+
+/* Text References General */
+.text-reference {
+  display: inline-block;
+}
+
+.reference-header {
+  color: #969696;
+  display: inline-block;
+  float: left;
+  font-size: 12px;
+  font-weight: bold;
+  margin-right: 30px;
+  padding-top: 5px;
+  position: relative;
+  vertical-align: top;
+}
+
+.reference_model_content {
+  color: #565656;
+  display: block;
+  max-width: 750px;
+  min-height: 23px;
+  overflow: hidden;
+}
+
+/* Since the Text Reference works for both
+text references and modelos, we have slightly
+different styling depending on whether it has
+a header */
+.reference_model_content.has_header {
+  color: #1D3F78;
+}
+
+/*********************************************************/
+/*                   WORDBANK REFERENCE                  */
+/*********************************************************/
+
+.wordbank-reference {
+  display: inline-block;
+  float: left;
+}
+
+.wordbank-reference .wordbank {
+  float: left;
+}
+
+/*********************************************************/
+/*                     AUDIO REFERENCE                   */
+/*********************************************************/
+
+.reference-audio {
+  margin-left: 10px;
+}
+
+.reference-audio .remove_fields,
+.reference-audio .edit_fields {
+  vertical-align: top;
+}
+
+.record_label {
+  color: #1D3E6A;
+  font-size: 11px;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+/*********************************************************/
+/*                     VIDEO REFERENCE                   */
+/*********************************************************/
+
+#video_player,
+#video_controls .arc-controls {
+  text-align: center;
+}
+
+#video_controls .volume_spinner {
+  display: none;
+}
+
+
+/*********************************************************/
+/*                     IMAGE REFERENCE                   */
+/*********************************************************/
+
+.image-upload {
+  padding: 0px 4px;
+}
+
+/* Fine Uploader Overrides */
+#reference_modal .qq-upload-button {
+  display: inline-block;
+  float: none;
+  margin-bottom: 18px;
+  vertical-align: bottom;
+}
+
+#reference_modal ul.qq-upload-list {
+  display: inline-block;
+  float: none;
+  margin-left: 23px;
+  margin-top: 0px!important; /* Overcome default fineuploader settings */
+  width: 345px;
+}
+
+#reference_modal .qq-upload-file-selector,
+#reference_modal .qq-upload-size {
+  color: #565656;
+  display: inline-block;
+  float: none;
+  font-size: 11px;
+  line-height: 13px;
+  margin-right: 0px;
+  vertical-align: top;
+}
+
+.upload-errors {
+  margin-left: 135px;
+  margin-top: 5px;
+  width: 330px;
+}
+
+/* Override default list size for FineUploader */
+#reference_modal ul.qq-upload-list li {
+  min-height: 40px;
+  max-height: 40px;
+  padding: 20px 0px 0px 0px;
+}
+
+#reference_modal input.qq-edit-filename {
+  display: none;
+}
+
+#reference_modal .qq-thumbnail-selector {
+  margin-right: 10px;
+  max-height: 50px;
+}
+
+/* Image Reference Modal General */
+.fine-uploader-message {
+  display: block;
+  font-weight: bold;
+  margin-left: 135px;
+  padding: 5px 0px 5px 35px;
+}
+
+.success {
+  background: url('/images/icons-upload-message.png') 0px 0px no-repeat;
+  color: #73A55F;
+}
+
+.failure {
+  background: url('/images/icons-upload-message.png') 0px -40px no-repeat;
+  color: #982E2A;
+}
+
+.no-image-file {
+  float: right;
+  padding-top: 8px;
+  width: 348px;
+}
+
+/* Image Reference General */
+.image-filename {
+  color: #7A7A7A;
+  display: inline-block;
+  font-size: 11px;
+  line-height: 13px;
+  margin-bottom: 10px;
+}
+
+.created-image {
+  display: block;
+  float: left;
+  width: 100%;
+}
+
+.image-container {
+  display: inline-block;
+}
+
+/*********************************************************/
+/*                     ACTIVITY BODY                     */
+/*********************************************************/
+
+/* Prompt */
+.created_activity .answer_positioning,
+.created_activity.composition .answer_positioning {
+  padding: 0px;
+  max-width: 100%;
+  width: 100%;
+}
+
+.activity-question-prompt {
+  color: #1B3D6B;
+  display: inline-block;
+  font-size: 14px;
+}
+
+.question_prompt {
+  display: inline-block;
+  width: 800px;
+}
+
+/* Engine Description */
+.engine_label {
+  background: url('/images/dots-top-blue.png') top repeat-x;
+  margin: 25px 0px;
+}
+
+.engine_label.partner_chat {
+  margin: 15px 0px;
+  width: 460px;
+}
+
+.engine-text {
+  color: #7A7A7A;
+  display: inline-block;
+  font-size: 11px;
+  line-height: 12px;
+  margin-top: 10px;
+  vertical-align: top;
+}
+
+.dots-left {
+  background: url('/images/dots-side-left-blue.png') bottom repeat-y;
+  display: inline-block;
+  height: 22px;
+  margin-right: 10px;
+  width: 2px;
+}
+
+.dots-right {
+  background: url('/images/dots-side-right-blue.png') bottom repeat-y;
+  display: inline-block;
+  height: 22px;
+  float: right;
+  width: 2px;
+}
+
+/* Video Engine */
+.video-container {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+}
+
+.video-links {
+  margin-top: 20px;
+  text-align: left;
+  padding: 0px 20px;
+}
+
+.video-controls {
+  float:right;
+}
+
+.reference-controls .video-controls {
+  float:none;
+  margin-left:295px;
+}
+
+/*********************************************************/
+/*                     PARTNER CHAT                      */
+/*********************************************************/
+
+/* Shrink Main Content area */
+.created_partner_chat [id="testFrame"] {
+  float: left;
+  width: 515px;
+}
+
+/* Reference Changes */
+.created_partner_chat .references-container {
+  display: inline-block;
+  margin-top: 76px;
+  width: 385px;
+}
+
+.created_partner_chat table.reference_wordbank {
+  min-width: 350px;
+  max-width: 350px;
+}
+
+.created_partner_chat img.image-reference {
+  max-width: 385px;
+}
+
+.created_partner_chat .wordbank-reference {
+  float: none;
+}
+
+.created_partner_chat .created-image {
+  float: none;
+  text-align: right;
+}
+
+.created_partner_chat .reference-item {
+  margin-bottom: 30px;
+}
+
+
+/*********************************************************/
+/*                    ENGINE PREVIEWS                    */
+/*********************************************************/
+
+.composition_engine_example {
+  background: url('/images/example_composition_2.png') no-repeat;
+  clear: both;
+  display: block;
+  height: 370px;
+  margin-left: 15px;
+}
+
+.audio_composition_engine_example {
+  background: url('/images/example_audio_composition.png') no-repeat;
+  clear: both;
+  display: block;
+  height: 370px;
+  width: 840px;
+}
+
+.partner_chat_engine_example {
+  background: url('/images/example_partner_chat.png') no-repeat;
+  clear: both;
+  display: block;
+  height: 320px;
+  width: 475px;
+}
+
+.video-container {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.video-container .volume_spinner {
+  display: none;
+}

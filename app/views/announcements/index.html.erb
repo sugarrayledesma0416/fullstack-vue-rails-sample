@@ -1,0 +1,34 @@
+<% content_for(:body_classes, '  ns-communication') %>
+<% content_for(:js_head, javascript_tag('notifications')) %>
+<% content_for(:css_head, stylesheet_link_tag('music/features/communication/main')) %>
+
+<%= content_for(
+      :navigation,
+      render(
+        'app_shell/navbar_section/main',
+        section: current_section,
+        program: current_program
+      )
+    ) %>
+
+<div>
+  <div class="u-mar-bot-16  u-mar-top-neg-12">
+    <%= link_to course_section_path(@current_section.course, current_section),
+                class: "u-mar-bot-16" do %>
+      <%= Music::Components.icon(variant: 'return',text: '') %>
+      Return to Dashboard
+    <% end %>
+  </div>
+
+  <%= render(
+        'partials/communications_content',
+        communication_type: 'announcements',
+        new_path: section_announcements_path(
+          section_id: params[:section_id], page_type: 'new'
+        ),
+        notifications: @notifications,
+        viewed_path: section_announcements_path(
+          section_id: params[:section_id], page_type: 'dismissed'
+        )
+      ) %>
+</div>

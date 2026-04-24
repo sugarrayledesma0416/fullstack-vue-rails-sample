@@ -1,0 +1,52 @@
+{
+ "activity_type": "fill_in_the_blanks",
+ "question_count": 0,
+ "style": {
+  "Style": {
+   "item_numbers": true
+  }
+ },
+ "assessment_type": null,
+ "callout_icon": null,
+ "config": null,
+ "diagnostic_reference": null,
+ "dl": {
+  "node_text": "<p>test</p>"
+ },
+ "dl_audio": null,
+ "external_references": [],
+ "ignore_title": null,
+ "included_content": null,
+ "is_bonus": null,
+ "items": [
+  {
+   "Item": {
+    "points_possible": 2,
+    "prompt": {
+     "Prompt": {
+      "node": {
+       "node_text": "Abcdef<wol ref=\"1\"/> ghij"
+      },
+      "wols": [
+       {
+        "WriteOnLine": {
+         "answers": [
+          "answer1"
+         ],
+         "ref": "1"
+        }
+       }
+      ]
+     }
+    },
+    "question_number": 1,
+    "rank": 1,
+    "sidebar_ref": null
+   }
+  }
+ ],
+ "language": "es",
+ "media_items": [],
+ "strict_media_requirements": null,
+ "title": ""
+}

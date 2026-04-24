@@ -1,0 +1,41 @@
+<sl-dialog  class="js-section-selector-dialog">
+  <span slot="label">Add Students</span>
+  <l-stack-v3 class="u-mar-bot-16" gap="lg">
+    <%= form_tag(new_instructor_enrollment_path(program_id: current_program.id),
+                class: 'no_initial_focus',
+                id: 'section_selector_form',
+                method: :get) do %>
+        
+      <% section_list = []
+        @sections.each { |section| section_list << [section.name, section.id] } %>
+    
+      <sl-select 
+        name="section[id]" 
+        label="Select Section"
+        size="large"
+        hoist
+        pill
+        class="u-mar-4  js-section-select">
+        <% section_list.each do |section, id| %>
+          <sl-option value="<%= id %>"><%= section %></sl-option>
+        <% end %>
+      </sl-select>
+      <%= hidden_field_tag :program_id, current_program.id %>
+      <%= hidden_field_tag :section_selector, true %>
+      <%= hidden_field_tag :return_to, @return_to %>  
+    <% end %>
+  </l-stack-v3>
+  <l-line-v3 slot="footer" align-x="between">
+    <sl-button 
+      class="sl-button-v3  sl-button-v3--tertiary  js-cancel-section-selector"
+      type="button">
+      Cancel
+    </sl-button>
+    <sl-button
+      type="submit"
+      form="section_selector_form"
+      class="sl-button-v3  sl-button-v3--primary">
+      Select
+    </sl-button>
+  </l-line-v3>
+  </sl-dialog>

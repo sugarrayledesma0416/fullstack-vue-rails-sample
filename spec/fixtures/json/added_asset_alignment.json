@@ -1,0 +1,26 @@
+{
+  "links": {
+    "self": "https://api.abconnect.certicaconnect.com/rest/v4.1/assets/30F68E62-A25B-11ED-9CB7-FF7D19B583DC/alignments?fields%5Bstandards%5D=statement.descr,standard_type,number.enhanced"
+  },
+  "data": [
+    {
+      "type": "standards",
+      "id": "CEDEB8C9-67AD-11DF-AB5F-995D9DFF4B22",
+      "attributes": {
+        "statement": {
+          "descr": "With prompting and support, ask and answer questions about key details in a text."
+        },
+        "standard_type": "objective",
+        "number": {
+          "enhanced": "CCSS.ELA-Literacy.RI.K.1"
+        }
+      }
+    }
+  ],
+  "meta": {
+    "offset": 100,
+    "count": 1,
+    "took": 276,
+    "limit": 100
+  }
+}

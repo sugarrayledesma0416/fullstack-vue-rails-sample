@@ -1,0 +1,34 @@
+@import 'music/library/v1/base/main';
+/* ================================================================== *
+    
+    External References
+
+* =================================================================== */
+
+.c-external-references {
+  display: inline-flex;
+  align-items: center;
+}
+
+.c-external-references__reference {
+  margin-right: 1rem;
+}
+
+.c-external-references__reference-icon {
+  display: inline-block;
+  > svg {
+    height: 0.5rem;
+    width: auto;
+  }
+}
+
+.c-external-references__reference-link {
+  display: inline-block;
+  padding-left: 0.25rem;
+  padding-right: 1rem;
+  font-size: 0.9rem;
+
+  &:last-of-type {
+    padding-right: 0;
+  }
+}

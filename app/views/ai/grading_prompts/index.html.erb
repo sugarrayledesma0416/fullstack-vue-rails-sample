@@ -1,0 +1,156 @@
+<div class="u-dis-flex">
+  <div>
+    <h2>Grading Suggestion Prompts</h2>
+
+    <% if @presenter.using_ai_core_for_grading_suggestions? %>
+      <div class="u-mar-bot-16 u-pad-8 u-bor-rad-4" style="background-color: #e3f2fd; border: 1px solid #1976d2;">
+        <strong>⚙️ AI Core Integration Active</strong><br>
+        Prompts are managed by AI Core. M3 prompts can be created for testing but cannot be set as active.
+      </div>
+    <% end %>
+
+    <div class="u-mar-bot-16">
+      <%= link_to(
+            'New M3 Only Grading Suggestion Prompt',
+            new_ai_grading_prompt_path,
+            class: 'c-button c-button--border'
+          ) %>
+    </div>
+    <% @presenter.grading_suggestion_prompts.each do |prompt| %>
+      <div class="u-mar-bot-24 u-pad-16 u-bor-rad-4" style="border: 2px solid <%= prompt.source == 'ai_core' ? '#1976d2' : (prompt.source == 'experiment' ? '#ff9800' : '#757575') %>;">
+        <div class="u-dis-flex u-jus-con-spa-bet u-ali-ite-cen u-mar-bot-8">
+          <div>
+            <span class="u-pad-4 u-bor-rad-4 u-tex-siz-12" style="background-color: <%= prompt.source == 'ai_core' ? '#e3f2fd' : (prompt.source == 'experiment' ? '#fff3e0' : '#f5f5f5') %>; color: <%= prompt.source == 'ai_core' ? '#1976d2' : (prompt.source == 'experiment' ? '#f57c00' : '#424242') %>;">
+              <%= prompt.source == 'm3' ? 'M3 ONLY' : prompt.source.upcase %>
+            </span>
+            <% if prompt.ai_core_experiment_name.present? %>
+              <span class="u-pad-4 u-bor-rad-4 u-tex-siz-12 u-mar-lef-8" style="background-color: #fff3e0; color: #f57c00;">
+                <%= prompt.ai_core_experiment_name %>
+                <% if prompt.parameters.dig('experiment_metadata', 'variant_count') %>
+                  (<%= prompt.parameters.dig('experiment_metadata', 'variant_count') %> variants)
+                <% end %>
+              </span>
+            <% end %>
+          </div>
+          <div>
+            <% if prompt.active_for_instructor_grading? %>
+              <span class="u-pad-4 u-bor-rad-4 u-tex-siz-12" style="background-color: #e8f5e8; color: #2e7d32;">
+                ✓ ACTIVE
+              </span>
+            <% end %>
+          </div>
+        </div>
+        
+        <div class="u-mar-bot-8">
+          <b>ID:</b> 
+          <% if prompt.active_for_instructor_grading? || prompt.source == 'ai_core' %>
+            <%= prompt.id %>
+            <% if prompt.source == 'ai_core' %>
+              <span class="u-tex-siz-12" style="color: #1976d2;">(Read-only - managed by AI Core)</span>
+            <% end %>
+          <% else %>
+            <%= link_to(
+                  prompt.id,
+                  edit_ai_grading_prompt_path(id: prompt.id)
+                ) %>
+          <% end %>
+        </div>
+        <div><b>Provider:</b> <%= prompt.provider %></div>
+        <div><b>Model:</b> <%= prompt.model %></div>
+        <div><b>Temperature:</b> <%= prompt.temperature %></div>
+        <div><b>Content Hash:</b> <code class="u-tex-siz-12"><%= prompt.content_hash[0..12] %>...</code></div>
+        <div><b>Body</b></div>
+
+        <div class="u-pad-16 u-bor-rad-4" style="background-color: #f8f9fa; white-space: pre-wrap; word-wrap: break-word; max-width: 100%; overflow-wrap: break-word;"><%= prompt.template_body %></div>
+      </div>
+
+      <% stats = @presenter.grading_suggestion_stats(prompt.id) %>
+      <%= render('stats', stats:) %>
+
+      <div class="u-mar-bot-16">
+        <%= link_to(
+              'Generate internal grading suggestions',
+              ai_grading_prompt_generate_internal_grading_suggestions_path(grading_prompt_id: prompt.id),
+              class: 'c-button  c-button--border'
+            ) %>
+      </div>
+    <% end %>
+  </div>
+  <div>
+    <h2>Overall Comment Prompts</h2>
+
+    <% if @presenter.using_ai_core_for_overall_comments? %>
+      <div class="u-mar-bot-16 u-pad-8 u-bor-rad-4" style="background-color: #e3f2fd; border: 1px solid #1976d2;">
+        <strong>⚙️ AI Core Integration Active</strong><br>
+        Prompts are managed by AI Core. M3 prompts can be created for testing but cannot be set as active.
+      </div>
+    <% end %>
+
+    <div class="u-mar-bot-16">
+      <%= link_to(
+            'New M3 Only Overall Comment Prompt',
+            new_ai_grading_prompt_path(prompt_type: 'overall'),
+            class: 'c-button c-button--border'
+          ) %>
+    </div>
+    <% @presenter.overall_comment_prompts.each do |prompt| %>
+      <div class="u-mar-bot-24 u-pad-16 u-bor-rad-4" style="border: 2px solid <%= prompt.source == 'ai_core' ? '#1976d2' : (prompt.source == 'experiment' ? '#ff9800' : '#757575') %>;">
+        <div class="u-dis-flex u-jus-con-spa-bet u-ali-ite-cen u-mar-bot-8">
+          <div>
+            <span class="u-pad-4 u-bor-rad-4 u-tex-siz-12" style="background-color: <%= prompt.source == 'ai_core' ? '#e3f2fd' : (prompt.source == 'experiment' ? '#fff3e0' : '#f5f5f5') %>; color: <%= prompt.source == 'ai_core' ? '#1976d2' : (prompt.source == 'experiment' ? '#f57c00' : '#424242') %>;">
+              <%= prompt.source == 'm3' ? 'M3 ONLY' : prompt.source.upcase %>
+            </span>
+            <% if prompt.ai_core_experiment_name.present? %>
+              <span class="u-pad-4 u-bor-rad-4 u-tex-siz-12 u-mar-lef-8" style="background-color: #fff3e0; color: #f57c00;">
+                <%= prompt.ai_core_experiment_name %>
+                <% if prompt.parameters.dig('experiment_metadata', 'variant_count') %>
+                  (<%= prompt.parameters.dig('experiment_metadata', 'variant_count') %> variants)
+                <% end %>
+              </span>
+            <% end %>
+          </div>
+          <div>
+            <% if prompt.active_for_instructor_grading? %>
+              <span class="u-pad-4 u-bor-rad-4 u-tex-siz-12" style="background-color: #e8f5e8; color: #2e7d32;">
+                ✓ ACTIVE
+              </span>
+            <% end %>
+          </div>
+        </div>
+
+        <div class="u-mar-bot-8">
+          <b>ID:</b> 
+          <% if prompt.active_for_instructor_grading? || prompt.source == 'ai_core' %>
+            <%= prompt.id %>
+            <% if prompt.source == 'ai_core' %>
+              <span class="u-tex-siz-12" style="color: #1976d2;">(Read-only - managed by AI Core)</span>
+            <% end %>
+          <% else %>
+            <%= link_to(
+                  prompt.id,
+                  edit_ai_grading_prompt_path(id: prompt.id, prompt_type: 'overall')
+                ) %>
+          <% end %>
+        </div>
+        <div><b>Provider:</b> <%= prompt.provider %></div>
+        <div><b>Model:</b> <%= prompt.model %></div>
+        <div><b>Temperature:</b> <%= prompt.temperature %></div>
+        <div><b>Content Hash:</b> <code class="u-tex-siz-12"><%= prompt.content_hash[0..12] %>...</code></div>
+        <div><b>Body</b></div>
+
+        <div class="u-pad-16 u-bor-rad-4" style="background-color: #f8f9fa; white-space: pre-wrap; word-wrap: break-word; max-width: 100%; overflow-wrap: break-word;"><%= prompt.template_body %></div>
+      </div>
+
+      <% stats = @presenter.overall_comment_stats(prompt.id) %>
+      <%= render('stats', stats:) %>
+      
+      <div class="u-mar-bot-16">
+        <%= link_to(
+              'Generate internal overall comments',
+              ai_grading_prompt_generate_internal_overall_comments_path(grading_prompt_id: prompt.id),
+              class: 'c-button  c-button--border'
+            ) %>
+      </div>
+    <% end %>
+  </div>
+</div>

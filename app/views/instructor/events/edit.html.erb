@@ -1,0 +1,30 @@
+<% content_for(:css_head, stylesheet_link_tag("dashboard")) %>
+<div data-container="event_wizard" class="event_wizard">
+  <% if @event.editable_by?(current_user)%>
+    <%= form_for([:instructor, @event], 
+                :url => {:action => 'update',
+                :id => @event.id}, 
+                :html => {:method => :put}) do |form| %>
+
+      <%= render 'form', :form => form %>
+    <% end %>
+    <% confirm_message = "Are you sure you want to remove the event '#{@event.name}' from your calendar?" %>
+    <%= link_to("Delete", '#', { :onclick => "if ( confirm(\"#{confirm_message}\") ) $(this).event_wizard('submit', 'delete'); return false;",
+                                 :class => 'delete_link',
+                                 'data-content-type' => 'Delete link' } ) %>
+      
+  <% else %>
+    <div class="access_denied"> Only the owner(<%= @event.owner_full_name%>) of the events/holiday can edit it.  </div>
+  <% end %>
+
+  <div id="additional_links">
+    <div class="cancel_link">
+      <%= link_to "cancel", "#", :onclick => '$(this).event_wizard("close"); return false;', 'data-content-type' => 'Cancel link' %>
+    </div>
+    <% if @event.editable_by?(current_user)%>
+      <div class="link_savechanges">
+        <%= submit_tag 'save', :id => 'update-button', 'data-button' => 'submit', :onclick => 'return $(this).event_wizard("submit");', :class => "red-button prevent-default update-button"  %>
+      </div>
+    <% end %>
+  </div>
+</div>

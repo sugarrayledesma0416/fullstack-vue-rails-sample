@@ -1,0 +1,56 @@
+<%
+   filter             = presenter.filter
+   categories         = presenter.categories
+   weeks              = presenter.weeks
+   start_date         = presenter.start_date
+   end_date           = presenter.end_date
+   previous_sections  = presenter.previous_sections
+%>
+<div id="previously_assigned" class="filter_groups ui-helper-clearfix">
+  <div class="disabled hidden_helper"></div>
+  <h3>Previously Assigned</h3>
+  <span class="summary_sentence"><%= presenter.summary_sentences[:previously_assigned].html_safe %></span>
+  <div class="edit_summary_sentence"><%= link_to 'edit >', '#', 'data-js-link' => 'toggle_filters_previous' %></div>
+
+  <div class="filter_options hidden_helper">
+
+  <div id="previous_sections">
+    <%= f.label :previous_section_id, 'Previous Section' %>
+
+    <div data-js-select="previous_section" class="select_wrapper  u-dis-inline-block">
+    <%= f.select(:previous_section_id,
+    previous_sections.collect {|section| ["#{section.course.name} - #{section.name}", section.id]},
+    {:include_blank => 'None', :selected => filter.previous_section_id},
+    {'data-js-change' => 'copy_previous', class: "c-select  c-select--assignment-filter"}) %>
+    </div>
+
+  </div>
+  <div id="category">
+    <%= f.label :category_id, 'Category' %>
+
+    <div data-js-select="previous_category" class="select_wrapper  u-dis-inline-block">
+    <%= f.select(:category_id,
+                 categories.collect {|c| [c.name, c.id]},
+                 { :include_blank => 'All Categories',
+                   :selected => filter.category_id},
+                   {:disabled => !filter.previous_section_id, class: "c-select  c-select--assignment-filter" } ) %>
+    </div>
+  </div>
+  <div id="week">
+    <div id="section_disabled_explanation" style="display:none;" >Please select a previous section to enable this filter</div>
+    <%= f.label :week, 'Week' %>
+
+    <div data-js-select="previous_week" class="select_wrapper  u-dis-inline-block">
+    <%= f.select(:week, options_for_select(weeks.to_enum(:each_with_index).collect {|wk, i| ["Week #{i+1}", wk]}, 
+    (filter.week.blank? ?  "" : Date.parse(filter.week) )),
+    { :include_blank => 'All Weeks'}, 
+    {:disabled => !filter.previous_section_id, 'data-js-change' => 'reset', class: "c-select  c-select--assignment-filter"} ) %>
+    </div>
+
+  </div>
+  </div>
+  <div class="filter_links hidden_helper">
+    <%= link_to 'cancel', '#', :class => 'cancel', 'data-js-link' => 'toggle_filters_previous' %>
+    <%= f.submit "apply", :id => 'previous_section_filter_submit', :class => 'red-button' %>
+  </div>
+</div>

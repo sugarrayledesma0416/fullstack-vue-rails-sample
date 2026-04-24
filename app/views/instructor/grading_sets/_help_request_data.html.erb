@@ -1,0 +1,13 @@
+<% json_help_request_data = format_help_request_data( current_program,
+                                                      section,
+                                                      students,
+                                                      activity,
+                                                      'completed',
+                                                      request.fullpath,
+                                                      params ) %>
+
+<% json_help_request_data[:question_id] = question_id || '' %>
+
+<div class="js-help-request-rails-data"
+     data-from-dom="<%= json_help_request_data.to_json %>" />
+</div>

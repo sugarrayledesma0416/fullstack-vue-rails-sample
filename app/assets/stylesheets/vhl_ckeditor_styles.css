@@ -1,0 +1,54 @@
+.instructor_deletion{
+	text-decoration: line-through !important;
+	color: Red !important;
+	}
+
+.instructor_addition{
+	font-weight: bold !important;
+  color: Red !important;
+  text-decoration: underline;	
+	background-color:white !important;
+}
+
+.instructor_no_correction{
+	color: Black !important;
+	font-weight: normal !important;
+}
+
+.deletion_decor{
+	cursor:pointer !important;	
+}
+
+.recording_decor {
+  cursor:pointer !important;
+}
+
+.instructor_comment{
+  text-decoration:none !important;
+	font-weight: bold !important;
+  color: white !important;
+	background-color:red !important;
+	margin-left: 2px;
+	margin-right: 2px;
+	border-right-width: 1px;
+	border-left-width: 1px;
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+	border-style: solid;
+	border-color: red;
+	text-decoration: none;
+	font-style: normal;
+}
+
+/*
+.comment_cursor{
+	cursor: url("/media/images/common/proofing_alert.gif"), pointer !important;
+}
+
+.correction_cursor{
+	cursor: url("/media/images/common/proofing_flag_postponed.gif"), pointer !important;
+}*/
+
+.play, .record{
+  cursor: pointer !important
+}

@@ -1,0 +1,725 @@
+{ "activities" : [ 
+      { "MultipleChoiceContent" : { "activity_type" : "multiple_choice",
+            "assessment_type" : null,
+            "callout_icon" : null,
+            "config" : null,
+            "diagnostic_reference" : null,
+            "dl" : { "node_text" : "" },
+            "dl_audio" : null,
+            "exam_reference" : { "Exam" : { "body" : { "node_text" : "Choose the answer that corresponds to the clue." },
+                    "header" : { "node_text" : "Seleccionar" },
+                    "rank" : 1,
+                    "sidebar_ref" : null
+                  } },
+            "external_references" : [  ],
+            "ignore_title" : null,
+            "included_content" : null,
+            "is_bonus" : null,
+            "items" : [ { "Exam" : { "body" : { "node_text" : "Choose the answer that corresponds to the clue." },
+                      "header" : { "node_text" : "Seleccionar" },
+                      "rank" : 1,
+                      "sidebar_ref" : null
+                    } },
+                    {
+                      "Text":{
+                        "rank":33,
+                        "sidebar_ref":null,
+                        "header":null,
+                        "body":{
+                          "node_text":"This is a text section reference without any header."
+                        }
+                      }
+                    },
+                    {
+                      "Text":{
+                        "rank":34,
+                        "sidebar_ref":null,
+                        "header":{ "node_text" : "This is a text section reference"},
+                        "body":{
+                          "node_text":"Por suerte (<i>luckily</i>), comparten un auto grande."
+                        }
+                      }
+                    },
+                { "Item" : { "choices" : [ { "Choice" : { "is_correct" : false,
+                                "text" : "Gael García Bernal "
+                              } },
+                          { "Choice" : { "is_correct" : true,
+                                "text" : "Javier Bardem "
+                              } },
+                          { "Choice" : { "is_correct" : false,
+                                "text" : "Diego Luna "
+                              } }
+                        ],
+                      "concept" : null,
+                      "points_possible" : 2,
+                      "prompt" : { "node_text" : "husband of Penélope Cruz" },
+                      "question_number" : 1,
+                      "rank" : 1,
+                      "sidebar_ref" : null
+                    } },
+                { "Item" : { "choices" : [ { "Choice" : { "is_correct" : true,
+                                "text" : "Diego Luna"
+                              } },
+                          { "Choice" : { "is_correct" : false,
+                                "text" : "Salma Hayek"
+                              } },
+                          { "Choice" : { "is_correct" : false,
+                                "text" : "Javier Bardem"
+                              } }
+                        ],
+                      "concept" : null,
+                      "points_possible" : 2,
+                      "prompt" : { "node_text" : "lifelong friend of Gael García Bernal" },
+                      "question_number" : 2,
+                      "rank" : 2,
+                      "sidebar_ref" : null
+                    } },
+                { "Item" : { "choices" : [ { "Choice" : { "is_correct" : false,
+                                "text" : "ayuntamiento"
+                              } },
+                          { "Choice" : { "is_correct" : false,
+                                "text" : "Plaza de Armas"
+                              } },
+                          { "Choice" : { "is_correct" : true,
+                                "text" : "Plaza Mayor"
+                              } }
+                        ],
+                      "concept" : null,
+                      "points_possible" : 2,
+                      "prompt" : { "node_text" : "town square in Salamanca, Spain" },
+                      "question_number" : 3,
+                      "rank" : 3,
+                      "sidebar_ref" : null
+                    } },
+                { "Item" : { "choices" : [ { "Choice" : { "is_correct" : false,
+                                "text" : "ayuntamiento"
+                              } },
+                          { "Choice" : { "is_correct" : true,
+                                "text" : "feria"
+                              } },
+                          { "Choice" : { "is_correct" : false,
+                                "text" : "plaza"
+                              } }
+                        ],
+                      "concept" : null,
+                      "points_possible" : 2,
+                      "prompt" : { "node_text" : "town festival" },
+                      "question_number" : 4,
+                      "rank" : 4,
+                      "sidebar_ref" : null
+                    } },
+                { "Item" : { "choices" : [ { "Choice" : { "is_correct" : true,
+                                "text" : "ayuntamiento"
+                              } },
+                          { "Choice" : { "is_correct" : false,
+                                "text" : "plaza"
+                              } },
+                          { "Choice" : { "is_correct" : false,
+                                "text" : "feria"
+                              } }
+                        ],
+                      "concept" : null,
+                      "points_possible" : 2,
+                      "prompt" : { "node_text" : "city hall" },
+                      "question_number" : 5,
+                      "rank" : 5,
+                      "sidebar_ref" : null
+                    } }
+              ],
+            "language" : "es",
+            "media_items" : [  ],
+            "points_per_response" : null,
+            "question_count" : 5,
+            "strict_media_requirements" : null,
+            "style" : { "Style" : { "item_numbers" : true } },
+            "title" : "Seleccionar"
+          } },
+      { "MultipleChoiceContent" : { "activity_type" : "multiple_choice",
+            "assessment_type" : null,
+            "callout_icon" : null,
+            "config" : null,
+            "diagnostic_reference" : null,
+            "dl" : { "node_text" : "" },
+            "dl_audio" : null,
+            "exam_reference" : { "Exam" : { "body" : { "node_text" : "Identifica la palabra que no está relacionada con cada grupo." },
+                    "header" : { "node_text" : "Identificar" },
+                    "rank" : 2,
+                    "sidebar_ref" : null
+                  } },
+            "external_references" : [  ],
+            "ignore_title" : null,
+            "included_content" : null,
+            "is_bonus" : null,
+            "items" : [ { "Exam" : { "body" : { "node_text" : "Identifica la palabra que no está relacionada con cada grupo." },
+                      "header" : { "node_text" : "Identificar" },
+                      "rank" : 2,
+                      "sidebar_ref" : null
+                    } },
+                { "Item" : { "choices" : [ { "Choice" : { "is_correct" : false,
+                                "text" : "champiñón"
+                              } },
+                          { "Choice" : { "is_correct" : false,
+                                "text" : "cebolla"
+                              } },
+                          { "Choice" : { "is_correct" : true,
+                                "text" : "dueña"
+                              } },
+                          { "Choice" : { "is_correct" : false,
+                                "text" : "zanahoria"
+                              } }
+                        ],
+                      "concept" : null,
+                      "points_possible" : 2,
+                      "prompt" : { "node_text" : "" },
+                      "question_number" : 1,
+                      "rank" : 6,
+                      "sidebar_ref" : null
+                    } },
+                { "Item" : { "choices" : [ { "Choice" : { "is_correct" : false,
+                                "text" : "camarones"
+                              } },
+                          { "Choice" : { "is_correct" : true,
+                                "text" : "ajo"
+                              } },
+                          { "Choice" : { "is_correct" : false,
+                                "text" : "atún"
+                              } },
+                          { "Choice" : { "is_correct" : false,
+                                "text" : "salmón"
+                              } }
+                        ],
+                      "concept" : null,
+                      "points_possible" : 2,
+                      "prompt" : { "node_text" : "" },
+                      "question_number" : 2,
+                      "rank" : 7,
+                      "sidebar_ref" : null
+                    } },
+                { "Item" : { "choices" : [ { "Choice" : { "is_correct" : true,
+                                "text" : "aceite"
+                              } },
+                          { "Choice" : { "is_correct" : false,
+                                "text" : "leche"
+                              } },
+                          { "Choice" : { "is_correct" : false,
+                                "text" : "refresco"
+                              } },
+                          { "Choice" : { "is_correct" : false,
+                                "text" : "agua mineral"
+                              } }
+                        ],
+                      "concept" : null,
+                      "points_possible" : 2,
+                      "prompt" : { "node_text" : "" },
+                      "question_number" : 3,
+                      "rank" : 8,
+                      "sidebar_ref" : null
+                    } },
+                { "Item" : { "choices" : [ { "Choice" : { "is_correct" : false,
+                                "text" : "jamón"
+                              } },
+                          { "Choice" : { "is_correct" : false,
+                                "text" : "chuleta de cerdo"
+                              } },
+                          { "Choice" : { "is_correct" : true,
+                                "text" : "vinagre"
+                              } },
+                          { "Choice" : { "is_correct" : false,
+                                "text" : "carne de res"
+                              } }
+                        ],
+                      "concept" : null,
+                      "points_possible" : 2,
+                      "prompt" : { "node_text" : "" },
+                      "question_number" : 4,
+                      "rank" : 9,
+                      "sidebar_ref" : null
+                    } },
+                { "Item" : { "choices" : [ { "Choice" : { "is_correct" : true,
+                                "text" : "cerveza"
+                              } },
+                          { "Choice" : { "is_correct" : false,
+                                "text" : "lechuga"
+                              } },
+                          { "Choice" : { "is_correct" : false,
+                                "text" : "arvejas"
+                              } },
+                          { "Choice" : { "is_correct" : false,
+                                "text" : "frijoles"
+                              } }
+                        ],
+                      "concept" : null,
+                      "points_possible" : 2,
+                      "prompt" : { "node_text" : "" },
+                      "question_number" : 5,
+                      "rank" : 10,
+                      "sidebar_ref" : null
+                    } },
+                { "Item" : { "choices" : [ { "Choice" : { "is_correct" : false,
+                                "text" : "carne"
+                              } },
+                          { "Choice" : { "is_correct" : false,
+                                "text" : "pescado"
+                              } },
+                          { "Choice" : { "is_correct" : false,
+                                "text" : "mariscos"
+                              } },
+                          { "Choice" : { "is_correct" : true,
+                                "text" : "camarero"
+                              } }
+                        ],
+                      "concept" : null,
+                      "points_possible" : 2,
+                      "prompt" : { "node_text" : "" },
+                      "question_number" : 6,
+                      "rank" : 11,
+                      "sidebar_ref" : null
+                    } },
+                { "Item" : { "choices" : [ { "Choice" : { "is_correct" : true,
+                                "text" : "pollo"
+                              } },
+                          { "Choice" : { "is_correct" : false,
+                                "text" : "naranja"
+                              } },
+                          { "Choice" : { "is_correct" : false,
+                                "text" : "limón"
+                              } },
+                          { "Choice" : { "is_correct" : false,
+                                "text" : "uvas"
+                              } }
+                        ],
+                      "concept" : null,
+                      "points_possible" : 2,
+                      "prompt" : { "node_text" : "" },
+                      "question_number" : 7,
+                      "rank" : 12,
+                      "sidebar_ref" : null
+                    } },
+                { "Item" : { "choices" : [ { "Choice" : { "is_correct" : false,
+                                "text" : "maíz"
+                              } },
+                          { "Choice" : { "is_correct" : true,
+                                "text" : "queso"
+                              } },
+                          { "Choice" : { "is_correct" : false,
+                                "text" : "papa"
+                              } },
+                          { "Choice" : { "is_correct" : false,
+                                "text" : "champiñón"
+                              } }
+                        ],
+                      "concept" : null,
+                      "points_possible" : 2,
+                      "prompt" : { "node_text" : "" },
+                      "question_number" : 8,
+                      "rank" : 13,
+                      "sidebar_ref" : null
+                    } }
+              ],
+            "language" : "es",
+            "media_items" : [  ],
+            "points_per_response" : null,
+            "question_count" : 8,
+            "strict_media_requirements" : null,
+            "style" : { "Style" : { "item_numbers" : true } },
+            "title" : "Identificar"
+          } },
+      { "MultipleChoiceContent" : { "activity_type" : "multiple_choice",
+            "assessment_type" : null,
+            "callout_icon" : null,
+            "config" : null,
+            "diagnostic_reference" : null,
+            "dl" : { "node_text" : "" },
+            "dl_audio" : null,
+            "exam_reference" : { "Exam" : { "body" : { "node_text" : "Escucha el audio para escoger la opción correcta para completar cada oración." },
+                    "header" : { "node_text" : "Escoger" },
+                    "rank" : 3,
+                    "sidebar_ref" : null
+                  } },
+            "external_references" : [  ],
+            "ignore_title" : null,
+            "included_content" : null,
+            "is_bonus" : null,
+            "items" : [ { "Exam" : { "body" : { "node_text" : "Escucha el audio para escoger la opción correcta para completar cada oración." },
+                      "header" : { "node_text" : "Escoger" },
+                      "rank" : 3,
+                      "sidebar_ref" : null
+                    } },
+                { "Audio" : { "audio" : { "MediaLink" : { "activity_id" : null,
+                              "desired_media_item_id" : null,
+                              "desired_media_type" : "audio",
+                              "instructor_uploaded" : false,
+                              "line" : 175,
+                              "media_item_id" : "111825",
+                              "spec" : null
+                            } },
+                      "rank" : 4,
+                      "recording_id" : null,
+                      "sidebar_ref" : null
+                    } },
+                { "Item" : { "choices" : [ { "Choice" : { "is_correct" : false,
+                                "text" : "los entremeses del día y el cerdo"
+                              } },
+                          { "Choice" : { "is_correct" : false,
+                                "text" : "el salmón y el arroz con pollo"
+                              } },
+                          { "Choice" : { "is_correct" : true,
+                                "text" : "la carne y el arroz con pollo"
+                              } }
+                        ],
+                      "concept" : null,
+                      "points_possible" : 2,
+                      "prompt" : { "node_text" : "Dos de los mejores platos del restaurante son __." },
+                      "question_number" : 1,
+                      "rank" : 14,
+                      "sidebar_ref" : null
+                    } },
+                { "Item" : { "choices" : [ { "Choice" : { "is_correct" : false,
+                                "text" : "los lleva a su mesa, les muestra el menú y les sirve el postre"
+                              } },
+                          { "Choice" : { "is_correct" : true,
+                                "text" : "les habla de los especiales del día, les recomienda unos platos y ellos deciden qué van a comer"
+                              } },
+                          { "Choice" : { "is_correct" : false,
+                                "text" : "les lleva unas bebidas, les recomienda unos platos y les sirve pan"
+                              } }
+                        ],
+                      "concept" : null,
+                      "points_possible" : 2,
+                      "prompt" : { "node_text" : "La camarera __." },
+                      "question_number" : 2,
+                      "rank" : 15,
+                      "sidebar_ref" : null
+                    } },
+                { "Item" : { "choices" : [ { "Choice" : { "is_correct" : true,
+                                "text" : "tantos platos como"
+                              } },
+                          { "Choice" : { "is_correct" : false,
+                                "text" : "más platos que"
+                              } },
+                          { "Choice" : { "is_correct" : false,
+                                "text" : "menos platos que"
+                              } }
+                        ],
+                      "concept" : null,
+                      "points_possible" : 2,
+                      "prompt" : { "node_text" : "Roberto va a comer __ Rosa." },
+                      "question_number" : 3,
+                      "rank" : 16,
+                      "sidebar_ref" : null
+                    } }
+              ],
+            "language" : "es",
+            "media_items" : [ { "MediaLink" : { "activity_id" : null,
+                      "desired_media_item_id" : null,
+                      "desired_media_type" : "audio",
+                      "instructor_uploaded" : false,
+                      "line" : 175,
+                      "media_item_id" : "111825",
+                      "spec" : null
+                    } } ],
+            "points_per_response" : null,
+            "question_count" : 3,
+            "strict_media_requirements" : null,
+            "style" : { "Style" : { "item_numbers" : true } },
+            "title" : "Escoger"
+          } },
+      { "MultipleChoiceContent" : { "activity_type" : "multiple_choice",
+            "assessment_type" : null,
+            "callout_icon" : null,
+            "config" : null,
+            "diagnostic_reference" : null,
+            "dl" : { "node_text" : "" },
+            "dl_audio" : null,
+            "exam_reference" : { "Exam" : { "body" : { "node_text" : "Listen and select the statements that express the correct superlatives." },
+                    "header" : { "node_text" : "Superlativos" },
+                    "rank" : 5,
+                    "sidebar_ref" : null
+                  } },
+            "external_references" : [  ],
+            "ignore_title" : null,
+            "included_content" : null,
+            "is_bonus" : null,
+            "items" : [ { "Exam" : { "body" : { "node_text" : "Listen and select the statements that express the correct superlatives." },
+                      "header" : { "node_text" : "Superlativos" },
+                      "rank" : 5,
+                      "sidebar_ref" : null
+                    } },
+                { "Audio" : { "audio" : { "MediaLink" : { "activity_id" : null,
+                              "desired_media_item_id" : null,
+                              "desired_media_type" : "audio",
+                              "instructor_uploaded" : false,
+                              "line" : 223,
+                              "media_item_id" : "111962",
+                              "spec" : null
+                            } },
+                      "rank" : 6,
+                      "recording_id" : null,
+                      "sidebar_ref" : null
+                    } },
+                { "Item" : { "choices" : [ { "Choice" : { "is_correct" : false,
+                                "text" : "Tus pantalones no son los más grandes de la tienda."
+                              } },
+                          { "Choice" : { "is_correct" : true,
+                                "text" : "Tus pantalones son los más grandes de la tienda."
+                              } }
+                        ],
+                      "concept" : null,
+                      "points_possible" : 2,
+                      "prompt" : { "node_text" : "" },
+                      "question_number" : 1,
+                      "rank" : 17,
+                      "sidebar_ref" : null
+                    } },
+                { "Item" : { "choices" : [ { "Choice" : { "is_correct" : true,
+                                "text" : "La camisa blanca es la más bonita del centro comercial."
+                              } },
+                          { "Choice" : { "is_correct" : false,
+                                "text" : "La camisa blanca no es tan bonita como otras camisas de la tienda."
+                              } }
+                        ],
+                      "concept" : null,
+                      "points_possible" : 2,
+                      "prompt" : { "node_text" : "" },
+                      "question_number" : 2,
+                      "rank" : 18,
+                      "sidebar_ref" : null
+                    } },
+                { "Item" : { "choices" : [ { "Choice" : { "is_correct" : false,
+                                "text" : "Las rebajas del centro comercial son peores que las rebajas de la tienda."
+                              } },
+                          { "Choice" : { "is_correct" : true,
+                                "text" : "En el centro comercial puedes encontrar las mejores rebajas."
+                              } }
+                        ],
+                      "concept" : null,
+                      "points_possible" : 2,
+                      "prompt" : { "node_text" : "" },
+                      "question_number" : 3,
+                      "rank" : 19,
+                      "sidebar_ref" : null
+                    } },
+                { "Item" : { "choices" : [ { "Choice" : { "is_correct" : true,
+                                "text" : "El vestido azul es el más caro de la tienda."
+                              } },
+                          { "Choice" : { "is_correct" : false,
+                                "text" : "El vestido azul es el más barato de la tienda."
+                              } }
+                        ],
+                      "concept" : null,
+                      "points_possible" : 2,
+                      "prompt" : { "node_text" : "" },
+                      "question_number" : 4,
+                      "rank" : 20,
+                      "sidebar_ref" : null
+                    } },
+                { "Item" : { "choices" : [ { "Choice" : { "is_correct" : true,
+                                "text" : "Sebastián es el mejor vendedor de la tienda."
+                              } },
+                          { "Choice" : { "is_correct" : false,
+                                "text" : "Sebastián es el peor vendedor de la tienda."
+                              } }
+                        ],
+                      "concept" : null,
+                      "points_possible" : 2,
+                      "prompt" : { "node_text" : "" },
+                      "question_number" : 5,
+                      "rank" : 21,
+                      "sidebar_ref" : null
+                    } }
+              ],
+            "language" : "es",
+            "media_items" : [ { "MediaLink" : { "activity_id" : null,
+                      "desired_media_item_id" : null,
+                      "desired_media_type" : "audio",
+                      "instructor_uploaded" : false,
+                      "line" : 223,
+                      "media_item_id" : "111962",
+                      "spec" : null
+                    } } ],
+            "points_per_response" : null,
+            "question_count" : 5,
+            "strict_media_requirements" : null,
+            "style" : { "Style" : { "item_numbers" : true } },
+            "title" : "Superlativos"
+          } },
+      { "MultipleChoiceContent" : { "activity_type" : "multiple_choice",
+            "assessment_type" : null,
+            "callout_icon" : null,
+            "config" : null,
+            "diagnostic_reference" : null,
+            "dl" : { "node_text" : "" },
+            "dl_audio" : null,
+            "exam_reference" : { "Exam" : { "body" : { "node_text" : "Elige la mejor respuesta para cada pregunta según el video clip." },
+                    "header" : { "node_text" : "Elegir" },
+                    "rank" : 7,
+                    "sidebar_ref" : null
+                  } },
+            "external_references" : [  ],
+            "ignore_title" : null,
+            "included_content" : null,
+            "is_bonus" : null,
+            "items" : [ { "Exam" : { "body" : { "node_text" : "Elige la mejor respuesta para cada pregunta según el video clip." },
+                      "header" : { "node_text" : "Elegir" },
+                      "rank" : 7,
+                      "sidebar_ref" : null
+                    } },
+                { "Video" : { "english_subtitles" : null,
+                      "foreign_language" : null,
+                      "foreign_subtitles" : null,
+                      "rank" : 8,
+                      "sidebar_ref" : null,
+                      "video" : { "MediaLink" : { "activity_id" : null,
+                              "desired_media_item_id" : null,
+                              "desired_media_type" : "video",
+                              "instructor_uploaded" : false,
+                              "line" : 284,
+                              "media_item_id" : "120249",
+                              "spec" : null
+                            } }
+                    } },
+                { "Item" : { "choices" : [ { "Choice" : { "is_correct" : false,
+                                "text" : "Miguel"
+                              } },
+                          { "Choice" : { "is_correct" : true,
+                                "text" : "Maru"
+                              } }
+                        ],
+                      "concept" : null,
+                      "points_possible" : 2,
+                      "prompt" : { "node_text" : "¿Quién pidió jamón?" },
+                      "question_number" : 1,
+                      "rank" : 22,
+                      "sidebar_ref" : null
+                    } },
+                { "Item" : { "choices" : [ { "Choice" : { "is_correct" : true,
+                                "text" : "sabrosísimos"
+                              } },
+                          { "Choice" : { "is_correct" : false,
+                                "text" : "fríos"
+                              } }
+                        ],
+                      "concept" : null,
+                      "points_possible" : 2,
+                      "prompt" : { "node_text" : "Según Felipe, ¿cómo están los espárragos?" },
+                      "question_number" : 2,
+                      "rank" : 23,
+                      "sidebar_ref" : null
+                    } },
+                { "Item" : { "choices" : [ { "Choice" : { "is_correct" : false,
+                                "text" : "choca con (<i>he collides with</i>) el dueño del restaurante"
+                              } },
+                          { "Choice" : { "is_correct" : true,
+                                "text" : "choca con Felipe"
+                              } }
+                        ],
+                      "concept" : null,
+                      "points_possible" : 2,
+                      "prompt" : { "node_text" : "¿Qué pasa cuando el camarero entra corriendo?" },
+                      "question_number" : 3,
+                      "rank" : 24,
+                      "sidebar_ref" : null
+                    } },
+                { "Item" : { "choices" : [ { "Choice" : { "is_correct" : false,
+                                "text" : "le ayudaron con los platos"
+                              } },
+                          { "Choice" : { "is_correct" : true,
+                                "text" : "le quitaron la comida"
+                              } }
+                        ],
+                      "concept" : null,
+                      "points_possible" : 2,
+                      "prompt" : { "node_text" : "Según el camarero, ¿qué pasó?" },
+                      "question_number" : 4,
+                      "rank" : 25,
+                      "sidebar_ref" : null
+                    } },
+                { "Item" : { "choices" : [ { "Choice" : { "is_correct" : true,
+                                "text" : "les sirvieron la comida a sus amigos"
+                              } },
+                          { "Choice" : { "is_correct" : false,
+                                "text" : "reservaron una mesa para cuatro"
+                              } }
+                        ],
+                      "concept" : null,
+                      "points_possible" : 2,
+                      "prompt" : { "node_text" : "Según Juan Carlos, ¿qué hicieron Felipe y él?" },
+                      "question_number" : 5,
+                      "rank" : 26,
+                      "sidebar_ref" : null
+                    } },
+                { "Item" : { "choices" : [ { "Choice" : { "is_correct" : false,
+                                "text" : "van a invitar a Maru y a Miguel a otro restaurante"
+                              } },
+                          { "Choice" : { "is_correct" : true,
+                                "text" : "van a pagar la comida y lavar los platos"
+                              } }
+                        ],
+                      "concept" : null,
+                      "points_possible" : 2,
+                      "prompt" : { "node_text" : "¿Qué van a hacer Felipe y Juan Carlos para compensar (<i>to make up for</i>) los daños?" },
+                      "question_number" : 6,
+                      "rank" : 27,
+                      "sidebar_ref" : null
+                    } }
+              ],
+            "language" : "es",
+            "media_items" : [ { "MediaLink" : { "activity_id" : null,
+                      "desired_media_item_id" : null,
+                      "desired_media_type" : "video",
+                      "instructor_uploaded" : false,
+                      "line" : 284,
+                      "media_item_id" : "120249",
+                      "spec" : null
+                    } } ],
+            "points_per_response" : null,
+            "question_count" : 6,
+            "strict_media_requirements" : null,
+            "style" : { "Style" : { "item_numbers" : true } },
+            "title" : "Elegir"
+          } }
+    ],
+  "activity_type" : "exam",
+  "assessment_type" : "exam",
+  "callout_icon" : null,
+  "config" : null,
+  "diagnostic_reference" : null,
+  "dl" : { "node_text" : "" },
+  "dl_audio" : null,
+  "exam_reference" : null,
+  "external_references" : [  ],
+  "ignore_title" : null,
+  "included_content" : null,
+  "is_bonus" : null,
+  "language" : "es",
+  "media_items" : [ { "MediaLink" : { "activity_id" : null,
+            "desired_media_item_id" : null,
+            "desired_media_type" : "audio",
+            "instructor_uploaded" : false,
+            "line" : 175,
+            "media_item_id" : "111825",
+            "spec" : null
+          } },
+      { "MediaLink" : { "activity_id" : null,
+            "desired_media_item_id" : null,
+            "desired_media_type" : "audio",
+            "instructor_uploaded" : false,
+            "line" : 223,
+            "media_item_id" : "111962",
+            "spec" : null
+          } },
+      { "MediaLink" : { "activity_id" : null,
+            "desired_media_item_id" : null,
+            "desired_media_type" : "video",
+            "instructor_uploaded" : false,
+            "line" : 284,
+            "media_item_id" : "120249",
+            "spec" : null
+          } }
+    ],
+  "points_per_response" : null,
+  "question_count" : 0,
+  "strict_media_requirements" : null,
+  "style" : { "Style" : { "item_numbers" : true } },
+  "title" : "MC Exam"
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      lang="en">
+  <head>
+    <%= render('partials/google_tag_manager') %>
+    <%= render('layouts/common_header') %>
+  </head>
+
+  <body
+    class="notranslate  ns-responsive  ns-activity  activities
+           <%= yield :body_classes %>
+           <%= yield :theme_classes %>"
+    <%= yield :angular_tags %>>
+    <%= render 'layouts/flash', flash: flash %>
+
+    <div id="page_container" class="c-page-container  ui-helper-clearfix  js-page-container">
+      <div id="column_wrapper">
+        <div class="js-vue-flash-banner"></div>
+        <% if @page_title %>
+          <h1 class="page_title  c-mobile-tabs-view__reference-content"><%= @page_title %></h1>
+        <% end %>
+        <%= yield :help_request_message_container %>
+        <%= yield %>
+      </div>
+      <!-- end column_wrapper -->
+    </div>
+
+    <% if (
+         controller.is_a?(Spr::ActivitiesController) ||
+         controller.is_a?(Instructor::ActivitiesController) ||
+         controller.is_a?(Cartridge::ActivitiesController)
+       ) %>
+      <script class="js-browser-not-supported" type="text/x-handlebars-template">
+        <%= render 'maestro_activity_engine/activities/partials/supported_browsers_message' %>
+      </script>
+      <%= render 'activities/help_request' %>
+    <% end %>
+    <%= yield :js_foot %>
+
+     <% if @activity&.virtual_chat? ||
+           @activity&.video_virtual_chat? ||
+           @activity&.partner_chat? ||
+           @activity&.group_chat?  %>
+      <%= render 'mobile_tabs_view/tabs_template' %>
+    <% end %>
+
+    <%= render 'layouts/inactivity_timeout' %>
+  </body>
+</html>

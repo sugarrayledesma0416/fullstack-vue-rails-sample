@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<activity activity_type="partner_chat" language="es" title="Típico fin de semana">
+  <dl>With a partner, choose to be <b> Estudiante 1</b> or <b>Estudiante 2</b>. <b> Estudiante 1</b> will interview <b>Estudiante 2</b> about what he or she does on a typical weekend. Include these questions in your conversation.</dl>
+  <items>
+    <style>
+      <item_numbers>hide</item_numbers>
+    </style>
+
+    <reference type="text">
+      <body>
+        <ul>
+          <li>What time does he/she leave the house on the weekend?</li>
+          <li>What does he/she do in the afternoon?</li>
+          <li>What TV shows does he/she watch?</li>
+          <li>Does he/she go out with friends?</li>
+        </ul>
+      </body>
+    </reference>
+    <item/>
+  </items>
+</activity>

@@ -1,0 +1,280 @@
+.ui-icon {
+  outline:0; /* dancing ants */
+}
+
+.ui-widget-overlay {
+  filter: Alpha(Opacity=50);
+  opacity: .50;
+  background:#000;
+}
+
+.ui-dialog .ui-dialog-title {
+  font-size: 1.2em;
+}
+
+div.ui-dialog-content p, div.ui-widget-content p {
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+div.ui-dialog-buttonpane button {
+  margin: 0;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+}
+
+div.ui-dialog-buttonpane #delete_link #additional_links {
+  padding: 7px 0px 0px 0px;
+  width: 200px;
+}
+
+div.ui-dialog-buttonpane #delete_link .enabled_element_wrapper,
+div.ui-dialog-buttonpane #delete_link .disabled_element_wrapper {
+  display: inline-block;
+  padding: 4px;
+  text-transform: lowercase;
+}
+
+div.ui-dialog-buttonpane .ui-button-text {
+  padding: 0;
+}
+
+div.ui-dialog-buttonpane button.ui-button:hover {
+  cursor: pointer;
+}
+
+.ui-corner-all {
+  -moz-border-radius: 0;
+}
+
+/* for cluetip */
+div.clue-left-default div.cluetip-arrows {
+  width:13px;
+}
+
+.cluetip-hover-warning {
+  background-color: transparent;
+}
+.cluetip-hover-warning div.cluetip-outer {
+  border: 2px solid #d12109;
+  position: relative;
+  background-color: #fff;
+}
+
+.cluetip-hover-warning h3.cluetip-title {
+  margin: 0 0 5px;
+  padding: 2px 5px;
+  font-size: 1.2em;
+  font-weight: bold;
+  background-color: #d12109;
+  color: #eee;
+}
+
+.cluetip-hover-warning div.cluetip-inner {
+  padding: 0 5px 5px;
+  display: inline-block;
+  font-size: 1.1em;
+  text-align: left;
+}
+.cluetip-hover-warning div.cluetip-close {
+  text-align: right;
+  margin: 0 5px 5px;
+  color: #fff;
+}
+
+/* vhl bordered */
+.cluetip-vhl_bordered {
+  background-color: #d9d9d9;
+}
+.cluetip-vhl_bordered #cluetip-outer {
+  position: relative;
+  margin: 0;
+  background-color: #d9d9d9;
+  border: 2px black solid;
+}
+.cluetip-vhl_bordered h3#cluetip-title {
+  margin: 0 0 5px;
+  padding: 8px 10px 4px;
+  font-size: 1.1em;
+  font-weight: normal;
+  background-color: #87876a;
+  color: #fff;
+}
+.cluetip-vhl_bordered #cluetip-title a {
+  color: #d9d9c2;
+  font-size: 0.95em;
+}
+.cluetip-vhl_bordered #cluetip-inner {
+  padding: 5px;
+}
+.cluetip-vhl_bordered div#cluetip-close {
+  text-align: right;
+  margin: 0 5px 5px;
+  color: #900;
+}
+
+/* vhl_bordered arrows */
+
+.clue-right-vhl_bordered .cluetip-arrows {
+  background-image: image-url('images/darrowleft.gif');
+}
+.clue-left-vhl_bordered .cluetip-arrows {
+  background-image: image-url('images/darrowright.gif');
+  left: 100%;
+  margin-right: -11px;
+}
+.clue-top-vhl_bordered .cluetip-arrows {
+  background-image: image-url('images/darrowdown.gif');
+  top: 100%;
+  left: 50%;
+  margin-left: -11px;
+  height: 11px;
+  width: 22px;
+}
+.clue-bottom-vhl_bordered .cluetip-arrows {
+  background-image: image-url('images/darrowup.gif');
+  top: -11px;
+  left: 50%;
+  margin-left: -11px;
+  height: 11px;
+  width: 22px;
+}
+
+
+
+/*dialog box overrides*/
+
+.ui-dialog.ui-widget-content {
+  border:2px solid #dadada;
+}
+
+.ui-dialog .ui-dialog-content {
+padding:10px 16px;
+}
+
+.ui-widget-header {
+  border:none;
+}
+
+.ui-dialog .ui-dialog-title{
+  letter-spacing:.01em;
+}
+.ui-dialog {
+  padding:0px;
+  font-size:1.2em;
+}
+
+.ui-dialog .ui-dialog-buttonpane {
+    margin: 0px;
+    padding: 0px 16px 10px 16px;
+    text-align: left;
+    border:none;
+}
+
+.ui-dialog .ui-dialog-buttonpane #delete_link {
+  float: left;
+}
+
+.activities .ui-widget-overlay {
+  filter: Alpha(Opacity=100);
+  opacity: 1;
+}
+
+
+/*datepicker overrrides */
+
+.ui-datepicker-calendar {
+  border:none;
+}
+
+/*tabs overrides  */
+#modal_box .ui-tabs-nav {
+  background:#F2F7FB;
+  padding:15px 0 0 15px;
+  margin:0;
+}
+
+#modal_box.ui-dialog-content {
+  padding:0px;
+  margin:0px;
+}
+
+.draggable {
+  cursor: move;
+}
+
+#modal_box .ui-tabs-nav {
+  background:#F2F7FB;
+  padding:15px 0 0 15px;
+  margin:0;
+}
+
+#tabs.ui-widget-content {
+  border: 0px;
+}
+
+#tabs .ui-corner-bottom {
+  -moz-border-radius-bottomleft: 0px;
+  -webkit-border-bottom-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  -moz-border-radius-bottomright: 0px;
+  -webkit-border-bottom-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+
+
+/* More Dialog Box Overrides */
+.ui-dialog a.ui-dialog-titlebar-close {
+  background: image-url('/images/dialog_close.png') 8px 2px no-repeat;
+  display: block;
+  height: 14px;
+  padding: 4px 6px;
+  width: 14px;
+}
+
+.ui-dialog a.ui-dialog-titlebar-close.ui-state-hover {
+  background: image-url('/images/dialog_close.png') -18px 2px no-repeat;
+  border: 0px;
+  display: block;
+  height: 14px;
+  padding: 4px 6px;
+  width: 14px;
+}
+
+.ui-dialog.ui-corner-all {
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+}
+
+.ui-dialog.ui-widget-content {
+  border: 1px solid #959595;
+}
+
+
+.ui-dialog-titlebar.ui-widget-header {
+  background: #959595;
+  background-image: none;
+  margin: 5px;
+}
+
+.ui-dialog-titlebar.ui-corner-all {
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+}
+
+.ui-dialog-titlebar .ui-dialog-titlebar-close .ui-icon-closethick {
+  background: none;
+}
+
+.assignables_wizard .wrap_table_dialog {
+  width: 568px;
+}
+
+/* Inactivity Timeout Dialog Fixes */
+.ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset {
+  width: 100%;
+}

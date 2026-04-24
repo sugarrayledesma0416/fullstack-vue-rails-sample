@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<activity activity_type="composition" title="Escribir un folleto" language="es">
+  <dl>Create a tourist brochure for a hotel or resort you have visited. If you wish, you may write about an imaginary hotel or resort.</dl>
+  <items>
+    <style>
+      <item_numbers>hide</item_numbers>
+    </style>
+
+    <item>
+      <prompt>Submit your final draft here:</prompt>
+    </item>
+
+  </items>
+</activity>

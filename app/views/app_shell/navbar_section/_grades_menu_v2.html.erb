@@ -1,0 +1,8 @@
+<% if section && section.non_zero? %>
+  <a 
+    href="<%= student_grade_summary_link%>"
+    class="c-menu__title  c-menu__title--program  c-menu__title--program-no-menu
+           js-nav-system__link  <%= main_nav_active('grades') %>">
+      Grades
+  </a>
+<% end %>

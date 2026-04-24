@@ -1,0 +1,23 @@
+@import 'music/library/v1/base/main';
+
+.ns-ai-grading-sets {
+  --ai-grading-gradient: radial-gradient(circle at 80% -50%, #f8c7b9, #fcdfcd, #faffe5, #e1f6ef);
+
+  &:is(#grading_style_form_container) {
+    background: var(--ai-grading-gradient);
+    border-radius: 0.5rem;
+    padding: 1rem;
+  }
+
+  .ns-composition .comment-inline-textarea {
+    height: rpx(150);
+  }
+
+  .instructor_comment_area .c-accent-bar-textbox-wrapper {
+    width: 100%;
+  }
+
+  .instructor_comment_input:is(textarea) {
+    height: rpx(150);
+  }
+}

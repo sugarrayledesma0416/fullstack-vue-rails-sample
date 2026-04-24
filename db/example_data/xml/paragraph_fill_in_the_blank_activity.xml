@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<activity activity_type="fill_in_the_blanks" title="Completar" language="es">
+  <dl>
+    <span lang="en-US">Complete these sentences using words from the word bank and what you learned in the video.</span>
+  </dl>
+  <external_references>
+    <external_reference>
+      <title>Panorama cultural</title>
+      <activity id="11806"/>
+    </external_reference>
+  </external_references>
+  <items>
+    <style>
+      <wol_size>words_standard</wol_size>
+      <item_numbers>hide</item_numbers>
+    </style>
+    <reference type="wordbank">
+      <body sorted="yes">Montreal
+una científica
+la Universidad de Québec
+Bolivia
+las matemáticas
+convenciones
+tradiciones
+en español
+la biología</body>
+    </reference>
+    <item>
+      <prompt>En <wol ref="1"/>  hay una importante comunidad de hispanos y muchas instituciones públicas y privadas ofrecen servicios <wol ref="2"/>. Una hispana importante en el campo de <wol ref="3"/>  es Ana María Seifert. Ella es de <wol ref="4"/>  y vive (<i>lives</i>) en Montreal. Seifert es <wol ref="5"/>  que estudia las condiciones de seguridad de los trabajadores. Ella participa en muchas <wol ref="6"/>  nacionales e internacionales. Muchas <wol ref="7"/>  bolivianas se mantienen (<i>are kept</i>) en la casa de la familia Seifert.</prompt>
+      <answers ref="1">
+        <answer>Montreal</answer>
+        <answer>Toronto</answer>
+        <answer>Calgary</answer>
+      </answers>
+      <answers ref="2">
+        <answer>en español</answer>
+      </answers>
+      <answers ref="3">
+        <answer>la biología</answer>
+      </answers>
+      <answers ref="4">
+        <answer>Bolivia</answer>
+        <answer>Colombia</answer>
+        <answer>Perú</answer>
+      </answers>
+      <answers ref="5">
+        <answer>una científica</answer>
+      </answers>
+      <answers ref="6">
+        <answer>convenciones</answer>
+      </answers>
+      <answers ref="7">
+        <answer>tradiciones</answer>
+      </answers>
+    </item>
+  </items>
+</activity>

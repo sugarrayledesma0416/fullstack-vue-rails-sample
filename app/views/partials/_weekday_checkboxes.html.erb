@@ -1,0 +1,13 @@
+<ul class="selectionlist weekday_check_boxes">
+  <% 
+  current_weekdays = (current_weekdays || '').split(',')
+  
+  Date::DAYNAMES.each_with_index do |day_name, day_id|
+    checked = current_weekdays.include?(day_id.to_s)
+    id = "#{object_name}_#{method_name}_#{day_id}" -%>
+    <li style="line-height: 2em">
+      <%= check_box_tag("#{object_name}[#{method_name}][]", day_id, checked, {:id => id, :style => "display:inline" } ) -%>
+      <%= label_tag(id, day_name, :style => "display:inline") -%>
+    </li>
+  <% end -%>
+</ul>

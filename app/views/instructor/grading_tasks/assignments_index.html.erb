@@ -1,0 +1,56 @@
+<%= render :partial => 'common_header' %>
+
+<div id="main_content">
+
+  <% unless current_focus.has_atleast_one_actionable_section? %>
+    <%= render :partial => 'instructor/partials/no_actionable_course_or_section' %>
+  <% else %>
+
+    <%
+    @grading_task_sets = [{:task_set_name => GradingTask::ALREADY_GRADED, :task_set_label => 'Already graded'},
+                          {:task_set_name => GradingTask::NEEDS_GRADING, :task_set_label => 'Needs grading'},
+                          {:task_set_name => GradingTask::UPCOMING_GRADING, :task_set_label => 'Upcoming grading'},
+                          {:task_set_name => GradingTask::UNASSIGNED_ACTIVITIES, :task_set_label => 'Unassigned activities'}]
+    %>
+    <div id="column_one">
+      <div id="task_categories_wrapper">
+        <ul>
+          <% @grading_task_sets.each do |task_set| %>
+            <% expanded_css_class = ' expanded program-header-bar' if @task_type == task_set[:task_set_name] %>
+            <li id="<%= task_set[:task_set_name] %>_header" class="task_category <%= expanded_css_class %>">
+              <h3>
+                <a href="#" data-js-link="task_section" data-js-task="<%= task_set[:task_set_name] %>" data-js-program-id="<%= current_program.id %>"><%= task_set[:task_set_label] %></a>
+              </h3>
+              <div class="task_numbers">
+                <span id="<%= "#{task_set[:task_set_name]}_to_grade" %>" class="circled"><%= @task_list.tasklist_count(task_set[:task_set_name]) %></span>
+                <span class="assignments">assignments</span>
+              </div>
+            </li>
+          <% end -%>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div id="column_two">
+    <% if current_focus.has_atleast_one_actionable_section? %>
+      <div id="instructor_tasks_wrapper">
+        <div id="instructor_task_sections">
+          <% @grading_task_sets.each do |task_set| %>
+            <% expanded_css_class = ' expanded' if @task_type == task_set[:task_set_name] %>
+            <div id="<%= task_set[:task_set_name] %>" class="grading_task_section<%= expanded_css_class %>">
+              <div class="instructor_task_header program-header-bar">
+                <h3><%= task_set[:task_set_label] %></h3>
+              </div>
+              <div class="instructor_task_activities">
+                <%= render :partial => 'activities_index' if @task_type == task_set[:task_set_name] %>
+              </div>
+            </div>
+          <% end -%>
+        </div> <!-- /#grading_task_sections -->
+      </div> <!-- /#grading_tasks_wrapper -->
+    <% else %>
+      <%= render :partial => 'instructor/partials/no_actionable_course_or_section' %>
+    <% end %>
+  </div>
+</div> <!-- /#main_content -->

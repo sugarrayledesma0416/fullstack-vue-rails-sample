@@ -1,0 +1,224 @@
+//= require_self
+//= require gradebook/gradebook_tooltips
+
+/*********************************************************/
+/*                      GENERAL STUFF                    */
+/*********************************************************/
+
+.gradebook #main_content {
+  margin-top:0px;
+}
+
+.gradebook h1.page_title {
+  display: none;
+}
+
+.gradebook [id="page_container"].ui-helper-clearfix:after {
+  content: "";
+  display: none;
+}
+
+.gradebook_throbber {
+  position: relative;
+  z-index: 92;
+  top: 40%;
+  left: 40%;
+  height: 30px;
+  width: 30px;
+}
+
+input.input_disabled {
+  background: #EEEEEE;
+}
+
+input.update_error {
+  border: 2px solid #B40404;
+}
+
+span.disabled {
+  color: #bbb;
+}
+
+.highlight {
+  background-color: #DFF09F;
+}
+
+.normal {
+  font-weight: normal;
+}
+
+.popup a {
+  text-decoration: none;
+}
+
+.gradebook_cell {
+  display:inline;
+}
+
+div.no_course_or_section{
+  font-style: italic;
+  padding-top: 38px;
+  position: absolute;
+}
+
+.email_link {
+  padding-top: 20px;
+}
+
+/*********************************************************/
+/*              GENERAL TEXT / LINK COLOURS              */
+/*********************************************************/
+
+td.not_current span,
+td.due_in_future span {
+  color: #666;
+  font-style:italic !important;
+}
+
+.late_score .score_modal {
+  color: #D12109 !important;
+}
+
+td.dropped_score {
+  background-color: #dedede;
+}
+
+td.dropped_score a, td.dropped_score a:link {
+  text-decoration: line-through;
+  color: #666;
+}
+
+/* Access Issues */
+td.access_problem {
+  background: url('/images/indash_icon_alert.png') left center no-repeat;
+}
+
+/*********************************************************/
+/*                    GRADEBOOK ACTIONS                  */
+/*********************************************************/
+#gradebook_top_bar {
+  background: #FFF;
+  width: 896px;
+  z-index: 900;
+}
+
+.gradebook_actions {
+  float:right;
+  margin-right: 30px;
+}
+
+#grade_display_style_selector {
+  float: right;
+  clear: right;
+}
+
+#grade_display_style_form a,
+.gradebook_actions a {
+  display:block;
+  float:left;
+  text-indent:-9999em;
+  height:26px;
+  width:26px;
+  background-image:url(/images/gradebook_square_btns.png);
+  background-repeat:no-repeat;
+  margin-left: 8px;
+}
+
+.grace_periods {
+  margin-right: 20px;
+}
+
+#gradebook_controls {
+  clear: both;
+  margin-top: 20px;
+  margin-right: 5px;
+}
+
+#time_content_navigation {
+  font-size: 11px;
+  line-height: 13px;
+  margin-left: 6px;
+}
+
+.add_students         { background-position:   -4px -32px; }
+.add_students:hover   { background-position:   -4px  -3px; }
+.drop_students        { background-position:  -35px -32px; }
+.drop_students:hover  { background-position:  -35px  -3px; }
+.add_column           { background-position:  -66px -32px; }
+.add_column:hover     { background-position:  -66px  -3px; }
+.add_column_disabled  { background-position:  -66px  -3px; }
+.grace_periods        { background-position: -192px -32px; }
+.grace_periods:hover  { background-position: -192px  -3px; }
+
+#grade_display_style_percent          { background-position:  -97px -32px; }
+#grade_display_style_percent:hover    { background-position:  -97px  -3px; }
+#grade_display_style_percent.selected { background-position:  -97px  -3px; }
+#grade_display_style_points           { background-position: -129px -32px; }
+#grade_display_style_points:hover     { background-position: -129px  -3px; }
+#grade_display_style_points.selected  { background-position: -129px  -3px; }
+#grade_display_style_mark             { background-position: -161px -32px; }
+#grade_display_style_mark:hover       { background-position: -161px  -3px; }
+#grade_display_style_mark.selected    { background-position: -161px  -3px; }
+
+
+/*********************************************************/
+/*                    STUDENT SEARCH                     */
+/*********************************************************/
+#student_search_results #student_search{
+  float:right;
+  padding:15px 0px 0px 0px;
+}
+
+input#student_search_string {
+  background: url(/images/bg_search.png) transparent top left no-repeat;
+  border: 0;
+  padding: 8px 0 8px 18px;
+  width: 148px;
+  margin-right:5px;
+  color:#AAAAAA;
+  float:left;
+  font-size:10px;
+  position:relative;
+  left:-4px;
+  }
+
+input.student_search_button {
+  background: url(/images/search_button.png) transparent top left no-repeat;
+  border: 0;
+  height: 16px;
+  text-indent: -222em;
+  text-transform: uppercase;
+  width: 16px;
+  outline:0;
+  cursor:pointer;
+  position:absolute;
+  right:15px;
+  top:7px;
+}
+
+.search_students input.student_search_button {
+  top:21px;
+}
+
+#student_search {
+  float:left;
+  position:relative;
+}
+
+.student_names {
+  background-position: 18px top;
+  text-align: left;
+}
+
+.loading {
+  font-size:10px;
+  font-style:italic;
+  color:#CCCCCC;
+}
+
+/* Live Person Overrides for Z-Index conflicts with Masthead */
+.lpchat-label,
+.lpchat-image {
+  z-index: auto!important;
+}
+

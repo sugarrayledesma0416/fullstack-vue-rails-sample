@@ -1,0 +1,16 @@
+<% if @calendar_presenter -%>
+  <% content_for(:body_classes, "ns-student-calendar-page") %>
+  <% content_for(:css_head, stylesheet_link_tag('music/features/assignment_calendar/student/main')) %>
+
+  <% content_for(:navigation, render(partial: 'app_shell/navbar_section/main', 
+                                     locals: { section: @section })) %>
+  <h1 class="u-screen-reader-only">Calendar</h1>
+  <div class="c-study-schedule-page">
+    <div class="c-calendar-wrapper  js-calendar-container">
+      <%= render partial: 'calendar/event_calendar', 
+                 locals: { calendar_presenter: @calendar_presenter } %>
+    </div>
+  </div>
+<% else -%>
+  There is no Assignment Calendar for this course.
+<% end -%>

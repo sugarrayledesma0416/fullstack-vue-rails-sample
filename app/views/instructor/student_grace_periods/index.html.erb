@@ -1,0 +1,105 @@
+<%= vite_javascript_tag 'entrypoints/instructor/student_grace_periods/student_grace_periods' %>
+
+<l-stack-v3 class="u-pad-rt-24 u-pad-lt-24 u-mar-top-neg-16" gap="0">
+  <m3-subnavigation-header page-title="<%= @page_title %>">
+  </m3-subnavigation-header>
+  <p class="u-mar-top-8">Students will be provided full course access for <%= @presenter.grace_periods.duration %> days.</p>
+
+  <div class="u-mar-bot-24 u-mar-top-24">
+    <h2 class="u-txt-body-1 u-txt-semibold u-mar-bot-8">Eligible Students</h2>
+    <p>Grace Periods Available: <%= @presenter.grace_periods.allowed %> </p>
+  </div>
+  <div class=" js-eligible-students">
+  <%=
+    form_tag(
+      instructor_grant_student_grace_period_path(
+        program_id: current_program.id,
+        course_id: @presenter.course.id
+      ),
+      class: 'no_initial_foucs js-grace-period-form',
+      id: 'students_grace_period_form',
+      method: :post
+    ) do
+  %>
+  <div class="c-table-roster-wrapper">
+    <table class="c-table-v3  c-table-roster">
+      <thead>
+        <tr>
+          <th class="c-table-v3__th">Name</th>
+          <th class="c-table-v3__th"> Course </th>
+          <th class="c-table-v3__th"><%= @presenter.section_column_header %></th>
+        </tr>
+      </thead>
+      <tbody class="student_list_body">
+      <% if @presenter.students_with_access_problems.size > 0 -%>
+        <% @presenter.students_with_access_problems.each do |student| -%>
+        <tr id="<%="student_#{student.id}"%>" class="<%= cycle('odd', 'even') %>">
+          <td class="c-table-v3__td">
+            <sl-checkbox 
+              class="c-table-roster__checkbox js-checkbox"
+              <%= mark_checked(student, @selected_student_ids) ? "checked" : nil %>
+              id=<%= "select_students_#{student.id}" %>
+              value="<%= student.id %>"
+              name="selected_student_ids[]">
+                <%= student.last_name_first %>
+            </sl-checkbox>
+          </td>
+          <td class="c-table-v3__td"><%= @presenter.course.name %></td>
+          <%= render('instructor/student_grace_periods/student_sections', student:) %>
+        </tr>
+        <% end -%>
+      <% else -%>
+        <tr id="student_0" class="even">
+          <td class="c-table-v3__td" colspan="3">
+            No students need grace period access.
+          </td>
+        </tr>
+      <% end -%>
+      </tbody>
+    </table>
+  </div>           
+  <l-line-v3 class="u-align-content-center u-justify-content-end u-mar-top-48">
+    <%= link_to 'Cancel', @return_to, class: 'c-button-v3  c-button-v3--tertiary' %>
+    <button 
+      class="c-button-v3 c-button-v3--primary u-mar-lt-16 js-grace-period-form-submit-button" 
+      id="upper_button"
+      type="submit">
+      Add Grace Periods
+    </button>
+    </l-line-v3>
+
+    <%= hidden_field_tag :program_id, current_program.id %>
+    <%= hidden_field_tag :course_id, @presenter.course.id %>
+    <%= hidden_field_tag :return_to, @return_to %>
+  <% end -%>
+
+  <% if @presenter.students_with_grace_period.size > 0 -%>
+  <sl-divider style="--spacing: 24px;"></sl-divider>
+  <div class="c-table-roster-wrapper u-mar-bot-48">
+    <h2 class="u-txt-body-1 u-txt-semibold u-mar-bot-16">Students with Grace Periods</h2>
+    <table class="c-table-v3  c-table-roster">
+      <thead>
+        <tr>
+          <th class="c-table-v3__th">Name</th>
+          <th class="c-table-v3__th">Days remaining </th>
+          <th class="c-table-v3__th">Course </th>
+          <th class="c-table-v3__th"><%= @presenter.section_column_header %></th>
+        </tr>
+      </thead>
+      <tbody class="student_list_body">
+    <% @presenter.students_with_grace_period.each do |student| -%>
+        <tr id="<%="student_#{student.id}"%>" class="<%= cycle('odd', 'even') %>">
+          <td class="c-table-v3__td">
+            <%= student.last_name_first %>
+          </td>
+          <td class="c-table-v3__td"><%= @presenter.grace_period_days_remaning(student.id) %></td>
+          <td class="c-table-v3__td"><%= @presenter.course.name %></td>
+          <%= render('instructor/student_grace_periods/student_sections', student:)%>
+        </tr>
+      <% end -%>
+      </tbody>
+    </table>
+  </div>
+  <% end %>
+  </div>
+</l-stack-v3>

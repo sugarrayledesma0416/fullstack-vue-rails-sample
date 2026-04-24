@@ -1,0 +1,55 @@
+<l-stack-v3 gap="5 " class="u-oflow-x-hid  u-oflow-y-auto  u-height-dvh-70  c-scrollbar-v3  c-scrollbar-v3--fade-effect">
+  <% sections.each do |section| %>
+    <div class="ns-enterprise__course-card  u-pad-24  u-width-auto<%= section.id == @section.id ? ' u-disabled' : ''%>">
+      <div class="l-line-v3  u-justify-content-space-between">
+        <div class="u-width-full">
+          <div class="u-txt-semibold  u-dis-inline-block  u-txt-body-2">
+            <%= section.name %>
+            <%=
+              link_to(
+                edit_institution_admin_course_section_path(
+                  id: section.id,
+                  course_id: params[:course_id],
+                  program_id: params[:program_id],
+                  school_id: params[:school_id]
+                ),
+                class: 'c-button-v3  c-button-v3--primary-clear  c-button-v3--sm'
+              ) do %>
+                <music-icon-edit-v3 class="u-fill-red-400"></music-icon-edit-v3>
+            <% end %>
+          </div>
+          <ul class="c-prioritized-list  u-txt-body-1">
+            <% @presenter.section_owners(section).each_with_index do |instructor_hash, index| %>
+              <li><%= "#{instructor_hash[:instructor].full_name}, #{instructor_hash[:role]}" %></li>
+            <% end %>
+          </ul>
+        </div>
+        <div class="l-stack-v3  u-align-items-center  u-mar-auto">
+          <music-bubble-alert-v3 class="info-bubble" variant="dark" placement="top">
+            <span tooltip-target>
+              <%= link_to '#', onclick: "$('.js-confirm-destroy-section-model-#{section.id}').vhlModal('open')" do %>
+                <music-icon-x-circle-v3 class="u-fill-true-gray-700"></music-icon-x-circle-v3>
+              <% end %>
+            </span>
+            <span class="u-txt-legal  u-width-160">
+              Delete this section. This cannot be undone.
+            </span>
+          </music-bubble-alert-v3>
+        </div>
+      </div>
+    </div>
+    <%= render('confirm_destroy_section', section: section, school_id: @presenter.school.id) if section.id != @section.id %>
+  <% end %>
+</l-stack-v3>
+<div class="u-txt-rt">
+  <%=
+    link_to(
+      institution_admin_sections_path(
+        course_id: params[:course_id],
+        program_id: params[:program_id],
+       school_id: params[:school_id]
+      )
+    ) do%>
+      <button class="c-button-v3  c-button-v3--primary  u-width-96">Save</button>
+  <% end %>
+</div>

@@ -1,0 +1,54 @@
+@import 'music/library/v1/base/main';
+@import 'music/features/jr/components/buttons';
+
+$auto-submit-border-color: #000; // v1 $black
+$page-fill-color: #fff; // v1 $white
+$text-color-quiet: #666; // v1 $gray-6
+$prompt-border-color: #666; // v1 $gray-6
+$text-color-quiet: #707070; // v1 $lightest-text
+$interstitial-shadow-color: #ccc; // v1 $gray-c
+$interstitial-border-color: #E2E2E2;
+$assessment-title-color: #47577D;
+$assessment-password-background-color: #F1F2F9;
+
+.begin-activity-prompt, .time-over-prompt {
+  width: rpx(300);
+  margin: rpx(100) auto 0;
+  padding: rpx(20);
+  text-align: center;
+  border: rpx(1) solid $prompt-border-color;
+}
+
+.begin-activity-prompt .buttons {
+  margin-top: rpx(20);
+  text-align: left;
+}
+
+.begin {
+  float: right;
+}
+
+#auto_submit {
+  border: rpx(1) solid $auto-submit-border-color;
+  padding: rpx(20);
+  width: rpx(300);
+  margin: rpx(20) auto;
+}
+
+.status {
+  margin: rpx(20) 0;
+}
+
+.assessment-controls {
+  margin: 0 rpx(12);
+  min-height: rpx(80);
+}
+
+.assessment-controls .start {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.assessment-controls .enter {
+  float: right;
+}

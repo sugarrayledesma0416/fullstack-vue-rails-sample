@@ -1,0 +1,67 @@
+<% if event_day.valid_day? %>
+  <% event_day_announcements = announcements_by_date.fetch(event_day.date, nil)
+     event_day_assignments = assignments_by_date.fetch(event_day.date, nil)
+  %>
+  <li class="<%= event_day.css_classes %>  ns-music-v1" id="<%= event_day.id %>" data-js-weekday="<%= event_day.date.strftime('%a') %>">
+    <div class="day">
+      <span class="day_number  u-txt-bold"><%= event_day.day %></span>
+          <% if show_estimates && event_day_assignments.present? %>
+            <span class="u-txt-rt  u-float-rt  u-mar-rt-8  u-txt-gray-6" data-day-total-time='day-total-time'>
+              <%= format_hours_minutes(event_day_assignments.total_time.to_i, :short) %>
+            </span>
+          <% end %>
+      <% if event_day_announcements&.any_class_cancelled == 1 %>
+        <span class="c-tag  c-tag--sm">
+          Class cancelled
+        </span>
+      <% end %>
+
+      <% if has_multiple_due_dates %>
+        <span class="day_item  js-tooltip-auto" title="Some or all of the activities in this list are assigned on additional dates.">
+          <%= feature_icon('music/v1/icons/core/help', ['c-embedded-icon--md']) %>
+        </span>
+      <% end %>
+
+      <span data-js-daily="daily" class="daily  ui-helper-clearfix">
+        <div class="items_daily  u-mar-top-10">
+          <% if event_day_assignments.present? %>
+            <% event_day.category_links.each do |category_link| -%>
+              <% next if category_link.count_label == 0 %>
+              <div class="day_item  test-day-item">
+                <% if event_day.clickable_category_links? %>
+                  <%= link_to "#{category_link.name}: #{category_link.count_label}",
+                    url_for(category_link.url_options),
+                    category_link.html_options.merge(
+                      'aria-label' => "#{category_link.name}: #{category_link.count_label}, #{event_day.date.strftime("%d %B %Y")}",
+                      'class' => 'u-txt-under'
+                    ) %>
+                <% else %>
+                  <span> <%= "#{category_link.name}: #{category_link.count_label} " %></span>
+                <% end %>
+              </div>
+            <% end -%>
+
+            <% event_day.assessment_links.each do |assessment_link| -%>
+              <div class="day_item">
+                <%= assessment_link_or_text(assessment_link, event_day.date.strftime("%d %B %Y")) %>
+              </div>
+            <% end -%>
+          <% end %>
+          <% if event_day_announcements.present? %>
+            <div class="day_item  announcement">
+              <%= user_announcement_link(event_day_announcements, event_day.date.strftime("%d %B %Y")) %>
+            </div>
+          <% end %>
+        </div>
+
+      </span>
+
+    </div>
+  </li>
+
+<% else %>
+
+  <li class="day  beyond_month">
+  </li>
+
+<% end %>

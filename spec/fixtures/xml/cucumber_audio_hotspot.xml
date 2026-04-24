@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<activity activity_type="audio_hotspots" language="es" title="hotspot title">
+  <dl>Hotspot instructions.</dl>
+  <items>
+    <topic>
+      <image id="1"/>
+    </topic>
+    <style>
+      <unplayed>
+        <image id="2"/>
+      </unplayed>
+      <played>
+        <image id="3"/>
+      </played>
+
+      <toggle_text_button>
+        <show>show text</show>
+        <hide>hide text</hide>
+      </toggle_text_button>
+    </style>
+
+    <hotspot x="50" y="100">
+      <target>target 1</target>
+      <base>base 1</base>
+      <audio id="10"/>
+    </hotspot>
+
+    <hotspot x="100" y="200">
+      <target>target 2</target>
+      <base>base 2</base>
+      <audio id="20"/>
+    </hotspot>
+
+    <hotspot x="75" y="300">
+      <target>target 3</target>
+      <base>base 3</base>
+      <audio id="30"/>
+    </hotspot>
+  </items>
+</activity>
+

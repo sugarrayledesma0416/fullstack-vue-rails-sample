@@ -1,0 +1,62 @@
+ <div class="c-button-group  c-button-group--tab  u-bord-bot-1  u-bord-gray-d  u-dis-inline-block  u-mar-bot-16  u-mar-top-32  u-pad-bot-16">
+  <% past_tab_selected    = past_tab ? "is-current" : "" %>
+  <% current_tab_selected = past_tab ? "" : "is-current" %>
+  <% if current_page == 'progress' %>
+    <%= link_to(
+          'Current',
+          institution_admin_section_metrics_path(
+            program_id: presenter.program.id,
+            school_id: presenter.school.id
+          ),
+          class: "c-tab  #{ current_tab_selected }"
+        ) %>
+    <%= link_to(
+          'Past',
+          institution_admin_section_metrics_past_path(
+            program_id: presenter.program.id,
+            school_id: presenter.school.id,
+            year: current_year
+          ),
+          class: "c-tab  #{ past_tab_selected }"
+        ) %>
+  <% else %>
+    <%= link_to(
+          'Current',
+          institution_admin_courses_current_path(
+            program_id: presenter.program.id,
+            school_id: presenter.school.id
+          ),
+          class: "c-tab  #{ current_tab_selected }"
+        ) %>
+    <%= link_to(
+          'Past',
+          institution_admin_courses_past_path(
+            program_id: presenter.program.id,
+            school_id: presenter.school.id,
+            year: current_year
+          ),
+          class: "c-tab  #{ past_tab_selected }"
+        ) %>
+  <% end %>
+ </div>
+ <div class="c-form-item  l-span-2  u-pad-bot-16  u-txt-ctr">
+   <select id="select-year" class="c-select  u-mar-auto  u-width-full js-select-year">
+     <%=
+       presenter.current_past_select_options(current_year) do |program_id, year, school_id|
+         if current_page == 'progress'
+           institution_admin_section_metrics_past_path(
+             program_id: presenter.program.id,
+             school_id: presenter.school.id,
+             year: year
+           )
+         else
+           institution_admin_courses_past_path(
+             program_id: presenter.program.id,
+             school_id: presenter.school.id,
+             year: year
+           )
+         end
+       end
+     %>
+   </select>
+ </div>

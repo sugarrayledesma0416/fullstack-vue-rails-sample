@@ -1,0 +1,55 @@
+<activity activity_type="virtual_chat" language="es" title="Preguntas personales - Virtual chat">
+  <dl>One of your classmates wants to know about what you like to do on vacation. Listen to his questions and record your answers.</dl>
+  <items>
+    <style>
+      <item_numbers>hide</item_numbers>
+      <avatar><image id="120966"/></avatar>
+    </style>
+    <reference type="model">
+      <body>
+        <b>Your classmate asks:</b> ¿Qué tiempo hace hoy?<br/>
+        <b>You say:</b> Hoy hace mucho frío.<br/>
+        <br/>
+        <b>Your classmate asks:</b> ¿Qué te gusta hacer en las vacaciones?<br/>
+        <b>You say:</b> En las vacaciones me gusta viajar y nadar.<br/>
+      </body>
+      <audio id="120955"/>
+    </reference>
+    <item>
+      <turns>
+        <turn>
+          <audio id="120956"/>
+        </turn>
+        <turn>
+          <audio id="120957"/>
+        </turn>
+        <turn>
+          <audio id="120958"/>
+        </turn>
+        <turn>
+          <audio id="120959"/>
+        </turn>
+        <!-- not using these for now to keep activity shorter
+        <turn>
+          <audio id="120960"/>
+        </turn>
+        <turn>
+          <audio id="120961"/>
+        </turn>
+        <turn>
+          <audio id="120962"/>
+        </turn>
+        <turn>
+          <audio id="120963"/>
+        </turn>
+        <turn>
+          <audio id="120964"/>
+        </turn>
+        <turn>
+          <audio id="120965"/>
+        </turn>    
+        -->
+      </turns>
+    </item>
+  </items>
+</activity>
