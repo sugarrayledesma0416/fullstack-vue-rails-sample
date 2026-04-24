@@ -1,0 +1,22 @@
+<%# image_options and media_item are passed via locals when calling the partial. %>
+
+<div class="ns-music-v1  ns-media-item-image">
+  <% if image_options[:reference_in_artifact] %>
+    <%= image_tag(embed_remote_image(media_item.public_filename), image_options) %>
+  <% else %>
+    <%= image_tag(media_item.public_filename, image_options) %>
+  <% end %>
+  <details id="longdesc-for-<%= media_item.id %>" class="c-disclosure">
+    <summary class="c-disclosure__header  c-no-button">Long Description</summary>
+    <div class="c-disclosure__body">
+      <div class="c-panel  c-panel--padded">
+
+        <%# Do we want a title for image descriptions? %>
+        <div class="c-panel__body">
+          <p><%= media_item.long_description %></p>
+        </div> <!-- / c-panel__body -->
+
+      </div> <!-- / c-panel -->
+    </div> <!-- / c-disclosure__body -->
+  </details>
+</div>

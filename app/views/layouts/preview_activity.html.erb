@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" class="<%= yield :html_classes %>">
+  <head>
+    <%= render('partials/google_tag_manager') %>
+    <%= render :partial => 'layouts/common_header' %>
+  </head>
+
+  <body class="notranslate  ns-responsive  ns-activity  activities
+               <%= yield :body_classes %>  <%= yield :theme_classes %>" <%= yield :angular_tags %>>
+    <div class="ns-masthead  ns-music-v1  <%= yield :theme_classes %>">
+      <%= render 'app_shell/masthead',
+                  section_header: @section_header,
+                  course: @course,
+                  section: @section,
+                  flash: flash %>
+    </div>
+
+    <div id="page_container" class="c-page-container  ui-helper-clearfix  js-page-container">
+      <div id="column_wrapper">
+        <h1 class="page_title"><%= @page_title if @page_title -%></h1>
+        <%= yield %>
+      </div>
+      <!-- end column_wrapper -->
+
+      <%= render 'layouts/music_v1/footer' %>
+    </div>
+    <%= yield :js_foot %>
+    <%= render 'layouts/inactivity_timeout' %>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+require_relative 'etl/common'
+
+class CategorySource < Source
+  def initialize(course_ids)
+    @records = ::Category.where(course_id: course_ids.split(','))
+  end
+end
+
+class CategoryTransform < Transform
+  def initialize(model)
+    @common_fields = %w(id course_id name accept_late_work weighting_percent)
+    super(model)
+  end
+
+  def process(record)
+    super(record) do |r|
+      r.details = { credit_only: record.credit_only,
+                    penalty_percent: record.penalty_percent,
+                    late_work_penalty: record.late_work_penalty,
+                    drop_low_scores: record.drop_low_scores }
+    end
+  end
+end
+
+source CategorySource, ENV['COURSE_IDS']
+transform CategoryTransform, GradebookEngine::Category
+destination RecordDestination

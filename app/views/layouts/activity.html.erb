@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      lang="en">
+  <head>
+    <%= render('partials/google_tag_manager') %>
+    <%= render :partial => 'layouts/common_header' %>
+  </head>
+
+  <body class="notranslate  ns-responsive  ns-activity  activities
+              <%= yield :body_classes %>
+              <%= yield :theme_classes %>
+              <%= '  u-jr-theme-background-color' if supersite_junior? %>"
+        <%= yield :angular_tags %>>
+    <% if current_user.cartridge? %>
+      <header class="<%= masthead_css_class %>  c-main-header  c-mobile-chat-activity-hidden-when-call-ongoing  js-masthead">
+        <%= render 'layouts/flash', flash: flash %>
+      </header>
+    <% else %>
+      <div class="ns-masthead  ns-music-v1  <%= yield :theme_classes %> <%= test_class('masthead-container') %>">
+        <%= render 'app_shell/masthead',
+                    section_header: @section_header,
+                    course: @course,
+                    section: @section,
+                    flash: flash %>
+      </div>
+    <% end %>
+
+    <div id="page_container" class="c-page-container  ui-helper-clearfix  js-page-container">
+      <div id="column_wrapper">
+        <div class="js-vue-flash-banner"></div>
+        <% if @page_title %>
+          <h1 class="page_title  c-mobile-tabs-view__reference-content"><%= @page_title %></h1>
+        <% end %>
+        <%= yield :help_request_message_container %>
+        <%= yield %>
+      </div>
+      <!-- end column_wrapper -->
+
+    <% unless current_user.cartridge? %>
+      <%= render 'layouts/music_v1/footer' %>
+    <% end %>
+    </div>
+    <% if controller.is_a?(ActivitiesController) || controller.is_a?(Instructor::ActivitiesController) || controller.is_a?(Cartridge::ActivitiesController) %>
+      <script class="js-browser-not-supported" type="text/x-handlebars-template">
+        <%= render 'maestro_activity_engine/activities/partials/supported_browsers_message' %>
+      </script>
+      <%= render 'activities/help_request' %>
+    <% end %>
+    <%= yield :js_foot %>
+
+     <% if @activity&.virtual_chat? ||
+           @activity&.video_virtual_chat? ||
+           @activity&.partner_chat? ||
+           @activity&.group_chat?  %>
+      <%= render 'mobile_tabs_view/tabs_template' %>
+    <% end %>
+    <%= render 'layouts/inactivity_timeout' %>
+  </body>
+</html>

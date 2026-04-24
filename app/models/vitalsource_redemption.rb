@@ -1,0 +1,2 @@
+class VitalsourceRedemption < ApplicationRecord
+end

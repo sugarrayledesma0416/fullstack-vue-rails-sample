@@ -1,0 +1,16 @@
+  <%= render(
+        'partials/form_errors',
+        header_message: nil,
+      ) %>
+  <div class="inline">
+    <%= form.label :name %> 
+    <%= form.text_field :name %>
+  </div>
+  <div class="inline">
+    <%= form.label :date %>
+    <%= form.text_field :date, :class => 'datepicker has_datepicker', :tabindex => 2 %>
+  </div>
+  <div class="inline">
+    <%= form.label :class_cancelled %>
+    <%= form.check_box :class_cancelled, :tabindex => 3 %>
+  </div>

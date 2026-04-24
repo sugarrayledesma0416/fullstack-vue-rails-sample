@@ -1,0 +1,271 @@
+<% content_for(:body_classes, "standard_layout  review_work  ns-review-work  partner_chat  ns-newcsslib") %>
+
+<% content_for(:js_head, javascript_include_tag("maestro_activity_engine/recording_v2")) %>
+<% content_for(:js_head, javascript_include_tag('protect_unsaved_changes.js')) %>
+<% content_for(:js_head, javascript_tag("document.domain = 'vhlcentral.com';") ) %>
+<% content_for(:js_head, javascript_include_tag('grading_sets.js')) %>
+<% content_for(:js_head, javascript_include_tag("#{MaestroActivityEngine::CDN_CKEDITOR_URL}/compatibility/sizzle.js") ) %>
+<% content_for(:js_head, javascript_include_tag('ckeditor_basepath_override.js')) %>
+<% content_for(:js_head, javascript_include_tag("#{MaestroActivityEngine::CDN_CKEDITOR_URL}/core/ckeditor.js") ) %>
+<% content_for(:js_head, javascript_include_tag("#{MaestroActivityEngine::CDN_CKEDITOR_URL}/core/lang/en.js") ) %>
+<% content_for(:js_head, javascript_include_tag("#{MaestroActivityEngine::CDN_CKEDITOR_URL}/core/plugins/correction_mode/plugin.js") ) %>
+<% content_for(:js_head, javascript_include_tag("#{MaestroActivityEngine::CDN_CKEDITOR_URL}/core/plugins/comment_mode/plugin.js") ) %>
+<% content_for(:js_head, javascript_include_tag("#{MaestroActivityEngine::CDN_CKEDITOR_URL}/core/plugins/recording_mode/plugin.js") ) %>
+<% content_for(:js_head, javascript_include_tag("#{MaestroActivityEngine::CDN_CKEDITOR_URL}/core/styles/styles/default.js") ) %>
+<% content_for(:js_head, javascript_include_tag("#{MaestroActivityEngine::CDN_CKEDITOR_URL}/extensions/inline_comments/instructor_engine.js") ) %>
+<% content_for(:js_head, javascript_include_tag("#{MaestroActivityEngine::CDN_CKEDITOR_URL}/extensions/inline_comments/instructor_init.js") ) %>
+<% content_for(:js_head, javascript_include_tag("#{MaestroActivityEngine::CDN_CKEDITOR_URL}/extensions/tabs/stereotabs.js") ) %>
+<% content_for(:js_head, javascript_include_tag("#{MaestroActivityEngine::CDN_CKEDITOR_URL}/extensions/tabs/instructor_init.js") ) %>
+
+<% content_for(:css_head, stylesheet_link_tag("instructor_grading")) %>
+<% content_for(:css_head, stylesheet_link_tag("music/features/grading")) %>
+<% content_for(:css_head, stylesheet_link_tag("activities")) %>
+<% content_for(:css_head, stylesheet_link_tag("review_work")) %>
+<% content_for(:css_head, stylesheet_link_tag("maestro_activity_engine/recording")) %>
+
+<% content_for(
+  :js_head,
+  javascript_packs_with_chunks_tag('instructor/grading_sets/edit')
+) %>
+<% content_for(
+  :css_head,
+  stylesheet_packs_with_chunks_tag('instructor/grading_sets/edit')
+) %>
+
+<% if @presenter.activity.activity_type == 'composition' %>
+  <% content_for(:js_head, javascript_include_tag("composition_grading.js") ) %>
+  <% content_for(:body_classes, " composition_grading") %>
+
+  <% if accent_bar_enabled? %>
+    <div class="ns-music-v1  u-mar-0  js-accent-bar-container--activity">
+      <%= render 'music/partials/accent_bar_component', language: @presenter.activity.language %>
+    </div>
+    <% content_for(:js_head, javascript_include_tag('accent_bar_component_wrapper')) %>
+  <% end %>
+<% end %>
+<% if @presenter.has_rubric? %>
+  <% content_for(:body_classes, "  rubric-graded") %>
+<% end %>
+
+<% if @presenter.activity_partner_chat? || @presenter.activity_solo_video_recording_or_included_in_multipart_activity? ||
+      @presenter.activity_group_chat? %>
+  <% content_for(:css_head, stylesheet_link_tag("grading_partner_chat")) %>
+  <% content_for(:js_head, javascript_include_tag('chat/partner_chat_review')) %>
+  <% content_for(:body_classes, " partner_grading ") %>
+<% end %>
+<% if @presenter.activity_true_false_enhanced? || @presenter.activity_has_mixed_grading_method? %>
+  <% content_for(:js_head, javascript_include_tag("activity_shell.js") ) %>
+<% end %>
+
+<% if current_program&.language_code == 'zh' %>
+  <% content_for(:css_head, stylesheet_link_tag('music/features/chinese/theme/fonts/AdobeKaitiRegular') ) %>
+  <% content_for(:css_head, stylesheet_link_tag('features/review_work/main') ) %>
+  <% content_for(:body_classes, '  ns-chinese-program') %>
+<% end %>
+
+<%= hidden_field_tag :student_id, @presenter.current_student.id %>
+<%= hidden_field_tag :jump_to, '' %>
+<%= hidden_field_tag :recording_server_url, @recording_server_url %>
+<%= hidden_field_tag :recording_path_prefix, Recording.new.generate_file_prefix(:instructor) %>
+<%= hidden_field_tag :load_balancer_url, recording_configuration_instance.load_balancer_url %>
+<%= hidden_field_tag :ckeditor_current_recording_path %>
+<%= hidden_field_tag :ckeditor_current_recording_comment_id %>
+
+<%= render 'maestro_activity_engine/activities/partials/include' %>
+
+<%= render 'instructor/grading_sets/help_request_data',
+           section: @presenter.sections.first,
+           students: [@presenter.current_student],
+           activity: @presenter.activity,
+           question_id: nil %>
+<%= render 'activities/get_help_menu' %>
+
+<% content_for(:js_head, javascript_include_tag('instructor_notes/instructor_notes_app_bootstrap.js')) %>
+
+<% if @presenter.activity_composition? %>
+  <%# TODO: See if this needed if composition_grading is included already. %>
+  <% content_for(:js_head, javascript_include_tag('composition_activity')) %>
+<% end %>
+
+<div id='location_details' class="ui-helper-clearfix">
+  <table class="no-border-data-table">
+    <tr>
+      <th id="location_course_label"><b>Course</b></th>
+      <td id="location_course_name"><%= @course.name %></td>
+    </tr>
+    <tr>
+      <th id="location_sections_label"><b>Section</b></th>
+      <td id="location_section_name"><%= @presenter.section.name %></td>
+    </tr>
+    <tr>
+      <th id="location_student_label"><b>Student name </b></th>
+      <td id="location_student_name"><%= @presenter.current_student.full_name%></td>
+    </tr>
+  </table>
+  <br/>
+</div>
+
+
+<div id="grading_set_static_wrap">
+  <div id="grading_set_background_wrap">
+    <div class="grey-frame">
+      <%= render 'grading_control_bar',
+                 activity_id: @presenter.activity.id,
+                 language: @presenter.language,
+                 instructor_editing_tools: @presenter.activity.has_open_ended?,
+                 presenter: @presenter %>
+    </div><!-- /#grey-frame -->
+  </div><!-- /#grading_set_background_wrap -->
+</div><!-- /#grading_set_static_wrap -->
+
+<div id="question_prompt" class="ui-helper-clearfix">
+  <div id="directions-frame" data-helpable-type="direction_line" data-page-element="activity_directions">
+    <span id="activity_title"><%= @presenter.activity.title %></span>
+
+    <% if @presenter.activity.direction_line.present? %>
+      <p id="activity_direction_line"><%= @presenter.activity.direction_line.html_safe %></p>
+    <% else %>
+      <p id="activity_direction_line" class="no-answer">(No Directions Provided)</p>
+    <% end %>
+  </div> <!-- /#directions-frame -->
+  <%= render 'activities/external_references', activity: @presenter.activity %>
+</div> <!-- /#question_prompt -->
+
+<div data-page-element="direction_line_vtext_requests" class="dl_requests_container"></div>
+
+<% unless @presenter.activity.activity_type == 'checkbox_survey' %>
+<div class='ui-helper-clearfix'>
+  <% @presenter.activity.content_object.items.each do |item| -%>
+    <% if item.is_a?(MaestroActivityEngine::ActivityContent::Reference::Base) -%>
+      <%= format_reference(item) %>
+    <% end -%>
+  <% end %>
+</div>
+<% end %>
+
+<% if @presenter.has_practice_test_recommendations? %>
+  <%= render '/instructor/grading_sets/practice_test_recommendations',
+             results: @presenter.results,
+             content_object: @presenter.content_object
+  %>
+<% end %>
+
+<%= form_tag(
+      if params[:score_id].present?
+        instructor_review_work_path(
+          program_id: current_program.id,
+          score_id: params[:score_id]
+        )
+      else
+        instructor_review_work_grade_path(
+          activity_id: @presenter.activity.id,
+          section_id: @presenter.section.id,
+          program_id: current_program.id,
+          user_id: @presenter.current_student.id
+        )
+      end,
+      class: 'main', method: :put) do -%>
+
+  <% if @presenter.activity.activity_type == 'checkbox_survey' %>
+
+  <%= render partial: 'maestro_activity_engine/activities/checkbox_survey/review',
+             locals: { results: @presenter.current_student_attempt.results,
+                       content_object: @presenter.content_object } %>
+  <% elsif @presenter.activity.activity_type == 'multi_checkbox_survey' %>
+  <%= render partial: 'maestro_activity_engine/activities/multi_checkbox_survey/review',
+             locals: { results: @presenter.current_student_attempt.results,
+                       content_object: @presenter.content_object } %>
+  <% else %>
+
+  <div id="student_answers" class="c-review-work-content" lang="<%= @presenter.activity.language %>">
+    <% if @presenter.activity.has_mixed_grading_method? || @presenter.activity.info_gap_partner_chat_v2_with_subactivities? %>
+      <%= render '/instructor/grading_sets/multi_type_activity',
+                 show_auto_graded_questions: 1,
+                 view_manager: @presenter.multi_type_activity_view_manager %>
+    <% else %>
+      <% if @presenter.activity.recording_activity? %>
+        <div class='ui-helper-clearfix'>
+          <% @presenter.activity.content_object.references.each do |item| -%>
+            <% if item.is_a?(MaestroActivityEngine::ActivityContent::Reference::Base) -%>
+              <%= format_reference(item) %>
+            <% end -%>
+          <% end %>
+        </div>
+      <% end %>
+      <div class="rw_activity_container ui-helper-clearfix <%= @presenter.activity.activity_type %>">
+        <% editor_index = 0 %>
+
+        <% @presenter.questions_to_grade.each do |question| %>
+          <div class="sbs_answer_container">
+          <% if @presenter.activity_true_false_enhanced? %>
+            <% view_manager = @presenter.question_to_grade_view_manager(question) %>
+            <%=
+              render(
+                'instructor/grading_sets/true_false_enhanced_grading',
+                question: question,
+                results: @presenter.results,
+                response_id: @presenter.question_response_id(question),
+                feedback_item: @presenter.feedback[@presenter.question_response_id(question)],
+                recording_path: view_manager.recording_path(view_manager.current_student, question),
+                is_new_recording: view_manager.new_recording?(view_manager.current_student, question),
+                params: params,
+                display_score_controls: true
+              )
+            %>
+          <% else %>
+            <div id='<%="#{question.label}"%>' class='box-frame ui-helper-clearfix'>
+              <% editor_index += 1 %>
+              <%=
+                render(
+                  '/instructor/grading_sets/question_to_grade',
+                  view_manager: @presenter.question_to_grade_view_manager(question),
+                  editor_index: editor_index,
+                  content_object: @presenter.activity.content_object,
+                  hide_duplicate_reference: true
+                )
+              %>
+            </div>
+          <% end %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+
+  </div> <!-- /#student_answers -->
+
+  <div class="ui-helper-clearfix"> </div>
+
+  <% end # checkbox survey %>
+
+  <div class="field_row  ns-music-v1">
+    <%= hidden_field_tag :view_type, @view_type %>
+    <% if @view_type == 'student' %>
+      <% link_label = (session[:activity_return] && session[:activity_return]['label'] ? session[:activity_return]['label'] : 'Return') %>
+      <% if @popup %>
+        <%= hidden_field_tag :popup, @popup %>
+      <% end %>
+      <%= link_to link_label, gradebook_student_details_path( program_id: current_program.id,
+                                                              section_id: @presenter.section.id,
+                                                              id: @presenter.current_student.id,
+                                                              popup: @popup),
+          style: "display: inline;" %>
+    <% else %>
+      <%= hidden_field_tag :return_to, params[:return_to] %>
+      <%= link_to @return_to_label || 'Cancel', safe_local_uri(@return_to), style: "display: inline;" %>
+    <% end %>
+    <%= submit_tag 'Save & Done', id: 'submit_button', class: "c-button  c-button--primary  done", style: "display: inline; float: right;" %>
+  </div> <!-- /.field_row -->
+
+<% end # form %>
+
+<div class="c-activity-footer-wrap  js-activity-footer-wrap">
+  <div id="activityFooter" class="ui-helper-clearfix">
+  </div> <!-- /#activityFooter -->
+</div> <!-- /#activityFooterWrap -->
+
+<% if accent_bar_enabled? %>
+  <div class="u-mar-0  js-accent-bar-container--activity  ns-music-v1">
+    <%= render 'music/partials/accent_bar_component', language: current_program.language_code %>
+  </div>
+  <% content_for(:js_head, javascript_include_tag('accent_bar_component_wrapper')) %>
+<% end %>

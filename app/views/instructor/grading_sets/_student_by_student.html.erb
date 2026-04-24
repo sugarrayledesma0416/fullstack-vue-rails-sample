@@ -1,0 +1,170 @@
+<% content_for(:js_head, javascript_include_tag('protect_unsaved_changes.js') ) unless (@grading_style == Setting::GradingTasks::GradingStyle::SPOTCHECK) %>
+<% content_for(:css_head, stylesheet_link_tag("activities")) %>
+<% content_for(:css_head, stylesheet_link_tag("ai/grading_sets")) %>
+<% content_for(:body_classes, " by_student ns-newcsslib") %>
+<% content_for(:js_head, javascript_include_tag('chat/partner_chat_review')) %>
+<% content_for(
+  :js_head,
+  javascript_packs_with_chunks_tag('instructor/grading_sets/edit')
+) %>
+<% content_for(
+  :css_head,
+  stylesheet_packs_with_chunks_tag('instructor/grading_sets/edit')
+) %>
+
+<% if current_program&.language_code == 'zh' %>
+    <% content_for(:css_head, stylesheet_link_tag('music/features/chinese/theme/fonts/AdobeKaitiRegular') ) %>
+    <% content_for(:css_head, stylesheet_link_tag('features/review_work/main') ) %>
+    <% content_for(:body_classes, '  ns-chinese-program  ns-review-work') %>
+<% end %>
+
+<% if view_manager.activity_composition? %>
+  <% content_for(:js_head, javascript_include_tag("composition_grading.js") ) %>
+  <% content_for(:body_classes, " composition_grading") %>
+
+  <% if accent_bar_enabled? %>
+    <div class="ns-music-v1  u-mar-0  js-accent-bar-container--activity">
+      <%= render 'music/partials/accent_bar_component', {language: @presenter.activity.language} %>
+    </div>
+    <% content_for( :js_head, javascript_include_tag('accent_bar_component_wrapper')) %>
+  <% end %>
+<% end %>
+<% if view_manager.activity_true_false_enhanced? %>
+  <% content_for(:js_head, javascript_include_tag("activity_shell.js") ) %>
+<% end %>
+
+
+
+<!-- Contains the scope of the 'music' styles -->
+<div class="ns-newcsslib">
+
+
+  <div data-target-var='rails_data'
+       data-from-dom='<%= { program_id: current_program.id,
+                            activity_id: view_manager.activity.id}.to_json.html_safe %>'>
+  </div>
+
+  <div id="main_content" vhl-app="get_help_app"
+        class="js-help-request-grading-<%= @angular_controller === 'studentActivityRequestsCtrl' ? 'student' : 'instructor' %>">
+    <%= form_tag(instructor_grading_set_path(current_program, view_manager.grading_set, task_type: params[:task_type]),
+            id: 'grading_form',
+            class: 'main',
+            method: :put) do %>
+
+    <%= render 'help_request_data',
+               section: @presenter.sections.first,
+               students: [@presenter.current_student],
+               activity: @presenter.activity,
+               question_id: nil %>
+    <%= render 'activities/get_help_menu' %>
+
+    <div class="c-grading-header">
+      <div class="c-grading-tasks__title  ns-music-v1">
+        <% unless current_user.cartridge? %>
+          <%= format_lesson_strand_label(view_manager.activity) -%> |
+        <% end %>
+        <%= view_manager.activity.title -%> |
+        <%= render 'student_dropdown', view_manager: view_manager %>
+      </div>
+    </div>
+
+    <div id="student_container"
+         class="ns-reference-table
+                <%= @presenter.ai_grading_feature_enabled? ? 'ns-ai-grading-sets' : nil %>
+                ui-helper-clearfix">
+      <div id="grading_set_static_wrap">
+        <div id="grading_set_background_wrap">
+          <%= render 'invalid_scores_message' %>
+          <%= render(
+                'activity_title_and_direction_line',
+                activity: view_manager.activity,
+                instructor_feedback: view_manager.instructor_feedback
+              ) %>
+          <div id="modal_box"></div>
+          <%= render(
+                'grading_control_bar',
+                activity_id: view_manager.activity.id,
+                instructor_editing_tools: @presenter.activity.has_open_ended?,
+                disable_controls: view_manager.disable_controls?,
+                language: view_manager.language
+              ) %>
+        </div><!-- #background wrap -->
+      </div><!-- grading_set_static_wrap -->
+
+        <% if view_manager.has_mixed_grading_method? || view_manager.activity.info_gap_partner_chat_v2_with_subactivities? %>
+          <%= render(
+                'multi_type_activity',
+                show_auto_graded_questions: view_manager.presenter.show_auto_graded_questions?,
+                view_manager: view_manager.presenter.multi_type_activity_view_manager
+              ) %>
+        <% else %>
+
+          <% if view_manager.recording_activity? || view_manager.activity.speech_rec_listen_repeat? %>
+            <div class='ui-helper-clearfix'>
+              <% view_manager.activity_references.each do |item| -%>
+                <%= format_reference(item) %>
+              <% end %>
+            </div>
+          <% end %>
+
+          <div id="student_answers">
+            <% unless @presenter.has_rubric? %>
+              <div class='u-txt-rt  u-mar-top-8'>
+                <b>Grade All</b>:&nbsp;
+                <a id='instructor-grading-set-all-zero' class='u-link'>
+                  0%
+                </a>
+                |
+                <a id='instructor-grading-set-all-hundred' class='u-link'>
+                  100%
+                </a>
+              </div>
+            <% end %>
+            <% view_manager.questions_to_grade.each_with_index do |question, index| -%>
+              <% if view_manager.activity_true_false_enhanced? %>
+                <%= render(
+                      'true_false_enhanced_grading',
+                      question: question,
+                      results: view_manager.results,
+                      response_id: view_manager.current_response_id(question),
+                      feedback_item: view_manager.feedback[view_manager.current_response_id(question)],
+                      recording_path: view_manager.recording_path(view_manager.current_student, question),
+                      is_new_recording: view_manager.new_recording?(view_manager.current_student, question),
+                      params: params,
+                      display_score_controls: view_manager.student_pending_question?(question.label)
+                    ) %>
+              <% else %>
+                <%= render(
+                      'question_to_grade',
+                      editor_index: index,
+                      view_manager: view_manager.question_to_grade_view_manager(question),
+                      content_object: nil
+                    ) %>
+              <% end %>
+            <% end %>
+          </div> <!-- /#student_answers -->
+        <% end %>
+
+        <%= hidden_field_tag :student_id, view_manager.current_student.id %>
+        <%= hidden_field_tag :jump_to, '' %>
+        <%= hidden_field_tag :recording_server_url, @recording_server_url %>
+        <%= hidden_field_tag :recording_path_prefix, Recording.new.generate_file_prefix(:instructor) %>
+        <%= hidden_field_tag :load_balancer_url, recording_configuration_instance.load_balancer_url %>
+        <%= hidden_field_tag :ckeditor_current_recording_path %>
+        <%= hidden_field_tag :ckeditor_current_recording_comment_id %>
+
+      </div><!-- /#student_container -->
+      <div class="grading_pagination">
+        <%= yield :references_audio_player %>
+        <%= render(
+              'prev_next_buttons',
+              is_first: view_manager.currently_on_first_student?,
+              is_last: view_manager.currently_on_last_student?,
+              loop_through: 'questions'
+            ) %>
+      </div>
+    <% end -%>
+  </div>
+
+
+</div> <!-- / .ns-newcsslib -->

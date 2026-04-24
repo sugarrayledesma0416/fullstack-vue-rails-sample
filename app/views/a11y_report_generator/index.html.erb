@@ -1,0 +1,14 @@
+<% content_for(:js_head, javascript_include_tag('support_tools/instructor_resources_export')) %>
+<div class="ns-music-v1">
+  <h1>A11y Report Generator Tool</h1>
+  <div class="c-box  c-box--outlined">
+    <p>This tool exports A11y accessibility reports</p>
+    <p>This process may take a few minutes depending on the number of files that need to be retrieved.</p>
+  </div>
+  <div class="c-form-item-group">
+    <%= form_tag(report_a11y_report_generator_path, method: :get ) do %>
+      <div class='c-form-item'><%= select_tag 'program_id', options_from_collection_for_select(@programs, 'id', 'title'), :include_blank => 'Select Program',  class: 'c-select  u-mar-bot-16' %><div>
+      <div class='c-form-item'><%= submit_tag 'Export', class: 'c-button  c-button--primary  u-mar-bot-16', id: 'export_button' %></div>
+    <% end %>
+  </div>
+</div>

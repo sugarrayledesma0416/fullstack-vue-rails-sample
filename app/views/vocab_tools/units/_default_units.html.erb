@@ -1,0 +1,30 @@
+<% content_for(:css_head, stylesheet_link_tag('music/features/flashcards/main')) %>
+<% content_for(:body_classes, "  ns-flashcards") %>
+<% content_for(:js_head, javascript_packs_with_chunks_tag('vocab_tools/units')) %>
+
+<script>
+/* The page-title h1 is populated here so that it will be visible
+    on the page while the units page is loading. */
+$('.page_title').text('<%= current_program.vocab_tools_label %>');
+$('.page_title').append('<span class="u-screen-reader-only">: Select a <%= current_program.two_tier? ? 'unit' : 'lesson' %>.</span>');
+</script>
+
+<div class="u-mar-bot-16">
+  <%= render(partial: 'activities/return_to') %>
+</div>
+
+<input
+  class="js-units"
+  type="hidden"
+  data-units="<%= @unit_data.to_json %>"
+  data-current-program="<%= current_program.to_json %>">
+
+<% @unit_data[:units].each do |unit| %>
+  <input
+    class="js-unit-<%= unit[:id] %>"
+    type="hidden"
+    data-vocab-tools-word-path="<%= vocab_tools_words_path(current_program, current_section, unit_id: unit[:id]) %>">
+<% end %>
+
+<div class="ns-beta  js-units-gallery">
+</div>

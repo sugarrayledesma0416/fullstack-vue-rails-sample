@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<activity activity_type="audio_hotspots" title="Les néologismes et le franglais" language="fr">
+  <dl>Click on each word to hear the correct pronunciation. Repeat each French word after the speaker.</dl>
+  <items>
+    <topic>
+      <image id="101574" />
+      <audio id="102302" />
+    </topic>
+
+    <style/>
+
+    <hotspot x="15" y="85" width="97" height="16">
+      <audio id="102303"/>
+    </hotspot>
+
+    <hotspot x="137" y="85" width="85" height="16">
+      <audio id="102314"/>
+    </hotspot>
+
+    <hotspot x="247" y="85" width="83" height="16">
+      <audio id="102315"/>
+    </hotspot>
+
+    <hotspot x="357" y="85" width="74" height="16">
+      <audio id="102316"/>
+    </hotspot>
+
+    <hotspot x="15" y="157" width="98" height="16">
+      <audio id="102304"/>
+    </hotspot>
+
+    <hotspot x="136" y="157" width="82" height="16">
+      <audio id="102305"/>
+    </hotspot>
+
+    <hotspot x="247" y="157" width="96" height="16">
+      <audio id="102306"/>
+    </hotspot>
+
+    <hotspot x="357" y="157" width="90" height="16">
+      <audio id="102307"/>
+    </hotspot>
+
+    <hotspot x="16" y="250" width="153" height="16">
+      <audio id="102308"/>
+    </hotspot>
+
+    <hotspot x="184" y="250" width="143" height="16">
+      <audio id="102309"/>
+    </hotspot>
+
+    <hotspot x="343" y="250" width="153" height="16">
+      <audio id="102310"/>
+    </hotspot>
+
+    <hotspot x="16" y="308" width="83" height="16">
+      <audio id="102311"/>
+    </hotspot>
+
+    <hotspot x="180" y="308" width="87" height="16">
+      <audio id="102312"/>
+    </hotspot>
+
+    <hotspot x="347" y="308" width="73" height="16">
+      <audio id="102313"/>
+    </hotspot>
+  </items>
+</activity>

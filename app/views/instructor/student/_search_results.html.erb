@@ -1,0 +1,117 @@
+<div aria-live="polite" 
+     aria-atomic="true" 
+     class="u-screen-reader-only  js-search-results-announcement">
+</div>
+
+<% unless presenter.students.empty? %>
+  <%= form_tag(instructor_enrollments_path(program_id: current_program.id),
+                                                     id: 'students_enrollment_confirmation_form',
+                                                     method: :post) do %>
+    <div class="c-table-enrollments-wrapper">
+      <table class="c-table-v3  c-table-enrollments  js-table-enrollments"
+             aria-label="Search results for students"
+             tabindex="0">
+        <thead>
+          <tr>
+            <th class="c-table-v3__th  c-table-v3__th--name">Name</th>
+            <th class="c-table-v3__th">Email Address</th>
+            <th class="c-table-v3__th">Enrolled Courses</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% presenter.students.each do |student| %>
+            <% enrollment_blocked = presenter.enrollments_for_program_blocked?(student) %>
+            <tr id='<%="student_#{student.id}"%>'>
+              <td class="c-table-v3__td  c-table-enrollments__name">
+                  <sl-checkbox
+                    name="selected_student_ids[]"
+                    value="<%= student.id %>"
+                    id="select_students_<%= student.id %>"
+                    class="c-checkbox  js-student-checkbox"
+                    aria-describedby="student_<%= student.id %>_info"
+                    data-active-sections="<%= !student.active_sections.empty? %>"
+                    <%= 'checked' if mark_checked(student, @selected_student_ids) %>
+                    <%= 'disabled' if enrollment_blocked && @single_enrollment_enforced %>>
+                      <%= "#{student.last_name}, #{student.first_name}" %>
+                  </sl-checkbox>
+              </td>
+              <td class="c-table-v3__td"><%= student.email %></td>
+              <td class="c-table-v3__td" id="student_<%= student.id %>_info">
+                <% unless student.active_sections.empty? %>
+                    <p class="u-mar-bot-16 u-txt-semibold">
+                      Actively enrolled in the following <%= pluralize_without_count(student.active_sections.count, 'section') %>:
+                    </p>
+                    <table 
+                      class="c-table--active-enrollments"
+                      aria-label="Current enrollments for <%= "#{student.last_name}, #{student.first_name}" %>">
+                    <thead>
+                      <tr class="u-mar-bot-8">
+                        <th scope="col">Program</th>
+                        <th scope="col">School</th>
+                        <th scope="col">Course</th>
+                        <th scope="col">Section</th>
+                        <th scope="col">Instructor</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <% presenter.active_enrollments_for_student(student).each do |active_enrollment| %>
+                        <% section = active_enrollment.section %>
+                        <tr class="u-mar-bot-8">
+                          <td><%= presenter.program_title_for_section(section) %> </td>
+                          <td><%= presenter.school_name_for_section(section) %> </td>
+                          <td><%= presenter.course_name_for_section(section) %> </td>
+                          <td><%= section.name %></td>
+                          <td><%= presenter.instructor_name_for_section(section) %></td>
+                        </tr>
+                      <% end %>
+                    </tbody>
+                  </table>
+                <% else %>
+                  <span>Not actively enrolled in any course.</span>
+                <% end %>
+              </td>
+            </tr>
+            <% if enrollment_blocked && @single_enrollment_enforced %>
+              <tr>
+                <td colspan="3">
+                  <%= presenter.blocked_enrollment_msg %>
+                </td>
+              </tr>
+            <% end %>
+          <% end %>
+          <%= hidden_field_tag :program_id, presenter.program.id %>
+          <%= hidden_field_tag :selected_section_id, presenter.selected_section_id %>
+          <%= hidden_field_tag :return_to, presenter.return_to %>
+        </tbody>
+      </table>
+    </div>
+    <% if @single_enrollment_enforced %>
+      <div class="c-search-results__enrollment-notice u-hidden js-search-results-notice">
+        Students who are already enrolled in a separate course or section will be transferred, 
+        along with their work. 
+      </div>
+    <% else %>
+      <div class="c-search-results__enrollment-notice u-hidden js-search-results-notice">
+          Any selected student with an active enrollment in this program
+          will be added to <b><%= presenter.course_name_for_section(@section) %>
+          | <%= @section.name %></b>. No student work will transfer.
+          <%= link_to "Need to transfer a student?", "https://support.vhlcentral.com/hc/en-us/articles/24318466564119-K-12-Concurrent-Enrollment-FAQs" %>
+
+      </div>
+    <% end %>
+    
+  <% end %>
+<% else %>
+  <div class="u-mar-top-24  js-no-results" 
+       role="status" 
+       aria-live="polite">
+  </div>
+  <l-stack-v3 gap="6" align-y="center" align-x="center">
+    <h2 class="c-heading-v3--2  u-mar-top-64">No results found</h2>
+    <sl-button
+      type="submit"
+      class="sl-button-v3  sl-button-v3--primary-clear  js-clear-search">
+      Clear Search
+    </sl-button>
+  </l-stack-v3>
+<% end %>

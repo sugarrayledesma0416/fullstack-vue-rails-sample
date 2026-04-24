@@ -1,0 +1,29 @@
+<% class_prefix = 'user' %>
+<% id_prefix = "#{student.id}_#{class_prefix}" %>
+<div class="<%= class_prefix %>_container">
+  <div class="<%= class_prefix %>_name"><%= student.full_name %></div>
+  <div class="user_grading  u-width-full">
+    <%= render(
+          'instructor/grading_sets/score_controls',
+          view_manager: ScoreControlsViewManager.new(
+            question,
+            feedback,
+            results,
+            presenter.response_id(student, question),
+            params
+          )
+        )
+    %>
+  </div>
+
+  <div class="user_comments  <%= class_prefix %>_comments">
+    <%= render(
+          'instructor/grading_sets/all_instructor_comments',
+          feedback_item: feedback,
+          is_new_recording: presenter.new_recording?(student, question),
+          question: question,
+          recording_path: recording_path,
+          response_id: presenter.response_id(student, question)
+        ) %>
+  </div>
+</div>

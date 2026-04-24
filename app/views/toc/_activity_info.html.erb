@@ -1,0 +1,21 @@
+<%#
+  Contents for the activity table column.
+%>
+<div class="c-col-activity__info">
+  <% if presenter.access_guardian.can_access_content?(activity, activity.lesson) %>
+    <% has_note = presenter.has_note?(activity) %>
+    <% link = activity_path_from_toc(presenter.section_id, activity) %>
+    <%= format_activity_label_with_icons(dom_id(activity), activity, link, nil, has_note, true) %>
+  <% else %>
+    <%= format_activity_label_with_icons(dom_id(activity), activity, nil, nil, has_note, true) %>
+  <% end %>
+
+  <% if activity.dictionary_words_list.present? %>
+    <div data-hover-container="<%= dom_id(activity) %>" class="c-col-activity__words">
+      <div class="results_table_hover_arrow"></div>
+      <div class="activity_title  u-txt-bold  u-sp"><%= activity.title.html_safe %></div>
+      <div class="activity_type">Words:</div>
+      <div><%= activity.dictionary_words_list %></div>
+    </div>
+  <% end %>
+</div>

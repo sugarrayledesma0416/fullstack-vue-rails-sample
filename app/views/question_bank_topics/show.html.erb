@@ -1,0 +1,139 @@
+<%= link_to(question_bank_topics_path) do %>
+  <%= Music::Components.icon(
+        variant: 'return',
+        text: 'Return to Topic List',
+        classes: ['c-embedded-icon--md', 'u-txt-16']
+      ) %>
+<% end %>
+
+<div class="l-grid  u-mar-bot-16">
+  <div class="l-col-6  u-pad-top-16">
+    <h1 class="c-heading--page-title  u-txt-24">
+      <%= @title %>
+    </h1>
+      <%= link_to(edit_question_bank_topic_path(id: @question_bank_topic.id)) do %>
+          <%= Music::Components.icon(
+            variant: 'edit',
+            text: 'Edit Topic',
+            classes: ['c-embedded-icon--md', 'u-txt-16']
+          ) %>
+      <% end %>
+  </div>
+  <div class="l-col-6">
+      <%= link_to(
+        @question_bank_topic.has_topic_concepts? ?
+        new_question_bank_topic_question_bank_path(
+            question_bank_topic_id: @question_bank_topic.id
+        ) : '#',
+        { class: "c-button  c-button--border  " \
+               "u-float-rt  u-mar-top-24  u-mar-rt-0  " \
+               "#{ 'is-disabled' unless @question_bank_topic.has_topic_concepts?}",
+               title: "#{ 'There are no concept mappings for this topic' unless @question_bank_topic.has_topic_concepts?}" }
+        ) do %>
+          <%= Music::Components.icon(
+            variant: 'add',
+            text: 'Add Question Bank',
+            classes: ['c-embedded-icon--md', 'u-txt-16']
+          ) %>
+      <% end %>
+
+    <%= link_to(
+          topic_mappings_question_bank_topic_path(
+            question_bank_topic_id: @question_bank_topic.id
+          ),
+          class: 'c-button  c-button--border  ' \
+                 'u-float-rt  u-mar-top-24  u-mar-rt-0  u-mar-rt-10'
+        ) do %>
+      <%= Music::Components.icon(
+            variant: 'list',
+            text: 'Topic Mappings',
+            classes: ['c-embedded-icon--md', 'u-txt-16']
+          ) %>
+    <% end %>
+  </div>
+</div>
+
+<table class="c-table">
+  <thead>
+    <tr class="c-header-row">
+      <th scope="col">Bank Name</th>
+      <th scope="col">Updated At</th>
+      <th scope="col">Updated By</th>
+      <th scope="col">Needs Review</th>
+      <th scope="col">Revisions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @active_banks.each do |question_bank| %>
+      <tr class="c-row
+                 <%= test_class("question-bank-#{question_bank.id}") %>">
+        <td>
+          <%= link_to(
+                question_bank.title.html_safe,
+                section_activity_path(id: question_bank.id, popup: 1, section_id: 0)
+              ) %>
+        </td>
+        <td>
+          <%= format_date_time(question_bank.last_revised_at, :standard) %>
+        </td>
+        <td>
+          <%= question_bank.last_changed_by_name %>
+        </td>
+        <td>
+          <%= question_bank.question_bank_revisions.where(status: 'pending').exists? ? 'Yes' : '' %>
+        </td>
+        <td>
+          <%= link_to(
+                Music::Components.icon(variant: 'list', text: :default),
+                question_bank_topic_question_bank_question_bank_revisions_path(
+                  question_bank_topic_id: @question_bank_topic.id,
+                  question_bank_id: question_bank.id
+                )
+              ) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<h3 class="c-heading--page-title  u-mar-top-20">
+  Inactive Question Banks
+</h3>
+<table class="c-table">
+  <thead>
+    <tr class="c-header-row">
+      <th scope="col">Bank Name</th>
+      <th scope="col">Updated At</th>
+      <th scope="col">Updated By</th>
+      <th scope="col">Revisions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @inactive_banks.each do |question_bank| %>
+      <tr class="c-row
+                 <%= test_class("question-bank-#{question_bank.id}") %>">
+        <td>
+          <%= link_to(
+                question_bank.title.html_safe,
+                section_activity_path(id: question_bank.id, popup: 1, section_id: 0)
+              ) %>
+        </td>
+        <td>
+          <%= format_date_time(question_bank.last_revised_at, :standard) %>
+        </td>
+        <td>
+          <%= question_bank.last_changed_by_name %>
+        </td>
+        <td>
+          <%= link_to(
+                Music::Components.icon(variant: 'list', text: :default),
+                question_bank_topic_question_bank_question_bank_revisions_path(
+                  question_bank_topic_id: @question_bank_topic.id,
+                  question_bank_id: question_bank.id
+                )
+              ) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

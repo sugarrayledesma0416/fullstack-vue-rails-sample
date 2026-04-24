@@ -1,0 +1,26 @@
+<div class="c-reply-audio-controls">
+  <div class="c-recording-controls">
+    <%= Music::Components.media_button(
+      text: 'Record',
+      variant: 'speak', 
+      classes: ['js-record-media-button'],
+      toggle: :stop, 
+      volume: true) %>
+    <%= Music::Components.media_button(
+      variant: 'listen',
+      toggle: :stop, 
+      classes: ['js-listen-media-button']) %>
+  </div>
+  <button disabled type="button" class="c-no-button  u-txt-ctr  u-txt-nodec  u-mar-bot-16  js-delete-button" aria-labelledby="a11y-delete-recording-label">
+  <%= Music::Components.icon(variant: 'delete', size: 'lg') %>
+    <div id="a11y-delete-recording-label" class="u-txt-10  u-mar-top-8  u-txt-gray-3"> Delete Recording </div>
+  </button>
+</div>
+
+<div class="c-form-item  u-mar-top-10">
+<%= form.label :text, 'Your Reply', class: 'c-form-item__label' %>
+<%= form.text_area :text,
+    rows: 5,
+    class: 'c-form-item__textarea  c-reply-textarea  c-replay-textarea--no-shadow  u-bord-0  js-forum-post-textarea',
+    placeholder: 'Type here...' %>
+</div>

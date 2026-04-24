@@ -1,0 +1,40 @@
+<activity activity_type="multiple_choice" language="es" title="title text">
+  <dl>Instructions</dl>
+  <items>
+    <style>
+      <item_numbers>show</item_numbers>
+    </style>
+    <item>
+      <prompt><image id="1"/>prompt_for_question_1</prompt>
+      <choices>
+        <distractor><image id="2"/></distractor>
+        <distractor>wrong answer 1</distractor>
+        <answer>right answer</answer>
+        <distractor>wrong answer 3</distractor>
+      </choices>
+    </item>
+    <item>
+      <choices>
+        <answer>right answer</answer>
+        <distractor><image id="4"/>wrong answer 2</distractor>
+        <distractor>wrong answer 3</distractor>
+      </choices>
+    </item>
+    <item>
+      <prompt>prompt_for_question_3</prompt>
+      <choices>
+        <distractor>wrong answer 1</distractor>
+        <distractor>wrong answer 2</distractor>
+        <answer>right answer</answer>
+      </choices>
+    </item>
+    <item>
+      <prompt>prompt_for_question_4</prompt>
+      <choices>
+        <distractor>wrong answer 1</distractor>
+        <answer>right answer</answer>
+        <distractor>wrong answer 2</distractor>
+      </choices>
+    </item>    
+  </items>
+</activity>

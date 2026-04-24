@@ -1,0 +1,32 @@
+<plugin>
+    <title>HD Plugin</title>
+    <filename>hd.swf</filename>
+    <version>3.0</version>
+
+    <flashvars>
+        <flashvar>
+            <name>file</name>
+            <default></default>
+            <description>
+            Location of the HD video the player should load.
+            The regular 'file' flashvar holds the location of the fallback video.
+            </description>
+        </flashvar>
+        <flashvar>
+            <name>fullscreen</name>
+            <default>false</default>
+            <description>
+            When "true", HD is automatically toggled on when switching to fullscreen.
+            </description>
+        </flashvar>
+        <flashvar>
+            <name>state</name>
+            <default>true</default>
+            <description>
+            Set this "false" to let the player start with the low-quality video.
+            Set this "true" to let the player start with HD.
+            </description>
+        </flashvar>
+    </flashvars>
+
+</plugin>

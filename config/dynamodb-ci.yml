@@ -1,0 +1,5 @@
+test:
+  # when spawning and running parallel, this will be starting port
+  local_port: 9000
+  region: us-east-1
+  spawn_local: true

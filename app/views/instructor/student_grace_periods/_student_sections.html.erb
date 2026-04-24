@@ -1,0 +1,18 @@
+<%#
+  List student sections in the course.
+  If there's only one section, display it as text.
+  If there are multiple sections, display them as an unordered list.
+%>
+<% student_course_sections = student.enrolled_sections_by_name %>
+
+<td class="c-table-v3__td">
+  <% if student_course_sections.size == 1 %>
+    <%= student_course_sections.first.name %>
+  <% else %>
+    <ul>
+      <% student_course_sections.each do |section| %>
+        <li><%= section.name %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</td>

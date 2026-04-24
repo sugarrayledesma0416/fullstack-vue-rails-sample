@@ -1,0 +1,57 @@
+<%= render(
+      'partials/form_errors',
+      header_message: nil,
+      object: @prompt
+    ) %>
+
+<%= form_with(model: @prompt, scope: :prompt, url: ai_grading_prompts_path) do |form| %>
+  <%= hidden_field_tag(:prompt_type, params[:prompt_type]) %>
+
+  <div class="c-form-item">
+    <% ai_core_managing = (params[:prompt_type] == 'overall' ? AI::OverallCommentPrompt : AI::GradingSuggestionPrompt).using_ai_core_source? %>
+    <%= form.check_box :active_for_instructor_grading, {
+          class: 'c-form-item__checkbox',
+          disabled: ai_core_managing,
+          style: ai_core_managing ? 'opacity: 0.5; cursor: not-allowed;' : ''
+        } %>
+    <%= form.label(
+          :active_for_instructor_grading,
+          'Active for instructor grading?',
+          class: 'c-form-item__label',
+          style: ai_core_managing ? 'opacity: 0.5; cursor: not-allowed;' : ''
+        ) %>
+    <% if ai_core_managing %>
+      <div class="u-mar-top-8 u-tex-siz-14" style="color: #666; font-style: italic;">
+        Cannot be set as active because AI Core is managing prompts for this type. M3 prompts are for testing only.
+      </div>
+    <% end %>
+  </div>
+
+
+  <div class="c-form-item">
+    <%= form.label :model, { class: 'c-form-item__label' } %>
+    <%= form.select(
+          :model,
+          %w[gpt-4 gpt-4-turbo gpt-4o],
+          { class: 'c-select' }
+        ) %>
+  </div>
+
+  <div class="c-form-item">
+    <%= form.label :template_body, { class: 'c-form-item__label' } %>
+    <%= form.text_area(
+          :template_body, 
+          { class: 'c-form-item__textarea', cols: 80, rows: 15 }
+        ) %>
+  </div>
+
+  <div class="c-form-item">
+    <%= form.label :temperature, { class: 'c-form-item__label' } %>
+    <%= form.text_field :temperature, { class: 'c-form-item__input', size: 5 } %>
+  </div>
+
+  <div class="c-button-group  c-button-group--lt  u-mar-top-32">
+    <%= link_to "cancel", ai_grading_prompts_path, { class: 'c-button  c-button' } %>
+    <%= form.submit 'Create',  class: 'c-button c-button--primary' %>
+  </div>
+<% end %>

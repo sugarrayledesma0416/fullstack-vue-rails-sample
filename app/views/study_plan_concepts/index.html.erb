@@ -1,0 +1,13 @@
+<% content_for(:css_head, stylesheet_link_tag("course_student")) %>
+<% content_for(:body_classes, "ns-newcsslib standard_layout course_student") %>
+<% content_for(:body_classes, " t-vol") %>
+<% content_for(:navigation, render(:partial => 'app_shell/navbar_section/main', :locals => { :section => current_section })) %>
+
+
+<div id="main_content">
+  <ul>
+  <% @presenter.readings.each do |reading| %>
+    <li><%= link_to reading.text, section_study_plan_concepts_path(current_section, reading.activity) %></li>
+  <% end %>
+  </ul>
+</div><!-- /#main_content -->

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<activity language="es" title="Learning Engine Tutorial: The present progressive" activity_type="learning_engine">
+  <dl>Example Learning Engine Activity Direction Line</dl>
+  <items>
+    <reference type="image">
+      <image id="138152" />
+    </reference>
+
+    <tutorial>
+      <video id="119438">
+        <subtitles>
+          <foreign_subtitles id="119605"/>
+          <english_subtitles id="119604"/>
+        </subtitles>
+      </video>
+      <checkpoints>
+        <checkpoint start="50" end="60" ref="1" stop="true" />
+      </checkpoints>
+      <header_bar_title>The present progressive</header_bar_title>
+
+      <drag_and_drop checkpoint_ref="1">
+        <item>
+          <prompt>Juana
+            <wol ref="1" />
+            <wol ref="2" />el periódico.</prompt>
+          <choices ref="1">
+            <distractor>es</distractor>
+            <answer>está</answer>
+            <distractor>están</distractor>
+          </choices>
+          <choices ref="2">
+            <distractor>lee</distractor>
+            <distractor>leer</distractor>
+            <answer>leyendo</answer>
+          </choices>
+        </item>
+        <item>
+          <prompt>oír: nosotros
+            <wol ref="1" />
+          </prompt>
+          <choices>
+            <distractor>oye</distractor>
+            <answer>oímos</answer>
+            <distractor>oyen</distractor>
+          </choices>
+        </item>
+      </drag_and_drop>
+
+      <multiple_choice checkpoint_ref="1">
+        <item>
+          <prompt>rep_tiendo</prompt>
+          <choices>
+            <answer>i</answer>
+            <distractor>u</distractor>
+            <distractor>y</distractor>
+          </choices>
+        </item>
+        <item>
+          <prompt>cre_endo</prompt>
+          <choices>
+            <distractor>i</distractor>
+            <distractor>u</distractor>
+            <answer>y</answer>
+          </choices>
+        </item>
+        <item>
+          <prompt>p_diendo</prompt>
+          <choices>
+            <distractor>i</distractor>
+            <answer>u</answer>
+            <distractor>y</distractor>
+          </choices>
+        </item>
+      </multiple_choice>
+    </tutorial>
+
+    <category_matching>
+      <item>
+        <categories>
+          <category ref="1">Masculino</category>
+          <category ref="2">Femenino</category>
+        </categories>
+        <prompts>
+          <prompt answer_ref="1">video</prompt>
+          <prompt answer_ref="2">escuela</prompt>
+          <prompt answer_ref="2">lección</prompt>
+          <prompt answer_ref="1">conductor</prompt>
+          <prompt answer_ref="1">problema</prompt>
+          <prompt answer_ref="2">nacionalidad</prompt>
+          <prompt answer_ref="1">hombre</prompt>
+          <prompt answer_ref="2">mujer</prompt>
+        </prompts>
+      </item>
+    </category_matching>
+  </items>
+</activity>
+
+

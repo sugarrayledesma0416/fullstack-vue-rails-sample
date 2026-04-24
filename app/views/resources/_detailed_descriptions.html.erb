@@ -1,0 +1,12 @@
+<div id="resource_<%= resource.id.to_s %>_description"
+     class="c-hover  u-screen-reader-only  js-resource-description">
+  <p class="u-mar-bot-16"><%= presenter.resource_description(resource) %></p>
+
+  <div class="u-txt-bold">
+    <!-- Commented since it was causing a lot of calls to AWS. -->
+    <!-- #number_to_human_size(resource.file_size) -->
+  </div>
+  <div><%= resource.file_type %></div>
+  <div>Added <%= format_date_time(resource.uploaded_at, :short_month)%></div>
+  <div>Added by <%= resource.source %></div>
+</div>

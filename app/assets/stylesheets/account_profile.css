@@ -1,0 +1,64 @@
+h1 {
+	font-weight: normal;
+	font-size: 1.385em;
+	margin: 0 0 14px 0;
+}
+h2 {
+	clear: both;
+	text-transform: lowercase;
+	font-size: 1.846em;
+	margin: 0 0 20px 0;
+	word-spacing: -6px;
+}
+	h2 span {
+		font-weight: normal;
+	}
+#column_one {
+	width: 460px;
+	margin: 0 0 0 54px;
+}
+#column_one>div {
+	background: url(/images/bkgd-sign-up.gif) transparent top left no-repeat;
+	padding: 0px 32px 33px 32px;
+	line-height: 1.8;
+}
+div#account_profile_title>div.edit {
+	font-size: 0.846em;
+	margin-bottom: .5em;
+	position: relative;
+	right: 0;
+	top: 31px;
+}
+div#additional_links {
+    margin-top: 1em;
+}
+div#additional_links a {
+    font-weight: bold;
+}
+
+input.text {
+	background: url(/images/bkgd-form-field.gif) transparent top left no-repeat;
+	width: 224px;
+	padding: 3px 5px 3px 5px;
+	border: 2px solid #fff;
+	float: none;
+	background-color: white;
+}
+select.text {
+	padding: 3px 0px 3px 5px;
+	border: 1px solid #ccc;
+	float: none;
+	background-color: white;
+}
+textarea.text {
+	padding: 3px 5px 3px 5px;
+	border: 1px solid #ccc;
+	float: none;
+	background-color: white;
+}
+input.file {
+	padding: 3px 5px 3px 5px;
+	border: 1px solid #ccc;
+	float: none;
+	background-color: white;
+}

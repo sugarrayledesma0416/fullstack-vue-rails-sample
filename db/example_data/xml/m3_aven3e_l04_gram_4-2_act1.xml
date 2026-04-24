@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<activity activity_type="fill_in_the_blanks" title="¡Manos a la obra!" language="es">
+  <dl>Provide the present tense forms of <b>cerrar</b> and <b>dormir</b> respectively.</dl>
+  <items>
+    <style>
+      <wol_size>words_standard</wol_size>
+      <item_numbers>show</item_numbers>
+    </style>
+    <reference type="model">
+      <body> Ustedes <b>cierran</b>.<br />
+      Mi abuela no <b>duerme</b>.</body>
+    </reference>
+    <reference type="text">
+      <body>cerrar (e:ie)</body>
+    </reference>
+    <item>
+      <prompt>Ustedes <wol/>.</prompt>
+      <answers>
+        <answer>cierran</answer>
+      </answers>
+    </item>
+    <item>
+      <prompt>Tú <wol/>.</prompt>
+      <answers>
+        <answer>cierras</answer>
+      </answers>
+      </item>
+      <item>
+      <prompt>Nosotros <wol/>.</prompt>
+      <answers>
+        <answer>cerramos</answer>
+      </answers>
+    </item>
+    <item>
+      <prompt>Mi hermano <wol/>.</prompt>
+      <answers>
+        <answer>cierra</answer>
+      </answers>
+    </item>
+    <item>
+      <prompt>Yo <wol/>.</prompt>
+      <answers>
+        <answer>cierro</answer>
+      </answers>
+    </item>
+    <item>
+      <prompt>Usted <wol/>.</prompt>
+      <answers>
+        <answer>cierra</answer>
+      </answers>
+    </item>
+    <item>
+      <prompt>Los chicos <wol/>.</prompt>
+      <answers>
+        <answer>cierran</answer>
+      </answers>
+    </item>
+    <item>
+      <prompt>Ella <wol/>.<br /><br /></prompt>
+      <answers>
+        <answer>cierra</answer>
+      </answers>
+    </item>
+    <reference type="text">
+      <body>dormir (o:ue)</body>
+    </reference>    
+    <item>
+      <prompt>Mi abuela no <wol/>.</prompt>
+      <answers>
+        <answer>duerme</answer>
+      </answers>
+    </item>
+    <item>
+      <prompt>Yo no <wol/>.</prompt>
+      <answers>
+        <answer>duermo</answer>
+      </answers>
+    </item>
+    <item>
+      <prompt>Tú no <wol/>.</prompt>
+      <answers>
+        <answer>duermes</answer>
+      </answers>
+    </item>
+    <item>
+      <prompt>Mis hijos no <wol/>.</prompt>
+      <answers>
+        <answer>duermen</answer>
+      </answers>
+    </item>
+    <item>
+      <prompt>Usted no <wol/>.</prompt>
+      <answers>
+        <answer>duerme</answer>
+      </answers>
+    </item>
+    <item>
+      <prompt>Nosotros no <wol/>.</prompt>
+      <answers>
+        <answer>dormimos</answer>
+      </answers>
+    </item>
+    <item>
+      <prompt>Él no <wol/>.</prompt>
+      <answers>
+        <answer>duerme</answer>
+      </answers>
+    </item>
+    <item>
+      <prompt>Ustedes no <wol/>.</prompt>
+      <answers>
+        <answer>duermen</answer>
+      </answers>
+    </item>
+  </items>
+</activity>

@@ -1,0 +1,253 @@
+@import 'music/library/v1/base/main';
+/* ================================================================== *
+
+    Lists in Activities
+    incl. Answer Positioning
+
+* =================================================================== */
+
+/* Class for forcing ul to have bullets, used primarily for References */
+ul.normallist {
+  list-style-position: outside;
+  list-style-type: disc!important;
+  margin-left: rpx(25);
+  padding-left: rpx(0);
+}
+
+.c-list-reference {
+  font-size: $font-size-16;
+  @include theme-opt-in('supersites-jr') {
+    font-size: rpx(22);
+  }
+  margin-left: rpx(16);
+  margin-top: rpx(16);
+}
+
+.ns-activity {
+  .c-activity-body ul {
+    list-style-position: outside;
+    margin-left: rpx(25);
+    padding-left: 0;
+  }
+
+  .c-activity-body .answer_choices {
+    list-style-type: none;
+    margin-left: 0;
+    margin-top: 0;
+  }
+
+  .c-activity-body ol ul {
+    list-style-position: inside;
+    margin-left: 0;
+  }
+
+  .c-activity-body label {
+    font-weight: normal;
+    margin-left: rpx(2);
+  }
+
+  .c-activity-body .c-multiple-choice__radio_buttons p {
+    display: inline;
+  }
+}
+
+ul.auto_graded_question,
+ol.items,
+ol.answers,
+ol.do_not_show_nums {
+  clear: both;
+  color: $gray-3;
+  display: list-item;
+  font-size: rpx(14);
+  line-height: rpx(28);
+  list-style-type: none!important;
+  margin: rpx(20) 0 rpx(25) 0;
+  position: relative;
+  word-wrap: break-word;
+
+  @include viewport-min(md) {
+    margin: rpx(20) 0 rpx(25) rpx(25);
+  }
+}
+
+ul.auto_graded_question {
+  margin-top: rpx(0);
+  margin-bottom: rpx(0);
+  list-style: none;
+}
+
+ul.auto_graded_question ul.answer_choices li {
+  width: 100%;
+}
+
+ul.auto_graded_question li,
+ol.items li,
+ol.answers li {
+  font-size: rpx(14);
+  font-weight: bold;
+  line-height: rpx(28);
+  list-style-type: decimal;
+  list-style-position: outside;
+  margin-bottom: rpx(10);
+  padding-left: rpx(25);
+  padding-top: rpx(0);
+
+}
+
+@include theme-opt-in('supersites-jr') {
+  ol.answers li {
+    line-height: rpx(44);
+  }
+  
+  .answer_positioning { 
+    line-height: rpx(28);
+  }
+}
+
+/* Hide top-level item numbering: */
+ol.do_not_show_nums li {
+  list-style-type: none;
+}
+
+[id="accent_bar"] ul li {
+  padding-left: 0;
+  line-height: inherit;
+}
+
+[id="accent_bar"] ul {
+  margin-top: 0;
+}
+
+/* Multiple choice "fakes" its numbering for a11y reasons, so hide this element too: */
+ol.do_not_show_nums .questionno {
+  display: none;
+}
+
+/* Keep numbering on nested lists: */
+ol.do_not_show_nums ol,
+ol.do_not_show_nums ol li {
+  list-style-type: decimal;
+  font-weight: normal;
+}
+
+ol.do_not_show_nums ul,
+ol.do_not_show_nums ul li {
+  list-style-type: disc;
+  font-weight: normal;
+}
+
+ol li ul.answer_choices li,
+.review_question_wrapper ul.answer_choices li {
+  list-style-type: none;
+  margin-left: rpx(0);
+  margin-bottom: rpx(10);
+  padding-left: rpx(0);
+}
+
+ol.answers li ul {
+  margin-top: rpx(10);
+}
+
+ol.answers li ul li {
+  font-weight: normal;
+}
+
+[id="activity_direction_line_container"],
+[id="direction_line"] {
+  ul, ol {
+    list-style-position: outside;
+    margin: 0 0 1rem 1rem;
+    padding-left: 0;
+  }
+
+  li > ul,
+  li > ol,
+  ul > ul,
+  ul > ol,
+  ol > ul,
+  ol > ol {
+    margin-bottom: 0;
+  }
+}
+
+li.ns-word-ordering-v2-question span.correct {
+  color: #1D873E;
+  font-weight: normal;
+}
+
+li.ns-word-ordering-v2-question span.incorrect.incorrect {
+  border-bottom: 0;
+  font-weight: normal;
+}
+
+.ns-word-ordering-v2-question {
+  line-height: rpx(28);
+
+  .correct-answers {
+    font-weight: 600;
+  }
+}
+
+/* Answer Positioning */
+
+/* Goes inside the LI to hold the Question Content */
+.answer_positioning {
+  display: inline-block;
+  font-weight: normal;
+  padding-left: rpx(5);
+  position: relative;
+  vertical-align: top;
+  max-width: rpx(810);
+
+
+  input[type="radio"] {
+    margin-top: rpx(7);
+    vertical-align: top;
+  }
+
+  input[type="text"] {
+    margin-top: rpx(2);
+    vertical-align: top;
+  }
+
+  .inline {
+    display: block;
+    margin-bottom: rpx(7);
+  }
+
+  .has-prompt-audio {
+    display: flex;
+  }
+
+  .header-audio {
+    display: inline-flex;
+    margin-left: 0;
+  }
+
+  .choice-audio {
+    display: inline-flex;
+  }
+
+  .c-play-choice-audio {
+    margin-left: 0.5rem;
+  }
+
+  b,
+  i,
+  sup {
+    vertical-align: top;
+  }
+
+  @include theme-opt-in('supersites-jr') {
+    b,
+    i,
+    sup {
+      vertical-align: baseline;
+    }
+  }
+
+  sup {
+    font-size: rpx(12);
+    line-height: rpx(12);
+  }
+}

@@ -1,0 +1,8 @@
+<% unless drop_student_failed_count.zero? %>
+  <div id="dropped_students">
+    <span>
+      Drop failed for
+      <b><%= pluralize(drop_student_failed_count, 'Student') %> : </b>
+    </span>
+  </div>
+<% end %>

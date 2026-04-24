@@ -1,0 +1,216 @@
+<% content_for(:js_head, javascript_include_tag('protect_unsaved_changes.js') ) %>
+<% content_for(:css_head, stylesheet_link_tag("activities")) %>
+<% content_for(:css_head, stylesheet_link_tag("ai/grading_sets")) %>
+<% content_for(:js_head, javascript_include_tag('chat/partner_chat_review')) %>
+<% content_for(
+  :js_head,
+  javascript_packs_with_chunks_tag('instructor/grading_sets/edit')
+) %>
+<% content_for(
+  :css_head,
+  stylesheet_packs_with_chunks_tag('instructor/grading_sets/edit')
+) %>
+
+<% content_for(:body_classes, " by_question  ns-newcsslib") %>
+
+<% if view_manager.activity_composition? %>
+  <% content_for(:js_head, javascript_include_tag("composition_grading.js") ) %>
+  <% content_for(:body_classes, " composition_grading") %>
+
+  <% if %w[en zh].exclude?(current_program.language_code) %>
+    <div class="ns-music-v1  u-mar-0  js-accent-bar-container--activity">
+      <%= render 'music/partials/accent_bar_component', {language: @presenter.activity.language} %>
+    </div>
+    <% content_for( :js_head, javascript_include_tag('accent_bar_component_wrapper')) %>
+  <% end %>
+<% end %>
+
+  <div class="container-fluid">
+
+    <div data-target-var='rails_data' data-from-dom='<%= { :program_id => current_program.id,
+                                                             :activity_id => view_manager.activity.id}.to_json.html_safe %>'>
+    </div>
+
+    <div id="main_content"
+         vhl-app="get_help_app"
+         class="<%= @presenter.ai_grading_feature_enabled? ? 'ns-ai-grading-sets' : nil %>
+                js-help-request-grading-<%= @angular_controller === 'studentActivityRequestsCtrl' ? 'student' : 'instructor' %>">
+      <%= render('instructor/grading_sets/help_request_data',
+                 section: @presenter.sections.first,
+                 students: @presenter.students,
+                 activity: @presenter.activity,
+                 question_id: view_manager.question_label
+                )%>
+      <%= render :partial => 'activities/get_help_menu' %>
+
+      <%= form_tag(instructor_grading_set_path(current_program, view_manager.grading_set), :id => 'grading_form', :class => 'main', :method => :put) do %>
+        <div class="c-grading-header">
+          <div class="c-grading-tasks__title  ns-music-v1">
+            <% unless current_user.cartridge? %>
+              <%= format_lesson_strand_label(view_manager.activity) -%> |
+            <% end %>
+            <%= view_manager.activity.title -%>
+            <%= render 'question_dropdown', view_manager: view_manager %>
+          </div>
+        </div>
+
+      <div id="question_container" data-helpable-type="whole_question" id="<%= view_manager.question_label %>_whole_question">
+        <div id="grading_set_static_wrap">
+          <div id="grading_set_background_wrap">
+            <%= render :partial => 'invalid_scores_message' %>
+            <%= render :partial => 'grading_control_bar', :locals => {
+                  :activity_id => view_manager.activity.id,
+                  :instructor_editing_tools => @presenter.activity.has_open_ended?,
+                  :disable_controls => view_manager.disable_controls?,
+                  :language => view_manager.language } %>
+            <% unless view_manager.chat_activity? %>
+              <div id="question_and_sample_answer">
+                <div class="sample_question_frame">
+                  <div class="toggle_question_wrap">
+                    <div id="question_prompt" class="ui-helper-clearfix">
+                      <span class="question_number">
+                        <% if view_manager.activity.has_sub_activities? && view_manager.column_matching_question? %>
+                          Column-Matching Question <%= view_manager.question_number %>: 
+                        <% else %>
+                          <%= view_manager[view_manager.question_label] %>:
+                        <% end %>
+                      </span>
+                      <div class="question_prompt_text ui-helper-clearfix" id="<%= view_manager.question_label %>_prompt" data-helpable-type="question_prompt">
+                        <% if view_manager.has_prompt? %>
+                          <% if view_manager.activity_true_false_enhanced? %>
+                              <%= format_mc_prompt(view_manager.prompt).vhl_nl2br.html_safe %>
+                          <% end %>
+
+                          <% view_manager.text_prompt_content do %>
+                            <%= view_manager.html_friendly_prompt { |formatter, *args| self.send(formatter, *args) } %>
+                          <% end %>
+                        <% else %>
+                          <% if view_manager.inline_open_ended_table_question? %>
+                            <%=
+                              render(
+                                'maestro_activity_engine/activities/table_inline_open_ended/instructor_grading',
+                                content_object: view_manager.question_content_object,
+                                is_read_only: true,
+                                item: view_manager.question,
+                                results: nil
+                              )
+                            %>
+                          <% elsif view_manager.activity.has_sub_activities? && view_manager.column_matching_question? %>
+                            <span class="no-answer  u-pad-lt-8">
+                              <%= view_manager.question.tiles.first.label %>
+                            </span>
+                          <% elsif view_manager.show_no_prompt_message? %>
+                            <span class="no-answer">(No Prompt)</span>
+                          <% end %>
+                        <% end %>
+
+                      </div><!-- question_prompt_text -->
+
+                      <% view_manager.sample_answer_content do |template| %>
+                        <%= render :partial => template, :locals => {:question => view_manager.question} -%>
+                      <% end %>
+                    </div>
+
+                  </div>
+                </div><!-- sample_question_frame -->
+                <div class="toggle_question_control">
+                  <span class="arrow up"></span>
+                  Hide Question
+                  <span class="arrow up"></span>
+                </div> <!-- /.toggle_question_control -->
+              </div> <!-- /#question_and_sample_answer -->
+            <% end %>
+          </div><!-- #background wrap -->
+        </div><!-- #grading_set_static_wrap -->
+      </div>
+
+      <div id="student_answers">
+        <% unless @presenter.has_rubric? %>
+          <div class='u-txt-rt  u-mar-top-48'>
+            <b>Grade All</b>:&nbsp;
+            <a id='instructor-grading-set-all-zero' class='u-link'>
+              0%
+            </a>
+            |
+            <a id='instructor-grading-set-all-hundred' class='u-link'>
+              100%
+            </a>
+          </div>
+        <% end %>
+        <% view_manager.students.each.with_index(1) do |student, editor_index| -%>
+          <% if view_manager.activity_true_false_enhanced? %>
+            <% next if view_manager.presenter.true_false_enhanced_graded_question?(student) %>
+            <% response_id = "#{view_manager.question_label}_student_#{student.id}" %>
+            <div class="col-7">
+              <% answer_container_id = "answer_container_#{view_manager.question_label}_student_#{student.id}" -%>
+              <div class="student_answer_container ui-helper-clearfix" id="<%= answer_container_id %>">
+                <h3 class="student_name">
+                  <span class="student_name">Student: <%= student.full_name %></span>
+                </h3>
+                <div class="box-frame" data-content-type="answer_container" data-js-first_load=true>
+                  <b>Response: </b><%= view_manager.true_false_enhanced_correction(student) %>
+                </div>
+              </div>
+            </div>
+            <div class="col-3">
+              <%= render(
+                    'instructor/grading_sets/score_controls',
+                    view_manager: ScoreControlsViewManager.new(
+                      view_manager.question,
+                      view_manager.feedback[response_id],
+                      view_manager.results(student),
+                      response_id,
+                      params
+                    )
+                  )
+              %>
+              <%= render(
+                    'instructor/grading_sets/all_instructor_comments',
+                    response_id: response_id,
+                    feedback_item: view_manager.feedback[response_id],
+                    recording_path: view_manager.recording_path(student, view_manager.question),
+                    is_new_recording: view_manager.new_recording?(student, view_manager.question)
+                  ) %>
+            </div>
+          <% elsif view_manager.inline_open_ended_table_question? %>
+            <% view_manager.question.wols.each do |wol| %>
+              <%= render(
+                    'student_grading',
+                    student: student,
+                    question: wol,
+                    editor_index: editor_index,
+                    view_manager: view_manager
+                  ) %>
+            <% end %>
+            <hr/>
+          <% else %>
+            <%= render(
+                  'student_grading',
+                  student: student,
+                  question: view_manager.question,
+                  editor_index: editor_index,
+                  view_manager: view_manager
+                ) %>
+          <% end %>
+        <% end %>
+      </div> <!-- /#student_answers -->
+
+      <%= hidden_field_tag :question_label, view_manager.question_label %>
+      <%= hidden_field_tag :jump_to, '' %>
+      <%= hidden_field_tag :recording_server_url, @recording_server_url %>
+      <%= hidden_field_tag :recording_path_prefix, Recording.new.generate_file_prefix(:instructor) %>
+      <%= hidden_field_tag :load_balancer_url, recording_configuration_instance.load_balancer_url %>
+      <%= hidden_field_tag :ckeditor_current_recording_path %>
+      <%= hidden_field_tag :ckeditor_current_recording_comment_id %>
+
+      <div class="grading_pagination">
+        <%= render :partial => 'prev_next_buttons', :locals => {:is_first => view_manager.currently_on_first_question?,
+                                                                :is_last => view_manager.currently_on_last_question?,
+                                                                :loop_through => 'students'  }   %>
+      </div>
+      <% end -%>
+
+    </div>
+
+  </div> <!-- / .container-fluid -->
+

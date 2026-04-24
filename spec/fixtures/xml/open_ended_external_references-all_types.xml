@@ -1,0 +1,40 @@
+<activity activity_type="open_ended" language="es" title="sample_open_ended_title">
+	<dl>instructions_go_here</dl>
+	<external_references>
+		<external_reference>
+			<title>external activity reference</title>
+			<activity id="999"/>
+		</external_reference>
+		<external_reference>
+			<title>external audio reference</title>
+			<audio id="1000"/>
+		</external_reference>
+		<external_reference>
+			<title>external video reference</title>
+			<video id="1001"/>
+		</external_reference>
+		<external_reference>
+			<title>external image reference</title>
+			<image id="1002"/>
+		</external_reference>
+	</external_references>
+	<items>
+    <style>
+      	<item_numbers>show</item_numbers>
+        <answer_size>medium</answer_size>
+    </style>
+    <item>
+			<prompt>prompt_for_question_1</prompt>
+		</item>
+		<item>
+			<prompt>prompt_for_question_2</prompt>
+      <sample_answer>optional_sample_answer_text</sample_answer>
+		</item>
+    <item>
+      <prompt answer_size="11">prompt_for_question_3</prompt>
+    </item>
+    <item>
+      <prompt />
+    </item>    
+	</items>
+</activity>

@@ -1,0 +1,27 @@
+
+<% 
+  json_help_request_data = format_help_request_data(
+    current_program,
+    current_section,
+    [@activity_presenter && @activity_presenter.user || current_user],
+    @activity || @created_activity,
+    (@attempt && @attempt.current_view || 'preview'),
+    request.fullpath,
+    params
+  )
+  json_help_request_data[:question_id] = ''
+%>
+
+<!-- This element hosts add help request modal -->
+<div class="js-add-help-request-app">
+</div>
+
+<!-- This stores rails data for help request to pass to vue components -->
+<div class="js-help-request-rails-data"
+     data-from-dom="<%= json_help_request_data.to_json %>" />
+</div>
+
+<!-- This stores requestSeverityLevels to pass to help request modal vue component -->
+<div class="js-help-request-severity-levels"
+     data-from-dom="<%= severity_levels_array_for_dropdown.to_json %>" />
+</div>

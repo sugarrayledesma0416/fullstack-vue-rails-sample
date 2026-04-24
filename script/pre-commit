@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+# This script is a pre-commit git hook that prevents direct commits to the 'release' branch.
+# It is intended to be used by deployers, who generally should only be rebasing the 'master' branch
+# onto the 'release' branch, and then pushing the 'release' branch to remote.
+
+# onto the 'release' branch, and then pushing the 'release' branch to origin.
+
+# To install this script as a git hook, copy it to the .git/hooks directory, or create a symlink:
+#  m3 && ln -s ../../script/pre-commit .git/hooks/pre-commit
+# The script must be executable:
+#  chmod +x .git/hooks/pre-commit
+#
+# It will be run whenever you commit. If you are on the 'release' branch,
+# it will exit with a non-zero status, preventing the commit.
+
+red='\033[1;31m'
+green='\033[1;32m'
+no_color='\033[0m'
+current_branch=$(git rev-parse --abbrev-ref HEAD)
+
+if [ "$current_branch" = "release" ]; then
+  echo -e "${red}❌ pre-commit: direct commits to the 'release' branch are not permitted.${no_color}"
+  exit 1
+else
+  echo -e "${green}✅ pre-commit: current branch is '$current_branch'.${no_color}"
+  exit 0
+fi

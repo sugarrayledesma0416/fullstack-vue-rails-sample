@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+av3e:
+  id: 1
+  label: Aventuras 3e
+
+prom1e:
+  id: 2
+  label: Promenades
+
+ven2e:
+  id: 3
+  label: Ventanas, Second Edition
+
+sent1e:
+  id: 4
+  label: Sentieri
+
+m3tar:
+  id: 5
+  label: M3 Publish Target

@@ -1,0 +1,2442 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lesson_plan program_id="50">
+  <description>The Basics: All concepts plus minimal auto-graded practice</description>
+  <lessons>
+    <lesson id="198" title="Lección 1: Hola, ¿qué tal?">
+      <group>
+<!--L1 PREPARACIÓN -->
+<!--Tutorials-->
+        <activity id="55216" title="Hola, ¿qué tal?"/>
+        <activity id="55219" title="Saludos y una despedida"/>
+        <activity id="13025" title="Crucigrama"/>
+<!--Practice-->
+        <activity id="35650" title="Hola, ¿qué tal?"/>
+        <activity id="37699" title="¿Lógico o ilógico?"/>
+        <activity id="37700" title="¡Hola!"/>
+        <activity id="48226" title="Seleccionar"/>
+		<activity id="3141" title="The Spanish alphabet"/>
+      </group>
+      <group>
+<!--L1 AVENTURAS -->
+<!--Practice-->
+        <activity id="11507" title=" ¡Todos a bordo!"/>
+        <activity id="47418" title="Completar"/>
+        <activity id="37708" title="¿Cierto o falso?"/>
+        <activity id="9262" title="Ahora dilo tú"/>
+      </group>
+      <group>
+<!--L1 EXPLORACIÓN -->
+<!--Practice-->
+        <activity id="37709" title="¿Cierto o falso?"/>
+        <activity id="30688" title="Encuentros en la plaza"/>
+        <activity id="37714" title="Identificar"/>
+        <activity id="33574" title="Elegir"/>
+      </group>
+      <group>
+<!--L1 GRAMÁTICA - 1.1 Nouns and articles -->
+<!--Tutorials-->
+        <activity id="28895" title="Nouns and articles"/>
+        <activity id="13032" title="¿Singular o plural?"/>
+<!--Practice-->
+        <activity id="40018" title="¡Manos a la obra!"/>
+        <activity id="37716" title="¿Femenino o masculino?"/>
+      </group>
+      <group>
+<!--L1 GRAMÁTICA - 1.2 Numbers 0–30 -->
+<!--Tutorials-->
+        <activity id="28896" title="Numbers 0–30"/>
+        <activity id="13034" title="Contar cosas y personas"/>
+<!--Practice-->
+        <activity id="45353" title="¿Cuántas hay?"/>
+        <activity id="37729" title="Escoger"/>
+        <activity id="37727" title="Contar"/>
+      </group>
+      <group>
+<!--L1 GRAMÁTICA - 1.3 Present tense of ser -->
+<!--Tutorials-->
+        <activity id="28897" title="Present tense of ser"/>
+<!--Practice-->
+        <activity id="40023" title="¡Manos a la obra!"/>
+        <activity id="44891" title="¿Qué es?"/>
+      </group>
+      <group>
+<!--L1 GRAMÁTICA - 1.4 Telling time -->
+<!--Tutorials-->
+        <activity id="28898" title="Telling time"/>
+        <activity id="13036" title="¿Qué hora es?"/>
+<!--Practice-->
+        <activity id="40026" title="¡Manos a la obra!"/>
+        <activity id="37738" title="Emparejar"/>
+      </group>
+      <group>
+<!--L1 LECTURA -->
+<!--Practice-->
+        <activity id="44332" title="Directorio telefónico de Laura Rivas León"/>
+        <activity id="39658" title="¿Comprendiste?"/>
+        <activity id="47475" title="Tu directorio"/>
+      </group>
+      <group>
+<!--L1 VOCABULARIO -->
+        <activity id="51635" title="Hola, ¿qué tal?"/>
+      </group>
+    </lesson>
+    <lesson id="199" title="Lección 2: Las clases">
+      <group>
+<!--L2 PREPARACIÓN -->
+<!--Tutorials-->
+        <activity id="55222" title="En la clase"/>
+        <activity id="55226" title="Emparejar"/>
+        <activity id="13013" title="Los días de la semana"/>
+<!--Practice-->
+        <activity id="38403" title="En la clase"/>
+        <activity id="36307" title="Escuchar"/>
+        <activity id="49961" title="Mis clases"/>
+        <activity id="38405" title="Clasificar"/>
+		<activity id="10781" title="Spanish vowels"/>
+      </group>
+      <group>
+<!--L2 AVENTURAS -->
+<!--Practice-->
+        <activity id="28446" title="¿Qué clases tomas?"/>
+        <activity id="38407" title="¿Quién?"/>
+        <activity id="38411" title="Completar"/>
+        <activity id="9299" title="Ahora dilo tú"/>
+      </group>
+      <group>
+<!--L2 EXPLORACIÓN -->
+<!--Practice-->
+        <activity id="47674" title="¿Cierto o falso?"/>
+        <activity id="30715" title="Los estudios"/>
+        <activity id="47684" title="Emparejar"/>
+        <activity id="31255" title="Elegir"/>
+      </group>
+      <group>
+<!--L2 GRAMÁTICA - 2.1 Present tense of regular –ar verbs -->
+<!--Tutorials-->
+        <activity id="28899" title="Present tense of –ar verbs"/>
+<!--Practice-->
+        <activity id="40029" title="¡Manos a la obra!"/>
+        <activity id="47686" title="Completar"/>
+      </group>
+      <group>
+<!--L2 GRAMÁTICA - 2.2 Forming questions in Spanish -->
+<!--Tutorials-->
+        <activity id="28900" title="Forming questions in Spanish"/>
+        <activity id="13017" title="Emparejar"/>
+<!--Practice-->
+        <activity id="40032" title="¡Manos a la obra!"/>
+        <activity id="38425" title="Una conversación"/>
+      </group>
+      <group>
+<!--L2 GRAMÁTICA - 2.3 Present tense of estar -->
+<!--Tutorials-->
+        <activity id="28901" title="Present tense of estar"/>
+<!--Practice-->
+        <activity id="47688" title="¡Manos a la obra!"/>
+        <activity id="47694" title="Completar"/>
+      </group>
+      <group>
+<!--L2 GRAMÁTICA - 2.4 Numbers 31–100 -->
+<!--Tutorials-->
+        <activity id="28902" title="Numbers 31 and higher"/>
+        <activity id="13019" title="Emparejar"/>
+<!--Practice-->
+        <activity id="47698" title="¡Manos a la obra!"/>
+        <activity id="38438" title="Baloncesto"/>
+      </group>
+      <group>
+<!--L2 LECTURA -->
+<!--Practice-->
+        <activity id="52860" title="UAM"/>
+        <activity id="39681" title="¿Comprendiste?"/>
+        <activity id="39683" title="Preguntas"/>
+      </group>
+	    <group>
+<!--L2 VOCABULARIO -->
+<!--Practice-->
+        <activity id="50672" title="Las clases"/>
+      </group>
+	    <group>
+<!--L2 AVENTURAS EN LOS PAÍSES HISPANOS - Estados Unidos y Canadá -->
+          <activity id="44382" title="El mapa de los Estados Unidos y Canadá"/>
+          <activity id="46250" title="Las notas culturales y las estadísticas"/>
+          <activity id="51164" title="El mapa y los datos geográficos"/>
+       </group>
+    </lesson>
+    <lesson id="200" title="Lección 3: La familia">
+      <group>
+<!--L3 PREPARACIÓN -->
+<!--Tutorials-->
+        <activity id="55241" title="La familia"/>
+        <activity id="55237" title="La familia de José Miguel Pérez Santoro"/>
+        <activity id="12999" title="Crucigrama"/>
+<!--Practice-->
+        <activity id="35652" title="La familia"/>
+        <activity id="48242" title="Escuchar"/>
+        <activity id="48245" title="Emparejar"/>
+        <activity id="3872" title="Diphthongs and linking"/>
+		  </group>
+      <group>
+<!--L3 AVENTURAS -->
+<!--Practice-->
+        <activity id="11547" title=" ¿Es grande tu familia?"/>
+        <activity id="38819" title="¿Cierto o falso?"/>
+        <activity id="47928" title="Adivinar"/>
+        <activity id="9317" title="Ahora dilo tú"/>
+      </group>
+      <group>
+<!--L3 EXPLORACIÓN -->
+<!--Practice-->
+        <activity id="38821" title="¿Cierto o falso?"/>
+        <activity id="30716" title="La familia"/>
+        <activity id="38827" title="Completar"/>
+        <activity id="31251" title="Elegir"/>
+      </group>
+      <group>
+<!--L3 GRAMÁTICA - 3.1 Descriptive adjectives -->
+<!--Tutorials-->
+        <activity id="28903" title="Descriptive adjectives"/>
+        <activity id="13005" title="Emparejar"/>
+<!--Practice-->
+        <activity id="40041" title="¡Manos a la obra!"/>
+        <activity id="44915" title="Emparejar"/>
+      </group>
+      <group>
+<!--L3 GRAMÁTICA - 3.2 Possessive adjectives -->
+<!--Tutorials-->
+        <activity id="28904" title="Possessive adjectives"/>
+<!--Practice-->
+        <activity id="40046" title="¡Manos a la obra!"/>
+        <activity id="48007" title="Completar"/>
+        <activity id="3456" title="Escoger"/>
+      </group>
+      <group>
+<!--L3 GRAMÁTICA - 3.3 Present tense of regular –er and –ir verbs -->
+<!--Tutorials-->
+        <activity id="28905" title="Present tense of –er and –ir verbs"/>
+<!--Practice-->
+        <activity id="48009" title="¡Manos a la obra!"/>
+        <activity id="48011" title="Mi familia"/>
+      </group>
+      <group>
+<!--L3 GRAMÁTICA - 3.4 Present tense of tener and venir -->
+<!--Tutorials-->
+        <activity id="28906" title="Present tense of tener and venir"/>
+        <activity id="13007" title="Descripciones"/>
+<!--Practice-->
+        <activity id="38848" title="¡Manos a la obra!"/>
+        <activity id="48013" title="Completar"/>
+        <activity id="4185" title="Escoger"/>
+      </group>
+      <group>
+<!--L3 LECTURA -->
+<!--Practice-->
+        <activity id="52365" title="Familias de todo tipo"/>
+        <activity id="40108" title="¿Comprendiste?"/>
+        <activity id="48020" title="Preguntas"/>
+      </group>
+      <group>
+<!--L3 VOCABULARIO -->
+        <activity id="51717" title="La familia"/>
+      </group>
+    </lesson>
+    <lesson id="201" title="Lección 4: El fin de semana">
+      <group>
+<!--L4 PREPARACIÓN -->
+<!--Tutorials-->
+        <activity id="55246" title="Los pasatiempos"/>
+        <activity id="8510" title="El fin de semana"/>
+        <activity id="8511" title="Crucigrama"/>
+        <activity id="55401" title="En el centro"/>
+<!--Practice-->
+        <activity id="37771" title="El fin de semana"/>
+        <activity id="37840" title="Clasificar"/>
+        <activity id="38007" title="Repaso"/>
+       <activity id="26817" title="Word stress and accent marks"/>
+      </group>
+	   <group>
+<!--L4 AVENTURAS -->
+<!--Practice-->
+        <activity id="11497" title="¡Vamos al parque!"/>
+      </group>
+      <group>
+<!--L4 EXPLORACIÓN -->
+<!--Practice-->
+        <activity id="30717" title="¡Fútbol en España!"/>
+      </group>
+      <group>
+<!--L4 GRAMÁTICA - 4.1 Present tense of ir -->
+<!--Tutorials-->
+        <activity id="28907" title="Present tense of ir"/>
+<!--Practice-->
+        <activity id="8524" title="Completar"/>
+        <activity id="37526" title="Diversiones"/>
+      </group> 
+	  <group>
+<!--L4 GRAMÁTICA - 4.2 Stem-changing verbs: e –> ie, o –> ue -->
+<!--Tutorials-->
+        <activity id="28908" title="Stem-changing verbs: e –&gt; ie, o –&gt; ue"/>
+<!--Practice-->
+        <activity id="37881" title="El día del partido"/>
+        <activity id="37886" title="Escoger"/>
+	  </group>
+      <group>
+<!--L4 GRAMÁTICA - 4.3 Stem-changing verbs: e -> i -->
+<!--Tutorials-->
+        <activity id="28909" title="Stem-changing verbs: e -&gt; i"/>
+<!--Practice-->
+        <activity id="37899" title="Completar"/>
+      </group>  
+       <group>
+<!--L4 GRAMÁTICA - 4.4 Verbs with irregular yo forms -->
+<!--Tutorials-->
+        <activity id="28910" title="Verbs with irregular yo forms"/>
+<!--Practice-->
+        <activity id="37540" title="Completar"/>
+        <activity id="37541" title="Escoger"/>
+      </group> 
+	   <group>
+<!--L4 AVENTURAS EN LOS PAÍSES HISPANOS - México -->
+<!--Practice-->
+        <activity id="48173" title="México: Teotihuacán"/>
+      </group>
+    </lesson>
+    <lesson id="202" title="Lección 5: Las vacaciones">
+      <group>
+<!--L5 PREPARACIÓN -->
+<!--Tutorials-->
+        <activity id="55252" title="Practica el vocabulario"/>
+        <activity id="13675" title="Crucigrama"/>
+        <activity id="55255" title="Las vacaciones"/>
+<!--Practice-->
+        <activity id="35654" title="Las vacaciones"/>
+        <activity id="50597" title="Escuchar"/>
+        <activity id="48595" title="¿Cierto o falso?"/>
+        <activity id="50599" title="Analogías"/>
+        <activity id="13758" title="Spanish  b and  v"/>
+	    </group>
+      <group>
+<!--L5 AVENTURAS -->
+<!--Practice-->
+        <activity id="20341" title="Tenemos una reservación."/>
+        <activity id="39487" title="Ordenar"/>
+        <activity id="39493" title="Completar"/>
+        <activity id="15735" title="Tenemos una reservación."/>
+        <activity id="13743" title="Ahora dilo tú"/>
+      </group>
+      <group>
+<!--L5 EXPLORACIÓN -->
+<!--Practice-->
+        <activity id="39499" title="¿Cierto o falso?"/>
+        <activity id="30718" title="¡Vacaciones en Perú!"/>
+        <activity id="39555" title="Completar"/>
+        <activity id="41485" title="Seleccionar"/>
+      </group>
+      <group>
+<!--L5 GRAMÁTICA - 5.1 Estar with conditions and emotions -->
+<!--Tutorials-->
+        <activity id="43368" title="Estar with conditions and emotions"/>
+        <activity id="13671" title="¿Cómo están?"/>
+<!--Practice-->
+        <activity id="39557" title="¡Manos a la obra!"/>
+        <activity id="50622" title="Un viaje"/>
+        <activity id="50661" title="Completar"/>
+      </group>
+      <group>
+<!--L5 GRAMÁTICA - 5.2 The present progressive -->
+<!--Tutorials-->
+        <activity id="28912" title="The present progressive"/>
+        <activity id="13672" title="Emparejar"/>
+<!--Practice-->
+        <activity id="50636" title="¡Manos a la obra!"/>
+        <activity id="46351" title="De vacaciones"/>
+        <activity id="13747" title="Escoger"/>
+      </group>
+      <group>
+<!--L5 GRAMÁTICA - 5.3 Comparing ser and estar -->
+<!--Tutorials-->
+        <activity id="28913" title="Ser and estar"/>
+        <activity id="13673" title="¿Ser o estar?"/>
+<!--Practice-->
+        <activity id="39857" title="¡Manos a la obra!"/>
+        <activity id="50642" title="Completar"/>
+        <activity id="39869" title="¿Qué verbo?"/>
+      </group>
+      <group>
+<!--L5 GRAMÁTICA - 5.4 Direct object nouns and pronouns -->
+<!--Tutorials-->
+        <activity id="28914" title="Direct object nouns and pronouns"/>
+        <activity id="13674" title="Emparejar"/>
+<!--Practice-->
+        <activity id="50650" title="¡Manos a la obra!"/>
+        <activity id="50664" title="Sustitución"/>
+        <activity id="13749" title="Completar"/>
+      </group>
+      <group>
+<!--L5 LECTURA -->
+<!--Practice-->
+        <activity id="52865" title="¡Descubre el Viejo San Juan!"/>
+        <activity id="40237" title="¿Comprendiste?"/>
+        <activity id="40236" title="Preguntas"/>
+      </group>
+      <group>
+<!--L5 VOCABULARIO -->
+        <activity id="54246" title="Las vacaciones"/>
+      </group>
+    </lesson>
+    <lesson id="203" title="Lección 6: ¡De compras!">
+      <group>
+<!--L6 PREPARACIÓN -->
+<!--Tutorials-->
+        <activity id="55258" title="Practica el vocabulario"/>
+        <activity id="13681" title="Crucigrama"/>
+        <activity id="55261" title="¡De compras!"/>
+        <activity id="13682" title="Los colores"/>
+<!--Practice-->
+        <activity id="35655" title="¡De compras!"/>
+        <activity id="51340" title="Escuchar"/>
+        <activity id="46455" title="¿Cierto o falso?"/>
+        <activity id="20387" title="The consonants d and t"/>
+      </group>
+      <group>
+<!--L6 AVENTURAS -->
+<!--Practice-->
+        <activity id="15860" title="¡Qué ropa más bonita!"/>
+        <activity id="39237" title="¿Cierto o falso?"/>
+        <activity id="50859" title="Contestar"/>
+        <activity id="15932" title="Ahora dilo tú"/>
+      </group>
+      <group>
+<!--L6 EXPLORACIÓN -->
+<!--Practice-->
+        <activity id="39239" title="¿Cierto o falso?"/>
+        <activity id="30719" title="Comprar en los mercados"/>
+        <activity id="39250" title="Comprensión"/>
+        <activity id="31249" title="Ordenar"/>
+      </group>
+      <group>
+<!--L6 GRAMÁTICA - 6.1 Numbers 101 and higher -->
+<!--Tutorials-->
+        <activity id="53130" title="Numbers 31 and higher"/>
+<!--Practice-->
+        <activity id="50867" title="¡Manos a la obra!"/>
+        <activity id="39704" title="Emparejar"/>
+        <activity id="39706" title="Ordenar"/>
+      </group>
+      <group>
+<!--L6 GRAMÁTICA - 6.2 Preterite tense of regular verbs -->
+<!--Tutorials-->
+        <activity id="41466" title="Preterite tense of regular verbs"/>
+<!--Practice-->
+        <activity id="40053" title="¡Manos a la obra!"/>
+        <activity id="50878" title="Fin de semana"/>
+        <activity id="39714" title="¿Qué hiciste?"/>
+      </group>
+      <group>
+<!--L6 GRAMÁTICA - 6.3 Indirect object pronouns -->
+<!--Tutorials-->
+        <activity id="41470" title="Indirect object pronouns"/>
+<!--Practice-->
+        <activity id="40055" title="¡Manos a la obra!"/>
+        <activity id="50884" title="Completar"/>
+        <activity id="39722" title="Escoger"/>
+      </group>
+      <group>
+<!--L6 GRAMÁTICA - 6.4 Demonstrative adjectives and pronouns -->
+<!--Tutorials-->
+        <activity id="28918" title="Demonstrative adjectives and pronouns"/>
+<!--Practice-->
+        <activity id="40058" title="¡Manos a la obra!"/>
+        <activity id="50890" title="En un almacén"/>
+        <activity id="32766" title="Completar"/>
+      </group>
+      <group>
+<!--L6 LECTURA -->
+<!--Practice-->
+        <activity id="52869" title="El Palacio de la GANGA"/>
+        <activity id="40112" title="¿Comprendiste?"/>
+        <activity id="40113" title="Preguntas"/>
+      </group>
+      <group>
+<!--L6 VOCABULARIO -->
+<!--Practice-->
+        <activity id="54250" title="¡De compras!"/>
+      </group>
+      <group>
+<!--L6 AVENTURAS EN LOS PAÍSES HISPANOS - Puerto Rico -->
+<!--Practice-->
+        <activity id="50903" title="El mapa de Puerto Rico"/>
+        <activity id="48868" title="Las notas culturales y las estadísticas"/>
+        <activity id="51158" title="El mapa y los datos geográficos"/>
+      </group>
+      <group>
+<!--L6 AVENTURAS EN LOS PAÍSES HISPANOS - Cuba -->
+<!--Practice-->
+        <activity id="51160" title="El mapa de Cuba"/>
+        <activity id="48879" title="Las notas culturales y las estadísticas"/>
+        <activity id="51161" title="El mapa y los datos geográficos"/>
+      </group>
+      <group>
+<!--L6 AVENTURAS EN LOS PAÍSES HISPANOS - La República Dominicana -->
+<!--Practice-->
+        <activity id="50907" title="El mapa de la República Dominicana"/>
+        <activity id="51162" title="Las notas culturales y las estadísticas"/>
+        <activity id="50914" title="El mapa y los datos geográficos"/>
+      </group>
+    </lesson>
+    <lesson id="204" title="Lección 7: La vida diaria">
+      <group>
+<!--L7 PREPARACIÓN -->
+<!--Tutorials-->
+        <activity id="54101" title="Flashcards"/>
+        <activity id="20953" title="Tutorial 1"/>
+        <activity id="20954" title="Tutorial 2"/>
+        <activity id="20955" title="Tutorial 3"/>
+        <activity id="55264" title="Practica el vocabulario"/>
+        <activity id="55271" title="La vida diaria"/>
+        <activity id="13687" title="Crucigrama"/>
+        <activity id="13688" title="Emparejar"/>
+<!--Practice-->
+        <activity id="35656" title="La rutina diaria"/>
+        <activity id="51370" title="¿Cierto o falso?"/>
+        <activity id="51368" title="Escuchar"/>
+        <activity id="39899" title="Ordenar"/>
+        <activity id="33660" title="Seleccionar"/>
+        <activity id="41246" title="Repaso"/>
+        <activity id="14228" title="Más práctica"/>
+<!--Workbook-->
+        <activity id="51047" title="1 - Las rutinas"/>
+        <activity id="33456" title="2 - ¿En el baño o en la habitación?"/>
+        <activity id="36450" title="3 - Ángel y Lupe"/>
+        <activity id="14423" title="4 - La palabra diferente"/>
+        <activity id="33457" title="5 - La rutina de Silvia"/>
+<!--Lab Manual-->
+        <activity id="48555" title="1 - Describir"/>
+        <activity id="44281" title="2 - Preguntas"/>
+        <activity id="14486" title="3 - Entrevista"/>
+      </group>
+      <group>
+<!--L7 AVENTURAS -->
+<!--Practice-->
+        <activity id="15890" title="¡Jamás me levanto temprano!"/>
+        <activity id="39913" title="¿Cierto o falso?"/>
+        <activity id="50998" title="Los planes de Álex"/>
+        <activity id="33615" title="Ahora dilo tú"/>
+<!--Video Manual-->
+        <activity id="40322" title="1 - La rutina diaria"/>
+        <activity id="13583" title="2 - ¿Álex o Javier?"/>
+        <activity id="14499" title="3 - Ordenar"/>
+        <activity id="40324" title="4 - Resumen"/>
+        <activity id="12877" title="5 - Preguntas"/>
+        <activity id="12881" title="6 - Preguntas personales"/>
+        <activity id="12883" title="7 - Tus vacaciones"/>
+      </group>
+      <group>
+<!--L7 PRONUNCIACIÓN -->
+<!--Tutorials-->
+        <activity id="13691" title="The consonant r"/>
+<!--Practice-->
+        <activity id="13792" title="The consonant r"/>
+<!--Lab Manual-->
+        <activity id="29235" title="The consonant r"/>
+        <activity id="50386" title="1 - Práctica"/>
+        <activity id="50387" title="2 - Oraciones"/>
+        <activity id="50389" title="3 - Refranes"/>
+        <activity id="51357" title="4 - Dictado"/>
+      </group>
+      <group>
+<!--L7 EXPLORACIÓN -->
+<!--Practice-->
+        <activity id="39922" title="¿Cierto o falso?"/>
+        <activity id="51001" title="Completar"/>
+        <activity id="13984" title="La hora del café en el mundo hispano"/>
+        <activity id="51002" title="Escoger"/>
+        <activity id="39929" title="Conexión Internet"/>
+        <activity id="52249" title="Vocabulario"/>
+        <activity id="30720" title="Tapas para todos los días"/>
+        <activity id="51010" title="Ordenar"/>
+        <activity id="33626" title="Elegir"/>
+      </group>
+      <group>
+<!--L7 FLASH CULTURA -->
+<!--Video Manual-->
+        <activity id="40340" title="1 - Más vocabulario"/>
+        <activity id="40338" title="2 - Completar"/>
+        <activity id="46779" title="3 - ¡En español!"/>
+        <activity id="53864" title="4 - Montaditos"/>
+        <activity id="53865" title="5 - Completar"/>
+        <activity id="40356" title="6 - ¿Cierto o falso?"/>
+        <activity id="46742" title="7 - Un día en la vida de..."/>
+      </group>
+      <group>
+<!--L7 GRAMÁTICA - 7.1 Reflexive verbs -->
+<!--Tutorials-->
+        <activity id="28919" title="Reflexive verbs"/>
+<!--Practice-->
+        <activity id="39983" title="¡Manos a la obra!"/>
+        <activity id="51013" title="Conversaciones"/>
+        <activity id="33629" title="Completar"/>
+        <activity id="51015" title="Nuestra rutina"/>
+        <activity id="51019" title="No te preocupes"/>
+<!--Workbook-->
+        <activity id="40258" title="1 - Se hace"/>
+        <activity id="51049" title="2 - Lo hiciste"/>
+        <activity id="40262" title="3 - Terminar"/>
+        <activity id="51052" title="4 - Escoger"/>
+        <activity id="40265" title="5 - El incidente"/>
+<!--Lab Manual-->
+        <activity id="48557" title="1 - Describir"/>
+        <activity id="50390" title="2 - Preguntas"/>
+        <activity id="33508" title="3 - ¡Esto fue el colmo! (The last straw!)"/>
+      </group>
+      <group>
+<!--L7 GRAMÁTICA - 7.2 Indefinite and negative words -->
+<!--Tutorials-->
+        <activity id="28920" title="Indefinite and negative words"/>
+        <activity id="13685" title="Emparejar"/>
+<!--Practice-->
+        <activity id="39964" title="¡Manos a la obra!"/>
+        <activity id="33634" title="Completar"/>
+        <activity id="39968" title="Eres muy negativo"/>
+<!--Workbook-->
+        <activity id="40267" title="1 - Alguno o ninguno"/>
+        <activity id="40269" title="2 - Palabras negativas"/>
+        <activity id="51055" title="3 - Lo contrario"/>
+        <activity id="51058" title="4 - No, no es cierto"/>
+        <activity id="51061" title="5 - Lo opuesto"/>
+<!--Lab Manual-->
+        <activity id="12826" title="1 - ¿Lógico o ilógico?"/>
+        <activity id="17738" title="2 - ¿Pero o sino?"/>
+        <activity id="50391" title="3 - Transformar"/>
+        <activity id="50392" title="4 - Preguntas"/>
+        <activity id="40309" title="5 - Entre amigos"/>
+      </group>
+      <group>
+<!--L7 GRAMÁTICA - 7.3 Preterite of ser and ir -->
+<!--Tutorials-->
+        <activity id="28921" title="Preterite of ser and ir"/>
+<!--Practice-->
+        <activity id="39978" title="¡Manos a la obra!"/>
+        <activity id="51020" title="Conversación"/>
+        <activity id="33635" title="¿Ser o ir?"/>
+        <activity id="51022" title="Frases"/>
+        <activity id="39990" title="Fue un día maravilloso"/>
+<!--Workbook-->
+        <activity id="40283" title="1 - ¿Ser o ir?"/>
+        <activity id="40285" title="2 - Viaje a Perú"/>
+<!--Lab Manual-->
+        <activity id="12830" title="1 - Escoger"/>
+        <activity id="50393" title="2 - Cambiar"/>
+        <activity id="44289" title="3 - Preguntas"/>
+        <activity id="51359" title="4 - ¿Qué hicieron (did they do) anoche?"/>
+      </group>
+      <group>
+<!--L7 GRAMÁTICA - 7.4 Gustar and verbs like gustar -->
+<!--Tutorials-->
+        <activity id="28922" title="Verbs like gustar"/>
+        <activity id="13686" title="Emparejar"/>
+<!--Practice-->
+        <activity id="51025" title="¡Manos a la obra!"/>
+        <activity id="51028" title="Completar"/>
+        <activity id="51265" title="Gustar y verbos similares"/>
+<!--Workbook-->
+        <activity id="51063" title="1 - ¿Uno o varios?"/>
+        <activity id="12951" title="2 - Nos gusta el fútbol"/>
+        <activity id="40289" title="3 - Los otros"/>
+        <activity id="51066" title="4 - ¿Qué piensan?"/>
+        <activity id="14478" title="5 - Mi rutina diaria"/>
+        <activity id="40295" title="6 - Síntesis"/>
+<!--Lab Manual-->
+        <activity id="12838" title="1 - Escoger"/>
+        <activity id="50394" title="2 - Cambiar"/>
+        <activity id="44291" title="3 - Preguntas"/>
+        <activity id="51071" title="4 - Preferencias"/>
+      </group>
+      <group>
+<!--L7 LECTURA -->
+<!--Practice-->
+        <activity id="52875" title="¡Una mañana desastrosa!"/>
+        <activity id="51041" title="¿Comprendiste?"/>
+        <activity id="40115" title="Preguntas"/>
+        <activity id="52876" title="¡Qué día!"/>
+        <activity id="47093" title="Seleccionar"/>
+      </group>
+      <group>
+<!--L7 VOCABULARIO -->
+        <activity id="51044" title="La vida diaria"/>
+<!--Lab Manual-->
+        <activity id="51072" title="La vida diaria"/>
+      </group>
+    </lesson>
+    <lesson id="205" title="Lección 8: ¡A comer!">
+      <group>
+<!--L8 PREPARACIÓN -->
+<!--Tutorials-->
+        <activity id="54104" title="Flashcards"/>
+        <activity id="20956" title="Tutorial 1"/>
+        <activity id="20957" title="Tutorial 2"/>
+        <activity id="20958" title="Tutorial 3"/>
+        <activity id="55276" title="Practica el vocabulario"/>
+        <activity id="13694" title="Crucigrama"/>
+        <activity id="55287" title="El desayuno y el almuerzo"/>
+        <activity id="55279" title="La comida"/>
+<!--Practice-->
+        <activity id="35657" title="La comida"/>
+        <activity id="41355" title="¿Lógico o ilógico?"/>
+        <activity id="51089" title="¿Qué pide Nora?"/>
+        <activity id="41358" title="La comida"/>
+        <activity id="41361" title="Repaso"/>
+        <activity id="33403" title="Más práctica"/>
+<!--Workbook-->
+        <activity id="51191" title="1 - ¿Qué comida es?"/>
+        <activity id="51223" title="2 - Categorías"/>
+        <activity id="36355" title="3 - ¿Qué es?"/>
+        <activity id="41504" title="4 - ¿Cuándo lo comes?"/>
+<!--Lab Manual-->
+        <activity id="48405" title="1 - Identificar"/>
+        <activity id="51346" title="2 - Describir"/>
+        <activity id="21334" title="3 - En el restaurante"/>
+      </group>
+      <group>
+<!--L8 AVENTURAS -->
+<!--Practice-->
+        <activity id="20051" title="¿Qué tal la comida?"/>
+        <activity id="41362" title="En el restaurante"/>
+        <activity id="41363" title="Preguntas"/>
+        <activity id="33674" title="Ahora dilo tú"/>
+<!--Video Manual-->
+        <activity id="32582" title="1 - En un restaurante"/>
+        <activity id="35043" title="2 - ¿Quién?"/>
+        <activity id="18717" title="3 - Los restaurantes de Madrid"/>
+        <activity id="18718" title="4 - Resumen"/>
+        <activity id="24865" title="5 - Opiniones"/>
+        <activity id="51287" title="6 - Corregir"/>
+        <activity id="17741" title="7 - Preguntas personales"/>
+      </group>
+      <group>
+<!--L8 PRONUNCIACIÓN -->
+<!--Tutorials-->
+        <activity id="13698" title="ll, ñ, c, and z"/>
+<!--Practice-->
+        <activity id="33676" title="ll, ñ, c, and z"/>
+<!--Lab Manual-->
+        <activity id="21205" title="ll, ñ, c, and z"/>
+        <activity id="44298" title="1 - Práctica"/>
+        <activity id="44299" title="2 - Oraciones"/>
+        <activity id="44297" title="3 - Refranes"/>
+        <activity id="51348" title="4 - Dictado"/>
+      </group>
+      <group>
+<!--L8 EXPLORACIÓN -->
+<!--Practice-->
+        <activity id="51090" title="¿Cierto o falso?"/>
+        <activity id="51091" title="Completar"/>
+        <activity id="33688" title="Frutas exóticas de Latinoamérica: la pitahaya, la lúcuma y el membrillo"/>
+        <activity id="51093" title="Completar"/>
+        <activity id="41744" title="Conexión Internet"/>
+        <activity id="51095" title="Vocabulario"/>
+        <activity id="30721" title="La comida latina"/>
+        <activity id="41746" title="¿Cierto o falso?"/>
+        <activity id="33690" title="Completar"/>
+      </group>
+      <group>
+<!--L8 FLASH CULTURA -->
+<!--Video Manual-->
+        <activity id="51295" title="1 - Más vocabulario"/>
+        <activity id="46774" title="2 - ¡En español!"/>
+        <activity id="53872" title="3 - Completar"/>
+        <activity id="45583" title="4 - Ordenar"/>
+        <activity id="41679" title="5 - Emparejar"/>
+        <activity id="41682" title="6 - Un plato típico"/>
+      </group>
+      <group>
+<!--L8 GRAMÁTICA - 8.1 Preterite of stem-changing verbs -->
+<!--Tutorials-->
+        <activity id="28923" title="Preterite of stem-changing verbs"/>
+<!--Practice-->
+        <activity id="41369" title="¡Manos a la obra!"/>
+        <activity id="41371" title="¡Pobre señor Suárez!"/>
+        <activity id="33695" title="Escoger"/>
+        <activity id="51097" title="¡Qué noche!"/>
+        <activity id="34042" title="Oraciones"/>
+<!--Workbook-->
+        <activity id="41509" title="1 - En el pasado"/>
+        <activity id="41512" title="2 - ¿Qué hicieron?"/>
+        <activity id="51229" title="3 - Sujetos diferentes"/>
+        <activity id="20266" title="4 - En el restaurante"/>
+        <activity id="41520" title="5 - La planta de la abuela"/>
+<!--Lab Manual-->
+        <activity id="48553" title="1 - Identificar"/>
+        <activity id="50396" title="2 - Cambiar"/>
+        <activity id="44303" title="3 - Preguntas"/>
+        <activity id="33547" title="4 - Un día largo"/>
+      </group>
+      <group>
+<!--L8 GRAMÁTICA - 8.2 Double object pronouns -->
+<!--Tutorials-->
+        <activity id="28924" title="Double object pronouns"/>
+        <activity id="13692" title="Emparejar"/>
+<!--Practice-->
+        <activity id="41374" title="¡Manos a la obra!"/>
+        <activity id="41377" title="Escoger"/>
+        <activity id="51102" title="Cambiar"/>
+        <activity id="51105" title="Responder"/>
+<!--Workbook-->
+        <activity id="41522" title="1 - Buena gente"/>
+        <activity id="51238" title="2 - Pronombres"/>
+        <activity id="51245" title="3 - ¿Quiénes son?"/>
+        <activity id="41526" title="4 - La cena"/>
+<!--Lab Manual-->
+        <activity id="51350" title="1 - Escoger"/>
+        <activity id="50397" title="2 - Cambiar"/>
+        <activity id="50398" title="3 - Preguntas"/>
+        <activity id="33551" title="4 - Una fiesta"/>
+      </group>
+      <group>
+<!--L8 GRAMÁTICA - 8.3 Saber and conocer -->
+<!--Tutorials-->
+        <activity id="41496" title="Saber and conocer"/>
+<!--Practice-->
+        <activity id="51107" title="¡Manos a la obra!"/>
+        <activity id="41380" title="Completar"/>
+        <activity id="51121" title="¿Saber o conocer?"/>
+        <activity id="51115" title="Escoger"/>
+        <activity id="51110" title="Completar"/>
+<!--Workbook-->
+        <activity id="51248" title="1 - ¿Saber o conocer?"/>
+        <activity id="51250" title="2 - ¿Qué hacen?"/>
+        <activity id="51255" title="3 - Oraciones completas"/>
+<!--Lab Manual-->
+        <activity id="48407" title="1 - ¿Saber o conocer?"/>
+        <activity id="50400" title="2 - Cambiar"/>
+        <activity id="50401" title="3 - Preguntas"/>
+        <activity id="51352" title="4 - Mi compañera de cuarto"/>
+        <activity id="48579" title="5 - La mejor comida"/>
+      </group>
+      <group>
+<!--L8 GRAMÁTICA - 8.4 Comparatives and Superlatives -->
+<!--Tutorials-->
+        <activity id="28925" title="Comparisons"/>
+        <activity id="28926" title="Superlatives"/>
+<!--Practice-->
+        <activity id="51122" title="Lucila y Tita"/>
+        <activity id="41392" title="Mario y Luis"/>
+        <activity id="38055" title="Superlativos"/>
+        <activity id="51124" title="El más..."/>
+        <activity id="41399" title="Mi alimentación"/>
+<!--Workbook-->
+        <activity id="41538" title="1 - ¿Cómo se comparan?"/>
+        <activity id="41546" title="2 - Es obvio"/>
+        <activity id="41553" title="3 - ¿Por qué?"/>
+        <activity id="41570" title="4 - Facilísimo"/>
+        <activity id="41576" title="5 - El más..."/>
+        <activity id="41579" title="6 - ¿Más o menos?"/>
+        <activity id="41592" title="7 - Síntesis"/>
+<!--Lab Manual-->
+        <activity id="51354" title="1 - Escoger"/>
+        <activity id="44308" title="2 - Comparar"/>
+        <activity id="50402" title="3 - Al contrario"/>
+        <activity id="50403" title="4 - Preguntas"/>
+      </group>
+      <group>
+<!--L8 LECTURA -->
+<!--Practice-->
+        <activity id="51143" title="Cinco estrellas para El Palmito"/>
+        <activity id="41426" title="¿Comprendiste?"/>
+        <activity id="41429" title="Preguntas"/>
+        <activity id="52379" title="Gastronomía: La fería del maíz"/>
+        <activity id="48721" title="Preguntas"/>
+      </group>
+      <group>
+<!--L8 AVENTURAS EN LOS PAÍSES HISPANOS - Suramérica I -->
+<!--Workbook-->
+        <activity id="46772" title="1 - El mapa"/>
+        <activity id="51267" title="2 - ¿De qué país es?"/>
+        <activity id="51271" title="3 - Definiciones"/>
+        <activity id="41589" title="4 - ¡A viajar!"/>
+      </group>
+      <group>
+<!--L8 AVENTURAS EN LOS PAÍSES HISPANOS - Venezuela -->
+<!--Practice-->
+        <activity id="51151" title="El mapa de Venezuela"/>
+        <activity id="34613" title="Las notas culturales y las estadísticas"/>
+        <activity id="51154" title="El mapa y los datos geográficos"/>
+        <activity id="43030" title="Conexión Internet: Simón Bolívar"/>
+        <activity id="43034" title="Conexión Internet: Ecoturismo en el Orinoco"/>
+        <activity id="41735" title="Venezuela: Las costas y las montañas"/>
+        <activity id="51166" title="Completar"/>
+<!--Video Manual-->
+        <activity id="35127" title="1 - Más vocabulario"/>
+        <activity id="51288" title="2 - Marcar"/>
+        <activity id="51289" title="3 - Completar"/>
+        <activity id="41654" title="4 - Escribir"/>
+      </group>
+      <group>
+<!--L8 AVENTURAS EN LOS PAÍSES HISPANOS - Colombia -->
+<!--Practice-->
+        <activity id="51167" title="El mapa de Colombia"/>
+        <activity id="34188" title="Las notas culturales y las estadísticas"/>
+        <activity id="51155" title="El mapa y los datos geográficos"/>
+        <activity id="43038" title="Conexión Internet: Ciudades colombianas"/>
+        <activity id="43042" title="Conexión Internet: Artistas colombianos"/>
+        <activity id="41736" title="Colombia: Las fiestas y los parques"/>
+        <activity id="51169" title="Completar"/>
+<!--Video Manual-->
+        <activity id="24558" title="1 - Más vocabulario"/>
+        <activity id="41657" title="2 - Preguntas"/>
+        <activity id="24559" title="3 - Emparejar"/>
+        <activity id="41661" title="4 - Responder"/>
+      </group>
+      <group>
+<!--L8 AVENTURAS EN LOS PAÍSES HISPANOS - Ecuador -->
+<!--Practice-->
+        <activity id="51170" title="El mapa de Ecuador"/>
+        <activity id="51174" title="Las notas culturales y las estadísticas"/>
+        <activity id="51176" title="El mapa y los datos geográficos"/>
+        <activity id="51372" title="Conexión Internet: Ciudades ecuatorianas"/>
+        <activity id="51374" title="Conexión Internet: Las islas Galápagos"/>
+        <activity id="41737" title="Ecuador: Las islas Galápagos"/>
+        <activity id="51184" title="Escoger"/>
+<!--Video Manual-->
+        <activity id="32121" title="1 - Más vocabulario"/>
+        <activity id="41664" title="2 - Marcar"/>
+        <activity id="41666" title="3 - Responder"/>
+      </group>
+      <group>
+<!--L8 AVENTURAS EN LOS PAÍSES HISPANOS - Perú -->
+<!--Practice-->
+        <activity id="49131" title="El mapa de Perú"/>
+        <activity id="33667" title="Las notas culturales y las estadísticas"/>
+        <activity id="51186" title="El mapa y los datos geográficos"/>
+        <activity id="43058" title="Conexión Internet: La cultura inca"/>
+        <activity id="43062" title="Conexión Internet: Artistas, escritores y músicos peruanos"/>
+        <activity id="41738" title="Perú: Los deportes de aventura"/>
+        <activity id="51188" title="Elegir"/>
+<!--Video Manual-->
+        <activity id="33526" title="1 - Más vocabulario"/>
+        <activity id="52285" title="2 - Fotos"/>
+        <activity id="41671" title="3 - Completar"/>
+      </group>
+      <group>
+<!--L8 VOCABULARIO -->
+<!--Practice-->
+        <activity id="54274" title="La comida"/>
+<!--Lab Manual-->
+        <activity id="51073" title="La comida"/>
+      </group>
+    </lesson>
+    <lesson id="206" title="Lección 9: Las celebraciones">
+      <group>
+<!--L9 PREPARACIÓN -->
+<!--Tutorials-->
+        <activity id="20959" title="Tutorial 1"/>
+        <activity id="20960" title="Tutorial 2"/>
+        <activity id="20961" title="Tutorial 3"/>
+        <activity id="55290" title="Practica el vocabulario"/>
+        <activity id="13701" title="Crucigrama"/>
+        <activity id="55298" title="Arrastrar"/>
+        <activity id="55301" title="Las celebraciones"/>
+<!--Practice-->
+        <activity id="40534" title="Las celebraciones"/>
+        <activity id="48562" title="¿Lógico o ilógico?"/>
+        <activity id="40538" title="¡Feliz cumpleaños!"/>
+        <activity id="40541" title="Completar"/>
+        <activity id="35266" title="Escoger"/>
+        <activity id="55092" title="Definiciones"/>
+        <activity id="55097" title="Repaso"/>
+        <activity id="18273" title="Más práctica"/>
+<!--Workbook-->
+        <activity id="40726" title="1 - Identificar"/>
+        <activity id="20628" title="2 - Las etapas de la vida"/>
+        <activity id="40728" title="3 - Escribir"/>
+        <activity id="55391" title="4 - Información personal"/>
+<!--Lab Manual-->
+        <activity id="54297" title="1 - ¿Lógico o ilógico?"/>
+        <activity id="55952" title="2 - Escoger"/>
+        <activity id="55960" title="3 - Una celebración"/>
+      </group>
+      <group>
+<!--L9 AVENTURAS -->
+<!--Practice-->
+        <activity id="35274" title="¡Feliz cumpleaños, Maite!"/>
+        <activity id="40545" title="Preguntas"/>
+        <activity id="40547" title="Identificar"/>
+        <activity id="35281" title="Ahora dilo tú"/>
+<!--Video Manual-->
+        <activity id="32583" title="1 - Una fiesta"/>
+        <activity id="24905" title="2 - Ordenar"/>
+        <activity id="21045" title="3 - La quinceañera"/>
+        <activity id="24881" title="4 - Resumen"/>
+        <activity id="24902" title="5 - Corregir"/>
+        <activity id="24903" title="6 - Eventos importantes"/>
+        <activity id="24904" title="7 - Preguntas personales"/>
+      </group>
+      <group>
+<!--L9 PRONUNCIACIÓN -->
+<!--Tutorials-->
+        <activity id="13704" title="The letters h, j, and g"/>
+<!--Practice-->
+        <activity id="35283" title="The letters h, j, and g"/>
+<!--Lab Manual-->
+        <activity id="21193" title="The letters h, j, and g"/>
+        <activity id="44603" title="1 - Práctica"/>
+        <activity id="50404" title="2 - Oraciones"/>
+        <activity id="44611" title="3 - Refranes"/>
+        <activity id="24889" title="4 - Dictado"/>
+      </group>
+      <group>
+<!--L9 EXPLORACIÓN -->
+<!--Practice-->
+        <activity id="55103" title="¿Cierto of falso?"/>
+        <activity id="40549" title="Completar"/>
+        <activity id="37615" title="Una celebración única"/>
+        <activity id="55105" title="Completar"/>
+        <activity id="55109" title="Conexión Internet"/>
+        <activity id="55111" title="Vocabulario"/>
+        <activity id="30722" title="Las fiestas"/>
+        <activity id="40555" title="Elegir"/>
+        <activity id="35301" title="Completar"/>
+      </group>
+      <group>
+<!--L9 FLASH CULTURA -->
+<!--Video Manual-->
+        <activity id="40819" title="1 - Más vocabulario"/>
+        <activity id="40822" title="2 - Completar"/>
+        <activity id="55457" title="3 - ¡En español!"/>
+        <activity id="52636" title="4 - Ordenar"/>
+        <activity id="52637" title="5 - Emparejar"/>
+        <activity id="55460" title="6 - ¿Cierto o falso?"/>
+        <activity id="40834" title="7 - ¡De parranda!"/>
+      </group>
+      <group>
+<!--L9 GRAMÁTICA - 9.1 Irregular preterites -->
+<!--Tutorials-->
+        <activity id="28927" title="Irregular preterites"/>
+<!--Practice-->
+        <activity id="55196" title="¡Manos a la obra!"/>
+        <activity id="40560" title="Una fiesta sorpresa"/>
+        <activity id="40563" title="Oraciones"/>
+        <activity id="40570" title="La fiesta"/>
+<!--Workbook-->
+        <activity id="20658" title="1 - ¿Hay o hubo?"/>
+        <activity id="40731" title="2 - ¿Cómo fue?"/>
+        <activity id="40733" title="3 - ¿Qué hicieron?"/>
+        <activity id="40735" title="4 - Es mejor dar..."/>
+        <activity id="40738" title="5 - El pasado"/>
+        <activity id="55402" title="6 - Ya lo hizo"/>
+<!--Lab Manual-->
+        <activity id="48409" title="1 - Escoger"/>
+        <activity id="50405" title="2 - Cambiar"/>
+        <activity id="44497" title="3 - Preguntas"/>
+        <activity id="33737" title="4 - Completar"/>
+      </group>
+      <group>
+<!--L9 GRAMÁTICA - 9.2 Verbs that change meaning in the preterite -->
+<!--Tutorials-->
+        <activity id="28928" title="Verbs that change meaning in the preterite"/>
+<!--Practice-->
+        <activity id="40572" title="¡Manos a la obra!"/>
+        <activity id="55200" title="Oraciones"/>
+        <activity id="40581" title="Ordenar"/>
+        <activity id="40579" title="Carlos y Eva"/>
+        <activity id="55202" title="Completar"/>
+<!--Workbook-->
+        <activity id="40746" title="1 - Completar"/>
+        <activity id="55407" title="2 - Traducir"/>
+        <activity id="17032" title="3 - Raquel y Ronaldo"/>
+<!--Lab Manual-->
+        <activity id="18206" title="1 - Identificar"/>
+        <activity id="44499" title="2 - Preguntas"/>
+        <activity id="18202" title="3 - ¡Qué lástima! (What a shame!)"/>
+        <activity id="55966" title="4 - Relaciones amorosas"/>
+      </group>
+      <group>
+<!--L9 GRAMÁTICA - 9.3 Relative pronouns -->
+<!--Tutorials-->
+        <activity id="40855" title="Relative pronouns"/>
+<!--Practice-->
+        <activity id="55205" title="¡Manos a la obra!"/>
+        <activity id="40585" title="Una fiesta de aniversario"/>
+        <activity id="40589" title="Combinar"/>
+        <activity id="40591" title="Completar"/>
+        <activity id="40593" title="Oraciones"/>
+<!--Workbook-->
+        <activity id="55409" title="1 - Relativamente"/>
+        <activity id="55412" title="2 - Fiesta sorpresa"/>
+        <activity id="55415" title="3 - ¿Que o lo que?"/>
+        <activity id="40757" title="4 - Pronombres relativos"/>
+        <activity id="40761" title="5 - Mi amiga Natalia"/>
+        <activity id="40763" title="6 - Una fiesta"/>
+<!--Lab Manual-->
+        <activity id="48411" title="1 - Escoger"/>
+        <activity id="55968" title="2 - Completar"/>
+        <activity id="55444" title="3 - Preguntas"/>
+        <activity id="53209" title="4 - La fiesta sorpresa"/>
+      </group>
+      <group>
+<!--L9 GRAMÁTICA - 9.4 ¿Qué? and ¿cuál? -->
+<!--Tutorials-->
+        <activity id="40859" title="¿Qué? and ¿cuál?"/>
+        <activity id="52635" title="Emparejar"/>
+<!--Practice-->
+        <activity id="40596" title="¡Manos a la obra!"/>
+        <activity id="40600" title="Minidiálogos"/>
+        <activity id="40604" title="Completar"/>
+        <activity id="40607" title="Preguntas"/>
+        <activity id="55208" title="Escoger"/>
+<!--Workbook-->
+        <activity id="40768" title="1 - ¿Qué o cuál?"/>
+        <activity id="55417" title="2 - Muchas preguntas"/>
+        <activity id="55422" title="3 - ¿Cuál es la pregunta?"/>
+        <activity id="40774" title="4 - Síntesis"/>
+<!--Lab Manual-->
+        <activity id="48415" title="1 - ¿Lógico o ilógico?"/>
+        <activity id="50406" title="2 - Preguntas"/>
+        <activity id="40807" title="4 - Escoger"/>
+      </group>
+      <group>
+<!--L9 LECTURA -->
+<!--Practice-->
+        <activity id="52382" title="Sociedad"/>
+        <activity id="47108" title="Comprendiste"/>
+        <activity id="40650" title="Preguntas"/>
+        <activity id="55324" title="Vida social"/>
+        <activity id="47112" title="Identificar"/>
+      </group>
+      <group>
+<!--L9 VOCABULARIO -->
+        <activity id="54371" title="Las celebraciones"/>
+<!--Lab Manual-->
+        <activity id="54361" title="Las celebraciones"/>
+      </group>
+    </lesson>
+    <lesson id="207" title="Lección 10: En el consultorio">
+      <group>
+<!--L10 PREPARACIÓN -->
+<!--Tutorials-->
+        <activity id="20962" title="Tutorial 1"/>
+        <activity id="20963" title="Tutorial 2"/>
+        <activity id="20964" title="Tutorial 3"/>
+        <activity id="55304" title="Practica el vocabulario"/>
+        <activity id="13707" title="Crucigrama"/>
+        <activity id="55308" title="¿Qué pasa?"/>
+        <activity id="55311" title="En el consultorio"/>
+<!--Practice-->
+        <activity id="35659" title="En el consultorio"/>
+        <activity id="40909" title="Escuchar"/>
+        <activity id="55509" title="Me duele"/>
+        <activity id="40917" title="Completar"/>
+        <activity id="40918" title="Contestar"/>
+        <activity id="41250" title="Repaso"/>
+        <activity id="33648" title="Más práctica"/>
+<!--Workbook-->
+        <activity id="55563" title="1 - El cuerpo humano"/>
+        <activity id="41089" title="2 - ¿Adónde vas?"/>
+        <activity id="41090" title="3 - Las categorías"/>
+        <activity id="41095" title="4 - Oraciones completas"/>
+        <activity id="41099" title="5 - Doctora y paciente"/>
+<!--Lab Manual-->
+        <activity id="55591" title="1 - Identificar"/>
+        <activity id="55971" title="2 - Describir"/>
+      </group>
+      <group>
+<!--L10 AVENTURAS -->
+<!--Practice-->
+        <activity id="20577" title="¡Uf! ¡Qué dolor!"/>
+        <activity id="40921" title="¿Cierto o falso?"/>
+        <activity id="40922" title="Ordenar"/>
+        <activity id="40924" title="Ahora dilo tú"/>
+<!--Video Manual-->
+        <activity id="32584" title="1 - Un accidente"/>
+        <activity id="21138" title="2 - ¿Quién?"/>
+        <activity id="17123" title="3 - Clínicas y hospitales"/>
+        <activity id="33765" title="4 - Resumen"/>
+        <activity id="17127" title="5 - Seleccionar"/>
+        <activity id="17129" title="6 - Preguntas"/>
+        <activity id="32668" title="7 - Preguntas personales"/>
+      </group>
+      <group>
+<!--L10 PRONUNCIACIÓN -->
+<!--Lab Manual-->
+        <activity id="33763" title="c (before a consonant) and q"/>
+        <activity id="44612" title="1 - Práctica"/>
+        <activity id="44614" title="3 - Refranes"/>
+        <activity id="21123" title="4 - Dictado"/>
+      </group>
+      <group>
+<!--L10 ORTOGRAFÍA -->
+<!--Practice-->
+        <activity id="29940" title="El acento y las sílabas fuertes"/>
+        <activity id="35170" title="Práctica"/>
+        <activity id="35346" title="Definiciones"/>
+      </group>
+      <group>
+<!--L10 EXPLORACIÓN -->
+        <activity id="40925" title="¿Cierto o falso?"/>
+        <activity id="40927" title="Completar"/>
+        <activity id="55511" title="Una contribución importante a la medicina"/>
+        <activity id="55512" title="¿Cierto o falso?"/>
+        <activity id="40928" title="Conexión Internet"/>
+        <activity id="55513" title="Vocabulario"/>
+        <activity id="30723" title="La salud"/>
+        <activity id="40932" title="¿Cierto o falso?"/>
+      </group>
+      <group>
+<!--L10 FLASH CULTURA -->
+<!--Video Manual-->
+        <activity id="41220" title="1 - Más vocabulario"/>
+        <activity id="46815" title="2 - ¡En español!"/>
+        <activity id="53869" title="3 - Problemas de salud"/>
+        <activity id="53887" title="4 - Completar"/>
+        <activity id="55607" title="5 - Ordenar"/>
+        <activity id="55608" title="6 - El sistema de salud en Argentina"/>
+        <activity id="55609" title="7 - ¿Un pequeño accidente?"/>
+      </group>
+      <group>
+<!--L10 GRAMÁTICA - 10.1 The imperfect tense -->
+<!--Tutorials-->
+        <activity id="28931" title="The imperfect tense"/>
+<!--Practice-->
+        <activity id="40938" title="¡Manos a la obra!"/>
+        <activity id="55516" title="La salud"/>
+        <activity id="40941" title="Completar"/>
+        <activity id="40940" title="Transformar"/>
+        <activity id="40944" title="Escoger"/>
+<!--Workbook-->
+        <activity id="41102" title="1 - El imperfecto"/>
+        <activity id="55565" title="2 - Oraciones imperfectas"/>
+        <activity id="55568" title="3 - No, pero antes..."/>
+        <activity id="46740" title="4 - ¿Qué hacían?"/>
+        <activity id="41109" title="5 - Antes y ahora"/>
+<!--Lab Manual-->
+        <activity id="55594" title="1 - Identificar"/>
+        <activity id="50407" title="2 - Cambiar"/>
+        <activity id="44504" title="3 - Preguntas"/>
+        <activity id="55986" title="4 - Completar"/>
+      </group>
+      <group>
+<!--L10 GRAMÁTICA - 10.2 Constructions with se -->
+<!--Tutorials-->
+        <activity id="41065" title="Constructions with se"/>
+<!--Practice-->
+        <activity id="40948" title="¡Manos a la obra!"/>
+        <activity id="40949" title="¿Cierto o falso?"/>
+        <activity id="40951" title="Completar"/>
+        <activity id="40953" title="Emparejar"/>
+        <activity id="40958" title="En el hospital"/>
+<!--Workbook-->
+        <activity id="41115" title="1 - ¿Qué se hace?"/>
+        <activity id="55571" title="2 - Los anuncios"/>
+        <activity id="41121" title="3 - Pronombres"/>
+        <activity id="55576" title="4 - El verbo correcto"/>
+        <activity id="41127" title="5 - Eso pasó"/>
+        <activity id="55580" title="6 - ¿Qué pasó?"/>
+<!--Lab Manual-->
+        <activity id="55599" title="1 - Escoger"/>
+        <activity id="44506" title="2 - Preguntas"/>
+        <activity id="41170" title="3 - Letreros (Signs)"/>
+      </group>
+      <group>
+<!--L10 GRAMÁTICA - 10.3 Adverbs -->
+<!---->
+        <activity id="41131" title="1 - Adjetivos y adverbios"/>
+<!--Tutorials-->
+        <activity id="41070" title="Adverbs"/>
+<!--Practice-->
+        <activity id="40962" title="¡Manos a la obra!"/>
+        <activity id="40963" title="En la clínica"/>
+        <activity id="40966" title="Escoger"/>
+        <activity id="40968" title="Seleccionar"/>
+        <activity id="40969" title="!Qué día el de ayer!"/>
+<!--Workbook-->
+        <activity id="41134" title="1 - Adjetivos y adverbios"/>
+        <activity id="41140" title="2 - Adverbios"/>
+        <activity id="41144" title="3 - Más adverbios"/>
+        <activity id="41148" title="4 - Háblame de ti"/>
+        <activity id="41149" title="5 - Síntesis"/>
+<!--Lab Manual-->
+        <activity id="48421" title="1 - Completar"/>
+        <activity id="44507" title="2 - Cambiar"/>
+        <activity id="44508" title="3 - Preguntas"/>
+        <activity id="41182" title="4 - Situaciones"/>
+      </group>
+      <group>
+<!--L10 GRAMÁTICA - 10.4 -->
+<!--Tutorials-->
+        <activity id="28934" title="Adverbs"/>
+<!--Practice-->
+        <activity id="35374" title="Common adverbs and adverbial expressions"/>
+        <activity id="25142" title="¡Inténtalo!"/>
+        <activity id="20585" title="Escoger"/>
+        <activity id="25144" title="Reordenar"/>
+        <activity id="35376" title="Seleccionar"/>
+        <activity id="34094" title="Más práctica"/>
+<!--Workbook-->
+        <activity id="17199" title="1 - En mi ciudad"/>
+        <activity id="33748" title="2 - Completar"/>
+        <activity id="17203" title="3 - Traducir"/>
+        <activity id="25169" title="4 - Háblame de ti"/>
+<!--Lab Manual-->
+        <activity id="18263" title="1 – Completar"/>
+        <activity id="25188" title="2 – Cambiar"/>
+        <activity id="25189" title="3 – Preguntas"/>
+        <activity id="25190" title="4 – Situaciones"/>
+      </group>
+      <group>
+<!--L10 LECTURA -->
+<!--Practice-->
+        <activity id="52880" title="El consultorio de la Dra. Fernanda Jiménez Ocaña"/>
+        <activity id="55533" title="Preguntas"/>
+        <activity id="52887" title="Libro de la semana"/>
+        <activity id="47166" title="Seleccionar"/>
+      </group>
+      <group>
+<!--L10 AVENTURAS EN LOS PAÍSES HISPANOS - Suramérica II -->
+<!--Workbook-->
+        <activity id="56005" title="1 - El mapa"/>
+        <activity id="55585" title="2 - Palabras desordenadas"/>
+        <activity id="41156" title="3 - Palabras cruzadas"/>
+        <activity id="41158" title="4 - ¿Qué se hace?"/>
+      </group>
+      <group>
+<!--L10 AVENTURAS EN LOS PAÍSES HISPANOS - Argentina -->
+<!--Practice-->
+        <activity id="55612" title="El mapa de Argentina"/>
+        <activity id="35419" title="Las notas culturales y las estadísticas"/>
+        <activity id="55537" title="El mapa y los datos geográficos"/>
+        <activity id="43066" title="Conexión Internet: El tango"/>
+        <activity id="43070" title="Conexión Internet: Juan y Eva Perón"/>
+        <activity id="41019" title="Argentina: El tango"/>
+        <activity id="35421" title="Completar"/>
+<!--Video Manual-->
+        <activity id="32674" title="2 - Completar"/>
+        <activity id="25744" title="3 - Marcar"/>
+        <activity id="25529" title="4 - ¿Cierto o falso?"/>
+        <activity id="25530" title="5 - Completar"/>
+        <activity id="33042" title="6 - Responder"/>
+      </group>
+      <group>
+<!--L10 AVENTURAS EN LOS PAÍSES HISPANOS - Chile -->
+<!--Practice-->
+        <activity id="55615" title="El mapa de Chile"/>
+        <activity id="35328" title="Las notas culturales y las estadísticas"/>
+        <activity id="55542" title="El mapa y los datos geográficos"/>
+        <activity id="43107" title="Conexión Internet: Pablo Neruda e Isabel Allende"/>
+        <activity id="43081" title="Conexión Internet: Deportes de invierno y montaña"/>
+        <activity id="41031" title="Chile: La isla de Pascua"/>
+        <activity id="35335" title="Escoger"/>
+<!--Video Manual-->
+        <activity id="24885" title="1 - Más vocabulario"/>
+        <activity id="41183" title="2 - Fotos"/>
+        <activity id="41184" title="3 - Completar"/>
+      </group>
+      <group>
+<!--L10 AVENTURAS EN LOS PAÍSES HISPANOS - Uruguay -->
+<!--Practice-->
+        <activity id="55618" title="El mapa de Uruguay"/>
+        <activity id="41041" title="Las notas culturales y las estadísticas"/>
+        <activity id="55961" title="El mapa y los datos geográficos"/>
+        <activity id="43093" title="Conexión Internet: Escritores"/>
+        <activity id="43097" title="Conexión Internet: Preferencias gastronómicas"/>
+        <activity id="41048" title="Uruguay: Las estancias"/>
+        <activity id="41050" title="Escoger"/>
+<!--Video Manual-->
+        <activity id="41186" title="1 - Más vocabulario"/>
+        <activity id="41189" title="2 - Predecir"/>
+        <activity id="55603" title="3 - Describir"/>
+        <activity id="41197" title="4 - Responder"/>
+      </group>
+      <group>
+<!--L10 AVENTURAS EN LOS PAÍSES HISPANOS - Paraguay -->
+<!--Practice-->
+        <activity id="55621" title="El mapa de Paraguay"/>
+        <activity id="41025" title="Las notas culturales y las estadísticas"/>
+        <activity id="55963" title="El mapa y los datos geográficos"/>
+        <activity id="43085" title="Conexión Internet: Alfredo Stroessner"/>
+        <activity id="43089" title="Conexión Internet: Historia"/>
+        <activity id="41033" title="Paraguay: El mate"/>
+        <activity id="55548" title="Completar"/>
+<!--Video Manual-->
+        <activity id="41204" title="1 - Más vocabulario"/>
+        <activity id="55606" title="2 - Ordenar"/>
+        <activity id="41214" title="3 - Fotos"/>
+      </group>
+      <group>
+<!--L10 AVENTURAS EN LOS PAÍSES HISPANOS - Bolivia -->
+<!--Practice-->
+        <activity id="55943" title="El mapa de Bolivia"/>
+        <activity id="35611" title="Las notas culturales y las estadísticas"/>
+        <activity id="55551" title="El mapa y los datos geográficos"/>
+        <activity id="43101" title="Conexión Internet: Bolivianos célebres"/>
+        <activity id="43105" title="Conexión Internet: Tiahuanaco"/>
+        <activity id="41036" title="Bolivia: El salar de Uyuni"/>
+        <activity id="55553" title="Escoger"/>
+<!--Video Manual-->
+        <activity id="32683" title="1 - Más vocabulario"/>
+        <activity id="23470" title="2 - Foto"/>
+        <activity id="52641" title="3 - Marcar"/>
+        <activity id="52642" title="4 - Palabra correcta"/>
+      </group>
+      <group>
+<!--L10 VOCABULARIO -->
+<!--Practice-->
+        <activity id="54382" title="En el consultorio"/>
+<!--Lab Manual-->
+        <activity id="54391" title="En el consultorio"/>
+      </group>
+    </lesson>
+    <lesson id="208" title="Lección 11: El carro y la tecnología">
+      <group>
+<!--L11 PREPARACIÓN -->
+<!--Tutorials-->
+        <activity id="20965" title="Tutorial 1"/>
+        <activity id="20966" title="Tutorial 2"/>
+        <activity id="20967" title="Tutorial 3"/>
+        <activity id="54442" title="Practica el vocabulario - En el cibercafé"/>
+        <activity id="55317" title="Practica el vocabulario - En la gasolinera"/>
+        <activity id="13711" title="Crucigrama"/>
+        <activity id="55332" title="La tecnología"/>
+        <activity id="55322" title="El carro"/>
+<!--Practice-->
+        <activity id="36065" title="La tecnología – En el cibercafé"/>
+        <activity id="36066" title="La tecnología – En la gasolinera"/>
+        <activity id="46760" title="¿Qué necesitas?"/>
+        <activity id="41902" title="En una gasolinera"/>
+        <activity id="41905" title="Problemas con la computadora"/>
+        <activity id="41916" title="Oraciones"/>
+        <activity id="41917" title="Preguntas"/>
+        <activity id="43789" title="Repaso"/>
+        <activity id="18277" title="Más práctica"/>
+<!--Workbook-->
+        <activity id="19433" title="1 - La tecnología"/>
+        <activity id="37324" title="2 - Eso hacían"/>
+        <activity id="42071" title="3 - La computadora"/>
+        <activity id="55711" title="4 - Preguntas"/>
+        <activity id="55712" title="5 - Mi primer día manejando"/>
+<!--Lab Manual-->
+        <activity id="55726" title="1 - Asociaciones"/>
+        <activity id="55729" title="2 - ¿Lógico o ilógico?"/>
+        <activity id="48435" title="3 - Identificar"/>
+      </group>
+      <group>
+<!--L11 AVENTURAS -->
+<!--Practice-->
+        <activity id="20593" title="Tecnohombre, ¡mi héroe!"/>
+        <activity id="41949" title="Seleccionar"/>
+        <activity id="41957" title="¿Quién?"/>
+        <activity id="35608" title="Ahora dilo tú"/>
+<!--Video Manual-->
+        <activity id="32585" title="1 - ¿Qué pasa?"/>
+        <activity id="34070" title="2 - ¿Qué oíste?"/>
+        <activity id="42519" title="3 - Madrid"/>
+        <activity id="18710" title="4 - Resumen"/>
+        <activity id="55737" title="5 - Corregir"/>
+        <activity id="25201" title="6 - Una carta"/>
+        <activity id="18714" title="7 - Preguntas personales"/>
+      </group>
+      <group>
+<!--L11 PRONUNCIACIÓN -->
+<!--Lab Manual-->
+        <activity id="56014" title="c (before e or i), s, and z"/>
+        <activity id="44648" title="1 - Práctica"/>
+        <activity id="44653" title="3 - Refranes"/>
+        <activity id="48438" title="4 - Dictado"/>
+      </group>
+      <group>
+<!--L11 ORTOGRAFÍA -->
+<!--Practice-->
+        <activity id="29942" title="La acentuación de palabras similares"/>
+        <activity id="41946" title="Práctica"/>
+        <activity id="35392" title="Definiciones"/>
+      </group>
+      <group>
+<!--L11 EXPLORACIÓN -->
+        <activity id="41970" title="¿Cierto o falso?"/>
+        <activity id="41974" title="Completar"/>
+        <activity id="20598" title="Los automóviles clásicos de Uruguay y Argentina"/>
+        <activity id="55687" title="Elegir"/>
+        <activity id="41977" title="Conexión Internet"/>
+        <activity id="30724" title="Maravillas de la tecnología"/>
+        <activity id="55690" title="Elegir"/>
+        <activity id="41991" title="Contestar"/>
+      </group>
+      <group>
+<!--L11 FLASH CULTURA -->
+<!--Video Manual-->
+        <activity id="42521" title="1 - Más vocabulario"/>
+        <activity id="55740" title="2 - La tecnología"/>
+        <activity id="46819" title="3 - ¡En español!"/>
+        <activity id="55743" title="4 - Completar"/>
+        <activity id="46821" title="5 - Emparejar"/>
+        <activity id="42567" title="6 - ¿Cierto o falso?"/>
+        <activity id="48451" title="7 - Preguntas"/>
+        <activity id="55663" title="8 - Un email"/>
+      </group>
+      <group>
+<!--L11 GRAMÁTICA - 11.1 The preterite and the imperfect -->
+<!---->
+        <activity id="42115" title="4 - El pasado"/>
+<!--Tutorials-->
+        <activity id="28932" title="The preterite and the imperfect"/>
+<!--Practice-->
+        <activity id="41994" title="¡Manos a la obra!"/>
+        <activity id="55696" title="Un accidente"/>
+        <activity id="42001" title="Completar"/>
+        <activity id="42003" title="Escribir"/>
+        <activity id="55698" title="En el taller"/>
+<!--Workbook-->
+        <activity id="55714" title="1 - ¿Pretérito o imperfecto?"/>
+        <activity id="42080" title="2 - Antes y ayer"/>
+        <activity id="46652" title="3 - ¿Qué pasaba?"/>
+        <activity id="42177" title="4 - El pasado"/>
+        <activity id="42181" title="5 - ¡Qué diferencia!"/>
+        <activity id="42150" title="6 - ¿Dónde estabas?"/>
+        <activity id="42165" title="7 - El diario de Laura"/>
+        <activity id="42182" title="8 - Pretérito o imperfecto"/>
+<!--Lab Manual-->
+        <activity id="55734" title="1 - Identificar"/>
+        <activity id="44509" title="2 - Responder"/>
+        <activity id="48432" title="3 - ¡Qué día!"/>
+      </group>
+      <group>
+<!--L11 GRAMÁTICA - 11.2 Por and para -->
+<!--Tutorials-->
+        <activity id="28936" title="Por and para"/>
+<!--Practice-->
+        <activity id="42006" title="¡Manos a la obra!"/>
+        <activity id="55702" title="Un viaje a Buenos Aires"/>
+        <activity id="35398" title="¿Por o para?"/>
+        <activity id="42010" title="Completar"/>
+        <activity id="42008" title="!Qué día!"/>
+<!--Workbook-->
+        <activity id="42184" title="1 - Para éste o por aquello"/>
+        <activity id="55717" title="2 - Por muchas razones"/>
+        <activity id="42188" title="3 - Por y para"/>
+        <activity id="21155" title="4 - Escribir oraciones"/>
+        <activity id="55720" title="5 - Para Silvia"/>
+<!--Lab Manual-->
+        <activity id="48354" title="1 - Escoger"/>
+        <activity id="44510" title="2 - La aventura (adventure)"/>
+        <activity id="18160" title="3 - Los planes"/>
+      </group>
+      <group>
+<!--L11 GRAMÁTICA - 11.3 Stressed possessive adjectives and pronouns -->
+<!--Tutorials-->
+        <activity id="28938" title="Stressed possessive adjectives and pronouns"/>
+<!--Practice-->
+        <activity id="42017" title="¡Manos a la obra!"/>
+        <activity id="55705" title="Oraciones"/>
+        <activity id="42032" title="Más oraciones"/>
+        <activity id="42035" title="Completar"/>
+        <activity id="42037" title="Lo mío es tuyo"/>
+<!--Workbook-->
+        <activity id="55723" title="1 - Esas cosas tuyas"/>
+        <activity id="42198" title="2 - ¿De quién es?"/>
+        <activity id="42202" title="3 - Los suyos"/>
+        <activity id="42211" title="4 - Los pronombres posesivos"/>
+<!--Lab Manual-->
+        <activity id="48358" title="1 - Identificar"/>
+        <activity id="44511" title="2 - Transformar"/>
+        <activity id="48433" title="3 - Cierto o falso"/>
+      </group>
+      <group>
+<!--L11 GRAMÁTICA - 11.4 -->
+<!--Tutorials-->
+        <activity id="13710" title="Emparejar"/>
+<!--Practice-->
+        <activity id="20515" title="Mío/a, tuyo/a, suyo/a, nuestro/a, vuestro/a, and more"/>
+        <activity id="35401" title="¡Inténtalo!"/>
+        <activity id="35402" title="Oraciones"/>
+        <activity id="35403" title="Completar"/>
+        <activity id="34276" title="Más práctica"/>
+<!--Workbook-->
+        <activity id="21160" title="1 - Esas cosas tuyas"/>
+        <activity id="17659" title="2 - ¿De quién es?"/>
+        <activity id="17657" title="3 - Los suyos"/>
+        <activity id="17661" title="4 - ¿De quién son?"/>
+<!--Lab Manual-->
+        <activity id="18166" title="1 - Identificar"/>
+        <activity id="25207" title="2 - Transformar"/>
+        <activity id="18168" title="3 - ¿Cierto o falso?"/>
+      </group>
+      <group>
+<!--L11 LECTURA -->
+<!--Practice-->
+        <activity id="52683" title="La tira cómica"/>
+        <activity id="42066" title="¿Comprendiste?"/>
+        <activity id="42068" title="Preguntas"/>
+        <activity id="52889" title="Los hispanos de los EEUU toman Internet"/>
+        <activity id="47867" title="¿Comprendiste?"/>
+      </group>
+      <group>
+<!--L11 VOCABULARIO -->
+        <activity id="54410" title="La tecnología"/>
+<!--Lab Manual-->
+        <activity id="54404" title="La tecnología"/>
+      </group>
+    </lesson>
+    <lesson id="209" title="Lección 12: Hogar, dulce hogar">
+      <group>
+<!--L12 PREPARACIÓN -->
+<!--Tutorials-->
+        <activity id="20968" title="Tutorial 1"/>
+        <activity id="20969" title="Tutorial 2"/>
+        <activity id="20970" title="Tutorial 3"/>
+        <activity id="55342" title="Practica el vocabulario"/>
+        <activity id="13715" title="Crucigrama"/>
+        <activity id="54456" title="El comedor"/>
+        <activity id="55353" title="La vivienda"/>
+<!--Practice-->
+        <activity id="41772" title="Escoger"/>
+        <activity id="41773" title="Escuchar"/>
+        <activity id="55792" title="Emparejar"/>
+        <activity id="41779" title="Escoger"/>
+        <activity id="35425" title="Seleccionar"/>
+        <activity id="42556" title="Repaso"/>
+        <activity id="24232" title="Más práctica"/>
+<!--Workbook-->
+        <activity id="55899" title="1 - Los aparatos domésticos"/>
+        <activity id="41943" title="2 - ¿En qué habitación?"/>
+        <activity id="55901" title="3 - ¿Qué hacían?"/>
+        <activity id="41945" title="4 - Una es diferente"/>
+        <activity id="53883" title="5 - Definiciones"/>
+<!--Lab Manual-->
+        <activity id="48474" title="1 - Describir"/>
+        <activity id="55927" title="2 - Identificar"/>
+        <activity id="44533" title="3 - Quehaceres domésticos"/>
+        <activity id="48476" title="4 - En la oficina de la agente inmobiliaria"/>
+      </group>
+      <group>
+<!--L12 AVENTURAS -->
+<!--Practice-->
+        <activity id="26101" title="¡Les va a encantar la casa!"/>
+        <activity id="41780" title="¿Cierto o falso?"/>
+        <activity id="41782" title="En la casa de Ibarra"/>
+        <activity id="35439" title="Ahora dilo tú"/>
+<!--Video Manual-->
+        <activity id="32586" title="1 - En la casa"/>
+        <activity id="22642" title="2 - ¿Cierto o falso?"/>
+        <activity id="32670" title="4 - Resumen"/>
+        <activity id="42469" title="5 - Seleccionar"/>
+        <activity id="55933" title="6 - Preguntas"/>
+        <activity id="24549" title="7 - Escribir"/>
+      </group>
+      <group>
+<!--L12 PRONUNCIACIÓN -->
+<!--Lab Manual-->
+        <activity id="24572" title="The letter x"/>
+        <activity id="44659" title="1 – Práctica"/>
+        <activity id="44665" title="3 – Refranes"/>
+        <activity id="55930" title="4 - Dictado"/>
+      </group>
+      <group>
+<!--L12 ORTOGRAFÍA -->
+<!--Practice-->
+        <activity id="26375" title="Mayúsculas y minúsculas"/>
+        <activity id="28188" title="Práctica"/>
+        <activity id="28189" title="Palabras desordenadas"/>
+      </group>
+      <group>
+<!--L12 EXPLORACIÓN -->
+        <activity id="41783" title="¿Cierto o falso?"/>
+        <activity id="41784" title="Completar"/>
+        <activity id="43826" title="Las casas de Pablo Neruda"/>
+        <activity id="35455" title="Escoger"/>
+        <activity id="55795" title="Conexión Internet"/>
+        <activity id="55796" title="Vocabulario"/>
+        <activity id="31272" title="La casa de Frida"/>
+        <activity id="41793" title="¿Cierto o falso?"/>
+        <activity id="55799" title="Escoger"/>
+      </group>
+      <group>
+<!--L12 FLASH CULTURA -->
+<!--Video Manual-->
+        <activity id="42516" title="1 - Más vocabulario"/>
+        <activity id="42517" title="2 - Emparejar"/>
+        <activity id="46842" title="3 - ¡En español!"/>
+        <activity id="45616" title="4 - ¿Dónde están?"/>
+        <activity id="46843" title="5 - Impresiones"/>
+        <activity id="42534" title="6 - Ordenar"/>
+        <activity id="42540" title="7 - ¿Qué te gusto más?"/>
+      </group>
+      <group>
+<!--L12 GRAMÁTICA - 12.1 Usted and Ustedes commands -->
+<!--Tutorials-->
+        <activity id="41934" title="Formal commands"/>
+<!--Practice-->
+        <activity id="55822" title="¡Manos a la obra!"/>
+        <activity id="55827" title="¡A mudarse!"/>
+        <activity id="35528" title="Mandatos formales"/>
+        <activity id="41798" title="Escoger"/>
+<!--Workbook-->
+        <activity id="55906" title="1 - Háganlo así"/>
+        <activity id="42085" title="2 - Por favor"/>
+        <activity id="42090" title="3 - Para emergencias"/>
+        <activity id="42095" title="4 - Lo opuesto"/>
+<!--Lab Manual-->
+        <activity id="48457" title="1 - Identificar"/>
+        <activity id="44536" title="2 - Cambiar"/>
+        <activity id="44537" title="3 - Preguntas"/>
+        <activity id="44538" title="4 - Más preguntas"/>
+        <activity id="48459" title="5 - ¿Cómo llegar?"/>
+      </group>
+      <group>
+<!--L12 GRAMÁTICA - 12.2 The present subjunctive -->
+<!--Tutorials-->
+        <activity id="41930" title="The present subjunctive"/>
+<!--Practice-->
+        <activity id="55947" title="¡Manos a la obra!"/>
+        <activity id="55829" title="Completar"/>
+        <activity id="41804" title="Escoger"/>
+        <activity id="41806" title="El subjuntivo"/>
+        <activity id="55832" title="Limpiemos la casa"/>
+<!--Workbook-->
+        <activity id="42098" title="1 - Oraciones"/>
+        <activity id="42105" title="2 - El verbo correcto"/>
+        <activity id="42108" title="3 - El subjuntivo en las oraciones"/>
+        <activity id="55908" title="4 - Es necesario"/>
+        <activity id="42117" title="5 - Sí, es bueno"/>
+<!--Lab Manual-->
+        <activity id="48470" title="1 - Escoger"/>
+        <activity id="44539" title="2 - Cambiar"/>
+        <activity id="44540" title="3 - Transformar"/>
+        <activity id="48471" title="4 - ¿Qué pasa aquí?"/>
+      </group>
+      <group>
+<!--L12 GRAMÁTICA - 12.3 Subjunctive with verbs of will and influence -->
+<!--Tutorials-->
+        <activity id="41938" title="Subjunctive with verbs of will and influence"/>
+<!--Practice-->
+        <activity id="41809" title="¡Manos a la obra!"/>
+        <activity id="41812" title="Entre amigas"/>
+        <activity id="41814" title="Seleccionar"/>
+        <activity id="41816" title="Oraciones"/>
+        <activity id="41817" title="Formar oraciones"/>
+<!--Workbook-->
+        <activity id="42122" title="1 - Preferencias"/>
+        <activity id="55911" title="2 - Comprar una casa"/>
+        <activity id="42136" title="3 - Pronombres"/>
+        <activity id="42141" title="4 - ¿Subjuntivo o infinitivo?"/>
+        <activity id="55912" title="5 - Síntesis"/>
+<!--Lab Manual-->
+        <activity id="48472" title="1 - Identificar"/>
+        <activity id="44541" title="2 - Transformar"/>
+        <activity id="44542" title="3 - Situaciones"/>
+        <activity id="48473" title="4 - ¿Qué hacemos?"/>
+      </group>
+      <group>
+<!--L12 GRAMÁTICA - 12.4 -->
+<!--Tutorials-->
+        <activity id="28942" title="Subjunctive with verbs of will and influence"/>
+<!--Practice-->
+        <activity id="20520" title="Verbs of will and influence"/>
+        <activity id="23607" title="¡Inténtalo!"/>
+        <activity id="23609" title="Completar"/>
+        <activity id="35541" title="Seleccionar"/>
+        <activity id="35543" title="Oraciones"/>
+        <activity id="34279" title="Más práctica"/>
+<!--Workbook-->
+        <activity id="29475" title="1 - Preferencias"/>
+        <activity id="32625" title="2 - Comprar una casa"/>
+        <activity id="29477" title="3 - Instrucciones"/>
+        <activity id="36095" title="4 - ¿Subjuntivo o infinitivo?"/>
+<!--Lab Manual-->
+        <activity id="26346" title="1 – Identificar"/>
+        <activity id="34085" title="2 - Transformar"/>
+        <activity id="32697" title="3 - Situaciones"/>
+        <activity id="22637" title="4 – ¿Qué hacemos?"/>
+      </group>
+      <group>
+<!--L12 LECTURA -->
+<!--Practice-->
+        <activity id="52899" title="La Casa Colorada"/>
+        <activity id="55854" title="¿Comprendiste?"/>
+        <activity id="41849" title="Preguntas"/>
+        <activity id="52901" title="Bienvenidos al Palacio de Las Garzas"/>
+        <activity id="47187" title="Ordenar"/>
+      </group>
+      <group>
+<!--L12 AVENTURAS EN LOS PAÍSES HISPANOS - América Central I -->
+<!--Workbook-->
+        <activity id="42548" title="1 - El mapa"/>
+        <activity id="55915" title="2 - Definiciones"/>
+        <activity id="55919" title="3 - Describir"/>
+        <activity id="46841" title="4 - Las fotos"/>
+      </group>
+      <group>
+<!--L12 AVENTURAS EN LOS PAÍSES HISPANOS - Guatemala -->
+<!--Practice-->
+        <activity id="55871" title="El mapa de Guatemala"/>
+        <activity id="41847" title="Las notas culturales y las estadísticas"/>
+        <activity id="55873" title="El mapa y los datos geográficos"/>
+        <activity id="43174" title="Conexión Internet: Rigoberta Menchú"/>
+        <activity id="43179" title="Conexión Internet: Sitios arqueológicos mayas"/>
+        <activity id="41892" title="Guatemala: Antigua y Chichicastenango"/>
+        <activity id="33718" title="Completar"/>
+<!--Video Manual-->
+        <activity id="33558" title="1 - Más vocabulario"/>
+        <activity id="20443" title="2 - Describir"/>
+        <activity id="33559" title="3 - Categorías"/>
+        <activity id="18304" title="4 - Marcar"/>
+        <activity id="20447" title="5 - Completar"/>
+        <activity id="19524" title="6 - ¿Cierto o Falso?"/>
+        <activity id="20450" title="7 - Escribir"/>
+      </group>
+      <group>
+<!--L12 AVENTURAS EN LOS PAÍSES HISPANOS - Honduras -->
+<!--Practice-->
+        <activity id="55874" title="El mapa de Honduras"/>
+        <activity id="41863" title="Las notas culturales y las estadísticas"/>
+        <activity id="55879" title="El mapa y los datos geográficos"/>
+        <activity id="43183" title="Conexión Internet: Exportaciones"/>
+        <activity id="43187" title="Conexión Internet: Copán"/>
+        <activity id="41893" title="Honduras: Copán"/>
+        <activity id="55886" title="Completar"/>
+<!--Video Manual-->
+        <activity id="42484" title="1 - Más vocabulario"/>
+        <activity id="42487" title="2 - Predecir"/>
+        <activity id="42491" title="3 - Marcar"/>
+        <activity id="42495" title="4 - Seleccionar"/>
+      </group>
+      <group>
+<!--L12 AVENTURAS EN LOS PAÍSES HISPANOS - El Salvador -->
+<!--Practice-->
+        <activity id="55887" title="El mapa de El Salvador"/>
+        <activity id="55889" title="Las notas culturales y las estadísticas"/>
+        <activity id="55894" title="El mapa y los datos geográficos"/>
+        <activity id="43191" title="Conexión Internet: Parques nacionales"/>
+        <activity id="43195" title="Conexión Internet: Museos"/>
+        <activity id="41894" title="El Salvador: El maíz"/>
+        <activity id="41885" title="Escoger"/>
+<!--Video Manual-->
+        <activity id="42501" title="1 - Más vocabulario"/>
+        <activity id="55935" title="2 - Marcar"/>
+        <activity id="42511" title="3 - Completar"/>
+        <activity id="42515" title="4 - Foto"/>
+      </group>
+      <group>
+<!--L12 VOCABULARIO -->
+<!--Practice-->
+        <activity id="54427" title="Hogar, dulce hogar"/>
+<!--Lab Manual-->
+        <activity id="54430" title="Hogar, dulce hogar"/>
+      </group>
+    </lesson>
+    <lesson id="210" title="Lección 13: La naturaleza">
+      <group>
+<!--L13 PREPARACIÓN -->
+<!--Tutorials-->
+        <activity id="20971" title="Tutorial 1"/>
+        <activity id="20972" title="Tutorial 2"/>
+        <activity id="20973" title="Tutorial 3"/>
+        <activity id="55358" title="Practica el vocabulario"/>
+        <activity id="13719" title="Crucigrama"/>
+        <activity id="55361" title="La naturaleza"/>
+<!--Practice-->
+        <activity id="46747" title="Seleccionar"/>
+        <activity id="42747" title="La naturaleza"/>
+        <activity id="42750" title="Definir"/>
+        <activity id="42828" title="Repaso"/>
+        <activity id="24237" title="Más práctica"/>
+<!--Workbook-->
+        <activity id="42941" title="2 - Problema y solución"/>
+        <activity id="42944" title="3 - Sinónimos y antónimos"/>
+        <activity id="42947" title="5 - Carta al editor"/>
+<!--Lab Manual-->
+        <activity id="48495" title="2 - Eslóganes"/>
+        <activity id="48497" title="4 - Completar"/>
+      </group>
+      <group>
+<!--L13 AVENTURAS -->
+<!--Practice-->
+        <activity id="26372" title="¡Qué paisaje más hermoso!"/>
+        <activity id="42760" title="Seleccionar"/>
+        <activity id="42761" title="Preguntas"/>
+        <activity id="34156" title="Ahora dilo tú"/>
+<!--Video Manual-->
+        <activity id="43106" title="1 - La excursión"/>
+        <activity id="29576" title="2 - Opiniones"/>
+        <activity id="28555" title="3 - Los paisajes de Puerto Rico"/>
+        <activity id="22790" title="4 - Resumen"/>
+        <activity id="35054" title="5 - ¿Cierto o falso?"/>
+        <activity id="43127" title="6 - Preguntas"/>
+        <activity id="43110" title="7 - Describir"/>
+      </group>
+      <group>
+<!--L13 PRONUNCIACIÓN -->
+<!--Lab Manual-->
+        <activity id="24574" title="l, ll, and y"/>
+        <activity id="44671" title="1 - Práctica"/>
+        <activity id="44678" title="3 - Refranes"/>
+        <activity id="26537" title="4 - Dictado"/>
+      </group>
+      <group>
+<!--L13 ORTOGRAFÍA -->
+<!--Practice-->
+        <activity id="26377" title="Los signos de puntuación"/>
+        <activity id="28208" title="Práctica"/>
+        <activity id="28209" title="¿Palabras de amor?"/>
+      </group>
+      <group>
+<!--L13 EXPLORACIÓN -->
+        <activity id="42762" title="Escoger"/>
+        <activity id="42765" title="Seleccionar"/>
+        <activity id="43831" title="Un paraíso para los observadores de pájaros"/>
+        <activity id="34163" title="¿Cierto o falso?"/>
+        <activity id="42769" title="Conexión Internet"/>
+        <activity id="30726" title="Naturaleza en Costa Rica"/>
+        <activity id="42776" title="¿Cierto o falso?"/>
+        <activity id="42778" title="Completar"/>
+      </group>
+      <group>
+<!--L13 FLASH CULTURA -->
+<!--Video Manual-->
+        <activity id="43112" title="1 - Más vocabulario"/>
+        <activity id="43128" title="2 - Emparejar"/>
+        <activity id="46846" title="3 - ¡En español!"/>
+        <activity id="53878" title="5 - Completar"/>
+        <activity id="43120" title="6 - Ordenar"/>
+        <activity id="46847" title="7 - ¡Defendamos al volcán!"/>
+        <activity id="43124" title="8 - Ecoturismo"/>
+      </group>
+      <group>
+<!--L13 GRAMÁTICA - 13.1 The subjunctive with verbs of emotion -->
+<!--Tutorials-->
+        <activity id="28943" title="The subjunctive with verbs of emotion"/>
+<!--Practice-->
+        <activity id="42786" title="¡Manos a la obra!"/>
+        <activity id="34169" title="Emociones"/>
+<!--Workbook-->
+        <activity id="42948" title="1 - Emociones"/>
+        <activity id="42950" title="2 - Es así"/>
+        <activity id="42951" title="3 - Ojalá..."/>
+<!--Lab Manual-->
+        <activity id="48490" title="1 - Escoger"/>
+        <activity id="44559" title="2 - Transformar"/>
+        <activity id="44560" title="3 - Preguntas"/>
+        <activity id="26555" title="4 - El Club de Ecología"/>
+      </group>
+      <group>
+<!--L13 GRAMÁTICA - 13.2 The subjunctive with doubt, disbelief, and denial -->
+<!--Tutorials-->
+        <activity id="28944" title="The subjunctive with doubt, disbelief, and denial"/>
+<!--Practice-->
+        <activity id="42796" title="¡Manos a la obra!"/>
+        <activity id="34174" title="Completar"/>
+        <activity id="35009" title="Oraciones"/>
+        <activity id="42809" title="Es imposible que..."/>
+<!--Workbook-->
+        <activity id="42955" title="1 - No es probable"/>
+        <activity id="42956" title="2 - Es posible que pase"/>
+        <activity id="42957" title="3 - ¿Estás seguro?"/>
+        <activity id="42959" title="5 - Oraciones nuevas"/>
+<!--Lab Manual-->
+        <activity id="29579" title="1 - Identificar"/>
+        <activity id="44562" title="2 - Cambiar"/>
+      </group>
+      <group>
+<!--L13 GRAMÁTICA - 13.3 The subjunctive with conjunctions -->
+<!--Tutorials-->
+        <activity id="28945" title="The subjunctive with conjunctions"/>
+<!--Practice-->
+        <activity id="34179" title="El lago"/>
+<!--Workbook-->
+        <activity id="35021" title="1 - Las conjunciones"/>
+        <activity id="42962" title="3 - Siempre llegas tarde"/>
+        <activity id="42965" title="4 - Síntesis"/>
+<!--Lab Manual-->
+        <activity id="35251" title="1 - ¿Lógico o ilógico?"/>
+        <activity id="28702" title="2 - A la entrada del parque"/>
+        <activity id="26574" title="3 - Identificar"/>
+      </group>
+      <group>
+<!--L13 LECTURA -->
+<!--Practice-->
+        <activity id="52397" title="Fábulas"/>
+        <activity id="42868" title="¿Comprendiste?"/>
+        <activity id="42869" title="Preguntas"/>
+        <activity id="52399" title="El conde Lucanor (fragmento)"/>
+        <activity id="46937" title="Seleccionar"/>
+      </group>
+      <group>
+<!--L13 VOCABULARIO -->
+<!--Lab Manual-->
+        <activity id="54444" title="La naturaleza"/>
+      </group>
+    </lesson>
+    <lesson id="211" title="Lección 14: En la ciudad">
+      <group>
+<!--L14 PREPARACIÓN -->
+<!--Tutorials-->
+        <activity id="20974" title="Tutorial 1"/>
+        <activity id="20975" title="Tutorial 2"/>
+        <activity id="20976" title="Tutorial 3"/>
+        <activity id="55365" title="Practica el vocabulario"/>
+        <activity id="13723" title="Crucigrama"/>
+        <activity id="13724" title="Emparejar"/>
+        <activity id="55368" title="En la ciudad"/>
+        <activity id="55371" title="En el correo"/>
+<!--Practice-->
+        <activity id="35646" title="En la ciudad"/>
+        <activity id="48599" title="¿Adónde fue?"/>
+        <activity id="42891" title="Completar"/>
+        <activity id="42724" title="Diferente"/>
+        <activity id="43791" title="Repaso"/>
+        <activity id="24243" title="Más práctica"/>
+<!--Workbook-->
+        <activity id="43223" title="1 - El dinero"/>
+        <activity id="43227" title="2 - ¿Qué clase (kind) de tienda es ésta?"/>
+        <activity id="26598" title="3 - ¿Cómo pagas?"/>
+        <activity id="35069" title="4 - Tu empresa"/>
+        <activity id="43234" title="5 - Cómo llegar"/>
+<!--Lab Manual-->
+        <activity id="48517" title="1 - ¿Lógico o ilógico?"/>
+        <activity id="34058" title="2 - Hacer diligencias"/>
+        <activity id="29641" title="4 - Perdidos en el centro"/>
+      </group>
+      <group>
+<!--L14 AVENTURAS -->
+<!--Practice-->
+        <activity id="26585" title="Estamos perdidos."/>
+        <activity id="42731" title="¿Cierto o falso?"/>
+        <activity id="42734" title="Ordenar"/>
+        <activity id="34206" title="Ahora dilo tú"/>
+<!--Video Manual-->
+        <activity id="32588" title="1 - En el centro"/>
+        <activity id="43392" title="2 - Ordenar"/>
+        <activity id="24529" title="3 - Completar"/>
+        <activity id="43394" title="4 - Resumen"/>
+        <activity id="43396" title="5 - Seleccionar"/>
+        <activity id="22928" title="6 - Escribir"/>
+        <activity id="29136" title="7 - Las diligencias"/>
+      </group>
+      <group>
+<!--L14 PRONUNCIACIÓN -->
+<!--Lab Manual-->
+        <activity id="35083" title="m and n"/>
+        <activity id="44682" title="1 - Práctica"/>
+        <activity id="44688" title="2 - Oraciones"/>
+        <activity id="44689" title="3 - Refranes"/>
+        <activity id="22886" title="4 - Dictado"/>
+      </group>
+      <group>
+<!--L14 ORTOGRAFÍA -->
+<!--Practice-->
+        <activity id="46649" title="Las abreviaturas"/>
+        <activity id="42727" title="Práctica"/>
+        <activity id="42728" title="Emparejar"/>
+      </group>
+      <group>
+<!--L14 EXPLORACIÓN -->
+        <activity id="42737" title="¿Cierto o falso?"/>
+        <activity id="42739" title="Seleccionar"/>
+        <activity id="43828" title="La transformación de una ciudad"/>
+        <activity id="42756" title="Conexión Internet"/>
+        <activity id="31271" title="El metro del D.F."/>
+      </group>
+      <group>
+<!--L14 FLASH CULTURA -->
+<!--Video Manual-->
+        <activity id="43444" title="1 - Más vocabulario"/>
+        <activity id="43452" title="2 - Completar"/>
+        <activity id="46861" title="3 - ¡En español!"/>
+        <activity id="53876" title="4 - ¿Qué les gusta?"/>
+        <activity id="45639" title="5 - ¿Qué dice?"/>
+      </group>
+      <group>
+<!--L14 GRAMÁTICA - 14.1 The subjunctive in adjective clauses -->
+<!--Tutorials-->
+        <activity id="28946" title="The subjunctive in adjective clauses"/>
+        <activity id="13722" title="Emparejar"/>
+<!--Practice-->
+        <activity id="42767" title="¡Manos a la obra!"/>
+        <activity id="42771" title="Minidiálogos"/>
+        <activity id="26588" title="¿Indicativo o subjuntivo?"/>
+<!--Workbook-->
+        <activity id="22986" title="1 - El futuro de las computadoras"/>
+        <activity id="43246" title="2 - ¿Esté o está?"/>
+        <activity id="43252" title="4 - ¿Hay alguno que sea así?"/>
+        <activity id="43253" title="5 - Une las frases"/>
+<!--Lab Manual-->
+        <activity id="48511" title="1 - Identificar"/>
+        <activity id="35086" title="2 - Escoger"/>
+        <activity id="44575" title="3 - Cambiar"/>
+      </group>
+      <group>
+<!--L14 GRAMÁTICA - 14.2 Familiar (tú) commands -->
+<!--Practice-->
+        <activity id="42783" title="¡Manos a la obra!"/>
+        <activity id="42785" title="Unas diligencias"/>
+        <activity id="42810" title="Mandatos"/>
+        <activity id="42801" title="Completar"/>
+<!--Workbook-->
+        <activity id="43272" title="3 - Planes para el verano"/>
+        <activity id="43276" title="4 - ¿Te ayudo?"/>
+<!--Lab Manual-->
+        <activity id="48512" title="1 - Identificar"/>
+        <activity id="48513" title="2 - ¿Dónde están?"/>
+        <activity id="48514" title="3 - Consejos prácticos"/>
+      </group>
+      <group>
+<!--L14 GRAMÁTICA - 14.3 Nosotros/as commands -->
+<!--Practice-->
+        <activity id="42849" title="¡Manos a la obra!"/>
+        <activity id="42893" title="Conversación"/>
+        <activity id="35097" title="Mandatos"/>
+        <activity id="34216" title="Transformar"/>
+        <activity id="42897" title="Vámonos a dormir"/>
+<!--Workbook-->
+        <activity id="43291" title="2 - ¡Sí! ¡No!"/>
+        <activity id="43299" title="3 - Como Lina"/>
+        <activity id="43305" title="4 - El préstamo"/>
+<!--Lab Manual-->
+        <activity id="48515" title="1 - Identificar"/>
+        <activity id="44576" title="2 - Cambiar"/>
+        <activity id="44577" title="3 - Preguntas"/>
+        <activity id="48516" title="4 - ¿Cierto o Falso?"/>
+      </group>
+      <group>
+<!--L14 LECTURA -->
+<!--Practice-->
+        <activity id="52402" title="Esquina peligrosa"/>
+        <activity id="42943" title="Preguntas"/>
+        <activity id="52906" title="El Metrocable de Medellín"/>
+        <activity id="52276" title="Comprensión"/>
+      </group>
+      <group>
+<!--L14 AVENTURAS EN LOS PAÍSES HISPANOS - América Central II -->
+<!--Workbook-->
+        <activity id="52733" title="1 - El mapa"/>
+        <activity id="52734" title="2 - Palabras desordenadas"/>
+        <activity id="52735" title="3 - Las fotos"/>
+        <activity id="52737" title="4 - Definiciones"/>
+        <activity id="52738" title="5 - El Canal de Panamá"/>
+      </group>
+      <group>
+<!--L14 AVENTURAS EN LOS PAÍSES HISPANOS - Nicaragua -->
+<!--Practice-->
+        <activity id="35696" title="Las notas culturales y las estadísticas"/>
+        <activity id="43199" title="Conexión Internet: El inglés en Nicaragua"/>
+        <activity id="43203" title="Conexión Internet: Economía y derechos humanos"/>
+        <activity id="43685" title="Masaya"/>
+<!--Video Manual-->
+        <activity id="43398" title="1 - Más vocabulario"/>
+      </group>
+      <group>
+<!--L14 AVENTURAS EN LOS PAÍSES HISPANOS - Costa Rica -->
+<!--Practice-->
+        <activity id="34097" title="Las notas culturales y las estadísticas"/>
+        <activity id="43207" title="Conexión Internet: Óscar Arias Sánchez"/>
+        <activity id="43211" title="Conexión Internet: Artistas costarricenses"/>
+        <activity id="43686" title="Monteverde y Tortuguero"/>
+        <activity id="42969" title="Seleccionar"/>
+<!--Video Manual-->
+        <activity id="43403" title="1 - Más vocabulario"/>
+        <activity id="25179" title="2 - Foto"/>
+        <activity id="43406" title="3 - Marcar"/>
+      </group>
+      <group>
+<!--L14 AVENTURAS EN LOS PAÍSES HISPANOS - Panamá -->
+<!--Practice-->
+        <activity id="35549" title="Las notas culturales y las estadísticas"/>
+        <activity id="43219" title="Conexión Internet: Los kuna"/>
+        <activity id="43687" title="Los deportes en el mar"/>
+        <activity id="42970" title="Escoger"/>
+<!--Video Manual-->
+        <activity id="24550" title="1 - Más vocabulario"/>
+        <activity id="43410" title="2 - Responder"/>
+        <activity id="28073" title="3 - Ordenar"/>
+        <activity id="43413" title="4 - Emparejar"/>
+        <activity id="24552" title="5 - Responder"/>
+        <activity id="43432" title="6 - Pasatiempos"/>
+      </group>
+      <group>
+<!--L14 VOCABULARIO -->
+<!--Practice-->
+        <activity id="54462" title="En la ciudad"/>
+<!--Lab Manual-->
+        <activity id="54465" title="En la ciudad"/>
+      </group>
+    </lesson>
+    <lesson id="212" title="Lección 15: El bienestar">
+      <group>
+<!--L15 PREPARACIÓN -->
+<!--Tutorials-->
+        <activity id="20977" title="Tutorial 1"/>
+        <activity id="20978" title="Tutorial 2"/>
+        <activity id="20979" title="Tutorial 3"/>
+        <activity id="55374" title="Practica el vocabulario"/>
+        <activity id="13729" title="Crucigrama"/>
+        <activity id="55378" title="El bienestar"/>
+<!--Practice-->
+        <activity id="48524" title="¿Lógico o ilógico?"/>
+        <activity id="48525" title="Seleccionar"/>
+        <activity id="43175" title="Identificar"/>
+        <activity id="35137" title="Escoger"/>
+        <activity id="43221" title="Repaso"/>
+        <activity id="24249" title="Más práctica"/>
+<!--Workbook-->
+        <activity id="43409" title="1 - Lo opuesto"/>
+        <activity id="23483" title="2 - Vida sana"/>
+        <activity id="23493" title="6 - Los alimentos"/>
+<!--Lab Manual-->
+        <activity id="48541" title="1 - Identificar"/>
+        <activity id="28219" title="2 - Describir"/>
+        <activity id="48534" title="3 - A entrenarse"/>
+      </group>
+      <group>
+<!--L15 AVENTURAS -->
+<!--Practice-->
+        <activity id="27008" title="¡Qué buena excursión!"/>
+        <activity id="35141" title="Ahora dilo tú"/>
+<!--Video Manual-->
+        <activity id="32589" title="1 - Una excursión"/>
+        <activity id="24569" title="2 - ¿Quién?"/>
+        <activity id="29773" title="3 - Un gimnasio en Madrid"/>
+        <activity id="23460" title="4 - Resumen"/>
+        <activity id="43536" title="5 - ¿Cierto o falso?"/>
+        <activity id="23464" title="6 - Preguntas personales"/>
+        <activity id="29138" title="7 - Describir"/>
+      </group>
+      <group>
+<!--L15 PRONUNCIACIÓN -->
+<!--Lab Manual-->
+        <activity id="24578" title="ch and p"/>
+        <activity id="44692" title="1 - Práctica"/>
+        <activity id="44695" title="2 - Oraciones"/>
+        <activity id="44696" title="3 - Refranes"/>
+        <activity id="35225" title="4 - Dictado"/>
+      </group>
+      <group>
+<!--L15 ORTOGRAFÍA -->
+<!--Practice-->
+        <activity id="35143" title="Las letras b y v"/>
+      </group>
+      <group>
+<!--L15 EXPLORACIÓN -->
+        <activity id="43233" title="¿Cierto o falso?"/>
+        <activity id="43235" title="Seleccionar"/>
+        <activity id="35152" title="Escoger"/>
+        <activity id="43239" title="Conexión Internet"/>
+        <activity id="30728" title="¿Estrés? ¿Qué estrés?"/>
+        <activity id="43242" title="¿Cierto o falso?"/>
+      </group>
+      <group>
+<!--L15 FLASH CULTURA -->
+<!--Video Manual-->
+        <activity id="43538" title="2 - Completar"/>
+        <activity id="46870" title="3 - ¡En español!"/>
+        <activity id="53890" title="4 - Completar"/>
+        <activity id="43580" title="7 - No hablo español"/>
+      </group>
+      <group>
+<!--L15 GRAMÁTICA - 15.1 Past participles used as adjectives -->
+<!--Tutorials-->
+        <activity id="43361" title="Past participles used as adjectives"/>
+<!--Practice-->
+        <activity id="43255" title="Completar"/>
+        <activity id="43260" title="Completar"/>
+        <activity id="43263" title="Escribir"/>
+        <activity id="43267" title="Escoger"/>
+<!--Workbook-->
+        <activity id="43421" title="1 - Oraciones"/>
+        <activity id="43423" title="2 - Las consecuencias"/>
+        <activity id="43431" title="4 - El misterio"/>
+<!--Lab Manual-->
+        <activity id="48537" title="1 - Identificar"/>
+        <activity id="44592" title="2 - Preguntas"/>
+        <activity id="48538" title="3 - ¿Cierto o Falso?"/>
+      </group>
+      <group>
+<!--L15 GRAMÁTICA - 15.2 The present perfect -->
+<!--Tutorials-->
+        <activity id="43366" title="The present perfect"/>
+<!--Practice-->
+        <activity id="43270" title="¡Manos a la obra!"/>
+        <activity id="43274" title="Completar"/>
+        <activity id="43278" title="Ordenar"/>
+        <activity id="43280" title="Conversación"/>
+<!--Workbook-->
+        <activity id="43443" title="1 - ¿Qué han hecho?"/>
+        <activity id="43458" title="4 - Todavía no"/>
+<!--Lab Manual-->
+        <activity id="48535" title="1 - Identificar"/>
+        <activity id="44595" title="2 - Transformar"/>
+        <activity id="44597" title="3 - Preguntas"/>
+        <activity id="48540" title="4 - Consejos de una amiga"/>
+      </group>
+      <group>
+<!--L15 GRAMÁTICA - 15.3 The past perfect -->
+<!--Tutorials-->
+        <activity id="43374" title="The past perfect"/>
+<!--Practice-->
+        <activity id="43293" title="Seleccionar"/>
+        <activity id="43298" title="Escoger"/>
+        <activity id="43295" title="Oraciones"/>
+<!--Workbook-->
+        <activity id="43462" title="2 - Nunca antes"/>
+        <activity id="43465" title="3 - Ya había pasado"/>
+        <activity id="43468" title="4 - Tiger Woods"/>
+<!--Lab Manual-->
+        <activity id="48536" title="1 - ¿Lógico o ilógico?"/>
+        <activity id="44599" title="2 - Describir"/>
+        <activity id="48539" title="3 - Completar"/>
+      </group>
+      <group>
+<!--L15 LECTURA -->
+<!--Practice-->
+        <activity id="52413" title="14 (de Indicios pánicos)"/>
+        <activity id="47203" title="Preguntas"/>
+      </group>
+      <group>
+<!--L15 VOCABULARIO -->
+        <activity id="54480" title="El bienestar"/>
+<!--Lab Manual-->
+        <activity id="54474" title="El bienestar"/>
+      </group>
+    </lesson>
+    <lesson id="213" title="Lección 16: El mundo del trabajo">
+      <group>
+<!--L16 PREPARACIÓN -->
+<!--Tutorials-->
+        <activity id="20980" title="Tutorial 1"/>
+        <activity id="20981" title="Tutorial 2"/>
+        <activity id="20982" title="Tutorial 3"/>
+        <activity id="55382" title="Practica el vocabulario"/>
+        <activity id="13735" title="Crucigrama"/>
+        <activity id="55385" title="Arrastrar"/>
+<!--Practice-->
+        <activity id="43532" title="¿Lógico o ilógico?"/>
+        <activity id="43534" title="Escuchar"/>
+        <activity id="43551" title="Completar"/>
+        <activity id="43553" title="Asociaciones"/>
+        <activity id="43558" title="Palabra correcta"/>
+        <activity id="27253" title="Más práctica"/>
+<!--Workbook-->
+        <activity id="43695" title="1 - El anuncio"/>
+        <activity id="25481" title="3 - Una es diferente"/>
+        <activity id="29371" title="4 - Las ocupaciones"/>
+<!--Lab Manual-->
+        <activity id="48550" title="1 - Identificar"/>
+        <activity id="28123" title="2 - Anuncios clasificados"/>
+        <activity id="48551" title="3 - Publicidad"/>
+      </group>
+      <group>
+<!--L16 AVENTURAS -->
+<!--Practice-->
+        <activity id="46759" title="Memorias del viaje"/>
+        <activity id="43575" title="Preguntas"/>
+        <activity id="43582" title="¿Quién lo dijo?"/>
+      </group>
+      <group>
+<!--L16 PRONUNCIACIÓN -->
+<!--Lab Manual-->
+        <activity id="30075" title="Intonation"/>
+        <activity id="44699" title="1 - Práctica"/>
+        <activity id="50408" title="2 - Oraciones"/>
+        <activity id="30154" title="3 - Dictado"/>
+      </group>
+      <group>
+<!--L16 ORTOGRAFÍA -->
+<!--Practice-->
+        <activity id="34233" title="Las letras y, ll y h"/>
+        <activity id="35557" title="Práctica"/>
+        <activity id="43567" title="Adivinanza"/>
+      </group>
+      <group>
+<!--L16 EXPLORACIÓN -->
+        <activity id="43587" title="¿Cierto o falso?"/>
+        <activity id="43589" title="Completar"/>
+        <activity id="43839" title="Paseador de perros: ¿un oficio con futuro?"/>
+        <activity id="35677" title="¿Cierto o falso?"/>
+        <activity id="43593" title="Conexión Internet"/>
+        <activity id="30729" title="El mundo del trabajo"/>
+        <activity id="43595" title="Escoger"/>
+        <activity id="43600" title="¿Cierto o falso?"/>
+      </group>
+      <group>
+<!--16 FLASH CULTURA -->
+<!--Video Manual-->
+        <activity id="45543" title="2 - Emparejar"/>
+        <activity id="46873" title="3 - ¡En español!"/>
+        <activity id="45650" title="4 - Marcar"/>
+        <activity id="46874" title="5 - Impresiones"/>
+      </group>
+      <group>
+<!--L16 GRAMÁTICA - 16.1 The future tense -->
+<!--Tutorials-->
+        <activity id="28415" title="The future"/>
+        <activity id="13732" title="Emparejar"/>
+<!--Practice-->
+        <activity id="43601" title="¡Manos a la obra!"/>
+        <activity id="35682" title="Completar"/>
+        <activity id="43615" title="Horóscopo"/>
+<!--Workbook-->
+        <activity id="29803" title="2 - A los 30 años"/>
+        <activity id="43704" title="3 - Será así"/>
+        <activity id="29806" title="4 - Fin de semana entre amigos"/>
+<!--Lab Manual-->
+        <activity id="48547" title="1 - Identificar"/>
+        <activity id="50409" title="2 - Cambiar"/>
+        <activity id="44712" title="3 - Preguntas"/>
+      </group>
+      <group>
+<!--L16 GRAMÁTICA - 16.2 The conditional tense -->
+<!--Tutorials-->
+        <activity id="43528" title="The conditional"/>
+<!--Practice-->
+        <activity id="43620" title="¡Manos a la obra!"/>
+        <activity id="43624" title="Completar"/>
+        <activity id="43626" title="Escribir"/>
+        <activity id="43627" title="Me gustaría otro trabajo"/>
+<!--Workbook-->
+        <activity id="43714" title="1 - ¿Lo haría?"/>
+        <activity id="43715" title="4 - ¿Sería así?"/>
+<!--Lab Manual-->
+        <activity id="48548" title="1 - Identificar"/>
+        <activity id="50410" title="2 - Cambiar"/>
+        <activity id="44715" title="3 - Entrevista"/>
+        <activity id="48549" title="4 - La conferencia de negocios"/>
+      </group>
+      <group>
+<!--L16 GRAMÁTICA - 16.3 The past subjunctive -->
+<!--Tutorials-->
+        <activity id="28419" title="The past subjunctive"/>
+        <activity id="43531" title="Crucigrama"/>
+<!--Practice-->
+        <activity id="43628" title="¡Manos a la obra!"/>
+        <activity id="43635" title="Escoger"/>
+<!--Workbook-->
+        <activity id="43718" title="1 - Si pudiera"/>
+        <activity id="43719" title="2 - Sería más feliz"/>
+        <activity id="43720" title="3 - Lo contrario"/>
+        <activity id="43721" title="4 - El trabajo"/>
+<!--Lab Manual-->
+        <activity id="28155" title="1 - Identificar"/>
+        <activity id="50411" title="2 - Cambiar"/>
+        <activity id="44718" title="3 - Completar"/>
+      </group>
+      <group>
+<!--L16 LECTURA -->
+<!--Practice-->
+        <activity id="52423" title="Imaginación y destino"/>
+        <activity id="43681" title="¿Comprendiste?"/>
+        <activity id="43683" title="Preguntas"/>
+        <activity id="53195" title="Carlos Slim, el hombre más rico del mundo"/>
+        <activity id="50572" title="¿Cierto o falso?"/>
+      </group>
+      <group>
+<!--L16 AVENTURAS EN LOS PAÍSES HISPANOS - España -->
+        <activity id="43684" title="El Festival de San Fermín"/>
+<!--Workbook-->
+        <activity id="43727" title="1 - El mapa de España"/>
+<!--Video Manual-->
+        <activity id="31963" title="3 - Ordenar"/>
+        <activity id="10906" title="1 - Más vocabulario"/>
+        <activity id="11795" title="2 - Festivales"/>
+        <activity id="12394" title="4 - Fotos"/>
+        <activity id="32837" title="5 - El festival de San Fermín"/>
+      </group>
+    </lesson>
+  </lessons>
+</lesson_plan>

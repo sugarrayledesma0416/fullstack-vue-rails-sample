@@ -1,0 +1,27 @@
+Description
+==============
+  error_id: <%= @server_error.error_id %>
+
+
+Submitter
+==============
+  user_id: <%= @server_error.user_id %>
+<% if user = @server_error.user -%>
+  name: <%= user.full_name %>
+  account_type: <%= user.base_account_type %>
+<% else -%>
+  No unarchived user found for user_id.
+<% end -%>
+
+<% if @server_error.user_comment.present? -%>
+  user comment: <%= @server_error.user_comment %>
+<% end -%>
+
+
+Environment
+==============
+  browser: <%= @server_error.browser_name %> <%= @server_error.browser_version %>
+  operating_system: <%= @server_error.operating_system %>
+  ip_address: <%= @server_error.ip_address %>
+  user_agent: <%= @server_error.user_agent_string %>
+  http_referer: <%= @server_error.http_referer %>

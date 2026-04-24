@@ -1,0 +1,74 @@
+<table class="c-table  c-programs-table  ns-programs-table">
+  <thead>
+    <tr class="c-program-data__header-row">
+      <th scope="col"></th>
+      <th scope="col" class="c-header-table">Courses</th>
+      <th scope="col" class="c-header-table">Sections</th>
+      <th scope="col" class="c-header-table">Enrolled Students</th>
+      <th scope="col" class="c-header-table">
+        Idle Students
+        <a class='js-idle-students-help' href="#">
+          <music-icon-help class="u-pad-1  u-fill-black  u-mar-bot-6"></music-icon-help>
+        </a>
+      </th>
+      <% if current_user.institution_admin? %>
+        <th scope="col" class="c-header-table">
+          Access Issues
+          <music-icon-exclamation class="u-pad-1  u-fill-red  u-mar-bot-6">
+          </music-icon-exclamation>
+        </th>
+      <% end %>
+    </tr>
+  </thead>
+  <tbody>
+    <% if programs.empty? %>
+      <tr class="c-program-data__row">
+        <td>You don't have any programs yet!</td>
+      </tr>
+    <% else %>
+      <% program_cover_images = @presenter.show_program_cover_images(programs.map(&:id)) %>
+      <% programs.each do |program| %>
+        <tr class="c-program-data__row">
+          <th scope="row" class="u-txt-wrap  u-width-program-header">
+            <div class="l-line">
+                <div class="u-mar-top-12  u-txt-20">
+                  <% if current_user.is_a?(DataAdmin) %>
+                    <span>
+                      <%= program.title %>
+                    </span>
+                  <% else %>
+                    <a class="c-title-program  u-dis-flex"
+                      href="<%= institution_admin_courses_current_path(program_id: program.id, school_id: school&.id) %>">
+                      <img
+                        src="<%= program_cover_images[program.id.to_s] %>"
+                        class="u-img-program-size" />
+                      <span class="u-mar-top-16  u-mar-lt-16">
+                        <%= program.title %>
+                      </span>
+                    </a>
+                  <% end %>
+                </div>
+            </div>
+          </th>
+          <td class="u-txt-ctr">
+            <%= @presenter.count_courses_by_program(school.id, program.id) %>
+          </td>
+          <td class="u-txt-ctr">
+            <%= @presenter.count_section_by_program(school&.id, program.id) %>
+          </td>
+          <td class="u-txt-ctr">
+            <%= @presenter.count_enrollments_by_school_and_program(school&.id, program.id) %>
+          </td>
+          <td class="u-txt-ctr">
+            <%= @presenter.count_idle_students_by_program(program.id, school&.id) %>
+          </td>
+          <% if current_user.institution_admin? %>
+            <td class="u-txt-ctr">
+              <%= @presenter.count_insufficient_access_by_program(school&.id, program.id) %>
+            </td>
+          <% end %>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>

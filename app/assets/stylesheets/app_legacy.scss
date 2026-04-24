@@ -1,0 +1,1488 @@
+/* Layout Helpers from Jquery-UI */
+.ui-helper-hidden { display: none; }
+.ui-helper-hidden-accessible { position: absolute !important; clip: rect(1px 1px 1px 1px); clip: rect(1px,1px,1px,1px); }
+.ui-helper-reset { margin: 0; padding: 0; border: 0; outline: 0; line-height: 1.3; text-decoration: none; font-size: 100%; list-style: none; }
+.ui-helper-clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+.ui-helper-clearfix { display: inline-block; }
+/* required comment for clearfix to work in Opera \*/
+* html .ui-helper-clearfix { height:1%; }
+.ui-helper-clearfix { display:block; }
+/* end clearfix */
+.ui-helper-zfix { width: 100%; height: 100%; top: 0; left: 0; position: absolute; opacity: 0.0; filter:alpha(opacity=0); }
+/* End Layout Helpers */
+
+body {
+	background: #f5f5f5 none;
+	color: #333;
+	font-size: 62.5%;
+	padding: 0;
+	text-align: center;
+}
+
+h1 {
+  font-size:1.385em;
+  font-weight:normal;
+  margin:0 0 14px;
+}
+
+#navigation .subnav a {
+  background-image:none;
+  }
+
+.activities #navigation {margin: 0 0px 20px 0;}
+
+
+
+#sub_navigation_content li span.current {
+	background: url(/images/bkgd-nav-line.png) transparent top right no-repeat;
+	color: #CD001A;
+	font-weight:bold;
+}
+#sub_navigation_grades li span.current {
+	background: url(/images/bkgd-nav-line.png) transparent top right no-repeat;
+	color: #CD001A;
+	font-weight:bold;
+}
+#footer {
+        background-color:#f5f5f5;
+        border-top:solid 1px #747474;
+	clear: both;
+	font-size: 0.769em;
+	padding: 1em 0;
+	display: flex;
+	justify-content: space-between;
+
+  .c-footer__link {
+    text-decoration: underline;
+  }
+}
+
+#footer p {
+	color: #2f2f2f;
+	display: inline;
+	margin: 0;
+	margin-left: 2%;
+	margin-right: 2%;
+}
+
+#footer ul {
+	list-style: none;
+	margin: 0;
+	padding: .5em 0;
+}
+#footer li {
+	display: inline;
+	margin: 0;
+	padding: 0 .25em 0 0;
+}
+#footer li.copyright {
+	border: 1px solid #fff;
+}
+#errorExplanation {
+	background-color: #f0f0f0;
+	border: 2px solid #d12209;
+	margin-bottom: 20px;
+}
+#errorExplanation h2 {
+	background-color: #c00;
+	color: #fff;
+	font-size: 12px;
+	font-weight: bold;
+	margin: 0px;
+	padding: 5px 5px 5px 10px;
+	text-align: left;
+	word-spacing: normal;
+}
+#errorExplanation p {
+	color: #333;
+	margin-bottom: 0;
+	padding: 5px 10px;
+}
+#errorExplanation ul {
+	font-size: 12px;
+	margin: 0 20px 10px 20px;
+}
+#errorExplanation li {
+	list-style: square;
+	margin: 0 0 5px 0;
+}
+
+
+a.enhanced_email {
+  color: #ffffff;
+}
+
+div#popup_flash {
+  font-size: 1.1em;
+  text-align: left;
+}
+
+/* maestro 3 stuff */
+.clear_divs {
+	clear: both;
+}
+
+tr.purchase_required_warning div {
+  text-align: center;
+  font-weight: bold;
+  padding: .25em;
+  border:  2px solid #ec4040;
+}
+
+.language_check_boxes {
+	list-style-type: none;
+	margin-left: 0em;
+	margin-top: 0.3em;
+}
+.weekday_check_boxes {
+	list-style-type: none;
+	margin-left: 0em;
+	margin-top: 0.3em;
+}
+div#my_assignments lh {
+	font-weight: bold;
+	margin-left: -2.5em;
+}
+
+.fieldWithErrors .input_group {
+	background-color: white;
+	border: 1px solid white;
+	padding: 3px;
+}
+span.passcode_purchase {
+	font-style: italic;
+	font-weight: bold;
+	margin-left: 1.5em;
+}
+.course_list_toggle_link {
+	margin-left: 1.5em;
+}
+
+p {
+	line-height: 1.4em;
+}
+dl {
+	padding: 0;
+}
+dt {
+	font-weight: bold;
+	line-height: 1.25em;
+	margin-top: 1em;
+}
+dt.first {
+	margin-top: 0;
+}
+dd {
+	line-height: 1.25em;
+	margin-left: 0;
+	padding-left: 0;
+}
+
+#content {
+	background-color: #fff;
+	border-top: 1px solid #ccc;
+	clear: both;
+	padding: 1em;
+	position: relative;
+}
+
+div.featured_content {
+	background-color: #fff;
+	border: 1px solid #ccc;
+	color: #2f2f2f;
+	float: left;
+	margin-bottom: 1em;
+	padding: 2em 0;
+	width: 332px;
+}
+div.featured_content h3 {
+	font-size: .846em;
+	font-style: normal;
+	margin-bottom: .5em;
+	margin-top: 0px;
+	text-transform: lowercase;
+}
+
+div.featured_content h3 {
+	text-align: right;
+	margin: 0 0 15px 0;
+}
+div.featured_content h3 a.not_built_yet {
+	color: #2f2f2f;
+}
+div.featured_content p {
+	font-size: 0.846em;
+}
+
+div.featured_content div.thumbnail,
+div.featured_content div.videoplayer {
+	background: transparent;
+	border: 0;
+	margin: 0;
+	margin-bottom: 1em;
+	padding: 0;
+	position: relative;
+	text-align: center;
+	width: 100%;
+}
+
+div.featured_content div.thumbnail {
+}
+
+div.myprofile_module,
+div.messages_module,
+div.community_module,
+div.myprograms_module,
+div.featured_content {
+	border-bottom: 1px dotted #0026a5;
+	margin-bottom: 1em;
+	padding: 1em;
+}
+.tri_column #column_one {
+	margin-bottom: 3em;
+	padding: 0;
+	padding-bottom: 90px;
+	text-align: center;
+}
+.tri_column #column_one div.myprofile_module,
+.tri_column #column_one div.messages_module,
+.tri_column #column_one div.community_module {
+	color: #535353;
+	margin: 0 auto;
+	padding: 25px 0;
+	position: relative;
+	width: 176px;
+}
+div.myprofile_module img.portrait {
+	border: 1px solid #666;
+	margin: 55px auto 10px 0;
+}
+div.myprofile_module h3 {
+	border-bottom: 1px dotted #0026a5;
+	font-size: 0.923em;
+	font-style: normal;
+	left: 0;
+	margin: 0;
+	padding: 0;
+	padding-bottom: .5em;
+	position: absolute;
+	text-align: left;
+	top: 60px;
+	width: 100%;
+}
+div.myprofile_module p {
+	margin-top: 0;
+	padding-top: 0;
+	text-align: left;
+}
+div.myprofile_module p.edit {
+	font-size: 0.846em;
+	margin-bottom: .5em;
+	position: absolute;
+	right: 0;
+	top: 31px;
+}
+div.myprofile_module p.edit	a {
+	color: #979797;
+	text-transform: lowercase;
+}
+div.myprofile_module div.progress {
+	clear: both;
+	padding: 0;
+	width: 178px;
+}
+div.myprofile_module div.progress p {
+	margin-bottom: 0;
+	padding-bottom: 0;
+	font-size: .846em;
+}
+div.myprofile_module div.progress h4 {
+	margin-top: 0;
+	padding-top: 0;
+	font-weight: normal;
+	font-size: .846em;
+	font-style: italic;
+}
+div.myprofile_module img.progress-meter {
+	width: 100%;
+}
+div.messages_module {
+}
+div.messages_module h3 {
+	font-size: 0.923em;
+	font-style: normal;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+	text-transform: lowercase;
+}
+div.messages_module h3 a.not_built_yet {
+	color: #535353;
+}
+div.messages_module h2 {
+	margin-top: 0;
+	padding-top: 0;
+}
+div.messages_module ul h3 {
+	font-size: 0.923em;
+	font-style: normal;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+	text-transform: lowercase;
+}
+div.messages_module ul h3 a.not_built_yet {
+	color: #559aba;
+}
+div.messages_module .messagelist li .icon {
+	display: inline;
+	float: left;
+	height: 30px;
+	margin-right: 15px;
+	width: 30px;
+}
+div.messages_module .messagelist li .icon img {
+	display: inline;
+	width: 30px;
+}
+ul.messagelist {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+ul.messagelist li {
+	padding: .75em;
+	padding-left: 0;
+}
+
+ul.messagelist li span.messagedate {
+	color: #999;
+	display: block;
+}
+
+ul.messagelist li h3 {
+	font-size: 0.846em;
+	margin: 0;
+	padding: 0;
+}
+div.messages_module ul.messagelist li p {
+	font-size: 0.846em;
+	margin: 0;
+	margin-bottom: .25em;
+	margin-left: 45px;
+	padding: 0;
+	text-align: left;
+}
+div.messages_module p.more {
+	font-weight: bold;
+	margin-left: 0;
+	text-align: left;
+	text-transform: lowercase;
+}
+div.messages_module p.more a.not_built_yet {
+	color: #192e7e;
+}
+div.messages_module .messagelist li .messagedate {
+	color: #878787;
+	font-style: italic;
+}
+div.community_module {
+}
+div.community_module h3 {
+	font-size: 0.923em;
+	font-style: normal;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+	text-transform: lowercase;
+}
+div.community_module h3 a.not_built_yet {
+	color: #535353;
+}
+div.community_module h2 {
+	margin-top: 0;
+	padding-top: 0;
+}
+div.community_module ul h3 {
+	font-size: 0.923em;
+	font-style: normal;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+	text-transform: lowercase;
+}
+div.community_module ul h3 a.not_built_yet {
+	color: #559aba;
+}
+div.community_module .buddylist li .icon {
+	display: inline;
+	float: left;
+	height: 30px;
+	margin-right: 15px;
+	width: 30px;
+}
+div.community_module .buddylist li .icon img {
+	display: inline;
+	width: 30px;
+}
+ul.buddylist {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+ul.buddylist li {
+	padding: .75em;
+	padding-left: 0;
+}
+
+ul.buddylist li span.messagedate {
+	color: #999;
+	display: block;
+}
+
+ul.buddylist li h3 {
+	font-size: 0.846em;
+	margin: 0;
+	padding: 0;
+}
+div.community_module ul.buddylist li p {
+	font-size: 0.846em;
+	margin: 0;
+	margin-bottom: .25em;
+	margin-left: 45px;
+	padding: 0;
+	text-align: left;
+}
+div.community_module p.more {
+	font-weight: bold;
+	margin-left: 0;
+	text-align: left;
+	text-transform: lowercase;
+}
+div.community_module p.more a.not_built_yet {
+	color: #192e7e;
+}
+div.community_module .buddylist li .messagedate {
+	color: #878787;
+	font-style: italic;
+}
+div.myprograms_module {
+	border: 1px solid #ccc;
+	padding: 25px 20px 90px 20px;
+	position: relative;
+}
+div.myprograms_module h2 {
+	color: #b10f0c;
+	font-size: 1.231em;
+	margin: 0;
+	margin-bottom: .5em;
+	padding: 0;
+	text-align: left;
+	text-transform: lowercase;
+}
+div.myprograms_module p.edit {
+	font-size: 0.846em;
+	margin-bottom: .5em;
+	position: absolute;
+	right: 21px;
+	top: 29px;
+}
+div.myprograms_module p.edit	a {
+	color: #979797;
+	text-transform: lowercase;
+}
+div.myprograms_module form {
+	margin-bottom: .5em;
+	text-align: left;
+}
+div.myprograms_module select {
+	width: 100%;
+}
+div.myprograms_module div.programlist {
+}
+div.myprograms_module div.program {
+	border-bottom: 1px dotted #0026A5;
+	margin: 0;
+	margin-bottom: 1em;
+	padding: 0;
+}
+div.myprograms_module div.book {
+	margin: 0;
+	padding: 0;
+	text-align: left;
+	width: 100%;
+}
+div.myprograms_module div.book div {
+	font-size: 0.846em;
+	font-weight: bold;
+	line-height: 1.3em;
+}
+div.myprograms_module div.book div a {
+	color: #192E7E;
+}
+
+div.myprograms_module div.program .thumbnail,
+div.myprograms_module div.program .videoplayer {
+	background-color: transparent;
+	border: 0;
+	margin: 0;
+	margin-bottom: .5em;
+	padding: 0;
+	text-align: center;
+}
+
+div.myprograms_module div.closed {
+	border-color: #e8e8e8;
+}
+div.myprograms_module div.inactive {
+	border-color: #e8e8e8;
+}
+div.myprograms_module div.thumbnail {
+}
+div.myprograms_module div.closed div.thumbnail {
+	background-color: #eee;
+	border-color: #e8e8e8;
+}
+div.myprograms_module div.inactive div.thumbnail {
+	background-color: #eee;
+	border-color: #e8e8e8;
+}
+div.myprograms_module span.booktitle {
+	font-weight: bold;
+}
+div.myprograms_module dl.courselist {
+	color: #606060;
+	margin: 0;
+	padding: 0 0 1em 0;
+}
+div.myprograms_module dl.courselist h3 {
+	margin-bottom: .25em;
+	padding-bottom: 0;
+}
+div.myprograms_module dl.courselist dt {
+	border-top: 1px dotted #ccc;
+	margin-bottom: 0;
+	margin-top: 1em;
+	padding-bottom: 0;
+	padding-top: 1em;
+}
+div.myprograms_module dl.courselist dt.first {
+	border-top: none;
+	font-size: 0.846em;
+	margin-top: 0;
+	padding-top: 0;
+}
+div.myprograms_module dl.courselist dd {
+	font-size: 0.846em;
+	margin-bottom: .5em;
+}
+div.myprograms_module dl.courselist dd.progress {
+	display: none;
+}
+div.myprograms_module dl.courselist dd.alert1 {
+	background-color: #fe5858;
+	color: #fff;
+	margin-bottom: .5em;
+	padding: 5px 10px;
+}
+div.myprograms_module dl.courselist dd.alert2 {
+	background-color: #fe8657;
+	color: #fff;
+	margin-bottom: .5em;
+	padding: 5px 10px;
+}
+div.myprograms_module dl.courselist dd.alert3 {
+	background-color: #c7c7c7;
+	color: #606060;
+	margin-bottom: .5em;
+	padding: 5px 10px;
+}
+div.myprograms_module dl.closed {
+	background-color: #ccc;
+	margin-top: 1em;
+	padding: 1em;
+}
+div.myprograms_module dl.closed dt {
+	border-top: none;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding-bottom: 0;
+}
+div.myprograms_module dl.closed h3 {
+	background: url(/images/ico-padlock.gif) no-repeat 100% 0;
+	display: inline;
+	padding-right: 22px;
+}
+div.myprograms_module h4 {
+	margin-bottom: .25em;
+	padding-bottom: .25em;
+}
+div.myprograms_module ul.pipelist {
+	background-image: none;
+	font-size: 0.846em;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+	padding-bottom: 1px;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-width: 1px;
+	border-color: #cccccc;
+	margin-top: 12px;
+	margin-bottom: 12px;
+}
+div.myprograms_module ul.pipelist li {
+	background: none;
+	border: 0;
+	border-right: 0;
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+div.myprograms_module ul.pipelist li:after {
+	content: "";
+	padding: 0;
+}
+div.myprograms_module ul.pipelist li:last-child:after {
+	content: "";
+}
+div.myprograms_module ul.pipelist li a {
+	background: none;
+	margin: 0;
+	padding: 0;
+}
+
+div.myprograms_module ul.pipelist li.first {
+}
+div.myprograms_module ul.pipelist li.last {
+}
+div.myprograms_module div.morelinks {
+	padding-top: 0;
+}
+ul.pipelist li {
+	border-right: 1px solid #CCC;
+	display: inline;
+	list-style-type: none;
+	padding-left: .35em;
+}
+ul.pipelist li:after {
+	content: "\00A0\00A0\007C";
+	padding: 0;
+}
+ul.pipelist li:last-child:after {
+	content: "";
+}
+ul.pipelist li.first {
+	padding-left: 0;
+}
+ul.pipelist li.last {
+	border-right: none;
+}
+
+ul.notifications {
+	margin: 0;
+	padding: 0;
+}
+ul.notifications li {
+	padding: 0.75em 0.75em 0.75em 0;
+}
+ul.notifications li h3 {
+	font-size: 0.846em;
+	margin: 0;
+	padding: 0;
+}
+p.more {
+	font-weight: bold;
+}
+p.more a.not_built_yet {
+	color: #192E7E;
+}
+
+div.morelinks {
+	clear: both;
+	font-weight: bold;
+	padding-top: 1em;
+}
+div.morelinks a.not_built_yet {
+	color: #559ABA;
+}
+
+.access_code, .program_title, .program_privileges {
+	font-weight: bold;
+}
+
+a {
+	text-decoration: none;
+	cursor: pointer;
+}
+a.button {
+	background-color: #e8e8e8;
+	border-bottom: 3px solid #666;
+	border-left: 1px solid #ccc;
+	border-right: 3px solid #666;
+	border-top: 1px solid #ccc;
+	color: #666666;
+	font-weight: bold;
+	font-weight: normal;
+	margin-bottom: 2em;
+	-moz-border-radius: 5px;
+	padding: .5em .75em;
+	text-decoration: none;
+	-webkit-border-radius: 5px;
+}
+a.edit {
+	font-size: .75em;
+	padding: .25em 0;
+}
+a.more:after {
+	content: "\00A0\00BB";
+}
+a.external {
+	background: url("/images/ico-external-link.png") no-repeat center right;
+	padding-right: 16px;
+}
+a.pdf {
+	background: url("/images/file-acrobat.gif") no-repeat center right;
+	padding-right: 20px;
+}
+a img {
+	border: none;
+}
+
+.caption {
+	color: #999;
+	display: block;
+	font-size: .85em;
+	font-style: oblique;
+	line-height: 1.5em;
+}
+.right {
+	float: right;
+}
+.wrapRt {
+	float: left;
+	margin: 1em 1em 1em 0;
+}
+.wrapLt {
+	float: right;
+	margin: 1em 0 1em 1em;
+}
+.thumbnail, .videoplayer {
+	background-color: #CCC;
+	border: 2px solid #999;
+	color: #888;
+	margin: .5em;
+	padding: .5em;
+}
+
+.thumbnail span, .videoplayer span {
+	display: block;
+	padding: 1em;
+	text-align: center;
+}
+.portrait {
+}
+.landscape {
+}
+
+.videoplayer {
+	background: #ccc url("/images/ico-play-video.jpg") no-repeat 50% 50%;
+	margin-bottom: 1em;
+	position: relative;
+}
+
+.video_standard {
+	height: 240px;
+	width: 320px;
+}
+.video_widescreen {
+	height: 240px;
+	width: 488px;
+}
+
+.note {
+	color: #999;
+	font-weight: normal;
+}
+
+span.tip {
+	color: #999;
+	font-style: oblique;
+	font-weight: normal;
+}
+.help {
+	display: block;
+	font-size: .75em;
+	padding-top: .25em;
+}
+span.help {
+	color: #999;
+}
+.left {
+	float: left;
+}
+
+a.video {
+	background: url("/images/ico-video.jpg") no-repeat center left;
+	padding-left: 24px;
+}
+.error_msg {
+	background-color: #FCC;
+	border: 1px solid #FF0000;
+	color: #FF0000;
+	margin-bottom: .5em;
+	padding: .5em;
+}
+.error_msg p {
+	background: url("/images/error.png") no-repeat;
+	margin: 0;
+	padding: 0 0 0 24px;
+}
+
+
+fieldset {
+	border: 1px solid #ccc;
+	margin-bottom: 1em;
+	margin-top: 2em;
+	padding: 1em;
+}
+fieldset div.twocol {
+	float: left;
+	padding-bottom: 1em;
+	width: 50%;
+}
+legend {
+	color: #666;
+	font-size: 1.25em;
+}
+label {
+	display: inline;
+	font-weight: bold;
+	padding: 1em 0 .25em 0;
+	margin-right:15px;
+}
+
+label.newline_label {
+  display:block;
+}
+.student_select_form{
+	margin-top:10px;
+	width:300px;
+	/*float:left;*/
+}
+input.text {
+	display: block;
+	float: left;
+}
+.inline label, .inline input {
+	display: inline;
+}
+.inline label {
+	padding: 0 1em 0 0;
+}
+
+/*
+		What is this style for? The selector is extremely generic:
+*/
+.inline div {
+	display: inline;
+}
+/*
+		Overriding it for textangular fields in program config:
+		/app/views/program_configs/edit.html.erb (mae-36180)
+*/
+.ns-program-config .ta-editor {
+  display: block;
+}
+
+
+#gradebook_external_activity_form div.fieldWithErrors{
+  display: inline;
+}
+
+
+#gradebook_external_activity_form div.field_row{
+  margin-bottom: 0.5em;
+  width:300px;
+  text-align:right;
+  padding-top:5px;
+}
+
+.field_row label{
+  display: inline;
+}
+.field_row input{
+  float:right;
+}
+#gradebook_external_activity_form .fieldWithErrors label{
+  color: #ec4040;
+}
+
+#gradebook_external_activity_form .fieldWithErrors input{
+  border: 2px solid #ec4040;
+}
+
+#gradebook_external_activity_form .fieldWithErrors select{
+  border: 2px solid #ec4040;
+}
+
+
+.error {
+	color: #FF0000;
+}
+div.error input {
+	color: #000;
+}
+div.communication {
+	background-color: #eee;
+	margin-bottom: 1em;
+	padding: 1em;
+}
+div.communication p {
+	font-size: 1.2em;
+}
+div.communication p > strong {
+	font-size: 1.25em;
+	font-style: italic;
+}
+
+ul.simplelist {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+ul.simplelist li {
+	margin: 0;
+	padding: 0 0 .25em 0;
+}
+ul.selectionlist {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+ul.selectionlist li {
+	margin: 0;
+	padding: 0;
+}
+ul.selectionlist label {
+	padding: 0;
+}
+
+ul.pipelist {
+	margin: 0;
+	padding: 0;
+}
+ul.pipelist li {
+	border-right: 1px solid #CCC;
+	display: inline;
+	list-style-type: none;
+	padding-left: .35em;
+}
+ul.pipelist li:after {
+	content: "\00A0\00A0\007C";
+	padding: 0;
+}
+ul.pipelist li:last-child:after {
+	content: "";
+}
+ul.pipelist li.first {
+	padding-left: 0;
+}
+ul.pipelist li.last {
+	border-right: none;
+}
+
+form div.row {
+	margin-bottom: 1em;
+}
+
+ul.tabs {
+	border-bottom: 1px solid #ccc;
+	display: block;
+	float: left;
+	font-size: 1.2em;
+	font-weight: bold;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+ul.tabs li {
+	display: block;
+	float: left;
+	margin: 0;
+	padding: 0;
+}
+ul.tabs li.first {
+	padding-left: 0;
+}
+ul.tabs li a {
+	background-color: #e8e8e8;
+	border: 1px solid #ccc;
+	border-bottom: none;
+	float: left;
+	font-size: .85em;
+	margin: 0 0 -1px 0;
+	-moz-border-radius-topleft: .5em;
+	-moz-border-radius-topright: .5em;
+	padding: .25em .5em;
+	text-align: center;
+	-webkit-border-top-left-radius: .5em;
+	-webkit-border-top-right-radius: .5em;
+}
+ul.tabs li a.active, ul.tabs li a.current {
+	background-color: #fff;
+	border-bottom: 1px solid #fff;
+	color: #666;
+}
+ul.tabs li a:hover {
+	color: #666;
+	text-decoration: none;
+}
+
+ul.bank_assignments, ul.external_activity_assignments{
+	clear: both;
+	list-style: none;
+	margin: .5em;
+	padding: 0;
+}
+ul.bank_assignments li, ul.external_activity_assignments li {
+	background-color: #f1f7fa;
+	display: block;
+	margin: .25em 0;
+	padding: .5em;
+}
+ul.bank_assignments lh{
+	display: none;
+}
+
+ul.external_activity_assignments lh {
+  font-weight: bold;
+  font-size: 0.85em;
+}
+
+table.calendar {
+	border-collapse: collapse;
+	border-color: #b2b2b2;
+	border-style: solid;
+	border-width: 0 0 1px 1px;
+	margin-bottom: 2em;
+	width: 100%;
+	font-size: 10px;
+}
+
+
+table.calendar thead th {
+	background: #eee;
+	color: #777;
+	font-size: 10px;
+	padding: 5px 10px;
+	text-align: left;
+}
+
+table.calendar thead .cal-details {
+	background-color: #353535;
+	color: #fff;
+	font-size: 10px;
+	padding: 5px 10px;
+}
+	table.calendar thead .cal-details h3 {
+		float: left;
+		font-size: 14px;
+		margin: 0;
+	}
+	table.calendar thead .calendar_navigation li {
+		float: left;
+		font-weight: bold;
+		margin: 0 5px;
+		padding: 0 10px 0 0;
+		background: url(/images/bkgd-pipe-white.png) right 5px no-repeat;
+	}
+	table.calendar thead .calendar_navigation li.count {background-image: none;}
+
+		table.calendar thead .calendar_navigation li a {
+			color: #fff;
+			text-decoration: underline;
+		}
+table.calendar tbody {
+	clear: both;
+}
+table.calendar th,
+table.calendar td {
+	border: 0;
+	border-bottom: 1px solid #e5e5e5;
+	border-right: 1px solid #b2b2b2;
+}
+table.calendar tbody td {
+	padding: 5px 10px;
+	width: 14%;
+	vertical-align: top;
+}
+table.calendar tbody tr.week {
+  height: 90px;
+}
+table.calendar tbody td.day_name {
+	background-color: #666;
+	color: #fff;
+	padding: 3px 6px;
+}
+table.calendar span.day_number {
+	display: block;
+	float: left;
+	width: 100%;
+}
+table.calendar tbody td.day a {
+}
+table.calendar tbody td.day a:hover {
+	background-color: #ccc;
+}
+table.calendar tbody td.other {
+	color: #9a9a9a;
+}
+table.calendar tbody td.today {
+	background-color: #0068b0;
+	color: #660066;
+	font-weight: bold;
+}
+table.calendar tbody td.today li {
+  color: #000;
+  font-weight: normal;
+}
+table.calendar tbody td.active {
+	background-color: #eee;
+}
+table.calendar .controls {
+	background-color: #ccc;
+	padding: .25em 0;
+	text-align: center;
+}
+table.calendar .controls ul {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+table.calendar .controls li {
+	margin: 0;
+	padding: 0;
+}
+table.calendar .controls li.prev a:before {
+	content: "\00AB\00A0";
+}
+table.calendar .controls li.next a:after {
+	content: "\00A0\00BB";
+}
+#assignment_calendar ul.calendar_navigation {
+	margin-bottom: .5em;
+}
+table.large_table {
+	border: 1px solid #ccc;
+	border-collapse: collapse;
+	width: 100%;
+}
+table.large_table tr {
+	border-bottom: 1px solid #ccc;
+}
+table.large_table th {
+	background-color: #666;
+	color: #fff;
+	padding: .5em;
+}
+table.large_table td {
+	padding: .5em;
+}
+table.small_table {
+	border-collapse: collapse;
+	margin-bottom: 2em;
+	width: 100%;
+}
+table.small_table tr {
+	border-bottom: 1px dotted #ccc;
+}
+table.small_table th, table.small_table td {
+	padding: .5em;
+}
+#flash {
+	margin-bottom: 1em;
+	margin-left: 55px;
+	width: 850px;
+}
+#flash fieldset#flash_notice {
+	border: 1px solid #c7241f;
+	display: block;
+	margin: 0;
+	margin-bottom: 1em;
+	padding: 0;
+	padding-bottom: 1em;
+	position: relative;
+	text-align: center;
+}
+#flash fieldset#flash_notice legend {
+	background: #c7241f;
+	color: #fff;
+	font-size: 1.2em;
+	font-weight: bold;
+	margin-bottom: .25em;
+	margin-left: 1em;
+	padding: 5px 10px;
+	text-transform: lowercase;
+}
+
+
+.join_course_section_row td label {
+	display: inline;
+	font-weight: normal;
+	padding: 0;
+}
+
+.controls {
+	background-color: #eee;
+	float: left;
+	margin: .25em 0;
+	position: relative;
+	width: 100%;
+}
+.controls img, .controls ul {
+	float: left;
+	margin: .5em;
+}
+.controls div.morelinks {
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+.featured_events {
+	border: 1px solid #ccc;
+	padding: 1em 0 .5em 0;
+}
+.featured_events dl {
+	border-left: 1px dotted #ccc;
+	float: left;
+	min-height: 17em;
+	padding: 0 2em;
+	width: 22.5em !important;
+	width: 26.5em;
+}
+.featured_events dl.first {
+	border: none;
+}
+.featured_events dt {
+	font-size: 1.2em;
+	margin-bottom: .5em;
+}
+.featured_events dd {
+}
+
+.not_built_yet,
+a.not_built_yet:visited,
+a.not_built_yet:link {
+	color: #8D1A15;
+}
+
+/* vhl added for /passcodes/how_to_find */
+
+
+
+div#overall_search_feedback li {
+	list-style: square;
+	margin-left: 2em;
+}
+
+.errorExplanation {
+	background-color: #f0f0f0;
+	border: 2px solid #d12209;
+	margin-bottom: 20px;
+}
+#overall_search_feedback.errorExplanation h2 {
+	background-color: #c00;
+	color: #fff;
+	font-size: 12px;
+	font-weight: bold;
+	margin: 0 0 5px 0;
+	padding: 5px 5px 5px 15px;
+	text-align: left;
+	word-spacing: normal;
+}
+.errorExplanation p {
+	color: #333;
+	margin-bottom: 0;
+	padding: 5px;
+}
+.errorExplanation ul {
+	font-size: 12px;
+	margin: 0 20px 10px 20px;
+}
+.errorExplanation li {
+	list-style: square;
+	margin: 0 0 5px 0;
+}
+
+#school_search_feedback ul.unrecognized_search_token {
+	margin:  0.25em 0.25em 1em;
+}
+
+
+#school_search_feedback li.unrecognized_search_token {
+	margin:  0.25em 0.5em;
+}
+
+ul.personalized_programs {
+  width: 60%;
+}
+
+li.sortable_row {
+	padding: 10px 10px 10px 10px;
+	margin:  0.25em 0.5em 0.25em 0.5em;
+	background-color: #f0f0f0;
+	border: 1px solid #CCCCCC;
+}
+
+li.sortable_row label{
+	display: inline;
+}
+li.sortable_row input{
+	display: inline;
+}
+li.sortable_row .handle{
+	float: right;
+	cursor: move;
+	margin-top: -6px;
+}
+
+.toc_activity_icon{
+ vertical-align: bottom;
+}
+
+hr.full_width_divider{
+	border: 0px;
+	border-bottom: 1px dotted #0026a5;
+	margin-bottom: 1em;
+	display: block;
+}
+
+div.screencast_context_link {
+	float: right;
+	padding-top: 2px;
+}
+
+.ui-dialog {
+  text-align: left;
+}
+
+.ui-dialog div.inline{
+  margin-bottom: 2em;
+}
+
+div.form_container{
+ display: table;
+}
+
+.disabled_element_wrapper,
+.enabled_element_wrapper{
+  position: relative;
+  display: inline;
+  margin: auto;
+  padding: 5px 0 5px 5px;
+}
+
+div.chat_link_block iframe{
+  padding-top: 20px;
+}
+div.chat_link_note {
+  margin-left: 86px;
+  margin-top: -37px;
+}
+
+
+table.passcode_package_list{
+	border: 0px;
+  margin: 2px;
+}
+
+.underline {
+  text-decoration:underline;
+}
+
+#navigation_container{
+	position:absolute;
+	top:-50px;
+	left:493px;
+}
+
+.privacy_policy_wrapper #column_wrapper {
+   padding-top:0px;
+   margin-top:75px;
+}
+
+.privacy_policy sup {
+  vertical-align: super;
+  font-size:9px;
+}
+
+.privacy_policy p {
+  margin-bottom:20px;
+}
+
+.privacy_policy .opt-out {
+  margin-left:16px;
+}
+
+.privacy_policy .opt-out li {
+  list-style-type:disc;
+}
+
+.coming_soon{
+  margin:45px 30px 10px 100px;
+  color:#333333;
+  font-size:10pt;
+  line-height:20px;
+  width:600px;
+}
+
+#return_to_current_courses{
+  margin:33px 0px 0px 180px;
+}
+
+.activity_link {
+  font-size: 12px;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+/* Announcement form for creating and editing announcements as an instructor */
+#announcement_form label {
+    display:block;
+}
+
+#announcement_form #accent_bar {
+    padding-top: 17px;
+}
+
+.dialog_section span, .dialog_course span {
+    color: #ccc;
+    font-weight: bold;
+}
+
+/*
+  Hide elements from visual browsers, keep content accessible.
+  Taken from http://html5boilerplate.com/
+
+  Hiding #master-audio-audio-wrapper explicitly  because it is
+  difficult to add a .no-visual class onto this elm, which is created by
+  jquery.jwplayer.js. The reason for hiding the player is
+  that it causes display issues, but page functionality
+  relies on its existence.
+*/
+
+.no-visual {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}

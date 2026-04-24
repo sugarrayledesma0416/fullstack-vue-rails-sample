@@ -1,0 +1,40 @@
+<%= link_to(question_bank_topic_path(id: @question_bank_topic.id)) do %>
+  <%= Music::Components.icon(
+        variant: 'return',
+        text: 'Return to Question Bank List',
+        classes: ['c-embedded-icon--md', 'u-txt-16']
+      ) %>
+<% end %>
+
+<div class="l-grid  u-mar-bot-16">
+  <div class="l-col-12  u-pad-top-16">
+    <h1 class="c-heading--page-title  u-txt-24">
+      <%= @title %>
+    </h1>
+  </div>
+</div>
+
+<table class="c-table">
+  <thead>
+    <tr class="c-header-row">
+      <th scope="col">Program</th>
+      <th scope="col">Lesson</th>
+      <th scope="col">Concept</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @mappings.each do |mapping| %>
+      <tr class="c-row">
+        <td>
+          <%= mapping.concept.program.title %>
+        </td>
+        <td>
+          <%= mapping.concept.lesson.name %>
+        </td>
+        <td>
+          <%= mapping.concept.name %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

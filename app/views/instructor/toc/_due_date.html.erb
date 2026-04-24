@@ -1,0 +1,31 @@
+<% show_due_date = due_date_handler.activity_is_assigned? %>
+<% portfolio_enabled = defined?(portfolio_enabled) && portfolio_enabled %>
+<% if show_due_date || portfolio_enabled %>
+  <% due_date = show_due_date ? due_date_handler.instructor_due_date_info : '' %>
+  <div id="<%= "toc_activity_due_date_#{due_date_handler.assignment_id}" %>"
+       class="toc_activity_due_date  u-dis-inline  u-txt-nowrap
+              <%= 'u-txt-bold' if due_date.casecmp('today').zero? %>">
+    <% if portfolio_enabled %>
+      <%= link_to(
+        feature_icon('icons/toc-portfolio', ['c-embedded-icon--md']),
+        'javascript://',
+        class: 'js-tooltip-auto  u-mar-rt-4  u-cursor-default  u-float-lt',
+        title: 'Export to Portfolio available'
+      ) %>
+    <% end %>
+    <% if due_date_handler.individually_assigned? %>
+      <%= link_to(
+        feature_icon('icons/individually_assigned', ['c-embedded-icon--md']),
+        instructor_individual_assignments_path(
+          activity_ids: [due_date_handler.activity_id],
+          program_id: current_program.id
+        ),
+        class: 'u-mar-rt-8',
+        title: 'Manage Individual Assignments'
+      ) %>
+    <% end %>
+    <%= due_date %>
+  </div>
+<% elsif local_assigns[:instructor_created?] || activity.hidden?(current_focus.course) %>
+  <div class="toc_activity_due_date">hidden</div>
+<% end %>

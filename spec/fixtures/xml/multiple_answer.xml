@@ -1,0 +1,44 @@
+<activity activity_type="multiple_answer" title="my multiple answer activity" language="es">
+  <dl>Choose all the correct answers for each question</dl>
+  <items>
+    <item>
+      <prompt>Question 1 Prompt</prompt>>
+      <answer>correct answer 1</answer>
+      <distractor>distractor 1</distractor>
+    </item>
+
+    <item>
+      <prompt>Question 2 Prompt</prompt>>
+      <answer>correct answer 1</answer>
+      <distractor>distractor 1</distractor>
+    </item>
+
+    <item>
+      <prompt>Question 3 Prompt</prompt>>
+      <answer>correct answer 1</answer>
+      <distractor>distractor 1</distractor>
+    </item>
+
+    <item>
+      <prompt>Question 4 Prompt</prompt>>
+      <answer>correct answer 1</answer>
+      <distractor>distractor 1</distractor>
+    </item>
+
+    <item>
+      <prompt>Question 5 Prompt</prompt>>
+      <answer>correct answer 1</answer>
+      <distractor>distractor 1</distractor>
+      <answer>correct answer 2</answer>
+      <distractor>distractor 2</distractor>
+    </item>
+
+    <item>
+      <answer>correct answer 1</answer>
+      <distractor>distractor 1</distractor>
+      <distractor>distractor 2</distractor>
+      <distractor>distractor 3</distractor>
+    </item>
+  </items>
+</activity>
+

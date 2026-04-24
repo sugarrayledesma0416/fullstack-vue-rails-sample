@@ -1,0 +1,45 @@
+<activity activity_type="short_clips" language="es" title="Short clips activity">
+  <dl>Answer Juan Pablo's questions about your daily habits.</dl>
+  <items>
+    <episode_synopsis sidebar_ref="1">Unos cuantos videos de ejemplo</episode_synopsis>
+    <video_clip>
+      <image id="247" />
+      <video id="1578" />
+      <transcript>
+        <stage_directions>(Thinking about stage directions)</stage_directions>
+        <stage_directions>(Another stage directions)</stage_directions>
+        <turn>
+          <speaker>311</speaker>
+          <dialog>Not an even field to be on</dialog>
+        </turn>
+        <stage_directions>(Soundsystem, maybe?)</stage_directions>
+      </transcript>
+    </video_clip>
+    <video_clip>
+      <image id="248" />
+      <video id="3113" />
+      <transcript>
+        <stage_directions>(Thinking about stage directions)</stage_directions>
+        <stage_directions>(Another stage directions)</stage_directions>
+        <turn>
+          <speaker>311</speaker>
+          <dialog>Not an even field to be on</dialog>
+        </turn>
+        <stage_directions>(Soundsystem, maybe?)</stage_directions>
+      </transcript>
+    </video_clip>
+  </items>
+  <sidebar ref="1">
+    <title>Character List</title>
+    <reference type="character_list">
+      <character>
+        <image id="247"/>
+        <name><b>Felipe</b></name>
+      </character>
+      <character>
+        <image id="248"/>
+        <name>Juan</name>
+      </character>
+    </reference>
+  </sidebar>
+</activity>

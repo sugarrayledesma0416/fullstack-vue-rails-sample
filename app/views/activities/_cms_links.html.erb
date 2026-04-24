@@ -1,0 +1,24 @@
+<% unless @activity.instructor_id # Exclude IGC/customized exams -%>
+  <% if current_user.roles.map(&:name).include?(Role::PROOFER) -%>
+    <div data-container="cms_activity_id" class="c-activity-context__headline-meta">
+      activity id in cms:
+      <%= link_to(
+            @activity.cms_activity_id,
+            "http://cms.vhlcentral.com/activities/#{@activity.cms_activity_id}",
+            title: 'Open in CMS',
+            target: '_blank'
+          ) %>
+    </div>
+  <% end -%>
+  <% if @activity.reviewable_by_all_questions? && current_user.can_review_questions? -%>
+    <div data-container="cms_review_questions" class="c-activity-context__headline-meta">
+      review questions in cms:
+      <%= link_to(
+            @activity.cms_activity_id,
+            "http://cms.vhlcentral.com/activities/#{@activity.cms_activity_id}/review_all_questions",
+            title: 'Review questions in CMS',
+            target: '_blank'
+          ) %>
+    </div>
+  <% end -%>
+<% end -%>

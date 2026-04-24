@@ -1,0 +1,3169 @@
+---
+record_0:
+  id: '1'
+  extension_name: 3DS
+  extension_description: 3DStudio
+  is_archived: '0'
+  is_allowed: '0'
+record_1:
+  id: '2'
+  extension_name: 7Z
+  extension_description: 7-Zip Compressed File
+  is_archived: '0'
+  is_allowed: '1'
+record_2:
+  id: '3'
+  extension_name: '906'
+  extension_description: Calcompplotter
+  is_archived: '0'
+  is_allowed: '0'
+record_3:
+  id: '4'
+  extension_name: ABC
+  extension_description: AProgramsMasterIndex
+  is_archived: '0'
+  is_allowed: '0'
+record_4:
+  id: '5'
+  extension_name: ABK
+  extension_description: CorelDRAWautobackup
+  is_archived: '0'
+  is_allowed: '0'
+record_5:
+  id: '6'
+  extension_name: ACL
+  extension_description: CorelDRAWkeyboardaccelerator
+  is_archived: '0'
+  is_allowed: '0'
+record_6:
+  id: '7'
+  extension_name: AD
+  extension_description: AfterDarkimage
+  is_archived: '0'
+  is_allowed: '0'
+record_7:
+  id: '8'
+  extension_name: ADM
+  extension_description: AfterDarkMultiModule
+  is_archived: '0'
+  is_allowed: '0'
+record_8:
+  id: '9'
+  extension_name: ADR
+  extension_description: AfterDarkRandomizer
+  is_archived: '0'
+  is_allowed: '0'
+record_9:
+  id: '10'
+  extension_name: AFM
+  extension_description: Adobefontmetrics(Type1)
+  is_archived: '0'
+  is_allowed: '0'
+record_10:
+  id: '11'
+  extension_name: AG4
+  extension_description: AccessG4documentimaging
+  is_archived: '0'
+  is_allowed: '0'
+record_11:
+  id: '12'
+  extension_name: AI
+  extension_description: AdobeIllustratorgraphics
+  is_archived: '0'
+  is_allowed: '0'
+record_12:
+  id: '13'
+  extension_name: AI
+  extension_description: EncapsulatedPostScriptheader
+  is_archived: '0'
+  is_allowed: '0'
+record_13:
+  id: '14'
+  extension_name: AIF
+  extension_description: Digitalaudio(Mac)
+  is_archived: '0'
+  is_allowed: '0'
+record_14:
+  id: '15'
+  extension_name: AIFC
+  extension_description: Digitalaudio(Mac)
+  is_archived: '0'
+  is_allowed: '0'
+record_15:
+  id: '16'
+  extension_name: ALB
+  extension_description: JASCImageCommander
+  is_archived: '0'
+  is_allowed: '0'
+record_16:
+  id: '17'
+  extension_name: ANI
+  extension_description: Animatedcursor
+  is_archived: '0'
+  is_allowed: '0'
+record_17:
+  id: '18'
+  extension_name: ANN
+  extension_description: Windowshelpannotations
+  is_archived: '0'
+  is_allowed: '0'
+record_18:
+  id: '19'
+  extension_name: ANS
+  extension_description: ANSItext
+  is_archived: '0'
+  is_allowed: '0'
+record_19:
+  id: '20'
+  extension_name: ARC
+  extension_description: ARC+compressedarchive
+  is_archived: '0'
+  is_allowed: '0'
+record_20:
+  id: '21'
+  extension_name: ARJ
+  extension_description: Compressedarchive(Jung)
+  is_archived: '0'
+  is_allowed: '0'
+record_21:
+  id: '22'
+  extension_name: ART
+  extension_description: XaraStudiodrawing
+  is_archived: '0'
+  is_allowed: '0'
+record_22:
+  id: '23'
+  extension_name: ASA
+  extension_description: ASPinfo
+  is_archived: '0'
+  is_allowed: '0'
+record_23:
+  id: '24'
+  extension_name: ASAX
+  extension_description: ASP.NETfile
+  is_archived: '0'
+  is_allowed: '0'
+record_24:
+  id: '25'
+  extension_name: ASC
+  extension_description: ASCIIfile
+  is_archived: '0'
+  is_allowed: '0'
+record_25:
+  id: '26'
+  extension_name: ASCX
+  extension_description: ASP.NETfile
+  is_archived: '0'
+  is_allowed: '0'
+record_26:
+  id: '27'
+  extension_name: ASD
+  extension_description: Wordtemporarydocument
+  is_archived: '0'
+  is_allowed: '0'
+record_27:
+  id: '28'
+  extension_name: ASF
+  extension_description: NetShowfile
+  is_archived: '0'
+  is_allowed: '0'
+record_28:
+  id: '29'
+  extension_name: ASM
+  extension_description: Assemblysourcecode
+  is_archived: '0'
+  is_allowed: '0'
+record_29:
+  id: '30'
+  extension_name: ASMX
+  extension_description: ASP.NETfile
+  is_archived: '0'
+  is_allowed: '0'
+record_30:
+  id: '31'
+  extension_name: ASP
+  extension_description: ActiveServerPage
+  is_archived: '0'
+  is_allowed: '0'
+record_31:
+  id: '32'
+  extension_name: ASPX
+  extension_description: ASP.NETfile
+  is_archived: '0'
+  is_allowed: '0'
+record_32:
+  id: '33'
+  extension_name: ASX
+  extension_description: NetShowfile
+  is_archived: '0'
+  is_allowed: '0'
+record_33:
+  id: '34'
+  extension_name: ATT
+  extension_description: AT&TGroupIVfax
+  is_archived: '0'
+  is_allowed: '0'
+record_34:
+  id: '35'
+  extension_name: AU
+  extension_description: Digitalaudio(Sun)
+  is_archived: '0'
+  is_allowed: '0'
+record_35:
+  id: '36'
+  extension_name: AVI
+  extension_description: Microsoftmovieformat
+  is_archived: '0'
+  is_allowed: '0'
+record_36:
+  id: '37'
+  extension_name: AXD
+  extension_description: Actrixdrawing
+  is_archived: '0'
+  is_allowed: '0'
+record_37:
+  id: '38'
+  extension_name: BAK
+  extension_description: Backup
+  is_archived: '0'
+  is_allowed: '0'
+record_38:
+  id: '39'
+  extension_name: BAS
+  extension_description: BASICsourcecode
+  is_archived: '0'
+  is_allowed: '0'
+record_39:
+  id: '40'
+  extension_name: BAT
+  extension_description: DOS
+  is_archived: '0'
+  is_allowed: '0'
+record_40:
+  id: '41'
+  extension_name: BFC
+  extension_description: Windowsbriefcasedocument
+  is_archived: '0'
+  is_allowed: '0'
+record_41:
+  id: '42'
+  extension_name: BIN
+  extension_description: Driver
+  is_archived: '0'
+  is_allowed: '0'
+record_42:
+  id: '43'
+  extension_name: BM1
+  extension_description: ApogeeBioMenacefile
+  is_archived: '0'
+  is_allowed: '0'
+record_43:
+  id: '44'
+  extension_name: BML
+  extension_description: Bookmarklibrary(SyncURL)
+  is_archived: '0'
+  is_allowed: '0'
+record_44:
+  id: '45'
+  extension_name: BMP
+  extension_description: Windows bitmap
+  is_archived: '0'
+  is_allowed: '1'
+record_45:
+  id: '46'
+  extension_name: BMK
+  extension_description: Windowshelpbookmarks
+  is_archived: '0'
+  is_allowed: '0'
+record_46:
+  id: '47'
+  extension_name: BMS
+  extension_description: BlackMagicscript
+  is_archived: '0'
+  is_allowed: '0'
+record_47:
+  id: '48'
+  extension_name: BRK
+  extension_description: Brooktroutfax
+  is_archived: '0'
+  is_allowed: '0'
+record_48:
+  id: '49'
+  extension_name: BS1
+  extension_description: ApogeeBlakeStonefile
+  is_archived: '0'
+  is_allowed: '0'
+record_49:
+  id: '50'
+  extension_name: C
+  extension_description: Csourcecode
+  is_archived: '0'
+  is_allowed: '0'
+record_50:
+  id: '51'
+  extension_name: CAB
+  extension_description: Microsoftcompressedformatfordistribution
+  is_archived: '0'
+  is_allowed: '0'
+record_51:
+  id: '52'
+  extension_name: CAL
+  extension_description: Windowscalendar
+  is_archived: '0'
+  is_allowed: '0'
+record_52:
+  id: '53'
+  extension_name: CAL
+  extension_description: SuperCalcspreadsheet
+  is_archived: '0'
+  is_allowed: '0'
+record_53:
+  id: '54'
+  extension_name: CAL
+  extension_description: CALSrasterandvectorformats
+  is_archived: '0'
+  is_allowed: '0'
+record_54:
+  id: '55'
+  extension_name: CAP
+  extension_description: VenturaPub.captions
+  is_archived: '0'
+  is_allowed: '0'
+record_55:
+  id: '56'
+  extension_name: CAL
+  extension_description: CALSrasterandvectorformats
+  is_archived: '0'
+  is_allowed: '0'
+record_56:
+  id: '57'
+  extension_name: CCB
+  extension_description: VisualBasicanimatedbutton
+  is_archived: '0'
+  is_allowed: '0'
+record_57:
+  id: '58'
+  extension_name: CCH
+  extension_description: CorelChart
+  is_archived: '0'
+  is_allowed: '0'
+record_58:
+  id: '59'
+  extension_name: CDA
+  extension_description: CDaudiotrack
+  is_archived: '0'
+  is_allowed: '0'
+record_59:
+  id: '60'
+  extension_name: CDR
+  extension_description: CorelDRAWvectorgraphics
+  is_archived: '0'
+  is_allowed: '0'
+record_60:
+  id: '61'
+  extension_name: CDT
+  extension_description: CorelDRAWtemplate
+  is_archived: '0'
+  is_allowed: '0'
+record_61:
+  id: '62'
+  extension_name: CDX
+  extension_description: CorelDRAWcompresseddrawing
+  is_archived: '0'
+  is_allowed: '0'
+record_62:
+  id: '63'
+  extension_name: CDX
+  extension_description: FoxProandClipperindex
+  is_archived: '0'
+  is_allowed: '0'
+record_63:
+  id: '64'
+  extension_name: CFG
+  extension_description: Configuration
+  is_archived: '0'
+  is_allowed: '0'
+record_64:
+  id: '65'
+  extension_name: CGM
+  extension_description: CGMvectorgraphics
+  is_archived: '0'
+  is_allowed: '0'
+record_65:
+  id: '66'
+  extension_name: CH3
+  extension_description: HarvardGraphicschart
+  is_archived: '0'
+  is_allowed: '0'
+record_66:
+  id: '67'
+  extension_name: CHP
+  extension_description: VenturaPub.chapter
+  is_archived: '0'
+  is_allowed: '0'
+record_67:
+  id: '68'
+  extension_name: CHK
+  extension_description: DOS/Windowscorruptedfile(Chkdsk)
+  is_archived: '0'
+  is_allowed: '0'
+record_68:
+  id: '69'
+  extension_name: CIF
+  extension_description: VenturaPub.chapterinfo.
+  is_archived: '0'
+  is_allowed: '0'
+record_69:
+  id: '70'
+  extension_name: CIT
+  extension_description: Intergraphscannedimage
+  is_archived: '0'
+  is_allowed: '0'
+record_70:
+  id: '71'
+  extension_name: CK?
+  extension_description: iD/ApogeeCommanderKeen?
+  is_archived: '0'
+  is_allowed: '0'
+record_71:
+  id: '72'
+  extension_name: COB
+  extension_description: COBOLsourcecode
+  is_archived: '0'
+  is_allowed: '0'
+record_72:
+  id: '73'
+  extension_name: COB
+  extension_description: Truespace3-Dfile
+  is_archived: '0'
+  is_allowed: '0'
+record_73:
+  id: '74'
+  extension_name: CLP
+  extension_description: Windowsclipboard
+  is_archived: '0'
+  is_allowed: '0'
+record_74:
+  id: '75'
+  extension_name: CLS
+  extension_description: VisualBasicclassmodule
+  is_archived: '0'
+  is_allowed: '0'
+record_75:
+  id: '76'
+  extension_name: CMF
+  extension_description: Corelmetafile
+  is_archived: '0'
+  is_allowed: '0'
+record_76:
+  id: '77'
+  extension_name: CMP
+  extension_description: JPEGbitmap/LEADbitmap
+  is_archived: '0'
+  is_allowed: '0'
+record_77:
+  id: '78'
+  extension_name: CMP
+  extension_description: RichLinkcomposedformat
+  is_archived: '0'
+  is_allowed: '0'
+record_78:
+  id: '79'
+  extension_name: CMX
+  extension_description: Corelclipart
+  is_archived: '0'
+  is_allowed: '0'
+record_79:
+  id: '80'
+  extension_name: CMV
+  extension_description: CorelPresentationExchange
+  is_archived: '0'
+  is_allowed: '0'
+record_80:
+  id: '81'
+  extension_name: CNT
+  extension_description: Windowshelpcontents
+  is_archived: '0'
+  is_allowed: '0'
+record_81:
+  id: '82'
+  extension_name: COM
+  extension_description: Executableprogram
+  is_archived: '0'
+  is_allowed: '0'
+record_82:
+  id: '83'
+  extension_name: CPD
+  extension_description: Faxcoverdocument
+  is_archived: '0'
+  is_allowed: '0'
+record_83:
+  id: '84'
+  extension_name: CPE
+  extension_description: Faxcoverdocument
+  is_archived: '0'
+  is_allowed: '0'
+record_84:
+  id: '85'
+  extension_name: CPI
+  extension_description: DOScodepage
+  is_archived: '0'
+  is_allowed: '0'
+record_85:
+  id: '86'
+  extension_name: CPL
+  extension_description: Windowscontrolpanelapplets
+  is_archived: '0'
+  is_allowed: '0'
+record_86:
+  id: '87'
+  extension_name: CPL
+  extension_description: Corelcolorpalette
+  is_archived: '0'
+  is_allowed: '0'
+record_87:
+  id: '88'
+  extension_name: CPP
+  extension_description: C++sourcecode
+  is_archived: '0'
+  is_allowed: '0'
+record_88:
+  id: '89'
+  extension_name: CPR
+  extension_description: KnowledgeAccessbitmap
+  is_archived: '0'
+  is_allowed: '0'
+record_89:
+  id: '90'
+  extension_name: CPR
+  extension_description: CorelPresentspresentation
+  is_archived: '0'
+  is_allowed: '0'
+record_90:
+  id: '91'
+  extension_name: CPT
+  extension_description: CorelPhotopaintimage
+  is_archived: '0'
+  is_allowed: '0'
+record_91:
+  id: '92'
+  extension_name: CPX
+  extension_description: CorelPresentationExchange
+  is_archived: '0'
+  is_allowed: '0'
+record_92:
+  id: '93'
+  extension_name: CRD
+  extension_description: Cardfilefile
+  is_archived: '0'
+  is_allowed: '0'
+record_93:
+  id: '94'
+  extension_name: CRP
+  extension_description: CorelPresentsruntimepresentation
+  is_archived: '0'
+  is_allowed: '0'
+record_94:
+  id: '95'
+  extension_name: CSC
+  extension_description: Corelscript
+  is_archived: '0'
+  is_allowed: '0'
+record_95:
+  id: '96'
+  extension_name: CSV
+  extension_description: Comma delimited
+  is_archived: '0'
+  is_allowed: '1'
+record_96:
+  id: '97'
+  extension_name: CT
+  extension_description: ScitexCTbitmap
+  is_archived: '0'
+  is_allowed: '0'
+record_97:
+  id: '98'
+  extension_name: CUR
+  extension_description: Cursor
+  is_archived: '0'
+  is_allowed: '0'
+record_98:
+  id: '99'
+  extension_name: CUT
+  extension_description: Dr.Halobitmap
+  is_archived: '0'
+  is_allowed: '0'
+record_99:
+  id: '100'
+  extension_name: CV5
+  extension_description: Canvas5vector/bitmap
+  is_archived: '0'
+  is_allowed: '0'
+record_100:
+  id: '101'
+  extension_name: DAT
+  extension_description: Data
+  is_archived: '0'
+  is_allowed: '0'
+record_101:
+  id: '102'
+  extension_name: DAT
+  extension_description: WordPerfectmergedata
+  is_archived: '0'
+  is_allowed: '0'
+record_102:
+  id: '103'
+  extension_name: DB
+  extension_description: Paradoxtable
+  is_archived: '0'
+  is_allowed: '0'
+record_103:
+  id: '104'
+  extension_name: DBF
+  extension_description: dBASEdatabase
+  is_archived: '0'
+  is_allowed: '0'
+record_104:
+  id: '105'
+  extension_name: DBT
+  extension_description: dBASEtext
+  is_archived: '0'
+  is_allowed: '0'
+record_105:
+  id: '106'
+  extension_name: DBX
+  extension_description: DATABEAMbitmap
+  is_archived: '0'
+  is_allowed: '0'
+record_106:
+  id: '107'
+  extension_name: DCA
+  extension_description: IBMtext
+  is_archived: '0'
+  is_allowed: '0'
+record_107:
+  id: '108'
+  extension_name: DCM
+  extension_description: DICOMmedicalimage
+  is_archived: '0'
+  is_allowed: '0'
+record_108:
+  id: '109'
+  extension_name: DCS
+  extension_description: ColorseparatedEPSformat
+  is_archived: '0'
+  is_allowed: '0'
+record_109:
+  id: '110'
+  extension_name: DCX
+  extension_description: Intelfaximage
+  is_archived: '0'
+  is_allowed: '0'
+record_110:
+  id: '111'
+  extension_name: DCT
+  extension_description: Dictionary
+  is_archived: '0'
+  is_allowed: '0'
+record_111:
+  id: '112'
+  extension_name: DEF
+  extension_description: Definition
+  is_archived: '0'
+  is_allowed: '0'
+record_112:
+  id: '113'
+  extension_name: DG
+  extension_description: Autotrolvectorgraphics
+  is_archived: '0'
+  is_allowed: '0'
+record_113:
+  id: '114'
+  extension_name: DGN
+  extension_description: Intergraphvectorgraphics
+  is_archived: '0'
+  is_allowed: '0'
+record_114:
+  id: '115'
+  extension_name: DIB
+  extension_description: WindowsDIBbitmap
+  is_archived: '0'
+  is_allowed: '0'
+record_115:
+  id: '116'
+  extension_name: DIC
+  extension_description: Dictionary
+  is_archived: '0'
+  is_allowed: '0'
+record_116:
+  id: '117'
+  extension_name: DIF
+  extension_description: Spreadsheet
+  is_archived: '0'
+  is_allowed: '0'
+record_117:
+  id: '118'
+  extension_name: DISCO
+  extension_description: PublishingandDiscoveringWebServices
+  is_archived: '0'
+  is_allowed: '0'
+record_118:
+  id: '119'
+  extension_name: DLG
+  extension_description: Dialoguescript
+  is_archived: '0'
+  is_allowed: '0'
+record_119:
+  id: '120'
+  extension_name: DLL
+  extension_description: Dynamiclinklibrary
+  is_archived: '0'
+  is_allowed: '0'
+record_120:
+  id: '121'
+  extension_name: DOC
+  extension_description: Document (Word and others)
+  is_archived: '0'
+  is_allowed: '1'
+record_121:
+  id: '122'
+  extension_name: DOCX
+  extension_description: Microsoft Word Open XML Document
+  is_archived: '0'
+  is_allowed: '1'
+record_122:
+  id: '123'
+  extension_name: DOT
+  extension_description: Wordtemplate
+  is_archived: '0'
+  is_allowed: '0'
+record_123:
+  id: '124'
+  extension_name: DOX
+  extension_description: MultiMateV4.0document
+  is_archived: '0'
+  is_allowed: '0'
+record_124:
+  id: '125'
+  extension_name: DPI
+  extension_description: Pointlinebitmap
+  is_archived: '0'
+  is_allowed: '0'
+record_125:
+  id: '126'
+  extension_name: DRV
+  extension_description: Driver
+  is_archived: '0'
+  is_allowed: '0'
+record_126:
+  id: '127'
+  extension_name: DRW
+  extension_description: Designervectorgraphics(Version2.x,3.x)
+  is_archived: '0'
+  is_allowed: '0'
+record_127:
+  id: '128'
+  extension_name: DS4
+  extension_description: Designervectorgraphics(Version4.x)
+  is_archived: '0'
+  is_allowed: '0'
+record_128:
+  id: '129'
+  extension_name: DSF
+  extension_description: Designervectorgraphics(Version6.x)
+  is_archived: '0'
+  is_allowed: '0'
+record_129:
+  id: '130'
+  extension_name: DWG
+  extension_description: AutoCADvectorformat
+  is_archived: '0'
+  is_allowed: '0'
+record_130:
+  id: '131'
+  extension_name: DX
+  extension_description: Autotroldocumentimaging
+  is_archived: '0'
+  is_allowed: '0'
+record_131:
+  id: '132'
+  extension_name: DXF
+  extension_description: AutoCADvectorformat
+  is_archived: '0'
+  is_allowed: '0'
+record_132:
+  id: '133'
+  extension_name: ED5
+  extension_description: EDMICSbitmap(DOD)
+  is_archived: '0'
+  is_allowed: '0'
+record_133:
+  id: '134'
+  extension_name: EMF
+  extension_description: EnhancedWindowsmetafile
+  is_archived: '0'
+  is_allowed: '0'
+record_134:
+  id: '135'
+  extension_name: EPS
+  extension_description: Encapsulated Post Script
+  is_archived: '0'
+  is_allowed: '1'
+record_135:
+  id: '136'
+  extension_name: ESI
+  extension_description: Esriplotfile(vector)
+  is_archived: '0'
+  is_allowed: '0'
+record_136:
+  id: '137'
+  extension_name: EVY
+  extension_description: Envoydocument
+  is_archived: '0'
+  is_allowed: '0'
+record_137:
+  id: '138'
+  extension_name: EXE
+  extension_description: Executableprogram
+  is_archived: '0'
+  is_allowed: '0'
+record_138:
+  id: '139'
+  extension_name: FAX
+  extension_description: Variousfaxformats
+  is_archived: '0'
+  is_allowed: '0'
+record_139:
+  id: '140'
+  extension_name: FDX
+  extension_description: Forceindex
+  is_archived: '0'
+  is_allowed: '0'
+record_140:
+  id: '141'
+  extension_name: FH3
+  extension_description: Freehand3
+  is_archived: '0'
+  is_allowed: '0'
+record_141:
+  id: '142'
+  extension_name: FLC
+  extension_description: Autodeskanimation
+  is_archived: '0'
+  is_allowed: '0'
+record_142:
+  id: '143'
+  extension_name: FLD
+  extension_description: Hijaakthumbnailfolder
+  is_archived: '0'
+  is_allowed: '0'
+record_143:
+  id: '144'
+  extension_name: FLI
+  extension_description: Autodeskanimation
+  is_archived: '0'
+  is_allowed: '0'
+record_144:
+  id: '145'
+  extension_name: FLT
+  extension_description: Graphicsconversionfilter
+  is_archived: '0'
+  is_allowed: '0'
+record_145:
+  id: '146'
+  extension_name: FMT
+  extension_description: dBASEScreenformat
+  is_archived: '0'
+  is_allowed: '0'
+record_146:
+  id: '147'
+  extension_name: FMV
+  extension_description: FrameMakerraster&vectorgraphics
+  is_archived: '0'
+  is_allowed: '0'
+record_147:
+  id: '148'
+  extension_name: FNT
+  extension_description: Windowsfont
+  is_archived: '0'
+  is_allowed: '0'
+record_148:
+  id: '149'
+  extension_name: FOG
+  extension_description: Fontographerfont
+  is_archived: '0'
+  is_allowed: '0'
+record_149:
+  id: '150'
+  extension_name: FON
+  extension_description: Windowsbitmappedfont
+  is_archived: '0'
+  is_allowed: '0'
+record_150:
+  id: '151'
+  extension_name: FON
+  extension_description: Telephonefile
+  is_archived: '0'
+  is_allowed: '0'
+record_151:
+  id: '152'
+  extension_name: FOR
+  extension_description: FORTRANsourcecode
+  is_archived: '0'
+  is_allowed: '0'
+record_152:
+  id: '153'
+  extension_name: FOT
+  extension_description: WindowsTrueTypefontinfo.
+  is_archived: '0'
+  is_allowed: '0'
+record_153:
+  id: '154'
+  extension_name: FOX
+  extension_description: FoxBasecompiledprogram
+  is_archived: '0'
+  is_allowed: '0'
+record_154:
+  id: '155'
+  extension_name: FM3
+  extension_description: Formatinfofor1-2-3Version3
+  is_archived: '0'
+  is_allowed: '0'
+record_155:
+  id: '156'
+  extension_name: FP1
+  extension_description: FlyingPigsforWindowsdata
+  is_archived: '0'
+  is_allowed: '0'
+record_156:
+  id: '157'
+  extension_name: FPX
+  extension_description: FlashPixbitmap
+  is_archived: '0'
+  is_allowed: '0'
+record_157:
+  id: '158'
+  extension_name: FRM
+  extension_description: dBASEreportlayout
+  is_archived: '0'
+  is_allowed: '0'
+record_158:
+  id: '159'
+  extension_name: FTG
+  extension_description: Windowshelpfilelinks
+  is_archived: '0'
+  is_allowed: '0'
+record_159:
+  id: '160'
+  extension_name: FTS
+  extension_description: Windowshelptextsearchindex
+  is_archived: '0'
+  is_allowed: '0'
+record_160:
+  id: '161'
+  extension_name: G4
+  extension_description: GTXRasterCAD(rasterintovector)
+  is_archived: '0'
+  is_allowed: '0'
+record_161:
+  id: '162'
+  extension_name: GAL
+  extension_description: CorelMultimediaManageralbum
+  is_archived: '0'
+  is_allowed: '0'
+record_162:
+  id: '163'
+  extension_name: GCA
+  extension_description: IBMMO:DCA-GOCAvectorgraphics
+  is_archived: '0'
+  is_allowed: '0'
+record_163:
+  id: '164'
+  extension_name: GDF
+  extension_description: GDDMformat
+  is_archived: '0'
+  is_allowed: '0'
+record_164:
+  id: '165'
+  extension_name: GED
+  extension_description: Arts&Lettersgraphics
+  is_archived: '0'
+  is_allowed: '0'
+record_165:
+  id: '166'
+  extension_name: GEM
+  extension_description: GEMvectorgraphics
+  is_archived: '0'
+  is_allowed: '0'
+record_166:
+  id: '167'
+  extension_name: GFI
+  extension_description: Genigraphicspresentationlink
+  is_archived: '0'
+  is_allowed: '0'
+record_167:
+  id: '168'
+  extension_name: GFX
+  extension_description: Genigraphicspresentationlink
+  is_archived: '0'
+  is_allowed: '0'
+record_168:
+  id: '169'
+  extension_name: GID
+  extension_description: Windowshelpglobalindex
+  is_archived: '0'
+  is_allowed: '0'
+record_169:
+  id: '170'
+  extension_name: GIF
+  extension_description: Graphics Interchange Format bitmap
+  is_archived: '0'
+  is_allowed: '1'
+record_170:
+  id: '171'
+  extension_name: GIM
+  extension_description: Genigraphicspresentationlink
+  is_archived: '0'
+  is_allowed: '0'
+record_171:
+  id: '172'
+  extension_name: GIX
+  extension_description: Genigraphicspresentationlink
+  is_archived: '0'
+  is_allowed: '0'
+record_172:
+  id: '173'
+  extension_name: GNA
+  extension_description: Genigraphicspresentationlink
+  is_archived: '0'
+  is_allowed: '0'
+record_173:
+  id: '174'
+  extension_name: GNX
+  extension_description: Genigraphicspresentationlink
+  is_archived: '0'
+  is_allowed: '0'
+record_174:
+  id: '175'
+  extension_name: GP4
+  extension_description: CALSGroupIV-ITUGroupIV
+  is_archived: '0'
+  is_allowed: '0'
+record_175:
+  id: '176'
+  extension_name: GRA
+  extension_description: Microsoftgraph
+  is_archived: '0'
+  is_allowed: '0'
+record_176:
+  id: '177'
+  extension_name: GRF
+  extension_description: MicrografxCharismavectorgraphics
+  is_archived: '0'
+  is_allowed: '0'
+record_177:
+  id: '178'
+  extension_name: GRP
+  extension_description: WindowsProgManGroup
+  is_archived: '0'
+  is_allowed: '0'
+record_178:
+  id: '179'
+  extension_name: GWX
+  extension_description: Genigraphicspresentationlink
+  is_archived: '0'
+  is_allowed: '0'
+record_179:
+  id: '180'
+  extension_name: GWZ
+  extension_description: Genigraphicspresentationlink
+  is_archived: '0'
+  is_allowed: '0'
+record_180:
+  id: '181'
+  extension_name: GX1
+  extension_description: ShowPartnerbitmap
+  is_archived: '0'
+  is_allowed: '0'
+record_181:
+  id: '182'
+  extension_name: GX2
+  extension_description: ShowPartnerbitmap
+  is_archived: '0'
+  is_allowed: '0'
+record_182:
+  id: '183'
+  extension_name: GZ
+  extension_description: UNIX Gzip
+  is_archived: '0'
+  is_allowed: '1'
+record_183:
+  id: '184'
+  extension_name: H
+  extension_description: Cheader
+  is_archived: '0'
+  is_allowed: '0'
+record_184:
+  id: '185'
+  extension_name: HED
+  extension_description: HighEditdocument
+  is_archived: '0'
+  is_allowed: '0'
+record_185:
+  id: '186'
+  extension_name: HGL
+  extension_description: HPGraphicslanguage
+  is_archived: '0'
+  is_allowed: '0'
+record_186:
+  id: '187'
+  extension_name: HLP
+  extension_description: Helptext
+  is_archived: '0'
+  is_allowed: '0'
+record_187:
+  id: '188'
+  extension_name: HPJ
+  extension_description: VisualBasichelpproject
+  is_archived: '0'
+  is_allowed: '0'
+record_188:
+  id: '189'
+  extension_name: HPP
+  extension_description: C++programheader
+  is_archived: '0'
+  is_allowed: '0'
+record_189:
+  id: '190'
+  extension_name: HPL
+  extension_description: HPGraphicslanguage
+  is_archived: '0'
+  is_allowed: '0'
+record_190:
+  id: '191'
+  extension_name: HQX
+  extension_description: BinHexformat
+  is_archived: '0'
+  is_allowed: '0'
+record_191:
+  id: '192'
+  extension_name: HT
+  extension_description: HyperTerminal
+  is_archived: '0'
+  is_allowed: '0'
+record_192:
+  id: '193'
+  extension_name: HTM
+  extension_description: HTML document (Web page)
+  is_archived: '0'
+  is_allowed: '1'
+record_193:
+  id: '194'
+  extension_name: HTML
+  extension_description: HTML document (Web page)
+  is_archived: '0'
+  is_allowed: '1'
+record_194:
+  id: '195'
+  extension_name: HTX
+  extension_description: HTMLextensionfile
+  is_archived: '0'
+  is_allowed: '0'
+record_195:
+  id: '196'
+  extension_name: HYC
+  extension_description: WordPerfecthypenlist
+  is_archived: '0'
+  is_allowed: '0'
+record_196:
+  id: '197'
+  extension_name: ICA
+  extension_description: IBMMO:DCA-IOCAbitmap
+  is_archived: '0'
+  is_allowed: '0'
+record_197:
+  id: '198'
+  extension_name: ICB
+  extension_description: Targabitmap
+  is_archived: '0'
+  is_allowed: '0'
+record_198:
+  id: '199'
+  extension_name: ICO
+  extension_description: Windowsicon
+  is_archived: '0'
+  is_allowed: '0'
+record_199:
+  id: '200'
+  extension_name: IDC
+  extension_description: InternetDatabaseConnector
+  is_archived: '0'
+  is_allowed: '0'
+record_200:
+  id: '201'
+  extension_name: IDD
+  extension_description: MIDIinstrumentdefinition
+  is_archived: '0'
+  is_allowed: '0'
+record_201:
+  id: '202'
+  extension_name: IDE
+  extension_description: Developmentenvironmentconfiguration
+  is_archived: '0'
+  is_allowed: '0'
+record_202:
+  id: '203'
+  extension_name: IDX
+  extension_description: FoxBaseindex
+  is_archived: '0'
+  is_allowed: '0'
+record_203:
+  id: '204'
+  extension_name: IFF
+  extension_description: Amigabitmap
+  is_archived: '0'
+  is_allowed: '0'
+record_204:
+  id: '205'
+  extension_name: IGF
+  extension_description: InsetSystems(Hijaak)raster&vectorgraphics
+  is_archived: '0'
+  is_allowed: '0'
+record_205:
+  id: '206'
+  extension_name: IL
+  extension_description: Iconlibrary(hDCComputer)
+  is_archived: '0'
+  is_allowed: '0'
+record_206:
+  id: '207'
+  extension_name: IMG
+  extension_description: ISO9660CD-ROMimage
+  is_archived: '0'
+  is_allowed: '0'
+record_207:
+  id: '208'
+  extension_name: IMG
+  extension_description: Macintoshimagefile
+  is_archived: '0'
+  is_allowed: '0'
+record_208:
+  id: '209'
+  extension_name: IMG
+  extension_description: GEMPaintbitmap
+  is_archived: '0'
+  is_allowed: '0'
+record_209:
+  id: '210'
+  extension_name: INF
+  extension_description: Setupinformation
+  is_archived: '0'
+  is_allowed: '0'
+record_210:
+  id: '211'
+  extension_name: INI
+  extension_description: Initialization
+  is_archived: '0'
+  is_allowed: '0'
+record_211:
+  id: '212'
+  extension_name: JFF
+  extension_description: JPEGbitmap
+  is_archived: '0'
+  is_allowed: '0'
+record_212:
+  id: '213'
+  extension_name: JIF
+  extension_description: JPEGbitmap
+  is_archived: '0'
+  is_allowed: '0'
+record_213:
+  id: '214'
+  extension_name: JPG
+  extension_description: JPEG bitmap
+  is_archived: '0'
+  is_allowed: '1'
+record_214:
+  id: '215'
+  extension_name: JS
+  extension_description: JavaScriptfile
+  is_archived: '0'
+  is_allowed: '0'
+record_215:
+  id: '216'
+  extension_name: JT
+  extension_description: JTFax
+  is_archived: '0'
+  is_allowed: '0'
+record_216:
+  id: '217'
+  extension_name: JTF
+  extension_description: JPEGbitmap
+  is_archived: '0'
+  is_allowed: '0'
+record_217:
+  id: '218'
+  extension_name: KEY
+  extension_description: Keynote presentation
+  is_archived: '0'
+  is_allowed: '1'
+record_218:
+  id: '219'
+  extension_name: KDC
+  extension_description: KodakPhotobitmap
+  is_archived: '0'
+  is_allowed: '0'
+record_219:
+  id: '220'
+  extension_name: KFX
+  extension_description: KofaxGroupIVfax
+  is_archived: '0'
+  is_allowed: '0'
+record_220:
+  id: '221'
+  extension_name: KYE
+  extension_description: Kyegameprogramdata
+  is_archived: '0'
+  is_allowed: '0'
+record_221:
+  id: '222'
+  extension_name: LBL
+  extension_description: dBASElabel
+  is_archived: '0'
+  is_allowed: '0'
+record_222:
+  id: '223'
+  extension_name: LBM
+  extension_description: DeluxePaintgraphics
+  is_archived: '0'
+  is_allowed: '0'
+record_223:
+  id: '224'
+  extension_name: LEG
+  extension_description: Legacytext
+  is_archived: '0'
+  is_allowed: '0'
+record_224:
+  id: '225'
+  extension_name: LIB
+  extension_description: Functionlibrary
+  is_archived: '0'
+  is_allowed: '0'
+record_225:
+  id: '226'
+  extension_name: LIT
+  extension_description: MicrosoftReaderfile
+  is_archived: '0'
+  is_allowed: '0'
+record_226:
+  id: '227'
+  extension_name: LOG
+  extension_description: Logfile
+  is_archived: '0'
+  is_allowed: '0'
+record_227:
+  id: '228'
+  extension_name: LNK
+  extension_description: Windows9x/NTshortcut
+  is_archived: '0'
+  is_allowed: '0'
+record_228:
+  id: '229'
+  extension_name: LQT
+  extension_description: LiquidAudio
+  is_archived: '0'
+  is_allowed: '0'
+record_229:
+  id: '230'
+  extension_name: LSN
+  extension_description: Topiclist(CDE)
+  is_archived: '0'
+  is_allowed: '0'
+record_230:
+  id: '231'
+  extension_name: LST
+  extension_description: List
+  is_archived: '0'
+  is_allowed: '0'
+record_231:
+  id: '232'
+  extension_name: LV
+  extension_description: LaserViewGroupIV
+  is_archived: '0'
+  is_allowed: '0'
+record_232:
+  id: '233'
+  extension_name: LZH
+  extension_description: LHARCcompressed
+  is_archived: '0'
+  is_allowed: '0'
+record_233:
+  id: '234'
+  extension_name: LZS
+  extension_description: Skyroadsprogramdata
+  is_archived: '0'
+  is_allowed: '0'
+record_234:
+  id: '235'
+  extension_name: M1V
+  extension_description: MPEGfile
+  is_archived: '0'
+  is_allowed: '0'
+record_235:
+  id: '236'
+  extension_name: M3U
+  extension_description: MPEGfile
+  is_archived: '0'
+  is_allowed: '0'
+record_236:
+  id: '237'
+  extension_name: M4A
+  extension_description: MPEG-4file
+  is_archived: '0'
+  is_allowed: '1'
+record_237:
+  id: '238'
+  extension_name: MAC
+  extension_description: MacPaintbitmap
+  is_archived: '0'
+  is_allowed: '0'
+record_238:
+  id: '239'
+  extension_name: MAK
+  extension_description: VisualBasic/MSC++project
+  is_archived: '0'
+  is_allowed: '0'
+record_239:
+  id: '240'
+  extension_name: MAP
+  extension_description: Linkeditormap
+  is_archived: '0'
+  is_allowed: '0'
+record_240:
+  id: '241'
+  extension_name: MB1
+  extension_description: ApogeeMosterBashfile
+  is_archived: '0'
+  is_allowed: '0'
+record_241:
+  id: '242'
+  extension_name: MBX
+  extension_description: Mailbox(e-mail)
+  is_archived: '0'
+  is_allowed: '0'
+record_242:
+  id: '243'
+  extension_name: MCS
+  extension_description: MathCADformat
+  is_archived: '0'
+  is_allowed: '0'
+record_243:
+  id: '244'
+  extension_name: MCW
+  extension_description: WordforMacintoshdocument
+  is_archived: '0'
+  is_allowed: '0'
+record_244:
+  id: '245'
+  extension_name: MDB
+  extension_description: Accessdatabase
+  is_archived: '0'
+  is_allowed: '0'
+record_245:
+  id: '246'
+  extension_name: MEL
+  extension_description: Mayascript
+  is_archived: '0'
+  is_allowed: '0'
+record_246:
+  id: '247'
+  extension_name: MET
+  extension_description: OS/2Metafile
+  is_archived: '0'
+  is_allowed: '0'
+record_247:
+  id: '248'
+  extension_name: MEU
+  extension_description: Menuitems
+  is_archived: '0'
+  is_allowed: '0'
+record_248:
+  id: '249'
+  extension_name: MDX
+  extension_description: dBASEIVmulti-index
+  is_archived: '0'
+  is_allowed: '0'
+record_249:
+  id: '250'
+  extension_name: MID
+  extension_description: MIDIsoundfile
+  is_archived: '0'
+  is_allowed: '0'
+record_250:
+  id: '251'
+  extension_name: MID
+  extension_description: Eudorascriptfile
+  is_archived: '0'
+  is_allowed: '0'
+record_251:
+  id: '252'
+  extension_name: MIL
+  extension_description: SameasGP4
+  is_archived: '0'
+  is_allowed: '0'
+record_252:
+  id: '253'
+  extension_name: MIX
+  extension_description: PhotoDrawfile
+  is_archived: '0'
+  is_allowed: '0'
+record_253:
+  id: '254'
+  extension_name: MME
+  extension_description: MIME-encodedfile
+  is_archived: '0'
+  is_allowed: '0'
+record_254:
+  id: '255'
+  extension_name: MMF
+  extension_description: Microsoftmailfile
+  is_archived: '0'
+  is_allowed: '0'
+record_255:
+  id: '256'
+  extension_name: MMM
+  extension_description: Macromindanimationformat
+  is_archived: '0'
+  is_allowed: '0'
+record_256:
+  id: '257'
+  extension_name: MOD
+  extension_description: Eudorascriptfile
+  is_archived: '0'
+  is_allowed: '0'
+record_257:
+  id: '258'
+  extension_name: MOV
+  extension_description: QuickTime movie
+  is_archived: '0'
+  is_allowed: '1'
+record_258:
+  id: '259'
+  extension_name: MPA
+  extension_description: MPEG file
+  is_archived: '0'
+  is_allowed: '1'
+record_259:
+  id: '260'
+  extension_name: MP2
+  extension_description: MPEGfile
+  is_archived: '0'
+  is_allowed: '0'
+record_260:
+  id: '261'
+  extension_name: MP2V
+  extension_description: MPEGfile
+  is_archived: '0'
+  is_allowed: '0'
+record_261:
+  id: '262'
+  extension_name: MP3
+  extension_description: MPEG-1 Layer 3 audio
+  is_archived: '0'
+  is_allowed: '1'
+record_262:
+  id: '263'
+  extension_name: MPE
+  extension_description: MPEGfile
+  is_archived: '0'
+  is_allowed: '0'
+record_263:
+  id: '264'
+  extension_name: MPEG
+  extension_description: MPEGfile
+  is_archived: '0'
+  is_allowed: '0'
+record_264:
+  id: '265'
+  extension_name: MPG
+  extension_description: MPEG file
+  is_archived: '0'
+  is_allowed: '1'
+record_265:
+  id: '266'
+  extension_name: MPP
+  extension_description: MicrosoftProject
+  is_archived: '0'
+  is_allowed: '0'
+record_266:
+  id: '267'
+  extension_name: MRK
+  extension_description: InformativeGraphicsmarkupfile
+  is_archived: '0'
+  is_allowed: '0'
+record_267:
+  id: '268'
+  extension_name: MSG
+  extension_description: Messagefile
+  is_archived: '0'
+  is_allowed: '0'
+record_268:
+  id: '269'
+  extension_name: MSP
+  extension_description: MicrosoftPaintbitmap
+  is_archived: '0'
+  is_allowed: '0'
+record_269:
+  id: '270'
+  extension_name: MUS
+  extension_description: Music
+  is_archived: '0'
+  is_allowed: '0'
+record_270:
+  id: '271'
+  extension_name: MVB
+  extension_description: MicrosoftMultimediaViewer
+  is_archived: '0'
+  is_allowed: '0'
+record_271:
+  id: '272'
+  extension_name: M1V
+  extension_description: MPEGfile
+  is_archived: '0'
+  is_allowed: '0'
+record_272:
+  id: '273'
+  extension_name: M3D
+  extension_description: CorelMotion3-D
+  is_archived: '0'
+  is_allowed: '0'
+record_273:
+  id: '274'
+  extension_name: NAP
+  extension_description: NAPLPSformat
+  is_archived: '0'
+  is_allowed: '0'
+record_274:
+  id: '275'
+  extension_name: NAV
+  extension_description: Eudorascriptfile
+  is_archived: '0'
+  is_allowed: '0'
+record_275:
+  id: '276'
+  extension_name: NDX
+  extension_description: dBASEindex
+  is_archived: '0'
+  is_allowed: '0'
+record_276:
+  id: '277'
+  extension_name: NDX
+  extension_description: CDEindex
+  is_archived: '0'
+  is_allowed: '0'
+record_277:
+  id: '278'
+  extension_name: NG
+  extension_description: NortonGuidestext
+  is_archived: '0'
+  is_allowed: '0'
+record_278:
+  id: '279'
+  extension_name: NLM
+  extension_description: NetWareNLMprogram
+  is_archived: '0'
+  is_allowed: '0'
+record_279:
+  id: '280'
+  extension_name: NTZ
+  extension_description: InVircibleantivirusblueprint
+  is_archived: '0'
+  is_allowed: '0'
+record_280:
+  id: '281'
+  extension_name: O
+  extension_description: UNIXmachinelanguage
+  is_archived: '0'
+  is_allowed: '0'
+record_281:
+  id: '282'
+  extension_name: OAZ
+  extension_description: OAZFax
+  is_archived: '0'
+  is_allowed: '0'
+record_282:
+  id: '283'
+  extension_name: OBD
+  extension_description: MicrosoftOfficebinder
+  is_archived: '0'
+  is_allowed: '0'
+record_283:
+  id: '284'
+  extension_name: OBJ
+  extension_description: Machinelanguage
+  is_archived: '0'
+  is_allowed: '0'
+record_284:
+  id: '285'
+  extension_name: OBJ
+  extension_description: Wavefront3-Dfile
+  is_archived: '0'
+  is_allowed: '0'
+record_285:
+  id: '286'
+  extension_name: OBZ
+  extension_description: MicrosoftOfficewizard
+  is_archived: '0'
+  is_allowed: '0'
+record_286:
+  id: '287'
+  extension_name: ODT
+  extension_description: OpenDocument Text
+  is_archived: '0'
+  is_allowed: '1'
+record_287:
+  id: '288'
+  extension_name: ODS
+  extension_description: OpenDocument Spreadsheet
+  is_archived: '0'
+  is_allowed: '1'
+record_288:
+  id: '289'
+  extension_name: ODP
+  extension_description: OpenDocument Presentation
+  is_archived: '0'
+  is_allowed: '1'
+record_289:
+  id: '290'
+  extension_name: ODG
+  extension_description: OpenDocument Graphic
+  is_archived: '0'
+  is_allowed: '1'
+record_290:
+  id: '291'
+  extension_name: OEB
+  extension_description: OpeneBookpublication
+  is_archived: '0'
+  is_allowed: '0'
+record_291:
+  id: '292'
+  extension_name: OLB
+  extension_description: OLEobjectlibrary
+  is_archived: '0'
+  is_allowed: '0'
+record_292:
+  id: '293'
+  extension_name: OLE
+  extension_description: OLEobject
+  is_archived: '0'
+  is_allowed: '0'
+record_293:
+  id: '294'
+  extension_name: OPF
+  extension_description: Openpackagefile
+  is_archived: '0'
+  is_allowed: '0'
+record_294:
+  id: '295'
+  extension_name: ORG
+  extension_description: Organizerfile
+  is_archived: '0'
+  is_allowed: '0'
+record_295:
+  id: '296'
+  extension_name: OTF
+  extension_description: OpenTypefont
+  is_archived: '0'
+  is_allowed: '0'
+record_296:
+  id: '297'
+  extension_name: OVL
+  extension_description: Overlaymodule
+  is_archived: '0'
+  is_allowed: '0'
+record_297:
+  id: '298'
+  extension_name: OVR
+  extension_description: Overlaymodule
+  is_archived: '0'
+  is_allowed: '0'
+record_298:
+  id: '299'
+  extension_name: OZM
+  extension_description: SharpOrganizermemobank
+  is_archived: '0'
+  is_allowed: '0'
+record_299:
+  id: '300'
+  extension_name: OZP
+  extension_description: SharpOrganizertelephonebank
+  is_archived: '0'
+  is_allowed: '0'
+record_300:
+  id: '301'
+  extension_name: OUT
+  extension_description: Encyclopediadefinitions
+  is_archived: '0'
+  is_allowed: '0'
+record_301:
+  id: '302'
+  extension_name: P10
+  extension_description: TektronicPlot10
+  is_archived: '0'
+  is_allowed: '0'
+record_302:
+  id: '303'
+  extension_name: PAGES
+  extension_description: Pages Document
+  is_archived: '0'
+  is_allowed: '1'
+record_303:
+  id: '304'
+  extension_name: PAL
+  extension_description: Windowspalette
+  is_archived: '0'
+  is_allowed: '0'
+record_304:
+  id: '305'
+  extension_name: PAS
+  extension_description: Pascalsourcecode
+  is_archived: '0'
+  is_allowed: '0'
+record_305:
+  id: '306'
+  extension_name: PAT
+  extension_description: CorelDRAWpattern
+  is_archived: '0'
+  is_allowed: '0'
+record_306:
+  id: '307'
+  extension_name: PBD
+  extension_description: PowerBuilderdynamiclibrary
+  is_archived: '0'
+  is_allowed: '0'
+record_307:
+  id: '308'
+  extension_name: PBK
+  extension_description: MicrosoftPhonebook
+  is_archived: '0'
+  is_allowed: '0'
+record_308:
+  id: '309'
+  extension_name: PBM
+  extension_description: PortableBitmap
+  is_archived: '0'
+  is_allowed: '0'
+record_309:
+  id: '310'
+  extension_name: PCL
+  extension_description: HPLaserJetseries
+  is_archived: '0'
+  is_allowed: '0'
+record_310:
+  id: '311'
+  extension_name: PCD
+  extension_description: PhotoCDbitmap
+  is_archived: '0'
+  is_allowed: '0'
+record_311:
+  id: '312'
+  extension_name: PCM
+  extension_description: LaserJetcartridgeinfo.
+  is_archived: '0'
+  is_allowed: '0'
+record_312:
+  id: '313'
+  extension_name: PCS
+  extension_description: PICSanimation
+  is_archived: '0'
+  is_allowed: '0'
+record_313:
+  id: '314'
+  extension_name: PCT
+  extension_description: PC Paint bitmap
+  is_archived: '0'
+  is_allowed: '1'
+record_314:
+  id: '315'
+  extension_name: PCW
+  extension_description: PCWritedocument
+  is_archived: '0'
+  is_allowed: '0'
+record_315:
+  id: '316'
+  extension_name: PCX
+  extension_description: PCPaintbrushbitmap
+  is_archived: '0'
+  is_allowed: '0'
+record_316:
+  id: '317'
+  extension_name: PDF
+  extension_description: Portable Document Format (Acrobat)
+  is_archived: '0'
+  is_allowed: '1'
+record_317:
+  id: '318'
+  extension_name: PDF
+  extension_description: Printer driver
+  is_archived: '0'
+  is_allowed: '1'
+record_318:
+  id: '319'
+  extension_name: PDF
+  extension_description: Printer description (QuarkXpress)
+  is_archived: '0'
+  is_allowed: '1'
+record_319:
+  id: '320'
+  extension_name: PDV
+  extension_description: PCPaintbrushprinterdriver
+  is_archived: '0'
+  is_allowed: '0'
+record_320:
+  id: '321'
+  extension_name: PDW
+  extension_description: HiJaakvectorgraphics
+  is_archived: '0'
+  is_allowed: '0'
+record_321:
+  id: '322'
+  extension_name: PFA
+  extension_description: Type1font(ASCII)
+  is_archived: '0'
+  is_allowed: '0'
+record_322:
+  id: '323'
+  extension_name: PFB
+  extension_description: Type1font(encrypted)
+  is_archived: '0'
+  is_allowed: '0'
+record_323:
+  id: '324'
+  extension_name: PFM
+  extension_description: WindowsType1fontmetrics
+  is_archived: '0'
+  is_allowed: '0'
+record_324:
+  id: '325'
+  extension_name: PGL
+  extension_description: HPGL7475Aplotter(vectorgraphics)
+  is_archived: '0'
+  is_allowed: '0'
+record_325:
+  id: '326'
+  extension_name: PIC
+  extension_description: ! 'Variousvectorformats:'
+  is_archived: '0'
+  is_allowed: '0'
+record_326:
+  id: '327'
+  extension_name: PIC
+  extension_description: Lotus1-2-3
+  is_archived: '0'
+  is_allowed: '0'
+record_327:
+  id: '328'
+  extension_name: PIC
+  extension_description: MicrografxDraw
+  is_archived: '0'
+  is_allowed: '0'
+record_328:
+  id: '329'
+  extension_name: PIC
+  extension_description: MacPICTformat
+  is_archived: '0'
+  is_allowed: '0'
+record_329:
+  id: '330'
+  extension_name: PIC
+  extension_description: IBMStoryboardbitmap
+  is_archived: '0'
+  is_allowed: '0'
+record_330:
+  id: '331'
+  extension_name: PIF
+  extension_description: Windowsinfo.forDOSprograms
+  is_archived: '0'
+  is_allowed: '0'
+record_331:
+  id: '332'
+  extension_name: PIF
+  extension_description: IBMPictureInterchange
+  is_archived: '0'
+  is_allowed: '0'
+record_332:
+  id: '333'
+  extension_name: PIN
+  extension_description: EpicPinballdata
+  is_archived: '0'
+  is_allowed: '0'
+record_333:
+  id: '334'
+  extension_name: PIX
+  extension_description: InsetSystemsraster&vectorgraphics
+  is_archived: '0'
+  is_allowed: '0'
+record_334:
+  id: '335'
+  extension_name: PL
+  extension_description: Perlscript
+  is_archived: '0'
+  is_allowed: '0'
+record_335:
+  id: '336'
+  extension_name: PLT
+  extension_description: AutoCADplotterfile
+  is_archived: '0'
+  is_allowed: '0'
+record_336:
+  id: '337'
+  extension_name: PLT
+  extension_description: HPGLplotterfile
+  is_archived: '0'
+  is_allowed: '0'
+record_337:
+  id: '338'
+  extension_name: PM
+  extension_description: PageMakergraphics/text
+  is_archived: '0'
+  is_allowed: '0'
+record_338:
+  id: '339'
+  extension_name: PMx
+  extension_description: PageMakerdocument(x=ver.)
+  is_archived: '0'
+  is_allowed: '0'
+record_339:
+  id: '340'
+  extension_name: PML
+  extension_description: PageMakerlibrary
+  is_archived: '0'
+  is_allowed: '0'
+record_340:
+  id: '341'
+  extension_name: PNG
+  extension_description: PNG bitmap
+  is_archived: '0'
+  is_allowed: '1'
+record_341:
+  id: '342'
+  extension_name: POV
+  extension_description: POV-Rayraytracing
+  is_archived: '0'
+  is_allowed: '0'
+record_342:
+  id: '343'
+  extension_name: PP4
+  extension_description: PicturePublisher4
+  is_archived: '0'
+  is_allowed: '0'
+record_343:
+  id: '344'
+  extension_name: PPD
+  extension_description: PostScriptprinterdescription
+  is_archived: '0'
+  is_allowed: '0'
+record_344:
+  id: '345'
+  extension_name: PPM
+  extension_description: PortablePixelmap
+  is_archived: '0'
+  is_allowed: '0'
+record_345:
+  id: '346'
+  extension_name: PPS
+  extension_description: PowerPoint Slideshow
+  is_archived: '0'
+  is_allowed: '1'
+record_346:
+  id: '347'
+  extension_name: PPT
+  extension_description: PowerPoint
+  is_archived: '0'
+  is_allowed: '1'
+record_347:
+  id: '348'
+  extension_name: PPTX
+  extension_description: PowerPoint Open XML Presentation
+  is_archived: '0'
+  is_allowed: '1'
+record_348:
+  id: '349'
+  extension_name: PRC
+  extension_description: Resource(textorprogram)file(3comPalmPilot)
+  is_archived: '0'
+  is_allowed: '0'
+record_349:
+  id: '350'
+  extension_name: PRD
+  extension_description: MicrosoftWordprinterdriver
+  is_archived: '0'
+  is_allowed: '0'
+record_350:
+  id: '351'
+  extension_name: PRE
+  extension_description: LotusFreelance
+  is_archived: '0'
+  is_allowed: '0'
+record_351:
+  id: '352'
+  extension_name: PRG
+  extension_description: dBASEsourcecode
+  is_archived: '0'
+  is_allowed: '0'
+record_352:
+  id: '353'
+  extension_name: PRN
+  extension_description: XyWriteprinterdriver
+  is_archived: '0'
+  is_allowed: '0'
+record_353:
+  id: '354'
+  extension_name: PRN
+  extension_description: Temporaryprintfile
+  is_archived: '0'
+  is_allowed: '0'
+record_354:
+  id: '355'
+  extension_name: PRS
+  extension_description: WordPerfectprinterdriver
+  is_archived: '0'
+  is_allowed: '0'
+record_355:
+  id: '356'
+  extension_name: PRS
+  extension_description: HarvardGraphics
+  is_archived: '0'
+  is_allowed: '0'
+record_356:
+  id: '357'
+  extension_name: PRT
+  extension_description: Formattedtext
+  is_archived: '0'
+  is_allowed: '0'
+record_357:
+  id: '358'
+  extension_name: PS
+  extension_description: PostScriptpagedescription
+  is_archived: '0'
+  is_allowed: '0'
+record_358:
+  id: '359'
+  extension_name: PSD
+  extension_description: Photoshopnativeformat
+  is_archived: '0'
+  is_allowed: '0'
+record_359:
+  id: '360'
+  extension_name: PSR
+  extension_description: Powersoftreport
+  is_archived: '0'
+  is_allowed: '0'
+record_360:
+  id: '361'
+  extension_name: PTx
+  extension_description: PageMakertemplate(x=ver.)
+  is_archived: '0'
+  is_allowed: '0'
+record_361:
+  id: '362'
+  extension_name: PUB
+  extension_description: MicrosoftPublisherpublication
+  is_archived: '0'
+  is_allowed: '0'
+record_362:
+  id: '363'
+  extension_name: PUB
+  extension_description: VenturaPublisherpublication
+  is_archived: '0'
+  is_allowed: '0'
+record_363:
+  id: '364'
+  extension_name: PUZ
+  extension_description: Acrosspuzzle
+  is_archived: '0'
+  is_allowed: '0'
+record_364:
+  id: '365'
+  extension_name: PWL
+  extension_description: Windowspasswordlist
+  is_archived: '0'
+  is_allowed: '0'
+record_365:
+  id: '366'
+  extension_name: P10
+  extension_description: TektronixPlot10plotter(vectorgraphics)
+  is_archived: '0'
+  is_allowed: '0'
+record_366:
+  id: '367'
+  extension_name: QBW
+  extension_description: QuickBooks
+  is_archived: '0'
+  is_allowed: '0'
+record_367:
+  id: '368'
+  extension_name: QLB
+  extension_description: Quickprogramminglibrary
+  is_archived: '0'
+  is_allowed: '0'
+record_368:
+  id: '369'
+  extension_name: QLC
+  extension_description: ATMfontinfo.
+  is_archived: '0'
+  is_allowed: '0'
+record_369:
+  id: '370'
+  extension_name: QT
+  extension_description: QuickTimemovie
+  is_archived: '0'
+  is_allowed: '0'
+record_370:
+  id: '371'
+  extension_name: QTM
+  extension_description: QuickTimemovie
+  is_archived: '0'
+  is_allowed: '0'
+record_371:
+  id: '372'
+  extension_name: RA
+  extension_description: RealAudiofile
+  is_archived: '0'
+  is_allowed: '0'
+record_372:
+  id: '373'
+  extension_name: RAM
+  extension_description: RealAudiofile
+  is_archived: '0'
+  is_allowed: '0'
+record_373:
+  id: '374'
+  extension_name: RAR
+  extension_description: Winrar Compressed Archive
+  is_archived: '0'
+  is_allowed: '1'
+record_374:
+  id: '375'
+  extension_name: RAS
+  extension_description: Sunbitmap
+  is_archived: '0'
+  is_allowed: '0'
+record_375:
+  id: '376'
+  extension_name: RAW
+  extension_description: 3-Dfile(openstandard)
+  is_archived: '0'
+  is_allowed: '0'
+record_376:
+  id: '377'
+  extension_name: RC
+  extension_description: Resourcescript
+  is_archived: '0'
+  is_allowed: '0'
+record_377:
+  id: '378'
+  extension_name: REC
+  extension_description: Recorderfile
+  is_archived: '0'
+  is_allowed: '0'
+record_378:
+  id: '379'
+  extension_name: REG
+  extension_description: Registrationfile
+  is_archived: '0'
+  is_allowed: '0'
+record_379:
+  id: '380'
+  extension_name: RES
+  extension_description: Programmingresource
+  is_archived: '0'
+  is_allowed: '0'
+record_380:
+  id: '381'
+  extension_name: RFT
+  extension_description: DCA/RFTdocument
+  is_archived: '0'
+  is_allowed: '0'
+record_381:
+  id: '382'
+  extension_name: RGB
+  extension_description: SGIbitmap
+  is_archived: '0'
+  is_allowed: '0'
+record_382:
+  id: '383'
+  extension_name: RIA
+  extension_description: AlpharelGroupIVbitmap
+  is_archived: '0'
+  is_allowed: '0'
+record_383:
+  id: '384'
+  extension_name: RIB
+  extension_description: Rendermangraphics
+  is_archived: '0'
+  is_allowed: '0'
+record_384:
+  id: '385'
+  extension_name: RIC
+  extension_description: RochFaxNet
+  is_archived: '0'
+  is_allowed: '0'
+record_385:
+  id: '386'
+  extension_name: RIX
+  extension_description: RIXvirtualscreen
+  is_archived: '0'
+  is_allowed: '0'
+record_386:
+  id: '387'
+  extension_name: RLC
+  extension_description: CADOverlayESP(ImageSystems)
+  is_archived: '0'
+  is_allowed: '0'
+record_387:
+  id: '388'
+  extension_name: RLE
+  extension_description: Compressed(runlengthencoded)
+  is_archived: '0'
+  is_allowed: '0'
+record_388:
+  id: '389'
+  extension_name: RLF
+  extension_description: RichLinkcompiledformat
+  is_archived: '0'
+  is_allowed: '0'
+record_389:
+  id: '390'
+  extension_name: RM
+  extension_description: RealMediafile
+  is_archived: '0'
+  is_allowed: '0'
+record_390:
+  id: '391'
+  extension_name: RMI
+  extension_description: MIDImusic
+  is_archived: '0'
+  is_allowed: '0'
+record_391:
+  id: '392'
+  extension_name: RMM
+  extension_description: RealMedia file
+  is_archived: '0'
+  is_allowed: '1'
+record_392:
+  id: '393'
+  extension_name: RND
+  extension_description: AutoShaderenderingformat
+  is_archived: '0'
+  is_allowed: '0'
+record_393:
+  id: '394'
+  extension_name: RNL
+  extension_description: GTXRunlengthbitmap
+  is_archived: '0'
+  is_allowed: '0'
+record_394:
+  id: '395'
+  extension_name: RTF
+  extension_description: Microsoft text/graphics
+  is_archived: '0'
+  is_allowed: '1'
+record_395:
+  id: '396'
+  extension_name: R8P
+  extension_description: LaserJetportraitfont
+  is_archived: '0'
+  is_allowed: '0'
+record_396:
+  id: '397'
+  extension_name: R8L
+  extension_description: LaserJetlandscapefont
+  is_archived: '0'
+  is_allowed: '0'
+record_397:
+  id: '398'
+  extension_name: RV
+  extension_description: RealVideofile
+  is_archived: '0'
+  is_allowed: '0'
+record_398:
+  id: '399'
+  extension_name: SAM
+  extension_description: AmiProdocument
+  is_archived: '0'
+  is_allowed: '0'
+record_399:
+  id: '400'
+  extension_name: SAT
+  extension_description: ACIS3-Dmodel
+  is_archived: '0'
+  is_allowed: '0'
+record_400:
+  id: '401'
+  extension_name: SAV
+  extension_description: Savedfile
+  is_archived: '0'
+  is_allowed: '0'
+record_401:
+  id: '402'
+  extension_name: SBP
+  extension_description: IBMStoryboardgraphics/Superbasetext
+  is_archived: '0'
+  is_allowed: '0'
+record_402:
+  id: '403'
+  extension_name: SC
+  extension_description: Paradoxsourcecode
+  is_archived: '0'
+  is_allowed: '0'
+record_403:
+  id: '404'
+  extension_name: SC?
+  extension_description: ColoRIXraster(?=res.)
+  is_archived: '0'
+  is_allowed: '0'
+record_404:
+  id: '405'
+  extension_name: SC2
+  extension_description: MicrosoftSchedule+7
+  is_archived: '0'
+  is_allowed: '0'
+record_405:
+  id: '406'
+  extension_name: SCD
+  extension_description: MicrosoftSchedule+7
+  is_archived: '0'
+  is_allowed: '0'
+record_406:
+  id: '407'
+  extension_name: SCH
+  extension_description: MicrosoftSchedule+1
+  is_archived: '0'
+  is_allowed: '0'
+record_407:
+  id: '408'
+  extension_name: SCM
+  extension_description: ScreenCammovie
+  is_archived: '0'
+  is_allowed: '0'
+record_408:
+  id: '409'
+  extension_name: SCP
+  extension_description: Dial-upNetworkingscript
+  is_archived: '0'
+  is_allowed: '0'
+record_409:
+  id: '410'
+  extension_name: SCR
+  extension_description: Windowsscreensaver
+  is_archived: '0'
+  is_allowed: '0'
+record_410:
+  id: '411'
+  extension_name: SCR
+  extension_description: Genericscript
+  is_archived: '0'
+  is_allowed: '0'
+record_411:
+  id: '412'
+  extension_name: SCR
+  extension_description: Faximage
+  is_archived: '0'
+  is_allowed: '0'
+record_412:
+  id: '413'
+  extension_name: SCR
+  extension_description: dBASEscreenlayout
+  is_archived: '0'
+  is_allowed: '0'
+record_413:
+  id: '414'
+  extension_name: SCT
+  extension_description: LotusManuscriptscreencapturetext
+  is_archived: '0'
+  is_allowed: '0'
+record_414:
+  id: '415'
+  extension_name: SCT
+  extension_description: Scitexbitmap
+  is_archived: '0'
+  is_allowed: '0'
+record_415:
+  id: '416'
+  extension_name: SDL
+  extension_description: SmartDrawlibrary
+  is_archived: '0'
+  is_allowed: '0'
+record_416:
+  id: '417'
+  extension_name: SDR
+  extension_description: SmartDrawvectorgraphics
+  is_archived: '0'
+  is_allowed: '0'
+record_417:
+  id: '418'
+  extension_name: SDT
+  extension_description: SmartDrawtemplate
+  is_archived: '0'
+  is_allowed: '0'
+record_418:
+  id: '419'
+  extension_name: SET
+  extension_description: Setupparameters
+  is_archived: '0'
+  is_allowed: '0'
+record_419:
+  id: '420'
+  extension_name: SFP
+  extension_description: LaserJetportraitfont
+  is_archived: '0'
+  is_allowed: '0'
+record_420:
+  id: '421'
+  extension_name: SFL
+  extension_description: LaserJetlandscapefont
+  is_archived: '0'
+  is_allowed: '0'
+record_421:
+  id: '422'
+  extension_name: SFS
+  extension_description: PCL5scalablefont
+  is_archived: '0'
+  is_allowed: '0'
+record_422:
+  id: '423'
+  extension_name: SGI
+  extension_description: SGIbitmap
+  is_archived: '0'
+  is_allowed: '0'
+record_423:
+  id: '424'
+  extension_name: SHB
+  extension_description: CorelShow
+  is_archived: '0'
+  is_allowed: '0'
+record_424:
+  id: '425'
+  extension_name: SHG
+  extension_description: SegmentedHyperGraphic(imagemapWindowshelp)
+  is_archived: '0'
+  is_allowed: '0'
+record_425:
+  id: '426'
+  extension_name: SHS
+  extension_description: OLE2package(cancontainexecutables)
+  is_archived: '0'
+  is_allowed: '0'
+record_426:
+  id: '427'
+  extension_name: SHW
+  extension_description: CorelShow
+  is_archived: '0'
+  is_allowed: '0'
+record_427:
+  id: '428'
+  extension_name: SIT
+  extension_description: Stuffit Archive
+  is_archived: '0'
+  is_allowed: '1'
+record_428:
+  id: '429'
+  extension_name: SITX
+  extension_description: Stuffit X Archive
+  is_archived: '0'
+  is_allowed: '1'
+record_429:
+  id: '430'
+  extension_name: SLD
+  extension_description: AutoCADslide
+  is_archived: '0'
+  is_allowed: '0'
+record_430:
+  id: '431'
+  extension_name: SLK
+  extension_description: SYLKformat(spreadsheets)
+  is_archived: '0'
+  is_allowed: '0'
+record_431:
+  id: '432'
+  extension_name: SMI
+  extension_description: SMILmultimedia
+  is_archived: '0'
+  is_allowed: '0'
+record_432:
+  id: '433'
+  extension_name: SND
+  extension_description: Digitalaudio
+  is_archived: '0'
+  is_allowed: '0'
+record_433:
+  id: '434'
+  extension_name: SPD
+  extension_description: Speedoscalablefont
+  is_archived: '0'
+  is_allowed: '0'
+record_434:
+  id: '435'
+  extension_name: STY
+  extension_description: VenturaPub.stylesheet
+  is_archived: '0'
+  is_allowed: '0'
+record_435:
+  id: '436'
+  extension_name: SUN
+  extension_description: Sunbitmap
+  is_archived: '0'
+  is_allowed: '0'
+record_436:
+  id: '437'
+  extension_name: SVG
+  extension_description: Scalable Vector Graphics File
+  is_archived: '0'
+  is_allowed: '1'
+record_437:
+  id: '438'
+  extension_name: SVX
+  extension_description: Amigasoundfile
+  is_archived: '0'
+  is_allowed: '0'
+record_438:
+  id: '439'
+  extension_name: SWF
+  extension_description: Shockwavefile
+  is_archived: '0'
+  is_allowed: '0'
+record_439:
+  id: '440'
+  extension_name: SY3
+  extension_description: HarvardGraphicssymbol
+  is_archived: '0'
+  is_allowed: '0'
+record_440:
+  id: '441'
+  extension_name: SYL
+  extension_description: SYLKformat(spreadsheets)
+  is_archived: '0'
+  is_allowed: '0'
+record_441:
+  id: '442'
+  extension_name: DOS
+  extension_description: OS/2driver
+  is_archived: '0'
+  is_allowed: '0'
+record_442:
+  id: '443'
+  extension_name: TAL
+  extension_description: AdobeTypeAlignshapedtext
+  is_archived: '0'
+  is_allowed: '0'
+record_443:
+  id: '444'
+  extension_name: TAR.GZ
+  extension_description: Tarball File
+  is_archived: '0'
+  is_allowed: '1'
+record_444:
+  id: '445'
+  extension_name: TAZ
+  extension_description: UNIXGziparchive
+  is_archived: '0'
+  is_allowed: '0'
+record_445:
+  id: '446'
+  extension_name: TDF
+  extension_description: Speedotypefacedefinition
+  is_archived: '0'
+  is_allowed: '0'
+record_446:
+  id: '447'
+  extension_name: TFM
+  extension_description: Intellifontfontmetrics
+  is_archived: '0'
+  is_allowed: '0'
+record_447:
+  id: '448'
+  extension_name: TGA
+  extension_description: TARGAbitmap
+  is_archived: '0'
+  is_allowed: '0'
+record_448:
+  id: '449'
+  extension_name: TGZ
+  extension_description: UNIXGziparchive
+  is_archived: '0'
+  is_allowed: '0'
+record_449:
+  id: '450'
+  extension_name: TIF
+  extension_description: TIFFbitmap
+  is_archived: '0'
+  is_allowed: '0'
+record_450:
+  id: '451'
+  extension_name: TLB
+  extension_description: OLEtypelibrary
+  is_archived: '0'
+  is_allowed: '0'
+record_451:
+  id: '452'
+  extension_name: TMP
+  extension_description: Temporary
+  is_archived: '0'
+  is_allowed: '0'
+record_452:
+  id: '453'
+  extension_name: TOC
+  extension_description: Tableofcontents
+  is_archived: '0'
+  is_allowed: '0'
+record_453:
+  id: '454'
+  extension_name: TORRENT
+  extension_description: BitTorrent
+  is_archived: '0'
+  is_allowed: '0'
+record_454:
+  id: '455'
+  extension_name: TRM
+  extension_description: Terminalfile
+  is_archived: '0'
+  is_allowed: '0'
+record_455:
+  id: '456'
+  extension_name: TTC
+  extension_description: TrueTypefontcompressed
+  is_archived: '0'
+  is_allowed: '0'
+record_456:
+  id: '457'
+  extension_name: TTF
+  extension_description: TrueTypefont
+  is_archived: '0'
+  is_allowed: '0'
+record_457:
+  id: '458'
+  extension_name: TXT
+  extension_description: ASCII text
+  is_archived: '0'
+  is_allowed: '1'
+record_458:
+  id: '459'
+  extension_name: USP
+  extension_description: LaserJetportraitfont
+  is_archived: '0'
+  is_allowed: '0'
+record_459:
+  id: '460'
+  extension_name: USL
+  extension_description: LaserJetlandscapefont
+  is_archived: '0'
+  is_allowed: '0'
+record_460:
+  id: '461'
+  extension_name: VBP
+  extension_description: VisualBasicproject
+  is_archived: '0'
+  is_allowed: '0'
+record_461:
+  id: '462'
+  extension_name: VBX
+  extension_description: VisualBasiccustomcontrol
+  is_archived: '0'
+  is_allowed: '0'
+record_462:
+  id: '463'
+  extension_name: VBS
+  extension_description: VisualBasicscript
+  is_archived: '0'
+  is_allowed: '0'
+record_463:
+  id: '464'
+  extension_name: VCF
+  extension_description: vCardfile
+  is_archived: '0'
+  is_allowed: '0'
+record_464:
+  id: '465'
+  extension_name: VDA
+  extension_description: Targabitmap
+  is_archived: '0'
+  is_allowed: '0'
+record_465:
+  id: '466'
+  extension_name: VGR
+  extension_description: VenturaPub.chapterinfo.
+  is_archived: '0'
+  is_allowed: '0'
+record_466:
+  id: '467'
+  extension_name: VOC
+  extension_description: SoundBlastersound
+  is_archived: '0'
+  is_allowed: '0'
+record_467:
+  id: '468'
+  extension_name: VOX
+  extension_description: Voxwarecompressedaudio
+  is_archived: '0'
+  is_allowed: '0'
+record_468:
+  id: '469'
+  extension_name: VP
+  extension_description: VenturalPublisherpublication
+  is_archived: '0'
+  is_allowed: '0'
+record_469:
+  id: '470'
+  extension_name: VSD
+  extension_description: Visiodrawing
+  is_archived: '0'
+  is_allowed: '0'
+record_470:
+  id: '471'
+  extension_name: VST
+  extension_description: Targabitmap
+  is_archived: '0'
+  is_allowed: '0'
+record_471:
+  id: '472'
+  extension_name: VUE
+  extension_description: dBASErelationalview
+  is_archived: '0'
+  is_allowed: '0'
+record_472:
+  id: '473'
+  extension_name: WAV
+  extension_description: Digitalaudio(Windows)
+  is_archived: '0'
+  is_allowed: '0'
+record_473:
+  id: '474'
+  extension_name: WAX
+  extension_description: WMAmetafile(locationofWMAfile)
+  is_archived: '0'
+  is_allowed: '0'
+record_474:
+  id: '475'
+  extension_name: WB?
+  extension_description: QuattroProspreadsheet(?=version)
+  is_archived: '0'
+  is_allowed: '0'
+record_475:
+  id: '476'
+  extension_name: WBK
+  extension_description: MicrosoftWordbackup
+  is_archived: '0'
+  is_allowed: '0'
+record_476:
+  id: '477'
+  extension_name: WBT
+  extension_description: WinBatchfile
+  is_archived: '0'
+  is_allowed: '0'
+record_477:
+  id: '478'
+  extension_name: WCM
+  extension_description: WordPerfectmacro
+  is_archived: '0'
+  is_allowed: '0'
+record_478:
+  id: '479'
+  extension_name: WDB
+  extension_description: Microsoftworksdatafile
+  is_archived: '0'
+  is_allowed: '0'
+record_479:
+  id: '480'
+  extension_name: WGP
+  extension_description: WildBoardgamesdata
+  is_archived: '0'
+  is_allowed: '0'
+record_480:
+  id: '481'
+  extension_name: WID
+  extension_description: Fontwidthtable
+  is_archived: '0'
+  is_allowed: '0'
+record_481:
+  id: '482'
+  extension_name: WIF
+  extension_description: Waveletimage
+  is_archived: '0'
+  is_allowed: '0'
+record_482:
+  id: '483'
+  extension_name: WIZ
+  extension_description: MicrosoftWordwizard
+  is_archived: '0'
+  is_allowed: '0'
+record_483:
+  id: '484'
+  extension_name: WKQ
+  extension_description: Quattrospreadsheet
+  is_archived: '0'
+  is_allowed: '0'
+record_484:
+  id: '485'
+  extension_name: WK1
+  extension_description: Lotusver.2.x
+  is_archived: '0'
+  is_allowed: '0'
+record_485:
+  id: '486'
+  extension_name: WK3
+  extension_description: Lotusver.3.x&Windows
+  is_archived: '0'
+  is_allowed: '0'
+record_486:
+  id: '487'
+  extension_name: WK4
+  extension_description: Lotusver.4.x
+  is_archived: '0'
+  is_allowed: '0'
+record_487:
+  id: '488'
+  extension_name: WKS
+  extension_description: Lotus1-2-3 ver.1 a spreadsheet
+  is_archived: '0'
+  is_allowed: '1'
+record_488:
+  id: '489'
+  extension_name: WMA
+  extension_description: Windows Media audio (ASFfile)
+  is_archived: '0'
+  is_allowed: '1'
+record_489:
+  id: '490'
+  extension_name: WMF
+  extension_description: WindowsMetafile
+  is_archived: '0'
+  is_allowed: '0'
+record_490:
+  id: '491'
+  extension_name: WMV
+  extension_description: WindowsMediavideo(ASFfile)
+  is_archived: '0'
+  is_allowed: '0'
+record_491:
+  id: '492'
+  extension_name: WPD
+  extension_description: Corel Word Perfect
+  is_archived: '0'
+  is_allowed: '1'
+record_492:
+  id: '493'
+  extension_name: WP?
+  extension_description: WordPerfectdocument(?=version)
+  is_archived: '0'
+  is_allowed: '0'
+record_493:
+  id: '494'
+  extension_name: WPG
+  extension_description: WordPerfectraster&vectorgraphics
+  is_archived: '0'
+  is_allowed: '0'
+record_494:
+  id: '495'
+  extension_name: WPM
+  extension_description: WordPerfectmacro
+  is_archived: '0'
+  is_allowed: '0'
+record_495:
+  id: '496'
+  extension_name: WPT
+  extension_description: WordPerfecttemplate
+  is_archived: '0'
+  is_allowed: '0'
+record_496:
+  id: '497'
+  extension_name: WQ?
+  extension_description: QuattroProforDOS(?=version)
+  is_archived: '0'
+  is_allowed: '0'
+record_497:
+  id: '498'
+  extension_name: WPS
+  extension_description: Microsoft Works document
+  is_archived: '0'
+  is_allowed: '1'
+record_498:
+  id: '499'
+  extension_name: WRI
+  extension_description: WindowsWritedocument
+  is_archived: '0'
+  is_allowed: '0'
+record_499:
+  id: '500'
+  extension_name: WRK
+  extension_description: Sympohonyspreadsheet
+  is_archived: '0'
+  is_allowed: '0'
+record_500:
+  id: '501'
+  extension_name: WRL
+  extension_description: VRMLpage
+  is_archived: '0'
+  is_allowed: '0'
+record_501:
+  id: '502'
+  extension_name: WS?
+  extension_description: WordStarforWindows(?=version)
+  is_archived: '0'
+  is_allowed: '0'
+record_502:
+  id: '503'
+  extension_name: WSD
+  extension_description: WordStar2000document
+  is_archived: '0'
+  is_allowed: '0'
+record_503:
+  id: '504'
+  extension_name: WSH
+  extension_description: WindowsScripHostproperties
+  is_archived: '0'
+  is_allowed: '0'
+record_504:
+  id: '505'
+  extension_name: WVL
+  extension_description: Waveletcompressedfile
+  is_archived: '0'
+  is_allowed: '0'
+record_505:
+  id: '506'
+  extension_name: WVX
+  extension_description: WMVmetafile(locationofWMVfile)
+  is_archived: '0'
+  is_allowed: '0'
+record_506:
+  id: '507'
+  extension_name: XAR
+  extension_description: CorelXaradrawing
+  is_archived: '0'
+  is_allowed: '0'
+record_507:
+  id: '508'
+  extension_name: XBM
+  extension_description: XWindowbitmap
+  is_archived: '0'
+  is_allowed: '0'
+record_508:
+  id: '509'
+  extension_name: XFX
+  extension_description: JetFax
+  is_archived: '0'
+  is_allowed: '0'
+record_509:
+  id: '510'
+  extension_name: XLA
+  extension_description: Exceladd-in
+  is_archived: '0'
+  is_allowed: '0'
+record_510:
+  id: '511'
+  extension_name: XLB
+  extension_description: Exceltoolbar
+  is_archived: '0'
+  is_allowed: '0'
+record_511:
+  id: '512'
+  extension_name: XLC
+  extension_description: Excelchart
+  is_archived: '0'
+  is_allowed: '0'
+record_512:
+  id: '513'
+  extension_name: XLD
+  extension_description: Exceldialogue
+  is_archived: '0'
+  is_allowed: '0'
+record_513:
+  id: '514'
+  extension_name: XLK
+  extension_description: Excelbackup
+  is_archived: '0'
+  is_allowed: '0'
+record_514:
+  id: '515'
+  extension_name: XLM
+  extension_description: Excelmacro
+  is_archived: '0'
+  is_allowed: '0'
+record_515:
+  id: '516'
+  extension_name: XLS
+  extension_description: Excel spreadsheet
+  is_archived: '0'
+  is_allowed: '1'
+record_516:
+  id: '517'
+  extension_name: XLSX
+  extension_description: Excel spreadsheet
+  is_archived: '0'
+  is_allowed: '1'
+record_517:
+  id: '518'
+  extension_name: XLT
+  extension_description: Exceltemplate
+  is_archived: '0'
+  is_allowed: '0'
+record_518:
+  id: '519'
+  extension_name: XLW
+  extension_description: Excelproject
+  is_archived: '0'
+  is_allowed: '0'
+record_519:
+  id: '520'
+  extension_name: XML
+  extension_description: XML file
+  is_archived: '0'
+  is_allowed: '1'
+record_520:
+  id: '521'
+  extension_name: XPM
+  extension_description: XWindowpixelmap
+  is_archived: '0'
+  is_allowed: '0'
+record_521:
+  id: '522'
+  extension_name: XSD
+  extension_description: XMLschema
+  is_archived: '0'
+  is_allowed: '0'
+record_522:
+  id: '523'
+  extension_name: XWD
+  extension_description: XWindowdump
+  is_archived: '0'
+  is_allowed: '0'
+record_523:
+  id: '524'
+  extension_name: XY?
+  extension_description: XyWritedocument(?=version)
+  is_archived: '0'
+  is_allowed: '0'
+record_524:
+  id: '525'
+  extension_name: XYW
+  extension_description: XyWriteforWindowsdocument
+  is_archived: '0'
+  is_allowed: '0'
+record_525:
+  id: '526'
+  extension_name: Z
+  extension_description: UNIXGziparchive
+  is_archived: '0'
+  is_allowed: '0'
+record_526:
+  id: '527'
+  extension_name: ZIP
+  extension_description: PKZIP compressed
+  is_archived: '0'
+  is_allowed: '1'
+record_527:
+  id: '528'
+  extension_name: ZIPX
+  extension_description: Extended Zip File
+  is_archived: '0'
+  is_allowed: '1'

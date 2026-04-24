@@ -1,0 +1,20 @@
+<activity activity_type="image_choice" language="en" title="image choice">
+  <dl>Haz clic en la imagen correspondente.</dl>
+  <items>
+    <item>
+      <answer_image id="123" />
+      <distractor_image id="234" />
+      <distractor_image id="345" />
+      <audio id="456" />
+      <audio_text>valid_audio_text</audio_text>
+    </item>
+
+    <item>
+      <answer_image id="234" />
+      <distractor_image id="123" />
+      <distractor_image id="345" />
+      <audio id="456" />
+      <audio_text>valid_audio_text</audio_text>
+    </item>
+  </items>
+</activity>

@@ -1,0 +1,209 @@
+id,label,title
+1,supersite,"Aventuras, Second Edition (Supersite)"
+2,supersite,Espaces (Supersite)
+3,supersite,Imagina (Supersite)
+4,supersite,Sueña (Supersite)
+5,supersite,"Vistas, Third Edition (Supersite)"
+6,websam,"Vistas, Third Edition (WebSAM)"
+7,supersite,"Revista, Second Edition (Supersite)"
+8,supersite,"Enfoques, Second Edition (Supersite)"
+9,websam,"Enfoques, Second Edition (WebSAM)"
+10,supersite,Imaginez (Supersite)
+11,websam,Imaginez (WebSAM)
+12,supersite,"Facetas, Second Edition (Supersite)"
+13,websam,"Facetas, Second Edition (WebSAM)"
+14,supersite,"Descubre, Level 1 (Supersite)"
+15,websam,"Descubre, Level 1 (e-Cuaderno)"
+16,supersite,¡Viva! (Supersite)
+17,supersite,"Descubre, Level 3 (Supersite)"
+18,websam,"Descubre, Level 3 (e-Cuaderno)"
+19,supersite,"Descubre, Level 2 (Supersite)"
+20,websam,"Descubre, Level 2 (e-Cuaderno)"
+21,supersite,"Ventanas, Second Edition (Lengua)"
+22,websam,"Ventanas, Second Edition (WebSAM)"
+23,supersite_ancillary,"Ventanas, Second Edition (Lecturas)"
+24,supersite,¡ADELANTE! uno (Supersite)
+25,supersite,¡ADELANTE! dos (Supersite)
+26,supersite,¡ADELANTE! tres (Supersite)
+27,supersite,"Panorama, Third Edition (Supersite)"
+28,websam,"Panorama, Third Edition (WebSAM)"
+29,websam,¡ADELANTE! uno (WebSAM)
+30,websam,¡ADELANTE! dos (WebSAM)
+31,websam,¡ADELANTE! tres (WebSAM)
+32,supersite,"Aventuras, Third Edition (Supersite)"
+33,websam,"Aventuras, Third Edition (WebSAM)"
+34,supersite_websam,"Aventuras, Third Edition (Supersite + WebSAM)"
+35,supersite_vtext,"Aventuras, Third Edition (Supersite + vText)"
+36,supersite_websam_vtext,"Aventuras, Third Edition (Supersite + WebSAM + vText)"
+37,supersite,Promenades (Supersite)
+38,websam,Promenades (WebSAM)
+39,supersite_websam,Promenades (Supersite + WebSAM)
+40,supersite_vtext,Promenades (Supersite + vText)
+41,supersite_websam_vtext,Promenades (Supersite + WebSAM + vText)
+42,supersite,"Revista, Third Edition (Supersite)"
+43,supersite,"Invitaciones, Second Edition - Primera Parte (Supersite)"
+44,supersite,"Invitaciones, Second Edition - Segunda Parte (Supersite)"
+45,supersite,"Hola, ¿qué tal? (Supersite)"
+46,supersite_short,"Panorama, Third Edition (Supersite) 12-month access"
+47,websam_short,"Panorama, Third Edition (WebSAM) 12-month access"
+48,supersite_websam_short,Promenades (Supersite + WebSAM) 12-month access
+49,supersite_short,Promenades (Supersite) 12-month access
+50,supersite,"Imagina, Second Edition (Supersite)"
+51,supersite_websam,"Imagina, Second Edition (Supersite + WebSAM)"
+52,vtext,"Imagina, Second Edition (vText)"
+53,supersite_vtext,"Imagina, Second Edition (Supersite + vText)"
+54,supersite_websam_vtext,"Imagina, Second Edition (Supersite + WebSAM + vText)"
+55,supersite,"Sueña, Second Edition (Supersite)"
+56,supersite_websam,"Sueña, Second Edition (Supersite + WebSAM)"
+57,supersite,"¡Viva!, Second Edition (Supersite)"
+58,supersite_websam,"¡Viva!, Second Edition (Supersite + WebSAM)"
+59,vtext,"¡Viva!, Second Edition (vText)"
+60,supersite_vtext,"¡Viva!, Second Edition (Supersite + vText)"
+61,supersite_websam_vtext,"¡Viva!, Second Edition (Supersite + WebSAM + vText)"
+62,supersite,Immagina (Supersite)
+63,supersite_websam,Immagina (Supersite + WebSAM)
+64,supersite,"Espaces, Second Edition (Supersite)"
+65,supersite_websam,"Espaces, Second Edition (Supersite + WebSAM)"
+66,vtext,"Espaces, Second Edition (vText)"
+67,supersite_vtext,"Espaces, Second Edition (Supersite + vText)"
+68,supersite_websam_vtext,"Espaces, Second Edition (Supersite + WebSAM + vText)"
+69,supersite,Face-à-face (Supersite)
+70,supersite_websam,Face-à-face (Supersite + WebSAM)
+71,supersite,Sentieri (Supersite)
+72,supersite_websam,Sentieri (Supersite + WebSAM)
+73,vtext,Sentieri (vText)
+74,supersite_vtext,Sentieri (Supersite + vText)
+75,supersite_websam_vtext,Sentieri (Supersite + WebSAM + vText)
+76,supersite_short,Sentieri (Supersite) 12-month access
+77,supersite_websam_short,Sentieri (Supersite + WebSAM) 12-month access
+78,supersite,D'accord! Level 1 (Supersite)
+79,supersite_websam,D'accord! Level 1 (Supersite + Cahier interactif)
+80,supersite,D'accord! Level 2 (Supersite)
+81,supersite_websam,D'accord! Level 2 (Supersite + Cahier interactif)
+82,supersite,D'accord! Level 3 (Supersite)
+83,supersite_websam,D'accord! Level 3 (Supersite + Cahier interactif)
+84,vtext,"Descubre, Level 1 (vText)"
+85,supersite_vtext,"Descubre, Level 1 (Supersite + vText)"
+86,supersite_websam_vtext,"Descubre, Level 1 (Supersite + e-Cuaderno + vText)"
+87,vtext,"Descubre, Level 3 (vText)"
+88,supersite_vtext,"Descubre, Level 3 (Supersite + vText)"
+89,supersite_websam_vtext,"Descubre, Level 3 (Supersite + e-Cuaderno + vText)"
+90,vtext,"Descubre, Level 2 (vText)"
+91,supersite_vtext,"Descubre, Level 2 (Supersite + vText)"
+92,supersite_websam_vtext,"Descubre, Level 2 (Supersite + e-Cuaderno + vText)"
+93,websam,"Imagina, Second Edition (WebSAM)"
+94,websam,"Sueña, Second Edition (WebSAM)"
+95,websam,"¡Viva!, Second Edition (WebSAM)"
+96,websam,Immagina (WebSAM)
+97,websam,"Espaces, Second Edition (WebSAM)"
+98,websam,Face-à-face (WebSAM)
+99,websam,Sentieri (WebSAM)
+100,websam_short,Sentieri (WebSAM) 12-month access
+101,websam,D'accord! Level 1 (Cahier interactif)
+102,websam,D'accord! Level 2 (Cahier interactif)
+103,websam,D'accord! Level 3 (Cahier interactif)
+106,instructor,"Instructor - ¡ADELANTE! uno, ¡ADELANTE! dos, ¡ADELANTE! tres"
+107,instructor,"Instructor - Ventanas, Second Edition"
+108,instructor,Instructor - Promenades
+109,instructor,"Instructor - Descubre, Level 1, Descubre, Level 2, Descubre, Level 3"
+110,instructor,"Instructor - Aventuras, Third Edition"
+112,instructor,Denk Mal!
+114,instructor,"Instructor - Aventuras, Second Edition"
+115,instructor,Instructor - Espaces
+116,instructor,Instructor - Imagina
+117,instructor,Instructor - Sueña
+118,instructor,"Instructor - Vistas, Third Edition"
+119,instructor,"Instructor - Revista, Second Edition"
+120,instructor,"Instructor - Enfoques, Second Edition"
+121,instructor,Instructor - Imaginez
+122,instructor,"Instructor - Facetas, Second Edition"
+123,instructor,Instructor - ¡Viva!
+125,instructor,"Instructor - Panorama, Third Edition"
+126,instructor,"Instructor - Revista, Third Edition"
+127,instructor,"Instructor - Hola, ¿qué tal?"
+128,instructor,"Instructor - Imagina, Second Edition"
+129,instructor,"Instructor - Sueña, Second Edition"
+130,instructor,"Instructor - ¡Viva!, Second Edition"
+131,instructor,Instructor - Immagina
+132,instructor,"Instructor - Espaces, Second Edition"
+133,instructor,Instructor - Face-à-face
+135,instructor,"Instructor - Invitaciones, Second Edition - Primera Parte, Invitaciones, Second Edition - Segunda Parte"
+136,instructor,"Instructor - D'accord! Level 1, D'accord! Level 2, D'accord! Level 3"
+137,instructor,Instructor - Sentieri
+138,supersite_websam,"Descubre, Level 1 (Supersite + e-Cuaderno)"
+139,supersite_websam,"Descubre, Level 2 (Supersite + e-Cuaderno)"
+140,supersite_websam,"Descubre, Level 3 (Supersite + e-Cuaderno)"
+141,instructor,Instructor - Denk Mal!
+145,supersite,Denk Mal! (Supersite)
+146,supersite,"Enfoques, Third Edition (Supersite)"
+147,instructor,"Instructor - Enfoques, Third Edition"
+149,supersite,"Imaginez, Second Edition (Supersite)"
+150,instructor,"Instructor - Imaginez, Second Edition"
+151,instructor,"Instructor - Vistas, Fourth Edition"
+152,supersite,"Vistas, Fourth Edition (Supersite)"
+153,supersite_vtext,"Enfoques, Third Edition (Supersite + vText)"
+154,supersite_vtext,"Vistas, Fourth Edition (Supersite + vText)"
+158,instructor,"Instructor - Facetas, Third Edition"
+159,supersite,"Facetas, Third Edition (Supersite)"
+161,instructor,Instructor - Rêvez
+162,supersite,Rêvez (Supersite)
+168,instructor,Instructor - Intrigas
+169,supersite,Intrigas (Supersite)
+170,instructor,Instructor - Protagonistas
+171,supersite,Protagonistas (Supersite)
+174,instructor,Instructor - A Handbook of Contemporary Spanish Grammar
+175,supersite,A Handbook of Contemporary Spanish Grammar (Supersite)
+176,instructor,Instructor - Taller de Escritores
+177,supersite,Taller de Escritores (Supersite)
+180,plus,Denk Mal! Upgrade to Supersite Plus
+181,plus,"Enfoques, Third Edition Upgrade to Supersite Plus"
+182,plus,"Facetas, Third Edition Upgrade to Supersite Plus"
+183,plus,"Vistas, Fourth Edition Upgrade to Supersite Plus"
+184,plus,"Imaginez, Second Edition Upgrade to Supersite Plus"
+185,plus,R&ecirc;vez Upgrade to Supersite Plus
+186,plus,Intrigas Upgrade to Supersite Plus
+187,plus,Protagonistas Upgrade to Supersite Plus
+188,plus,A Handbook of Contemporary Spanish Grammar Upgrade to Supersite Plus
+189,plus,Taller de Escritores Upgrade to Supersite Plus
+190,supersite_websam_supersite plus,Denk Mal! (Supersite Plus)
+191,supersite_websam_supersite plus,"Enfoques, Third Edition (Supersite Plus)"
+192,supersite_websam_vtext_supersite plus,"Enfoques, Third Edition (Supersite Plus with vText)"
+193,supersite_websam_supersite plus,"Facetas, Third Edition (Supersite Plus)"
+194,supersite_websam_supersite plus,"Vistas, Fourth Edition (Supersite Plus)"
+195,supersite_websam_vtext_supersite plus,"Vistas, Fourth Edition (Supersite Plus with vText)"
+196,supersite_websam_supersite plus,"Imaginez, Second Edition (Supersite Plus)"
+197,supersite_websam_supersite plus,Rêvez (Supersite Plus)
+198,supersite_supersite plus,Intrigas (Supersite Plus)
+200,supersite_websam_supersite plus,Protagonistas (Supersite Plus)
+202,supersite_supersite plus,A Handbook of Contemporary Spanish Grammar (Supersite Plus)
+203,supersite_supersite plus,Taller de Escritores (Supersite Plus)
+204,supersite_vtext,D'accord! Level 1 (Supersite + vText)
+205,supersite_vtext,D'accord! Level 2 (Supersite + vText)
+206,supersite_vtext,D'accord! Level 3 (Supersite + vText)
+207,supersite_websam_vtext,D'accord! Level 1 (Supersite + Cahier interactif + vText)
+208,supersite_websam_vtext,D'accord! Level 2 (Supersite + Cahier interactif + vText)
+209,supersite_websam_vtext,D'accord! Level 3 (Supersite + Cahier interactif + vText)
+210,supersite_websam_vtext_short,Promenades (Supersite + WebSAM + vText) 12-month access
+211,supersite_vtext_short,Promenades (Supersite + vText) 12-month access
+212,supersite_short,Protagonistas (Supersite) 6-month access
+213,supersite_websam_vtext_supersite plus,Protagonistas vText with Supersite Plus
+214,supersite_websam_vtext_short_supersite plus,"Vistas, Fourth Edition (Supersite Plus with vText) 6-month access"
+215,supersite_websam_vtext_supersite plus,"Imaginez, Second Edition vText with Supersite Plus"
+216,supersite_short,"Vistas, Fourth Edition (Supersite) 6-month access"
+217,supersite_websam_short_supersite plus,"Vistas, Fourth Edition (Supersite Plus) 6-month access"
+218,supersite_vtext_short,"Vistas, Fourth Edition (Supersite + vText) 6-month access"
+219,supersite_websam_vtext_short,Sentieri (Supersite + WebSAM + vText) 12-month access
+220,supersite_vtext_short,Sentieri (Supersite + vText) 12-month access
+221,supersite_vtext,"Imaginez, Second Edition vText with Supersite"
+222,supersite_websam_short_supersite plus,Protagonistas (Supersite Plus) 6-month access
+223,supersite_vtext_short,Protagonistas vText with Supersite 6-month access
+224,supersite_websam_vtext_short_supersite plus,Protagonistas vText with Supersite Plus 6-month access
+225,supersite_vtext,Protagonistas vText with Supersite
+226,supersite_medium,"Vistas, Fourth Edition (Supersite) 12-month access"
+227,supersite_websam_medium_supersite plus,"Vistas, Fourth Edition (Supersite Plus) 12-month access"
+228,supersite_vtext_medium,"Vistas, Fourth Edition vText with Supersite 12-month access"
+229,supersite_websam_vtext_medium_supersite plus,"Vistas, Fourth Edition vText with Supersite Plus 12-month access"
+230,websam_medium_supersite plus,"Vistas, Fourth Edition Upgrade to Supersite Plus 12-month access"
+231,websam_short_supersite plus,"Vistas, Fourth Edition Upgrade to Supersite Plus 6-month access"
+500,supersite,"Vistas, Fourth Edition M3 Version"
+501,supersite,"M3 Publishing Target"

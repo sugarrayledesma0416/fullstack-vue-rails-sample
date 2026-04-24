@@ -1,0 +1,47 @@
+{
+  "activities": [
+    {
+      "ExternalLinkContent": {
+        "activity_type": "external_link",
+        "dl": {
+          "node_text": "Write your answer to the prompts below."
+        },
+        "title": "Escribir - External Link",
+        "items": [
+          {
+            "Exam": {
+              "rank": 1,
+              "sidebar_ref": null,
+              "header": {
+                "node_text": "Escribir - Open ended"
+              },
+              "body": {
+                "node_text": "Write your answer to the prompts below."
+              }
+            }
+          },
+          {
+            "Passage": {
+              "body": {
+                "node_text": "<article><p>This is test passage reference</p><p><img class=\"fr-media-item-img fr-dib fr-fir\" data-media-item-id=\"1023\" alt=\"Olga Lucía stands at the front door of her apartment.\" src=\"\" data-instructor-uploaded=\"false\" data-description=\"test\" style=\"width: 60px;\"></p></article>"
+              },
+              "rank": 1
+            }
+          },
+          {
+            "Item": {
+              "external_link_url": "https://dummy-url-1.com/",
+              "rank": 2,
+              "sidebar_ref": null,
+              "question_number": 1,
+              "points_possible": 10
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "activity_type": "exam",
+  "language": "es",
+  "title": "Assessment Spec"
+}

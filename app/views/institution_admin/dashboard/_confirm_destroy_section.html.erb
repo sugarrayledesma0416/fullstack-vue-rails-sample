@@ -1,0 +1,40 @@
+<div class="c-modal  c-modal--md  js-modal  js-confirm-destroy-section-model-<%= section.id %>  u-hidden">
+  <div role="dialog" aria-label="Small modal" class="c-modal__box  c-modal__box--radius  js-modal-box  js-modal-a11y">
+    <div role="document" class="js-modal-content">
+
+      <div class="c-modal__body  u-pad-0  c-modal__body--margin">
+        <div class="u-txt-lt">
+          <div class="l-line  l-line--debug  u-justify-content-space-between  u-mar-bot-16  u-bord-bot-1">
+            <h3 class="u-txt-widget-red-700  c-modal__header  u-txt-heading-2">Delete Section</h3>
+            <music-icon-close size="lg" class="u-fill-black  u-mar-top-6  js-x-close  js-modal-close  u-enterprise__hover"></music-icon-close>
+          </div>
+
+          <div>
+            <p class="u-mar-top-24  c-modal__paragraph">
+            Are you sure you want to delete <span class="c-modal__paragraph_bold"><%= section.name %></span>?
+            </p>
+          </div>
+          <div>
+            <p class="c-modal__paragraph_bold_red">
+              All grades, assignments, and any other data will be deleted.<br>
+              Students will be unenrolled. This action cannot be undone.
+            </p>
+          </div>
+
+          <div class="l-line  l-line--debug  u-justify-content-space-between  u-txt-bold  u-mar-bot-0  u-mar-top-48">
+            <button class="c-button-v3  c-button-v3--tertiary  c-button-v3--sm  u-bord-solid  u-bord-1  u-bord-gray-6  u-txt-bold  u-pad-8  u-pad-lt-16  u-pad-rt-16  js-modal-close">
+              Close
+            </button>
+            <%= button_to 'Delete',
+              institution_admin_delete_section_path(section: { id: section.id },
+                                                    school_id: school_id),
+              method: :post,
+              onclick: 'this.disabled = true;this.form.submit();',
+              class: 'c-button-v3  c-button-v3--primary  c-button-v3--sm  u-txt-white  u-pad-8  u-pad-lt-16  u-pad-rt-16  u-mar-0' %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="u-screen-reader-only" tabindex="-1">Dialog end</button>
+  </div>
+</div>

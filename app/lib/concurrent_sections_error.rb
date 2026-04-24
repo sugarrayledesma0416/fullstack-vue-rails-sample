@@ -1,0 +1,2 @@
+class ConcurrentSectionsError < StandardError
+end

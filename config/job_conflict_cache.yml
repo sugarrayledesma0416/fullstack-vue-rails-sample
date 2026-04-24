@@ -1,0 +1,15 @@
+development:
+  host: localhost
+  port: 6379
+  db: 6
+  enabled: true
+
+test: &TEST
+  host: localhost
+  port: 6379
+  db: 17
+  enabled: false
+
+# The values for staging and live are configured by chef. Just need the
+# empty hash for live here so env doesn't die when compiling local assets.
+live: {}

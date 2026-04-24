@@ -1,0 +1,6 @@
+test: &TEST
+  fms_server_url: http://valid_server/url
+  wowza_server_url:  http://valid_recording_server/url
+  load_balancer_url: /load_balancer_url
+  video_host: arc-staging.chat.vhlcentral.com
+  video_application: vre

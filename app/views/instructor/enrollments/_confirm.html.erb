@@ -1,0 +1,26 @@
+
+<sl-dialog  class="js-add-students-confirm-dialog">
+  <span slot="label">Add Students</span>
+  <l-stack-v3 gap="6">
+    <p>Are you sure you want to add the following <span class="js-confirmation-message"></span> to 
+      <span class="u-txt-semibold"><%= @selected_section.course.name %>, <%= @selected_section.name %></span>?
+    </p>
+    <music-flash-banner-v3 variant="inline" no-close="true" class="js-enrollment-notice">
+    </music-flash-banner-v3>
+    <ul class="c-list-v3  u-pad-lt-16  u-mar-top-0  js-students-list"></ul>
+
+  </l-stack-v3>
+  <l-line-v3 slot="footer" align-x="between">
+    <sl-button 
+      class="sl-button-v3  sl-button-v3--tertiary  js-cancel-dialog"
+      type="button">
+      Cancel
+    </sl-button>
+    <sl-button
+      type="submit"
+      form="students_enrollment_confirmation_form"
+      class="sl-button-v3  sl-button-v3--primary  js-confirm-students">
+      Add Students
+    </sl-button>
+  </l-line-v3>
+  </sl-dialog>

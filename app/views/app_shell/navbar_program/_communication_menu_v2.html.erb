@@ -1,0 +1,71 @@
+<a 
+  href="javascript://"
+  aria-controls="communication-subnav"
+  aria-expanded="false"
+  class="c-menu__title  c-menu__title--program  js-nav-system__link 
+         <%= main_nav_active('communication') %>"
+  id="tour-guide-nav-communication"
+  role="button">
+  Student Communications
+  <span aria-hidden="true">
+    <%= Music::Components.icon(variant: 'caret', classes: ['c-menu__title--icon']) %>
+  </span>
+</a>
+
+<ul 
+  class="c-menu__inner  c-menu__inner--program  c-menu__inner--right-align  js-nav-system__subnav" 
+  id="communication-subnav">
+  <li class="js-nav-system__subnav__item">
+    <%= link_to main_app.instructor_announcements_path(current_program),
+                class: 'c-menu__item  c-menu__item--program  js-nav-system__subnav__link' do %>
+        <%= render(
+              'app_shell/menu_item',
+              item_icon: 'announcements',
+              item_name: 'Announcements',
+              item_description: 'Create, edit or remove announcements.'
+            ) %>
+    <% end %>
+  </li>
+
+  <% unless supersite_junior? %>
+    <li class="js-nav-system__subnav__item">
+      <%= link_to main_app.forums_path(current_program, current_section),
+                  class: 'c-menu__item  c-menu__item--program  js-nav-system__subnav__link' do %>
+            <%= render(
+                  'app_shell/menu_item',
+                  item_icon: 'forums',
+                  item_name: 'Forums',
+                  item_description: 'Create, review, or remove student text or voice boards.'
+              ) %>
+      <% end %>
+    </li>
+  <% end %>
+
+  <% unless defined?(DISABLE_HELP_REQUESTS) || supersite_junior?  %>
+    <li class="js-nav-system__subnav__item">
+      <%= link_to main_app.instructor_help_requests_path(current_program),
+                  class: 'c-menu__item  c-menu__item--program  js-nav-system__subnav__link' do %>
+        <%= render(
+              'app_shell/menu_item',
+              item_icon: 'student_requests',
+              item_name: 'Student Requests',
+              item_description: 'Review student help requests with assignments or grades.'
+            ) %>
+      <% end %>
+    </li>
+  <% end %>
+
+  <% unless defined? DISABLE_HELP_REQUESTS %>
+    <li class="js-nav-system__subnav__item">
+      <%= link_to main_app.instructor_reported_problems_path(current_program),
+                  class: 'c-menu__item  c-menu__item--program  js-nav-system__subnav__link' do %>
+            <%= render(
+                'app_shell/menu_item',
+                item_icon: 'student_technical_support',
+                item_name: 'Student Technical Requests',
+                item_description: 'Monitor student technical support requests.'
+              ) %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>

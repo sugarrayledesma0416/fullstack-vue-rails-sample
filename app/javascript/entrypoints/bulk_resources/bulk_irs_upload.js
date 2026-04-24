@@ -1,0 +1,1 @@
+import '~/src/views/bulk_irs_upload'

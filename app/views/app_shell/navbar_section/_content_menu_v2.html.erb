@@ -1,0 +1,69 @@
+<a
+  href="#"
+  aria-controls="assignments-subnav"
+  class="c-menu__title  c-menu__title--program  js-nav-system__link
+        test-content-menu <%= main_nav_active('content') %>"
+  aria-expanded="false"
+  role="button">
+  Assignments
+  <span aria-hidden="true">
+    <%= Music::Components.icon(variant: 'caret', classes: ['c-menu__title--icon']) %>
+  </span>
+</a>
+
+<ul 
+  class="c-menu__inner  c-menu__inner--program  js-nav-system__subnav"
+  id="assignments-subnav">
+
+  <% if program_has_activities? -%>
+    <li class="js-nav-system__subnav__item">
+      <%= link_to main_app.section_toc_path(section || 0, current_program),
+                  class: 'c-menu__item  c-menu__item--program  js-nav-system__subnav__link' do %>
+            <%= render(
+                  'app_shell/menu_item',
+                  item_icon: 'activities',
+                  item_name: 'Activities',
+                  item_description: 'Assigned and unassigned activities.'
+                ) %>
+      <% end %>
+    </li>
+  <% end %>
+
+  <% if section && section.non_zero? && program_has_assessment? -%>
+    <li class="js-nav-system__subnav__item">
+      <%= link_to main_app.student_assessments_path(current_program, section),
+                  class: 'c-menu__item  c-menu__item--program  js-nav-system__subnav__link' do %>
+            <%= render(
+                  'app_shell/menu_item',
+                  item_icon: 'assessments',
+                  item_name: 'Assessments',
+                  item_description: 'Assigned or completed quizzes and tests.'
+                ) %>
+      <% end %>
+    </li>
+  <% end %>
+
+  <li class="js-nav-system__subnav__item">
+    <% if section && section.non_zero? %>
+      <%= link_to main_app.study_schedule_path(section.course, section),
+                  class: 'c-menu__item  c-menu__item--program  js-nav-system__subnav__link' do %>
+            <%= render( 
+                  'app_shell/menu_item',
+                  item_icon: 'assignment_calendar',
+                  item_name: 'Calendar',
+                  item_description: 'Assignments listed by date.'
+              ) %>
+      <% end %>      
+    <% else %>
+      <%= link_to main_app.no_section_calendar_path(0, current_program),
+                  class: 'c-menu__item  c-menu__item--program  js-nav-system__subnav__link' do %>
+            <%= render( 
+                  'app_shell/menu_item',
+                  item_icon: 'assignment_calendar',
+                  item_name: 'Calendar',
+                  item_description: 'Assignments listed by date.'
+              ) %>
+      <% end %>
+    <% end %>
+  </li>
+</ul>

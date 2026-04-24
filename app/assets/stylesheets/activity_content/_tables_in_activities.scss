@@ -1,0 +1,22 @@
+@import 'music/library/v1/base/main';
+/* ================================================================== *
+
+    Tables in Activities
+
+* =================================================================== */
+
+.activities table {
+  border: none;
+}
+
+li table th {
+  background: $gray-e;
+  border: rpx(1) solid $gray-c;
+  padding: rpx(5);
+  text-align: center;
+}
+
+li table td {
+  border: rpx(1) solid $gray-c;
+  padding: rpx(5);
+}

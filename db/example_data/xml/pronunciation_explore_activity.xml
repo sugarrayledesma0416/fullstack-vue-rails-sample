@@ -1,0 +1,239 @@
+<?xml version="1.0"?>
+<activity activity_type="pronunciation_explore" title="Pronunciation explore example" language="es">
+  <dl>Click on the words to hear audio.</dl>
+  <items>
+    <reference type="pronunciation_example_group">
+      <pronunciation_examples cols="4">
+        <pronunciation_example>
+          <audio id="138677" />
+          <example_text>
+            <color1>b</color1>ueno
+          </example_text>
+        </pronunciation_example>
+        <pronunciation_example>
+          <audio id="138689" />
+          <example_text>
+            <color1>v</color1>ólei<color2>b</color2>ol
+          </example_text>
+        </pronunciation_example>
+        <pronunciation_example>
+          <audio id="138687" />
+          <example_text>
+            <color1>b</color1>i<color2>b</color2>lioteca
+          </example_text>
+        </pronunciation_example>
+        <pronunciation_example>
+          <audio id="138682" />
+          <example_text>
+            <color1>v</color1>i<color2>v</color2>ir
+          </example_text>
+        </pronunciation_example>
+      </pronunciation_examples>
+      <pronunciation_explanation>There is no difference in pronunciation between the Spanish letters <b>b</b> and <b>v</b>. However, each letter can be pronounced two different ways, depending on which letters appear next to them.</pronunciation_explanation>
+    </reference>
+
+    <reference type="pronunciation_example_group">
+      <pronunciation_examples cols="4">
+        <pronunciation_example>
+          <audio id="138678" />
+          <example_text>
+            <color1>b</color1>onito
+          </example_text>
+        </pronunciation_example>
+        <pronunciation_example>
+          <audio id="138681" />
+          <example_text>
+            <color1>v</color1>iajar
+          </example_text>
+        </pronunciation_example>
+        <pronunciation_example>
+          <audio id="138685" />
+          <example_text>
+            ta<color1>mb</color1>ién
+          </example_text>
+        </pronunciation_example>
+        <pronunciation_example>
+          <audio id="138693" />
+          <example_text>
+            i<color1>nv</color1>estigar
+          </example_text>
+        </pronunciation_example>
+      </pronunciation_examples>
+      <pronunciation_explanation><b>B</b> and <b>v</b> are pronounced like the English hard <i>b</i> when they appear either as the first letter of a word, at the beginning of a phrase, or after <b>m</b> or <b>n</b>.</pronunciation_explanation>
+    </reference>
+
+    <reference type="pronunciation_example_group">
+      <pronunciation_examples cols="4">
+        <pronunciation_example>
+          <audio id="138683" />
+          <example_text>
+            de<color2>b</color2>er
+          </example_text>
+        </pronunciation_example>
+        <pronunciation_example>
+          <audio id="138684" />
+          <example_text>
+            no<color2>v</color2>io
+          </example_text>
+        </pronunciation_example>
+        <pronunciation_example>
+          <audio id="138679" />
+          <example_text>
+            a<color2>b</color2>ril
+          </example_text>
+        </pronunciation_example>
+        <pronunciation_example>
+          <audio id="138676" />
+          <example_text>
+            cer<color2>v</color2>eza
+          </example_text>
+        </pronunciation_example>
+      </pronunciation_examples>
+      <pronunciation_explanation>In all other positions, <b>b</b> and <b>v</b> have a softer pronunciation, which has no equivalent in English. Unlike the hard <b>b</b>, which is produced by tightly closing the lips and stopping the flow of air, the soft <b>b</b> is produced by keeping the lips slightly open.</pronunciation_explanation>
+    </reference>
+
+    <reference type="pronunciation_example_group">
+      <pronunciation_examples cols="4">
+        <pronunciation_example>
+          <audio id="138688" />
+          <example_text>
+            <color1>b</color1>ola
+          </example_text>
+        </pronunciation_example>
+        <pronunciation_example>
+          <audio id="138680" />
+          <example_text>
+            <color1>v</color1>ela
+          </example_text>
+        </pronunciation_example>
+        <pronunciation_example>
+          <audio id="138691" />
+          <example_text>
+            Cari<color2>b</color2>e
+          </example_text>
+        </pronunciation_example>
+        <pronunciation_example>
+          <audio id="138686" />
+          <example_text>
+            decli<color2>v</color2>e
+          </example_text>
+        </pronunciation_example>
+      </pronunciation_examples>
+      <pronunciation_explanation>In both pronunciations, there is no difference in sound between <b>b</b> and <b>v</b>. The English <i>v</i> sound, produced by friction between the upper teeth and lower lip, does not exist in Spanish. Instead, the soft <b>b</b> comes from friction between the two lips.</pronunciation_explanation>
+    </reference>
+
+    <reference type="pronunciation_example_group">
+      <pronunciation_examples cols="1">
+        <pronunciation_example>
+          <audio id="138690" />
+          <example_text>
+            <color1>V</color1>erónica y su esposo canta<color1>n<color2><ligature /></color2>b</color1>oleros
+          </example_text>
+        </pronunciation_example>
+      </pronunciation_examples>
+      <pronunciation_explanation>When <b>b</b> or <b>v</b> begins a word, its pronunciation depends on the previous word. At the beginning of a phrase or after a word that ends in <b>m</b> or <b>n</b>, it is pronounced as a hard <b>b</b>.</pronunciation_explanation>
+    </reference>
+
+    <reference type="pronunciation_example_group">
+      <pronunciation_examples cols="4">
+        <pronunciation_example>
+          <audio id="138692" />
+          <example_text>
+            <color1>B</color1>enito
+          </example_text>
+        </pronunciation_example>
+        <pronunciation_example>
+          <audio id="138692" />
+          <example_text>
+            es d<color2>e<ligature />B</color2>oquerón
+          </example_text>
+        </pronunciation_example>
+        <pronunciation_example>
+          <audio id="138692" />
+          <example_text>
+            per<color2>o<ligature />v</color2>ive
+          </example_text>
+        </pronunciation_example>
+        <pronunciation_example>
+          <audio id="138692" />
+          <example_text>
+            e<color1>n<color2><ligature /></color2>V</color1>ictoria
+          </example_text>
+        </pronunciation_example>
+      </pronunciation_examples>
+      <pronunciation_explanation>Words that begin with <b>b</b> or <b>v</b> are pronounced with a soft <b>b</b> if they appear immediately after a word that ends in a vowel or any consonant other than <b>m</b> or <b>n</b>.</pronunciation_explanation>
+    </reference>
+
+    <reference type="pronunciation_example_group">
+      <pronunciation_examples>
+        <pronunciation_example>
+          <audio id="136813" />
+          <example_text>
+            <color2>c</color2>ereales
+          </example_text>
+        </pronunciation_example>
+        <pronunciation_example>
+          <audio id="137077" />
+          <example_text>
+            deli<color2>c</color2>ioso
+          </example_text>
+        </pronunciation_example>
+        <pronunciation_example>
+          <audio id="137078" />
+          <example_text>
+            <color1>c</color1>ondu<color2>c</color2>ir
+          </example_text>
+        </pronunciation_example>
+        <pronunciation_example>
+          <audio id="137079" />
+          <example_text>
+            <color1>c</color1>ono<color2>c</color2>er
+          </example_text>
+        </pronunciation_example>
+      </pronunciation_examples>
+    </reference>
+
+    <reference type="pronunciation_example_group">
+      <pronunciation_examples cols="3">
+        <pronunciation_example>
+          <audio id="137080" />
+          <example_text>
+            este <annotation>(adjective)</annotation>
+          </example_text>
+        </pronunciation_example>
+        <pronunciation_example>
+          <audio id="137081" />
+          <example_text>
+            <color1>é</color1>ste
+            <annotation>(pronoun)</annotation>
+          </example_text>
+        </pronunciation_example>
+        <pronunciation_example>
+          <audio id="137082" />
+          <example_text>
+            est<color1>é</color1>
+            <annotation>(verb)</annotation>
+          </example_text>
+        </pronunciation_example>
+      </pronunciation_examples>
+      <pronunciation_explanation>The demonstrative adjectives <b>esta</b> and <b>este</b> do not have an accent mark. The demonstrative pronouns <b>ésta</b> and <b>éste</b> have an accent mark on the first syllable. The verb forms <b>está</b> (present indicative) and <b>esté</b> (present subjunctive) have an accent mark on the last syllable.</pronunciation_explanation>
+    </reference>
+
+    <reference type="pronunciation_example_group">
+      <pronunciation_examples cols="2">
+        <pronunciation_example>
+          <example_text>
+            usted <right_arrow /> <color1>Ud.</color1>
+          </example_text>
+        </pronunciation_example>
+        <pronunciation_example>
+          <example_text>
+            Ustedes <right_arrow /> <color1>Uds.</color1>
+          </example_text>
+        </pronunciation_example>
+      </pronunciation_examples>
+      <pronunciation_explanation>(these have no audio) As you have already learned, the subject pronouns <b>usted</b> and <b>ustedes</b> are often abbreviated.</pronunciation_explanation>
+    </reference>
+
+  </items>
+</activity>

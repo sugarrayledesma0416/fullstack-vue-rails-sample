@@ -1,0 +1,63 @@
+---
+version: 2
+plugins:
+  brakeman-pro:
+    enabled: false
+    checks:
+      dangerous_attr_accessible:
+        enabled: false
+      no_attr_accessible:
+        enabled: false
+      basic_auth_usage:
+        enabled: false
+  bundler-audit:
+    enabled: true
+  csslint:
+    enabled: false
+  duplication:
+    enabled: true
+    config:
+      languages:
+      - ruby
+      - javascript
+  eslint:
+    enabled: true
+    channel: eslint-9
+    config:
+      extensions:
+        - .js
+        - .vue
+  fixme:
+    enabled: true
+  rubocop:
+    channel: rubocop-1-39-0
+    enabled: true
+exclude_patterns:
+  - '**/*.min.js'
+  - '**/angular-*.js'
+  - '**/fine_uploader/*.js'
+  - '**/jquery-*.js'
+  - '**/jquery.*.js'
+  - 'lib/demo_data/*'
+  - 'lib/live_data/*'
+  - 'app/lib/patches/capybara_selenium_driver.rb'
+  - 'lib/tasks/*.rake'
+  - '!**/jquery.*.vhl.js'
+  - '!**/jquery.vhl*.js'
+  - JavaScriptFlashGateway.js
+  - angular.js
+  - jquery.js
+  - jwerty.js
+  - sha256.js
+  - swfobject.js
+  - textAngular.js
+  - toastr.js
+  - app/javascript/spec/
+  - bin/
+  - config/
+  - db/
+  - features/
+  - public/
+  - script/
+  - spec/
+  - tmp/

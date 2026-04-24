@@ -1,0 +1,60 @@
+<% container_id = "partner_chat_container_#{partner_chat_view_manager.student_on_left.id}_#{partner_chat_view_manager.student_on_right.id}" %>
+<div class="grid  ns-beta">
+
+  <div class="col-7">
+
+    <div class='answer_text'>
+      <div class="student_response_area"
+        id=<%="student_#{partner_chat_view_manager.student.id}_partner_chat_container"%>>
+        <%= content_tag(:div, '',
+                        id: container_id,
+                        class: 'js-pchat-video-container',
+                        style: 'width: 480px; height: 270px') %>
+        <%= hidden_field_tag 'recording_file',
+                              partner_chat_recording_url(results.response(question.label)) %>
+      </div>
+    </div>
+  </div> <!-- / main column -->
+  <div class="col-5">
+    <div class="c-grading-sidebar  c-grading-sidebar--plain">
+        <% if @presenter.has_rubric? %>
+          <%= render partial: 'instructor/grading_sets/comment_boxes_for_rubric_grading' %>
+        <div class="js-grading-controls-app"
+             data-rubric-column-headers="<%= @presenter.activity.rubric.header_row.header_columns.to_json %>"
+             data-rubric-criterias="<%= @presenter.activity.rubric.criterias_with_ordered_performances.to_json %>"
+             data-view-rubric-link="<%= @presenter.format_rubric_link('View').to_json %>"
+             data-rubric-graded="<%= @presenter.rubric_graded? %>"
+             data-grade-pending="<%= @presenter.grade_pending? %>"
+             data-user-scores="<%= @user_scores_json %>"
+             data-chat-type="true"
+             data-points-possible="<%= partner_chat_view_manager.question.points_possible %>">
+        </div>
+      <% else %>
+      <div class="c-multi-user-question">
+        <% # One partner %>
+        <div class="c-multi-user-question__user">
+          <%= render partial: 'instructor/grading_sets/partner_chat_grading_form',
+                     locals: { presenter: presenter,
+                                  question: question,
+                                  results: results,
+                                  original_user: presenter.original_user(student),
+                                  student: partner_chat_view_manager.student_on_left,
+                                  feedback: partner_chat_view_manager.student_on_left_feedback,
+                                  recording_path: partner_chat_view_manager.student_on_left_recording_path } %>
+        </div>
+        <% # The other partner %>
+        <div class="c-multi-user-question__user">
+          <%= render partial: 'instructor/grading_sets/partner_chat_grading_form',
+                     locals: { presenter: presenter,
+                                  question: question,
+                                  results: results,
+                                  original_user: presenter.original_user(student),
+                                  student: partner_chat_view_manager.student_on_right,
+                                  feedback: partner_chat_view_manager.student_on_right_feedback,
+                                  recording_path: partner_chat_view_manager.student_on_right_recording_path } %>
+        </div>
+      </div><!-- / .c-multi-user-question -->
+      <% end %>
+    </div> <!-- / .c-grading-sidebar -->
+  </div> <!-- / right column -->
+</div> <!-- / grid -->

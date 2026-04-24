@@ -1,0 +1,10 @@
+    <ul style="list-style-type: none;">
+      <li><%= section.course.school.name if section.course.school  %><br/>
+      <ul style="list-style-type: none">
+        <li>
+        <span class="my_courses_course_name"><%= link_to(section.course.name, course_section_path(section.course, section) ) %></span><br />
+        <span class="my_courses_course_level"><%= section.course.level %></span><br />
+        </li>
+      </ul>
+      </li>
+    </ul>

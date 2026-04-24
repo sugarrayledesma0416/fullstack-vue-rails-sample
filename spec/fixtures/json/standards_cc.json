@@ -1,0 +1,112 @@
+[
+    {
+        "id": 12502,
+        "vendor_guid": "8074E404-7440-11DF-93FA-01FD9CFF4B22",
+        "vendor_standard_set_guid": "CF6A375C-67AD-11DF-AB5F-995D9DFF4B22",
+        "name": "English Language Arts/Literacy",
+        "description": "Cite several pieces of textual evidence to support analysis of what the text says explicitly as well as inferences drawn from the text.",
+        "label": "Grade Level Standard",
+        "number": "zzFAKE.ELA-Literacy.RL.7.1",
+        "additional_info": "{\"additional_info\":{\"ancestors\":\"2878A7B0-74F7-11DF-80DD-6B359DFF4B22,80410AF8-7440-11DF-93FA-01FD9CFF4B22,27FF5842-74F7-11DF-80DD-6B359DFF4B22\",\"grade_levels\":\"7\",\"parent_guid\":\"27FF5842-74F7-11DF-80DD-6B359DFF4B22\"}}"
+    },
+    {
+        "id": 12503,
+        "vendor_guid": "80755DA8-7440-11DF-93FA-01FD9CFF4B22",
+        "vendor_standard_set_guid": "CF6A375C-67AD-11DF-AB5F-995D9DFF4B22",
+        "name": "English Language Arts/Literacy",
+        "description": "Determine a theme or central idea of a text and analyze its development over the course of the text; provide an objective summary of the text.",
+        "label": "Grade Level Standard",
+        "number": "CCSS.ELA-Literacy.RL.7.2",
+        "additional_info": "{\"additional_info\":{\"ancestors\":\"2878A7B0-74F7-11DF-80DD-6B359DFF4B22,80410AF8-7440-11DF-93FA-01FD9CFF4B22,27FF5842-74F7-11DF-80DD-6B359DFF4B22\",\"grade_levels\":\"7\",\"parent_guid\":\"27FF5842-74F7-11DF-80DD-6B359DFF4B22\"}}"
+    },
+    {
+        "id": 12508,
+        "vendor_guid": "80A50A12-7440-11DF-93FA-01FD9CFF4B22",
+        "vendor_standard_set_guid": "CF6A375C-67AD-11DF-AB5F-995D9DFF4B22",
+        "name": "English Language Arts/Literacy",
+        "description": "Determine the meaning of words and phrases as they are used in a text, including figurative and connotative meanings; analyze the impact of rhymes and other repetitions of sounds (e.g., alliteration) on a specific verse or stanza of a poem or section of a story or drama.",
+        "label": "Grade Level Standard",
+        "number": "CCSS.ELA-Literacy.RL.7.4",
+        "additional_info": "{\"additional_info\":{\"ancestors\":\"2878A7B0-74F7-11DF-80DD-6B359DFF4B22,80410AF8-7440-11DF-93FA-01FD9CFF4B22,28004FCC-74F7-11DF-80DD-6B359DFF4B22\",\"grade_levels\":\"7\",\"parent_guid\":\"28004FCC-74F7-11DF-80DD-6B359DFF4B22\"}}"
+    },
+    {
+        "id": 12509,
+        "vendor_guid": "80A6750A-7440-11DF-93FA-01FD9CFF4B22",
+        "vendor_standard_set_guid": "CF6A375C-67AD-11DF-AB5F-995D9DFF4B22",
+        "name": "English Language Arts/Literacy",
+        "description": "Analyze how a drama’s or poem’s form or structure (e.g., soliloquy, sonnet) contributes to its meaning.",
+        "label": "Grade Level Standard",
+        "number": "CCSS.ELA-Literacy.RL.7.5",
+        "additional_info": "{\"additional_info\":{\"ancestors\":\"2878A7B0-74F7-11DF-80DD-6B359DFF4B22,80410AF8-7440-11DF-93FA-01FD9CFF4B22,28004FCC-74F7-11DF-80DD-6B359DFF4B22\",\"grade_levels\":\"7\",\"parent_guid\":\"28004FCC-74F7-11DF-80DD-6B359DFF4B22\"}}"
+    },
+    {
+        "id": 12561,
+        "vendor_guid": "80C6C378-7440-11DF-93FA-01FD9CFF4B22",
+        "vendor_standard_set_guid": "CF6A375C-67AD-11DF-AB5F-995D9DFF4B22",
+        "name": "English Language Arts/Literacy",
+        "description": "Engage effectively in a range of collaborative discussions (one-on-one, in groups, and teacher-led) with diverse partners on grade 7 topics, texts, and issues, building on others’ ideas and expressing their own clearly.",
+        "label": "Grade Level Standard",
+        "number": "CCSS.ELA-Literacy.SL.7.1",
+        "additional_info": "{\"additional_info\":{\"ancestors\":\"27FE236E-74F7-11DF-80DD-6B359DFF4B22,27FD3382-74F7-11DF-80DD-6B359DFF4B22\",\"grade_levels\":\"7\",\"parent_guid\":\"27FD3382-74F7-11DF-80DD-6B359DFF4B22\"}}"
+    },
+    {
+        "id": 12566,
+        "vendor_guid": "80CAA02E-7440-11DF-93FA-01FD9CFF4B22",
+        "vendor_standard_set_guid": "CF6A375C-67AD-11DF-AB5F-995D9DFF4B22",
+        "name": "English Language Arts/Literacy",
+        "description": "Analyze the main ideas and supporting details presented in diverse media and formats (e.g., visually, quantitatively, orally) and explain how the ideas clarify a topic, text, or issue under study.",
+        "label": "Grade Level Standard",
+        "number": "CCSS.ELA-Literacy.SL.7.2",
+        "additional_info": "{\"additional_info\":{\"ancestors\":\"27FE236E-74F7-11DF-80DD-6B359DFF4B22,27FD3382-74F7-11DF-80DD-6B359DFF4B22\",\"grade_levels\":\"7\",\"parent_guid\":\"27FD3382-74F7-11DF-80DD-6B359DFF4B22\"}}"
+    },
+    {
+        "id": 12568,
+        "vendor_guid": "80CC8146-7440-11DF-93FA-01FD9CFF4B22",
+        "vendor_standard_set_guid": "CF6A375C-67AD-11DF-AB5F-995D9DFF4B22",
+        "name": "English Language Arts/Literacy",
+        "description": "Present claims and findings, emphasizing salient points in a focused, coherent manner with pertinent descriptions, facts, details, and examples; use appropriate eye contact, adequate volume, and clear pronunciation.",
+        "label": "Grade Level Standard",
+        "number": "CCSS.ELA-Literacy.SL.7.4",
+        "additional_info": "{\"additional_info\":{\"ancestors\":\"27FE236E-74F7-11DF-80DD-6B359DFF4B22,2876B5FE-74F7-11DF-80DD-6B359DFF4B22\",\"grade_levels\":\"7\",\"parent_guid\":\"2876B5FE-74F7-11DF-80DD-6B359DFF4B22\"}}"
+    },
+    {
+        "id": 12571,
+        "vendor_guid": "80CF6BE0-7440-11DF-93FA-01FD9CFF4B22",
+        "vendor_standard_set_guid": "CF6A375C-67AD-11DF-AB5F-995D9DFF4B22",
+        "name": "English Language Arts/Literacy",
+        "description": "Demonstrate command of the conventions of standard English grammar and usage when writing or speaking.",
+        "label": "Grade Level Standard",
+        "number": "CCSS.ELA-Literacy.L.7.1",
+        "additional_info": "{\"additional_info\":{\"ancestors\":\"27FB400E-74F7-11DF-80DD-6B359DFF4B22,27FC3A36-74F7-11DF-80DD-6B359DFF4B22\",\"grade_levels\":\"7\",\"parent_guid\":\"27FC3A36-74F7-11DF-80DD-6B359DFF4B22\"}}"
+    },
+    {
+        "id": 12576,
+        "vendor_guid": "80D33112-7440-11DF-93FA-01FD9CFF4B22",
+        "vendor_standard_set_guid": "CF6A375C-67AD-11DF-AB5F-995D9DFF4B22",
+        "name": "English Language Arts/Literacy",
+        "description": "Demonstrate command of the conventions of standard English capitalization, punctuation, and spelling when writing.",
+        "label": "Grade Level Standard",
+        "number": "CCSS.ELA-Literacy.L.7.2",
+        "additional_info": "{\"additional_info\":{\"ancestors\":\"27FB400E-74F7-11DF-80DD-6B359DFF4B22,27FC3A36-74F7-11DF-80DD-6B359DFF4B22\",\"grade_levels\":\"7\",\"parent_guid\":\"27FC3A36-74F7-11DF-80DD-6B359DFF4B22\"}}"
+    },
+    {
+        "id": 12581,
+        "vendor_guid": "80D60194-7440-11DF-93FA-01FD9CFF4B22",
+        "vendor_standard_set_guid": "CF6A375C-67AD-11DF-AB5F-995D9DFF4B22",
+        "name": "English Language Arts/Literacy",
+        "description": "A fake description with more than 30 characters",
+        "label": "Grade Level Standard",
+        "number": "",
+        "additional_info": "{\"additional_info\":{\"ancestors\":\"27FB400E-74F7-11DF-80DD-6B359DFF4B22,27FA18C8-74F7-11DF-80DD-6B359DFF4B22\",\"grade_levels\":\"7\",\"parent_guid\":\"27FA18C8-74F7-11DF-80DD-6B359DFF4B22\"}}"
+    },
+    {
+        "id": 12582,
+        "vendor_guid": "4008b6e6-b0a4-4e16-b802-a10f889b69f9",
+        "vendor_standard_set_guid": "CF6A375C-67AD-11DF-AB5F-995D9DFF4B22",
+        "name": "English Language Arts/Literacy",
+        "description": "A fake description with more than 30 characters",
+        "label": "Grade Level Standard",
+        "number": "",
+        "additional_info": "{\"additional_info\":{\"ancestors\":\"27FB400E-74F7-11DF-80DD-6B359DFF4B22,27FA18C8-74F7-11DF-80DD-6B359DFF4B22\",\"grade_levels\":\"8\",\"parent_guid\":\"d3224276-cdf8-4e2b-bcdb-f6ed411796b9\"}}"
+    }
+]

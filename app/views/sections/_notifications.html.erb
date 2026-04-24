@@ -1,0 +1,93 @@
+<div class="c-panel__header">
+  <h2 class="c-heading--dashboard-panel <%= test_class('class-bulletin') %>"
+      id="a11y-class-bulletin-titlebar">
+    <%= feature_icon('music/icons/student-dashboard/bell', ['c-embedded-icon--lg'] ) %>
+    Class Bulletin
+  </h2>
+</div>
+
+<div class="c-panel__body">
+
+  <div class="c-notification-container  u-mar-bot-10">
+    <h3 class="u-txt-bold <%= test_class('notification-count') %>"
+         id="a11y-notification-count">
+      <%= link_to(
+            section_notifications_path(current_section),
+            'aria-describedby' => 'a11y-notification-count',
+            class: test_class('announcement-count')
+          ) do %>
+        Notifications
+        <span class="u-txt-bold  u-txt-black">
+          (<%= list[:activity_notifications].size %>)
+        </span>
+      <% end %>
+    </h3>
+    <% if list[:activity_notifications].empty? %>
+      <div>No notifications</div>
+    <% else %>
+      <ul class="notifications-list  u-pad-0  c-plain-list">
+        <% list[:activity_notifications].each do |notification| %>
+          <li class="notification  <%= test_class("notification-id-#{notification.id}") %>">
+            <%= link_to(
+                  strip_tags(notification.label).shorten(36),
+                  section_notification_path(current_section, notification),
+                  'aria-describedby' => "a11y-notification-date-#{notification.id}",
+                  class: "#{test_class('notification-label')}  u-txt-under",
+                  lang: current_program.language_code
+                ) %>
+            <span class="notification-date  <%= test_class('notification-date') %>"
+                  id="a11y-notification-date-<%= notification.id %>">
+              <%= time_ago_in_words(notification.created_at) %> ago
+            </span>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
+  <!-- activity_notifications div ends-->
+
+  <div class="c-announcements-container  <%= test_class('announcement-bulletin') %>">
+    <h3 class="u-txt-bold" id="a11y-announcement-count">
+      <%= link_to(
+            section_announcements_path(current_section),
+            'aria-describedby' => 'a11y-announcement-count',
+            class: test_class('announcement-count')
+          ) do %>
+        Announcements
+        <span class="u-txt-bold  u-txt-black">
+          (<%= list[:announcement_notifications].size %>)
+        </span>
+      <% end %>
+    </h3>
+    <% if list[:announcement_notifications].empty? %>
+      <div>No announcements</div>
+    <% else %>
+      <ul class="notifications-list  u-pad-0  c-plain-list">
+        <% list[:announcement_notifications].each do |notification| %>
+          <% # NOTE: The test class begins with 'notification' rather than 'announcement'
+             #       to avoid breaking the notifications feature spec. %>
+          <li class="notification  <%= test_class("notification-id-#{notification.id}") %>">
+            <% announcement = notification.announcement %>
+            <%= link_to(
+                  strip_tags(notification.label).shorten(36),
+                  section_notification_path(current_section, notification),
+                  'aria-describedby' => "a11y-announcement-date-#{notification.id}",
+                  class: "#{test_class('notification-label')}  " \
+                         "#{announcement.class_cancelled? && 'u-dis-block'}  u-txt-under"
+                ) %>
+
+            <% if announcement.class_cancelled? %>
+              <span class='u-txt-upper  u-txt-black'>Class cancelled</span>
+            <% end %>
+
+            <span class="notification-date  <%= test_class('notification-date') %>"
+                  id="a11y-announcement-date-<%= notification.id %>">
+              <%= time_ago_in_words(notification.created_at) %> ago
+            </span>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
+  <!-- announcement_notifications div ends-->
+</div>

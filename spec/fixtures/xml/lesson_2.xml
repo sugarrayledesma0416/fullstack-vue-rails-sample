@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<lesson>
+  <toc_entry title="contextos" location="2147207577" background_color="#ED1C24"/>
+  <toc_entry title="fotonovela" location="2147207607" background_color="#76377C"/>
+  <toc_entry title="pronunciaci&#xF3;n" location="2147207578" background_color="#76377C"/>
+  <toc_entry title="cultura" location="2147207608" background_color="#DA9A22">
+    <toc_entry title="M&#xE1;s cultura" location="2147207609" background_color="#5B57A6"/>
+  </toc_entry>
+  <toc_entry title="estructura" location="2147207566" background_color="#3A7CC0">
+    <toc_entry title="2.1 Present tense of &lt;b&gt;&lt;i&gt;&amp;ndash;ar&lt;/i&gt;&lt;/b&gt; verbs" location="2147207579" background_color="#ED1C24"/>
+    <toc_entry title="2.2 Forming questions in Spanish" location="2147207580" background_color="#007DC6"/>
+    <toc_entry title="2.3 Present tense of &lt;b&gt;&lt;i&gt;estar&lt;/i&gt;&lt;/b&gt;" location="2147207581" background_color="#E0861B"/>
+    <toc_entry title="2.4 Numbers 31 and higher" location="2147207582" background_color="#17A46A"/>
+  </toc_entry>
+  <toc_entry title="adelante" location="2147207610" background_color="#4DA75E">
+    <toc_entry title="Lectura" location="2147207611" background_color="#FFD503"/>
+    <toc_entry title="Lectura adicional" location="2147207612" background_color="#ED1C24"/>
+    <toc_entry title="Escuchar" location="2147207613" background_color="#007DC6"/>
+    <toc_entry title="En pantalla" location="2147207614" background_color="#E0861B"/>
+    <toc_entry title="Flash cultura" location="2147207615" background_color="#17A46A"/>
+  </toc_entry>
+  <toc_entry title="flash cultura" location="2147207648" background_color="#DA9A22"/>
+  <toc_entry title="panorama" location="2147207616" background_color="#4DA75E">
+    <toc_entry title="Espa&#xF1;a" location="2147207617" background_color="#ED1C24"/>
+  </toc_entry>
+  <toc_entry title="vocabulario" location="2147207618" background_color="#FFCC00"/>
+</lesson>

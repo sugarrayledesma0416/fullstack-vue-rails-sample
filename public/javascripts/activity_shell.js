@@ -1,0 +1,1 @@
+../../app/assets/javascripts/activity_shell.js

@@ -1,0 +1,71 @@
+<% unless @show_finish_spotchecking
+     #when we finish spotchecking, we push the done button to submit our changes, then redirect to the same page with a
+     #param set to show the finish spotchecking modal when the page loads. We want to disable protect_unsaved_changes
+     #when we submit from this modal as per MAE-6375
+     content_for(:js_head, javascript_include_tag('protect_unsaved_changes.js'))
+   end%>
+
+<% content_for(:js_head, javascript_tag("document.domain = 'vhlcentral.com';") ) %>
+<% content_for(:js_head, javascript_include_tag('grading_tasks.js')) %>
+<% content_for(:js_head, javascript_include_tag("grading_sets.js") ) %>
+<% content_for(:js_head, javascript_include_tag("coming_soon.js") ) %>
+
+<% content_for(:js_head, javascript_include_tag('get_help/get_help_app_bootstrap.js')) %>
+
+<% content_for(:js_head, javascript_include_tag("#{MaestroActivityEngine::CDN_CKEDITOR_URL}/compatibility/sizzle.js") ) %>
+<% content_for(:js_head, javascript_include_tag('ckeditor_basepath_override.js')) %>
+<% content_for(:js_head, javascript_include_tag("#{MaestroActivityEngine::CDN_CKEDITOR_URL}/core/ckeditor.js") ) %>
+
+<% content_for(:js_head, javascript_include_tag("#{MaestroActivityEngine::CDN_CKEDITOR_URL}/core/lang/en.js") ) %>
+<% content_for(:js_head, javascript_include_tag("#{MaestroActivityEngine::CDN_CKEDITOR_URL}/core/plugins/correction_mode/plugin.js") ) %>
+<% content_for(:js_head, javascript_include_tag("#{MaestroActivityEngine::CDN_CKEDITOR_URL}/core/plugins/comment_mode/plugin.js") ) %>
+<% content_for(:js_head, javascript_include_tag("#{MaestroActivityEngine::CDN_CKEDITOR_URL}/core/plugins/recording_mode/plugin.js") ) %>
+<% content_for(:js_head, javascript_include_tag("#{MaestroActivityEngine::CDN_CKEDITOR_URL}/core/styles/styles/default.js") ) %>
+
+<% content_for(:js_head, javascript_include_tag("#{MaestroActivityEngine::CDN_CKEDITOR_URL}/extensions/inline_comments/instructor_engine.js") ) %>
+<% content_for(:js_head, javascript_include_tag("#{MaestroActivityEngine::CDN_CKEDITOR_URL}/extensions/inline_comments/instructor_init.js") ) %>
+<% content_for(:js_head, javascript_include_tag("#{MaestroActivityEngine::CDN_CKEDITOR_URL}/extensions/tabs/stereotabs.js") ) %>
+<% content_for(:js_head, javascript_include_tag("#{MaestroActivityEngine::CDN_CKEDITOR_URL}/extensions/tabs/instructor_init.js") ) %>
+
+<% content_for(:js_head, javascript_include_tag("maestro_activity_engine/recording_v2")) %>
+<% content_for(
+  :js_head,
+  javascript_packs_with_chunks_tag("activities/audio_play")
+) %>
+
+<% content_for(:css_head, stylesheet_link_tag("program_toc")) %>
+<% content_for(:css_head, stylesheet_link_tag("instructor_grading")) %>
+<% content_for(:css_head, stylesheet_link_tag("music/features/grading")) %>
+
+<% content_for(:css_head, stylesheet_link_tag("maestro_activity_engine/recording")) %>
+
+<% if @presenter.activity_partner_chat? %>
+  <% content_for(:css_head, stylesheet_link_tag("grading_partner_chat")) %>
+  <% content_for(:body_classes, "partner_grading ") %>
+<% end %>
+
+<%= render :partial => 'maestro_activity_engine/activities/partials/include' %>
+<% content_for(:body_classes, "standard_layout grading_tasks program_page") %>
+
+<% if @presenter.has_rubric? %>
+  <% content_for(:css_head, stylesheet_link_tag('music/features/rubrics/main')) %>
+  <% content_for(:body_classes, "  rubric-graded  ns-rubrics-grading") %>
+<% end %>
+
+<% if @presenter.activity_composition? %>
+  <%# TODO: See if this needed if composition_grading is included already
+            by question_by_question and student_by_student partials. %>
+  <% content_for(:js_head, javascript_include_tag('composition_activity')) %>
+<% end %>
+
+<% content_for(:navigation, render(:partial => 'app_shell/navbar_program/main')) %>
+<% grading_style = Setting::GradingTasks::GradingStyle::BY_STUDENT if @grading_style == Setting::GradingTasks::GradingStyle::SPOTCHECK %>
+<%= render :partial => grading_style || @grading_style, :locals => { :view_manager => @view_manager,
+                                                                     :progress_bar_view_manager => @progress_bar_view_manager } %>
+<%= render :partial => 'partials/coming_soon' %>
+<% if accent_bar_enabled? %>
+  <div class="u-mar-0  js-accent-bar-container--activity  ns-music-v1">
+    <%= render 'music/partials/accent_bar_component', language: current_program.language_code %>
+  </div>
+  <% content_for(:js_head, javascript_include_tag('accent_bar_component_wrapper')) %>
+<% end %>

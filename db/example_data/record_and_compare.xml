@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<activity language="es" title="Example Watch and Repeat" activity_type="learning_engine">
+  <dl>Watch the clip, then record and compare each phrase.</dl>
+  <items>
+    <reference type="video">
+      <video id="137867" />
+    </reference>
+    <record_and_compare>
+      <record_and_compare_word>
+         <word_text>¿En qu<b>é</b> puedo servirles?</word_text>
+         <audio id="137819" />
+      </record_and_compare_word>
+      <record_and_compare_word>
+         <word_text>Tenemos una reservaci<b>ó</b>n.</word_text>
+         <audio id="137813" />
+      </record_and_compare_word>
+    </record_and_compare>
+  </items>
+</activity>

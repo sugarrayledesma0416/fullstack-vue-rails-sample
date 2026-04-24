@@ -1,0 +1,13 @@
+<% content_for(:body_classes, "ns-music-v1  ns-music-v3  ns-responsive") %>
+<%= vite_client_tag %>
+<%
+  content_for(
+    :js_head,
+    vite_javascript_tag('entrypoints/bulk_resources/bulk_irs_upload')
+  )
+%>
+
+<div class="js-bulk-irs-upload-app"
+  data-presigned-url="<%= @signed_url %>"
+  data-root-url="<%= upload_bulk_resources_uploader_path(@current_program.id) %>">
+</div>

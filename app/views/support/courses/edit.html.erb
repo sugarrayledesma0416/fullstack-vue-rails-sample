@@ -1,0 +1,34 @@
+<div class="ns-music-v1">
+    <%= form_for ([:support, @course]) do |form| %>
+      <div class="l-grid  u-mar-bot-16">
+        <strong class="l-col-3">Course id:</strong>
+        <%= content_tag :span, @course.id, class:"l-col-9" %>
+      </div>
+      <div class="l-grid  u-mar-bot-16">
+        <strong class="l-col-3">Course name:</strong>
+        <%= content_tag :span, @course.name, class:"l-col-9" %>
+      </div>
+      <div class="l-grid  u-mar-bot-16">
+        <strong class="l-col-3">Course owner:</strong>
+        <%= content_tag :span, @course.owner.full_name, class:"l-col-9" %>
+      </div>
+      <div class="l-grid  u-mar-bot-16">
+        <strong class="l-col-3">Course program:</strong>
+        <%= content_tag :span, @course.program.title, class:"l-col-9" %>
+      </div>
+      <div class="l-grid  u-mar-bot-16">
+        <strong class="l-col-3">Course school:</strong>
+        <%= content_tag :span, @course.school.name, class:"l-col-9" %>
+      </div>
+      <div class="l-grid  u-mar-bot-16">
+        <strong class="l-col-3">Start date:</strong>
+        <%= content_tag :span, @course.start_date, class:"l-col-9" %>
+      </div>
+      <div class="c-form-item">
+        <%= form.label :end_date, 'End date', { class: 'c-form-item__label'} %>
+        <%= form.text_field :end_date, { class: 'c-form__input'} %>
+        </div>
+      <%= form.submit 'Submit' %>
+      </div>
+    <% end %>
+</div>

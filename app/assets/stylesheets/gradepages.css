@@ -1,0 +1,249 @@
+.add_course_body,
+.add_section_body,
+.add_column_body,
+.new_report_body {
+  border-top: 3px solid #e5e5e5;
+  padding-top: 10px;
+  position: relative;
+  margin-top: 15px;
+}
+
+div.field_row {
+  height: 24px;
+}
+
+
+/* Gradebook Subpages */
+.standard_layout.wizard.drop_students .student_checkbox_all,
+.standard_layout.wizard.quick_grade .student_checkbox_all {
+  margin-left: 8px;
+}
+
+.wrap_table {
+  margin: 0px 0px 20px 0px;
+}
+
+.enter_scores .wrap_table {
+  margin-top: 5px;
+}
+
+.standard_layout.wizard.search_students #student_search_results #student_search {
+  float: none;
+  margin-top: 10px;
+  padding: 0px;
+  width: 400px;
+}
+
+.standard_layout.wizard.search_students input.student_search_button {
+  top: 7px;
+  right: 10px;
+}
+
+.standard_layout.reports #course,
+.standard_layout.wizard.drop_students #course {
+  background: none;
+  font-size: 13px;
+  margin-bottom: 16px;
+  padding: 0px;
+}
+
+
+/* Links */
+
+#mid_links {
+  padding-top: 10px;
+  margin-top: 20px;
+}
+
+#mid_links #course_wizard_controls,
+#footer_links #course_wizard_controls {
+  float: right;
+}
+
+#mid_links #additional_links,
+#footer_links #additional_links {
+  float: left;
+  margin-top: 0;
+  clear: both;
+  text-transform: lowercase;
+  padding: 0;
+  width: 300px;
+}
+
+.cancel_link a {
+  font-weight: bold;
+}
+
+
+
+.save-button {
+  background: none;
+  border: none;
+  color: #0083CB;
+  cursor: pointer;
+  display: block;
+  font-size: 13px;
+  font-weight: normal;
+  margin-top: 5px;
+  text-align: right;
+  text-transform: lowercase;
+  width: auto;
+}
+
+.disabled-save {
+  color: #959595;
+  cursor: default;
+  position: relative;
+  z-index: 1;
+}
+
+/* Page Title */
+
+.standard_layout.reports h1.page_title,
+.standard_layout.wizard h1.page_title {
+  width: 200px;
+  font-weight: normal;
+  color: #565656;
+}
+
+.wizard_title {
+  font-weight: normal;
+  margin-left: -5px;
+}
+
+
+
+.delete_link {
+  float: left;
+  margin-left: 20px;
+}
+
+.link_savechanges {
+  float: right;
+}
+
+
+/* Student Search */
+#student_search {
+  margin-top: 2px;
+}
+
+input#student_search_string {
+  background: url(/images/bg_search.png) transparent top left no-repeat;
+  border: 0;
+  padding: 8px 0 8px 18px;
+  width: 148px;
+  margin-top: -2px;
+  margin-right: 5px;
+  color: #AAA;
+  float: left;
+  font-size: 10px;
+  position: relative;
+  left: -4px;
+}
+
+input#student_search_string.student_search_string_focus {
+  color: #000;
+  font-style: normal;
+}
+
+.student_search_user_blur{color:#000000;font-style:normal;}
+
+input.student_search_button {
+  background-color: #C0161C;
+  background-image: none;
+  border: 0px;
+  color: white;
+  cursor: pointer;
+  display: block;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 4px 16px;
+  text-align: center;
+  text-transform: lowercase;
+  width: auto;
+}
+
+/* Enter Score */
+td.penalty_column input,
+td.points_earned input {
+  width: 40px;
+}
+
+.cancel_link {
+  float: left;
+}
+
+.standard_layout.reports .red_button {
+  float: right;
+}
+
+
+#course_wizard_controls .save {
+  position: relative;
+}
+
+.save-disabled.inactive {
+  display: block;
+  height: 72px;
+  position: absolute;
+  overflow: hidden;
+  width: 362px;
+  z-index: 1001;
+  bottom: 0px;
+}
+
+.disabled_save {
+  background: #FFF;
+  border: 1px solid #DDD;
+  display: block;
+  font-size: 12px;
+  height: 38px;
+  outline: 0px;
+  position: absolute;
+  left: 60px;
+  padding: 5px;
+  text-align: left;
+  width: 170px;
+  z-index: 1003;
+}
+
+
+.wrap_table .student_list {
+  margin-bottom: 10px;
+}
+
+.email_list_preview {
+  margin-top: 5px;
+}
+
+#email_recipients_preview {
+  max-width: 892px;
+  padding-left: 3px;
+}
+
+input.update_error {
+  border: 2px solid #B40404;
+}
+
+.grace_periods .wrap_table {
+  margin-top: 20px;
+}
+
+.grace_periods .student_list th {
+  width: 200px;
+}
+
+.grace_periods .student_list th.name {
+  width: 490px;
+}
+
+.grace_periods #footer_links {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.grace_periods #additional_links a {
+  display: inline-block;
+  padding-top: 5px;
+}

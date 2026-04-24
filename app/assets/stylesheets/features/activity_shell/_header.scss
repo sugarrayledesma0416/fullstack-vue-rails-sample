@@ -1,0 +1,502 @@
+@import 'music/features/jr/theme/settings';
+@import 'music/features/jr/components/buttons';
+
+// Espirales Colors - These will be abstracted up to Music at a later date when the theming is more mature.
+
+@function espirales-color($section, $key) {
+  @return map-get(map-get($espirales-palette, $section), $key);
+}
+
+$espirales-palette: (
+  'orange': (
+    '100': #F5E5D9,
+    '200': #F4CCAF,
+    '300': #F0AA75,
+    '400': #ED7D29,
+    '500': #D85E26,
+    '600': #CC4D24,
+    '700': #B1421E
+  ),
+  'teal': (
+    '100': #F2FAF9,
+    '200': #DEF1EF,
+    '300': #9AD5CF,
+    '400': #4AB8B0,
+    '500': #279C9A,
+    '600': #058285,
+    '700': #035F61
+  ),
+  'purple': (
+    '100': #F2F0F7,
+    '200': #E6DAF4,
+    '300': #C2A2E2,
+    '400': #AB7ED5,
+    '500': #9063BA,
+    '600': #73459C,
+    '700': #562A7C // Updated.
+  ),
+  'blue': (
+    '100': #E8F0FA,
+    '200': #C9E4F5,
+    '300': #7FBFE6,
+    '400': #3DA3D9,
+    '500': #2A66A5,
+    '600': #1F4287,
+    '700': #142F63
+  ),
+  'green': (
+    '100': #F0F0E3,
+    '200': #CCDCB6,
+    '300': #A7C27F,
+    '400': #83A842,
+    '500': #3F823C,
+    '600': #0D6636,
+    '700': #074A25
+  ),
+  'red': (
+    '100': #F7EBE8,
+    '200': #FFC6BC,
+    '300': #F87868,
+    '400': #F04F40,
+    '500': #DF3339,
+    '600': #CA1030,
+    '700': #950918
+  ),
+);
+
+@mixin espirales-color-props() {
+  @each $title, $section in $espirales-palette {
+    @each $key, $col in $section {
+      // --espirales-purple-100, etc.
+      --espirales-#{$title}-#{$key}: #{$col};
+    }
+  }
+}
+
+@mixin spr-activity-header-gradient ($color) {
+  background: linear-gradient(90deg, var(--espirales-#{$color}-600) 0%, var(--espirales-#{$color}-400) 100%);
+}
+
+@mixin jr-focus-visible-state() {
+  /**
+   * TODO
+   * @SINCE June 10, 2021
+   *
+   * Copied from m3 ssjr button styles.
+   * When these buttons are better integrated into ssjr / library styles,
+   * this code can be removed.
+   */
+  --ssjr-button-focus-color: var(--ui-secondary-light);
+  --ssjr-button-focus-color-outer: var(--ui-secondary-lighter);
+  $focus-inner: mod(0.125) mod(0.125) 0 mod(0.25) var(--ssjr-button-focus-color);
+  $focus-outer: mod(0.125) mod(0.125) 0 mod(0.6) var(--ssjr-button-focus-color-outer);
+    box-shadow: #{$focus-inner}, #{$focus-outer};
+    background-color: $white;
+    outline: 0;
+}
+
+.c-activity-header {
+  $border: rpx(1) solid $gray-e;
+  $action-bottom-margin: 0.5rem;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  min-height: 3rem;
+  padding: 0.5rem 1rem 0;
+  background-color: $white;
+
+  &.t-espirales {
+    @include espirales-color-props();
+
+    background: linear-gradient(90deg, var(--espirales-blue-600) 0%, var(--espirales-purple-700) 100%);
+    display: flex;
+
+    &.c-activity-header {
+      padding: 0 1.5rem;
+    }
+
+    .c-activity-header {
+      &__action-icon {
+        margin-right: 0;
+      }
+
+      &__action-text {
+        color: var(--music-role-info);
+      }
+
+      &__close-activity-button {
+        font-size: rpx(24);
+        margin-left: 0.75rem;
+        color: var(--music-util-white);
+
+        &::part(base) {
+          padding: 0;
+
+          &:hover {
+            color: var(--music-util-white);
+          }
+        }
+      }
+
+      &__tooltip-button {
+        fill: var(--music-util-white);
+        margin-left: 0.5rem;
+        max-height: var(--music-font-heading-4);
+
+        sl-icon {
+          font-size: var(--music-font-heading-4);
+        }
+      }
+
+      &__tooltip {
+        [slot='content'] {
+          display: flex;
+          align-items: center;
+        }
+
+        &::part(body) {
+          align-items: center;
+          border-radius: 10px;
+          box-shadow: 0 4px 4px 0 #00000040;
+        }
+
+        &::part(base__arrow),
+        &::part(body) {
+          background-color: var(--music-util-white);
+          color: var(--music-true-gray-900);
+        }
+      }
+
+      &__tooltip-icon-wrapper {
+        max-height: var(--music-font-heading-4);
+        position: relative;
+      }
+
+      &__tooltip-icon-late {
+        --late-roundel: 0.55rem;
+
+        background: var(--music-role-error);
+        border-radius: calc(var(--late-roundel) / 2);
+        border: 1px solid var(--music-util-white);
+        height: var(--late-roundel);
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: var(--late-roundel);
+      }
+
+      &__tooltip-pill {
+        &--submitted::part(base),
+        &--late::part(base) {
+          height: 1rem;
+          color: var(--music-util-white);
+          margin-right: 0.25rem;
+        }
+
+        &--submitted::part(base) {
+          background-color: var(--music-role-success);
+          border-color: var(--music-role-success);
+        }
+
+        &--late::part(base) {
+          background-color: var(--music-role-error);
+          border-color: var(--music-role-error);
+        }
+      }
+
+      &__titles-and-info {
+        padding: 0.75rem 0;
+        width: 100%;
+      }
+
+      &__title-wrapper {
+        align-items: center;
+        display: flex;
+        flex: 1;
+        min-width: 0;
+      }
+
+      &__titles-inner {
+        align-items: center;
+        color: var(--music-util-white);
+        display: flex;
+        font-size: var(--music-font-body-2);
+        font-weight: var(--music-font-regular);
+
+        h1,
+        h2 {
+          color: var(--music-util-white);
+          font-size: var(--music-font-body-2);
+          font-weight: var(--music-font-regular);
+        }
+
+        h1 {
+          overflow: hidden;
+          padding-left: 0.5rem;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+
+        h2 {
+          padding-right: 0.5rem;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+
+  @include theme('supersites-jr') {
+    padding: 1.4rem 0.4rem 1rem 0.5rem;
+    background: none;
+    justify-content: center;
+  }
+
+  &__return-to {
+    margin-bottom: $action-bottom-margin;
+  }
+
+  @include theme('supersites-jr') {
+    /**
+     * @see m3/app/views/jr/activities/_return_to.html.erb
+     */
+    .activity-return-link {
+      background-color: var(--white);
+      border-radius: 0.6rem;
+      box-shadow: 0.1rem 0.1rem 0.3rem rgba(0, 0, 0, 0.3);
+      padding: 0.4rem 0.8rem;
+      color: var(--ui-link-color);
+      display: flex;
+      align-items: center;
+
+      &:hover {
+        text-decoration: none;
+        color: var(--ui-hover-color);
+      }
+
+      &:focus {
+        text-decoration: none;
+        color: var(--ui-focus-color);
+      }
+
+      &:focus-visible {
+        @include jr-focus-visible-state();
+      }
+
+      &__icon svg {
+        width: 2rem;
+        height: 2rem;
+        line-height: 2rem;
+        fill: var(--ui-link-color);
+      }
+
+      &__text {
+        display: inline-block;
+        margin-left: 0.6rem;
+        text-transform: uppercase;
+        font-size: var(--font-2, 1.2rem);
+        line-height: 1;
+      }
+    }
+  }
+
+  /**
+   * Actions can take the form of buttons or links.
+   * This holds semantic meaning based on how the
+   * action is implemented.
+   */
+  &__action {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 1rem;
+    margin-bottom: $action-bottom-margin;
+    padding: 0.65rem 0.8rem;
+    border: $border;
+    border-radius: 0.25rem;
+    background-color: $white;
+    color: $link-color;
+    font-size: var(--font-2, $font-size-14);
+    line-height: 1.385rem;
+  }
+
+  &__action:hover,
+  &__action:focus {
+    color: $link-hover-color;
+    border-color: $link-hover-color;
+    text-decoration: none;
+  }
+
+  @include theme('supersites-jr') {
+    &__action {
+      padding: 0.5rem 0.8rem;
+      color: var(--ui-link-color);
+      border-color: var(--ui-link-color);
+      fill: var(--ui-link-color);
+    }
+
+    &__action:hover {
+      color: var(--ui-hover-color);
+      border-color: var(--ui-hover-color);
+      fill: var(--ui-hover-color);
+    }
+
+    &__action:focus {
+      outline: 0;
+      @include button-focus-state();
+    }
+
+    &__action:focus-visible {
+      @include jr-focus-visible-state();
+    }
+
+    // Book page link is a div with a link inside.
+    // Style the div when the link is focused:
+    &__action:focus-within {
+      @include jr-focus-visible-state();
+    }
+
+    // ...and remove the outline from the link itself:
+    &__action [href]:focus {
+      outline: 0;
+    }
+  }
+
+  &__action-icon {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 0.5rem;
+  }
+
+  &__action-icon > svg {
+    height: 1rem;
+    width: auto;
+  }
+
+  &__action-text {
+    text-transform: uppercase;
+
+    // Overrides the original vtext link styles.
+    #vtext_reference {
+      padding-right: 0;
+      font-size: inherit;
+    }
+  }
+
+  @include theme('supersites-jr') {
+    &__action-text #vtext_reference {
+      background-position-y: 0.2rem;
+    }
+  }
+
+  /**
+   * Some actions take the form of hyperlinks instead
+   * of buttons, this has been left in place for semantic
+   * reasons.
+   */
+  &__action-text a[href] {
+    color: $link-color;
+
+    &:hover, &:focus {
+      color: $link-hover-color;
+      text-decoration: none;
+    }
+  }
+
+  @include theme('supersites-jr') {
+    &__action-text a[href] {
+      color: var(--ui-link-color);
+    }
+
+    &__action-text a[href]:hover {
+      color: var(--ui-hover-color);
+    }
+  }
+
+  &__rule {
+    border: 0;
+    border-top: $border;
+    height: rpx(1);
+    margin: 0.25rem 1rem 0;
+  }
+
+  @include theme('supersites-jr') {
+    &__rule {
+      display: none;
+    }
+  }
+
+  .c-external-references {
+    @include viewport-min('md') {
+      display: inherit;
+      margin-bottom: $action-bottom-margin;
+    }
+  }
+
+  .c-external-references__reference-link a[href] {
+    color: $link-color;
+
+    &:hover {
+      color: $link-hover-color;
+    }
+  }
+
+  @include theme('supersites-jr') {
+    .c-external-references__reference-link a[href] {
+      font-size: var(--font-2);
+      color: var(--ui-link-color);
+
+      &:hover {
+        color: var(--ui-hover-color);
+      }
+    }
+  }
+
+  /**
+   * In order to not modifying html and existing styles,
+   * the mobile version is adjusted with viewport-max.
+   */
+  @include viewport-max('sm') {
+    .c-action-assignment-list,
+    .c-action-info {
+      margin-left: auto;
+
+      @include theme('supersites-jr') {
+        margin-left: initial;
+      }
+
+      .c-activity-header__action-icon {
+        margin-right: 0;
+
+        & > svg {
+          height: 1.5rem;
+        }
+      }
+
+      .c-activity-header__action-text {
+        display: none;
+      }
+    }
+
+    .c-action-vtext {
+      display: none;
+    }
+  }
+
+  &__content-error-wrapper {
+    margin-left: auto;
+    background-color: transparent;
+  }
+
+  &__content-error {
+    font-size: var(--music-space-6);
+
+    &::part(base) {
+      color: var(--music-util-black);
+      border-radius: 50%;
+
+      &:hover {
+        box-shadow: var(--music-shadow-1);
+      }
+    }
+  }
+}

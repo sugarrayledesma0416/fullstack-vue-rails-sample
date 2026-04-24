@@ -1,0 +1,20 @@
+@use 'MusicV3/v3/styles/base' as *;
+
+m3-subnavigation-header {
+  display: block;
+
+  .c-subnav-header {
+    &__heading {
+      color: var(--music-true-gray-600);
+      font-weight: var(--music-font-light);
+      font-size: var(--music-font-detail);
+      margin-right: auto;
+    }
+
+    &__title {
+      font-size: var(--music-font-heading-2);
+      font-weight: var(--music-font-light);
+      color: var(--music-true-gray-600);
+    }
+  }
+}

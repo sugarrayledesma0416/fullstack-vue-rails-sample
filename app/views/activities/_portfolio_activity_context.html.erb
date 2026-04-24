@@ -1,0 +1,33 @@
+<div class="c-activity-context">
+  <div class="c-activity-context__content">
+    <div class="c-activity-context__headline">
+      <div class="c-activity-context__title  u-mar-0">
+        <h1 class="c-activity-context__title-text">
+          <%= @activity.title.to_s.html_safe %>
+        </h1>
+        <div class="c-activity-context__attempts-info  u-mar-top-16  u-mar-bot-16">
+          <% unless (
+              (@activity&.santillana? && @attempt_track.nil?) ||
+              supersite_junior?
+              ) %>
+              <%= format_remaining(@attempt) %>
+          <% end -%>
+        </div>
+      </div>
+    </div>
+
+    <div
+      id="direction_line"
+      class="description-area  c-activity-context__directions">
+      <%
+        dl = @activity&.content_object&.dl
+        dl_language = (dl && dl.attributes['lang'].presence) || @activity&.language
+      %>
+      <% if dl&.inner_html&.empty? && @activity&.activity_type != 'exam' -%>
+        <h2 class="u-screen-reader-only" lang="en">Instructions</h2>
+      <% else %>
+        <span lang="<%= dl_language %>"><%= dl&.inner_html&.html_safe %></span>
+      <% end %>
+    </div>
+  </div>
+</div>

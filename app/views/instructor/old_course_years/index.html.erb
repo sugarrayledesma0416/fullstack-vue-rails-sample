@@ -1,0 +1,14 @@
+<div class="show_courses_from">Show courses from:</div>
+
+<div class="ns-music-v1  c-course-focus__past-years  old_courses_years  u-pad-bot-2">
+  <select id="old_years" class="c-select  c-select--short  <%= test_class('old-years') %>">
+    <% @years.each do |year| -%>
+      <option value="<%= instructor_old_course_year_path(:program_id => current_program.id, :id => year) %>"><%= year %></option>
+    <% end -%>
+  </select>
+</div>
+
+
+
+
+

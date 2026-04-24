@@ -1,0 +1,120 @@
+<div class="u-txt-heading-2  u-txt-true-gray-600  u-line-height-2  u-txt-ctr">
+  Edit Section
+</div>
+
+<div class="u-txt-heading-3  u-txt-regular  u-line-height-1  u-txt-ctr  u-mar-top-24">
+  Edit Section for Course <%= @section.course.name %>
+</div>
+
+<%= form_tag(institution_admin_update_section_path, class: 'c-form  u-mar-24  js-edit-section-form') do %>
+  <l-stack-v3 gap="5" class="u-oflow-x-hid  u-oflow-y-auto  u-height-dvh-60  c-scrollbar-v3  c-scrollbar-v3--fade-effect">
+    <div
+      class="u-hidden  js-possible-instructors"
+      data-instructors="<%= {additional_instructors: @presenter.additional_instructor_options(@section.course)}.to_json %>">
+    </div>
+    <div class="u-hidden  js-section-data" data-section-data="<%= @presenter.section_edit_modal_data(@section) %>"></div>
+
+    <input type="hidden" class="js-section-id" id="section_id" name="section_id" value="">
+    <input type="hidden" class="js-course-id" id="course_id" name="course_id" value="<%= @section.course_id %>">
+    <form-item class="u-mar-top-10">
+      <music-text-field-v3>
+        <label for="section_name">Section Name</label>
+        <input type="text" id="section_name" name="section_name" class="js-section-name-field" required/>
+      </music-text-field-v3>
+    </form-item>
+
+    <music-text-field-v3>
+      <label for="course_owner">Instructor (Course Owner)</label>
+      <input type="text" id="course_owner" name="course_owner" value="course owner" class="js-section-owner-field" disabled/>
+    </music-text-field-v3>
+
+    <div class="c-form-item">
+      <input class="c-form-item__checkbox js-section-owner-visible-checkbox" type="checkbox" name="show_course_owner" id="show_course_owner"></input>
+      <label class="c-form-item__label" for="show_course_owner">Visible to students in course</label>
+    </div>
+    <div class="u-mar-top-0  u-mar-bot-0 u-bord-bot-1 u-bord-true-gray-200"></div>
+    <div class="js-additional-instructors-subform"></div>
+    <div class="l-simple-grid-v3  l-simple-grid-v3--1-1">
+      <button type="button" class="c-button-v3  c-button-v3--secondary-clear  c-button-v3--s  js-add-instructor">
+        <music-icon-wrapper-v3 variant="outline" class="u-pad-4">
+          <music-icon-plus-v3 size="6"></music-icon-plus-v3>
+        </music-icon-wrapper-v3>
+        Add additional instructor
+      </button>
+    </div>
+    <div class="c-form-item">
+      <input
+          class="c-form-item__checkbox  js-section-open-checkbox"
+          type="checkbox"
+          value="true"
+          name="section_open_to_students"
+          id="section_open_to_students">
+      </input>
+      <label class="c-form-item__label" for="section_open_to_students">
+        Allow new students to enroll in this course section.
+      </label>
+    </div>
+    <p>
+      Select when assignments will be available before the due date. This will not apply to assessments.
+    </p>
+    <div class="l-simple-grid-v3  l-simple-grid-v3--2-1">
+      <div class="c-form-item">
+        <music-select-field-v3>
+          <label class="u-screen-reader-only  course_instructor" for="days_to_show_assignment_due_date">Assignment Availability</label>
+          <%= select_tag 'days_to_show_assignment_due_date',
+              grouped_options_for_select(@presenter.days_to_show_assignment_due_date_options),
+              class: 'js-section-days-to-show-assignment-due-date'%>
+        </music-select-field-v3>
+      </div>
+    </div>
+    <p>
+      Assignments must be submited before:
+    </p>
+    <div class="l-simple-grid-v3  l-simple-grid-v3--2-1">
+      <div class="l-simple-grid-v3  l-simple-grid-v3--1-1-1">
+        <div class="c-form-item">
+          <music-select-field-v3>
+            <label for="due_date_hour">Hour</label>
+            <%= select_tag 'due_date_hour', options_for_select((1..12).map(&:to_s)), include_blank: true, class: 'js-section-due-date-hour' %>
+          </music-select-field-v3>
+        </div>
+        <div class="c-form-item">
+          <music-select-field-v3>
+            <label for="due_date_min">Minute</label>
+            <%= select_tag 'due_date_min', options_for_select(%w[00 15 30 45 59]), include_blank: true, class: 'js-section-due-date-min' %>
+          </music-select-field-v3>
+        </div>
+        <div class="c-form-item">
+          <music-select-field-v3>
+            <label for="due_date_ampm">AM/PM</label>
+            <%= select_tag 'due_date_ampm', options_for_select(%w[AM PM]), include_blank: true, class: 'js-section-due-date-ampm' %>
+          </music-select-field-v3>
+        </div>
+      </div>
+    </div>
+    <div class="c-form-item  u-pad-top-16">
+      <music-select-field-v3>
+        <label class="c-select-field__label" for="time_zone">Time Zone</label>
+        <%= select_tag 'time_zone',
+            options_for_select(@presenter.timezone_options_for_select),
+            required: true,
+            include_blank: true,
+            class: 'music-select  js-section-time-zone' %>
+      </music-select-field-v3>
+    </div>
+  </l-stack-v3>
+  <div class="l-line-v3  u-justify-content-space-between  u-mar-lt u-mar-lt-24  u-mar-rt-24">
+    <%=
+      link_to(
+        'Cancel',
+        new_institution_admin_course_sections_path(
+          program_id: params[:program_id],
+          school_id: params[:school_id],
+          course_id: params[:course_id]
+        ),
+        class: 'c-button-v3 c-button-v3--tertiary  u-txt-black  u-txt-nodec  u-width-96'
+      )
+    %>
+    <button class="c-button-v3  c-button-v3--primary  u-width-96  js-edit-section-submit">Save</button>
+  </div>
+<% end %>

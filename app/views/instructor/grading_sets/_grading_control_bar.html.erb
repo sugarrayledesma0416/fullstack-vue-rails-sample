@@ -1,0 +1,52 @@
+<%= hidden_field_tag(:disabled_controls,
+                     (disable_controls ? "disabled" : "enabled"),
+                     :id => "disabled_controls") %>
+
+<div id="grading_control_bar" class="ui-helper-clearfix">
+
+  <div id="instructor_editing_tools">
+
+    <!-- grading bar, top row: -->
+    <div class="grid--inner  ns-music-v1">
+
+      <div class="col-8  u-mar-bot-16">
+
+        <%= link_to(section_activity_path(0, activity_id) + "/?popup=1",
+          :class => "c-button  c-button--sm  c-button--instructor-tool",
+          :id => "preview_link_#{activity_id}",
+          :role => "button",
+          :onclick => format_popup_onclick({
+                     :window_name => "preview_#{activity_id}",
+                     :width => 985,
+                     :height => 600 }),
+          :target => '_blank') do %>
+            <%= Music::Components.icon(variant: 'reference', text: 'View Activity') %>
+        <% end %>
+
+      </div> <!-- / col-10 (left col) -->
+
+      <% if @presenter.mount_ai_grading_toggle_app? %>
+        <div 
+          class="col-2  js-ai-grading-suggestions-toggle"
+          data-feature-enabled-at-program-level="<%= @presenter.ai_grading_feature_enabled? %>"
+          data-feature-enabled-at-user-level="<%= @presenter.ai_grading_suggestions_enabled? %>" >
+        </div>
+      <% end %>
+
+      <div class="col-2">
+
+        <div id="instructor_display_controls">
+          <%= check_box_tag('show_hide_comments', 'yes',
+                            @presenter.grading_set.show_comments,
+                            {:class => 'inline', 'data-dash-change' => 'toggle_comments' }) %>
+          <label for="show_hide_comments">Comment boxes</label><br>
+          <%= check_box_tag('show_hide_student_names', 'yes',
+                            @presenter.grading_set.show_student_names,
+                            {:class => 'inline', 'data-dash-change' => 'toggle_names' }) %>
+          <label for="show_hide_student_names">Student names</label>
+        </div>
+
+      </div> <!-- /col-2 (right col) -->
+    </div> <!-- / grid (top row) -->
+  </div>
+</div>

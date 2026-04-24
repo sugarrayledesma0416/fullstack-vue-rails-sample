@@ -1,0 +1,120 @@
+
+<% content_for(:body_classes, "standard_layout grading_tasks request_tasks") %>
+
+<% content_for(:js_head, javascript_tag( "var AUTH_TOKEN = #{form_authenticity_token.inspect};" )) if protect_against_forgery?  %>
+<% content_for(:js_head, javascript_include_tag('request_tasks') ) %>
+
+<% content_for(:css_head, stylesheet_link_tag("instructor_tasks")) %>
+
+<% content_for(:focus, render(:partial => 'instructor/focus/show')) %>
+<% content_for(:navigation, render(:partial => 'app_shell/navbar_program/main')) %>
+
+<div id="main_content">
+  <div id="grading_modal_box"></div>
+  <% if current_focus.has_atleast_one_actionable_section? %>
+    <% content_for :allow_request_form  do %>
+      <div class="help_request_set_status" data-element="help_request_set_status">
+        <div class="request_label">Current course settings:</div>
+        <div><%= (current_focus.course.allows_review_requests? ? 'Allowing' : 'Not allowing') %> score reviews.</div>
+        <div><%= (current_focus.course.allows_help_requests? ? 'Allowing' : 'Not allowing') %> help requests.</div>
+        <div class="change_settings"><%= link_to 'Change these settings.', edit_instructor_course_path(current_program, current_focus.course)+'#/content', 'data-link-type' => 'edit course' %></div>
+      </div>
+    <% end %>
+    <div id="column_one">
+      <div id="task_categories_wrapper">
+        <ul>
+          <li id="processed_help_request_header" class="task_category" data-js-link="toggle_help_processed">
+            <h3>
+              <a>Processed <br /> Help Requests</a>
+            </h3>
+            <div class="task_numbers">
+              <span id="processed_help_request_count" class="circled"><%= @presenter.request_count_for(:processed_help_requests) %></span>
+              <span class="assignments">requests</span>
+            </div>
+          </li>
+          <li id="unprocessed_help_request_header" class="task_category" data-js-link="toggle_help_unprocessed">
+            <h3>
+              <a>Pending <br /> Help Requests</a>
+            </h3>
+            <div class="task_numbers">
+              <span id="unprocessed_help_request_count" class="circled"><%= @presenter.request_count_for(:unprocessed_help_requests) %></span>
+              <span class="assignments">requests</span>
+            </div>
+          </li>
+          <li id="processed_review_request_header" class="task_category" data-js-link="toggle_review_processed">
+            <h3>
+              <a>Processed <br /> Score Reviews</a>
+            </h3>
+            <div class="task_numbers">
+              <span id="processed_review_request_count" class="circled"><%= @presenter.request_count_for(:processed_review_requests) %></span>
+              <span class="assignments">requests</span>
+            </div>
+          </li>
+          <li id="unprocessed_review_request_header" class="task_category" data-js-link="toggle_review_unprocessed">
+            <h3>
+              <a>Pending <br /> Score Reviews</a>
+            </h3>
+            <div class="task_numbers">
+              <span id="unprocessed_review_request_count" class="circled"><%= @presenter.request_count_for(:unprocessed_review_requests) %></span>
+              <span class="assignments">requests</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <%= yield :allow_request_form %>
+    </div>
+  <% end %>
+
+  <div id="column_two">
+    <% if current_focus.has_atleast_one_actionable_section? %>
+      <div id="instructor_tasks_wrapper">
+        <div id="instructor_task_sections">
+          <% content_for :no_requests do %>
+            <div class="no_tasks"><p>No requests.</p></div>
+          <% end %>
+
+          <div id="processed_help_request_list" class="request_list">
+            <div class="instructor_task_header program-header-bar">
+              <h3>Processed Help Requests</h3>
+            </div>
+            <div class="instructor_task_activities">
+              <%= render(:partial => 'concept_group', :collection => @presenter.concept_groups_for(:processed_help_requests)) || yield(:no_requests) %>
+            </div>
+          </div>
+
+          <div id="unprocessed_help_request_list" class="request_list">
+            <div class="instructor_task_header program-header-bar">
+              <h3>Pending Help Requests</h3>
+            </div>
+            <div class="instructor_task_activities">
+              <%= render(:partial => 'concept_group', :collection => @presenter.concept_groups_for(:unprocessed_help_requests)) || yield(:no_requests) %>
+            </div>
+          </div>
+
+          <div id="processed_review_request_list" class="request_list">
+            <div class="instructor_task_header program-header-bar">
+              <h3>Processed Score Reviews</h3>
+            </div>
+            <div class="instructor_task_activities">
+              <%= render(:partial => 'concept_group', :collection => @presenter.concept_groups_for(:processed_review_requests),
+                                                      :locals => { :presenter => @presenter }) || yield(:no_requests) %>
+            </div>
+          </div>
+
+          <div id="unprocessed_review_request_list" class="request_list">
+            <div class="instructor_task_header program-header-bar">
+              <h3>Pending Score Reviews</h3>
+            </div>
+            <div class="instructor_task_activities">
+              <%= render(:partial => 'concept_group', :collection => @presenter.concept_groups_for(:unprocessed_review_requests),
+                                                      :locals => { :presenter => @presenter }) || yield(:no_requests) %>
+            </div>
+          </div>
+
+        </div> <!-- /#grading_task_sections -->
+      </div> <!-- /#grading_tasks_wrapper -->
+    <% else %>
+      <%= render :partial => 'instructor/partials/no_actionable_course_or_section' %>
+    <% end %>
+  </div>
+</div> <!-- /#main_content -->

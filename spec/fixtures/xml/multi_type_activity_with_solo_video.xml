@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<activity title="Preguntas" language="es" activity_type="multi_type">
+  <dl>Contesta las preguntas según la <b>Lectura</b>.</dl>
+
+  maestros, médicos y
+banqueros ejercieron su profesión en el palacio.
+
+  <items>
+    <style>
+      <item_numbers>show</item_numbers>
+    </style>
+    <activity activity_type="solo_video_recording" language="es" title="Situaciones">
+      <dl lang="en">With a partner, role-play these situations.</dl>
+      <external_references>
+        <external_reference>
+          <title>Vocabulary list</title>
+          <activity id="71121"/>
+        </external_reference>
+      </external_references>
+      <items>
+        <style>
+          <!-- recording limit is optional and defaults to 5 minutes -->inst
+          <recording_limit>5</recording_limit>
+        </style>
+        <reference type="exam">
+          <header>multiple-answer dl header text</header>
+          <body>multiple-answer dl body text</body>
+        </reference>
+        <reference type="exam">
+          <header>multiple-answer dl header text</header>
+          <body>multiple-answer dl body text</body>
+        </reference>
+        <reference type="image">
+          <image id="193175"/>
+        </reference>
+        <reference type="audio">
+          <audio id="111825"/>
+        </reference>
+        <reference type="wordbank">
+          <body sorted="yes">Montreal
+            una científica
+            la Universidad de Québec
+            Bolivia
+            las matemáticas
+            convenciones
+            tradiciones
+            en español
+            la biología
+          </body>
+        </reference>
+        <item/>
+      </items>
+    </activity>
+    <activity title="undefined" activity_type="multiple_choice">
+      <dl/>
+      <items>
+        <style>
+          <item_numbers>show</item_numbers>
+        </style>
+        <item>
+          <prompt>¿Qué sala es notable por sus muebles elegantes y sus lámparas de cristal?</prompt>
+          <choices>
+            <answer>el comedor Los Tamarindos</answer>
+            <distractor>el salón Dr. Belisario Porras</distractor>
+          </choices>
+        </item>
+        <item>
+          <prompt>¿En qué parte del palacio se encuentra la residencia del presidente?</prompt>
+          <choices>
+            <distractor>en la planta baja</distractor>
+            <answer>en el segundo piso</answer>
+          </choices>
+        </item>
+        <item>
+          <prompt>¿Dónde empiezan los turistas su visita al palacio?</prompt>
+          <choices>
+            <distractor>en el salón amarillo</distractor>
+            <answer>en el Patio de las Garzas</answer>
+          </choices>
+        </item>
+        <item>
+          <prompt>¿En qué lugar se representa artísticamente la rica herencia cultural de Panamá?</prompt>
+          <choices>
+            <answer>en el Patio Andaluz</answer>
+            <distractor>en el Patio de las Garzas</distractor>
+          </choices>
+        </item>
+        <item>
+          <prompt>¿Qué salón honra la memoria de un gran panameño?</prompt>
+          <choices>
+            <answer>el Salón Dr. Belisario Porras</answer>
+            <distractor>el Salón Amarillo</distractor>
+          </choices>
+        </item>
+      </items>
+    </activity>
+    <activity title="Ahora escribe" activity_type="open_ended">
+      <dl/>
+      <items>
+        <style>
+          <answer_size>4</answer_size>
+          <item_numbers>hide</item_numbers>
+        </style>
+        <reference type="text">
+          <body>Ahora responde:</body>
+        </reference>
+        <item>
+          <prompt>¿Qué partes del palacio te gustaría (<i>would you like</i>) visitar? ¿Por qué? Explica tu respuesta.
+          </prompt>
+        </item>
+      </items>
+    </activity>
+  </items>
+</activity>

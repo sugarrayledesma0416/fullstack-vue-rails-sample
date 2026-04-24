@@ -1,0 +1,27 @@
+@import 'music/universal/modules/layers';
+
+/*********************************************************/
+/*                   Accessible Hotspot                  */
+/*  The file includes css relevant for designing dummy   */
+/*  hotspot over transparent overlay for accessibility.  */
+/*********************************************************/
+.c-transparent-overlay {
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.c-proxy-hotspot {
+  background-color: transparent;
+  cursor: pointer;
+  position: absolute;
+}
+
+
+.c-transparent-overlay.c-help-request-info-mode {
+  position: absolute;
+  z-index: z(modal);
+}
+

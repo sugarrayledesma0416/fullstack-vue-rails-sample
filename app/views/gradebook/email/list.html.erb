@@ -1,0 +1,62 @@
+<% content_for(:body_classes, "standard_layout contact_students reports") %>
+
+<% content_for(:js_head, javascript_include_tag("gradepages") ) %>
+<% content_for(:css_head, stylesheet_link_tag("gradepages")) %>
+
+<% content_for(:focus, render(:partial => 'instructor/focus/show')) %>
+<%= vite_javascript_tag 'entrypoints/gradebook/email/list' %>`
+
+<div id="main_content">
+  <h1 class="page_title">Email students</h1>
+
+  <div class="add_column_body ui-helper-clearfix">
+    <div id="course"><b>Course:</b> <%= @course.name %> </div>
+    <%= form_tag(gradebook_drop_students_update_path(:program_id => current_program.id), :method => :post) do -%>
+      <div class="wrap_table">
+        <table class="student_list">
+          <thead>
+            <tr>
+              <th>
+                <div class="student_checkbox_all checkbox show_check" id="student_checkbox_all"></div>
+                <h3 class="toc_location_component">Name</h3>
+              </th>
+              <th><h3 class="toc_location_component">Email address</h3></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @students.each do |student| %>
+              <tr id="student_row_<%= student.id %>" class="student_row <%= cycle("altrow", "") %>">
+                <td width="275">
+                  <div class="<%= 'student_checkbox checkbox show_check' if user_display_email(student).present? %>" id="student_<%= student.id %>"></div>
+                  <span data-type-container="student_name"><%= student.last_name %>, <%= student.first_name %></span>
+                </td>
+                <td>
+                  <span data-type-container="student_email"><%= user_display_email(student) %></span>
+                </td>
+              </tr>
+            <% end -%>
+          </tbody>
+        </table>
+        <span class="inline">Separate by:</span>
+        <span class="inline" data-link-type="separator_options">
+          <%= link_to "Comma", '#', :class => 'prevent-default', 'data-js-separator' => 'comma' %> | <%= link_to "Semicolon", '#', :class => 'prevent-default', 'data-js-separator' => 'semicolon' %>
+        </span>
+        <div class="email_list_preview" data-page-element="email_list_preview">
+          <textarea cols="90" rows="10" class="student_response_input" id="email_recipients_preview" readonly>
+          </textarea>
+        </div>
+      </div>
+      <%= hidden_field_tag('return_to', @return_to) %>
+      <%= hidden_field_tag('recipients', "") %>
+      <%= hidden_field_tag('current_list_separator', "") %>
+      <div class="additional_links">
+        <div class="cancel_link">
+          <%= link_to 'cancel', @return_to, :style => "display: inline;" %>
+        </div>
+        <div class="red_button">
+          <%= link_to 'Send with E-mail program', '#', :id => 'email_link', :class => 'red-button  js-email-students-click-send' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

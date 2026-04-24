@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<activity activity_type="exam" assessment_type="exam" title="title text" language="es">
+	<dl>Master dl</dl>
+  <items>
+    <style>
+      <item_numbers>show</item_numbers>
+    </style>
+    <activity activity_type="multiple_choice" title="">
+      <dl/>
+      <items>
+        <style>
+          <item_numbers>show</item_numbers>
+        </style>
+        <reference type="exam">
+          <header>multiple-choice dl header text</header>
+          <body>multiple-choice dl body text</body>
+        </reference>
+        <item>
+          <prompt>prompt_for_question_1</prompt>
+          <choices>
+            <distractor>wrong answer</distractor>
+            <answer>right answer</answer>
+          </choices>
+        </item>
+      </items>
+    </activity>
+    <activity activity_type="solo_video_recording" title="Describe">
+      <dl/>
+      <external_references>
+        <external_reference>
+          <title>Vocabulary list</title>
+          <activity id="71121"/>
+        </external_reference>
+      </external_references>
+      <items>
+        <style>
+          <!-- recording limit is optional and defaults to 5 minutes -->
+          <recording_limit>5</recording_limit>
+        </style>
+        <reference type="exam">
+          <header>multiple-answer dl header text</header>
+          <body>multiple-answer dl body text</body>
+        </reference>
+        <reference type="image">
+          <image id="193175"/>
+        </reference>
+        <reference type="audio">
+          <audio id="111825"/>
+        </reference>
+        <reference type="wordbank">
+          <body sorted="yes">Montreal
+            una científica
+            la Universidad de Québec
+            Bolivia
+            las matemáticas
+            convenciones
+            tradiciones
+            en español
+            la biología</body>
+        </reference>
+        <item>
+          <points_possible>20</points_possible>
+        </item>
+      </items>
+    </activity>
+  </items>
+</activity>

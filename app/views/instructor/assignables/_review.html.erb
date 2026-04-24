@@ -1,0 +1,87 @@
+<div data-container="review" style="display: <%= presenter.start_on_review_step? ? 'block' : 'none' %>">
+
+  <div class="as_count">
+    <%= render 'selected_count', presenter: presenter %>
+  </div>
+  <div class="dialog_course" data-course-name="<%= presenter.course_name %>">
+    <b>Course:</b> <%= presenter.course_name %>
+  </div>
+  <div class="dialog_section" data-section-names="<%= presenter.section_names %>">
+    <b>Sections:</b> <%= presenter.section_names %>
+  </div>
+
+  <div class="wrap_table wrap_table_dialog" data-container="assignables">
+    <table>
+      <thead>
+        <tr>
+          <th width="15px">
+            <% if presenter.refine_selection? -%>
+              <input type="checkbox" class="js-select-all" checked>
+            <% end -%>
+          </th>
+          <th><h3>Activity</h3></th>
+          <th><h3>Lesson</h3></th>
+          <th class="middle">Category</th>
+          <th class="rightside">Due date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% presenter.assignables.each do |assignable| -%>
+          <tr>
+            <td>
+              <% if presenter.refine_selection? -%>
+                <input type="checkbox" data-input-type="checkbox" class="review_selected  show_check  js-selected"
+                       data-assignable-class="<%= assignable.class_name %>"
+                       data-assignable-id="<%= assignable.id %>"
+                       data-assignable-has-multiple-due-dates="<%= assignable.has_multiple_due_dates? %>"
+                       checked="checked" />
+              <% else -%>
+                <input type="hidden" data-input-type="hidden" class="js-selected"
+                       data-assignable-class="<%= assignable.class_name %>"
+                       data-assignable-id="<%= assignable.id %>"
+                       data-assignable-has-multiple-due-dates="<%= assignable.has_multiple_due_dates? %>" />
+              <% end -%>
+            </td>
+            <td data-assignable-title="<%= strip_html_tags(assignable.title) %>">
+              <%= assignable.strand_and_title_label %> <%= show_icons_for_activity(assignable) %>
+            </td>
+            <td data-assignable-lesson-name="<%= strip_html_tags(assignable&.assignable&.lesson&.name) %>">
+              <%= assignable&.assignable&.lesson&.name %>
+            </td>
+            <td data-assignable-category="<%= assignable.category_name %>">
+              <%= render :partial => 'category_cell', :locals => {:assignable => assignable, presenter:  presenter} %>
+            </td>
+            <td data-assignable-due_date="<%= assignable.toc_formatted_due_date %>">
+              <%= render :partial => 'due_date_cell', :locals => {:assignable => assignable, presenter:  presenter} %>
+            </td>
+          </tr>
+        <% end -%>
+      </tbody>
+    </table>
+  </div>
+  <% unless assistant_role_policy.is_assistant? %>
+    <div id="additional_links" class="ns-music-v1  ui-helper-clearfix  u-txt-reg">
+      <div class="cancel_link  u-pad-lt-0  u-pad-top-8  u-pad-bot-8  u-float-lt">
+        <%= Music::Components.button(
+          text: 'CANCEL',
+          variant: 'link',
+          classes: ['js-cancel-button', test_class('cancel-review')]
+        ) %>
+      </div>
+      <div class="reassign_link">
+        <%= Music::Components.button(
+          text: 'reassign',
+          variant: 'primary',
+          classes: ['prevent-default  js-reassign-button']
+        ) %>
+      </div>
+      <div class="unassign_link  u-pad-rt-24  u-pad-bot-8  u-pad-top-8  u-float-rt">
+        <%= Music::Components.button(
+          text: 'UNASSIGN',
+          variant: 'link',
+          classes: ['js-unassign-button']
+        ) %>
+      </div>
+    </div>
+  <% end %>
+</div>

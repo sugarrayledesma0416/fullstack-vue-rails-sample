@@ -1,0 +1,110 @@
+/** TODO: Change when the M4 styles are available from music**/
+.m4-fill--primary { 
+  fill: #AA3127;
+}
+
+.m4-button--primary {
+  background: #AA3127 !important;
+  color: white !important;
+  border: 0px !important;
+  border-radius: 2rem !important;
+  cursor: pointer;
+  
+  &:hover {
+    background: #922218 !important;
+    box-shadow: 0 .25rem .25rem 0 rgba(0, 0, 0, 0.15);
+  }
+
+  &:disabled {
+    background: darkgray !important;
+  }
+}
+
+.m4-button-secondary {
+  color: #AA3127 !important;
+  border-radius: 2rem !important;
+  cursor: pointer;
+
+  &:hover {
+    color: #AA3127;
+    background-color: #F8EFEE;
+  }
+}
+
+.m4-button-secondary:hover svg {
+  fill: #AA3127;
+}
+
+.m4-txt--primary-disabled {
+  color: #D8A7A3 !important;
+  cursor: not-allowed;
+
+  &:hover {
+    color: #D8A7A3;
+  }
+}
+
+.m4-button-tertiary {
+  border: 1px solid #404040;
+  border-radius: 25px;
+  color: #404040;
+  font-weight: 700;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none !important;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.m4-button--round {
+  border-radius: 2rem !important;
+}
+
+.m4-button--primary {
+  background: #AA3127 !important;
+  color: white !important;
+  border: 0px !important;
+  border-radius: 2rem !important;
+  cursor: pointer;
+  
+  &:hover {
+    background: #922218 !important;
+  }
+  &:disabled {
+    background: darkgray !important;
+  }
+}
+
+.m4-button-secondary {
+  color: #AA3127 !important;
+  border-radius: 2rem !important;
+  cursor: pointer;
+
+  &:hover {
+    color: #AA3127;
+    background-color: #F8EFEE;
+  }
+}
+
+.m4-button-secondary:hover svg {
+  fill: #AA3127;
+}
+
+.m4-fill--primary-disabled {
+  fill: #D8A7A3;
+  cursor: not-allowed;
+}
+
+.m4-button-group--space-between {
+  display: flex !important;
+  justify-content: space-between !important;
+}
+
+.c-pill {
+  background-color: #BFBFBF;
+  border-radius: 50px;
+  color: #fff;
+  font-size: 8px;
+  font-weight: 600;
+  padding: 2px 8px;
+}

@@ -1,0 +1,12 @@
+<div class="c-modal  c-modal--md  js-modal  js-<%= js_class %>  u-hidden">
+  <div role="dialog" aria-label="Dialog with a panel" class="c-modal__box  js-modal-box">
+    <button class="c-modal__close-button  c-no-button  js-x-close  js-modal-close">
+      <span class="c-icon  c-icon--md  c-icon--close"></span>
+      <span class="u-screen-reader-only">Close dialog</span>
+    </button>
+    <div role="document" class="js-modal-content">
+      <%= yield %>
+    </div>
+    <button class="u-screen-reader-only" tabindex="-1">Dialog end</button>
+  </div>
+</div>

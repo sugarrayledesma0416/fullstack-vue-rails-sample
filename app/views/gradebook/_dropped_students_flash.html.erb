@@ -1,0 +1,18 @@
+<% unless dropped_student_count.zero? %>
+  <div id="dropped_students">
+    <span>
+      <%= pluralize(dropped_student_count, ' student') %> dropped from <%= section_name %>.
+    </span>
+    <span id="undo_button_form">
+      <%= form_tag(
+            gradebook_undrop_students_path(program_id: current_program.id),
+            method: :post,
+            class: 'u-dis-inline'
+          ) do %>
+        <%= submit_tag 'Undo', class: 'u-txt-bold c-plain-button-v3 u-txt-util-success u-txt-under', id: 'undo_button' %>
+        <%= hidden_field_tag('dropped_student_info_key', dropped_student_info_key) %>
+        <%= hidden_field_tag('return_to', return_to) %>
+      <% end %>
+    </span>
+  </div>
+<% end %>

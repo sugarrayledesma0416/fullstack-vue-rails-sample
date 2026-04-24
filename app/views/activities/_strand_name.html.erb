@@ -1,0 +1,7 @@
+<div id="current_strand_name">
+  <span class="lesson-header"><%= @lesson_header[:lesson].to_s.html_safe %></span>
+  <span class="lesson-header"><%= @lesson_header[:strand].to_s.html_safe %></span>
+  <% unless @lesson_header[:substrand].nil? %>
+    <span class="lesson-header"><%= @lesson_header[:substrand].html_safe %></span>
+  <% end %>
+</div>

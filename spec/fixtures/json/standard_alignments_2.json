@@ -1,0 +1,50 @@
+[
+    {
+        "id": 64,
+        "standard_asset_id": 43,
+        "vendor_asset_guid": "69d489ed-95fd-4411-a949-f6785c95be49",
+        "vendor_standard_guid": "8074E404-7440-11DF-93FA-01FD9CFF4B22"
+    },
+    {
+        "id": 65,
+        "standard_asset_id": 44,
+        "vendor_asset_guid": "16f72018-ebf0-4b9d-b15f-78e1b2a06d90",
+        "vendor_standard_guid": "80CAA02E-7440-11DF-93FA-01FD9CFF4B22"
+    },
+    {
+        "id": 66,
+        "standard_asset_id": 45,
+        "vendor_asset_guid": "a365d87f-1521-4733-a3fe-97f8b40f3236",
+        "vendor_standard_guid": "80755DA8-7440-11DF-93FA-01FD9CFF4B22"
+    },
+    {
+        "id": 67,
+        "standard_asset_id": 46,
+        "vendor_asset_guid": "a46ad2c1-d8fc-4da6-8315-5370891e88e1",
+        "vendor_standard_guid": "80A6750A-7440-11DF-93FA-01FD9CFF4B22"
+    },
+    {
+        "id": 68,
+        "standard_asset_id": 47,
+        "vendor_asset_guid": "81279b26-19cc-42f4-94ed-d18a1dac6bc9",
+        "vendor_standard_guid": "80CF6BE0-7440-11DF-93FA-01FD9CFF4B22"
+    },
+    {
+        "id": 69,
+        "standard_asset_id": 48,
+        "vendor_asset_guid": "81279b26-19cc-42f4-94ed-d18a1dac6bc9",
+        "vendor_standard_guid": "80CF6BE0-7440-11DF-93FA-01FD9CFF4B22"
+    },
+    {
+        "id": 70,
+        "standard_asset_id": 49,
+        "vendor_asset_guid": "d80b6ed2-264f-4917-bb01-5107275e97c6",
+        "vendor_standard_guid": "80D60194-7440-11DF-93FA-01FD9CFF4B22"
+    },
+    {
+        "id": 75,
+        "standard_asset_id": 49,
+        "vendor_asset_guid": "d80b6ed2-264f-4917-bb01-5107275e97c6",
+        "vendor_standard_guid": "4008b6e6-b0a4-4e16-b802-a10f889b69f9"
+    }
+]

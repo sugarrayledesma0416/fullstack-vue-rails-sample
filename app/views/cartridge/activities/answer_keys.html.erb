@@ -1,0 +1,47 @@
+<%= render 'activities/include' %>
+
+<div data-target-var='rails_data' data-from-dom='<%= { program_id: current_program.id,
+                                                       activity_id: @activity.id}.to_json %>'>
+</div>
+
+<%= render 'cartridge/activities/show_header_content', disabled_alerts: @is_popup %>
+
+<% if @activity -%>
+  <div id="activity_wrapper" class="c-activity-wrapper">
+    <div id="main_content">
+      <% if @activity.content_object -%>
+        <div class="c-activity-info">
+          <%= render 'activities/activity_context',
+                      activity: @activity,
+                      attempt_track: @attempt_track,
+                      classwork: @classwork,
+                      workset: @workset,
+                      attempt: @attempt,
+                      section: current_section,
+                      score: @score,
+                      instructor_feedback: nil %>
+        </div>
+        <div role="main" id="activity_shell" lang="<%= @activity.language %>">
+          <div id="activity_body" class="c-activity-body">
+            <% if @activity.content_object.is_a?(MaestroActivityEngine::ActivityContent::Content) %>
+              <div id="testFrame" class="ui-helper-clearfix">
+                <%= render "maestro_activity_engine/activities/answer_keys/" + @activity.content_object.partial_name,
+                            content_object: @activity.content_object, attempt: @attempt %>
+              </div>
+              <% activity_content = @activity.content_object -%>
+              <%= render partial: 'maestro_activity_engine/activities/partials/sidebar',
+                         collection: activity_content.sidebars, as: :sidebar %>
+            <% else -%>
+              Trying to parse activity content resulted in the following error(s):
+              <ul>
+                <% @activity.parse_errors.each do |error| %>
+                  <li><%= error %></li>
+                <% end -%>
+              </ul>
+            <% end -%>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>

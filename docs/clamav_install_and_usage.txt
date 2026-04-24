@@ -1,0 +1,34 @@
+### CENTOS/RHEL ###
+
+# install as root or prefix commands with sudo
+
+# install clam binaries
+yum -y install clamav clamd
+
+# yum currently sets permissions on clamav log dir to the wrong user, so you must manually change
+# ownership
+chown clam:clam /var/log/clamav/
+
+## update virus definitions
+freshclam
+
+## set up freshclam to update virus definitions every day
+## if you don't do this, clam will start yelling at you when
+## you try to scan files that your virus definitions are out of 
+## date
+
+## add to crontab (crontab -e)
+0 0 * * * /usr/bin/freshclam
+
+## ensure cron daemon service is set to run on startup
+chkconfig crond on
+
+
+### MAC ###
+
+# install clam
+brew install clamav
+
+## Please add additional mac instrux (e.g. for keeping clamav virus definitions up-to-date)
+## if you are a mac user and can figure out how to do this :-)
+

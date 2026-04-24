@@ -1,0 +1,19 @@
+<activity activity_type="drop_down_same" language="es" title="cucumber_drop_down_same">
+  <dl>Instructions</dl>
+  <items>
+    <style>
+      <item_numbers>show</item_numbers>
+    </style>
+    <choices>
+      <choice ref="b">wrong answer</choice>
+      <choice ref="a">right answer</choice>
+      <choice ref="c">wrong answer 2</choice>
+    </choices>
+    <item>
+      <prompt><wol answer_ref="a"/> prompt_for_question_1</prompt>
+    </item>
+    <item>
+      <prompt><wol answer_ref="a"/> prompt_for_question_2</prompt>
+    </item>
+  </items>
+</activity>

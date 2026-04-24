@@ -1,0 +1,69 @@
+@import 'music/library/v1/base/main';
+/* ================================================================== *
+
+    Auto-graded Overrides
+
+* =================================================================== */
+
+/* Auto Graded Specific Overrides */
+.multi_type_question li,
+.auto_graded_question li {
+  margin-bottom: 1rem;
+  margin-left: 1.5rem;
+  padding-left: rpx(25);
+}
+
+/* Adjust correct/incorrect/etc icon for multitype only */
+.multi_type .multi_type_question li {
+  background-position: 0 rpx(2);
+}
+
+.multi_type_question li .answer_positioning,
+.auto_graded_question li .answer_positioning {
+  margin-top: rpx(3);
+  display: block;
+  width: auto;
+  max-width: 100%;
+}
+
+.by_question #question_prompt .reference_model {
+  border: 0;
+  padding: 0;
+}
+
+.by_question #question_prompt .reference_model .reference_diagnostic {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+/* Quick Fix for Autograded Enhanced Feedback Tables being too wide in Grading and Review Work */
+.long_feedback_table {
+  width: rpx(710);
+  overflow-y: auto;
+  overflow-x: auto;
+}
+
+.review_work .long_feedback_table {
+  width: rpx(574);
+  text-align: justify;
+}
+
+.by_student .long_feedback_table,
+.by_question .long_feedback_table {
+  width: rpx(590);
+}
+
+.long_feedback_table span.student_answer .correct,
+.long_feedback_table span.student_answer .incorrect {
+  word-break: normal;
+}
+
+.grading_tasks .long_feedback_table .correction_feedback {
+  margin-top: rpx(-5);
+}
+
+/* Limit TextArea Sizes */
+li.answersblank textarea {
+  display: block;
+  max-width: rpx(800);
+}

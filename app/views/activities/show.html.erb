@@ -1,0 +1,112 @@
+<%= render :partial => 'activities/include' %>
+
+<% content_for(:js_head, javascript_include_tag('record_view_time_spent.js')) %>
+<% content_for(:js_head, javascript_include_tag('ckeditor_basepath_override.js')) %>
+<% if @activate_guid_viewer %>
+  <% content_for(:js_head, javascript_include_tag('question_guid_viewer_overlay')) %>
+  <% content_for(:css_head, stylesheet_link_tag("question_guid_viewer_overlay")) %>
+<% end %>
+
+<% if @activity.partner_chat? || @activity_presenter.solo_video_recording_or_included_in_multipart_activity? || @activity.group_chat? %>
+  <% content_for :meta, avatar_meta_tag %>
+  <% content_for :meta do %>
+    <meta name="VHL.solo_video_included" content="<%= @activity.includes_solo_video_recording? %>">
+  <% end %>
+
+  <div data-partner-chat-submitted-links="" class="hidden_helper">
+    <%= link_to('Practice', practice_section_activity_path(:section_id => current_section.id, :id => @activity.id), 'data-button' => 'practice', :class => 'red-button') %>
+    <%= link_to("#{@return_label}", @return_url, 'data-button' => 'return', :class => 'red-button') %>
+  </div>
+  <% content_for :hidden_form_fields do %>
+    <div class="temporary_input"> <!-- what is this for? -->
+      <input type="hidden" id="user_id" name="user_id" value="<%= current_user.id %>" />
+      <input type="hidden" id="partner_id" name="partner_id" value="" />
+    </div>
+
+    <input type="hidden" id="user_section_id" name="user_section_id" value="<%= current_section.id %>" />
+    <input type="hidden" id="partner_section_id" name="partner_section_id" value="" />
+    <input type="hidden" id="recording_path" name="recording_path" value="" />
+    <input type="hidden" id="recording_token" name="recording_token" value="" />
+  <% end %>
+
+  <%= javascript_tag do -%>
+    VHL.Chat = VHL.Chat || {};
+    VHL.Chat.CONFIG = VHL.Chat.CONFIG || {};
+    VHL.Chat.CONFIG.pchatActivityRoster = <%= @activity_presenter.partner_chat_roster.to_json.html_safe %>;
+  <% end -%>
+  <% if (
+       @activity.preview? &&
+       %w[info_gap_partner_chat info_gap_partner_chat_v2].include?(@activity.activity_type)
+     ) %>
+    <% content_for(:js_head, javascript_include_tag('show_info_gap_references')) %>
+  <% end -%>
+<% end %>
+<% if @activity.activity_type == 'virtual_chat' || @activity.activity_type == 'video_virtual_chat' %>
+  <% content_for :current_user_data do %>
+    <%= hidden_field_tag :user_gender, current_user.gender %>
+    <%= hidden_field_tag :current_user_id, current_user.id %>
+  <% end %>
+<% end %>
+
+<% if @activity.composition? || @activity.has_composition_activities? %>
+  <% content_for(:js_head, javascript_include_tag('composition_activity')) %>
+<% end %>
+
+<% content_for :submit_buttons do %>
+  <% buttons = get_current_button_tag(@activity, @attempt_track, @workset) -%>
+  <%
+    course = current_user.student? ? @activity_presenter.course : current_focus&.course
+    show_portfolio_button = !@attempt.practice? &&
+                            course&.activity_share_to_portfolio?(
+                              @activity.activity_type
+                            ) &&
+                            access_guardian.has_portfolio?
+  %>
+  <%= render :partial => 'activities/activity_footer', :locals => {:disabled => @read_only,
+                                                                   :buttons => buttons,
+                                                                   :return_url => @return_url,
+                                                                   :return_label => @return_label,
+                                                                   :activity_id => @activity.id,
+                                                                   :section_id => current_section.id,
+                                                                   :activity_content => @activity.content_object,
+                                                                   :activity_allows_reference_links => !@activity.assessment?,
+                                                                   :blank_submission_protection_enabled => true,
+                                                                   :requires_ajax_submission => @activity_presenter.requires_ajax_submission?,
+                                                                   :enable_accentbar => true,
+                                                                   instructor_practice: true,
+                                                                   show_portfolio_button: } %>
+  <%= hidden_field_tag('practice', 'yes') if !@activity.preview? && @attempt_track.practice? %>
+<% end %>
+
+<%= render :partial => 'activities/show_header_content', :locals => { disabled_alerts: @is_popup } %>
+<div class="u-hidden  js-mobile-tabset-container"></div>
+<%= render :partial => 'activities/show_main_content' %>
+
+<% if @activity.solo_video_recording? %>
+      <%= render 'partials/chat/start_activity_button_in_mobile',
+            btn_text: 'Start Activity',
+            btn_classes: ['js-mobile-pchat-start-button', 'js-mobile-svr-start-button'],
+            container_classes: ['js-mobile-activity-start-container',
+                                'c-mobile-chat-activity-start-container'] %>
+      <%= render 'mobile_tabs_view/tabs_template' %>
+<% elsif @activity.group_chat? %>
+  <%= render 'partials/chat/start_activity_button_in_mobile',
+            btn_text: 'Start Activity',
+            btn_classes: ['js-mobile-group-chat-start-button'],
+            container_classes: ['js-mobile-activity-start-container',
+                                'c-mobile-chat-activity-start-container'] %>
+<% elsif @activity&.partner_chat? %>
+        <%= render 'partials/chat/start_activity_button_in_mobile',
+              btn_text: 'Choose Partner',
+              btn_classes: ['js-mobile-pchat-start-button'],
+              container_classes: ['js-mobile-activity-start-container',
+                                  'c-mobile-chat-activity-start-container'] %>
+<% end %>
+
+<div class="ns-music-v1">
+  <%= yield :music_dialog_box %>
+</div>
+
+<div id="time_out_dialog" title="Inactivity timeout" style="display: none">
+  Do you want to continue working on this activity?
+</div>

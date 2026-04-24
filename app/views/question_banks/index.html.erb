@@ -1,0 +1,47 @@
+<script>
+  document.addEventListener(
+    'DOMContentLoaded',
+    () => {
+      const form = document.getElementById('new_question_bank_form');
+      const submitButton = document.querySelector(
+        '.js-new-question-bank-submit-button'
+      );
+
+      submitButton.addEventListener(
+        'click',
+        (event) => {
+          event.preventDefault();
+          let programId = form.program_id.value;
+          let conceptId = form.concept_id.value;
+
+          let url = `/programs/${programId}/concepts/${conceptId}/question_banks/new`;
+          window.location = url;
+        }
+      );
+    }
+  );
+</script>
+
+<h2>Upload a new Question Bank</h2>
+
+<form id="new_question_bank_form" method="GET">
+  <div>
+    <label for="program_id">Program ID</label>
+    <input type="text" name="program_id" />
+  </div>
+
+  <div>
+    <label for="concept_id">Concept ID</label>
+    <input type="text" name="concept_id" />
+  </div>
+
+  <button class="js-new-question-bank-submit-button">Go</button>
+</form>
+
+<p>
+  TODO: Turn this into a program dropdown with autocomplete like in UA's 
+  license package manager. Then, on program selection, create either a 
+  dropdown with lessons as opt-groups and concepts as options, or a 
+  dropdown for selecting lessons, and on lesson selection, a dropdown
+  containing concepts for that lesson.
+</p>

@@ -1,0 +1,15 @@
+"id","page","url","created_at","updated_at","published","created_by_id"
+1,"home_front_register","http://support.vhlcentral.com/ics/support/default.asp?deptID=4502&task=knowledge&questionID=706","2010-07-14 15:15:15","2010-07-14 15:15:15",1,3
+2,"home#index","http://support.vhlcentral.com/ics/support/default.asp?deptID=4502&task=knowledge&questionID=707","2010-07-14 15:15:15","2010-07-14 15:15:15",1,3
+3,"registration#account_new","http://support.vhlcentral.com/ics/support/default.asp?deptID=4502&task=knowledge&questionID=706","2010-07-14 15:15:15","2010-07-14 15:15:15",1,3
+4,"registration#redeem_code_new","http://support.vhlcentral.com/ics/support/default.asp?deptID=4502&task=knowledge&questionID=708","2010-07-14 15:15:15","2010-07-14 15:15:15",1,3
+5,"registration#school_search_new","http://support.vhlcentral.com/ics/support/default.asp?deptID=4502&task=knowledge&questionID=709","2010-07-14 15:15:15","2010-07-14 15:15:15",1,3
+6,"school_users#school_search_new","http://support.vhlcentral.com/ics/support/default.asp?deptID=4502&task=knowledge&questionID=709","2010-07-14 15:15:15","2010-07-14 15:15:15",1,3
+7,"schools#search","http://support.vhlcentral.com/ics/support/default.asp?deptID=4502&task=knowledge&questionID=709","2010-07-14 15:15:15","2010-07-14 15:15:15",1,3
+8,"registration#course_add_new","http://support.vhlcentral.com/ics/support/default.asp?deptID=4502&task=knowledge&questionID=710","2010-07-14 15:15:15","2010-07-14 15:15:15",1,3
+9,"courses#course_add_new","http://support.vhlcentral.com/ics/support/default.asp?deptID=4502&task=knowledge&questionID=710","2010-07-14 15:15:15","2010-07-14 15:15:15",1,3
+10,"users#show","http://support.vhlcentral.com/ics/support/default.asp?deptID=4502&task=knowledge&questionID=711","2010-07-14 15:15:15","2010-07-14 15:15:15",1,3
+11,"users#edit","http://support.vhlcentral.com/ics/support/default.asp?deptID=4502&task=knowledge&questionID=711","2010-07-14 15:15:15","2010-07-14 15:15:15",1,3
+12,"profiles#edit","http://support.vhlcentral.com/ics/support/default.asp?deptID=4502&task=knowledge&questionID=713","2010-07-14 15:15:15","2010-07-14 15:15:15",1,3
+13,"password_resets#recover_login","http://support.vhlcentral.com/ics/support/default.asp?deptID=4502&task=knowledge&questionID=714","2010-07-14 15:15:15","2010-07-14 15:15:15",1,3
+14,"user_password#edit","http://support.vhlcentral.com/ics/support/default.asp?deptID=4502&task=knowledge&questionID=712","2010-07-14 15:15:15","2010-07-14 15:15:15",1,3

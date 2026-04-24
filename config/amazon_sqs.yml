@@ -1,0 +1,48 @@
+development:
+  etl_queue_name: gradebook-etl-dev
+  sqs_endpoint: http://localhost:6059
+  sqs_region: us-west-2
+  # If profile set it will be preferred over aws_key_id and aws_access_key
+  aws_profile: cmb_local
+  access_key_id:
+  secret_access_key:
+
+test:
+  etl_queue_name: gradebook-etl-test
+  sqs_endpoint:
+  sqs_region: us-west-2
+  aws_profile: cmb_local
+  access_key_id:
+  secret_access_key:
+
+staging:
+  etl_queue_name: gradebook-etl-qa
+  sqs_endpoint: https://sqs.us-east-1.amazonaws.com
+  sqs_region: us-east-1
+  aws_profile:
+  access_key_id:
+  secret_access_key:
+
+qa:
+  etl_queue_name: gradebook-etl-qa
+  sqs_endpoint: https://sqs.us-east-1.amazonaws.com
+  sqs_region: us-east-1
+  aws_profile:
+  access_key_id:
+  secret_access_key:
+
+production:
+  etl_queue_name: gradebook-etl
+  sqs_endpoint:
+  sqs_region:
+  aws_profile:
+  access_key_id:
+  secret_access_key:
+
+live:
+  etl_queue_name: gradebook-etl
+  sqs_endpoint: https://sqs.us-east-1.amazonaws.com
+  sqs_region: us-east-1
+  aws_profile:
+  access_key_id:
+  secret_access_key:

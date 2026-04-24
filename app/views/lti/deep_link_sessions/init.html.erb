@@ -1,0 +1,124 @@
+<% content_for(
+     :js_head,
+     javascript_packs_with_chunks_tag('lti/create_dashboard_deep_link')
+   ) %>
+<% content_for(
+     :js_head,
+     javascript_packs_with_chunks_tag('lti/create_home_page_deep_link')
+   ) %>
+
+<div class="l-container-fluid">
+  <div class="l-grid">
+    <div class="l-col-lg-2"></div>
+    <div class="l-col-lg-8  l-col-12">
+      <div class="c-panel  u-bord-1  u-bord-gray-e">
+        <div class="c-panel__header">
+          <h3 class="c-heading--panel">Current Assignments</h3>
+        </div>
+        <div class="c-panel__body">
+          <p>
+            Create a link to the student dashboard, which provides easy
+            access to upcoming assigned work. You can add this same link
+            into multiple locations of your course, and it will always
+            show the work relevant based on the current date.
+          </p>
+          <%= form_tag(
+                @launch.deep_link_return_url,
+                class: 'js-create-dashboard-deep-link-form',
+                method: :post
+              ) do %>
+            <%= hidden_field_tag(
+                  :JWT,
+                  '',
+                  class: 'js-deep-link-jwt-field'
+                ) %>
+            <%= hidden_field_tag(
+                  :program_id,
+                  params[:program_id],
+                  class: 'js-deep-link-program-id'
+                ) %>
+            <%= hidden_field_tag(
+                  :lti_launch_guid,
+                  params[:launch_guid],
+                  class: 'js-deep-link-launch-guid'
+                ) %>
+            <button type="button"
+                    class="c-button c-button--border is-navigable
+                           js-deep-link-submit-button">
+              Link to Current Assignments
+            </button>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="l-col-lg-2"></div>
+    <div class="l-col-lg-2"></div>
+    <div class="l-col-12  l-col-lg-8">
+      <div class="c-panel  u-bord-1  u-bord-gray-e">
+        <div class="c-panel__header">
+          <h3 class="c-heading--panel">Specific Activity</h3>
+        </div>
+        <div class="c-panel__body">
+          <p>
+            Choose a single activity to embed into your course. e.g. a
+            video or other presentational material, or specific high-value
+            quiz or exam.
+          </p>
+          <div class="c-button-group  c-button-group--lt  u-mar-0">
+            <%= link_to(instructor_toc_path(program_id: params[:program_id]), class: 'u-mar-bot-8') do %>
+              <%= Music::Components.button(
+                    text: 'Link to a Specific Activity',
+                    type: 'button',
+                    variant: 'border'
+                  ) %>
+            <% end %>
+            <%= link_to(instructor_assessments_path(program_id: params[:program_id]), class: 'u-mar-bot-8') do %>
+              <%= Music::Components.button(
+                    text: 'Link to a Specific Assessment',
+                    type: 'button',
+                    variant: 'border'
+                  ) %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="l-col-lg-2"></div>
+    <div class="l-col-lg-2"></div>
+    <div class="l-col-lg-8  l-col-12">
+      <div class="c-panel  u-bord-1  u-bord-gray-e">
+        <div class="c-panel__header">
+          <h3 class="c-heading--panel">VHLCentral Home</h3>
+        </div>
+        <div class="c-panel__body">
+          <p>
+            Create a link that both instructors and students can use to 
+            automatically log in to their account's VHL Home page.
+          </p>
+          <%= form_tag(
+                @launch.deep_link_return_url,
+                class: 'js-create-home-page-deep-link-form',
+                method: :post
+              ) do %>
+            <%= hidden_field_tag(
+                  :JWT,
+                  '',
+                  class: 'js-deep-link-jwt-field'
+                ) %>
+            <%= hidden_field_tag(
+                  :lti_launch_guid,
+                  params[:launch_guid],
+                  class: 'js-deep-link-launch-guid'
+                ) %>
+            <button type="button"
+                    class="c-button c-button--border is-navigable
+                           js-deep-link-submit-button">
+              Link to VHLCentral Home 
+            </button>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="l-col-lg-2"></div>
+  </div>
+</div>

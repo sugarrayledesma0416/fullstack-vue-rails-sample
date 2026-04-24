@@ -1,0 +1,362 @@
+<% content_for(:js_head, javascript_include_tag('stupidtable.min.js') ) %>
+<% content_for(:js_head, javascript_include_tag('assignment_wizard') ) %>
+<% content_for(:js_head, javascript_include_tag('assessment') ) %>
+<% content_for(:css_head, stylesheet_link_tag("instructor_action_bar") )%>
+<div data-modal="assignment_wizard" class="assignables_dialog"></div>
+<div data-modal="content_library" class="assignables_dialog"></div>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+
+<% if presenter.lti_deep_link_enabled? %>
+  <% content_for(
+       :js_head,
+       javascript_packs_with_chunks_tag('lti/create_activity_deep_link')
+     ) %>
+  <div class="ns-music-v1">
+    <%= render 'instructor/toc/deep_link_modal', presenter: presenter %>
+  </div>
+<% end %>
+
+<div class="activities  activities--instructor">
+  <% unless presenter.lti_deep_link_enabled? %>
+    <% unless assistant_role_policy.is_assistant? -%>
+      <% if presenter.assignable_view? || presenter.can_edit_course_library? -%>
+        <div class="l-line  l-line--mid  u-flex-wrap  instructor-action-bar">
+          <% if presenter.assignable_view? -%>
+            <div class="u-pad-bot-12  c-button  c-button--border  instructor-action-button">
+              <a href="#"
+                  id= "set_date_link"
+                  title="Set due date"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  class="u-txt-14  c-menu__title  js-nav-system__link  set_date_link  activity_set_date_link  assign-activities">
+                  <%= feature_icon('music/icons/calendar') %>
+                  Assign selected
+              </a>
+            </div>
+
+            <div class="l-line__splitter"></div>
+            <!-- assessment controls -->
+            <div class="l-line  l-line--mid  u-flex-wrap">
+              <%= render 'assessment_action_bar', presenter: presenter %>
+            </div> <!--end assessment controls -->
+
+            <div class="hidden_helper">
+              <div data-container="confirm_delete_igc" class="content-import-wizard">
+                <div data-page-element="assigned_activity_confirmation_message" class="hidden_helper">
+                  Removing an assigned instructor-created activity will remove it from the course and remove any student attempts from the gradebook. Are you sure you want to remove this activity?
+                </div>
+                <div data-page-element="unassigned_activity_confirmation_message" class="hidden_helper">
+                  Are you sure you want to remove this activity from this course?
+                </div>
+                <div id="additional_links" class="ui-helper-clearfix">
+                  <div class="cancel_link"><%= link_to 'cancel', '#', 'data-link' => 'cancel', :class => "left" %></div>
+                  <div class="link_savechanges"><%= link_to 'ok', '#', 'data-link' => 'ok',
+                    class: "red-button prevent-default",
+                    method: :delete  %></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="hidden_helper">
+              <div data-container="save_options" class="content-import-wizard">
+                This activity copy is a draft. Edit it in order to share it.
+                <div id="additional_links" class="ui-helper-clearfix">
+                  <div class="cancel_link"><%= link_to 'cancel', '#', 'data-link' => 'cancel', :class => "left" %></div>
+                  <div class="link_savechanges"><%= link_to 'copy', '#', 'data-link' => 'copy',
+                    class: "red-button  prevent-default  js-save-changes" %></div>
+                </div>
+              </div>
+            </div>
+
+          <% end -%>
+        </div>
+      <% end -%>
+    <% end -%>
+  <% end -%>
+
+  <div class="l-line  l-line--no-wrap  l-line--mid  u-sp u-mar-lt-20">
+    <% checkbox_id = 'assess_checkbox' -%>
+    <%= render(
+      'partials/selected_lesson',
+      header_label: presenter.activity_list_header.html_safe,
+    ) %>
+  </div>
+
+  <%=
+    hidden_field_tag(
+      :due_date_link_base_url,
+      instructor_assignables_path(
+        program_id: presenter.program.id,
+        source: 'toc',
+        in_institution_admin: @in_institution_admin
+      )
+    )
+  %>
+  <%= hidden_field_tag(
+        :show_assessments_url,
+        instructor_update_assessment_path(presenter.program.id)
+      ) %>
+
+  <div class="js-activity-table-wrapper">
+    <% activities_by_component(presenter.activities, use_component_name = true) do |component_name, component_language, component_activities| -%>
+      <% component_class = (component_name ? component_name.strip_tags.parameterize : "") %>
+      <div class="c-box  c-box--bubble-wrap">
+      <table class="c-table  c-table--activities  js-table--activities" data-container="component_header">
+        <thead>
+          <tr class="c-header-row  c-header-row--activities">
+            <th class="c-col-checkbox  toc_checkbox_wrapper  toc-checkbox-col  u-pad-rt-0">
+              <% if presenter.assignable_view? && !presenter.lti_deep_link_enabled? && !assistant_role_policy.is_assistant? -%>
+                <div class="checkbox_all" rel="<%= component_class %>"></div>
+              <% end %>
+            </th>
+            <th class="c-col-component  toc-section  u-pad-lt-0  u-pad-rt-0">
+              <h3
+                lang="<%= component_language %>"
+                class="u-dis-inline  toc_location_component">
+                <%= component_name.html_safe %>
+              </h3>
+              <% if component_name === 'Instructor-created Activities' %>
+                <%= select_tag(
+                  'content_filter',
+                  options_for_select(presenter.content_filter),
+                  class: 'c-select  u-mar-lt-12  js-content-selector'
+                ) %>
+              <% end %>
+            </th>
+            <% if component_name === 'Instructor-created Activities' %>
+              <th class="rightside  js-toc-creator  toc-creator-aline">
+                Created By
+              </th>
+            <% end %>
+            <% if presenter.show_google_classroom_button? -%>
+              <th class="c-col-gc-share  toc-section  u-txt-rt  <%= test_class('col-gc-share') %>">Share</th>
+            <% end -%>
+            <th class="c-col-due-date  u-txt-rt  toc-section">Due date</th>
+            <% if presenter.lti_deep_link_enabled? %>
+              <th class="u-txt-rt  toc-section">
+                <span class="u-screen-reader-only">Deep Link Controls</span>
+              </th>
+            <% end %>
+          </tr>
+        </thead>
+        <tbody>
+          <%= render 'partials/nothing_assigned_in_component',
+                     presenter: presenter,
+                     activities: component_activities,
+                     is_google_share_column: presenter.show_google_classroom_button?
+                     %>
+          <%= render '/partials/no_content_in_component',
+                     component_name: component_name,
+                     is_google_share_column: presenter.show_google_classroom_button? %>
+          <% component_activities.each do |activity| -%>
+            <% due_date_handler = presenter.due_date_info_for(activity.id) %>
+            <%= hidden_field_tag(
+                  "assessments_ids_for_#{dom_id(activity)}",
+                  format_assessment_url(presenter.assignments, activity)
+                ) %>
+            <%= hidden_field_tag(
+                  "format_assessment_label_activity_#{activity.id}",
+                  format_assessment_strand_label(activity)
+                ) %>
+            <tr class="c-row  c-row--activities  js-row--activities  assign_hover
+                      <%= test_class('activity_entry') %>
+                      <%= cycle("altrow", "") %>
+                      <%= 'js-non-assigned-activity' unless due_date_handler.activity_is_assigned? %>
+                      <% if activity.draft %>
+                        <%= 'js-draft-activity' if activity.instructor_id %>
+                      <% else %>
+                        <%= 'js-shared-activity' if activity.instructor_id %>
+                      <% end %>
+                      <%= 'js-other-instructor-activity' if presenter.other_instructor_activity?(activity) %>
+                      <%= presenter.activity_row_class(activity) %>"
+                id="assessment_toc_location_<%= activity.id %>">
+                <td class="c-col-checkbox  toc_checkbox_wrapper  toc-checkbox-col  toc_checkbox_wrapper--hide  u-pos-rel  u-pad-rt-2">
+                <% unless presenter.lti_deep_link_enabled? %>
+                  <% if presenter.assignable?(activity) && !assistant_role_policy.is_assistant? -%>
+                    <% checkbox_id = "#{dom_id(activity)}_checkbox" -%>
+                    <div data-content-type="<%= checkbox_id %>"
+                         class="toc_checkbox checkbox <%= component_class %>"
+                         id="<%= checkbox_id %>"></div>
+                  <% end %>
+                <% end %>
+
+                <% if presenter.assignable_view? -%>
+                  <%= render(
+                        '/instructor/partials/activity_results_table_hover',
+                        activity: activity,
+                        activity_in_course_library: presenter.activity_in_course_library?(activity),
+                        can_edit_course_library: presenter.can_edit_course_library?,
+                        unassignable_reason: presenter.unassignable_reason(activity),
+                        hover_type: :assessment_activity
+                      ) %>
+                <% end -%>
+              </td>
+              <td class="toc_location_activity_list_entry  u-pos-rel  u-pad-lt-0
+                         ns-music-v1" <%= test_attr('entry', activity.id) %> >
+
+                <%= ActivityLinkPresenter::GearMenu.new(self, activity, presenter, @in_institution_admin).render(:link).html_safe %>
+
+                <% has_note = presenter.has_note?(activity) %>
+                <%= format_activity_label_with_icons(
+                      dom_id(activity),
+                      activity,
+                      section_activity_path(0, activity),
+                      nil,
+                      has_note
+                    ) %>
+
+                <% if presenter.has_assignments_for?(activity) %>
+                  <div>
+                    <dl class="c-property-list">
+                      <dt class="c-property-list__name">
+                        Availability
+                      </dt>
+                      <dd class="c-property-list__value  release_date_time" id="release_date_time_for_assessment_<%= activity.id%>">
+                        <span class="assess_available_time  u-dis-inline-block" id="available_specifics_<%= activity.id %>">
+                          <%= presenter.assessment_availability(activity) %>
+                        </span>
+                        <% if presenter.show_release_link_for?(activity) %>
+                          <span class="available_pipe  u-dis-inline-block">|</span>
+                          <%= link_to(
+                                presenter.release_link_text(activity, 'assessment_release'),
+                                '#',
+                                'data-js-assignable-id' => presenter.release_link_assignment(activity).assignable.id,
+                                class: 'c-link',
+                                title: presenter.assessment_release_link_hover_text(activity),
+                                disabled: presenter.grades_available?(activity),
+                                'data-js-assess-link' => 'assessment_release',
+                                id: "release_hide_link_#{activity.id}"
+                              )
+                          %>
+                        <% else %>
+                          <span class="available_specifics  u-dis-inline-block">
+                            <%= presenter.availability_status_for(activity) %>
+                          </span>
+                        <% end %>
+                      </dd>
+                      <dt class="c-property-list__name">
+                        Result availability
+                      </dt>
+                      <dd class="c-property-list__value  grade_availability_time" id="grade_availability_time_for_assessment_<%= activity.id%>">
+                        <span class="grade_available_time  u-dis-inline-block" id="grade_available_specifics_<%= activity.id %>">
+                          <%= presenter.assessment_grade_availability(activity) %>
+                        </span>
+                        <% if presenter.show_grades_release_link_for?(activity) %>
+                          <span class="available_pipe  u-dis-inline-block">|</span>
+
+                          <%= link_to(
+                                presenter.release_link_text(activity, 'grade_release'),
+                                '#',
+                                'data-js-assignable-id' => presenter.release_link_assignment(activity).assignable.id,
+                                'data-js-assess-link' => 'grade_release',
+                                id: "release_hide_link_#{activity.id}"
+                              )
+                          %>
+                        <% else %>
+                          <span class="available_specifics  u-dis-inline-block">
+                            <%= presenter.grade_availability_status_for(activity) %>
+                          </span>
+                        <% end %>
+                      </dd>
+                      <dt class="c-property-list__name">
+                        Password protected
+                      </dt>
+                      <dd class="c-property-list__value  password-protected-value">
+                        <%= presenter.password_protected?(activity) %>
+                      </dd>
+                      <dt class="c-property-list__name">
+                        Time limit
+                      </dt>
+                      <dd class="c-property-list__value  time-limit-value">
+                        <% time_limit = presenter.time_limit_for(activity) %>
+                        <% pretty_time_limit = time_limit.is_a?(Integer) ? pretty_print_time(time_limit * 60) : time_limit %>
+                        <%= pretty_time_limit %>
+                        <% unless pretty_time_limit == 'None' %> |
+                          <button type="button"
+                                  title="<%= presenter.set_times_title %>"
+                                  class="c-no-button  c-link"
+                                  onclick="VHL.Assessments.displayModal(
+                                    '<%= instructor_assessment_time_limits_path(
+                                      section_id: current_focus.section.id, activity_id: activity.id) %>')"
+                                  <% if presenter.focused_on_course? %>disabled<% end %>>
+                            Set individual times
+                          </button>
+                        <% end %>
+                      </dd>
+                      <dt class="c-property-list__name">
+                        Number of attempts
+                      </dt>
+                      <dd class="c-property-list__value  number-of-attempts-value">
+                        <% num_of_attempts = presenter.max_attempts(activity) %>
+                        <%= num_of_attempts == -1 ? 'Unlimited' : num_of_attempts %>
+                      </dd>
+                      <% if presenter.allow_assessment_randomization?(activity) %>
+                        <dt class="c-property-list__name">
+                          Randomize per Student
+                        </dt>
+                        <dd class="c-property-list__value  randomize_per_student_value">
+                          <%= presenter.randomize_per_student(activity) %>
+                        </dd>
+                      <% end %>
+                    </dl>
+                  </div>
+                <% end %>
+              </td>
+              <% if component_name === 'Instructor-created Activities' %>
+                <td class="u-txt-lt  u-pad-bot-4  u-pad-top-6  js-toc-creator  toc-creator-aline">
+                  <%= presenter.activity_creator(activity) %>
+                </td>
+              <% end %>
+              <% if presenter.show_google_classroom_button? -%>
+                <td class="u-txt-ctr  u-pad-bot-0  u-pad-top-2">
+                  <div class="u-dis-inline-block  <%= test_class('google-classroom-btn') %>">
+                    <%= render(
+                      '/instructor/partials/google_classroom_button',
+                      activity: activity,
+                      presenter: presenter
+                    ) %>
+                  </div>
+                </td>
+              <% end -%>
+              <td class="rightsidecontent toc_location_activity_due_date" id="due_date_cell_for_activity_id_<%= activity.id %>" >
+                <% if presenter.assignable_view? -%>
+                  <% if presenter.activity_in_course_library?(activity) %>
+                    <%= render 'instructor/toc/due_date',
+                        activity: activity,
+                        due_date_handler: due_date_handler %>
+                  <% else %>
+                    <div class="toc_activity_due_date"></div>
+                  <% end -%>
+                <% else -%>
+                <% end -%>
+              </td>
+              <% if presenter.lti_deep_link_enabled? %>
+                <td class="u-txt-rt
+                           <%= test_class("deep-link-activity-#{activity.id}") %>
+                           toc-section">
+                  <%= link_to(
+                        'LINK',
+                        'javascript://',
+                        class: 'js-deep-link-activity-control',
+                        'data-js-activity-id' => activity.id,
+                        lang: presenter.program_language,
+                        title: "Link to #{activity.title}",
+                      ) %>
+                </td>
+              <% end %>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      </div>
+    <% end %>
+  </div>
+</div><!-- /activities -->
+
+<% unless @presenter.focused_on_course? %>
+  <div class="js-set-times">
+    <% if @errors %>
+      <%= render 'set_times_modal', presenter: @time_limits_presenter %>
+    <% end %>
+  </div>
+<% end %>

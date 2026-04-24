@@ -1,0 +1,64 @@
+
+<%= render(:partial => "activities/return_to") %>
+
+<div id="main_content">
+  <div role="main" id="activity_shell">
+    <div class="instructions-frame ui-helper-clearfix">
+      <% if @activity -%>
+        <h1 id="current_strand_name">
+          <span><%= @activity_list_header.html_safe %></span>
+        </h1>
+
+        <%= render(:partial => "activities/activity_header", :locals => { :activity => @activity, :section => current_section,
+                                                             :workset => @workset } ) %>
+
+
+        <%= render  :partial => 'activities/activity_context',
+                    :locals => {  :activity => @activity,
+                                  :attempt_track => @attempt_track,
+                                  :workset => @workset,
+                                  :classwork => @classwork,
+                                  :attempt => @attempt,
+                                  :section => current_section,
+                                  :score => nil,
+                                  :instructor_feedback => nil} %>
+    </div>
+    <div id="activity_body" class="c-activity-body">
+    <%
+      if @attempt_track.practice?
+        form_url = practice_section_activity_path(current_section_id, @activity)
+        form_parameters = { :method => :get, :id => 'activity_form', class: 'c-activity-form', :autocomplete => "off" }
+      else
+        form_url = section_activity_path(current_section_id, @activity)
+        form_parameters = { :method => :post, :id => 'activity_form', class: 'c-activity-form', :autocomplete => "off" }
+      end
+      if @activity.activity_type == 'composition'
+        form_parameters.merge!(:enctype => "multipart/form-data")
+      end
+    %>
+    <%=
+      form_for(:activity, :url => form_url, :html => form_parameters ) do |form|
+    %>
+    <% if @activity.content_object.is_a?(MaestroActivityEngine::ActivityContent::Content) %>
+      <div id="testFrame" class="ui-helper-clearfix">
+         <% @output_buffer << render(:partial => "maestro_activity_engine/activities/previews/" + @activity.content_object.partial_name + '_grading_preview',
+            :locals => { :content_object => @activity.content_object,
+                        :activity_id => @activity.id,
+                        :read_only_status => @activity.read_only?,
+                        :classwork => @classwork })
+          %>
+      </div>
+      <%= yield :submit_buttons %>
+    <% else -%>
+      Trying to parse activity content resulted in the following error(s):
+      <ul>
+        <% @activity.parse_errors.each do |error| %>
+          <li><%= error %></li>
+        <% end -%>
+      </ul>
+    <% end -%>
+    <% end -%>
+    </div>
+  </div>
+  <% end -%>
+</div>

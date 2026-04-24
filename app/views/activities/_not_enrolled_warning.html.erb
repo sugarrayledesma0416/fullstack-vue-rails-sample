@@ -1,0 +1,33 @@
+<div class="ns-music-v1">
+  <div class="c-modal  c-modal--md  js-modal  js-modal-not-enrolled-submission-warning  js-modal-a11y">
+    <div role="dialog" aria-labelledby="not_enrolled_dialog1" class="c-modal__box  js-modal-box">
+      <button class="c-modal__close-button  c-no-button  js-x-close  js-modal-close  js-modal-a11y__default-focus">
+        <span class="c-icon  c-icon--md  c-icon--close"></span>
+        <span class="u-screen-reader-only">Close dialog</span>
+      </button>
+
+      <div role="document" class="js-modal-content">
+        <div class="c-modal__body  u-mar-0  u-pad-0">
+          <div class="c-panel  c-panel--padded  u-mar-0">
+            <div class="c-panel__header  u-bord-radius-3">
+              <h1 id="not_enrolled_dialog1" class="c-heading--modal  u-txt-gray-6">Not Enrolled In Course</h1>
+            </div>
+            <div class="c-panel__body">
+              <div class="u-bg-light-orange  u-pad-12  u-mar-bot-12">
+                <span>
+                  <%= feature_icon('music/features/activity-shell/icons/icon-warning', ['c-embedded-icon--lg  u-mar-rt-8  u-mar-top-4']) %>
+                </span>
+                <span>You are not currently enrolled in a course using this program.</span>
+              </div>
+              <p class="<%= test_class('warning_message') %>">Completed assignments cannot be transferred to a course.</p>
+            </div>
+            <div class="c-button-group  u-mar-0  u-txt-rt">
+              <button type="button" class="c-button  c-button--primary  js-modal-close">Confirm</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="u-screen-reader-only" tabindex="-1">Dialog end</button>
+    </div>
+  </div>
+</div>

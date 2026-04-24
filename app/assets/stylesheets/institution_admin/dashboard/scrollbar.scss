@@ -1,0 +1,44 @@
+// ToDo: Remove these redundant styles after full implementation of music v3 in M3.
+
+// Fix for scrollbars look inside the modal
+.c-scrollbar-v3 {
+  // Prevent collision between content and scrollbar:
+  padding-right: 0.5rem;
+
+  &::-webkit-scrollbar {
+    width: 0.25rem;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 0.125rem;
+    background-color: var(--music-red-500, #AA3127);
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: var(--music-true-gray-200, #BFBFBF);
+    border-radius: 0.125rem;
+  }
+}
+
+.c-scrollbar-v3--fade-effect {
+  --scrollbar-width: 0.25rem;
+  --mask-height: 2.5rem;
+  --mask-image-content: linear-gradient(to bottom,
+    transparent,
+    0,
+    var(--music-util-black) calc(100% - var(--mask-height)),
+    transparent);
+  --mask-size-content: calc(100% - var(--scrollbar-width)) 100%;
+  --mask-image-scrollbar: linear-gradient(var(--music-util-black), var(--music-util-black));
+  --mask-size-scrollbar: var(--scrollbar-width) 100%;
+
+  padding-bottom: 1rem;
+  mask-image: var(--mask-image-content),
+  var(--mask-image-scrollbar);
+  mask-size: var(--mask-size-content),
+  var(--mask-size-scrollbar);
+  mask-position: 0 0,
+  100% 0;
+  mask-repeat: no-repeat,
+  no-repeat;
+}

@@ -1,0 +1,21 @@
+{ "request_help": {
+  "direction_line": true,
+  "engine": true,
+  "reference_text": true,
+  "vtext_reference": false
+},
+"request_review": {
+  "whole_question": ["multiple_choice", "recording", "virtual_chat", "partner_chat", "video_virtual_chat", "true_false_enhanced"],
+  "direction_line": false,
+  "engine": false,
+  "reference_text": false,
+  "vtext_reference": false
+},
+"report_content_problem": {
+  "answer_blank": ["multiple_choice"],
+  "direction_line": true,
+  "engine": true,
+  "reference_text": true,
+  "vtext_reference": true
+}
+}

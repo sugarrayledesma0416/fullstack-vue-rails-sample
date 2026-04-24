@@ -1,0 +1,2 @@
+<% content_for(:css_head, wicked_pdf_stylesheet_link_tag("pdf_vocab_words")) %>
+<%= render :partial => "vocab_words/#{@study_sheet_type}.html.erb", :locals => { :vocab_words => @vocab_words + @default_vocab_words} %>

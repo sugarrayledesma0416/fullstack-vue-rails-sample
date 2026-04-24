@@ -1,0 +1,369 @@
+/*********************************************************/
+/*                    HELP REQUESTS                      */
+/*********************************************************/
+
+@import 'music/library/v1/base/main';
+
+.c-help-request {
+  background-color: $gray-f8;
+  clear: both;
+  font-size: $font-size-16;
+  margin: rpx(25) 0;
+  min-width: 100%;
+}
+
+.c-help-request-header {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  font-weight: initial;
+  margin-bottom: rpx(4);
+  padding: rpx(10) rpx(6) rpx(6) rpx(6) !important;
+  width: 100%;
+}
+
+.is-collapsed svg {
+  transform: rotate(-90deg);
+}
+
+.c-help-request-header path {
+  fill: $blue;
+}
+
+.c-help-request-header svg {
+  height: rpx(20);
+}
+
+.c-help-request-header span {
+  pointer-events: none;
+}
+
+.c-help-request-container {
+  background-color: $white;
+  clear: both;
+  filter: drop-shadow(0.1rem 0.1rem 0.2rem $gray-c);
+  font-weight: normal;
+  padding: 1rem 1.5rem 1.5rem 1.5rem;
+  position: relative;
+}
+
+.c-instructor_response_container {
+  background-color: $gray-f5;
+  line-height: 1.9rem;
+  margin-top: 0.5rem;
+  max-width: 100%;
+  padding: 0.75rem 1.5rem;
+
+  .c-accent-bar-textbox-wrapper {
+    display: block;
+  }
+}
+
+.c-edit-request,
+.c-remove-request {
+  align-text: right;
+  letter-spacing: rpx(1);
+}
+
+.c-flash-banner-group.c-help-request-flash {
+  font-size: 1rem;
+  top: 2rem;
+
+  .c-flash-banner {
+    max-width: none;
+  }
+}
+
+.c-help-menu-container {
+  margin: 0 auto 0.5rem;
+  padding-top: rpx(2);
+  position: relative;
+  padding-right: 1rem;
+  border-bottom: rpx(1) solid $gray-c;
+}
+
+/* Help Request Selectable Elements */
+.highlighted_notable,
+.helpable {
+  border: rpx(2) solid $blue!important;
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: top;
+  margin: 3px 0px;
+  padding: 5px;
+  background-color: $light-orange;
+}
+
+
+.helpable #directions-frame {
+  left: 0px;
+}
+
+
+.composition li .helpable {
+  display: block;
+}
+
+#activity_body ol ul.answer_choices .helpable li {
+  margin-bottom: 0px;
+}
+
+ul.answer_choices .helpable,
+.activity_reference_block .helpable {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.recording_v2 li .helpable {
+  max-width: 780px;
+}
+
+.instructions-frame .helpable {
+  margin-top: 0px;
+}
+
+.helpable  #strand_page_number {
+  margin: 10px 5px;
+}
+
+.helpable .reference_model {
+  padding: 10px;
+  margin-bottom: 0px;
+}
+
+.helpable .reference_exam {
+  width: 820px;
+}
+
+.helpable .chat_container.vchat {
+  margin-right: 5px;
+  margin-top: 10px;
+}
+
+.helpable.flagged_for_review {
+  background: #FEF6E4!important;
+}
+
+/* don't set learning engine divs to display:inline-block */
+.learning_engine #activity_body .helpable, 
+#learning_engine.highlighted_notable, 
+#learning_engine.selected_notable {
+  display:block;
+}
+
+/* Help Request Messages & Modal */
+.help_request_submit {
+  padding-top: 10px;
+  text-align: right;
+}
+
+.cancel_request {
+  cursor: pointer;
+  float: left;
+}
+
+.help_request_message_container {
+  padding-top: rpx(5);
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: z(modal);
+}
+
+.help_request_message {
+  border: 1px solid #FFF;
+  color: #FFF;
+  padding: 5px;
+}
+
+.help_request_message.success {
+  background: #01AA4D;
+  outline: 1px solid #01AA4D;
+}
+
+.help_request_message.failure {
+  background: #B40404;
+  outline: 1px solid #B40404;
+}
+
+.request_type {
+  display: block;
+  height: 20px;
+  left: 0px;
+  position: absolute;
+  text-indent: -999em;
+  top: 4px;
+  width: 20px;
+}
+
+.request_type.request_review  { background: url('/images/icons/feedback_icon_r.png') no-repeat; }
+.request_type.request_help    { background: url('/images/icons/feedback_icon_h.png') no-repeat; }
+.request_type.request_comment { background: url('/images/icons/feedback_icon_c.png') no-repeat; }
+
+.request_status {
+  float: left;
+}
+
+.request_status.submitted { color: #01AA4D; }
+.request_status.resolved  { }
+.request_status.canceled  { }
+
+#activity_body .instructor_comment_area label {
+  color: #565656;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 14px;
+}
+
+.request_response_submit {
+  margin-top: 5px;
+  margin-bottom: 10px;
+  text-align: right;
+}
+
+/* Video Help Requests */
+
+.helpable #video-transcript-splitter {
+  height: auto;
+  width: auto;
+}
+
+.helpable #video-transcript-splitter #video-top-pane {
+  height: auto!important;
+  padding-bottom: 0px;
+  position: relative!important;
+  width: auto!important;
+}
+
+/*********************************************************/
+/*       HELP REQUESTS - PROGRESSIVE ENHANCEMENT         */
+/*********************************************************/
+
+/* This will prevent the items inside of helpable containers being clicked on. So that
+when you are trying to trigger a help request, you do not accidentally start playing a
+video, or audio, or anything of that sort. This will work in all browsers except IE.
+IE 11 is supposedly going to support it. */
+
+.activity_reference_block .helpable div,
+.virtual_chat_helpable .helpable div,
+.helpable #video-transcript-splitter div,
+.helpable object,
+.helpable .cke_skin_kama,
+.helpable .cke_skin_kama span
+{
+  pointer-events: none;
+}
+
+/* To compensate for Internet Explorer not supporting that fix we also
+Add a clickable area above the "engine" to give an appropriate target area. */
+
+.helpable_anchor {
+  color: #565656;
+  font-size: 14px;
+  line-height: 16px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/*********************************************************/
+/*                 REVIEW WORK REQUESTS                  */
+/*********************************************************/
+.review_work #question_prompt #activity_direction_line,
+.review_work #question_prompt #directions-frame {
+  margin-top: 0px;
+}
+
+.review_work #question_prompt .external_references {
+  clear: both;
+}
+
+
+/*********************************************************/
+/*                    FOOTER LINKS                       */
+/*********************************************************/
+
+
+/* Request Help Menu */
+[id="activityFooterWrap"] .help_request_menu {
+  bottom: 20px;
+  right: 0px;
+  z-index: z(bump);
+}
+
+.menu_wrapper {
+  background: #E5E5E5;
+}
+
+.help_menu_container {
+  margin: 0 auto 8px;
+  min-height: 2px;
+  padding-top: 2px;
+  position: relative;
+  padding-right: 24px;
+}
+
+.c-help-menu-container .help_request_wrapper {
+  margin-bottom: 0px;
+  text-align: right;
+}
+
+.helpable_block {
+  height: 40px;
+  margin-right: 0px;
+  position: absolute;
+  right: 0px;
+  width: 150px;
+}
+
+[id="activityFooterWrap"] #get_help {
+  background: url('/images/arrows-blue-small.png') right -17px no-repeat;
+  padding: 5px 20px 5px 5px;
+}
+
+[id="activityFooterWrap"] #get_help.open {
+  background: #FFF url('/images/arrows-blue-small.png') right 3px no-repeat;
+  border-bottom: 1px solid #BEBEBE;
+  border-left: 1px solid #BEBEBE;
+  border-right: 1px solid #BEBEBE;
+  padding: 4px 19px 2px 4px;
+  position: relative;
+  z-index: 500;
+  box-shadow: 1px 2px 3px #aaa;
+  -webkit-box-shadow: 1px 2px 3px #aaa;
+  -moz-box-shadow: 1px 2px 3px #aaa;
+}
+
+.help_request_wrapper {
+  margin-bottom: 5px;
+  position: relative;
+}
+
+.help_request_menu {
+  background: #FFF;
+  border: 1px solid #CCC;
+  height: auto;
+  padding: 5px;
+  position: absolute;
+  width: 215px;
+  box-shadow: 1px 1px 3px #aaa;
+  -webkit-box-shadow: 1px 1px 3px #aaa;
+  -moz-box-shadow: 1px 1px 3px #aaa;
+}
+
+/* Help Request Links */
+.c-activate-help {
+  display: inline;
+  font-size: rpx(16);
+}
+
+#cancel_help,
+.c-activate-help,
+.activate_report,
+.request_cancel_link {
+  cursor: pointer;
+}
+
+.activate_report {
+  display: block;
+}

@@ -1,0 +1,13 @@
+<activity activity_type="reference_activity" title="sample_title" language="es">
+  <dl>instructions_go_here</dl>
+  <items>
+    <reference_group background_color="true">
+      <paragraph>Lorem impsum dolor sic amet.</paragraph>
+      <headline level="1">Lugares</headline>
+      <headline level="2">El morro</headline>
+      <floating_image align="right" id="5">
+        <caption>This is an image caption.</caption>
+      </floating_image>
+    </reference_group>
+  </items>
+</activity>

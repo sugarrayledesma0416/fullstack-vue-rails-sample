@@ -1,0 +1,12 @@
+{
+  "links": {
+    "self": "https://api.abconnect.certicaconnect.com/rest/v4.1/assets/30F68E62-A25B-11ED-9CB7-FF7D19B583DC/alignments?fields%5Bstandards%5D=statement.descr,standard_type,number.enhanced"
+  },
+  "data": [],
+  "meta": {
+    "offset": 100,
+    "count": 1,
+    "took": 276,
+    "limit": 100
+  }
+}

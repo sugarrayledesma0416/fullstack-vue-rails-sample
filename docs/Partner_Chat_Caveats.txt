@@ -1,0 +1,5 @@
+Known Caveats for partner chat:
+  - when the inviter sends over the url to the invitee, that url may contain the wrong section for the invitee to use to open a new window.
+    --possible solution: invitee pushes accept, which sends acknowlege to inviter, telling them to hang on a minute,
+                         and invitee opens the new windown using the given url, and it uses the smart redirect already in place,
+                         and preserves the query string across the redirect, then sends accept message to inviter to initiate chat.

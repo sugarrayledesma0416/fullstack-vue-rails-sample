@@ -1,0 +1,242 @@
+input, label {
+	display: block;
+}
+
+#full_width_column {
+	float: left;
+	height: auto !important;
+	margin: 0 0 0 55px;
+	min-height: 400px;
+	padding: 0;
+}
+
+h1 {
+	font-weight: normal;
+	font-size: 1.385em;
+	margin: 0 0 14px 0;
+}
+
+
+#full_width_header h2 {
+	text-transform: lowercase;
+	word-spacing: -2px;
+}
+
+#full_width_header h2 {
+	margin: 0;
+	text-align: left;
+	color: #b10f0c;
+	font-size: 1.231em;
+	word-spacing: -3px;
+	float: left;
+}
+
+#full_width_header h2 span {font-weight: normal;}
+
+#full_width_header{
+	border-bottom: 1px dotted #0026a5;
+	margin-bottom: 1em;
+	padding: 1em;
+}
+
+.single_column #main_content {
+	margin-bottom: 3em;
+	padding: 0;
+	padding-bottom: 90px;
+	text-align: center;
+}
+
+#full_width_header {
+	color: #535353;
+	margin: 0 auto;
+	padding: 25px 0;
+	position: relative;
+	width: 811px;
+	text-align: left;
+}
+
+#full_width_body {
+	color: #535353;
+	margin: 0 auto;
+	padding: 25px 0;
+	position: relative;
+	width: 811px;
+	text-align: left;
+}
+
+#full_width_body .left_column {
+  width: 49%;
+  float: left;
+}
+
+#full_width_body .right_column {
+  width: 48%;
+  float: right;
+}
+
+#full_width_header p {
+	margin-top: 0;
+	padding-top: 0;
+	text-align: left;
+}
+
+#full_width_header p.edit {
+	font-size: 0.846em;
+	margin-left: 2.5em;
+	display: inline;
+	position: relative;
+	top: 5px;
+}
+
+#full_width_header p.edit	a {
+  margin-top: 20px;
+	color: #979797;
+	text-transform: lowercase;
+}
+
+
+
+div.outline {
+	border: 1px solid #ccc;
+}
+
+span.warning {
+  color: #d00;
+  border: 1px solid #ccc;
+  padding: .25em;
+}
+
+a.red-button, span.disabled-button {
+	font-weight: bold;
+	text-align: center;
+	color: #fff;
+	background: url(/images/red-button.gif) transparent top left repeat-x;
+	padding: 3px 15px 5px 15px;
+	text-transform: lowercase;
+	font-size: 13px;
+	width: auto
+}
+	a.red-button:hover {
+		text-decoration: none;
+		background-position:0px -28px;
+	}
+
+span.disabled-button {background-image: url(/images/btn-disabled.gif);}
+
+/*input.red-button {
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+  background: url(/images/red-button.gif) transparent top left repeat-x;
+  padding: 3px 15px 5px 15px;
+  text-transform: lowercase;
+  font-size: 1.231em;
+  width: auto
+}*/
+
+input.red-button {
+	float: left;
+	width: auto;
+	border: 0;
+	margin-top: 1em;
+}
+
+input.red-button {float: none;}
+
+input.text {
+	background: url(/images/bkgd-form-field.gif) transparent top left no-repeat;
+	width: 224px;
+	padding: 3px 5px 3px 5px;
+	border: 2px solid #fff;
+	float: none;
+	background-color: white;
+}
+
+select.text {
+	padding: 3px 0px 3px 5px;
+	border: 1px solid #ccc;
+	float: none;
+	background-color: white;
+}
+
+textarea.text {
+	padding: 3px 5px 3px 5px;
+	border: 1px solid #ccc;
+	float: none;
+	background-color: white;
+}
+
+input.file {
+  background: url(/images/bkgd-form-field.gif) transparent top left no-repeat;
+	padding: 3px 5px 3px 5px;
+	border: 1px solid #ccc;
+	float: none;
+	background-color: white;
+}
+
+/* Error Styles */
+.fieldWithErrors input[type=file]{border:3px solid #CC0000;}
+.white_bg {
+  background-color: #fff;
+}
+
+.grey_bg {
+  background-color: #eee;
+}
+
+.greytalics {
+  color: #777;
+  font-style: italic;
+}
+
+.greytalics a {
+  color: #777;
+}
+
+.red {
+	color: red;
+	font-weight: bold;
+}
+
+table.data td {
+	margin-left: 12px;
+	margin-right: 12px;
+	border-right: 1px solid black;
+}
+table.data th {
+	font-weight: bold;
+	border-bottom: 1px solid black;
+}
+
+/* site license manager */
+table.site_manager td.program_title {
+  font-weight: bold;
+  font-size: 1.1em;
+}
+table.site_manager span.program_package {
+  padding-left: 1.5em;
+  font-weight: bold;
+  font-size: 1.05em;
+}
+table.site_manager td.seat_counts {
+  font-weight: normal;
+  font-size: 1.25em;
+  text-align: center;
+}
+table.site_manager td.seat_counts span span {
+  display: block;
+  font-size: 1.25em;
+}
+table.site_manager td.action_buttons {
+  padding-top: .5em;
+  text-align: center;
+}
+span.search_query:before,
+span.search_query:after {
+  content: '"'
+}
+
+ul.normal_list li {
+  list-style-type: disc;
+  margin-left: 2em;
+}

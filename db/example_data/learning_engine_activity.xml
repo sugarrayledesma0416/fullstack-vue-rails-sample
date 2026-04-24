@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<activity language="es" title="Learning engine: Subject pronouns and the verb être" activity_type="learning_engine">
+  <dl>Example Learning Engine Activity Direction Line</dl>
+  <items>
+    <reference type="video">
+      <video id="136475" />
+    </reference>
+
+    <watch_and_repeat>
+      <repeat_prompt>
+        <image id="137739" />
+        <audio id="137819" />
+        <text>¿En qué puedo servirles?</text>
+      </repeat_prompt>
+      <repeat_prompt>
+        <image id="137745" />
+        <audio id="137813" />
+        <text>Tenemos una reservación.</text>
+      </repeat_prompt>
+      <repeat_prompt>
+        <image id="137739" />
+        <audio id="137790" />
+        <text>¿A nombre de quién?</text>
+      </repeat_prompt>
+    </watch_and_repeat>
+
+    <tutorial>
+      <video id="138699" />
+      <checkpoints>
+        <checkpoint start="10" end="17" ref="1" stop="false"/>
+        <checkpoint start="32" end="39" ref="2" stop="true"/>
+      </checkpoints>
+      <header_bar_title>Indirect object pronouns</header_bar_title>
+
+      <multiple_choice checkpoint_ref="2">
+        <item>
+          <prompt>Foo bar baz prompt</prompt>
+          <choices>
+            <answer>cierto</answer>
+            <distractor>falso</distractor>
+          </choices>
+        </item>
+      </multiple_choice>
+
+      <word_ordering>
+        <item>
+          <final_sentence>Elles voyagent en France, n'est-ce pas?</final_sentence>
+          <prompt>
+            <wol ref="1"/>
+            <wol ref="2"/>
+            <wol ref="3"/>,
+            <wol ref="4"/>?
+          </prompt>
+          <answers>
+            <answer wol_ref="2">voyagent</answer>
+            <answer wol_ref="3">en France</answer>
+            <answer wol_ref="4">n'est-ce pas</answer>
+            <answer wol_ref="1">elles</answer>
+          </answers>
+        </item>
+        <item>
+          <final_sentence>Est-ce que tu detestes le cours d'economie?</final_sentence>
+          <prompt>
+            <wol ref="1"/>
+            <wol ref="2"/>
+            <wol ref="3"/>
+            <wol ref="4"/>
+            <wol ref="5"/>
+            <wol ref="6"/>?
+          </prompt>
+          <answers>
+            <answer wol_ref="4">le</answer>
+            <answer wol_ref="6">d'economie</answer>
+            <answer wol_ref="1">est-ce que</answer>
+            <answer wol_ref="3">detestes</answer>
+            <answer wol_ref="5">cours</answer>
+            <answer wol_ref="2">tu</answer>
+          </answers>
+        </item>
+      </word_ordering>
+    </tutorial>
+
+    <identify>
+      <dictionary_entry>
+        <id>2</id>
+        <annotated_target>estar de vacaciones</annotated_target>
+        <translation>to be on vacation</translation>
+        <descriptor></descriptor>
+        <language>es</language>
+        <image id="136799" />
+        <audio id="136816" />
+        <target>estar de vacaciones</target>
+        <exclusion_entry_ids></exclusion_entry_ids>
+      </dictionary_entry>
+      <dictionary_entry>
+        <id>5</id>
+        <annotated_target>ir en taxi</annotated_target>
+        <translation>to go by taxi</translation>
+        <descriptor></descriptor>
+        <language>es</language>
+        <image id="136802" />
+        <audio id="136823" />
+        <target>ir en taxi</target>
+        <exclusion_entry_ids></exclusion_entry_ids>
+      </dictionary_entry>
+      <dictionary_entry>
+        <id>8</id>
+        <annotated_target>ir en avión</annotated_target>
+        <translation>to go by plane</translation>
+        <descriptor></descriptor>
+        <language>es</language>
+        <image id="136810" />
+        <audio id="136820" />
+        <target>ir en avión</target>
+        <exclusion_entry_ids></exclusion_entry_ids>
+      </dictionary_entry>
+    </identify>
+
+    <say_it>
+      <dictionary_entry>
+        <id>3</id>
+        <annotated_target>ir de vacaciones</annotated_target>
+        <translation>to go on vacation</translation>
+        <descriptor></descriptor>
+        <language>es</language>
+        <image id="136800" />
+        <audio id="136817" />
+        <target>ir de vacaciones</target>
+        <exclusion_entry_ids></exclusion_entry_ids>
+      </dictionary_entry>
+      <dictionary_entry>
+        <id>6</id>
+        <annotated_target>ir en barco</annotated_target>
+        <translation>to go by boat</translation>
+        <descriptor></descriptor>
+        <language>es</language>
+        <image id="136803" />
+        <audio id="136821" />
+        <target>ir en barco</target>
+        <exclusion_entry_ids></exclusion_entry_ids>
+      </dictionary_entry>
+    </say_it>
+
+    <listen_and_repeat>
+      <dictionary_entry>
+        <id>11</id>
+        <annotated_target>la estación= del metro</annotated_target>
+        <translation>subway station</translation>
+        <descriptor></descriptor>
+        <language>es</language>
+        <image id="136807" />
+        <audio id="136825" />
+        <target>la estación= del metro</target>
+        <exclusion_entry_ids></exclusion_entry_ids>
+      </dictionary_entry>
+
+      <dictionary_entry>
+        <id>14</id>
+        <annotated_target>el equipaje</annotated_target>
+        <translation>luggage</translation>
+        <descriptor></descriptor>
+        <language>es</language>
+        <image id="136811" />
+        <audio id="136814" />
+        <target>el equipaje</target>
+        <exclusion_entry_ids></exclusion_entry_ids>
+      </dictionary_entry>
+    </listen_and_repeat>
+
+    <drag_and_drop>
+      <item>
+        <prompt>Juana <wol ref="1"/> foo <wol ref="2"/> bar.</prompt>
+        <choices ref="1">
+          <distractor>one</distractor>
+          <answer>two</answer>
+          <distractor>three</distractor>
+        </choices>
+        <choices ref="2">
+          <distractor>foo</distractor>
+          <distractor>bee</distractor>
+          <answer>baa</answer>
+        </choices>
+      </item>
+      <item>
+        <prompt>Ils <wol ref="1"/> foo</prompt>
+        <choices>
+          <distractor>es</distractor>
+          <answer>sont</answer>
+        </choices>
+      </item>
+    </drag_and_drop>
+
+    <multiple_choice>
+      <item>
+        <prompt>Foo bar baz prompt</prompt>
+        <choices>
+          <answer>cierto</answer>
+          <distractor>falso</distractor>
+        </choices>
+      </item>
+    </multiple_choice>
+
+    <word_ordering>
+      <item>
+        <final_sentence>Elles voyagent en France, n'est-ce pas?</final_sentence>
+        <prompt>
+          <wol ref="1"/>
+          <wol ref="2"/>
+          <wol ref="3"/>,
+          <wol ref="4"/>?
+        </prompt>
+        <answers>
+          <answer wol_ref="2">voyagent</answer>
+          <answer wol_ref="3">en France</answer>
+          <answer wol_ref="4">n'est-ce pas</answer>
+          <answer wol_ref="1">elles</answer>
+        </answers>
+      </item>
+      <item>
+        <final_sentence>Est-ce que tu detestes le cours d'economie?</final_sentence>
+        <prompt>
+          <wol ref="1"/>
+          <wol ref="2"/>
+          <wol ref="3"/>
+          <wol ref="4"/>
+          <wol ref="5"/>
+          <wol ref="6"/>?
+        </prompt>
+        <answers>
+          <answer wol_ref="4">le</answer>
+          <answer wol_ref="6">d'economie</answer>
+          <answer wol_ref="1">est-ce que</answer>
+          <answer wol_ref="3">detestes</answer>
+          <answer wol_ref="5">cours</answer>
+          <answer wol_ref="2">tu</answer>
+        </answers>
+      </item>
+    </word_ordering>
+
+    <category_matching>
+         <item>
+            <categories>
+                <category ref="1">singular</category>
+                <category ref="2">plural</category>
+              </categories>
+            <prompts>
+          <prompt answer_ref="2">animaux</prompt>
+          <prompt answer_ref="2">amis</prompt>
+          <prompt answer_ref="2">étudiants</prompt>
+          <prompt answer_ref="1">objet</prompt>
+          <prompt answer_ref="1">bureau</prompt>
+          <prompt answer_ref="1">télévision</prompt>
+              </prompts>
+          </item>
+         <item>
+            <categories>
+                <category ref="1">singular</category>
+                <category ref="2">plural</category>
+              </categories>
+            <prompts>
+          <prompt answer_ref="2">animaux2</prompt>
+          <prompt answer_ref="2">amis2</prompt>
+          <prompt answer_ref="2">étudiants2</prompt>
+          <prompt answer_ref="1">objet2</prompt>
+          <prompt answer_ref="1">bureau2</prompt>
+          <prompt answer_ref="1">télévision2</prompt>
+              </prompts>
+          </item>
+    </category_matching>
+
+    <diagnostic>
+      <threshold>2</threshold>
+      <number_of_questions>3</number_of_questions>
+      <failure_message>We suggest your repeat this checkpoint.</failure_message>
+      <item>
+        <prompt>
+          Ana está <wol ref="1" />; quiere dormir. (<i>tired</i>)
+        </prompt>
+        <answers ref="1">
+          <answer>cansada</answer>
+        </answers>
+      </item>
+
+      <item>
+        <prompt>
+          Nosotros estamos <wol ref="1" />. ¡Vamos a jugar al fútbol! (<i>bored</i>)
+        </prompt>
+        <answers ref="1">
+          <answer>aburridos</answer>
+        </answers>
+      </item>
+
+      <item>
+        <prompt>
+          El gimnasio no está <wol ref="1" />a la medianoche. (<i>open</i>)
+        </prompt>
+        <answers ref="1">
+          <answer>abierto</answer>
+        </answers>
+      </item>
+
+      <item>
+        <prompt>
+          Sandra no puede hablar contigo ahora; está <wol ref="1" />. (<i>busy</i>)
+        </prompt>
+        <answers ref="1">
+          <answer>ocupada</answer>
+        </answers>
+      </item>
+
+      <item>
+        <prompt>
+          No me gusta comer en la cafetería porque las mesas están <wol ref="1" />. (<i>dirty</i>)
+        </prompt>
+        <answers ref="1">
+          <answer>sucias</answer>
+        </answers>
+      </item>
+    </diagnostic>
+  </items>
+</activity>
+
+

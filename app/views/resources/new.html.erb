@@ -1,0 +1,14 @@
+<% content_for(:js_head, javascript_include_tag('resources')) %>
+
+<% content_for(:css_head, stylesheet_link_tag('resources'))%>
+<% content_for(:css_head, stylesheet_link_tag('music/features/resources/main')) %>
+<% content_for(:body_classes, "standard_layout resources new_resource_wizard  ns-newcsslib  ns-beta  ns-resources  js-resources") %>
+
+<%= render "form", { resource: @resource,
+                     presenter: @presenter,
+                     selected_unit: @selected_unit,
+                     component_list: @component_list,
+                     selected_component_id: @selected_component_id,
+                     return_to: @return_to,
+                     form_url: create_resource_path(current_program),
+                     method: 'post' } %>

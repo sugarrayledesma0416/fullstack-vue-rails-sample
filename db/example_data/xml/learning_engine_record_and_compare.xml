@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<activity language="es" title="Pronunciation Learn Tutorial with Record and Compare" activity_type="learning_engine">
+  <dl>Example Learning Engine Activity Direction Line</dl>
+  <items>
+    <tutorial>
+      <video id="140313" />
+      <checkpoints>
+        <checkpoint ref="1" start="27" end="30" stop="true" />
+        <checkpoint ref="2" start="50" end="53" stop="true" />
+        <checkpoint ref="3" start="81" end="84" stop="true" />
+        <checkpoint ref="4" start="109" end="112" stop="true" />
+        <checkpoint ref="5" start="192" end="195" stop="true" />
+        <checkpoint ref="6" start="312" end="315" stop="true" />
+      </checkpoints>
+
+      <header_bar_title>ABC</header_bar_title>
+      <record_and_compare checkpoint_ref="1">
+        <record_and_compare_word>
+          <audio id="138677" />
+          <word_text>
+            <b>b</b>ueno
+          </word_text>
+        </record_and_compare_word>
+        <record_and_compare_word>
+          <audio id="138689" />
+          <word_text>
+            vóleibol
+          </word_text>
+        </record_and_compare_word>
+        <record_and_compare_word>
+          <audio id="138687" />
+          <word_text>
+            biblioteca
+          </word_text>
+        </record_and_compare_word>
+        <record_and_compare_word>
+          <audio id="138682" />
+          <word_text>
+            vivir
+          </word_text>
+        </record_and_compare_word>
+      </record_and_compare>
+
+      <record_and_compare checkpoint_ref="2">
+        <record_and_compare_word>
+          <audio id="138678" />
+          <word_text>
+            bonito
+          </word_text>
+        </record_and_compare_word>
+        <record_and_compare_word>
+          <audio id="138681" />
+          <word_text>
+            viajar
+          </word_text>
+        </record_and_compare_word>
+        <record_and_compare_word>
+          <audio id="138685" />
+          <word_text>
+            también
+          </word_text>
+        </record_and_compare_word>
+        <record_and_compare_word>
+          <audio id="138693" />
+          <word_text>
+            investigar
+          </word_text>
+        </record_and_compare_word>
+      </record_and_compare>
+
+      <record_and_compare checkpoint_ref="3">
+        <record_and_compare_word>
+          <audio id="138683" />
+          <word_text>
+            deber
+          </word_text>
+        </record_and_compare_word>
+        <record_and_compare_word>
+          <audio id="138684" />
+          <word_text>
+            novio
+          </word_text>
+        </record_and_compare_word>
+        <record_and_compare_word>
+          <audio id="138679" />
+          <word_text>
+            abril
+          </word_text>
+        </record_and_compare_word>
+        <record_and_compare_word>
+          <audio id="138676" />
+          <word_text>
+            cerveza
+          </word_text>
+        </record_and_compare_word>
+      </record_and_compare>
+
+      <record_and_compare checkpoint_ref="4">
+        <record_and_compare_word>
+          <audio id="138688" />
+          <word_text>
+            bola
+          </word_text>
+        </record_and_compare_word>
+        <record_and_compare_word>
+          <audio id="138680" />
+          <word_text>
+            vela
+          </word_text>
+        </record_and_compare_word>
+        <record_and_compare_word>
+          <audio id="138691" />
+          <word_text>
+            Caribe
+          </word_text>
+        </record_and_compare_word>
+        <record_and_compare_word>
+          <audio id="138686" />
+          <word_text>
+            declive
+          </word_text>
+        </record_and_compare_word>
+      </record_and_compare>
+
+      <record_and_compare checkpoint_ref="5">
+        <record_and_compare_word>
+          <audio id="138690" />
+          <word_text>
+            Verónica y su esposo cantan boleros
+          </word_text>
+        </record_and_compare_word>
+      </record_and_compare>
+
+      <record_and_compare checkpoint_ref="6">
+        <record_and_compare_word>
+          <audio id="138692" />
+          <word_text>
+            Benito es de Boquerón pero vive en Victoria
+          </word_text>
+        </record_and_compare_word>
+      </record_and_compare>
+    </tutorial>
+  </items>
+</activity>

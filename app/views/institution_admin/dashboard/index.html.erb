@@ -1,0 +1,48 @@
+<% content_for(:body_classes, "ns-full-width  ns-admin-dashboard  ns-music-v3") %>
+<% content_for(:css_head, stylesheet_link_tag('music/features/admin_dashboard/main')) %>
+<% content_for(:js_head, javascript_include_tag("institution_admin/dashboard/index")) %>
+<% content_for(:css_head, stylesheet_link_tag('institution_admin/dashboard/index')) %>
+
+<div class="c-enterprise__wrapper">
+  <% if @admin_schools.count > 1 %>
+    <div class="u-dis-flex  u-mar-bot-20">
+      <div class="flex-grow-2">
+        <h1 class="c-title-school  u-txt-gray-9  u-pad-top-20">
+          Admin Dashboard
+        </h1>
+      </div>
+      <div class="flex-grow-1  u-pad-top-20">
+        <div class="u-dis-flex  u-justify-content-end  <%= test_class("admin_school_dropdown") %>">
+          <music-menu-v3 theme="light">
+            <button class="c-button-v3  c-button-v3--tertiary">
+              <music-icon-wrapper-v3 class="c-licensing-icon-wrapper">
+                <music-icon-school class="u-fill-widget-red-700  u-mar-bot-8"></music-icon-school>
+              </music-icon-wrapper-v3>
+              <%= @selected_school.name %>
+              <music-icon-down-arrow size="lg" class="u-mar-bot-8"></music-icon-down-arrow>
+            </button>
+            <% @admin_schools.each do |school| %>
+              <a href="<%= institution_admin_dashboard_path(school_id: school.id) %>">
+                <l-line-v3>
+                  <span class="c-menu-v3__link-label">
+                    <%= school.name %>
+                  </span>
+                </l-line-v3>
+              </a>
+            <% end %>
+          </music-menu-v3>
+        </div>
+      </div>
+    </div>
+  <% elsif @admin_schools.count == 1 %>
+    <h1 class="c-title-school  u-txt-gray-9  u-pad-top-20">
+      <%= @selected_school.name %>
+    </h1>
+  <% end %>
+  <% if !@admin_schools.empty? %>
+    <div class="u-mar-bot-32">
+      <%= render partial: 'school', locals: { school: @selected_school } %>
+    </div>
+  <% end %>
+</div>
+<%= render partial: 'idle_students_help_modal' %>

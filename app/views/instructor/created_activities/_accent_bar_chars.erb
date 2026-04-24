@@ -1,0 +1,39 @@
+
+<%
+  lang_code = current_program.language_code
+  lang_name = current_program.language_name
+  character_list = AccentBarEnhanced.characters(lang_code)
+  special_chars_map = nil
+  if (character_list || []).length.positive?
+    lower_char_list = character_list.map do |character_obj|
+      {
+        char: character_obj['lower_case'],
+        desc: character_obj['target_text']
+      }
+    end
+    upper_char_list = character_list.map do |character_obj|
+      {
+        char: character_obj['upper_case'],
+        desc: character_obj['target_text']
+      }
+    end
+    first_char_lower = character_list.first['lower_case']
+    first_char_upper = character_list.first['upper_case']
+    special_chars_map = [
+      {
+        title: "#{lang_name} lowercase",
+        char: first_char_lower,
+        list: lower_char_list
+      },
+      {
+        title: "#{lang_name} uppercase",
+        char: first_char_upper,
+        list: upper_char_list
+      }
+    ]
+    special_chars_map = special_chars_map.to_json
+  end
+%>
+<% if special_chars_map %>
+  <input type="hidden" id="lang-char-map" class="js-lang-char-map" value="<%= h special_chars_map %>">
+<% end %>

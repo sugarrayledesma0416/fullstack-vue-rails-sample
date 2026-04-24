@@ -1,0 +1,38 @@
+@use 'music/library/v1/base/main';
+
+.c-foil-panel {
+  background: radial-gradient(circle at 80% -50%, #f8c7b9, #fcdfcd, #faffe5, #e1f6ef);
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.c-box.c-suggestion-input {
+  margin: 0 0 0.5rem;
+}
+
+.c-box.c-student-response {
+  margin: 0 0 0.5rem;
+}
+
+.c-box.c-prompt {
+  margin: 0 0 0.1rem;
+  width: 100%;
+}
+
+.c-prompt:first-child:nth-last-child(2),
+.c-prompt:first-child:nth-last-child(2) ~ .c-prompt {
+  width: 50%;
+}
+
+.c-prompt:first-child:nth-last-child(3),
+.c-prompt:first-child:nth-last-child(3) ~ .c-prompt {
+  width: 33%;
+}
+
+.c-box.c-suggestion {
+  margin: 0 0 0.5rem;
+}
+
+.c-box.c-suggestion:last-child {
+  margin: 0 0 0.1rem;
+}

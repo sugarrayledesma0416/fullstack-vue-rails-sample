@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<activity language="es" activity_type="true_false_enhanced" title="¿Cierto o falso?">
+  <dl>Después de leer la lectura, indica si cada afirmación es <b>cierta</b> o <b>falsa</b>.</dl>
+  <items>
+    <style>
+      <item_numbers>show</item_numbers>
+      <correction_instruction_in_target_language>true</correction_instruction_in_target_language>
+    </style>
+    <choices>
+      <choice ref="1">Verdadero</choice>
+      <choice ref="2">Falso</choice>
+    </choices>
+    <item>
+      <prompt><image id="1"/>La capital de Colombia es Bogotá</prompt>
+      <answer ref="1"/>
+    </item>
+    <item>
+      <prompt>La capital de Venezuela es Santiago</prompt>
+      <answer ref="2"/>
+      <sample_answer>La capital de Venezuela es Caracas</sample_answer>
+    </item>
+    <item>
+      <prompt>La capital de Bolivia es La Paz</prompt>
+      <answer ref="1"/>
+    </item>
+    <item>
+      <prompt>La capital de Peru es Quito</prompt>
+      <answer ref="2"/>
+      <sample_answer>La capital de Peru es Lima</sample_answer>
+    </item>
+    <item>
+      <prompt>La capital de España es Lisboa</prompt>
+      <answer ref="2"/>
+      <sample_answer>La capital de España es Madrid</sample_answer>
+    </item>
+  </items>
+</activity>

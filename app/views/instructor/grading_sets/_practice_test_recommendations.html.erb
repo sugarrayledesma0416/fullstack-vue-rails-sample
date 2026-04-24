@@ -1,0 +1,45 @@
+<% content_for(:body_classes, ' ns-newcsslib') %>
+<% content_for(:js_head, javascript_include_tag('donut_chart')) %>
+<% content_for(:css_head, stylesheet_link_tag('maestro_activity_engine/diagnostic_activity') ) %>
+
+<div class="ns-view">
+  <div class="container-fluid  container--tight">
+    <div id="diagnostic_results">
+      <div class="c-bigmetric c-bigmetric--practice-test">
+        <div class="c-bigmetric__graph">
+          <div class="c-radial-progress  c-radial-progress--lg">
+            <div class="js-d3-radial-inner" data-value="<%= results.overall_percent %>%">
+            </div>
+            <p class="c-radial-progress__label">Overall</p>
+          </div>
+        </div>
+        <div class="c-bigmetric__detail">
+          <h2 class="c-bigmetric__heading" > <%= results.overall_message_title %> </h2>
+          <div class='overall_score_msg'>
+            <%= results.overall_message_body %>
+          </div>
+        </div>
+      </div>
+      <div id="diagnostic_breakdown_scores">
+
+        <% content_object.concepts.each do |concept| -%>
+          <h3 class="diagnostic_breakdown_info c-heading--rule"> <%= format_concept(concept) %> </h3>
+          <div class="grid diagnostic_concept" id="diag_concept_<%= concept.ref %>">
+            <div class="col-1"> </div> <!-- col 1 -->
+            <div class="col-4 u-txtC">
+              <!-- TODO: replace inline stylewhen we have a stable vertical-center object -->
+              <div class="c-radial-progress  c-radial-progress--sm  concept_score_graph" style="margin-top: -0.25rem;">
+                <div class="js-d3-radial-inner" data-value="<%= results.concept_percent(concept.ref) %>%"> </div>
+              </div>
+            </div> <!-- col 2 -->
+
+            <div class="col-4">
+              <p class="c-score-notes  concept_score_notes"> <%= results.concept_message(concept) %> </p>
+            </div> <!-- col 3 -->
+            <div class="col-3"> </div>
+          </div> <!-- col 4 -->
+        <% end -%>
+      </div> <!-- row -->
+    </div> <!-- .grid -->
+  </div> <!-- detail -->
+</div> <!-- .ns-view -->

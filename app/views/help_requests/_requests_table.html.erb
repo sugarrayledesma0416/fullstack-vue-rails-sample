@@ -1,0 +1,36 @@
+  <div class="wrap_table">
+    <table id="help_requests" class="large_table" data-page-element="help_requests">
+      <thead>
+        <th>Activity</th>
+        <th>Request Type</th>
+        <th>Comment</th>
+        <th>Created</th>
+        <th>Updated</th>
+      </thead>
+      <tbody>
+        <% presenter.help_requests_info.each do |help_request_info| -%>
+          <tr class="help_request" data-help-request-id="<%= help_request_info.activity_id %>">
+            <td data-container="activity">
+              <% if presenter.type_scope == :reported_problems %>
+                <%= "#{format_lesson_strand_label(help_request_info.activity)} | #{help_request_info.activity_title} #{help_request_info.count}".html_safe -%>
+              <% else -%>
+                <%= link_to("#{format_lesson_strand_label(help_request_info.activity)} | #{help_request_info.activity_title} #{help_request_info.count}".html_safe, section_activity_path(current_section, help_request_info.activity) + help_request_info.anchor) -%>
+              <% end -%>
+            </td>
+            <td data-container="type" class="request_type">
+              <%= help_request_info.request_type %>
+            </td>
+            <td data-container="comment" class="request_comment">
+              <%= help_request_info.comment.html_safe %>
+            </td>
+            <td data-container="creation_date" class="creation_date">
+              <%= format_date_time(help_request_info.created_at, :gradebook_cell) %>
+            </td>
+            <td data-container="update_date" class="creation_date">
+              <%= format_date_time(help_request_info.updated_at, :gradebook_cell) %>
+            </td>
+          </tr>
+        <% end -%>
+        </tbody>
+    </table>
+  </div>

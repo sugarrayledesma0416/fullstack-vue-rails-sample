@@ -1,0 +1,17 @@
+# Feature Flag Configuration
+# This file defines all feature flags used in the M3 application
+# along with their descriptions and default bootstrap values
+#
+# Access: Feature flags status page is available to users with
+# 'ai_developer' or 'developer' roles
+
+feature_flags:
+  MAE-Q4-2025-Speech-Rec-Upgrade:
+    description: "Controls the speech recognition provider selection between Azure and Andromeda. (ON = Azure, OFF = Andromeda)"
+    default: false
+    type: "release"
+    environments:
+      - development
+      - staging
+      - qa
+      - production

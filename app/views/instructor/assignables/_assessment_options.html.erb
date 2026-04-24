@@ -1,0 +1,122 @@
+<div data-container="max_attempts" class="div_row ui-helper-clearfix">
+  <label for="activity_assignment_assigned_assessment_detail_number_of_attempts">Maximum attempts</label>
+  <% attempts_opts = (1..9) %>
+  <% select_options = Hash[attempts_opts.zip attempts_opts].merge('Unlimited' => '-1') %>
+  <% if presenter.attempts_overridable? %>
+    <%= select_tag "activity_assignment[assigned_assessment_detail_attributes][number_of_attempts]",
+        options_for_select(select_options, presenter.assessment_number_of_attempts), { title: presenter.number_of_attempts_warning } %>
+  <% else %>
+    <p data-element-type="max_attempt">1<p>
+    <%= hidden_field_tag 'activity_assignment[assigned_assessment_detail_attributes][number_of_attempts]', 1 %>
+  <% end %>
+      <p data-element-type="disabled_attempts_msg" class="u-txt-gray-6">Timed assessments may not have multiple attempts</p>
+  </div>
+
+<div class="div_row ui-helper-clearfix" data-page-element="availability_options_section"><label>Availability</label></div>
+
+<div style="height: 24px;" class="ui-helper-clearfix">
+  <div data-container="availability_text"style="float: left; line-height: 18px;">
+    <%= label_tag(:activity_assignment_show_assessment, presenter.sentence_text_with_singular_label(:show_assessment), :class => 'avail_label') %>
+  </div>
+  <div data-container="availability_option" class="avail_replaced">
+    <%= presenter.assessment_release_status_text %>. <a onClick="$(this).assignment_wizard('toggleAvailability');">edit</a>
+  </div>
+  <div data-container="show_assessment" class="avail_options" style="display: none;">
+    <% options = options_for_select(['I release it', 'a specific date and time'], presenter.assessment_release_status) %>
+    <%= select_tag('activity_assignment[show_assessment]', options) %>
+  </div>
+  <div data-container="show_at" class="avail_date">
+    <%= text_field_tag('activity_assignment[show_at]', '', :size => 10, :class => 'date_timepicker',
+                        :value => presenter.assessment_release_date) %>
+  </div>
+  <div data-container="assessment_availability_errors" class="u-pad-lt-5  u-float-lt  u-width-full">
+  </div>
+</div>
+
+<div style="height: 24px; margin-top: 5px;" class="ui-helper-clearfix">
+  <div data-container="grade_availability_text" style="float: left; line-height: 18px;">
+    <%= label_tag(:activity_assignment_grade_availability, 'Results will be available', :class => 'grade_label') %>
+  </div>
+  <div data-container="grade_availability_option" class="grades_replaced">
+    <%= presenter.assessment_grade_status_text %> <a onClick="$(this).assignment_wizard('toggleGrades');">edit</a>
+  </div>
+  <div data-container="grade_availability" class="grades_options" style="display: none;">
+    <%= select_tag('activity_assignment[grade_availability]', options_for_select(presenter.assessment_grade_availability_options, presenter.assessment_grade_status) ) %>
+  </div>
+  <div data-container="grades_available_at" class="grades_date">
+    <%= text_field_tag('activity_assignment[grades_available_at]', '', :size => 10, :class => 'date_timepicker', :value => presenter.assessment_grade_release_date) %>
+  </div>
+</div>
+
+<div class="div_row ui-helper-clearfix" data-page-element="due_time_options_section"><label>Due time</label></div>
+
+<div style="height: 24px; margin-top: 5px;" class="ui-helper-clearfix">
+  <div data-container="due_time_text" style="float: left; line-height: 18px;">
+    <%= label_tag(:custom_due_time, presenter.sentence_text_with_singular_label(:custom_due_time), :class => 'grade_label') %>
+  </div>
+  <div data-container="current_due_time" class="due_time_replaced">
+    <%= presenter.current_due_time_text %> <a onClick="$(this).assignment_wizard('toggleDueTime');">edit</a>
+  </div>
+  <div data-container="custom_due_time" class="custom_due_time" style="display: none;">
+    &nbsp;
+    <%= select_tag 'due_time_hour', options_for_select(['12','1','2','3','4','5','6','7','8','9','10','11'], presenter.current_due_time.strftime('%I').to_i.to_s), :tabindex => 4 %>
+    <%= select_tag 'due_time_min',  options_for_select(['00','15','30','45','59'], presenter.current_due_time.strftime('%M')), :tabindex => 5 %>
+    <%= select_tag 'due_time_ampm', options_for_select(["AM","PM"], presenter.current_due_time.strftime('%p')), :tabindex => 6 %>
+  </div>
+</div>
+
+<div class="div_row ui-helper-clearfix" data-page-element="time_limit_options_section">
+  <%= label_tag(:activity_assignment_time_limit, 'Time limit') %>
+</div>
+
+<div class="ui-helper-clearfix  u-mar-top-5">
+  <div data-container="time_limit_text" style="float: left; line-height: 18px;">
+    <%= label_tag(:time_limit, presenter.sentence_text_with_singular_label(:time_limit), :class => 'grade_label') %>
+  </div>
+  <div data-container="current_time_limit" class="due_time_replaced">
+    <%= presenter.current_time_limit > 0 ? presenter.current_time_limit : '' %> <a onClick="$(this).assignment_wizard('toggleTimeLimit');">edit</a>
+  </div>
+  <div data-container="custom_time_limit" class="custom_time_limit" style="display: none;">
+    <%= number_field_tag 'activity_assignment[assigned_assessment_detail_attributes][time_limit]', presenter.current_time_limit, in: 2...300, step: 15, :style=> 'margin-left:10px; width:40px;' %>
+  </div>
+  <div data-container="custom_time_limit_errors" class="u-pad-lt-5  u-float-lt  u-width-full">
+  </div>
+</div>
+
+<% if presenter.show_randomize_per_student_option? %>
+  <div class="div_row ui-helper-clearfix" data-page-element="randomize_per_student_section" data-container="randomize_per_student">
+    <div data-container="randomize_per_student_text" class="u-float-lt">
+      <%= label_tag(:activity_assignment_randomize_per_student, 'Randomize per student') %>
+    </div>
+    <div>
+    <%= select_tag(
+          'activity_assignment[randomize_per_student]',
+          options_for_select(
+            [['No', 'false'], ['Yes', 'true']],
+            presenter.assessment_randomize_per_student
+          ),
+          include_blank: false
+        )
+      %>
+    </div>
+  </div>
+<% end %>
+
+<div class="div_row ui-helper-clearfix" data-page-element="password_section">
+  <%= label_tag(:activity_assignment_password, 'Password') %>
+</div>
+
+<div style="height: 24px; margin-top: 5px" class="ui-helper-clearfix">
+  <div data-container="password_text" style="float: left; line-height: 18px;">
+    <%= label_tag(:password, presenter.sentence_text_with_singular_label(:password), :class=>'grade_label') %>
+  </div>
+  <% if presenter.assessment_password.present? %>
+  <div data-container="current_password" class="due_time_replaced">
+     <a onClick="$(this).assignment_wizard('togglePassword');">edit</a>
+  </div>
+  <% end %>
+  <div data-container="custom_password" class="custom_password" style="<%= 'display: none;' if presenter.assessment_password.present? %>">
+    &nbsp;
+    <%= text_field_tag 'activity_assignment[assigned_assessment_detail_attributes][password]', nil, :value => presenter.assessment_password %>
+  </div>
+</div>

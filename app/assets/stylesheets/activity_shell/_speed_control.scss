@@ -1,0 +1,35 @@
+@import 'music/library/v1/base/main';
+/* ================================================================== *
+
+    Speed Control
+
+* =================================================================== */
+
+[id="speed_control"] {
+  margin-top: 0.625rem;
+  border: 0;
+}
+
+#speed_control .control {
+  font: inherit;
+  padding: unset;
+  padding-left: 0.625rem;
+  font-size: 0.75rem;
+  cursor: pointer;
+  margin-right: 1.167rem;
+  display: inline;
+}
+
+.c-speed-control-activity-label {
+  line-height: 1.2;
+  margin-right: rpx(8);
+  text-transform: uppercase;
+
+  @include viewport-min(sm) {
+    line-height: 2.5;
+  }
+}
+
+.c-speed-control-label-complementary {
+  margin-bottom: 0.625rem;
+}

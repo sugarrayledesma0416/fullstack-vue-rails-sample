@@ -1,0 +1,22 @@
+<activity activity_type="drop_down_true_false" language="es" title="sample_drop_down_true_false">
+  <dl>Instructions</dl>
+  <items>
+    <style>
+        <item_numbers>show</item_numbers>
+    </style>
+    <item>
+      <prompt><wol/> prompt_for_question_1</prompt>
+      <choices>
+        <distractor>wrong answer</distractor>
+        <answer>right answer</answer>
+      </choices>
+    </item>
+    <item>
+      <prompt><wol/> prompt_for_question_2</prompt>
+      <choices>
+        <answer>right answer</answer>
+        <distractor>wrong answer</distractor>
+      </choices>
+    </item>
+  </items>
+</activity>

@@ -1,0 +1,19 @@
+.setting_label {
+  vertical-align: top;
+  width: 110px;
+}
+
+.m3-configuration {
+  margin-bottom: 1.5em;
+}
+
+.esample-table {
+  margin: 1.5em 0em 1.5em;
+}
+
+.c-multiselect {
+  font-size: inherit;
+  padding: 0.25rem;
+  height: 8rem;
+  border: rpx(1) solid #ddd;
+}

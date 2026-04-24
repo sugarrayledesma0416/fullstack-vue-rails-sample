@@ -1,0 +1,42 @@
+<% content_for(:css_head, stylesheet_link_tag('program_config')) %>
+
+<div class="m3-configuration">
+  <div data-page-element='record-details'>
+    <table>
+      <tbody>
+        <tr>
+          <td class="setting_label">
+            <b>Id:</b>
+          </td>
+          <td>
+            <%= program_config.id %>
+          </td>
+        </tr>
+        <tr>
+          <td class="setting_label">
+            <b>Modified By:</b>
+          </td>
+          <td>
+            <%= program_config.creator.full_name if program_config.creator %>
+          </td>
+        </tr>
+        <tr>
+          <td class="setting_label">
+            <b>Updated At:</b>
+          </td>
+          <td>
+            <%= program_config.updated_at %>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <pre>
+<%= JSON.pretty_generate(program_config.datastore) %>
+            </pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+

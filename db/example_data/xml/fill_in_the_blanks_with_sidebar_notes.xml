@@ -1,0 +1,132 @@
+<?xml version="1.0"?>
+<activity activity_type="fill_in_the_blanks" title="Escribir" language="es">
+    <dl>Write the correct response to each question or statement from the given options.</dl>
+        <external_references>
+        <external_reference>
+            <title>Flashcards</title>
+            <activity id="20948"/>
+        </external_reference>
+        <external_reference>
+            <title>Vocabulary list</title>
+            <activity id="20947"/>
+        </external_reference>
+    </external_references>    <items>
+        <style>
+            <!--To specify textbox size, replace "standard" below with "smallest", "small", or "double".-->
+            <wol_size>words_standard</wol_size>
+      <!--Choose to "show" or "hide" item numbers.-->
+            <item_numbers>show</item_numbers>
+        </style>
+    <reference type="model">
+      <body>Buenos d&#xED;as. <br/>
+      <b><u>Hola.</u></b> (Buenas noches./Hola.)</body>
+    </reference>
+    <!--This template has 6 items. Copy and paste the ITEM tag as needed to add items.-->
+
+        <item sidebar_ref="1">
+            <prompt>Gracias <br/><wol ref="1"/> (De nada./Lo siento.)</prompt>
+            <answers ref="1">
+                <answer>De nada.</answer>
+            </answers>
+        </item>
+
+    <item>
+            <prompt>&#xBF;Qu&#xE9; hay de nuevo? <br/><wol ref="2"/> (De nada./Nada.)</prompt>
+            <answers ref="2">
+                <answer>Nada.</answer>
+            </answers>
+        </item>
+        <item sidebar_ref="2">
+      <prompt>Encantado <br/><wol ref="3"/> (Mucho gusto./No hay de qu&#xE9;.)</prompt>
+            <answers ref="3">
+                <answer>Mucho gusto.</answer>
+            </answers>
+        </item>
+
+        <item sidebar_ref="2">
+            <prompt>&#xBF;C&#xF3;mo est&#xE1;s? <br/><wol ref="4"/> (Nada./No muy bien.)</prompt>
+            <answers ref="4">
+                <answer>No muy bien.</answer>
+            </answers>
+        </item>
+
+        <item>
+            <prompt>&#xBF;Qu&#xE9; pasa? <br/><wol ref="5"/> (Nada./Lo siento.)</prompt>
+            <answers ref="5">
+                <answer>Nada.</answer>
+            </answers>
+        </item>
+
+    <item>
+            <prompt>&#xBF;C&#xF3;mo se llama usted? <br/><wol ref="6"/> (Me llamo Gabriela./De nada.)</prompt>
+            <answers ref="6">
+                <answer>Me llamo Gabriela.</answer>
+            </answers>
+        </item>
+
+                <item sidebar_ref="3">
+            <prompt>&#xBF;C&#xF3;mo est&#xE1;s? <br/><wol ref="7"/> (Nada./No muy bien.)</prompt>
+            <answers ref="7">
+                <answer>No muy bien.</answer>
+            </answers>
+        </item>
+
+        <item>
+            <prompt>&#xBF;Qu&#xE9; pasa? <br/><wol ref="8"/> (Nada./Lo siento.)</prompt>
+            <answers ref="8">
+                <answer>Nada.</answer>
+            </answers>
+        </item>
+
+    <item>
+            <prompt>&#xBF;C&#xF3;mo se llama usted? <br/><wol ref="9"/> (Me llamo Gabriela./De nada.)</prompt>
+            <answers ref="9">
+                <answer>Me llamo Gabriela.</answer>
+            </answers>
+        </item>
+    </items>
+    <sidebar ref="1">
+      <title>cool sidebar note</title>
+      <reference type="model">
+        <header>Prompts</header>
+        <audio id="123"/>
+        <body>
+          <table>
+            <tr>
+            <th>Huésped</th><th>Empleado</th>
+            </tr>
+            <tr>
+            <td>Say hi to the employee and ask for your reservation tonight.</td>
+            <td>Tell the guest that you can't find his/her reservation.</td>
+            </tr>
+          </table>
+        </body>
+      </reference>
+    </sidebar>
+    <sidebar ref="2">
+      <title>second cool sidebar note</title>
+      <reference type="model">
+        <header>Prompts</header>
+        <audio id="123"/>
+        <body>
+          <table>
+            <tr>
+            <th>Huésped</th><th>Empleado</th>
+            </tr>
+            <tr>
+            <td>Say hi to the employee and ask for your reservation tonight.</td>
+            <td>Tell the guest that you can't find his/her reservation.</td>
+            </tr>
+          </table>
+        </body>
+      </reference>
+    </sidebar>
+    <sidebar ref="3">
+      <title>Image Test</title>
+      <reference type="model">
+        <body>
+          <image id="120966"/>
+        </body>
+      </reference>
+    </sidebar>
+</activity>

@@ -1,0 +1,2 @@
+class IllegalMixingAssignableTypes < StandardError
+end

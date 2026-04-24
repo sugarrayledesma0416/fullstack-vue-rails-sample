@@ -1,0 +1,2 @@
+class PortfolioApiError < StandardError
+end

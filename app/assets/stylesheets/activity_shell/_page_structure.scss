@@ -1,0 +1,59 @@
+@import 'music/library/v1/base/main';
+/* ================================================================== *
+
+    Page Structure
+
+* =================================================================== */
+
+.ns-activity {
+  @include theme('supersites-jr') {
+    .c-activity-wrapper {
+      background-color: $white;
+      border-radius: mod(2);
+      box-shadow: 0 0 mod(0.5) 0 rgba($black, 0.2);
+      margin: 0 mod(1) mod(2);
+      padding-bottom: mod(2);
+    }
+
+    // Overwrite t-supersites (Sr) style:
+    .c-page-container {
+      border: 0;
+    }
+  }
+}
+
+.activities #column_wrapper {
+  margin-top: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  @include theme('supersites-jr') {
+    background: none;
+  }
+}
+
+[id="testFrame"] {
+  padding-bottom: 3rem;
+}
+
+.activity-program-logo {
+  margin-left:-7px;
+}
+
+/* Group name, workset area*/
+
+#current_strand_name {
+  display:inline-block;
+  color: #808285;
+  font-size: rpx(11);
+  margin-top:5px;
+}
+
+.lesson-header {
+  background:transparent url('/images/workset_bg.png') no-repeat 0 -76px;
+  padding-left:9px;
+  padding-right:5px;
+}
+
+#activity_workset_key {
+  float: right;
+}

@@ -1,0 +1,18 @@
+/* ======================================================================= *
+
+    Mobile Tabs View component
+
+ * ======================================================================= */
+ 
+@import 'music/library/v1/base/main';
+
+.ns-chat-activity-mobile-tabs-view,
+.ns-video-virtual-chat,
+.ns-virtual-chat {
+  @import 'base/tabcontent';
+  @import 'base/tabset';
+}
+
+.c-mobile-tabset-container {
+  display: none;
+}

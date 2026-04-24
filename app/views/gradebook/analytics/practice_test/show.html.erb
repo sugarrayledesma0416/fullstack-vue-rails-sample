@@ -1,0 +1,97 @@
+<%= render 'includes' %>
+<% content_for(
+    :js_head,
+     javascript_packs_with_chunks_tag('gradebook/analytics/practice_test')
+   ) %>
+
+<h1 class="u-screen-reader-only">Gradebook Analytics Practice Test</h1>
+<%# Shared subnav lives in m3 so roster can use it: %>
+<%= render 'partials/gradebook_shared_subnav', active_subnav: 'analytics' %>
+
+<div class="c-study-plan  c-study-plan--section-analytics  <%= test_class('analytics-practice-test') %>">
+  <%= link_to(
+              gradebook_engine.course_section_analytics_overview_path(
+                current_program,
+                course_id: current_focus.course,
+                section_id: params[:section_id]
+              ),
+              class: 'u-mar-lt-neg-24  u-pad-lt-24') do %>
+                <%= Music::Components.icon(variant: 'return', text: 'Return') %>
+              <% end %>
+  <ol class="c-subnav  c-subnav--practice-test  js-subnav  js-nav-system  js-practice-test-subnav">
+    <li>
+      <a href="#"
+         class="c-subnav__link
+                <%= params[:current_tab].nil? || params[:current_tab] == 'practice-test-tab' ? 'is-current' : '' %>
+                js-practice-test-tab">
+        Practice Test
+      </a>
+    </li>
+    <li>
+      <a href="#"
+         id="study-plan-tab"
+         class="c-subnav__link
+                <%= params[:current_tab] == 'study-plan-tab' ? 'is-current' : '' %>
+                js-study-plan-tab">
+          Study Plan
+      </a>
+    </li>
+  </ol>
+  <div class="u-dis-flex  c-lesson-navigation">
+    <h2 class="u-txt-24  u-txt-bold  u-mar-rt-24  u-mar-bot-0">
+      <%= @section_practice_test_presenter.section.name %>
+    </h2>
+    <div class="c-form-item">
+    <%= hidden_field_tag 'two_tier_program', current_program.two_tier?, { class: 'js-two-tier-program' } %>
+    <% if current_program.two_tier? %>
+      <div class="c-form-item">
+        <%= render 'unit_selector', presenter: @section_practice_test_presenter %>
+      </div>
+    <% else %>
+      <div class="c-form-item">
+        <%= render 'lesson_selector', presenter: @section_practice_test_presenter %>
+      </div>
+    <% end %>
+    </div>
+    <div class="c-practice-test-analytics-legend-container">
+      <div class="c-box  c-box--plain  c-practice-test-analytics-legend">
+        <div class="c-legend-row">
+          <div class="c-practice-test-analytics-legend__key">N/A</div>
+          <div class="c-practice-test-analytics-legend__value">Not assigned</div>
+        </div>
+        <div class="c-legend-row">
+          <div class="c-practice-test-analytics-legend__key">90%</div>
+          <div class="c-practice-test-analytics-legend__value">Submitted</div>
+        </div>
+        <div class="c-legend-row">
+          <div class="c-practice-test-analytics-legend__key u-txt-ital">90%</div>
+          <div class="c-practice-test-analytics-legend__value">(italics) Before due date</div>
+        </div>
+        <div class="c-legend-row">
+          <div class="c-practice-test-analytics-legend__key">--</div>
+          <div class="c-practice-test-analytics-legend__value">Past due, unsubmitted</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% if @section_practice_test_presenter.success? %>
+    <div class="<%= params[:current_tab].nil? || params[:current_tab] == 'practice-test-tab' ? '' : 'u-hidden' %>
+                js-practice-test-content"
+         data-subnav-content="practice-test-content">
+      <div class="c-box  c-box--plain  c-practice-test-analytics-container  u-dis-inline-block">
+        <%= render 'section_practice_test', lesson_id: @section_practice_test_presenter.selected_lesson_id %>
+      </div>
+    </div>
+    <div class="<%= params[:current_tab] == 'study-plan-tab' ? '' : 'u-hidden' %>  js-study-plan-content"
+         data-subnav-content="study-plan-content">
+      <div class="c-box  c-box--plain  c-practice-test-analytics-container  u-dis-inline-block"
+           data-subnav-content="study-plan-content">
+        <%= render('section_study_plan', lesson_id: @section_practice_test_presenter.selected_lesson_id) %>
+      </div>
+    </div>
+  <% else %>
+    <div class="no-diagnostic-v2-activities  u-pad-lt-24  u-pad-top-16">
+      <%= @section_practice_test_presenter.results_message %>
+    </div>
+  <% end %>
+</div>

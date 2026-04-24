@@ -1,0 +1,144 @@
+<% content_for(:js_head, javascript_packs_with_chunks_tag('activities/default_activity_context')) %>
+  
+  <div class="c-activity-context">
+    <div class="c-activity-context__content  js-activity-content">
+      <div class="c-activity-context__headline">
+        <div class="c-activity-context__title  u-mar-0">
+          <% if current_user.student? && @activity.assessment? %>
+            <h1 class="c-activity-context__title-text  js-activity-title
+                       <%= test_class('activity-title') %>"
+                lang="<%= @activity&.language || 'en' %>">
+              <% if student_activity_display_name.present? %>
+              <span><%= single_line_title(student_activity_display_name) %><span>
+              <% end %>
+              <span class="u-no-visual" lang="en">
+                <%= Activity.humanize_activity_type(@activity.activity_type)%>
+                Activity
+              </span>
+            </h1>
+          <% else %>
+            <h1 class="c-activity-context__title-text  js-activity-title
+                       <%= test_class('activity-title') %>"
+              <% if student_activity_display_name.present? %>
+                data-print-title="<%= student_activity_display_name %>"
+              <% end %>
+                lang="<%= @activity&.language || 'en' %>">
+              <span lang="<%= @activity&.language || 'en' %>"><%= single_line_title(@activity.title) %></span>
+              <span class="u-no-visual" lang="en">
+                <%= Activity.humanize_activity_type(@activity.activity_type)%>
+                Activity
+              </span>
+            </h1>
+          <% end %>
+          <% # DefaultAudioIcon Vue component %>
+          <% if title_and_dl_audio_paths(@activity).present? %>
+            <div
+              class="c-activity-context__title-audio-icon" id="default_audio_icon"
+              data-audio-paths="<%= title_and_dl_audio_paths(@activity).to_json %>">
+            </div>
+          <% end %>
+          <div class="c-activity-context__attempts-info  <%= test_class('attempts-remaining') %>">
+            <% unless (
+                (@activity&.santillana? && @attempt_track.nil?) ||
+                supersite_junior?
+               ) %>
+                <%= format_remaining(@attempt) %>
+            <% end -%>
+          </div>
+
+          <div class="c-activity-context__title-icons">
+            <% if @activity.icon.present? -%>
+              <span class="c-activity-context__title-icon">
+                <%= format_activity_icon(@activity.icon, true) %>
+              </span>
+            <% end %>
+
+            <% if @activity.instructor_graded? %>
+              <span class="c-activity-context__title-icon  u-pad-lt-3">
+                <%= content_tag(
+                  :span,
+                  feature_icon('music/features/activity-shell/icons/icon-instructor-graded'),
+                  class: 'js-tooltip-auto',
+                  title: 'Instructor Graded',
+                  role: 'img',
+                  aria: {
+                    label: 'instructor_graded'
+                  }
+                ) %>
+              </span>
+            <% end -%>
+
+            <% if has_deadline && overdue && !spr? %>
+              <span class="c-activity-context__late-tag" lang="en">late</span>
+            <% end %>
+          </div>
+        </div>
+
+        <%= render 'activities/cms_links' %>
+
+        <% if has_deadline && !spr? %>
+          <div
+            class="c-activity-context__due-date
+                   <%= test_class('activity-context-due-date') %>"
+            lang="en">
+            <span class="c-activity-context__due-date-prefix">Due</span>
+            <%= @activity_presenter.ordinalized_due_date_time %>
+          </div>
+        <% end %>
+      </div>
+
+      <% if current_user.instructor? && @activity.instructor_created? %>
+        <div class="u-mar-bot-8">
+          <p><i>Created by:  <%= @activity.creator_name %></i></p>
+        </div>
+      <% end %>
+
+      <div
+        id="direction_line"
+        class="description-area  c-activity-context__directions  js-direction-line"
+        data-instructor-notable=""
+        data-helpable-type="direction_line">
+        <%
+          dl = @activity&.content_object&.dl
+          dl_language = (dl && dl.attributes['lang'].presence) || @activity&.language
+        %>
+        <% if dl&.inner_html&.empty? && @activity&.activity_type != 'exam' -%>
+          <h2 class="u-screen-reader-only" lang="en">Instructions</h2>
+        <% else %>
+          <span lang="<%= dl_language %>"><%= dl&.inner_html&.html_safe %></span>
+        <% end %>
+        <% if vista_online_learning? && @activity.content_object && @activity.content_object.dl_audio_path.present? -%>
+          <audio src="<%= @activity.content_object.dl_audio_path %>" dl-audio></audio>
+        <% end %>
+
+        <% if @instructor_feedback %>
+          <%= render 'activities/general_comments', instructor_feedback: @instructor_feedback %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="c-activity-context__notifications">
+      <%= render 'partials/notification_popup' %>
+      <%# We cannot merge both condition here, because the existence of @assignment_validator implies
+          that is an instructor. That's why students happened to see this warning when they shouldn't.
+      %>
+      <% if @assignment_validator && !@assignment_validator.assignable?(@activity) -%>
+        <div class="c-activity-context__notification  c-activity-context__read-only">
+          <%= feature_icon('music/features/activity-shell/icons/icon-warning', ['c-activity-context__notification-icon'] ) %>
+          <p class="c-activity-context__notification-text">
+            This activity is not assignable in your course.
+          </p>
+        </div>
+      <% end -%>
+
+      <%# We removed this warning and its condition was mixed up with the assignable message conditional. %>
+      <% if !@section.nil? && @activity.read_only? -%>
+        <div class="c-activity-context__notification  c-activity-context__read-only">
+          <%= feature_icon('music/features/activity-shell/icons/icon-warning', ['c-activity-context__notification-icon'] ) %>
+          <p class="c-activity-context__notification-text">
+            This is not your active course, so this activity is read-only.
+          </p>
+        </div>
+      <% end -%>
+    </div>
+  </div>

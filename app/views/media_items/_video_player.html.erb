@@ -1,0 +1,54 @@
+<% unless defined? @video_player_js_loaded %>
+  <% content_for(:js_head, javascript_include_tag("maestro_activity_engine/video_player") ) %>
+  <% @video_player_js_loaded = true %>
+<% end %>
+
+<%
+  uniqid = random_string(13)
+  height = media_item.height
+  width  = media_item.width
+  video_settings = @video_settings || MaestroActivityEngine::VideoSettings.new
+
+  if height.blank? || height == 0 || width.blank? || width == 0
+    height = 320
+    width  = 260
+  end
+
+  # Populating tracks for subtitles & descriptive audio
+  # Search for an available video reference:
+  #   1) As a local variable to this partial
+  #   2) As a property of an activity available in this partial
+  if reference && reference.is_a?(MaestroActivityEngine::ActivityContent::Reference::Video)
+    video_reference = reference
+  else
+    activity = (@activity || @presenter&.activity)
+    video_reference = activity && activity.content_object.items.detect do |item|
+      item.is_a?(MaestroActivityEngine::ActivityContent::Reference::Video)
+    end
+  end
+  tracks = video_reference&.tracks(video_settings: video_settings) || []
+%>
+
+<div class="c-video-and-transcript-wrapper" style="max-width: <%= width %>px">
+  <div id="video_<%= uniqid %>"
+       class="js-video-reference  ns-music-v1"
+       data-js-container="video"
+       data-js-fluid="true"
+       data-js-public-filename="<%= media_item.public_filename %>"
+       data-js-video-id="<%= "video_#{uniqid}" %>"
+       data-js-width="<%= width %>"
+       data-js-height="<%= height %>"
+       data-js-videotracks='<%= tracks.to_json %>'
+       data-js-record-button-present="<%= record_button_for_question.present? %>"
+       data-js-record-button="<%= record_button_for_question %>">
+    <% if video_reference&.title&.present? %>
+      <h3 class="c-box  u-txt-ctr  u-txt-reg  u-mar-bot-0  u-width-full
+        <%= test_class("video-title") %> ">
+        <%= video_reference.title %>
+      </h3>
+    <% end %>
+  </div>
+  <%= render 'media_items/audio_transcripts', media_item: media_item %>
+</div>
+
+<%= hidden_field_tag(:activity_type, ((@activity.nil? || @activity.activity_type != 'interactive_tutorial') ? "video" : "nil_or_interactive"), :id => "activity_type") %>

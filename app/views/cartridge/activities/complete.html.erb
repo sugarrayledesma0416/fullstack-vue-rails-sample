@@ -1,0 +1,76 @@
+<%= render 'activities/include' %>
+<% content_for(:js_head, javascript_include_tag('ckeditor_basepath_override.js')) if @activity.composition? || @activity.has_composition_activities? %>
+
+<% if @attempt -%>
+  <% content_for :activity_status do -%>
+  <%= format_footer_score(@score, @results) %>
+  <%= render "activities/completion_progress", attempt: @attempt %>
+  <% end -%>
+<% end -%>
+
+<% content_for :submit_buttons do %>
+  <% show_next_activity_button = @workset && !@workset.final_activity?(@attempt.activity) %>
+  <%= render 'cartridge/activities/activity_footer',
+              disabled: false,
+              complete: true,
+              activity_id: @activity.id,
+              section_id: current_section.id,
+              activity_content: @activity.content_object,
+              activity_allows_reference_links: !@activity.assessment?,
+              buttons: show_next_activity_button ? 'enable_practice_next_activity' : 'enable_practice',
+              return_label: @return_label,
+              return_url: @return_url,
+              blank_submission_protection_enabled: false,
+              enable_accentbar: true %>
+<% end %>
+
+<%= render 'cartridge/activities/show_header_content' %>
+<div class="u-hidden  js-mobile-tabset-container"></div>
+<% if @activity -%>
+  <div id="activity_wrapper" class="c-activity-wrapper">
+    <div id="main_content">
+      <% if @activity.content_object -%>
+        <div class="c-activity-info  c-mobile-tabs-view__reference-content">
+            <%= render 'activities/activity_context',
+                        activity: @activity,
+                        attempt_track: @attempt_track,
+                        classwork: @classwork,
+                        attempt: @attempt,
+                        workset: @workset,
+                        score: @score,
+                        instructor_feedback: @instructor_feedback,
+                        section: current_section %>
+        </div>
+        <div role="main" id="activity_shell" class="c-activity-content" lang="<%= @activity.language %>">
+          <% if @show_not_enrolled_warning %>
+            <%= render 'activities/not_enrolled_warning' %>
+          <% end %>
+          <div id="activity_body" class="c-activity-body">
+            <%= form_for(:activity, url: section_activity_path(current_section_id, @activity), html: { id: 'activity_form',
+                                                                                                            class: 'c-activity-form',
+                                                                                                            method: :post }) do |form| %>
+              <% complete = @attempt.complete? %>
+              <% if @activity.content_object.is_a?(MaestroActivityEngine::ActivityContent::Content) %>
+                <div id="testFrame" class="c-activity-main">
+                  <%= render "maestro_activity_engine/activities/complete/" + @activity.content_object.partial_name,
+                              content_object: @activity.content_object,
+                              activity_id: @activity.id,
+                              section: current_section.present? ? current_section : nil,
+                              read_only_status: @activity.read_only?,
+                              results: @results,
+                              attempt: @attempt,
+                              attempt_complete: complete,
+                              display_score: !@attempt.practice?,
+                              classwork: @classwork %>
+                </div>
+                <%= render partial: 'maestro_activity_engine/activities/partials/sidebar',
+                           collection: @activity.content_object.sidebars, as: :sidebar %>
+                <%=  yield :submit_buttons if @activity.content_object.submittable? %>
+              <% end -%>
+            <% end -%>
+          </div>
+        </div>
+      <% end -%>
+    </div>
+  </div>
+<% end -%>

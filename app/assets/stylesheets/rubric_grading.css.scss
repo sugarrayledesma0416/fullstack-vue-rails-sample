@@ -1,0 +1,34 @@
+.rubric-graded {
+  .col-student-answer {
+    padding-right: 0;
+    width: 63%;
+  }
+  .col-rubric-grading {
+    padding-left: rpx(20);
+    width: 37%;
+  }
+}
+
+.ns-newcsslib.rubric-graded {
+  .c-grading-sidebar {
+    border-left: none;
+    padding-left: 0;
+  }
+  .c-grading-sidebar--inline {
+    margin-left: 0px;
+  }
+}
+
+.c-grading-method-controls {
+  column-gap: rpx(10);
+}
+
+
+.c-earned-vs-total-points {
+  float: right;
+  font-weight: bold;
+}
+
+.instructor_comment_input {
+  border: rpx(1) solid $grey-b;
+}

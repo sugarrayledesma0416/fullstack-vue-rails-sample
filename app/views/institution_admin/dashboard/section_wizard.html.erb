@@ -1,0 +1,44 @@
+<% content_for(:body_classes, "ns-full-width  ns-admin-dashboard  u-bg-true-gray-500  ns-music-v3") %>
+<% content_for(:css_head, stylesheet_link_tag('music/features/admin_dashboard/main')) %>
+<% content_for(:css_head, stylesheet_link_tag('institution_admin/dashboard/tooltip')) %>
+<% content_for(:css_head, stylesheet_link_tag('institution_admin/dashboard/course')) %>
+<% content_for(:css_head, stylesheet_link_tag('institution_admin/dashboard/modals')) %>
+<%
+    content_for(
+      :js_head,
+      javascript_packs_with_chunks_tag(
+        "institution_admin/enterprise_sections/#{@section.new_record? ? 'create' : 'edit'}"
+      )
+    )
+%>
+<% content_for(:js_head, javascript_packs_with_chunks_tag('institution_admin/enterprise_sections/modals'))%>
+
+<%= render 'layouts/flash', { flash: flash  } %>
+<div class="l-container-fluid  u-bg-true-gray-50">
+  <div class="u-mar-top-16  u-mar-lt-20">
+    <%=
+      link_to(
+        institution_admin_sections_path(
+          course_id: params[:course_id],
+          program_id: params[:program_id],
+          school_id: params[:school_id]
+        ),
+        class: 'c-button-v3  c-button-v3--quaternary  c-button-v3--xs  u-pad-top-8  u-pad-bot-8  u-pad-lt-16  u-pad-rt-16  u-txt-nodec'
+      ) do %>
+        <music-icon-arrow rotate="2" class="u-fill-true-gray-900"></music-icon-arrow>
+        <p class="c-enterprise__paragraph  u-txt-true-gray-900  u-mar-0">Back to Course</p>
+      <% end %>
+  </div>
+</div>
+
+<div class="ns-full-width  u-pad-24  u-bg-true-gray-50  c-enterprise-course__wrapper">
+  <div class="l-simple-grid-v3  l-simple-grid-v3--1-1">
+    <div class="u-pad-lt-48  u-pad-rt-48">
+      <%= render 'section_form' %>
+    </div>
+
+    <div class="u-bg-util-white  u-bord-radius-16  u-pad-16">
+      <%= render 'section_list', sections: @section.course.sections %>
+    </div>
+  </div>
+</div>

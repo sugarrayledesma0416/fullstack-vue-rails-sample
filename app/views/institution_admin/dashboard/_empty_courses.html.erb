@@ -1,0 +1,30 @@
+<div class="u-pad-24">
+  <div class="u-dis-block">
+    <div class="u-txt-heading-2  u-txt-light  u-txt-true-gray-500  u-mar-bot-12">
+      <%= @presenter.program.title %>
+    </div>
+    <div class="u-dis-flex  u-mar-lt-6" style="gap: 30px;">
+      <%= render 'course_links', display_progress: @presenter.displayed_courses_by_school_program[params[:program_id].to_i].present? %>
+    </div>
+    <div class="l-stack-v3  l-stack-v3--strict  u-align-items-center  u-mar-top-48 u-mar-bot-64  u-pad-32">
+      <% if @presenter.current_year_selected? %>
+        <h3 class="u-txt-heading-3  u-txt-regular">No courses created</h3>
+        <p>Get started by making a new course in this program.</p>
+      <% else %>
+        <h3 class="u-txt-heading-3  u-txt-regular">No Past Courses</h3>
+        <p>Start by making a current course in this program.</p>
+      <% end %>
+      <%= form_with(
+            method: :get,
+            url: new_institution_admin_course_path(
+              program_id: params[:program_id],
+              school_id: params[:school_id]
+            )
+          ) do |form| %>
+        <button type="submit" class="c-button-v3  c-button-v3--primary  c-button-v3--sm">
+          <music-icon-plus-v3></music-icon-plus-v3> Create Course
+        </button>
+      <% end %>
+    </div>
+  </div>
+</div>

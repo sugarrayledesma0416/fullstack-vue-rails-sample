@@ -1,0 +1,45 @@
+
+.c-grading-pagination-container {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  font-size: 14px;
+  color: #333;
+}
+
+.c-grading-pagination-info {
+  margin-right: 10px;
+}
+
+.c-grading-pagination-box {
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.c-grading-pagination-button {
+  background: white;
+  border: none;
+  padding: 6px 10px;
+  font-size: 15px;
+  cursor: pointer;
+  color: #007bff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 30px;
+  transition: background 0.2s ease-in-out;
+}
+
+.c-grading-pagination-button:hover {
+  background: #f0f0f0;
+}
+
+.c-grading-pagination-button.disabled {
+  color: #aaa;
+  cursor: default;
+  pointer-events: none;
+  background: white;
+}

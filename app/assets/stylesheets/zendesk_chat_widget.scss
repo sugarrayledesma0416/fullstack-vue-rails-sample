@@ -1,0 +1,43 @@
+@import 'music/library/v1/base/main';
+
+.c-unread-indicator {
+  background: $black;
+  background-color: #e54054;
+  border-radius: 50%;
+  box-shadow: 0 0 0 rpx(1) #cf2615;
+  color: #fff;
+  font-size: rpx(12);
+  font-weight: bold;
+  height: rpx(20);
+  left: unset;
+  line-height: rpx(20);
+  min-width: rpx(20);
+  padding: 0 rpx(6);
+  position: absolute;
+  right: rpx(8);
+  text-align: center;
+  top: 0;
+}
+
+.c-zendesk-chat-widget-icon {
+  bottom: rpx(5);
+  height: rpx(64);
+  position: fixed;
+  right: rpx(5);
+  width: rpx(64);
+  z-index: 99999;
+}
+
+.c-zendesk-question-annotation {
+  align-items: center;
+  background-color: #1D2939;
+  border: rpx(2) solid;
+  border-radius: 50%;
+  height: rpx(44);
+  justify-content: center;
+  width: rpx(44);
+}
+
+.c-zendesk-question-annotation svg {
+  margin-top: rpx(5);
+}

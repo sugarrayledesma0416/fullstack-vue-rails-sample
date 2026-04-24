@@ -1,0 +1,25 @@
+<!-- Breadcrumbs Partial is no longer being used, breadcrumbs are being done away with. 
+Can be deleted once information is moved into appropriate files. MDP. -->
+
+<div id="grading_tasks_breadcrumbs">
+<div class="top"></div>
+  <ul>
+  <% breadcrumbs.each do |breadcrumb|  %>
+    <% if breadcrumb.has_key?(:link) %>
+      <li>
+        <%= link_to breadcrumb[:label], breadcrumb[:link] %>  
+        <span class="divider"> / </span>
+      </li>
+    <% elsif (breadcrumb.has_key?(:not_leaf) && breadcrumb[:not_leaf] == true ) %>
+      <li>
+        <span class="breadcrumb_label"><%= breadcrumb[:label] %></span>
+        <span class="divider"> / </span></li>
+    <% else %>
+      <li>
+        <span class="breadcrumb_label"><%= breadcrumb[:label] %></span>
+      </li>
+    <% end  %>
+  <% end  %>
+  </ul>
+  <br class="clear" />
+</div>

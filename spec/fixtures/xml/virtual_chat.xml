@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<activity activity_type="virtual_chat" language="es" title="Virtual Chat Example">
+  <dl/>
+  <items>
+    <style>
+      <item_numbers>hide</item_numbers>
+      <recording_limit>10</recording_limit>
+      <avatar><image id="111"/></avatar>
+    </style>
+    <reference type="model">
+      <header>Prompts</header>
+      <audio id="123"/>
+      <body>
+        <table>
+        <tr>
+        <th>Huésped</th><th>Empleado</th>
+        </tr>
+        <tr>
+        <td>Say hi to the employee and ask for your reservation tonight.</td>
+        <td>Tell the guest that you can't find his/her reservation.</td>
+        </tr>
+        <tr>
+        <td>Tell the employee that the reservation is in your name.</td>
+        <td>Tell him/her that you found the reservation and that it's for a double room.</td>
+        </tr>
+        <tr>
+        <td>Tell the employee that the hotel is very clean and orderly.</td>
+        <td>Say that you agree with the guest, welcome him/her and give him/her the keys.</td>
+        </tr>
+        <tr>
+        <td>Say the employee that you need something else: you need a taxi.</td>
+        <td>Say the guest that the bellhop can find a taxi.</td>
+        </tr>
+        </table>
+      </body>
+    </reference>
+    <item>
+      <turns>
+        <turn>
+          <audio id="11111"/>
+        </turn>
+        <turn>
+          <audio id="11111"/>
+        </turn>
+      </turns>
+    </item>
+  </items>
+</activity>

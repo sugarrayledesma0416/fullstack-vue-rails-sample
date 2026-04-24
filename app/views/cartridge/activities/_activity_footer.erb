@@ -1,0 +1,196 @@
+<%= content_for(:css_head, stylesheet_link_tag('music/universal/responsive/activity_footer', media: 'all')) %>
+<div class="ns-music-v1">
+  <div class="c-activity-footer  c-mobile-tabs-view__always-visible-content  js-activity-footer-wrap">
+    <div id="activityFooter" class="l-stack  js-activity-footer">
+      <% if show_accent_bar_for_activity?(enable_accentbar, @activity) && AccentBar.characters(activity_content.language).present? -%>
+        <div class="u-mar-0  js-accent-bar-container--activity">
+          <%= render 'music/partials/accent_bar_component', language: activity_content.language %>
+        </div>
+        <% content_for( :js_head, javascript_include_tag('accent_bar_component_wrapper')) %>
+      <% end -%>
+      <div class="u-txt-ctr  u-txt-sm-rt  u-mar-bot-0">
+        <div class="timer">
+        </div>
+        <div class="u-dis-block  u-dis-sm-inline-block  u-pad-lt-8  u-pad-rt-8">
+          <div id="status" class="u-mar-0  u-mar-bot-24  u-txt-ctr">
+            <%= yield :activity_status %>
+          </div>
+        </div>
+        <div class="u-dis-block  u-dis-sm-inline-block">
+          <% if params[:controller] == 'cartridge/activities' -%>
+            <% unless @no_activity_footer %>
+              <div class="activity_actions c-button-group  u-mar-bot-0  u-txt-ctr">
+                <% if ['save_submit', 'next_activity_submit', 'submit'].include?(buttons) -%>
+                  <% if buttons == 'next_activity_submit' -%>
+                    <%= link_to(
+                      format_next_activity_button(@activity),
+                      next_activity_section_activity_path(section_id: section_id, id: activity_id),
+                      'data-button': 'next',
+                      class: 'c-button  c-button--primary  c-button--footer  is-navigable')
+                    %>
+                  <% elsif buttons == 'save_submit' -%>
+                    <% save_params = {id: '_activity_save',
+                                      'data-button': 'save',
+                                      class: 'c-button  c-button--border  c-button--footer  is-navigable  js-activity-save',
+                                      onclick: 'show_save_modal();',
+                                      type: 'button',
+                                      'aria-label': 'Save without submitting'}
+                    if @activity.recording_v2? || @activity.activity_type == 'checkbox_survey'
+                      save_params[:disabled] = 'disabled'
+                      save_params[:class] << ' is-disabled'
+                    end %>
+                    <%= render 'partials/activity_save_modal' %>
+                    <%= button_tag('Save', save_params) %>
+                  <% end -%>
+                  <% submit_params = {id: '_activity_submit', 'data-button': 'submit', class: 'c-button  c-button--primary  c-button--footer  js-activity-submit'}
+                      # disable submit button as soon as the partner chat activity is open.
+                      disabled = true if @activity.partner_chat?
+                      if (local_assigns.include?(:disabled) && disabled)
+                        submit_params[:disabled] = 'disabled'
+                        submit_params[:class] << ' is-disabled'
+                      end
+
+                      if local_assigns.include?(:requires_ajax_submission) && requires_ajax_submission
+                        submit_params[:onclick] = ' return VHL.Activity.Submission.ajax_submission();'
+                      else
+                        submit_params[:onclick] = 'javascript: is_storing_work();'
+                        if local_assigns.include?(:blank_submission_protection_enabled) && blank_submission_protection_enabled
+                          submit_params[:onclick] += ' return confirm_unanswered_submissions();'
+                        end
+                      end
+                  %>
+                  <%= submit_tag('Submit', submit_params) %>
+                <% elsif buttons == 'accept_retry' %>
+                  <% accept_grade_msg =  "You have chosen to accept your grade of #{format_as_percent_with_one_decimal(results.score)}. You will lose your remaining #{attempt_track.remaining} #{pluralize_without_count(attempt_track.remaining, "attempt")}." %>
+                  <%= submit_tag('Accept', id: '_activity_accept',
+                                  class: 'c-button  c-button--border  c-button--footer  is-navigable',
+                                  'data-button': 'accept',
+                                  onclick: 'javascript: is_storing_work(); return VHL.Activity.Utils.submit_acceptance("' + accept_grade_msg + '");') %>
+                  <% submit_params = {id: '_activity_retry',
+                                      'data-button': 'retry',
+                                      class: 'c-button  c-button--primary  c-button--footer  is-navigable',
+                                      onclick: ''}
+                    if local_assigns.include?(:disabled) && disabled
+                      submit_params[:disabled] = 'disabled'
+                      submit_params[:class] << ' is-disabled'
+                    end
+
+                    if local_assigns.include?(:blank_submission_protection_enabled) && blank_submission_protection_enabled
+                      submit_params[:onclick] += ' return confirm_unanswered_submissions();'
+                    end
+                    # submit_params[:onclick] += ' return VHL.Activity.Utils.retry_activity();'
+                  %>
+                  <%= submit_tag('Re-try', submit_params) %>
+                <% elsif buttons == 'practice_activity' %>
+                  <% if !activity_content.partner_chat_activity? %>
+                    <% answers_params = {id: '_activity_answers', 'data-button': 'answers', class: 'c-button  c-button--border  c-button--footer  is-navigable'}
+                      answers_params[:onclick] = 'javascript: is_storing_work();'
+
+                      if local_assigns.include?(:blank_submission_protection_enabled) && blank_submission_protection_enabled
+                        answers_params[:onclick] += ' return confirm_unanswered_submissions();'
+                      end
+                    %>
+                    <%= submit_tag('Answers', answers_params) %>
+                    <% submit_params = {id: '_activity_check', 'data-button': 'check', class: 'c-button  c-button--primary  c-button--footer  is-navigable'}
+                      # disable answer check for Speech Rec LR, which checks answers client-side
+                      disabled = true if @activity.speech_rec_listen_repeat? || @activity.recording_v2?
+                      if local_assigns.include?(:disabled) && disabled
+                        submit_params[:disabled] = 'disabled'
+                        submit_params[:class] << ' is-disabled'
+                      end
+                      submit_params[:onclick] = 'javascript: is_storing_work();'
+
+                      if local_assigns.include?(:blank_submission_protection_enabled) && blank_submission_protection_enabled
+                        submit_params[:onclick] += ' return confirm_unanswered_submissions();'
+                      end
+                    %>
+                    <%= submit_tag('Check', submit_params) %>
+                  <% elsif defined?(instructor_practice) && instructor_practice %>
+                    <% submit_params = {id: '_activity_submit', 'data-button': 'submit', class: 'c-button  c-button--primary  c-button--footer  is-navigable  js-activity-submit'}
+                      # disable submit button as soon as the partner chat activity is open.
+                      disabled = true if @activity.partner_chat?
+                      if (local_assigns.include?(:disabled) && disabled)
+                        submit_params[:disabled] = 'disabled'
+                        submit_params[:class] << ' is-disabled'
+                      end
+
+                      if local_assigns.include?(:requires_ajax_submission) && requires_ajax_submission
+                        submit_params[:onclick] = ' return VHL.Activity.Submission.ajax_submission();'
+                      else
+                        submit_params[:onclick] = 'javascript: is_storing_work();'
+                        if local_assigns.include?(:blank_submission_protection_enabled) && blank_submission_protection_enabled
+                          submit_params[:onclick] += ' return confirm_unanswered_submissions();'
+                        end
+                      end
+                    %>
+                    <%= submit_tag('Submit', submit_params) %>
+                  <% end%>
+                <% elsif buttons == 'enable_practice_next_activity' %>
+                  <% unless @activity.activity_type == 'checkbox_survey' %>
+                    <%= link_to(
+                      'Practice',
+                      practice_section_activity_path(
+                        section_id: section_id,
+                        id: activity_id),
+                      'data-button': 'practice',
+                      class: 'c-button  c-button--border  c-button--footer  is-navigable')
+                    %>
+                  <% end %>
+                  <%= link_to(
+                    format_next_activity_button(@activity),
+                    next_activity_section_activity_path(
+                      section_id: section_id,
+                      id: activity_id),
+                    'data-button': 'next',
+                    class: 'c-button  c-button--primary  c-next-activity-link  c-button--footer  is-navigable')
+                  %>
+                <% elsif buttons == 'enable_practice' %>
+                  <% unless @activity.assessment? || @activity.activity_type == 'checkbox_survey' %>
+                    <%= link_to(
+                      'Practice',
+                      practice_cartridge_section_activity_path(
+                        section_id: section_id,
+                        id: activity_id),
+                      'data-button': 'practice',
+                      class: 'c-button  c-button--border  c-button--footer  is-navigable')
+                    %>
+                  <% end  %>
+                <% elsif buttons == 'next_activity' %>
+                <% elsif buttons == 'return_to' %>
+                <% elsif buttons == 'no-button' %>
+                <% else
+                  raise "Invalid buttons specified ("+buttons+")"
+                end %>
+              </div>
+            <% end -%>
+          <% end -%>
+          <div class="helpable_block hidden_helper">
+          </div>
+        </div>
+        <!-- /actions -->
+      </div>
+      <div class="c-footer__status  u-txt-upper">
+        <% unless @activity&.preview? -%>
+          <div class="timer-wrapper  u-mar-0">
+            <%= render 'activities/time_tracker_hooks' %>
+          </div>
+        <% end -%>
+        <% if @activity_presenter.has_smartbook_attempt_with_feedback? %>
+          <span class="ns-smart-book-feedback  u-dis-none  u-dis-sm-block  js-smartbook-fb-toggle-wrapper">
+            <a href="javascript:" class="c-slide-toggle  js-slide-in-toggle  u-dis-inline-block  <%= test_class('toggle-slide-feedback') %>" data-target="js-slide-feedback">
+              <span class="u-hidden  js-slide-toggle-label-open <%= test_class('slide-toggle-label-open') %>">Close</span>
+              <span class="js-slide-toggle-label-closed">Instructor Feedback</span>
+            </a>
+          </span>
+        <% end %>
+        <div class="l-line__splitter"></div>
+        <% if !@activity&.santillana? && !@attempt_track.nil? %>
+          <span class="c-footer__attempts-info  <%= test_class('attempts-remaining') %>"><%= format_remaining(@attempt) %></span>
+        <% end -%>
+      </div>
+    </div>
+  </div>
+  <!-- /activityFooter -->
+  <%= yield :hidden_form_fields %>
+</div>
+<!-- /activityFooterWrap -->

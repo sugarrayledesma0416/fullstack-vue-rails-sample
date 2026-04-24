@@ -1,0 +1,44 @@
+[
+    {
+        "id": 22,
+        "guid": "69d489ed-95fd-4411-a949-f6785c95be49",
+        "assessment_id": 285670,
+        "points_possible": 1
+    },
+    {
+        "id": 23,
+        "guid": "16f72018-ebf0-4b9d-b15f-78e1b2a06d90",
+        "assessment_id": 285670,
+        "points_possible": 1
+    },
+    {
+        "id": 24,
+        "guid": "a365d87f-1521-4733-a3fe-97f8b40f3236",
+        "assessment_id": 285670,
+        "points_possible": 1
+    },
+    {
+        "id": 25,
+        "guid": "a46ad2c1-d8fc-4da6-8315-5370891e88e1",
+        "assessment_id": 285670,
+        "points_possible": 15
+    },
+    {
+        "id": 26,
+        "guid": "81279b26-19cc-42f4-94ed-d18a1dac6bc9",
+        "assessment_id": 285670,
+        "points_possible": 4
+    },
+    {
+        "id": 27,
+        "guid": "9e792bf5-74f7-426d-a5d6-103ddbcf1d38",
+        "assessment_id": 285670,
+        "points_possible": 4
+    },
+    {
+        "id": 28,
+        "guid": "d80b6ed2-264f-4917-bb01-5107275e97c6",
+        "assessment_id": 285670,
+        "points_possible": 10
+    }
+]

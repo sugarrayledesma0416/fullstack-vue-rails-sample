@@ -1,0 +1,38 @@
+<div 
+  class="c-modal  c-modal--md  js-modal  js-delete-dialog 
+         js-<%= item.class.to_s.downcase %>-<%= item.id %>-modal  u-hidden">
+  <div role="dialog" aria-label="Delete course" class="c-modal__box  js-modal-box  js-modal-a11y">
+    <button class="c-modal__close-button  c-no-button  js-x-close  js-modal-close">
+      <span class="c-icon  c-icon--md  c-icon--close"></span>
+      <span class="u-screen-reader-only">Close dialog</span>
+    </button>
+    <div role="document" class="js-modal-content">
+      <div class="c-panel  c-panel--padded  u-mar-0">
+        <div class="c-modal__body">
+          <h3 class="c-dialog-heading">Delete <%= item.class.to_s %></h3>
+          <p> Are you sure you want to delete <strong><%= item.name %></strong>?</p>
+          <p>
+          <% if item.is_a?(Section) %>
+            All grades, assignments, and any other data will be deleted. Students will be unenrolled.
+          <% else %>
+            All data will be deleted.
+          <% end %>
+          </p>
+          <p class="u-txt-bold  u-txt-danger">This action cannot be undone.</p>
+        </div>
+        <div class="c-panel__footer">
+          <div class="c-button-group  u-mar-0  u-txt-rt">
+            <button 
+              type="button"
+              class="c-button  js-modal-close  js-cancel-button  <%= test_class('cancel-course-deletion') %>">Cancel</button>
+            <button 
+              type="button"
+              class="c-button  c-button--primary  js-accept-button <%= test_class('delete-course') %>">Confirm</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="u-screen-reader-only" tabindex="-1">Dialog end</button>
+  </div>
+</div>
+

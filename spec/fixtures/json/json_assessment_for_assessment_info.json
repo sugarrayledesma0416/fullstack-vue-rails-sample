@@ -1,0 +1,102 @@
+{
+  "activity_type": "exam",
+  "assessment_type": null,
+  "external_references": [],
+  "ignore_title": null,
+  "included_content": null,
+  "inline_external_references": [],
+  "language": "es",
+  "media_items": [],
+  "question_count": 0,
+  "activities": [
+    {
+      "OpenEndedContent": {
+        "activity_type": "open_ended",
+        "dl": {
+          "node_text": "Write your answer to the prompts below."
+        },
+        "title": "Escribir - Open ended",
+        "items": [
+          {
+            "Exam": {
+              "rank": 1,
+              "sidebar_ref": null,
+              "header": {
+                "node_text": "Escribir - Open ended"
+              },
+              "body": {
+                "node_text": "Write your answer to the prompts below."
+              }
+            }
+          },
+          {
+            "Item": {
+              "prompt": {
+                "node_text": "You are meeting a classmate for the first time. Write five questions you would ask him/her and then five answers he/she would give you. Include at least four <b>-ar</b> verbs in present tense.",
+                "audio": {
+                  "MediaLink": {
+                    "desired_media_item_id": "7723",
+                    "desired_media_type": "audio",
+                    "instructor_uploaded": false,
+                    "media_item_id": "7723"
+                  }
+                }
+              },
+              "sample_answer": null,
+              "answer_size": null,
+              "rank": 2,
+              "concept": "",
+              "sidebar_ref": null,
+              "question_number": 1,
+              "points_possible": 10
+            }
+          }
+        ]
+      }
+    },
+    {
+      "SoloVideoRecordingContent": {
+        "activity_type": "solo_video_recording",
+        "assessment_type": null,
+        "config": null,
+        "dl": null,
+        "dl_audio": null,
+        "exam_reference": null,
+        "external_references": [],
+        "ignore_title": null,
+        "included_content": null,
+        "inline_external_references": [],
+        "is_bonus": null,
+        "language": null,
+        "media_items": [],
+        "points_per_response": null,
+        "question_count": 1,
+        "strict_media_requirements": null,
+        "title": null,
+        "items": [
+          {
+            "Exam": {
+              "rank": 1,
+              "sidebar_ref": null,
+              "header": {
+                "node_text": "Escribir - SVR"
+              },
+              "body": {
+                "node_text": "Please Record."
+              }
+            }
+          },
+          {
+            "Item": {
+              "points_possible": 1,
+              "prompt": null,
+              "question_number": null,
+              "rank": 1
+            }
+          }
+        ],
+        "style": null
+      }
+    }
+  ]
+}

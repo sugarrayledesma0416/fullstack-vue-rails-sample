@@ -1,0 +1,147 @@
+<% content_for(:js_head, javascript_include_tag("jquery.hoverIntent.minified.js") ) %>
+
+<% content_for(:css_head, stylesheet_link_tag("add_assignments_dialog.css") ) %>
+
+<% content_for(:js_head, javascript_include_tag("jquery.vhl-checkboxes.js") ) %>
+<% content_for(:js_head, javascript_include_tag("table_of_contents.js") ) %>
+<% content_for(:js_head, javascript_include_tag("load_table_of_contents.js") ) %>
+<% content_for(:js_head, javascript_include_tag("history.js")) %>
+<% content_for(:js_head, javascript_include_tag("jquery.address-1.4.min.js") ) %>
+
+<% content_for(:body_classes, "  ns-music-v1  ns-full-width  ns-responsive  ns-toc-instructor
+                               ns-toc  toc activities_page  instructor") %>
+
+<% content_for(:css_head, stylesheet_link_tag("music/features/toc/main") )%>
+<% content_for(:css_head, stylesheet_link_tag("music/features/toc/toc_instructor") )%>
+<% content_for(:css_head, stylesheet_link_tag("jquery.cluetip") )%>
+<% content_for(:css_head, stylesheet_link_tag("layout/hovers.css") )%>
+<% content_for(:css_head, stylesheet_link_tag("music/library/universal/viewport") )%>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+
+<% if current_program&.language_code == 'zh' %>
+  <% content_for(:css_head, stylesheet_link_tag("music/features/chinese/theme/fonts/AdobeKaitiRegular") ) %>
+  <% content_for(:body_classes, '  ns-chinese-program') %>
+<% end %>
+
+<% unless @presenter.lti_deep_link_enabled? || @in_institution_admin %>
+  <%= content_for(
+        :focus,
+        render(
+          'instructor/focus/show',
+          current_user: @presenter.current_user,
+          program: @presenter.program
+        )
+      ) %>
+  <%= content_for(
+        :navigation,
+        render('app_shell/navbar_program/main', program: @presenter.program)
+      ) %>
+<% end %>
+
+<% if @in_institution_admin %>
+  <% content_for :meta do %>
+    <meta name="VHL.in_institution_admin" content="true">
+  <% end %>
+<% else %>
+  <% content_for :meta do %>
+    <meta name="VHL.in_institution_admin" content="false">
+  <% end %>
+<% end %>
+
+<div id="spinner" class="hidden"><%= image_tag('loading_32.gif') %></div>
+
+<div id="main_content">
+  <div id ="modal_box"></div>
+  <div id="toc" class="ns-toc  u-txt-16  u-pad-lt-16">
+    <div class="l-grid">
+
+      <div class="c-toc-sidebar  l-col-12  l-col-lg-3">
+        <button class="c-toc-nav-disclosure  c-no-button  u-dis-lg-none  js-toc-nav-disclosure"
+          aria-labelledby="nav-toggle-label"
+          data-target="toc-sidenav"
+          aria-controls="toc-sidenav"
+          aria-expanded="false">
+          <header class="c-activities-module__header">
+            <%= render(
+                  'instructor/partials/deep_linking_toc_warning',
+                  link_type: 'activities',
+                  presenter: @presenter,
+                  container_classes: 'u-mar-top-4  u-mar-bot-32'
+                ) %>
+            <h1 class="c-heading--page-title  c-heading--page-title-activities  u-mar-bot-0">Activities</h1>
+            <h2 class="c-heading--lesson-strand">
+              <span class="u-screen-reader-only" lang="en"><%= @presenter.display_lesson.name %></span>
+              <span class="c-toc-current-lesson" aria-hidden="true">
+                <%= @presenter.current_lesson_label.html_safe %>
+              </span>
+            </h2>
+            <%= Music::Components.icon(variant: 'caret', size: 'lg', classes: 'c-toc-disclosure-caret') %>
+          </header>
+        </button>
+        <div class="c-toc-sidenav  js-toc-sidenav" id="toc-sidenav">
+          <h3 class="u-screen-reader-only">Select a Lesson</h3>
+          <%= render 'partials/lesson_selector', presenter: @presenter %>
+
+          <h3 class="c-heading--caps  u-txt-reg"><%= spr? ? 'Lessons' : 'Strands' %></h3>
+
+          <nav class="ns-music-v1" id="topics_list">
+          <%= render('partials/lesson_topics',  presenter: @presenter,
+                                                display_lesson: @presenter.display_lesson,
+                                                current_strand: @presenter.current_strand,
+                                                current_topic: @presenter.current_topic,
+                                                start_unit: @presenter.start_unit ) -%>
+          </nav>
+          <div class="u-txt-ctr">
+            <button type="button" class="c-toc-nav-close  u-dis-lg-none  u-mar-bot-16  js-toc-nav-close">Close</button>
+          </div>
+        </div>
+      </div> <!-- / sidebar column -->
+
+      <div class="c-toc-main  l-col-12  l-col-lg-9  u-bg-gray-f5">
+        <div class="c-activities-module">
+          <header class="c-activities-module__header  u-dis-none  u-dis-lg-block">
+            <%= render(
+                  'instructor/partials/deep_linking_toc_warning',
+                  link_type: 'activities',
+                  presenter: @presenter,
+                  container_classes: 'u-mar-top-0  u-mar-bot-32'
+                ) %>
+
+            <h1 class="c-heading--page-title  c-heading--page-title-activities">Activities</h1>
+
+            <h2 class="c-heading--lesson-strand" lang="<%= @presenter.program_language %>">
+              <span class="u-screen-reader-only"><%= @presenter.display_lesson.name %></span>
+
+              <span class="c-toc-current-lesson" aria-hidden="true">
+                <%= @presenter.current_lesson_label.html_safe %>
+              </span>
+            </h2>
+          </header>
+
+          <nav class="c-activities-module__list  <%= test_class('activity-list') %>" id="activities_list" aria-labelledby="a11y_activities_list_heading">
+            <h3 id="a11y_activities_list_heading" class="u-screen-reader-only" lang="en">Activities in selected topic</h3>
+
+        <div id="activities_list" class="<%= test_class('activity-list') %>">
+          <% if @presenter.display_unit_viewable? -%>
+            <% if @presenter.activities.present? -%>
+              <%= render :partial => 'activities', :locals => { :presenter => @presenter } %>
+            <% else -%>
+              No activities to show.
+            <% end -%>
+          <% else -%>
+            <div class="unreleased_activities">
+              We're currently developing content for this <%= @presenter.program.toc_unit_label %>. Thank you for your patience.
+            </div>
+          <% end -%>
+        </div> <!-- / activities list -->
+      </nav>
+      </div> <!-- / l-col-8 -->
+    </div> <!-- / l-grid -->
+
+    <div class="u-hidden">
+      <form action="none" method="get" accept-charset="utf-8" id="hidden_activity_form"></form>
+    </div> <!-- /hidden form-->
+
+  </div> <!-- /toc -->
+
+</div>

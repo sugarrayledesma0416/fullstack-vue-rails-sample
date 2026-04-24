@@ -1,0 +1,91 @@
+<%= render :partial => 'activities/include' %>
+<% content_for(:js_head, javascript_include_tag('record_view_time_spent.js')) %>
+
+<% content_for :activity_status, content_tag(:p, (@activity ? "#{@results.total_points_earned} of #{@results.total_points_possible} pts. (#{format_as_percent_with_one_decimal(@results.score)})"  : ''), class: "c-footer__score-content  #{test_class('footer-score-content')}")  -%>
+<% content_for :submit_buttons do %>
+  <%= render :partial => 'activities/activity_footer', :locals => { :disabled => @read_only,
+                                                                    :buttons => 'accept_retry',
+                                                                    :results => @results,
+                                                                    :activity_id => @activity.id,
+                                                                    :section_id => current_section.id,
+                                                                    :attempt_track => @attempt_track,
+                                                                    :activity_content => @activity.content_object,
+                                                                    :activity_allows_reference_links => !@activity.assessment?,
+                                                                    :blank_submission_protection_enabled => false,
+                                                                    :enable_accentbar => false } %>
+<% end %>
+
+<% if accent_bar_enabled? %>
+  <div class="u-mar-0  js-accent-bar-container--activity">
+    <%= render 'music/partials/accent_bar_component', {language: @activity.content_object.language} %>
+  </div>
+<% end %>
+<% content_for( :js_head, javascript_include_tag('accent_bar_component_wrapper')  ) %>
+
+<%= render :partial => 'activities/show_header_content' %>
+
+<% if @activity -%>
+  <div id="activity_wrapper" class="c-activity-wrapper">
+    <div id="main_content">
+      <% if @activity.content_object -%>
+        <% if current_user.instructor? %>
+          <%= render 'instructor_notes/instructor_action_bar' %>
+        <% end %>
+        <div class="c-activity-info">
+          <%= render(
+                'activities/activity_context',
+                activity: @activity,
+                attempt: @attempt,
+                attempt_track: @attempt_track,
+                classwork: @classwork,
+                instructor_feedback: nil,
+                section: current_section,
+                score: @score,
+                workset: @workset
+              )
+          %>
+        </div>
+        <div class="c-activity-content" role="main" id="activity_shell" lang="<%= @activity.language %>">
+          <% if @show_not_enrolled_warning %>
+            <%= render 'activities/not_enrolled_warning' %>
+          <% end %>
+          <div id="activity_body" class="c-activity-body">
+            <% form_url = re_try_section_activity_path(current_section_id, @activity) %>
+            <%= form_for(:activity, :url => form_url, :html => { id: 'activity_form',
+                                                                 class: 'c-activity-form',
+                                                                 method: :post}) do |form| %>
+              <% complete = @attempt.complete? %>
+              <% if @activity.content_object.is_a?(MaestroActivityEngine::ActivityContent::Content) %>
+                <div id="testFrame" class="c-activity-main">
+                  <% @output_buffer << render(
+                       "maestro_activity_engine/activities/decide/#{@activity.content_object.partial_name}",
+                       activity_id: @activity.id,
+                       attempt: @attempt,
+                       attempt_complete: complete,
+                       classwork: @classwork,
+                       content_object: @activity.content_object,
+                       read_only_status: @activity.read_only?,
+                       results: @results,
+                       section: current_section
+                     )
+                  %>
+                </div>
+                <%= render :partial   => 'maestro_activity_engine/activities/partials/sidebar',
+                      :collection => @activity.content_object.sidebars, :as => :sidebar %>
+                <%=  yield :submit_buttons if @activity.content_object.submittable? %>
+              <% end -%>
+            <% end -%>
+          </div>
+        </div>
+      <% end -%>
+
+      <% if @next_link -%>
+        <%= render(:partial => "next_link", :locals => { :next_link => @next_link} ) %>
+      <% end -%>
+
+      <div id="time_out_dialog" title="Inactivity timeout" style="display: none">
+        Do you want to continue working on this activity?
+      </div>
+    </div>
+  </div>
+<% end -%>

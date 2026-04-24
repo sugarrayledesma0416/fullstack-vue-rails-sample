@@ -1,0 +1,80 @@
+<%
+  if @activity
+    content_for(:body_classes, " standard_layout #{@activity.activity_type}")
+    content_for(:body_classes, ' ns-assessment-builder-activity') if @activity.content_json
+    # We set a body class for each activity type, e.g: ns-composition
+    # However, when we are in the IGC edit page we want the display to be the same
+    # as in the IGC new page, because of that we want to skip this body class when the
+    # an instructor is editing an IGC.
+    if @activity.activity_type && controller.class != Instructor::CreatedActivitiesController
+      content_for(:body_classes, "  ns-#{@activity.activity_type.dasherize}")
+    end
+    unless @activity&.preview?
+    content_for(:body_classes, " ssplus_only") if current_user.instructor? && !@activity_allowed
+    end
+    content_for(:title, strip_html_tags(@activity.title))
+    content_for(:meta, "<meta name='VHL.activity_id' content='#{@activity.id}'/>".html_safe)
+    content_for(:meta, "<meta name='VHL.activity_title' content='#{strip_html_tags(@activity.title)}'/>".html_safe)
+    content_for(:meta, "<meta name='VHL.activity_type' content='#{@activity.activity_type}'/>".html_safe)
+    content_for(:meta, "<meta name='VHL.activity_grading_method' content='#{@activity.grading_method}'/>".html_safe)
+    content_for(:meta, "<meta name='VHL.activity_component_name' content='#{@activity.component_name}'/>".html_safe)
+    content_for(:meta, "<meta name='VHL.activity_submittable' content='#{@activity.submittable}'/>".html_safe)
+    content_for(:meta, "<meta name='VHL.activity_points_possible' content='#{@activity.points_possible}'/>".html_safe)
+    content_for(:meta, "<meta name='VHL.activity_max_attempts' content='#{@activity.max_attempts}'/>".html_safe)
+    content_for(:meta, "<meta name='VHL.activity_instructor_id' content='#{@activity.instructor_id}'/>".html_safe)
+    content_for(:meta, "<meta name='VHL.activity_revision_id' content='#{@activity.revision_id || 'empty'}'/>".html_safe)
+    content_for(:meta, "<meta name='VHL.activity_instructor_revision_id' content='#{@activity.instructor_revision_id || 'empty'}'/>".html_safe)
+    # QuestionBank instances do not have lessons or concepts
+    unless @activity.question_bank?
+      content_for(:meta, "<meta name='VHL.concept_id' content='#{@activity.concept_id}'/>".html_safe)
+      content_for(:meta, "<meta name='VHL.concept_name' content='#{Concept.where(id: @activity.concept_id).first.name}'/>".html_safe)
+      content_for(:meta, "<meta name='VHL.concept_rank' content='#{@activity.concept_rank}'/>".html_safe)
+      content_for(:meta, "<meta name='VHL.lesson_id' content='#{@activity.lesson_id}'/>".html_safe)
+      content_for(:meta, "<meta name='VHL.lesson_name' content='#{Lesson.where(id: @activity.lesson_id).first.name}'/>".html_safe)
+      content_for(:meta, "<meta name='VHL.lesson_label' content='#{Lesson.where(id: @activity.lesson_id).first.label}'/>".html_safe)
+    end
+  end
+
+  content_for(:css_head, stylesheet_link_tag('activities', media: 'all'))
+  content_for(:css_head, stylesheet_link_tag('features/activity_shell/main'))
+  content_for( :js_head, javascript_include_tag("jquery.cluetip.js", "jquery.hoverIntent.minified.js") )
+  content_for( :css_head, stylesheet_link_tag("jquery.cluetip.css") )
+  content_for(:css_head, stylesheet_link_tag("instructor_action_bar") )
+
+	# Activity context style and JS
+	content_for(:css_head, stylesheet_link_tag("music/features/glosses/main") )
+	content_for(:css_head, stylesheet_link_tag('music/universal/responsive/activity_header') )
+  content_for(:css_head, stylesheet_link_tag('music/features/references/main') )
+
+  unless spr?
+    content_for(:js_head, javascript_include_tag('features/activity_shell/workset'))
+  end
+
+  if @activity_submittable
+    content_for( :js_head, javascript_include_tag("jquery.idle-timer.js") )
+    content_for( :js_head, javascript_include_tag("submittable_activity.js") )
+    content_for(:meta, "<meta name='VHL.is_instructor' content='#{current_user.instructor?}'/>".html_safe)
+
+    enable_protect_work_feature
+    blank_submission_protection_enabled = @attempt_track && @attempt_track.final?
+    enable_blank_submission_protection_feature
+  end
+  if @activity_presenter && @activity_presenter.track_time?
+    content_for( :js_head, javascript_include_tag("assessment_timer.js") )
+  end
+  content_for( :js_head, javascript_include_tag("activity_shell.js") )
+
+  if current_program&.language_code == 'zh'
+    content_for(:css_head, stylesheet_link_tag("music/features/chinese/theme/fonts/AdobeKaitiRegular") )
+    content_for(:body_classes, '  ns-chinese-program')
+    content_for(
+      :js_head,
+      javascript_packs_with_chunks_tag('activities/pinyin_a11y')
+    )
+  end
+%>
+
+
+<%= render :partial => 'maestro_activity_engine/activities/partials/include' %>
+
+<%= render partial: 'layouts/flash_banner', locals: { dismiss_text: "Cancel Request", variant_selector: "help-request" } -%>

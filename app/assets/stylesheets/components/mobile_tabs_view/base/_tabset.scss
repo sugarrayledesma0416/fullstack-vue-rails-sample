@@ -1,0 +1,48 @@
+/* ======================================================================= *
+
+    Mobile Tabs View component's tabset
+
+ * ======================================================================= */
+
+@include viewport-max('sm') {
+  &.c-mobile-tabs-view--active-with-tabset-visible .c-mobile-tabset-container {
+    display: block;
+  }
+}
+
+.c-mobile-tabset {
+  display: inline-block;
+  width: 100%;
+}
+
+.c-mobile-tabset {
+  .c-tabset__tabs {
+    @include inline-group();
+    @include spacing();
+    background-color: $white;
+    border-bottom: rpx(1) solid $gray-c;
+    display:  flex;
+    font-size: 1rem;
+    justify-content: flex-start;
+    margin: 0;
+  }
+
+  .c-tabset__tab {
+    color: $gray-3;
+    padding: 1rem;
+    position: relative;
+    top: rpx(1);
+  
+    &.is-selected-tab {
+      border-bottom: rpx(3) solid $orange;
+      color: $black;
+      font-weight: bold;
+      text-decoration: none;
+    }
+  }
+}
+
+.ns-music-v1.c-mobile-tabset .c-no-button:not([disabled]) {
+  color: $black;
+  text-decoration: none;
+}

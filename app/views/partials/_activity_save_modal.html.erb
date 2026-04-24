@@ -1,0 +1,30 @@
+<div class="c-modal  c-modal--md  js-modal  js-activity-save-modal u-hidden" lang="en">
+  <div id="save_activity_dialog" tabindex="-1" role="dialog"
+    aria-labelledby="save_dialog_heading" aria-describedby="save_dialog_message" 
+    class="c-modal__box  js-modal-box js-modal-a11y  js-modal-a11y__no-change-id">
+    <div role="document" class="js-modal-content">
+      <div class="c-panel  c-panel--padded  u-mar-0">
+        <div class="c-panel__header">
+          <h3 id="save_dialog_heading" class="c-heading--md  u-dis-flex">Save without submitting</h3>
+        </div>
+        <div class="c-panel__body">
+          <p id="save_dialog_message" class="u-txt-lt js-save-modal-message <%= test_class('save-modal-message') %>"></p>
+        </div>
+        <div class="c-panel__footer">
+          <%
+            ok_params = {
+              type: 'submit',
+              class: 'c-button c-button--primary is-navigable js-modal-a11y__first-focus-element test-ok-button',
+              onclick: 'javascript: return VHL.Activity.Utils.save_activity();'
+            }
+          %>
+          <%= submit_tag('Ok', ok_params) %>
+          <button class="c-modal__close-button  c-no-button  js-x-close  js-modal-close js-modal-a11y__last-focus-element">
+            <span class="c-icon  c-icon--md  c-icon--close"></span>
+            <span class="u-screen-reader-only">Close dialog</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,200 @@
+.voice-board-form {
+  overflow:hidden;
+  margin-top:20px;
+  clear:both;
+}
+
+.voice-board-form {
+  clear:left;
+}
+
+.voice-board-form dt, .voice-board-form dd {
+  line-height: 1.5em;
+  margin-top: 0;
+  font-weight:normal;
+  float:left;
+
+}
+
+.communication label {
+  float:left;
+  text-align:right;
+  padding: 0px;
+  margin-right: 10px;
+  width:100px;
+  color:#565656;
+}
+
+#edit_info_msg {
+padding:10px 20px 20px 20px;
+background-color:#DFF09F;
+width:488px;
+}
+
+#edit_info_msg p {
+  padding-top:10px;
+}
+
+label.is_public {
+  width:auto;
+}
+
+.public_view dt {
+  margin-left:10px;
+}
+
+.communication_title_options {
+  position:relative;
+}
+
+.communication_create_new {
+  overflow:hidden;
+}
+
+.communication_create_new a {
+  display: block;
+  float:right;
+}
+
+.communication_create_new a:hover {
+  background-position:108px -1px;
+}
+
+.communication_edit {
+  position:absolute;
+  top:0;
+  right:0;
+}
+
+.communication_list {
+ clear:both;
+ margin-top:20px;
+}
+
+.communication_list li {
+  margin-bottom: 15px;
+  padding-bottom:2px;
+  border-bottom: 1px solid #ccc;
+  margin-top:20px;
+}
+
+.communication_list h2 {
+  margin-bottom:0;
+}
+
+.communication h2 a {
+  font-size:14px;
+  font-weight:normal;
+}
+
+.communication input[type="text"] {
+  width:200px;
+}
+
+.announcements #main_content {
+  border: 0;
+  }
+
+#announcement_form_container {
+  padding: 5px;
+}
+
+.announcements_list {
+  width: 500px;
+  }
+
+.announcements_list li {
+  padding: 10px 0 10px;
+  border-bottom: 2px solid #ccc;
+  }
+
+.announcements_list h2 {
+  margin: 0 0 5px;
+  font-size: 16px;
+  }
+
+.announcements_list p {
+  margin: 5px;
+}
+.announcement_section_desc {
+  font-size: smaller;
+  color: #535353;
+  padding: 0 5px;
+  }
+
+
+.announcements #main_content li div {
+  margin-top:8px;
+}
+
+.announcements_list {
+  margin: 5px;
+}
+
+.announcement_body {
+  margin-bottom: 5px;
+}
+
+.announcement_section_desc {
+  font-size: smaller;
+  color: #535353;
+  padding: 0 5px;
+}
+
+.notifications #navigation.short {
+  float: left;
+  height: 100%;
+  margin: 10px 0px 0px 0px;
+}
+
+.notifications #main_content {
+  border: 0px;
+}
+
+.notifications .wrap_table {
+  margin: 5px 0px 10px 0px;
+}
+
+.notifications .wrap_table table th,
+.notifications .wrap_table table td {
+  padding-left: 15px;
+}
+
+.notifications .wrap_table table td.notify_review {
+  padding-right: 15px;
+}
+
+.communication-return {
+  text-transform: lowercase;
+}
+
+/* Student External Activity Notifications */
+.external_activity .external_activity_title {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0 0 5px;
+}
+
+.external_activity .external_activity_score {
+  margin: 5px;
+}
+
+.external_activity .external_activity_recorded,
+.external_activity .external_activity_duedate {
+  color: #535353;
+  font-size: 11px;
+  margin: 5px 0px 0px 5px;
+}
+
+/* Help Request Page */
+tr.help_request a:hover {
+  text-decoration: none;
+}
+
+.help_requests_page .wrap_table {
+  margin: 5px 0px 10px 0px;
+}
+
+.help_requests_page td.request_comment  { width: 320px; }
+.help_requests_page td.request_type     { width: 120px; }
+.help_requests_page td.creation_date    { width:  90px; }

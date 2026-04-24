@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<activity activity_type="table_activity" language="es" title="foo">
+  <dl>Direction line</dl>
+  <items>
+
+    <table_inline_open_ended>
+      <table>
+        <caption>Caption</caption>
+        <header_row>
+          <data>Col A</data>
+          <header>Col Header B</header>
+          <header>Col Header C</header>
+          <header>Col Header D</header>
+        </header_row>
+        <data_row>
+          <header>Row Header A</header>
+          <data><wol ref="1"/></data>
+          <data><wol ref="2"/></data>
+          <data>Cell A4</data>
+        </data_row>
+        <data_row>
+          <header>Row Header B</header>
+          <data>Cell B2</data>
+          <data>Cell B3</data>
+          <data>Cell B4</data>
+        </data_row>
+        <footer_row>
+          <header>Footer header</header>
+          <data>Cell F2</data>
+          <data>Cell F3</data>
+          <data>Cell F4</data>
+        </footer_row>
+      </table>
+      <sample_answers ref="2">
+        <sample_answer>Sample answer text</sample_answer>
+        <sample_answer>Another sample answer</sample_answer>
+      </sample_answers>
+    </table_inline_open_ended>
+
+    <table_inline_open_ended>
+      <table>
+        <caption>Caption</caption>
+        <header_row>
+          <data>Col A</data>
+          <header>Col Header B</header>
+          <header>Col Header C</header>
+          <header>Col Header D</header>
+        </header_row>
+        <data_row>
+          <header>Row Header A</header>
+          <data>Cell A2</data>
+          <data>Cell A3</data>
+          <data>Cell A4</data>
+        </data_row>
+        <data_row>
+          <header>Row Header B</header>
+          <data>Cell B2</data>
+          <data><wol ref="1"/></data>
+          <data><wol ref="2"/></data>
+        </data_row>
+        <footer_row>
+          <header>Footer header</header>
+          <data>Cell F2</data>
+          <data>Cell F3</data>
+          <data>Cell F4</data>
+        </footer_row>
+      </table>
+      <sample_answers ref="1">
+        <sample_answer>Sample answer text #1</sample_answer>
+      </sample_answers>
+    </table_inline_open_ended>
+
+  </items>
+</activity>

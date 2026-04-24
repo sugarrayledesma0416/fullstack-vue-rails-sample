@@ -1,0 +1,88 @@
+<% content_for(:js_head, javascript_packs_with_chunks_tag('activities/supersite_junior_activity_context')) %>
+
+<div class="ns-supersites-jr">
+  <div class="c-supersite-jr-activity-context">
+    <div class="c-supersite-jr-activity-context__icon">
+      <% # JuniorDirectionLineIcon Vue component %>
+      <div id="junior_direction_line_icon"
+        data-junior-direction-line-icon-path="<%= asset_path('jr/penguin.svg') %>"
+        data-audio-paths="<%= title_and_dl_audio_paths(@activity).to_json %>"
+        data-audio-icon-path="<%= asset_path('jr/audio_dl.svg') %>"
+        data-active-audio-icon-path="<%= asset_path('jr/pause-active.svg') %>">
+      </div>
+    </div>
+
+    <div class="c-supersite-jr-activity-context__content">
+      <div class="c-supersite-jr-activity-context__headline">
+        <div class="c-supersite-jr-activity-context__title">
+          <h1 class="c-supersite-jr-activity-context__title-text  c-heading--activity-dl
+                     <%= test_class('activity-title') %>"
+              lang="<%= @activity&.language || 'en' %>">
+            <% if current_user.student? && @activity.assessment? %>
+              <% if student_activity_display_name.present? %>
+                <span>
+                  <%= single_line_title(student_activity_display_name) %>
+                <span>
+              <% end %>
+              <div class="u-no-visual" lang="en">
+                <%= Activity.humanize_activity_type(@activity.activity_type) %> Activity
+              </div>
+            <% else %>
+              <span
+                <% if student_activity_display_name.present? %>
+                  data-print-title="<%= student_activity_display_name %>"
+                <% end %>
+              >
+                <%= single_line_title(@activity.title) %>
+              </span>
+              <span class="u-no-visual" lang="en">
+                <%= Activity.humanize_activity_type(@activity.activity_type) %> Activity
+              </span>
+            <% end %>
+          </h1>
+        </div>
+      </div>
+      <% if has_deadline %>
+        <%
+          due_date_short = strip_tags(
+            format_date_time(assignment.due_date, :relative_day_or_short_date)
+          )
+          due_date_a11y = strip_tags(
+            format_date_time(assignment.due_date, :relative_day_or_month_unpadded)
+          )
+        %>
+        <div class="c-supersite-jr-activity-context__status" aria-label="<%= due_date_a11y %>">
+          Due <%= @activity_presenter.ordinalized_due_date_time %>
+        </div>
+      <% end %>
+
+      <% if current_user.instructor? && @activity.instructor_created? %>
+        <div class="u-mar-bot-8">
+          <p><i>Created by:  <%= @activity.creator_name %></i></p>
+        </div>
+      <% end %>
+
+      <div
+        id="direction_line"
+        class="c-supersite-jr-activity-context__directions js-direction-line"
+        data-instructor-notable
+        data-helpable-type="direction_line">
+        <%
+          dl = @activity&.content_object&.dl
+          dl_language = (dl && dl.attributes['lang'].presence) || @activity&.language
+        %>
+        <% if dl&.inner_html&.empty? && @activity&.activity_type != 'exam' -%>
+          <h2 class="u-screen-reader-only" lang="en">Instructions</h2>
+        <% else %>
+          <span lang="<%= dl_language %>"><%= dl&.inner_html&.html_safe %></span>
+        <% end %>
+      </div>
+
+      <div class="c-supersite-jr-activity-context__notifications">
+        <%= render 'partials/notification_popup' %>
+      </div>
+    </div>
+  </div>
+
+  <%= render 'activities/cms_links' %>
+</div>

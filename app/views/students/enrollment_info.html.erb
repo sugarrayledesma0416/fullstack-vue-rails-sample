@@ -1,0 +1,31 @@
+<div class="student_info_popup">
+  <h3 class="name"><%= @student.full_name %></h3>
+  <div><%= image_tag(@thumb_url, :class => 'portrait') %></div>
+
+  <% if @student.active_sections.present? %>
+  <div class="wrap_table">
+  <table class='student_details'>
+    <tr>
+      <th> Program </th>
+      <th> Course </th>
+      <th> Section </th>
+      <th> Instructor </th>
+      <th> Start Date</th>
+      <th> End Date</th>
+    </tr>
+    <% @student.active_sections.each do |section| %>
+      <% if section.course.school.id == @school.id %>
+    <tr>
+      <td> <%= section.course.program.title %> </td>
+      <td> <%= section.course.name %> </td>
+      <td> <%= section.name %> </td>
+      <td> <%= section.course.owner.full_name%> </td>
+      <td> <%= section.course.start_date%> </td>
+      <td> <%= section.course.end_date%> </td>
+    </tr>
+      <% end %>
+    <% end%>
+  </table>
+  </div>
+  <% end %>
+</div>

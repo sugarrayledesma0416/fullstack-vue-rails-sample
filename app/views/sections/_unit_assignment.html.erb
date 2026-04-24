@@ -1,0 +1,60 @@
+<h3 class="program-header-bar">assignments</h3>
+<div class="assignments-carousel" data-page-element="unit_assignments">
+  <div class="carousel" data-page-element="unit-carousel">
+    <input type="hidden" data-first-unit-id="<%= current_program.units.first.id %>"/>
+    <div class="carousel-nav">
+      <div ng-show="group.has_prev_group" class="arrow-prev" data-content-type="prev-link" data-ng-click="group.has_prev_group && select_group(group.prev_id)">Prev</div>
+    </div>
+    <div data-content-type="unit_tile" class="unit-tile" data-ng-if="(group.has_media_item)">
+      <img data-ng-src="{{group.media_item_public_filename}}" width="114" height="75" />
+    </div>
+    <div class="carousel-nav">
+      <div class="arrow-next" data-content-type="next-link" data-ng-click="group.has_next_group && select_group(group.next_id)" ng-show="group.has_next_group">Next</div>
+    </div>
+    <div data-page-element="unit-name" class="unit-name" data-ng-show="hide_spinner">{{group.display_name}}</div>
+    <div data-page-element='spinner' data-ng-hide="hide_spinner">
+      <%= image_tag('loading_32.gif', {:style => 'float: right'}) %>
+    </div>
+  </div>
+</div>
+
+<div data-ng-show="hide_spinner" class="assignment-box">
+  <div data-page-element="no_assignments_message" data-ng-hide="has_assignments()">No assignments to complete</div>
+
+  <div ng-repeat="assignment_day in group.assignment_days" class="c-assignment-date">
+    <div data-content-type="assignment_day" class="assignment_day">
+      <div class="due-date">
+        <div class="day" data-content-type="assignment_due_day">
+          Due {{assignment_day.due_date | date:'EEEE'}}
+        </div>
+        <div class="calendar">
+          <span class="due-date-month">{{assignment_day.due_date | date:'MMM'}}</span>
+          <span class="due-date-date">{{assignment_day.due_date | date:'dd'}}</span>
+        </div>
+        <div class="act-count">{{assignment_day.activities_remaining}}</div>
+        <div class="act-time">{{assignment_day.remaining_time}}</div>
+      </div>
+      <div class="assignment-box">
+        <!-- First Group -->
+        <ul class="assignment-list" ng-repeat="assignment_group in assignment_day.assignment_groups">
+          <li>
+            <a class="lesson_spanner"
+               style="border-left: 0.25rem solid {{assignment_group.color}};"
+               data-content-type="assignment_title"
+               ng-bind-html="assignment_group.title | unsafe"
+               ng-href="{{assignment_group.url}}"></a>
+            <span class="status" data-content-type="status">{{assignment_group.status}}</span>
+
+            <div class="assignments-start" ng-show="show_start_button(assignment_group)">
+              {{$scope.assignment_showing_start_button}}
+              <div class="time-est">ESTIMATE <span class="weighted_text">{{assignment_group.minutes_required}}</span></div>
+              <span class="red-button"><a ng-href="{{assignment_group.url}}">start</a></span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</div>
+

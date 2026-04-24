@@ -1,0 +1,7 @@
+<div class="workset_activity_hover hidden_helper" id="<%= meta_id %>">
+  <% concept_style = ''
+     concept_style = "background-color: #{title_bg}; color: white;" unless title_bg.blank? %>
+  <div class="progressbar_title" style="<%= concept_style %> padding:0px 0px 3px 5px;"><%= title_text.html_safe %></div>
+  <div class="progressbar_prompt"><%= html_string_shorten(body_header, 30) %></div>
+  <div class="progressbar_status"><%= body_text %></div>
+</div>

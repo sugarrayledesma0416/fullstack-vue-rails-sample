@@ -1,0 +1,31 @@
+development:
+  host: localhost
+  port: 6379
+  db: 2
+  password: ''
+  enabled: true
+
+test: &TEST
+  host: localhost
+  port: 6379
+  db: 15
+  password: ''
+  enabled: false
+
+# The values for staging and live are configured by chef. Just need the
+# empty hash for live here so env doesn't die when compiling local assets.
+
+#TODO remove staging. this is to facilitate qa temporarily.
+staging:
+  host: localhost
+  port: 6379
+  db: 2
+  password: ''
+  enabled: true
+
+live:
+  host: licensing-api-response-cache.production.vhlcentral.internal
+  port: 6379
+  db: 2
+  password: ''
+  enabled: true

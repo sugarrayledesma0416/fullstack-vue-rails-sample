@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "guid": "8e4b78f3-a05d-4e43-ac6f-b1c2dcb7f11e",
+        "assessment_id": 285670,
+        "points_possible": 1
+    },
+    {
+        "id": 2,
+        "guid": "349552ff-7996-436c-9118-16edf2df8fb2",
+        "assessment_id": 285670,
+        "points_possible": 1
+    },
+    {
+        "id": 3,
+        "guid": "ad3c1e29-447c-47cf-b89a-fa3d13488b88",
+        "assessment_id": 285670,
+        "points_possible": 1
+    }
+]

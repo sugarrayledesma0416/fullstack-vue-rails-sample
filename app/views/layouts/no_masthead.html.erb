@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <%= render('partials/google_tag_manager') %>
+    <%= render 'layouts/common_header' %>
+  </head>
+
+  <body class="notranslate <%= yield :body_classes %>  <%= yield :theme_classes %>" <%= yield :angular_tags %>>
+    <% #query_review_output %>
+
+    <div id="page_container" class="ui-helper-clearfix student_grades">
+      <div id="column_wrapper" class="ui-helper-clearfix">
+        <%= render 'layouts/flash', flash: flash -%>
+        <h1 class="page_title"><%= @page_title if @page_title -%></h1>
+        <%= yield %>
+        <div class="ui-helper-clearfix"></div>
+      </div><!-- end column_wrapper -->
+
+      <%= render 'partials/footer' %>
+    </div>
+    <%= render 'layouts/inactivity_timeout' %>
+  </body>
+</html>

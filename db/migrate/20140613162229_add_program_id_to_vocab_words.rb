@@ -1,0 +1,9 @@
+class AddProgramIdToVocabWords < ActiveRecord::Migration[4.2]
+  def self.up
+    add_column :vocab_words, :program_id, :integer
+  end
+
+  def self.down
+    remove_column :vocab_words, :program_id
+  end
+end

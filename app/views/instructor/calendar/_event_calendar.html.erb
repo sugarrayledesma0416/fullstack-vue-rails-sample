@@ -1,0 +1,91 @@
+<% content_for(:js_head, javascript_include_tag('calendar')) %>
+<% content_for(:js_head, javascript_include_tag('assignment_wizard') ) %>
+<% content_for( :js_head, javascript_include_tag("jquery.vhl-checkboxes.js") ) %>
+<% content_for(:js_head, javascript_include_tag('add_assignments')) %>
+<% content_for(:css_head, stylesheet_link_tag('music/features/assignment_calendar/calendar_component/instructor/main')) %>
+<% content_for(:body_classes, ' ns-calendar  ns-calendar-instructor  ns-full-width') %>
+
+<% event_calendar = calendar_presenter.event_calendar %>
+<% event_calendar.each_month do |month| %>
+  <div class="cal_details_item  ui-helper-clearfix">
+    <div id="month_controls" class="month_controls  legend_left">
+        <div class="clear"></div>
+        <ul class="cal_details">
+        </ul>
+        <ul class="right  month_select">
+        <% if event_calendar.prev_year_month %>
+          <li><a href="#" id="event_calendar_prev" class="prev" data-js-link="show_calendar" data-js-month="<%= event_calendar.prev_year_month %>"></a></li>
+        <% else %>
+          <li><a href="#" class="disabled_cal_nav  prevent-default  prev"></a></li>
+        <% end %>
+        <% if event_calendar.next_year_month %>
+           <li><a href="#" id="event_calendar_next" class="next" data-js-link="show_calendar" data-js-month="<%= event_calendar.next_year_month %>"></a></li>
+        <% else %>
+          <li><a href="#" class="disabled_cal_nav  prevent-default  next"></a></li>
+        <% end %>
+          <li>
+            <h3><%= "#{Date::MONTHNAMES[month.month]} #{month.year}" %></h3>
+          </li>
+        </ul>
+      </div>
+      <div class="legend_right">
+        <div class="clear"></div>
+        <ul class="bottom_list">
+          <li>
+            <div class="class_days_key  u-mar-lt-5">&nbsp;</div>
+          </li>
+           <li>class days</li>
+            <li class="assignments_key">assignments</li>
+        </ul>
+      </div>
+  </div><!-- cal_details_item -->
+  <div class="calendar_page  u-dis-block  js-calendar_page  <%= test_class('calendar-page') %>" id="<%= month.to_s %>">
+    <div id="messages">
+      <% event_calendar.messages.each do |message| -%>
+        <div>
+          <%= message %>
+        </div>
+      <% end -%>
+    </div><!-- #messages -->
+    <div class="cal_main_container">
+      <ul class="calendar">
+        <li class="days_of_week  ui-helper-clearfix">
+          <ul class="ui-helper-clearfix">
+            <% event_calendar.days_of_week.each do |d| %>
+              <li><%= d %></li>
+            <% end %>
+          </ul>
+        </li><!-- days_of_week -->
+        <% prev_day = nil %>
+        <% month.each_week do |week| %>
+          <li class="week  ui-helper-clearfix">
+            <ul class="ui-helper-clearfix">
+              <% week.each do |day| -%>
+              <%= render partial: 'instructor/calendar/event_calendar_day',
+                         handlers: [:html, :erb],
+                         locals: { event_day: day,
+                                   prev_day: prev_day,
+                                   show_estimates: calendar_presenter.show_estimated_times?,
+                                   assignments_by_date: calendar_presenter.items_by_date[:assignments],
+                                   announcements_by_date: calendar_presenter.items_by_date[:announcements],
+                                   has_multiple_due_dates: calendar_presenter.has_multiple_due_dates?(day.date) } %>
+                <% prev_day = day%>
+              <% end %>
+            </ul>
+          </li><!-- week -->
+        <% end %>
+      </ul><!-- class="calendar" -->
+    </div>
+    <div class="calendar_bottom">
+      <span id="total_time_month">
+        <% if calendar_presenter.show_estimated_times? && calendar_presenter.total_time(month) %>
+          <%= "#{Date::MONTHNAMES[month.month]} Totals: #{calendar_presenter.total_activity_count(month)} activities, #{format_hours_minutes(calendar_presenter.total_time(month), :short)}" %>
+        <% end %>
+      </span>
+      <div class="calendar_corner"></div>
+    </div>
+
+  </div><!-- calendar_page -->
+
+<% end %>
+

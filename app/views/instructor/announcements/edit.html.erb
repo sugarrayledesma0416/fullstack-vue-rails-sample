@@ -1,0 +1,29 @@
+<% content_for(:body_classes, "standard_layout announcements") %>
+<% content_for(:js_head, javascript_include_tag('announcement')) %>
+<% content_for( :css_head, stylesheet_link_tag("communication") ) %>
+<% enable_unsaved_changes_protection %>
+
+<div id="main_content">
+  <div id='announcement_form_container'>
+  <%= form_for(@announcement, :method => 'put', :url => {:action => 'update', :program_id => current_program.id, :id => @announcement.id}, :html => {:id => 'announcement_form', :enctype => "multipart/form-data", :class => 'main'}) do |form| %>
+
+    <%= render :partial => 'form', :locals => {:form => form,:announcement => @announcement} %>
+
+    <div id="additional_links">
+      <div class="cancel_link">
+        <%= link_to "cancel", instructor_announcements_path(current_program.id) %>
+      </div>
+      <div class="delete_link">
+        <%= link_to(
+              'delete',
+              instructor_announcement_path(current_program.id, @announcement.id),
+              data: { confirm: 'Are you sure you want to delete this announcement?' },
+              method: :delete
+            ) %>
+      </div>
+      <%= form.submit 'Save', :class => 'red-button', :style => 'float: right;' %>
+    </div>
+
+  <% end %>
+  </div>
+</div>

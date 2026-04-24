@@ -1,0 +1,37 @@
+<% content_for(:css_head, stylesheet_link_tag("course_section_wizard")) %>
+<% content_for(:css_head, stylesheet_link_tag("music/features/dashboard/block_enrollment")) %>
+<% content_for(:css_head, stylesheet_packs_with_chunks_tag('instructor/sections/edit')) %>
+<% content_for(:js_head, javascript_packs_with_chunks_tag('instructor/sections/edit')) %>
+<% content_for(:body_classes, "standard_layout course-setup edit-section  ns-allow-enroll") %>
+
+<% content_for(:meta) do %>
+  <meta name="VHL.course_school_id" content="<%= @presenter.course.school_id %>"/>
+<% end %>
+
+<% if @in_institution_admin %>
+  <% content_for :meta do %>
+    <meta name="VHL.in_institution_admin" content="true">
+  <% end %>
+  <div class="ns-music-v1  u-pad-bot-16">
+    <%= link_to request.referer do %>
+      <%= Music::Components.icon(variant: 'return', text: 'Return to Templates') %>
+    <% end %>
+  </div>
+<% else %>
+  <% content_for :meta do %>
+    <meta name="VHL.in_institution_admin" content="false">
+  <% end %>
+<% end %>
+
+<%
+  zones = ActiveSupport::TimeZone.all
+  priority_zones = ActiveSupport::TimeZone.us_zones.reverse
+%>
+<div
+  class="js-edit-section-wizard"
+  data-section-wizard-data="<%= {
+    currentUserRostering: current_user.rostering?,
+    loadingImg: asset_path('loading_32.gif'),
+    timeZones: priority_zones.map{|tz| [tz.to_s, tz.name] },
+    remainingTimeZones: (zones - priority_zones).map{|tz| [tz.to_s, tz.name] },
+  }.to_json %>" />

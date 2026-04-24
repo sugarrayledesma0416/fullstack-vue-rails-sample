@@ -1,0 +1,14 @@
+<%= stylesheet_link_tag 'music/features/footer/footer' %>
+<% ssjr_footer_class = ssjr_student? ? 'c-supersite-jr-footer' : '' %>
+<% inline_flex_class = ssjr_student? ? '' : 'u-dis-sm-inline-flex' %>
+<% rubric_class = @set_footer ? 'u-txt-14' : '' %>
+<ul class="c-footer  <%= ssjr_footer_class %>  <%= inline_flex_class %>  <%= rubric_class %>">
+  <% if ssjr_student? %>
+    <%= render partial: 'layouts/music_v1/supersites_jr_footer_items' %>
+  <% else %>
+    <%= render partial: 'layouts/music_v1/default_footer_items' %>
+  <% end %>
+  <% if Rails.env.live? || ENV.fetch('ENABLE_ANALYTICS', false) == 'true' %>
+    <%= render partial: 'partials/analytics' %>
+  <% end -%>
+</ul> <!-- end c-footer -->

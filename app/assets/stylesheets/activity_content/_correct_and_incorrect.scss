@@ -1,0 +1,179 @@
+@import 'music/library/v1/base/main';
+/* ================================================================== *
+
+    Correct / Incorrect
+    incl. fill-in-the-blank-specific and Accent Bar-specific styles
+
+* =================================================================== */
+
+/* Displays whether the answer is correct or incorrect and etc */
+li {
+  background-repeat: no-repeat;
+  background-size: 1.25rem 1.25rem;
+  background-position: 0 rpx(5);
+
+  &.correct {
+    background-image: image-url('music/icons/flash-banners/icon-success.svg');
+  }
+
+  &.incorrect {
+    background-image: image-url('music/icons/flash-banners/icon-error.svg');
+  }
+}
+
+li.pending    { background: transparent url('/images/icons/pending_apple_icon.svg')   no-repeat rpx(3) rpx(4); }
+li.warn       { background: transparent url('/images/icons/icon_warn.png')      no-repeat rpx(3) rpx(6); }
+li.partial    { background: transparent url('/images/icons/icon_partial.png')   no-repeat rpx(3) rpx(6); }
+
+li span.correct span.or {
+  color: black;
+  font-size: 0.9em;
+  font-weight: lighter;
+}
+
+.student_answer {
+  .incorrect.incorrect,
+  .missed_punctuation.missed_punctuation,
+  .incorrect_punctuation.incorrect_punctuation {
+    border-bottom: rpx(2) solid $error;
+    /* TODO: Remove !important after https://vistahl.atlassian.net/browse/MAE-59205 is played. */
+    color: $error !important;
+    cursor: help;
+    font-weight: bold;
+    hyphens: auto;
+    padding: 0 rpx(1) rpx(2);
+    text-decoration: none;
+  }
+}
+
+li.answer_incorrect span,
+li span.incorrect {
+  border-bottom: rpx(2) solid $error;
+  color: $error;
+  font-weight: bold;
+  line-height: rpx(17);
+  text-decoration: none;
+}
+
+li.answer_incorrect span i {
+  vertical-align: text-bottom;
+}
+
+.fill_in_the_blanks li.answer_incorrect span {
+  border-bottom: rpx(2) solid $error;
+  padding-bottom: 0;
+}
+
+// Inputs resize as expected when there is no accent bar,
+// so only fib's with the accent bar need this fix.
+.c-accent-bar-textbox-wrapper .c-fib-question__input,
+.c-accent-bar-textbox-wrapper .c-inline-open-ended-question__input {
+  width: auto;
+
+  @include viewport-max('sm') {
+    width: 100%;
+
+    @include theme-opt-in('supersites-jr') {
+      max-width: 50vw;
+    }
+  }  
+}
+
+.incorrect.blank {
+  border-bottom: rpx(2) solid $error;
+  display: inline-block;
+  min-width: rpx(50);
+  overflow: hidden;
+  text-indent: -999em;
+  padding-bottom: 0;
+}
+
+
+li.answer_correction span,
+li span.correct,
+li.answer_correct span {
+  color: $gray-3;
+  font-weight: bold;
+}
+
+li.answer_correct img,
+li.answer_correction img {
+  border: rpx(2) solid $gray-3;
+  padding: rpx(10);
+}
+
+li.answer_blank img {
+  padding: rpx(12);
+}
+
+li.answer_incorrect img {
+  border: rpx(2) solid $error;
+  padding: rpx(10);
+}
+
+li span.incorrect select {
+  border-color: $error;
+  font-weight: normal;
+  padding-bottom: rpx(2);
+  text-decoration: none;
+}
+
+li span.incorrect input {
+  border-color: $error;
+  padding-bottom: rpx(2);
+  text-decoration: none;
+}
+
+li.questions {
+  margin-bottom: rpx(10);
+  margin-left: rpx(5);
+}
+
+.answer_positioning .basictable input {
+  width: rpx(110);
+}
+
+/* Drop Down Specifics */
+.answer_positioning reference {
+  margin-right: rpx(10);
+  vertical-align: top;
+}
+
+.answer_positoning img {
+  vertical-align: top;
+}
+
+.answer_positioning .drop-down-try {
+  margin: rpx(5);
+  vertical-align: top;
+}
+
+
+.f-reference-wordbank__print {
+  display: none;
+}
+
+.drop_downs_activity ol li {
+  width:300px;
+}
+
+/* Load audio icon for printing */
+.player {
+  background: image-url('music/v1/icons/core/audio.svg') left rpx(15) top rpx(7) no-repeat;
+  background-size: rpx(0) rpx(0);
+}
+
+.ns-fill-in-the-blanks-questions.answers {
+  .student_answer.correct {
+    margin-left: rpx(4);
+    margin-right: rpx(4);
+  }
+}
+
+.ns-dropdown-questions.answers {
+  span.correct {
+    margin-left: rpx(4);
+    margin-right: rpx(4);
+  }
+}
+

@@ -1,0 +1,55 @@
+{
+  "activities": [
+    {
+      "ExternalLinkContent": {
+        "activity_type": "external_link",
+        "dl": {
+          "node_text": "Write your answer to the prompts below."
+        },
+        "title": "Escribir - External Link",
+        "items": [
+          {
+            "Exam": {
+              "rank": 1,
+              "sidebar_ref": null,
+              "header": {
+                "node_text": "Escribir - Open ended"
+              },
+              "body": {
+                "node_text": "Write your answer to the prompts below."
+              }
+            }
+          },
+          {
+            "Table": {
+              "body": {
+                "node_text": "<article><table style=\"width: 100%;\" class=\"fr-table-reference\"><thead><tr><th>COLUMN_1</th><th>COLUMN_2</th></tr></thead><tbody><tr><td style=\"width: 50.0000%;\">r1c1</td><td style=\"width: 50.0000%;\">r1c2</td></tr><tr><td style=\"width: 50.0000%;\">r2c1</td><td style=\"width: 50.0000%;\">r2c2</td></tr></tbody></table></article>"
+              },
+              "caption": {
+                "Caption": {
+                  "content": "<p>Default Table</p>"
+                }
+              },
+              "has_row_header": false,
+              "variant": "",
+              "rank": 2,
+              "sidebar_ref": null
+            }
+          },
+          {
+            "Item": {
+              "external_link_url": "https://dummy-url-1.com/",
+              "rank": 2,
+              "sidebar_ref": null,
+              "question_number": 1,
+              "points_possible": 10
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "activity_type": "exam",
+  "language": "es",
+  "title": "Assessment Spec"
+}

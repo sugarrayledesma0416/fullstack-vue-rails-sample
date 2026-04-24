@@ -1,0 +1,135 @@
+<% content_for(:js_head, javascript_packs_with_chunks_tag('question_bank_topics/index')) %>
+
+<div class="c-form-item-group">
+  <div class="c-form-item-group">
+    <div class="c-form-item">
+      <h1 class="c-heading--page-title">Search for a topic by name</h1>
+      <input class="c-form-item__input  js-search-input" type="text" placeholder="e.g. Topic A"
+                                                                     name="search">
+    </div>
+  </div>
+
+  <div class="c-form-item-group">
+    <div class="c-form-item">
+      <label class="c-form-item__label" for="select-language">Language</label>
+      <select id="select-language" class="c-select  js-search-by-language">
+        <option value="select">Select</option>
+        <% @languages.each do |language| %>
+          <option value="<%= language %>"><%= language %></option>
+        <% end %>
+      </select>
+    </div>
+
+    <div class="c-form-item">
+      <label class="c-form-item__label" for="select-level">Level</label>
+      <select id="select-level" class="c-select  js-search-by-level">
+        <option value="select">Select</option>
+        <% @levels.each do |level| %>
+          <option value="<%= level %>"><%= level %></option>
+        <% end %>
+      </select>
+    </div>
+
+    <div class="c-button-group">
+      <button class="c-button  c-button--primary  js-filter-button" type="button">Filter</button>
+      <button class="c-button  c-button  js-clear-button" type="button">Clear</button>
+    </div>
+  </div>
+
+  <div class="c-form-item-group">
+    <div class="c-form-item">
+    <%= link_to(
+          new_question_bank_topic_path,
+          class: 'c-button  c-button--border  ' \
+                 'u-float-rt  u-mar-top-24  u-mar-rt-0  u-mar-rt-10'
+        ) do %>
+      <%= Music::Components.icon(
+            variant: 'add',
+            text: 'New Topic',
+            classes: ['c-embedded-icon--md']
+          ) %>
+    <% end %>
+
+    <%= link_to(
+          upload_question_bank_topics_path,
+          class: 'c-button  c-button--border  ' \
+                 'u-float-rt  u-mar-top-24  u-mar-rt-0  u-mar-rt-10'
+        ) do %>
+      <%= Music::Components.icon(
+            variant: 'list',
+            text: 'Upload Topics File',
+            classes: ['c-embedded-icon--md']
+          ) %>
+    <% end %>
+    </div>
+  </div>
+
+  <div class="c-form-item-group">
+    <div class="c-form-item">
+      <%= link_to(
+        upload_question_bank_topics_concepts_path,
+        class: 'c-button  c-button--border  ' \
+        'u-float-rt  u-mar-top-24  u-mar-rt-0  u-mar-rt-10'
+        ) do %>
+          <%= Music::Components.icon(
+            variant: 'arrow-up',
+            text: 'Upload Mapping File',
+            classes: ['c-embedded-icon--md']
+          ) %>
+        <% end %>
+
+        <%= link_to(
+          concept_download_question_bank_topics_path,
+          class: 'c-button  c-button--border  ' \
+                 'u-float-rt  u-mar-top-24  u-mar-rt-0  u-mar-rt-10'
+        ) do %>
+          <%= Music::Components.icon(
+            variant: 'arrow-down',
+            text: 'Download Concept IDs',
+            classes: ['c-embedded-icon--md']
+          ) %>
+        <% end %>
+
+        <%= link_to(
+          topic_download_question_bank_topics_path,
+          class: 'c-button  c-button--border  ' \
+                 'u-float-rt  u-mar-top-24  u-mar-rt-0  u-mar-rt-10'
+        ) do %>
+          <%= Music::Components.icon(
+            variant: 'arrow-down',
+            text: 'Download Topic IDs',
+            classes: ['c-embedded-icon--md']
+          ) %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="u-mar-top-16">
+  <table class="c-table">
+    <thead>
+      <tr class="c-header-row">
+        <th scope="col">Name</th>
+        <th scope="col">Language</th>
+        <th scope="col">Level</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @question_bank_topics.each do |topic| %>
+        <tr class="c-row  js-topic"
+            data-language="<%= topic.language %>"
+            data-level="<%= topic.level %>">
+          <th scope="row">
+            <%= link_to topic.name.html_safe, question_bank_topic_path(id: topic.id) %>
+          </th>
+          <td><%= topic.language %></td>
+          <td><%= topic.level %></td>
+          <td>
+            <%= link_to "Edit", edit_question_bank_topic_path(id: topic.id) %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

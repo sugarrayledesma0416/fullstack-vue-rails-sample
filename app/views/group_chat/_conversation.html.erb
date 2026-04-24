@@ -1,0 +1,92 @@
+<script id="group-chat-conversation-template" type="text/x-handlebars-template">
+
+    <div class="c-panel  c-panel--chat  c-panel--conversation
+                js-conversation-panel u-hidden js-conversation-panel-{{conversationId}}">
+      <div class="c-panel__header  c-panel__header--chat  u-pad-top-10">
+
+        <div class="c-header  c-header--chat">
+          <button type="button"
+                  class="c-chat-widget__back-button  c-no-button  js-back-to-roster-btn">
+            <span class="c-icon  c-icon--lg  c-icon--caret-left"></span>
+            <span class="u-screen-reader-only">Back to roster.</span>
+          </button>
+          <h2 class="c-conversation__heading">
+            <span class="u-screen-reader-only">Chatting with</span>
+            <span class="c-conversation__other-username  js-chat-other-username">
+              {{ userNames }}
+            </span>
+          </h2>
+          <a href="javascript:void(0)" class="c-chat-widget__close  js-close-chat-btn" role="button" aria-label="Close Chat">
+            <%= Music::Components.icon(variant: 'close') %>
+          </a>
+        </div>
+
+        <div class="c-media-chat-box  c-panel__section  c-panel__section--chat  js-media-box"
+             data-step="initial">
+          <%= render 'chat/media_chat_steps' %>
+        </div>
+
+      </div> <!-- / panel header -->
+
+      <!-- This button is a direct child of the c-panel div above,
+           and thus is styled as a panel child. -->
+      <button class="c-no-button  u-txt-ctr  u-bg-gray-f5  js-open-av-check">
+        <span class="c-icon  c-icon--signal"></span>
+        Test your connection
+      </button>
+
+      <div
+        class="c-panel__body  c-panel__body--chat  js-conversation-scroller"
+        aria-label="Chat"
+        role="region"
+        tabindex="0">
+        <ol class="c-conversation">
+          <li class="js-not-recording-text  u-mar-32  u-txt-ctr u-hidden">
+            Not recording text chat.
+          </li>
+          <li class="js-load-more-item  u-mar-32  u-hidden">
+            <a href="#" class="js-load-more-link  u-txt-ctr  u-dis-block">
+              Load more messages with {{ userNames }}.
+            </a>
+          </li>
+          <li class="js-start-of-convo  u-mar-32  u-hidden">
+            <div class="u-txt-ctr">
+              This is the beginning of your conversation with
+              {{ userNames }}.
+            </div>
+          </li>
+        </ol>
+        <div class="c-conversation  js-conversation">
+        </div>
+        <!-- this should be inserted right before the first unread message: -->
+        <div class="c-conversation__new-message-marker  u-hidden">
+          <span>New messages</span>
+        </div>
+
+      </div> <!-- panel body -->
+      <div aria-live="polite" class="u-screen-reader-only  js-last-msg-announcement"></div>
+
+      <div class="c-panel__footer  c-panel__footer--chat">
+        <div class="c-conversation__new-message-marker  is-floating  u-hidden">
+          <span>New messages</span>
+        </div>
+
+        <form class="js-chat-form" data-to-user="{{conversationID}}" data-section-id="{{sectionId}}">
+          <div class="c-form-item-group  u-dis-flex  flex-justify-end">
+            <div class="c-form-item  flex-grow-1  u-mar-top-16  u-mar-rt-0">
+              <input type="text"
+                     id="new-chat-message-{{conversationID}}-{{sectionID}}"
+                     placeholder="Type something."
+                     autocomplete="off"
+                     class="c-form-item__input  c-form-item__input--new-chat-message  u-width-full
+                            u-dis-block  js-new-message"/>
+            </div>
+            <button class="c-button  c-button--border  js-send-btn  u-no-width  u-mar-top-16  u-mar-lt-16">
+              Send
+            </button>
+          </div>
+        </form>
+      </div>
+    </div> <!-- conversation panel -->
+
+</script>

@@ -1,0 +1,142 @@
+<meta name="VHL.section_id" content="1"/>
+<meta name="VHL.user_id" content="2"/>
+<meta name="VHL.activity_id" content="3"/>
+
+<div data-partner-chat-submitted-links="" class="hidden_helper">
+  <a href="#" data-button='practice' :class='red-button'>Practice</a>
+  <a href="#" data-button='return' :class='red-button'>return to activities</a>
+</div>
+
+<input type="hidden" id="partner_id" name="partner_id" value="" />
+<input type="hidden" id="partner_section_id" name="partner_section_id" value="" />
+<input type="hidden" id="user_section_id" name="user_section_id" value="" />
+<input type="hidden" id="recording_path" name="recording_path" value="" />
+<input type="hidden" id="recording_token" name="recording_token" value="" />
+<input type="hidden" id="practice"  name="recording_token" value="" />
+
+<div class="activity_reference_block pchat">
+</div>
+
+<div class="chat_container pchat">
+  <div id="video_controls">
+    <div class="checkbox show_check" id="video_checkbox"></div>
+    <span id="video_toggle">Show my video</span>
+    <div class="disabled_hover_info hidden_helper">You cannot disable your video while recording.</div>
+  </div>
+
+  <div class="partner_chat_interaction_container">
+    <div class="partner_chat_partners_container">
+      <div class="available_partners start">Choose partner
+        <div id="tutorial_choose_partner" class="tutorial_hover">
+          <span class="tutorial_arrow_right"></span>
+          Click on a partner's name to begin the partner chat.</div>
+      </div>
+
+      <ul id="contacts-list"></ul>
+    </div>
+
+    <div class="partner_chat_status_container">
+      <div class="invitation_status hidden_helper"></div>
+
+      <div class="error_message hidden_helper">
+        <div class="chat_status_message" id="chat_error">
+          <div class="request_inner">
+            <div class="chat_status_header">Error</div>
+            <div class="chat_message">
+              Your partner has disconnected. Click the submit button to complete the activity or click "redo activity" to start over.
+            </div>
+            <div class="request_controls">
+              <div class="cancel_request">
+                <a href="#" class="cancel_link" id="redo_activity_link">redo activity</a>
+                <div class="confirm hidden_helper">
+                  <div id="reset-dialog-confirm" title="Redo Activity?">
+                    <p>Your work on this activity will be erased. This action cannot be reversed.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <fieldset id="partner_chat_textmsg_container">
+      <div class="chat_window">
+        <div id="chat_with" class="chat_with"></div>
+
+        <div id="messages-container"></div>
+      </div>
+    </fieldset>
+
+    <div class="message-controls">
+      <input type="text" id="message"/>
+    </div>
+  </div>
+
+  <div class="partner_chat_controls">
+    <div id="partner_select_dots_horz" class="dots hidden_helper"></div>
+    <div id="step_one_dots" class="dots faded"></div>
+    <div id="step_two_dots" class="dots faded"></div>
+
+    <div class="button_invite">
+      <a href="#" class="partner_chat_button disabled" id="button_invite" data-invite_button="invite_button">Invite</a>
+      <span class="button_caption disabled" id="caption_partner_name">Invite</span>
+    </div>
+
+    <div id="tutorial_invite_partner" class="tutorial_hover hidden_helper">
+      <span class="tutorial_arrow_top"></span>
+      Click on the icon to invite the selected partner.
+    </div>
+
+    <div class="button_record">
+      <a href="#" class="partner_chat_button disabled" id="button_record">Record</a>
+      <span class="button_caption disabled" id="caption_record">Record</span>
+
+      <a href="#" class="partner_chat_button hidden_helper" id="button_rerecord">Re-Record</a>
+      <span class="button_caption hidden_helper" id="caption_rerecord">Re-Record</span>
+
+      <a href="#" class="partner_chat_button hidden_helper" id="button_record_stop">Stop Recording</a>
+      <span class="button_caption hidden_helper" id="caption_record_stop">Stop Recording</span>
+
+      <div class="volume_spinner record hidden_helper" style="cursor: pointer; height: 42px; width: 42px; position: absolute; left: 29px; top: 4.5px;">
+        <div class="volume" style="position: absolute; height: 42px; width: 42px; background: url(/images/activities/volume_large.png) left no-repeat;"></div>
+      </div>
+    </div>
+
+    <div id="tutorial_record_partner" class="tutorial_hover hidden_helper">
+      <span class="tutorial_arrow_top"></span>
+      Click on the record icon to begin recording your partner chat.
+    </div>
+
+    <div class="button_review">
+      <a href="#" class="partner_chat_button disabled" id="button_review">Play Back</a>
+      <span class="button_caption disabled" id="caption_review">Play Back</span>
+    </div>
+  </div>
+
+  <div class="flash_message_container">
+
+  </div>
+
+  <div class="connection_controls">
+    <div class="button_disconnect"><a href="#" id="disconnect_button" class="chat-control-button hidden_helper">Disconnect</a></div>
+  </div>
+
+  <div class="activity_actions">
+    <input data-button="next" />
+    <input type="submit" id="_activity_submit"/>
+  </div>
+</div>
+
+<div id="contacts-list-item-template">contact list item template</div>
+<div id="chat_request_send_template"></div>
+<div id="contacts_request_container_template"></div>
+<div id="partner_chat_controls_template"></div>
+<div id="chat_with"></div>
+
+<script id="status-template" type="text/x-handlebars-template">
+  <div class="chat_status_menu_item">
+    <span class="chat_status_icon chat_status_icon_{{label_css}}"></span>
+    <a href="#" class="chat_status_label set_chat_status" data-status-id="{{id}}">{{label}}</a>
+  </div>
+</script>

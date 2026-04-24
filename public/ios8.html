@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>VHL Central | Log in or out of your Vista Higher Learning Account</title>
+    <meta charset="UTF-8" />
+
+    <style type="text/css">
+      body { height: 100%; margin: 0; padding: 0; }
+      iframe { border: 0; height: 99.5%; width: 100%; }
+    </style>
+
+    <script type="text/javascript">
+      setInterval(function() {
+        if(window.frames[0].location.href === 'https://www.vhlcentral.com/user_session'
+           window.frames[0].location.href === 'https://www.vhlcentral.com/logout') {
+          window.location = 'https://www.vhlcentral.com/';
+        }
+      }, 250);
+    </script>
+  </head>
+
+  <body>
+    <iframe src="https://www.vhlcentral.com/"></iframe>
+  </body>
+</html>

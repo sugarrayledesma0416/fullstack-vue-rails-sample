@@ -1,0 +1,151 @@
+<%= link_to(question_bank_topic_path(id: @topic.id)) do %>
+  <%= Music::Components.icon(
+    variant: 'return',
+    text: 'Return to Question Bank List',
+    classes: ['c-embedded-icon--md', 'u-txt-16']
+  ) %>
+<% end %>
+
+<div class="u-mar-bot-16">
+  <div class="u-pad-top-16">
+    <h1 class="c-heading--page-title  u-txt-24">
+      <%= @title %>
+    </h1>
+  </div>
+  <%= link_to(
+        edit_question_bank_topic_question_bank_path(
+          question_bank_topic_id: @topic.id,
+          id: @question_bank.id
+        ),
+        class: 'c-button  c-button--border  ' \
+               'u-float-lt  u-mar-top-24  u-mar-lt-0  u-mar-bot-16'
+      ) do %>
+    <%= Music::Components.icon(
+          variant: 'add',
+          text: 'Add Revision',
+          classes: ['c-embedded-icon--md', 'u-txt-16']
+    ) %>
+  <% end %>
+</div>
+<table class="c-table">
+  <thead>
+    <tr class="c-header-row">
+      <th scope="col">Revision ID</th>
+      <th scope="col">Created_at</th>
+      <th scope="col">User</th>
+      <th scope="col">CSV</th>
+      <th scope="col">Status</th>
+      <th scope="col">Workflow</th>
+      <th scope="col">Preview</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @revisions.each do |question_bank_revision| %>
+      <tr class="c-row
+        <%= test_class("question-bank_revision-#{question_bank_revision.id}") %>">
+        <td>
+          <%= question_bank_revision.id %>
+        </td>
+        <td>
+          <%= format_date_time(question_bank_revision.created_at, :standard) %>
+        </td>
+        <td>
+          <%= question_bank_revision.last_changed_by_name %>
+        </td>
+        <td>
+          <%= link_to(
+                question_bank_revision.upload_filename.html_safe,
+                download_question_bank_revision_path(
+                  id: question_bank_revision.id
+                )
+              ) %>
+        </td>
+        <td>
+          <%= question_bank_revision.status %>
+        </td>
+        <td>
+          <% case question_bank_revision.status
+             when 'pending' %>
+              <%= link_to(
+                    'Approve',
+                    approve_question_bank_revision_path(
+                      id: question_bank_revision.id
+                    ),
+                    method: :post,
+                    data: { confirm: 'Publishing this revision will automatically archive the current live revision.' }
+                  ) %>
+                |
+              <%= link_to(
+                    'Reject',
+                    reject_question_bank_revision_path(
+                      id: question_bank_revision.id
+                    ),
+                    method: :post,
+                    data: { confirm: 'Rejecting this revision will leave the current live revision untouched.' }
+                  ) %>
+          <% when 'live' %>
+              <%= link_to(
+                    'Archive',
+                    archive_question_bank_revision_path(
+                      id: question_bank_revision.id
+                    ),
+                    method: :post,
+                    data: { confirm: 'Archiving this revision will make this bank unavailable to users. Procced?' }
+                  ) %>
+          <% when 'archived' %>
+              <%= link_to(
+                    'Enliven',
+                    approve_question_bank_revision_path(
+                      id: question_bank_revision.id
+                    ),
+                    method: :post,
+                    data: { confirm: 'Publishing this revision will automatically archive the current live revision.' }
+                  ) %>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to(
+               'preview',
+               section_activity_path(
+                 id: question_bank_revision.activity_id,
+                 popup: 1,
+                 section_id: 0,
+                 revision_id: question_bank_revision.id
+               )
+          ) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class="u-mar-bot-16">
+  <div class="u-pad-top-16">
+    <h1 class="c-heading--page-title  u-txt-24">
+      History of Actions
+    </h1>
+  </div>
+</div>
+
+<table class="c-table">
+  <thead>
+    <tr class="c-header-row">
+      <th scope="col">Revision ID</th>
+      <th scope="col">Updated_at</th>
+      <th scope="col">User</th>
+      <th scope="col">Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @revisions.each do |question_bank_revision| %>
+      <% question_bank_revision.question_bank_revision_logs.each do |question_bank_revision_log| %>
+        <tr class="c-row">
+          <td><%= question_bank_revision.id %></td>
+          <td><%= format_date_time(question_bank_revision_log.created_at, :standard) %></td>
+          <td><%= question_bank_revision_log.user_full_name %></td>
+          <td><%= "changed status to: #{question_bank_revision_log.status}" %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>

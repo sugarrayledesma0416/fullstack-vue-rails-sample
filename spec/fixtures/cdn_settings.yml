@@ -1,0 +1,4 @@
+test:
+  hostname: ftp.example.com
+  username: username
+  password: password

@@ -1,0 +1,48 @@
+<% content_for(:css_head, stylesheet_link_tag("music/features/forums/main")) %>
+<%= render 'forums/js_config' %>
+<% content_for :js_head, javascript_include_tag('forums') %>
+<% content_for :js_head, javascript_include_tag('jquery_common/deletion_modal') %>
+<% content_for(:body_classes, "standard_layout  ns-newcsslib  ns-beta  ns-forums") %>
+
+<% if accent_bar_enabled? %> 
+  <div class="u-mar-0  js-accent-bar-container--activity">
+    <%= render 'music/partials/accent_bar_component', {language: current_program.language_code} %>
+  </div>
+<% end %>
+
+<% if current_user.instructor? %>
+  <%= hidden_field_tag 'instructor_id', current_user.id %>
+  <%# content_for(:focus, render(:partial => 'instructor/focus/show')) %>
+  <% content_for(:navigation, render(:partial => 'app_shell/navbar_program/main')) %>
+<% end -%>
+
+<div class="container-fluid  u-mar-top-32">
+
+  <%= form_for(@forum, url: forum_path(current_program, @forum)) do |form| %>
+
+    <%= render(
+      'partials/form_errors',
+      header_message: nil,
+      object: @forum
+    ) %>
+
+    <div class="c-form-item  u-mar-bot-8">
+      <label class="u-txt-bold">Course</label>
+      <span class="u-mar-lt-32"><%= @course.name %></span>
+    </div>
+
+    <div class="c-form-item">
+      <label class="u-txt-bold">Section</label>
+      <span class="u-mar-lt-32"><%= @forum.section.name %></span>
+    </div>
+
+    <div class="c-form-item  c-form-item--title  u-mar-bot-32">
+      <%= form.label 'Forum Name', class: 'c-form-item__label' %>
+      <%= form.text_field :name, class: 'c-form-item__input  c-form-item__input--forums' %>
+    </div>
+
+    <%= form.submit 'Save', class: 'c-button  c-button--primary' %>
+    <%= link_to('Cancel', forums_path(current_program, current_section), class: 'c-no-button  u-txt-nodec  u-pad-10  u-mar-lt-10') %>
+  <% end %>
+
+</div> <!-- /container-fluid -->

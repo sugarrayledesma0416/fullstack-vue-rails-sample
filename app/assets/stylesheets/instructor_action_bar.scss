@@ -1,0 +1,368 @@
+/* Instructor Action Bar */
+
+@import 'music/library/v1/base/settings/units';
+@import 'music/library/v1/base/settings/colors';
+@import 'music/library/v1/base/main';
+
+/* colors: */
+$gray-ba: #bababa;
+$gray-d4: #d4d4d4;
+$gray-e6: #e6e6e6;
+$action-bar-blue: $link-color;
+
+.instructor-action-bar {
+  background: $gray-d4;
+  margin-bottom: 20px;
+  padding: 10px;
+  position: relative;
+}
+
+.activities--instructor .instructor-action-bar {
+  padding: rpx(10);
+}
+
+.instructor-action-bar--non-bg {
+  background: none;
+  height: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.standard_layout.activities {
+  .instructor-action-bar {
+    margin-bottom: 0;
+  }
+
+  &.vol .instructor-action-bar {
+    margin: 0 -32px;
+    padding-left: 32px;
+  }
+}
+
+.toc-creator-aline {
+  white-space: nowrap;
+}
+
+// Button General
+.instructor-action-button {
+  background: $white;
+  border: 1px solid $gray-ba;
+  border-radius: 3px;
+  display: inline-block;
+  font-size: 12px;
+  line-height: 14px;
+  margin-right: 5px;
+  padding: 5px;
+  position: relative;
+
+  // Assign Activities
+  &.assign-activities {
+    background-image: none;
+
+    a.set_date_link:hover,
+    .set_date_link {
+      height: auto;
+      font-size: 12px;
+
+      &:hover {
+        background-position: right -26px;
+      }
+
+      &.disable_link_function:hover {
+        background-position: right 2px;
+      }
+    }
+  }
+
+  // Create Activities
+  &.create-activity-links {
+    background: $white url('/images/add-content-button-bg.png') 0 0 no-repeat;
+    padding: 5px 12px;
+    width: rpx(112);
+    white-space: nowrap;
+  }
+
+  // Edit Created Activity
+  .edit-created-activity {
+    background: $white url('/images/instructor-toolbar-icons.png') right 1px top -42px no-repeat;
+    padding-right: 17px;
+  }
+
+  // Delete Created Activitiy
+  .delete-created-activity {
+    background: $white url('/images/instructor-toolbar-icons.png') right 1px top 20px no-repeat;
+    padding-right: 17px;
+  }
+
+  // Add Instructor Note
+  .add-instructor-note {
+    background: $white url('/images/instructor-toolbar-icons.png') right 1px top -65px no-repeat;
+    padding-right: 17px;
+  }
+
+  // Answer Key Link
+  &.answer-key-link a {
+    background: $white url('/images/instructor-toolbar-icons.png') right 1px top 1px no-repeat;
+    padding-right: 17px;
+  }
+
+  &.print-button {
+    height: rpx(26);
+
+    span {
+      &:first-child {
+        color: $action-bar-blue !important;
+      }
+
+      &:last-child.c-embedded-icon--print svg {
+        fill: $action-bar-blue;
+      }
+    }
+  }
+
+}
+
+/* Create Activity */
+.create-activity-dropdown {
+  left: -1px;
+  position: absolute;
+  top: 25px;
+  width: 132px;
+
+  .new-activity,
+  .import-content,
+  .new-assessment {
+    background: $gray-e6;
+    border-left: 1px solid $gray-ba;
+    border-right: 1px solid $gray-ba;
+    border-bottom: 1px solid $gray-ba;
+    color: $action-bar-blue;
+    cursor: pointer;
+    display: block;
+    font-size: 12px;
+    padding: 2px 0 2px 5px;
+
+    &:hover {
+      background-color: $white;
+      text-decoration: underline;
+    }
+  }
+
+  .new-activity {
+    background: $gray-e6 url('/images/right-arrow-thin.png') right no-repeat;
+
+    &:hover {
+      background-color: $white;
+      text-decoration: underline;
+    }
+  }
+
+  .new-activity-links-container {
+    background: $gray-e6;
+    border: 1px solid $gray-ba;
+    cursor: pointer;
+    left: 131px;
+    line-height: 14px;
+    position: absolute;
+    top: 18px;
+    width: 100%;
+    z-index: 60;
+  }
+
+  .create-activity-link {
+    background: $gray-e6;
+    border-bottom: 1px solid $gray-ba;
+    cursor: pointer;
+    display: block;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: normal;
+    padding: 3px;
+
+    &:last-child {
+      border-bottom: 0;
+    }
+
+    &:hover {
+      background: $white;
+      text-decoration: underline;
+    }
+
+    &.disabled-link:hover {
+      background: $gray-e6;
+      text-decoration: none;
+    }
+  }
+}
+
+.c-menu--admin__subitem:hover {
+  background-color: $gray-f5;
+}
+
+.import-content:hover {
+  background-color: $white;
+  text-decoration: underline;
+}
+
+.show_assessment,
+.show_grade,
+.show_answers {
+  float: left;
+  width: 400px;
+  margin-left: 35px;
+  font-size: 10px;
+}
+
+.assessment_show_status,
+.grade_availability,
+.answer_availability,
+.password-protected,
+.number-of-attempts-label,
+.time-limit {
+  float: left;
+  width: 110px;
+  font-weight: bold;
+}
+
+.release_date_time,
+.grade_availability_time,
+.answer_availability_time,
+.password-protected-value,
+.number-of-attempts-value,
+.time-limit-value {
+  float: left;
+}
+
+.answer_availability_time a.result_hidden,
+.grade_availability_time a.result_hidden,
+.release_date_time a.result_hidden {
+  background: url('/images/assess_arrows.png') right top no-repeat;
+}
+
+.answer_availability_time a.released,
+.grade_availability_time a.released,
+.release_date_time a.released {
+  background: url('/images/assess_arrows.png') right bottom no-repeat;
+}
+
+.available_pipe {
+  margin: 0px 2px;
+}
+
+.available_specifics {
+  display: block;
+}
+
+.instructor-action-bar .c-instructor-note-flash {
+  font-size: rpx(16);
+  top: calc(100% - 5rem);
+
+  .c-flash-banner {
+    max-width: none;
+  }
+}
+
+.c-instructor-note-audio-recorder {
+  border: rpx(1) solid $gray-d;
+  display: flex;
+  margin-top: rpx(24);
+  padding: rpx(8) 0;
+}
+
+.c-instructor-note-record-review {
+  width: 50%;
+
+  @include theme-opt-in('supersites-jr') {
+    width: 80%; 
+  }
+}
+
+.c-instructor-note-delete-record {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  margin: rpx(10);
+  width: 50%;
+
+  .c-instructor-note-delete-icon {
+    margin: rpx(5) 15%;
+
+    @include theme-opt-in('supersites-jr') {
+      margin: rpx(5) 40%;
+    }
+  }
+}
+
+.c-instructor-note-action-item {
+  display: flex;
+  justify-content: flex-end;
+
+  @include theme-opt-in('supersites-jr') {
+    display: block;
+    justify-content: unset;
+
+    @include viewport-min('md') {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+
+  .c-audio-note-container {
+    margin-right: auto;
+
+    .c-media-button-wrapper {
+      @include theme-opt-in('supersites-jr') {
+        margin: 0 auto;
+
+        @include viewport-min('md') {
+          margin-right: auto;
+        }
+      }
+    }
+  }
+
+  .c-instructor-note-action-link{
+    align-self: center;
+
+    @include theme-opt-in('supersites-jr') {
+      display: flex;
+      justify-content: center;
+      padding-left: mod(2);
+      margin-top: rpx(10);
+
+      @include viewport-min('md') {
+        display: block;
+        justify-content: unset;
+        padding: 0;
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+ /* For mobile phones: */
+@include viewport-max('sm') {
+  .c-instructor-note-flash {
+    font-size: rpx(14);
+
+    .c-flash-banner {
+      padding: rpx(16);
+    }
+  }
+
+  .c-instructor-notes-modal {
+    .c-modal__box--instructor-notes {
+      max-width: 95%;
+    }
+
+    .c-panel__body--instructor-notes {
+      padding: rpx(16);
+    }
+  }
+
+  .c-panel__footer .c-button-group--instructor-notes {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+}
+

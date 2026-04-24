@@ -1,0 +1,35 @@
+require_relative 'etl/common'
+
+class ScoreActionSource < Source
+  def initialize(course_ids)
+    @records = ::Score.includes(:section).where("sections.course_id in (#{course_ids})")
+  end
+end
+
+class ScoreActionTransform < Transform
+  def initialize(model)
+    @common_fields = %w(user_id section_id)
+    super(model)
+  end
+
+  def process(record)
+    super(record) do |r|
+      r.activity_id = record.scorable_id
+      r.action = '{"type":"import"}'
+      r.summation = %Q({"points_earned":"#{record.points_earned}",
+                        "points_pending":"#{record.points_pending}",
+                        "points_possible":"#{record.points_possible}",
+                        "net_points_earned":"#{record.points_earned}",
+                        "net_points_possible":"#{record.points_possible}",
+                        "penalty_percent":"#{record.penalty_percent}",
+                        "late":"#{record.late}",
+                        "pending":"#{record.pending}",
+                        "adjusted":"#{record.adjusted}",
+                        "gradeable":"#{record.gradable}"})
+    end
+  end
+end
+
+source ScoreActionSource, ENV['COURSE_IDS']
+transform ScoreActionTransform, GradebookEngine::ScoreAction
+destination RecordDestination

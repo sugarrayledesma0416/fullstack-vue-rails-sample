@@ -1,0 +1,97 @@
+<% if presenter.grouped_unassigned_activities.empty? -%>
+<div class="unassigned_activities_list_empty">
+  <div id="_no_activities">
+    No activities match the current filter settings. Please review your filter settings.
+  </div>
+</div>
+<% else-%>
+
+<div class="assign_items">
+  <div class="check_all_activities">
+    <div class="checkbox_program" id="leccion_checkbox"></div>
+    Select all
+  </div>
+  <div  class="assign_lesson">
+    <%= link_to( "Assign selected", '#',
+        :id => "set_date_link",
+    :class => 'set_date_link prevent-default',
+    :title => 'Assign selected',
+    :onclick => '$(this).assignment_wizard();' )
+    %>
+  </div>
+</div>
+
+<%=
+  hidden_field_tag(
+    :due_date_link_base_url,
+    instructor_assignables_path(
+      program_id: current_program.id,
+      source: 'calendar',
+      in_institution_admin: @in_institution_admin
+    )
+  )
+%>
+<div id="hover_group">
+  <div id="hover_holder" class="ui-helper-clearfix"></div>
+
+  <div class="unassigned_activities_list" id="unassigned_activities_list">
+    <div id ="modal_box"></div>
+
+    <% presenter.grouped_unassigned_activities.each do |group_label, group| -%>
+    <div class="lesson">
+      <h2 class="lesson_name">
+        <% if presenter.any_assignable?(group) %>
+          <div class="checkbox_all"></div>
+        <% end %>
+        <span class="<%= presenter.lesson_name_class(group) %>"
+              style="border-left:4px solid <%= group.first.concept.background_color%>; padding-left: 5px; margin-left: 5px">
+          <%= group.first.lesson.display_name.html_safe %> | <%= group.first.concept.name.html_safe %>
+        </span>
+      </h2>
+
+      <ul>
+        <% group.each do |activity| -%>
+        <li class='activity_item <%= presenter.activity_row_class(activity) %>'>
+          <div class="toc_checkbox_wrapper ui-helper-clearfix">
+            <% checkbox_id = "activity_#{activity.id}" -%>
+
+            <% if presenter.assignable?(activity) %>
+            <div class="toc_checkbox activity_selector checkbox" id="<%= checkbox_id %>"></div>
+            <% end %>
+            <div class="activity_time hidden_helper">
+              <%= activity.minutes_to_complete || 10 %>
+            </div>
+            <%= format_activity_label_with_icons("activity_#{activity.id}", activity, section_activity_path(0, activity), nil, presenter.has_note?(activity)) %>
+            <%= render(
+              '/instructor/partials/activity_results_table_hover',
+              activity:,
+              unassignable_reason: presenter.unassignable_reason(activity),
+              hover_type: :calendar
+            )  %>
+          </div>
+        </li>
+        <% end -%>
+      </ul>
+    </div>
+    <% end -%>
+  </div>
+</div>
+<div class='show_count'>
+  <%= "Showing activities 1-#{return_min_of(presenter.filter.current_requested_number_of_activities,presenter.filter.total_number_of_activities)} of #{presenter.filter.total_number_of_activities}" %>
+  <% if presenter.filter.has_more_displayable_activities? %>
+  <div class="show_more">
+    <%= link_to( "Show more", '#', :id => 'show_more_activities')%>
+    <%= hidden_field :service, :current_activities_count, :current_activities_count => presenter.filter.next_requested_nr_of_activities %>
+  </div>
+  <% end %>
+</div>
+
+<div class="assign_items">
+  <div id="total_selected">
+    0 activities, 0m
+  </div>
+  <div  class="assign_lesson">
+    <%= link_to( "Assign selected", '#', :id => "set_date_link", :class => 'set_date_link', :title => 'Assign selected', :onclick => '$(this).assignment_wizard(); return false;' ) %>
+  </div>
+</div>
+<% end -%>

@@ -1,0 +1,46 @@
+<div class="c-modal  c-modal--md  js-modal  js-mapped-standards-modal  u-hidden">
+  <div role="dialog" aria-label="Standards" class="c-modal__box  js-modal-box  u-oflow-auto  l-span-6">
+    <button class="c-modal__close-button  c-no-button  js-x-close  js-modal-close">
+      <span class="c-icon  c-icon--md  c-icon--close"></span>
+      <span class="u-screen-reader-only">Close dialog</span>
+    </button>
+    <div role="document" class="js-modal-content">
+
+      <div class="c-panel  c-panel--padded  u-mar-0">
+        <div class="c-panel__header">
+          <h3 class="c-heading--md  u-txt-reg">Standards List</h3>
+        </div>
+        <div class="c-panel__body">
+          <% activity_presenter.mapped_standards(current_focus.course, activity = nil)&.each do |set, standards| %>
+            <span class="c-heading--page-title  u-txt-upper"><%= set %></span>
+            <div class="c-box  c-box--plain  u-mar-0">
+              <ul class="u-mar-0">
+                <% standards.each do |standard| %>
+                  <li>
+                    <details class="c-standards-disclosure">
+                      <summary>
+                        <%=
+                          link_to(
+                            "#{instructor_standards_assigning_path(current_program.id)}?standards=#{standard['id']}&selected_unit=#{@activity_presenter.activity.lesson.unit_id}",
+                            target: :_blank,
+                          ) do %>
+                            <%= feature_icon('search', ['c-embedded-icon--md', 'u-mar-rt-8']) %>
+                          <% end %>
+                          <%= standard['number']%>
+                      </summary>
+                      <div class="c-box  c-box--plain  u-mar-0">
+                        <%= standard['description'] %>
+                      </div>
+                    </details>
+                  </li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
+    </div>
+    <button class="u-screen-reader-only" tabindex="-1">Dialog end</button>
+  </div>
+</div>

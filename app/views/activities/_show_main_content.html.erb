@@ -1,0 +1,35 @@
+<% if @activity %>
+<div class="c-activity-wrapper" id="activity_wrapper">
+  <div class="c-main-content" id="main_content">
+    <% if (params[:controller] == 'activity_preview' && @activity.gradable?) ||
+        (current_user.instructor? && params[:controller] != 'instructor/grading_styles') %>
+      <% unless spr? %>
+        <%= render 'instructor_notes/instructor_action_bar' %>
+      <% end %>
+    <% end %>
+
+    <div class="c-activity-info  c-mobile-tabs-view__reference-content  js-activity-info">
+      <%= render(
+            'activities/activity_context',
+            activity: @activity,
+            attempt: @attempt,
+            attempt_track: @attempt_track,
+            classwork: @classwork,
+            instructor_feedback: nil,
+            score: nil,
+            section: current_section,
+            workset: @workset
+          ) %>
+    </div>
+    <div class="c-activity-content" role="main" id="activity_shell" lang="<%= @activity.language %>" aria-labelledby="questions-label">
+  <% unless controller.class.to_s != "Instructor::ActivitiesController" && @activity_presenter.assessment? && @activity_presenter.requires_interstitial?(session[:unlocked_assessments]) -%>
+        <span id="questions-label" class="u-no-visual" lang="en">Questions</span>
+  <% end %>
+      <%= render 'activities/activity_body' %>
+</div>
+    <% if current_user.roles.map(&:name).include?('proofer') && @activity.activity_type == 'reading' %>
+      <%= yield :compro_reader_controls %>
+    <% end %>
+  </div>
+</div>
+<% end -%>

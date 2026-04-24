@@ -1,0 +1,238 @@
+id,label,program_id,feature_type,feature_code,rank
+1,Supersite,1,Component,SS,20
+2,Supersite,2,Component,SS,20
+3,Supersite,3,Component,SS,20
+4,Supersite,4,Component,SS,20
+5,Tutorials,5,Component,GT,10
+6,Practice,5,Component,SS,20
+7,WebSAM,5,Component,HW,30
+8,Assessment,5,Component,AS,40
+9,My Results,5,Component,MR,50
+10,Supersite,6,Component,SS,20
+11,Tutorials,7,Component,GT,10
+12,Practice,7,Component,SS,20
+13,WebSAM,7,Component,HW,30
+14,Assessment,7,Component,AS,40
+15,My Results,7,Component,MR,50
+16,Practice,8,Component,SS,20
+17,WebSAM,8,Component,HW,30
+19,My Results,8,Component,MR,50
+20,Tutorials,9,Component,GT,10
+21,Practice,9,Component,SS,20
+22,WebSAM,9,Component,HW,30
+23,Assessment,9,Component,AS,40
+24,My Results,9,Component,MR,50
+25,Tutorials,10,Component,GT,10
+26,Practice,10,Component,SS,20
+27,e-Cuaderno,10,Component,HW,30
+28,Assessment,10,Component,AS,40
+29,My Results,10,Component,MR,50
+30,vText,10,Component,VT,60
+31,Supersite,11,Component,SS,20
+32,Tutorials,12,Component,GT,10
+33,Practice,12,Component,SS,20
+34,e-Cuaderno,12,Component,HW,30
+35,Assessment,12,Component,AS,40
+36,My Results,12,Component,MR,50
+37,vText,12,Component,VT,60
+38,Tutorials,13,Component,GT,10
+39,Practice,13,Component,SS,20
+40,e-Cuaderno,13,Component,HW,30
+41,Assessment,13,Component,AS,40
+42,My Results,13,Component,MR,50
+43,vText,13,Component,VT,60
+44,Tutorials,15,Component,GT,10
+45,Lengua,15,Component,SS,20
+46,WebSAM,15,Component,HW,30
+47,Assessment,15,Component,AS,40
+48,Lecturas,15,Component,S2,45
+49,My Results,15,Component,MR,50
+50,Tutorials,16,Component,GT,10
+51,Practice,16,Component,SS,20
+52,WebSAM,16,Component,HW,30
+53,Assessment,16,Component,AS,40
+54,My Results,16,Component,MR,50
+55,Tutorials,17,Component,GT,10
+56,Practice,17,Component,SS,20
+57,WebSAM,17,Component,HW,30
+58,Assessment,17,Component,AS,40
+59,My Results,17,Component,MR,50
+60,Tutorials,18,Component,GT,10
+61,Practice,18,Component,SS,20
+62,WebSAM,18,Component,HW,30
+63,Assessment,18,Component,AS,40
+64,My Results,18,Component,MR,50
+65,Tutorials,19,Component,GT,10
+66,Practice,19,Component,SS,20
+67,WebSAM,19,Component,HW,30
+68,Assessment,19,Component,AS,40
+69,My Results,19,Component,MR,50
+70,Tutorials,20,Component,GT,10
+71,Practice,20,Component,SS,20
+72,WebSAM,20,Component,HW,30
+73,Assessment,20,Component,AS,40
+74,My Results,20,Component,MR,50
+75,vText,20,Component,VT,60
+77,Practice,21,Component,SS,20
+78,WebSAM,21,Component,HW,30
+79,Assessment,21,Component,AS,40
+80,My Results,21,Component,MR,50
+81,vText,21,Component,VT,60
+82,Practice,22,Component,SS,20
+83,Assessment,22,Component,AS,40
+84,Practice,26,Component,SS,20
+85,WebSAM,26,Component,HW,30
+86,Assessment,26,Component,AS,40
+87,My Results,26,Component,MR,50
+88,vText,26,Component,VT,60
+89,Practice,27,Component,SS,20
+90,WebSAM,27,Component,HW,30
+91,Assessment,27,Component,AS,40
+92,My Results,27,Component,MR,50
+93,Tutorials,28,Component,GT,10
+94,Practice,28,Component,SS,20
+95,WebSAM,28,Component,HW,30
+96,Assessment,28,Component,AS,40
+97,My Results,28,Component,MR,50
+98,vText,28,Component,VT,60
+99,Practice,29,Component,SS,20
+100,WebSAM,29,Component,HW,30
+101,Assessment,29,Component,AS,40
+102,My Results,29,Component,MR,50
+104,Practice,30,Component,SS,20
+105,WebSAM,30,Component,HW,30
+106,Assessment,30,Component,AS,40
+107,My Results,30,Component,MR,50
+108,vText,30,Component,VT,60
+109,Practice,31,Component,SS,20
+110,WebSAM,31,Component,HW,30
+111,Assessment,31,Component,AS,40
+112,My Results,31,Component,MR,50
+113,Practice,32,Component,SS,20
+114,WebSAM,32,Component,HW,30
+115,Assessment,32,Component,AS,40
+116,My Results,32,Component,MR,50
+117,vText,32,Component,VT,60
+118,Practice,33,Component,SS,20
+119,Cahier interactif,33,Component,HW,30
+120,Assessment,33,Component,AS,40
+121,My Results,33,Component,MR,50
+123,Practice,34,Component,SS,20
+124,Cahier interactif,34,Component,HW,30
+125,Assessment,34,Component,AS,40
+126,My Results,34,Component,MR,50
+128,Practice,35,Component,SS,20
+129,Cahier interactif,35,Component,HW,30
+130,Assessment,35,Component,AS,40
+131,My Results,35,Component,MR,50
+133,Practice,23,Component,SS,20
+134,Practice,24,Component,SS,20
+135,Practice,25,Component,SS,20
+136,"Aventuras, Second Edition",1,Program,,0
+137,Espaces,2,Program,,0
+138,Imagina,3,Program,,0
+139,Sueña,4,Program,,0
+140,"Vistas, Third Edition",5,Program,,0
+141,"Revista, Second Edition",6,Program,,0
+142,"Enfoques, Second Edition",7,Program,,0
+143,Imaginez,8,Program,,0
+144,"Facetas, Second Edition",9,Program,,10
+145,"Descubre, Level 1",10,Program,,10
+146,¡Viva!,11,Program,,10
+147,"Descubre, Level 3",12,Program,,10
+148,"Descubre, Level 2",13,Program,,10
+149,"Ventanas, Second Edition",15,Program,,10
+150,¡ADELANTE! uno,16,Program,,10
+151,¡ADELANTE! dos,17,Program,,10
+152,¡ADELANTE! tres,18,Program,,10
+153,"Panorama, Third Edition",19,Program,,10
+154,"Aventuras, Third Edition",20,Program,,10
+155,Promenades,21,Program,,10
+156,"Revista, Third Edition",22,Program,,10
+157,"Invitaciones, Second Edition - Primera Parte",23,Program,,10
+158,"Invitaciones, Second Edition - Segunda Parte",24,Program,,10
+159,"Hola, ¿qué tal?",25,Program,,10
+160,"Imagina, Second Edition",26,Program,,10
+161,"Sueña, Second Edition",27,Program,,10
+162,"¡Viva!, Second Edition",28,Program,,10
+163,Immagina,29,Program,,10
+164,"Espaces, Second Edition",30,Program,,10
+165,Face-à-face,31,Program,,10
+166,Sentieri,32,Program,,10
+167,D'accord! Level 1,33,Program,,10
+168,D'accord! Level 2,34,Program,,10
+169,D'accord! Level 3,35,Program,,10
+170,M3 Publishing Target,36,Program,,10
+171,Instructor Access,0,Instructor,,10
+172,Denk Mal!,37,Program,,10
+173,"Enfoques, Third Edition",38,Program,,10
+174,Tutorials,26,Component,GT,10
+175,Tutorials,27,Component,GT,10
+176,Practice,37,Component,SS,20
+177,WebSAM,37,Component,HW,30
+178,Assessment,37,Component,AS,40
+179,My Results,37,Component,MR,50
+180,Tutorials,38,Component,GT,10
+181,Practice,38,Component,SS,20
+182,Web-SAM,38,Component,HW,30
+183,Assessment,38,Component,AS,40
+184,My Results,38,Component,MR,50
+185,"Vistas, Fourth Edition",40,Program,,0
+186,Tutorials,40,Component,GT,10
+187,Practice,40,Component,SS,20
+188,WebSAM,40,Component,HW,30
+189,Assessment,40,Component,AS,40
+190,My Results,40,Component,MR,50
+191,"Imaginez, Second Edition",41,Program,,0
+192,Practice,41,Component,SS,20
+193,WebSAM,41,Component,HW,30
+194,Assessment,41,Component,AS,40
+195,My Results,41,Component,MR,50
+196,vText,38,Component,VT,60
+197,Unlisted,40,Component,UN,0
+198,vText,40,Component,VT,100
+199,"Facetas, Third Edition",39,Program,,0
+200,Tutorials,39,Component,GT,10
+201,Practice,39,Component,SS,20
+202,WebSAM,39,Component,HW,30
+203,Assessment,39,Component,AS,40
+204,My Results,39,Component,MR,50
+205,Rêvez,42,Program,,0
+206,Practice,42,Component,SS,20
+207,WebSAM,42,Component,HW,30
+208,Assessment,42,Component,AS,40
+209,My Results,42,Component,MR,50
+210,Intrigas,43,Program,,0
+211,Practice,43,Component,SS,20
+213,My Results,43,Component,MR,50
+214,Protagonistas,44,Program,,0
+215,Practice,44,Component,SS,20
+216,WebSAM,44,Component,HW,30
+217,Assessment,44,Component,AS,40
+218,My Results,44,Component,MR,50
+219,A Handbook of Contemporary Spanish Grammar,45,Program,,0
+220,Practice,45,Component,SS,20
+221,Assessment,45,Component,AS,40
+222,My Results,45,Component,MR,50
+223,Taller de Escritores,46,Program,,0
+224,Practice,46,Component,SS,20
+225,Assessment,46,Component,AS,40
+226,My Results,46,Component,MR,50
+227,My Results,22,Component,MR,50
+228,Unlisted,44,Component,UN,0
+229,Supersite Plus,37,AccessLevel,plus,0
+230,Supersite Plus,38,AccessLevel,plus,0
+231,Supersite Plus,39,AccessLevel,plus,0
+232,Supersite Plus,40,AccessLevel,plus,0
+233,Supersite Plus,41,AccessLevel,plus,0
+234,Supersite Plus,42,AccessLevel,plus,0
+235,Supersite Plus,43,AccessLevel,plus,0
+236,Supersite Plus,44,AccessLevel,plus,0
+237,Supersite Plus,45,AccessLevel,plus,0
+238,Supersite Plus,46,AccessLevel,plus,0
+239,vText,33,Component,VT,100
+240,vText,34,Component,VT,100
+241,vText,35,Component,VT,100
+242,vText,44,Component,VT,100
+243,vText,41,Component,VT,100
+500,"Vistas, Fourth Edition M3 Version",50,Program,,0

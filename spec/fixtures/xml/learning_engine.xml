@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<activity activity_type="learning_engine" title="title text" language="es">
+  <dl>instructions</dl>
+  <items>
+
+    <reference type="image">
+      <image id="3"/>
+    </reference>
+
+    <reference type="video">
+      <video id="4"/>
+    </reference>
+
+    <listen_and_repeat>
+      <dl>ListenRepeat Direction Line</dl>
+      <dictionary_entry>
+        <id>1</id>
+        <image id="1"/>
+        <audio id="2"/>
+        <target>target 1</target>
+        <annotated_target>annotated_target 1</annotated_target>
+        <descriptor>descriptor 1</descriptor>
+        <language>language 1</language>
+        <translation>translation 1</translation>
+        <exclusion_entry_ids></exclusion_entry_ids>
+      </dictionary_entry>
+    </listen_and_repeat>
+
+    <identify>
+      <dl>Identify Direction Line</dl>
+      <dictionary_entry>
+        <id>2</id>
+        <image id="1"/>
+        <audio id="2"/>
+        <target>target 2</target>
+        <annotated_target>annotated_target 2</annotated_target>
+        <descriptor>descriptor 2</descriptor>
+        <language>language 2</language>
+        <translation>translation 2</translation>
+        <exclusion_entry_ids></exclusion_entry_ids>
+      </dictionary_entry>
+    </identify>
+
+    <say_it>
+      <dl>SayIt Direction Line</dl>
+      <dictionary_entry>
+        <id>3</id>
+        <image id="1"/>
+        <audio id="2"/>
+        <target>target 3</target>
+        <annotated_target>annotated_target 3</annotated_target>
+        <descriptor>descriptor 3</descriptor>
+        <language>language 3</language>
+        <translation>translation 3</translation>
+        <exclusion_entry_ids></exclusion_entry_ids>
+      </dictionary_entry>
+    </say_it>
+
+    <word_ordering>
+      <dl>WordOrdering Direction Line</dl>
+      <item>
+        <final_sentence>Elles voyagent en France, n'est-ce pas?</final_sentence>
+        <prompt>
+          <wol ref="1"/>
+          <wol ref="2"/>
+          <wol ref="3"/>,
+          <wol ref="4"/>?
+        </prompt>
+        <answers>
+          <answer wol_ref="2">voyagent</answer>
+          <answer wol_ref="3">en France</answer>
+          <answer wol_ref="4">n'est-ce pas</answer>
+          <answer wol_ref="1">elles</answer>
+        </answers>
+      </item>
+      <item>
+        <final_sentence>Est-ce que tu detestes le cours d'economie?</final_sentence>
+        <prompt>
+          <wol ref="1"/>
+          <wol ref="2"/>
+          <wol ref="3"/>
+          <wol ref="4"/>
+          <wol ref="5"/>
+          <wol ref="6"/>?
+        </prompt>
+        <answers>
+          <answer wol_ref="4">le</answer>
+          <answer wol_ref="6">d'economie</answer>
+          <answer wol_ref="1">est-ce que</answer>
+          <answer wol_ref="3">detestes</answer>
+          <answer wol_ref="5">cours</answer>
+          <answer wol_ref="2">tu</answer>
+        </answers>
+      </item>
+      <item>
+        <final_sentence>Vous n'etudiez pas demain, d'accord?</final_sentence>
+        <prompt>
+          <wol ref="1"/>
+          <wol ref="2"/>
+          <wol ref="3"/>
+          <wol ref="4"/>,
+          <wol ref="5"/>?
+        </prompt>
+        <answers>
+          <answer wol_ref="3">pas</answer>
+          <answer wol_ref="5">d'accord</answer>
+          <answer wol_ref="4">demain</answer>
+          <answer wol_ref="2">n'etudiez</answer>
+          <answer wol_ref="1">vous</answer>
+        </answers>
+      </item>
+      <item>
+        <final_sentence>Est-ce qu'on travaille au resto U?</final_sentence>
+        <prompt>
+          <wol ref="1"/>
+          <wol ref="2"/>
+          <wol ref="3"/>
+          <wol ref="4"/>
+          <wol ref="5"/>?
+        </prompt>
+        <answers>
+          <answer wol_ref="2">on</answer>
+          <answer wol_ref="3">travaille</answer>
+          <answer wol_ref="5">resto U</answer>
+          <answer wol_ref="4">au</answer>
+          <answer wol_ref="1">est-ce qu'</answer>
+        </answers>
+      </item>
+    </word_ordering>
+
+    <diagnostic>
+      <dl>Diagnostic Direction Line</dl>
+      <threshold>10</threshold>
+      <number_of_questions>10</number_of_questions>
+      <failure_message>you failed</failure_message>
+      <item>
+        <prompt>Test <wol ref="1"/> with <wol ref="2"/> blanks</prompt>
+        <answers ref="1">
+          <answer>^*()(answer text 1...!@$%</answer>
+        </answers>
+        <answers ref="2">
+          <answer>answer text 2</answer>
+          <answer>   another answer 2    </answer>
+        </answers>
+      </item>
+      <item>
+        <prompt><wol/></prompt>
+        <answers>
+          <answer>.answer text 3.</answer>
+        </answers>
+      </item>
+      <item>
+        <prompt><wol/></prompt>
+        <answers>
+          <answer>Answer text 4</answer>
+        </answers>
+      </item>
+    </diagnostic>
+
+    <drag_and_drop>
+      <dl><b>DragDrop</b> Direction Line</dl>
+      <item>
+        <prompt>Juana <wol ref="1"/> foo <wol ref="2"/> bar.</prompt>
+        <choices ref="1">
+          <distractor>one</distractor>
+          <answer>two</answer>
+          <distractor>three</distractor>
+        </choices>
+        <choices ref="2">
+          <distractor>boo</distractor>
+          <distractor>bee</distractor>
+          <answer>baa</answer>
+        </choices>
+      </item>
+      <item>
+        <prompt>Ils <wol ref="1"/> foo</prompt>
+        <choices>
+          <distractor>es</distractor>
+          <answer>sont</answer>
+        </choices>
+      </item>
+    </drag_and_drop>
+
+    <multiple_choice>
+      <dl><b>MultipleChoice</b> Direction Line</dl>
+      <item>
+        <prompt>Foo bar baz prompt</prompt>
+        <choices>
+          <answer>cierto</answer>
+          <distractor>falso</distractor>
+        </choices>
+      </item>
+    </multiple_choice>
+
+    <category_matching>
+      <dl>CategoryMatching Direction Line</dl>
+      <item>
+        <categories>
+          <category ref="1">singular</category>
+          <category ref="2">plural</category>
+        </categories>
+        <prompts>
+          <prompt answer_ref="2">animaux</prompt>
+          <prompt answer_ref="2">amis</prompt>
+          <prompt answer_ref="2">étudiants</prompt>
+          <prompt answer_ref="1">objet</prompt>
+          <prompt answer_ref="1">bureau</prompt>
+          <prompt answer_ref="1">télévision</prompt>
+        </prompts>
+      </item>
+      <item>
+        <categories>
+          <category ref="1">singular</category>
+          <category ref="2">plural</category>
+        </categories>
+        <prompts>
+          <prompt answer_ref="2">animaux2</prompt>
+          <prompt answer_ref="2">amis2</prompt>
+          <prompt answer_ref="2">étudiants2</prompt>
+          <prompt answer_ref="1">objet2</prompt>
+          <prompt answer_ref="1">bureau2</prompt>
+          <prompt answer_ref="1">télévision2</prompt>
+        </prompts>
+      </item>
+    </category_matching>
+
+    <watch_and_repeat>
+      <dl><b>WatchRepeat</b> Direction Line</dl>
+      <repeat_prompt>
+        <image id="136801" />
+        <audio id="136819" />
+        <text><p>Texto de prueba</p></text>
+      </repeat_prompt>
+    </watch_and_repeat>
+
+    <tutorial>
+      <video id="135787"/>
+      <checkpoints>
+        <checkpoint start="92" end="93" ref="1" stop="true"/>
+        <checkpoint start="224" end="225" ref="2" stop="true"/>
+      </checkpoints>
+      <header_bar_title>Indirect object pronouns</header_bar_title>
+
+      <drag_and_drop checkpoint_ref="1">
+        <dl>Drag and drop.</dl>
+        <item>
+          <prompt>Tu parles aux professeurs. Tu <wol ref="1"/> parles.</prompt>
+          <choices ref="1">
+            <distractor>me</distractor>
+            <distractor>te</distractor>
+            <distractor>lui</distractor>
+            <distractor>nous</distractor>
+            <distractor>vous</distractor>
+            <answer>leur</answer>
+          </choices>
+        </item>
+
+        <item>
+          <prompt>Vous parlez à Sophie. Vous <wol ref="1"/> parlez.</prompt>
+          <choices ref="1">
+            <distractor>me</distractor>
+            <distractor>te</distractor>
+            <answer>lui</answer>
+            <distractor>nous</distractor>
+            <distractor>vous</distractor>
+            <distractor>leur</distractor>
+          </choices>
+        </item>
+
+        <item>
+          <prompt>Marc, tu es là? Je <wol ref="1"/> parle.</prompt>
+          <choices ref="1">
+            <distractor>me</distractor>
+            <answer>te</answer>
+            <distractor>lui</distractor>
+            <distractor>nous</distractor>
+            <distractor>vous</distractor>
+            <distractor>leur</distractor>
+          </choices>
+        </item>
+      </drag_and_drop>
+
+      <word_ordering checkpoint_ref="2">
+        <dl>Create the sentences by placing the indirect object pronoun into the correct position.</dl>
+        <item>
+          <final_sentence>Elle va lui envoyer une lettre.</final_sentence>
+          <question_prompt>Elle va envoyer une lettre à sa tante.</question_prompt>
+          <prompt>
+            <wol ref="1"/>
+            <wol ref="4"/>
+            <wol ref="5"/>
+            <wol ref="3"/>
+            <wol ref="2"/>
+          </prompt>
+          <answers>
+            <answer wol_ref="1">elle</answer>
+            <answer wol_ref="2">une lettre</answer>
+            <answer wol_ref="3">envoyer</answer>
+            <answer wol_ref="4">va</answer>
+            <answer wol_ref="5">lui</answer>
+          </answers>
+        </item>
+
+        <item>
+          <final_sentence>Nous ne leur parlons pas tous les jours.</final_sentence>
+          <question_prompt>Nous ne parlons pas à nos parents tous les jours.</question_prompt>
+          <prompt>
+            <wol ref="1"/>
+            <wol ref="3"/>
+            <wol ref="5"/>
+            <wol ref="6"/>
+            <wol ref="2"/>
+            <wol ref="4"/>
+          </prompt>
+          <answers>
+            <answer wol_ref="1">nous</answer>
+            <answer wol_ref="2">pas</answer>
+            <answer wol_ref="3">ne</answer>
+            <answer wol_ref="4">tous les jours</answer>
+            <answer wol_ref="5">leur</answer>
+            <answer wol_ref="6">parlons</answer>
+          </answers>
+        </item>
+
+        <item>
+          <final_sentence>Les étudiantes ne leur ont pas téléphoné.</final_sentence>
+          <question_prompt>Les étudiantes n'ont pas téléphoné à leurs cousines.</question_prompt>
+          <prompt>
+            <wol ref="1"/>
+            <wol ref="6"/>
+            <wol ref="2"/>
+            <wol ref="4"/>
+            <wol ref="3"/>
+            <wol ref="7"/>
+            <wol ref="5"/>
+          </prompt>
+          <answers>
+            <answer wol_ref="1">les</answer>
+            <answer wol_ref="2">ne</answer>
+            <answer wol_ref="3">ont</answer>
+            <answer wol_ref="4">leur</answer>
+            <answer wol_ref="5">téléphoné</answer>
+            <answer wol_ref="6">étudiantes</answer>
+            <answer wol_ref="7">pas</answer>
+          </answers>
+        </item>
+      </word_ordering>
+    </tutorial>
+
+    <record_and_compare>
+      <record_and_compare_word>
+        <word_text>Vol<b>ei</b>bol.</word_text>
+        <audio id="x" />
+      </record_and_compare_word>
+    </record_and_compare>
+
+  </items>
+</activity>

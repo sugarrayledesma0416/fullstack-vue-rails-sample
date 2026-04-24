@@ -1,0 +1,2 @@
+module Instructor::StudentHelper
+end

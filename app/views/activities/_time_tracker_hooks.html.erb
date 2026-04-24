@@ -1,0 +1,45 @@
+<% if !@attempt_track.practice? && @activity_presenter.track_time?  %>
+  <div class="timer-wrap" id="assessment_timer" tabindex="0">
+
+    <%= hidden_field_tag('start_time', @start_time) %>
+    <%= hidden_field_tag('form_id', @form_id) %>
+    <%= hidden_field_tag('timeout_override', @activity_presenter.standard_timeout_override) %>
+
+    <%= hidden_field_tag('attempt_id', @activity_presenter.assessment_attempt_id) %>
+    <%= hidden_field_tag('assessment_time_left', @activity_presenter.time_left_in_seconds) %>
+    <%= hidden_field_tag('original_time_limit', @activity_presenter.original_time_limit) %>
+    <%= hidden_field_tag('poll_interval', @activity_presenter.assessment_poll_interval) %>
+
+    <h3 class="u-screen-reader-only" id="timer_label">Time Remaining</h3>
+
+    <div class="timer-display" role="timer" aria-labelledby="timer_label countdown">
+      <div class="timer-animation"></div>
+      <div class="countdown" id="countdown">
+        <span class='hr'>
+        </span>
+        <span class="u-screen-reader-only">hours</span>
+        <span class='hr-divider'>:</span>
+        <span class='min'>
+        </span>
+        <span class="u-screen-reader-only">minutes</span>
+        <span class='min-divider'>:</span>
+        <span class='sec'>
+        </span>
+        <span class="u-screen-reader-only">seconds</span>
+      </div>
+
+    </div>
+
+    <div id='auto_submit' style="display:none;">
+      The time allocated to complete this assessment has finished.
+      <div class='status'>Your work is being submitted.</div>
+      <%= link_to("OK", @return_url, 'data-button' => 'return', :class => 'red-button') %>
+    </div>
+  </div>
+<% else %>
+  <%= hidden_field_tag('start_time', @start_time) %>
+  <%= hidden_field_tag('form_id', @form_id) %>
+  <%= hidden_field_tag('timeout_override', @timeout_override) %>
+<% end %>
+<!-- This is also in _assessment_info.html.erb -->
+<%= hidden_field_tag('activity_time_tracker_url_base', section_activity_path(current_section_id, @activity) ) %>

@@ -1,0 +1,85 @@
+<% content_for( :js_head, javascript_include_tag("jquery.hoverIntent.minified.js") ) %>
+<% content_for( :css_head, stylesheet_link_tag("add_assignments_dialog.css") ) %>
+
+<% content_for(:js_head, javascript_include_tag("table_of_contents.js") ) %>
+<% content_for(:js_head, javascript_include_tag("load_table_of_contents.js") ) %>
+<% content_for(:js_head, javascript_include_tag("history.js")) %>
+<% content_for(:js_head, javascript_include_tag("jquery.address-1.4.min.js") ) %>
+<% content_for(:js_head, javascript_include_tag("jquery.vhl-checkboxes.js") ) %>
+<%# TODO: Convert this view to use a v1 layout. Minimal changes done to make the view responsive for LTI integrations. %>
+<% content_for(:body_classes, "  ns-newcsslib   ns-responsive  standard_layout assesment  ns-music-v1") %>
+<% content_for(:css_head, stylesheet_link_tag("custom_assessments/icons"))%>
+<% content_for(:css_head, stylesheet_link_tag("music/library/v1/components/forms/overrides") )%>
+<% content_for(:css_head, stylesheet_link_tag("music/features/toc/main") )%>
+<% content_for(:body_classes, '  ns-full-width') %>
+<% if current_program&.language_code == 'zh' %>
+  <% content_for(:css_head, stylesheet_link_tag("music/features/chinese/theme/fonts/AdobeKaitiRegular") ) %>
+  <% content_for(:body_classes, '  ns-full-width  ns-chinese-program') %>
+<% end %>
+
+<% unless @in_institution_admin || @presenter.lti_deep_link_enabled? %>
+  <%= content_for(
+        :focus,
+        render(
+          'instructor/focus/show',
+          courses_and_sections: @courses_and_sections,
+          current_user: @presenter.current_user,
+          program: @presenter.program
+        )
+      ) %>
+  <%= content_for(
+        :navigation,
+        render('app_shell/navbar_program/main', program: @presenter.program)
+      ) %>
+<% end %>
+
+<div id="spinner" class="hidden"><%= image_tag('loading_32.gif') %></div>
+<div id="main_content" class="ns-music-v1">
+  <div id ="modal_box"></div>
+  <div id="toc" class="ns-toc">
+    <div class="frame">
+      <div class="l-grid">
+        <div class="l-col-lg-4">
+          <div class="u-mar-bot-16">
+            <%= render 'partials/lesson_selector', presenter: @presenter %>
+          </div>
+          <div id="topics_list">
+            <%= render('partials/lesson_topics',
+                       presenter: @presenter,
+                       display_lesson: @presenter.display_lesson,
+                       current_strand: @presenter.current_strand,
+                       current_topic: @presenter.current_topic,
+                       start_unit: @presenter.start_unit) -%>
+          </div>
+        </div> <!-- end left col -->
+        <div class="l-col-lg-8">
+          <%= render(
+                'instructor/partials/deep_linking_toc_warning',
+                link_type: 'assessments',
+                presenter: @presenter,
+                container_classes: 'u-mar-top-0  u-mar-bot-32'
+              ) %>
+          <div id="activities_list" class="<%= test_class('activity-list') %>">
+            <% if @presenter.display_unit_viewable? -%>
+              <% if @presenter.activities.present? -%>
+                <%= render 'activities', presenter: @presenter %>
+              <% else -%>
+                No assessment activities to show. Try selecting a different lesson using the dropdown menu.
+              <% end -%>
+            <% else -%>
+              <div class="unreleased_activities">
+                We're currently developing content for this <%= @presenter.program.toc_unit_label %>. Thank you for your patience.
+              </div>
+            <% end -%>
+          </div>
+        </div> <!-- end right col -->
+      </div> <!-- end l-grid -->
+
+    </div> <!-- /frame -->
+
+  <div class="u-hidden">
+    <form action="none" method="get" accept-charset="utf-8" id="hidden_activity_form">
+    </form>
+  </div> <!-- /hidden form-->
+  </div> <!-- /toc -->
+</div>

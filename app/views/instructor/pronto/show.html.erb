@@ -1,0 +1,9 @@
+<% content_for(:body_classes, "standard_layout pronto") %>
+
+<% content_for(:focus, render(:partial => 'instructor/focus/show')) %>
+<% content_for(:navigation, render(:partial => 'app_shell/navbar_program/main')) %>
+<div id="main_content">
+  <div data-page-element="sales_rep_link">
+    To request activation of Blackboard IM, please contact your <%= link_to "Modern Language Specialst", "http://vistahigherlearning.com/contact-a-rep" %>
+  </div>
+</div>

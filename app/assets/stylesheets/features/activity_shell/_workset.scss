@@ -1,0 +1,229 @@
+/* =================================================== *
+    Workset component (activity shell)
+
+    Vertical version
+
+ * =================================================== */
+
+.c-heading--assignments {
+  font-size: var(--font-6, #{$font-size-20});
+  font-weight: normal;
+  margin: 0;
+
+  &__text-jr {
+    display: none;
+  }
+
+  @include theme('supersites-jr') {
+    &__text-sr {
+      display: none;
+    }
+
+    &__text-jr {
+      display: block;
+      color: var(--heading-color);
+      font-size: var(--font-6);
+      text-align: center;
+      margin: 0 0 0.5rem;
+    }
+  }
+}
+
+.c-workset {
+  $workset-width: mod(20);
+  $workset-activity-title-color: $black;
+  $workset-activity-details-color: $gray-9;
+  $workset-item-box-border-color: $gray-9;
+
+  font-size: var(--font-default);
+  background-color: $white;
+  border-radius: 0.4rem;
+  box-shadow: 0 0 rpx(12) rgba(0, 0, 0, 0.4);
+  padding: 1rem;
+  position: fixed;
+  top: 2.5rem;
+  bottom: 0;
+  left: -100%;
+  opacity: 0;
+  overflow-y: auto;
+  text-align: left;
+  transition: left 0.3s, opacity 0.3s;
+  width: 100%;
+  z-index: z(overlay);
+
+  @include viewport-min(sm) {
+    left: -$workset-width;
+    width: $workset-width;
+    top: 3rem;
+  }
+
+  &.is-open {
+    left: 0;
+    opacity: 1;
+  }
+
+  &--sample-student {
+    top: 4.8rem;
+    @include viewport-min(sm) {
+      top: 5.4rem;
+    }
+  }
+  
+  &--top-0 {
+    top: 0;
+    transition: top 0.2s;
+  }
+
+  &__close-btn {
+    font-size: var(--font-7, #{$font-size-24});
+    line-height: 1;
+    padding: 0.25rem 0.5rem;
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+
+    &-jr { display: none; } 
+
+    @include theme('supersites-jr') {
+      &-jr { display: initial; }
+    }
+  }
+
+  &__group {
+  }
+  
+  &__group-name {
+    border-bottom: rpx(1.25) solid var(--group-color);
+    line-height: 1.2;
+    margin: 0.5rem 0;
+    padding-bottom: 0.25rem;
+
+    @include theme('supersites-jr') {
+      display: none;
+    }
+  }
+
+  &__assignment-list {
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  &__item {
+    border-radius: rpx(4);
+    line-height: 1.5;
+    margin-bottom: 0.35rem;
+    padding: 0.5rem;
+    position: relative;
+
+    &:hover {
+      background-color: $gray-f8;
+    }
+
+    &.is-current {
+      box-shadow: 0 0 rpx(5) vhl-shadow(0.3);
+      background-color: transparent;
+    }
+  }
+
+  &__item-checkmark {
+    display: none;
+
+    &.is-completed {
+      display: inline-block;
+
+      // Override icon-inside-a-link color:
+      .c-embedded-icon > .c-svg {
+        fill: $black;
+      }
+    }
+  }
+  
+  &__item-box {
+    width: 3.5rem;
+    height: 2.5rem;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    border: rpx(1) solid $workset-item-box-border-color;
+    border-radius: rpx(4);
+    position: relative;
+
+    @include theme('supersites-jr') {
+      border-width: rpx(2);
+    }
+  }
+
+  /*
+   Place a translucent element behind the item box
+   to give it a background color that is a tinted
+   version of the group color:
+
+   Since the color comes from the DB, the workset ERB
+   sets the default color on the group.
+  */
+  &__item-box::before {
+    content: '';
+    border-radius: rpx(4);
+    background-color: var(--activity-color);
+    opacity: 0.2;
+    position: absolute;
+    left: rpx(-1);
+    right: rpx(-1);
+    top: rpx(-1);
+    bottom: rpx(-1);
+  }
+
+  &__item-details {
+    color: $workset-activity-details-color;
+    line-height: 1.2;
+
+    @include theme('supersites-jr') { 
+      align-self: center;
+    }
+  }
+  
+  &__item-title {
+    color: $workset-activity-title-color;
+    margin-bottom: 0.25rem;
+  }
+
+  &__item-lesson-and-status {
+    @include theme('supersites-jr') {
+      display: none;
+    }
+  }
+
+  &__item-status {
+    color: $workset-activity-details-color; 
+    display: inline;
+    padding-left: 0.5rem;
+    margin-left: 0.5rem;
+    border-left: rpx(1) solid $workset-activity-details-color;
+    text-transform: capitalize;
+
+    &.is-unopened {
+      display: none;
+    }
+  }
+
+  &__link {
+    color: $black;
+
+    // The link only wraps the title, but this makes the full block clickable:
+    &::after {
+      content: '';
+      border-radius: rpx(4);
+      position: absolute;
+      padding: 0.5rem;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+    }
+
+    &:focus::after {
+      outline-color: solid $blue;
+    }
+  }
+}

@@ -1,0 +1,78 @@
+<div class="ns-music-v1  <%= 'ns-supersites-jr  t-supersites-jr' if ssjr_student? %>">
+  <div class="c-workset  u-hidden  js-workset  <%= 'c-workset--sample-student' if @fall_back_user %>  <%= test_class('workset') %>"
+       id="assignment-workset">
+    <button class="c-no-button  c-workset__close-btn  js-close-workset  js-close-workset-top"
+            lang="en"
+            type="button"
+            aria-controls="assignment-workset"
+            aria-label="Close">&times;</button>
+    <h3 class="c-heading  c-heading--assignments" lang="en">
+      <span class="c-heading--assignments__text-jr">Homework</span>
+      <span class="c-heading--assignments__text-sr">Assignments</span>
+    </h3>
+    <% workset.activities.present? && workset.grouped_activities(vista_online_learning?).each do |group| %>
+      <% @workset_presenter.group = group
+         @workset_presenter.group_name_color %>
+      <div class="c-workset__group  <%= test_class('group') %>" style="<%= @workset_presenter.strand_style %>">
+         <h4 class="c-workset__group-name" lang="<%= @workset_presenter.lang_attr %>">
+           <%= @workset_presenter.group_name %>
+         </h4>
+         <ul class="c-workset__assignment-list  <%= test_class('assignment-group') %>"
+             lang="<%= @activity.language %>">
+            <% group[:assignments].each.with_index do |(workset_activity, _assignment), index| -%>
+              <% @workset_presenter.assignment_list_styles(workset_activity) %>
+
+              <li class="c-workset__item  <%= @workset_presenter.class_attr %>  u-mar-top-0" aria-current="true">
+                <span class="l-line  l-line--sm">
+                  <span class="c-workset__item-box" style="<%= @workset_presenter.strand_style %>">
+                    <span class="c-workset__item-checkmark  <%= @workset_presenter.class_attr %>"
+                          lang="en"
+                          role="<%= @workset_presenter.checkmark_role %>"
+                          aria-label="<%= @workset_presenter.status_label %>">
+                          <%= Music::Components.icon(variant: 'checkmark', size: 'lg', text: '') %>
+                    </span>
+                  </span>
+                  <span class="c-workset__item-details">
+                    <span class="c-workset__item-title">
+                      <% if @workset_presenter.is_current %>
+                        <span class="<%= test_class('current-activity-title') %>">
+                          <%= workset_activity.title %>
+                        </span>
+                      <% else %>
+                        <%= link_to(workset_activity.title,
+                                    section_activity_path(section, workset_activity),
+                                    class: "c-workset__link  #{test_class('activity-title-link')}",
+                                    'data-workset-item' => workset_activity.id) %>
+                                <% end %>
+                    </span>
+
+                    <span class="c-workset__item-lesson-and-status  l-line l-line--flush">
+                      <span class="c-workset__item-lesson">
+                        <%= sanitize(workset_activity.lesson.display_name, tags: %w[span], attributes: %w[lang]) %>
+                      </span>
+                      <span class="c-workset__item-status  <%= @workset_presenter.class_attr %>" lang="en">
+                        <%= @workset_presenter.status_label %>
+                      </span>
+                    </span>
+                  </span> <!-- /c-workset__item-details -->
+                </span> <!-- / l-line (outer) -->
+              </li>
+            <% end %>
+        </ul> <!-- /c-workset__assignment-list -->
+      </div> <!-- / c-workset__group -->
+    <% end %>
+
+    <% if ssjr_student? %>
+      <p class="u-txt-ctr  u-mar-top-16  u-mar-bot-24">
+        <button
+          class="c-button  c-button--jr-close  js-close-workset"
+          lang="en"
+          type="button"
+          aria-controls="assignment-workset">
+          Close
+        </button>
+      </p>
+    <% end %>
+
+  </div> <!-- / c-workset -->
+</div> <!-- / ns-music-v1 -->

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<activity activity_type="reference_activity" title="Notas culturales" language="es">
+  <dl>Puerto Rico</dl>
+  <items>
+
+    <reference_group background_color="true">
+      <headline level="1">Lugares</headline>
+      <headline level="2">El morro</headline>
+      <paragraph>El Morro es una fortaleza que se construyó para proteger la bahía de San
+      Juan desde principios del siglo XVI hasta principios del siglo XX. Hoy día
+      muchos turistas visitan este lugar, convertido en un museo. Es el sitio más
+      fotografiado de Puerto Rico. La arquitectura de la fortaleza es impresionante.
+      Tiene misteriosos túneles, oscuras mazmorras y vistas fabulosas de la bahía.
+      </paragraph>
+      <floating_image align="right" id="140316" />
+      <citation>SOURCE: "La Fortaleza and San Juan National Historic Site". UNESCO</citation>
+    </reference_group>
+
+    <reference_group background_color="false">
+      <headline level="1">Artes</headline>
+      <headline level="2">Salsa</headline>
+      <paragraph>La salsa, un estilo musical de origen puertorriqueño y cubano, nació en el
+      barrio latino de la ciudad de Nueva York. Dos de los músicos de salsa más
+      famosos son Tito Puente y Willie Colón, los dos de Nueva York. Las estrellas de
+      la salsa en Puerto Rico son Felipe Rodríguez y Héctor Lavoe. Hoy en día, Puerto
+      Rico es el centro internacional de este estilo musical. El Gran Combo de Puerto
+      Rico es una de las orquestas de salsa más famosas del mundo.
+      </paragraph>
+      <floating_image align="left" id="140318" />
+    </reference_group>
+
+    <reference_group background_color="true">
+      <headline level="1">Ciencias</headline>
+      <headline level="2">El Observatorio de Arecibo</headline>
+      <paragraph>El Observatorio de Arecibo tiene uno de los
+      radiotelescopios más grandes del mundo. Gracias a
+      este telescopio, los científicos pueden estudiar las
+      propiedades de la Tierra, la Luna y otros cuerpos
+      celestes. También pueden analizar fenómenos
+      celestiales como los quasares y pulsares, y detectar
+      emisiones de radio de otras galaxias, en busca de
+      inteligencia extraterrestre.
+      </paragraph>
+      <floating_image align="right" id="140315" />
+      <citation>SOURCE: "Prepares to Observe at Arecibo". Space.com</citation>
+    </reference_group>
+
+    <reference_group background_color="false">
+      <headline level="1">Historia</headline>
+      <headline level="2">Relación con los Estados Unidos</headline>
+      <paragraph>Puerto Rico pasó a ser parte de los Estados Unidos después de la guerra
+        de 1898 y se hizo un estado libre asociado en 1952. Los puertorriqueños,
+        ciudadanos estadounidenses desde 1917, tienen representación política
+        en el Congreso, pero no votan en las elecciones presidenciales y no pagan
+        impuestos federales. Hay un debate entre los puertorriqueños: ¿debe la isla
+        seguir como estado libre asociado, hacerse un estado como los otros
+        o volverse independiente?
+      </paragraph>
+      <floating_image align="left" id="140317" />
+    </reference_group>
+
+    <gloss_list>
+      <gloss target="proteger">protect</gloss>
+      <gloss target="bahía">bay</gloss>
+      <gloss target="siglo">century</gloss>
+      <gloss target="nació">was born</gloss>
+      <gloss target="estrellas">stars</gloss>
+      <gloss target="mundo">world</gloss>
+      <gloss target="científicos">scientists</gloss>
+      <gloss target="tierra">earth</gloss>
+      <gloss target="luna">moon</gloss>
+      <gloss target="pasó a ser">became</gloss>
+      <gloss target="después de">after</gloss>
+      <gloss target="guerra">war</gloss>
+      <gloss target="se hizo">became</gloss>
+      <gloss target="ciudadanos">citizens</gloss>
+      <gloss target="desde">since</gloss>
+      <gloss target="pagan impuestos">pay taxes</gloss>
+      <gloss target="volverse">to become</gloss>
+      <gloss target="el" before="sitio">The Place</gloss>
+      <gloss target="política" after="representación">in charge of political topics</gloss>
+    </gloss_list>
+  </items>
+</activity>

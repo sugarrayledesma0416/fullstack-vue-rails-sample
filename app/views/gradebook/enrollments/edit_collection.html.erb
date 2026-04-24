@@ -1,0 +1,82 @@
+<%= vite_javascript_tag 'entrypoints/gradebook/enrollments/edit_collection' %>
+
+<l-stack-v3 class="u-pad-rt-24 u-pad-lt-24 u-mar-bot-48">
+  
+  <m3-subnavigation-header page-title="<%= @page_title %>" description="<%= @page_description %>">
+  </m3-subnavigation-header>
+
+  <%= form_tag(gradebook_drop_students_update_path(program_id: current_program.id),
+  method: :post,
+  class: "js-drop-form") do -%>
+
+  <l-line-v3 align-x="between" align-y="center" class="u-mar-bot-24  u-mar-top-16">
+    <h2 class="u-txt-body-1 u-txt-semibold">Select students to remove</h2>
+    <l-line-v3 gap="20">
+      <%= link_to 'Cancel', @return_to, class: "u-pad-8 u-txt-gray-700 u-txt-semibold u-txt-nodec" %>
+      <span class="u-flex-spacer"></span>
+      <sl-button class="sl-button-v3 sl-button-v3--primary sl-button-v3--xs js-open-confirm" disabled>Remove</sl-button>
+    </l-line-v3>
+  </l-line-v3>
+  <%= render 'confirm_drop' %>
+  <div class="c-table-roster-wrapper u-mar-bot-48">
+    <table class="c-table-v3  c-table-roster js-checkbox-list">
+      <thead>
+        <tr>
+          <th class="c-table-v3__th">Name</th>
+          <% unless current_user.clever? %>
+          <th class="c-table-v3__th">Email Address</th>
+          <% end %>
+          <th class="c-table-v3__th">Last Submission</th>
+          <%# This is the column for the droppable_students_presenter.enrollment_blocked_text. Text will be displayed in the td if the enrollment is blocked. %>
+          <th class="c-table-v3__th"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @droppable_students_presenter.droppable_students_info.each_with_index do |student, idx| %>
+          <tr id="student_row_<%= student[:user].id %>"
+            class="c-table__row  student_row  js-student-row  js-checkbox-row  <%= @droppable_students_presenter.checkbox_row_disabled(idx) %>">
+            <td class="c-table-v3__td">
+              <l-line-v3>
+                <sl-checkbox 
+                class="js-checkbox c-table-roster__checkbox"
+                <%= @droppable_students_presenter.enrollment_blocked?(idx) ? "disabled" : nil %>
+                <%= mark_checked(student, @selected_student_ids) ? "checked" : nil %>
+                id="<%= 'student_#{student[:user].id}_#{student[:section].id}' %>"
+                value="<%= student[:json] %>"
+                data-student-name="<%= "#{student[:user].first_name} #{student[:user].last_name}" %>"
+                name="selected_student_info[]">
+                  <%= "#{student[:user].last_name}, #{student[:user].first_name}" %>
+                </sl-checkbox>
+              </l-line-v3>
+            </td>
+            <% unless current_user.clever? %>
+            <td class="c-table-v3__td">
+             <% unless student[:user].clever? %>
+              <%= student[:user].email %>
+              <% end %>
+            </td>
+            <% end %>
+            <td class="c-table-v3__td" >
+            <% if student[:user][:updated_at] != nil %>
+              <p class="u-mar-bot-0"><%= student[:user][:updated_at].strftime('%b %d %Y') %>,</p>
+              <p class="u-mar-bot-0  u-txt-detail  u-txt-true-gray-400"><%= student[:user][:updated_at].strftime('%I:%M %p') %></p>
+            <% else %>
+              -
+            <% end %>
+            </td>
+            <%# This is the column for the droppable_students_presenter.enrollment_blocked_text. Text will be displayed if the enrollment is blocked. %>
+            <td class="c-table-v3__td">
+              <%= @droppable_students_presenter.enrollment_blocked_text(idx) %>
+            </td>
+          </tr>
+        <% end -%>
+      </tbody>
+    </table>
+  </div>
+  <%= hidden_field_tag('return_to', @return_to) %>
+
+
+</l-stack-v3>
+<% end %>
+
+

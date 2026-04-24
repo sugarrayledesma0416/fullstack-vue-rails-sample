@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<activity activity_type="ai_virtual_chat" language="es" title="ai virtual chat">
+   <dl>
+     Spanish Pronunciation Basics and sample references.
+    </dl>
+    <items>
+        <!-- Audio references -->
+        <reference type="audio">
+          <audio>
+            <title>Spanish Pronunciation Basics</title>
+            <url>https://example.com/spanish-pronunciation.mp3</url>
+            <duration>4:20</duration>
+            <transcript>Welcome to Spanish pronunciation fundamentals. Let's learn about vowels and consonants.</transcript>
+          </audio>
+        </reference>
+
+        <!-- Dialogue V2 references -->
+        <reference type="dialogue_v2">
+          <dialogue>
+            <segment>
+              <speaker>Maria</speaker>
+              <speech>¿Cómo estás?</speech>
+            </segment>
+            <segment>
+              <speaker>Juan</speaker>
+              <speech>Muy bien, gracias. ¿Y tú?</speech>
+            </segment>
+            <chat_controls language="es">
+              <message_placeholder_label>Escribe tu mensaje aquí...</message_placeholder_label>
+              <send_button_label>ENVIAR</send_button_label>
+            </chat_controls>
+          </dialogue>
+        </reference>
+
+        <!-- Email references -->
+        <reference type="email">
+          <from_address>juan@example.com</from_address>
+          <subject>Meeting Schedule</subject>
+          <body>
+            <paragraph>Hola, ¿podemos programar una reunión para el próximo lunes?</paragraph>
+          </body>
+        </reference>
+
+        <!-- Heading references -->
+        <reference type="heading">
+          <heading level="1">Spanish Language Course</heading>
+        </reference>
+
+        <!-- ID Card references -->
+        <reference type="id_card">
+          <card>
+            <name language="es">María García</name>
+            <paragraph>Estudiante de <important>Español</important></paragraph>
+          </card>
+        </reference>
+
+        <!-- Image references -->
+        <reference type="image">
+          <image id="123" />
+        </reference>
+
+        <!-- Internet Keywords references -->
+        <reference type="internet_keywords">
+          <keywords>
+            <keyword><target>Spanish grammar</target><base>Spanish grammar</base></keyword>
+            <keyword><target>Spanish vocabulary</target><base>Spanish vocabulary</base></keyword>
+            <keyword><target>Spanish pronunciation</target><base>Spanish pronunciation</base></keyword>
+          </keywords>
+        </reference>
+
+        <!-- List references -->
+        <reference type="list">
+          <body>
+            <sublist style="bullet">
+              <li>Master basic conversation skills</li>
+              <li>Understand grammar fundamentals</li>
+              <li>Build vocabulary</li>
+            </sublist>
+          </body>
+        </reference>
+
+        <!-- Model V2 references -->
+        <reference type="model_v2">
+          <model>
+            <paragraph>This is a sample Model V2 reference.</paragraph>
+          </model>
+        </reference>
+
+        <!-- Panel Group references -->
+        <reference type="panel_group">
+          <title>Panel Group Title</title>
+          <datum>
+            <stat>Panel 1</stat>
+            <value>Content for Panel 1</value>
+          </datum>
+          <datum>
+            <stat>Panel 2</stat>
+            <value>Content for Panel 2</value>
+          </datum>
+        </reference>
+
+        <!-- Paragraph references -->
+        <reference type="paragraph_v2">
+          <paragraph>This is a sample Paragraph reference.</paragraph>
+        </reference>
+
+        <!-- Social Media references -->
+        <reference type="social_media">
+          <post>
+            <profile_image id="123" />
+            <name>Spanish Language Group</name>
+            <paragraph>Join our weekly conversation practice sessions!</paragraph>
+          </post>
+        </reference>
+
+        <!-- Table references -->
+        <reference type="table">
+          <table>
+            <header_row>
+              <header>Header</header>
+              <data>Column 1</data>
+              <data>Column 2</data>
+            </header_row>
+            <data_row>
+              <header>Row 1</header>
+              <data>Data 1-1</data>
+              <data>Data 1-2</data>
+            </data_row>
+            <data_row>
+              <header>Row 2</header>
+              <data>Data 2-1</data>
+              <data>Data 2-2</data>
+            </data_row>
+            <footer_row>
+              <header>Footer</header>
+              <data>Summary 1</data>
+              <data>Summary 2</data>
+            </footer_row>
+          </table>
+        </reference>
+
+        <!-- Video references -->
+        <reference type="video">
+          <video id="123" />
+        </reference>
+
+        <!-- Vocabulary V2 references -->
+        <reference type="vocabulary_v2">
+          <vocabulary>
+            <word>Spanish</word>
+            <definition>The language spoken in Spain and many other countries.</definition>
+          </vocabulary>
+          <term>
+            <target>Spanish</target>
+            <translation>Español</translation>
+          </term>
+        </reference>
+
+        <!-- Wordbank references -->
+        <reference type="wordbank">
+          <wordbank>
+            <word>Spanish</word>
+            <definition>The language spoken in Spain and many other countries.</definition>
+          </wordbank>
+          <body>This is a wordbank body</body>
+        </reference>
+
+
+    <item>
+
+      <!-- <input_mode> is optional. The available input_mode options are as
+           follows: speech, text, speech-and-text, text-no-audio
+
+           These options specify whether the student will be able to use
+           speech input, text input, both speech and text input, or text input
+           without audio. When this element is omitted, the activity will
+           default to speech input. -->
+      <input_mode>speech-and-text</input_mode>
+
+      <!-- <allow_audio_transcript> is optional. When set to true, it enables
+           the display of a transcript of the student's speech input, and the
+           AI's response. If omitted, the default value is false.
+
+           There are some notable interactions with this setting and the
+           different input modes:
+           - when input_mode is text, and allow_audio_transcript is false, the
+             student texts will always be shown (since there is no audio
+             associated with those texts)
+           - when input_mode is speech-and-text and allow_audio_transcript is
+             false, the student audio transcript will not be shown when the
+             student uses speech input; when the student switches to text
+             input, that text will be shown. 
+          - when input_mode is text-no-audio, the student audio transcript will
+             be always set to true no matter what the XML says (since there is
+             no audio and only text input is allowed) -->
+      <allow_audio_transcript>true</allow_audio_transcript>
+
+      <!-- Exactly one <response_count> element is required. This specifies the
+           number of on-topic responses the student must generate before the
+           activity can be considered complete. It must be a whole number
+           greater than zero. -->
+      <response_count>4</response_count>
+
+      <!-- Exactly one <initial_prompt> element is required. This is the text
+           that the AI will speak when the student starts the activity. It
+           cannot be blank and cannot contain HTML tags. -->
+      <initial_prompt>¿Qué tal? ¿Cómo estás?</initial_prompt>
+
+      <!-- Exactly one <ai_instructions> element is required. These
+           instructions are sent to the AI, but not shown to the student.
+           They should include the persona the AI should assume, the criteria
+           for completing the scenario, and instructions on how to respond to
+           the student. HTML tags cannot be included. -->
+      <ai_instructions>
+        You are a helpful AI assistant used to learn Spanish. Use the provided references to help answer questions accurately.
+      </ai_instructions>
+
+      <!-- Exactly one <ai_persona> element is required. This specifies the
+        persona and voice of the AI. The available options are "Miguel" and
+        "Sara". -->
+      <ai_persona>Sara</ai_persona>
+    </item>
+  </items>
+</activity>

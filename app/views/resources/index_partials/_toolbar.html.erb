@@ -1,0 +1,31 @@
+<div class="c-toolbar-container">
+  <h2 class="u-txt-24  u-mar-bot-4  u-txt-reg"><%= @page_header %></h2>
+  <div class="c-toolbar  resource_tools  u-txt-smallcaps" role="region" aria-label="toolbar">
+    <div class="c-form-item  c-toolbar__item  c-toolbar__item--select">
+      <input type="checkbox"
+            class="c-form-item__checkbox  js-select-all-checkboxes"
+            id="resources_checkbox_all"/>
+      <label for="resources_checkbox_all" class="c-form-item__label  u-mar-bot-0">
+        Select all
+      </label>
+    </div>
+    <a href="#" role="button"
+        id="download_selected_resources_link"
+        class="c-toolbar__item  u-bord-lt-1  u-bord-gray-d  js-download-rsrc-button">
+        <span class="u-mar-rt-4" aria-hidden="true"><%= feature_icon('music/icons/download') %></span>
+        download
+    </a>
+    <% if current_user.instructor? %>
+      <div id="resource_message" class="js-resource-message  u-hidden">Please select a resource by clicking the checkboxes at the left</div>
+      <%= render 'resources/index_partials/instructor_toolbar' %>
+      <% if current_user.roles.map(&:name).include?(Role::RESOURCE_EDITOR) %>
+        <%= link_to Music::Components.icon(variant: 'edit', text: 'Edit components'), resource_components_path(current_program, return_to: @return_to),
+              { 
+                class: 'c-toolbar__item',
+                id: 'new_resource_component_link',
+                title: 'Edit components'
+              } %>
+      <% end %>
+    <% end %>
+  </div>
+</div>

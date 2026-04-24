@@ -1,0 +1,77 @@
+<activity activity_type="recording" title="2 - Ai miei tempi..." language="it">
+<dl>Un compagno più adulto ti racconta com’era l’università quando lui si è iscritto. Commenta le sue affermazioni usando il <u>congiuntivo imperfetto o trapassato</u> nella frase subordinata, come nei modelli. Registra le tue risposte. Dopo, ascolta e ripeti la frase corretta.</dl>
+<items>
+<style>
+<layout>word</layout>
+<column_fill>equalize</column_fill>
+<row_fill>equalize</row_fill>   
+    <transcript_display>hide</transcript_display> 
+      <compare_button_display>show</compare_button_display> 
+</style>
+<model>
+<header>Modelli</header>
+<body>
+<b><i>Senti:</i></b>  Il direttore e sua moglie avevano già divorziato.<br />
+<b><i>Dici:</i>  Non pensavo che il direttore e sua moglie avessero già divorziato.</b><br /><br />
+<b><i>Senti:</i></b>  Sua moglie era una giornalista, a quel tempo.<br />
+<b><i>Dici:</i>  Non pensavo che sua moglie fosse una giornalista.</b>
+</body>
+</model>
+<question>
+<prompt>
+<body></body>
+<audio id="103166" />
+</prompt>
+<answer>
+<audio id="103110" />
+</answer>
+</question>
+<question>
+<prompt>
+<body></body>
+<audio id="103171" />
+</prompt>
+<answer>
+<audio id="103111" />
+</answer>
+</question>
+<question>
+<prompt>
+<body></body>
+<audio id="103172" />
+</prompt>
+<answer>
+<audio id="103122" />
+</answer>
+</question>
+<question>
+<prompt>
+<body></body>
+<audio id="103173" />
+</prompt>
+<answer>
+<audio id="103133" />
+</answer>
+</question>
+<question>
+<prompt>
+<body></body>
+<audio id="103112" />
+</prompt>
+<answer>
+<audio id="103144" />
+</answer>
+</question>
+<question>
+<prompt>
+<body></body>
+<audio id="103113" />
+</prompt>
+<answer>
+<audio id="103155" />
+</answer>
+</question>
+<!-- end item segment -->
+<!-- these last two items never change -->
+</items>
+</activity>

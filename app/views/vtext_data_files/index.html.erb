@@ -1,0 +1,15 @@
+<div class="ns-music-v1">
+  <h1 class="c-heading--md">Activity Links Export</h1>
+  <%= form_tag(controller: :vtext_data_files, action: :create, method: :post) do %>
+    <div class="c-form-item">
+      <label class="c-form-item__label" for="program_id">Book ID in Maestro 3</label>
+      <input class="c-form-item__input" name="program_id" type="number" id="program_id" placeholder="Activity id valid" required>
+    </div>
+
+    <%= Music::Components.button(
+      classes: ['u-mar-top-16'],
+      text: 'Submit',
+      variant: 'primary',
+      type: 'submit') %>
+  <% end %>
+</div>

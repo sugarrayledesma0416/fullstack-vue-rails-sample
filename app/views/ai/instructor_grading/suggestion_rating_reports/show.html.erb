@@ -1,0 +1,49 @@
+<%# TODO: Needed? %>
+<%= content_for(
+      :js_head,
+      javascript_packs_with_chunks_tag('ai/instructor_grading/suggestion_rating_reports/question_report')
+    ) %>
+
+<div class="c-box  c-box--bubble-wrap  c-foil-panel">
+  <span class="u-txt-bold">Location:</span>
+  <a href="<%= @presenter.lesson_url %>"><%= @presenter.activity.lesson.name %></a>
+  &rarr;
+  <a href="<%= @presenter.strand_url %>"><%= @presenter.activity.lesson_strand_label %></a>
+  &rarr;
+  <%= content_tag(
+    :a,
+    @presenter.activity.title.html_safe,
+    {
+      href: activity_path(@presenter.activity)
+    }
+  ) %>
+  <br>
+  <div>
+    <div class="u-dis-flex" style="gap: 0.5rem;">
+      <span class="u-txt-bold">Direction Line:</span> <%= @presenter.full_sanitizer(@presenter.activity.direction_line) %>
+    </div>
+    <% if @presenter.activity_type_is_composition? %>
+      <div class="u-dis-flex" style="flex-direction: column;">
+        <span class="u-txt-bold">Question prompt:</span> <%= @presenter.current_question.html_friendly_prompt %>
+      </div>
+    <% end %>
+    <div class="u-dis-flex" style="gap: 0.5rem;">
+      <span class="u-txt-bold">Instructor:</span> <%= @presenter.instructor&.full_name %> <a class="u-txt-body-1  u-txt-blue" href="mailto:<%= @presenter.instructor&.email %>"><%= @presenter.instructor&.email %></a>
+    </div>
+  </div>
+</div>
+
+<!-- Pagination Top -->
+<%= render 'suggestion_pagination', flex_justify_end: 'false' %>
+
+<!-- Suggestion Details -->
+<% if @presenter.activity_type_is_composition? %>
+  <%= render 'suggestion_details', presenter: @presenter %>
+<% else %>
+  <% @presenter.questions.each do |question| %>
+    <%= render 'suggestion_details', presenter: @presenter %>
+  <% end %>
+<% end %>
+
+<!-- Pagination Bottom -->
+<%= render 'suggestion_pagination', flex_justify_end: 'true' %>

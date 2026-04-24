@@ -1,0 +1,88 @@
+<!-- vanillify vhlModal jQuery plugin ? -->
+<%= render layout: 'modal', locals: { js_class: 'edit-course-modal' } do %>
+  <div class="c-modal__body">
+    <h3 class="c-heading--md">Edit Course</h3>
+
+    <div class="l-container-fluid  u-bord-bot-2  u-bord-gray-e u-pad-bot-10">
+      <form class="js-form  js-course-form">
+        <div class="l-grid u-sp">
+          <div class="l-col-12  u-pad-0">
+            <div>
+              <div class="c-form-item">
+                <label class="c-form-item__label" for="edited_course_name">name</label>
+                <input class="c-form-item__input  u-width-full  fc-course-name-elm  <%= test_class('edited-course-name') %>"
+                      type="text"
+                      id="edited_course_name"
+                      maxlength="30" />
+              </div><!--end form-item-->
+            </div>
+          </div>
+        </div>
+
+        <div class="l-grid u-sp">
+          <div class="l-col-12  u-pad-0">
+            <div>
+              <label class="c-form-item__label" for="edited_source_template_id">Course template</label>
+              <%= select_tag('edited_source_template_id',
+                             options_for_select(@presenter.course_template_options(@program)),
+                             { id: 'edited_source_template_id',
+                               class: "c-dropdown--button  c-select u-width-full fc-source-template-id-elm  #{test_class('edited-source-template-id')}",
+                               prompt: 'Select a course template',
+                               selected: nil,
+                               'data-error-message-id': 'error_no_source_template' }) %>
+            </div>
+          </div>
+        </div>
+
+        <div class="l-grid u-sp">
+          <div class="l-col-12  u-pad-0">
+            <div>
+              <label class="c-form-item__label" for="edited_course_owner_id">Course owner</label>
+              <%= select_tag('edited_course_owner_id',
+                             options_for_select(@presenter.course_owner_options(@program)),
+                             { id: 'edited_course_owner_id',
+                               class: "c-dropdown--button  c-select u-width-full fc-course-owner-id-elm  #{test_class('edited-course-owner-id')}",
+                               prompt: 'Select a course owner',
+                               selected: nil,
+                               'data-error-message-id': 'error_no_course_owner' }) %>
+            </div>
+          </div>
+        </div>
+
+        <div class="l-grid  u-sp">
+          <div class="l-col-12  u-pad-0">
+            <div class="c-form-item  js-hide-from-dash-form-item  u-invisible">
+              <input type="checkbox" class="c-toggle  fc-hide-from-dash-checkbox-status" id="edit_course_checkbox_status"/>
+              <label class="c-label" for="edit_course_checkbox_status">
+                <span class="c-toggle__on-label  u-txt-no-transform">Hide this course on your instructor dashboard</span>
+                <span class="c-toggle__off-label  u-txt-no-transform">Hide this course on your instructor dashboard</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+      </form>
+    </div>
+
+    <div class="js-form-component--course-template-data"
+         data-path="create_course"
+         data-program-id="<%= @program.id %>"
+         data-school-id="<%= @presenter.school.id %>">
+    </div>
+
+    <div class="c-panel__footer">
+      <div class="c-button-group  u-mar-0  u-float-lt">
+        <button type="button"
+                class="c-button  c-button--border  js-delete-course-button">
+          Delete
+        </button>
+        <%= render partial: 'modal_confirm_delete' %>
+      </div>
+
+      <div class="c-button-group  u-mar-16  u-txt-rt">
+        <button type="button" class="c-button  js-modal-close">Cancel</button>
+        <button type="button" class="c-button  c-button--primary  fc-submit-button  <%= test_class('edit-course-submit-button') %>">Save</button>
+      </div>
+    </div>
+  </div>
+<% end %>

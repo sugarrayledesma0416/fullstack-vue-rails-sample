@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<activity activity_type="fill_in_the_blanks" language="zh" title="activity title">
+  <dl>Instructions</dl>
+  <items>
+    <style>
+      <wol_size>words_standard</wol_size>
+      <item_numbers>show</item_numbers>
+    </style>
+    <item>
+      <prompt><wol ref="1"/></prompt>
+      <answers ref="1">
+        <answer>我最近很忙</answer>
+      </answers>
+    </item>
+  </items>
+</activity>

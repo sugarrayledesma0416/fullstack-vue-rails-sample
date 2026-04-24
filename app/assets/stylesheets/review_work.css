@@ -1,0 +1,135 @@
+
+.rw_activity_container{
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.rw_activity_content_container{
+  border-right: 1px solid #C4C4C4;
+  margin: 19px;
+  padding-right: 14px;
+  width: 74%;
+  float:left;
+}
+
+.rw_activity_results_container{
+  float:left;
+  width: 15%;
+}
+
+.rw_activity_results_container .points{
+  position: relative;
+  background: #cccccc;
+}
+
+.rw_activity_results_container .points .label{
+  margin: 3px;
+  text-align: center;
+}
+
+.rw_activity_results_container .points .score{
+  margin: 3px;
+  text-align: center;
+}
+
+table.no-border-data-table {
+  border: 0px;
+  margin: 0px;
+}
+
+table.no-border-data-table th {
+  padding-left: 0px;
+}
+
+div#breadcrumbs ul {
+  margin-left: 0;
+  padding-left: 0;
+  display: inline;
+}
+
+div#breadcrumbs ul li:first-child {
+  margin-left: 0;
+  padding-left: 0;
+  list-style: none;
+  display: inline;
+}
+
+div#breadcrumbs ul li {
+  margin-left: 0;
+  list-style: none;
+  display: inline;
+  position: relative;
+}
+
+.partner_chat .box-frame-inner {
+  width: 900px;
+}
+
+.box-frame-inner {
+  margin-top: 10px;
+  padding-bottom: 5px;
+  width: 860px;
+}
+
+.box-frame {
+ margin-bottom: 10px;
+ padding-bottom: 5px;
+}
+
+div#student_answers{
+  border : none;
+}
+
+
+.standard_layout.wizard.review_work #instructor_editing_tools {
+  float: left;
+}
+
+.standard_layout.wizard.review_work #instructor_display_controls {
+  height: 28px;
+  margin-top: 10px;
+  padding-top: 20px;
+  width: 100px;
+}
+
+.standard_layout.wizard.review_work li.correct,
+.standard_layout.wizard.review_work li.incorrect {
+  float: left;
+  width: 720px;
+}
+
+.standard_layout.wizard.review_work .answer_positioning {
+  width: 700px;
+}
+
+
+.standard_layout.wizard.review_work div.field_row {
+  margin: 5px;
+}
+
+.standard_layout.wizard.review_work a.scoring_button.zero_credit.red-button,
+.standard_layout.wizard.review_work a.scoring_button.full_credit.red-button {
+  border: 1px transparent;
+  padding: 1px 16px;
+  width: 68px;
+}
+
+.review_arc {
+  float: left;
+  margin-right: 25px;
+  margin-top: -1px;
+  margin-left: 10px;
+}
+
+.review_work .record_review .play.btn {
+  margin-left: 0px;
+}
+
+
+.view_original_composition {
+  display: none;
+}
+
+.composition_grading .view_original_composition {
+  display: inline-block;
+}

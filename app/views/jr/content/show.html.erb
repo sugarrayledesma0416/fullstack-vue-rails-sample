@@ -1,0 +1,126 @@
+<% content_for(:navigation) do %>
+  <% render('app_shell/navbar_program/supersite_junior') %>
+<% end %>
+
+<%
+  # In addition to only displaying links that have a label and a url.
+  # We want instructors to see the Student and Instructor links, but the
+  # students should only see the Student links.
+  # If a link is an Instructor link and the user is a student, the second
+  # part of the if will be:
+  # ['Student', 'Student'].include?('Instructor') # Evaluates to false.
+  # Same link, but the user is an instructor:
+  # ['Student', 'Instructor'].include?('Instructor') # Evaluates to true.
+  #
+  # This should be moved out of the view layer or to a presenter.
+  # see: https://vistahl.atlassian.net/browse/MAE-59825
+  def user_can_see_entry?(entry)
+    entry&.url.present? && entry&.label.present? &&
+      ['Student', current_user.class.name].include?(entry&.target_user) &&
+      (
+        entry.program_id.blank? ||
+        access_guardian.has_vtext?(entry.program_id)
+      )
+  end
+%>
+
+<div id="main_content" class="ns-jr-toc-content">
+  <div class="l-center-block">
+    <ul class="c-plain-list">
+      <li class="c-ns-jr-toc-content__list-item">
+        <%= button_to(jr_section_program_lessons_path(section_id: current_section.id,
+                                                      program_id: current_program.id),
+                      class: 'c-ns-jr-toc-content__button',
+                      form_class: test_class('toc-activities-clickee'),
+                      method: 'get'
+            ) do %>
+              <%= feature_icon('jr/book', ['c-ns-jr-toc-content__button-img']) %>
+              <span class="c-ns-jr-toc-content__button-label">Activities</span>
+              <% unless program_has_activities? -%>
+                <span>This program has no activities.</span>
+              <% end %>
+        <% end %>
+      </li>
+
+      <% if current_section&.non_zero? && program_has_assessment? %>
+        <li class="c-ns-jr-toc-content__list-item">
+          <%= button_to(
+            jr_section_assessments_path(section_id: current_section.id),
+            class: 'c-ns-jr-toc-content__button',
+            form_class: test_class('toc-assessments-clickee'),
+            method: 'get'
+          ) do %>
+            <%= feature_icon('jr/assessment_3', ['c-ns-jr-toc-content__button-img']) %>
+            <span class="c-ns-jr-toc-content__button-label">Assessments</span>
+          <% end %>
+        </li>
+      <% end %>
+
+      <% if current_program.has_vocab_tools? && access_guardian.has_vocab_tools? %>
+        <li class="c-ns-jr-toc-content__list-item">
+          <%= button_to(
+            main_app.vocab_tools_units_path(current_program, current_section),
+            class: 'c-ns-jr-toc-content__button',
+            form_class: test_class('toc-vocab-tools-clickee'),
+            method: 'get'
+          ) do %>
+            <%= feature_icon('jr/vocab_tools', ['c-ns-jr-toc-content__button-img']) %>
+            <span class="c-ns-jr-toc-content__button-label"><%= current_program.vocab_tools_label %></span>
+          <% end %>
+        </li>
+      <% end %>
+
+      <% if @vtext_linker.menu_linkable? %>
+        <li class="c-ns-jr-toc-content__list-item">
+          <%= button_tag(
+            class: "c-ns-jr-toc-content__button  #{test_class('toc-vtext-clickee')}",
+            onclick: format_popup_onclick(
+              height: '720',
+              href: "'#{@vtext_linker.link}'",
+              width: '960',
+              window_name: 'vtext'
+            ),
+          ) do %>
+            <%= feature_icon('jr/vtext', ['c-ns-jr-toc-content__button-img']) %>
+            <span class="c-ns-jr-toc-content__button-label"><%= @vtext_linker.link_label %></span>
+          <% end %>
+        </li>
+      <% end %>
+
+      <% if access_guardian.has_ebook? %>
+        <li class="c-ns-jr-toc-content__list-item">
+          <%= button_to(
+            main_app.jr_ebooks_path(current_program, current_section),
+            class: 'c-ns-jr-toc-content__button',
+            form_class: test_class('toc-ebook-clickee'),
+            method: 'get'
+          ) do %>
+            <%= feature_icon('jr/ebook', ['c-ns-jr-toc-content__button-img']) %>
+            <span class="c-ns-jr-toc-content__button-label"><%= current_program.ebook_label %></span>
+          <% end %>
+        </li>
+      <% end %>
+
+      <% current_program.content_menu_additional_entries.each do |entry| -%>
+        <% if user_can_see_entry?(entry) %>
+          <li class="c-ns-jr-toc-content__list-item">
+            <%= button_tag(
+              class: "c-ns-jr-toc-content__button  #{test_class('toc-add-entry-clickee')}",
+              onclick: format_popup_onclick(
+                height: '720',
+                href: "'#{entry.url}'",
+                width: '960',
+                window_name: 'vtext'
+              ),
+            ) do %>
+              <%= feature_icon('jr/ebook', ['c-ns-jr-toc-content__button-img']) %>
+              <span class="c-ns-jr-toc-content__button-label"><%= entry.label %></span>
+            <% end %>
+          </li>
+        <% end -%>
+      <% end -%>
+
+    </ul>
+  </div> <!-- /l-center-block -->
+</div>
+

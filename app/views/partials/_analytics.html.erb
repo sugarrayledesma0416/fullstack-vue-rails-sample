@@ -1,0 +1,103 @@
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', '<%= LOCAL_ANALYTICS_ACCOUNT %>']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+  try {
+    var pageTracker = _gat._getTracker('<%= LOCAL_ANALYTICS_ACCOUNT %>');
+    pageTracker._trackPageview();  
+  } catch(err) {}
+
+
+  function recordOutboundLink(link, category, action) {
+    try {
+      var pageTracker=_gat._getTracker('<%= LOCAL_ANALYTICS_ACCOUNT %>');
+      pageTracker._trackEvent(category, action);
+    }catch(err){}
+  }
+</script>
+
+<% if tour_guide_eligible? %>
+  <%# These two script tags should be included  here and in this order as they are order dependent
+      and the external script cannot be put into a js file. %>
+  <script>
+    window.AppcuesSettings = {
+      enableURLDetection: true,
+    }
+  </script>
+  <script src="//fast.appcues.com/122479.js"></script>
+  <%= content_tag(
+    :div,
+      '',
+      class: 'js-tour-guide-initializer',
+      data: {
+        user: {
+          guid: current_user.guid,
+          role: current_user.base_account_type,
+          hasTrialAccess: display_demo_warning? ? true : false,
+          createdAt: current_user.created_at.iso8601,
+        },
+        program_id: current_program.id,
+        custom_triggers: [
+          {
+            stepChildId: "36b8cac7-e68f-4cdc-af35-614de16f8221",
+            eventType: 'mouseover',
+            selector: '#tour-guide-nav-content',
+            tourGuideEventType: 'step_child_activated',
+            delay: 750
+          },
+          {
+            stepChildId: "36b8cac7-e68f-4cdc-af35-614de16f8221",
+            eventType: 'mouseout',
+            selector: '#tour-guide-nav-content',
+            tourGuideEventType: 'step_child_deactivated'
+          },
+          {
+            stepChildId: "052185df-9cfe-4ded-9198-50aafadaf537",
+            eventType: 'mouseover',
+            selector: '#tour-guide-nav-grades',
+            tourGuideEventType: 'step_child_activated',
+            delay: 750
+          },
+          {
+            stepChildId: "052185df-9cfe-4ded-9198-50aafadaf537",
+            eventType: 'mouseout',
+            selector: '#tour-guide-nav-grades',
+            tourGuideEventType: 'step_child_deactivated'
+          },
+          {
+            stepChildId: "539412bc-ef90-4558-b99e-87b1a2ce4b1d",
+            eventType: 'mouseover',
+            selector: '#tour-guide-nav-teaching',
+            tourGuideEventType: 'step_child_activated',
+            delay: 750
+          },
+          {
+            stepChildId: "539412bc-ef90-4558-b99e-87b1a2ce4b1d",
+            eventType: 'mouseout',
+            selector: '#tour-guide-nav-teaching',
+            tourGuideEventType: 'step_child_deactivated'
+          },
+          {
+            stepChildId: "dcd346a3-5544-456b-9030-7806b179ce7e",
+            eventType: 'mouseover',
+            selector: '#tour-guide-nav-communication',
+            tourGuideEventType: 'step_child_activated',
+            delay: 750
+          },
+          {
+            stepChildId: "dcd346a3-5544-456b-9030-7806b179ce7e",
+            eventType: 'mouseout',
+            selector: '#tour-guide-nav-communication',
+            tourGuideEventType: 'step_child_deactivated'
+          },
+        ]
+      }
+    ) %>
+<% end %>

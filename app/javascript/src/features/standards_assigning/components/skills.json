@@ -1,0 +1,69 @@
+[
+  {
+    "name": "Reading",
+    "refinements": [
+      "Key Ideas and Details",
+      "Craft and Structure",
+      "Integration of Knowledge and Ideas",
+      "Range of Reading and Text Complexity",
+      "Print Concepts",
+      "Phonics and Word Analysis",
+      "Phonemic and Phonological Awareness",
+      "Fluency",
+      "Encoding"
+    ]
+  },
+  {
+    "name": "Writing",
+    "refinements": [
+      "Argument",
+      "Informational / Explanatory",
+      "Narrative",
+      "Text Types and Purposes",
+      "Improve Writing",
+      "Production and Distribution of Writing",
+      "Research to Build and Present Knowledge",
+      "Range of Writing",
+      "Handwriting"
+    ]
+  },
+  {
+    "name": "Listening",
+    "refinements": [
+      "Comprehension and Collaboration",
+      "Identify Main Ideas and Details in Multimedia",
+      "Analyze Rhetoric",
+      "Delineate Speaker's Argument",
+      "Authentic Audio"
+    ]
+  },
+  {
+    "name": "Speaking",
+    "refinements": [
+      "Engage in Collaborative Discussions",
+      "Clarity, Volume, Pronunciation",
+      "Present Ideas and Claims Clearly",
+      "Use Multimedia to Support Presentation",
+      "Adjust Speech to Different Contexts",
+      "Identify Main Ideas and Details in Multimedia",
+      "Delineate a Speaker's Argument"
+    ]
+  },
+  {
+    "name": "Language Fundamentals",
+    "refinements": [
+      "Grammar",
+      "Mechanics",
+      "Usage",
+      "Comprehension",
+      "Acquisition and Use",
+      "Academic Vocabulary",
+      "Domain-Specific or Content Vocabulary",
+      "Use Resources",
+      "Use Context",
+      "Use Morphology",
+      "Synonyms and Antonyms",
+      "Connotation and Denotation"
+    ]
+  }
+]

@@ -1,0 +1,37 @@
+<% content_for(:body_classes, '  ns-full-width  ns-gradebook') %>
+<%# Keep the page from scrolling: %>
+<% content_for(:html_classes, '  u-fixed-page') %>
+<% content_for(:css_head, stylesheet_link_tag('music/features/gradebook/main')) %>
+<% content_for(:js_head, javascript_include_tag("gradebook/gradebook_table")) %>
+<% content_for(:masthead_classes, 'c-masthead-wrapper  js-masthead-wrapper') %>
+
+<% content_for(
+    :js_head,
+    javascript_packs_with_chunks_tag('instructor/individual_assignments/index')
+  ) %>
+
+<% content_for(
+    :css_head,
+    stylesheet_packs_with_chunks_tag('instructor/individual_assignments/index')
+  ) %>
+
+<%= content_tag(
+      :div,
+      '',
+      class: 'js-individual-assignments-app',
+      data: {
+        entries: @presenter.entries.to_json,
+        'export-url' => export_instructor_individual_assignments_path(
+          format: 'csv',
+          lesson_id: params[:lesson_id],
+          week: params[:week],
+        ),
+        'filter-url' => instructor_individual_assignments_path,
+        'lesson-options' => @presenter.lesson_options.to_json,
+        'max-due-date': @presenter.max_due_date,
+        'min-due-date': @presenter.min_due_date,
+        'only-individual' => (params[:only_individual] != 'false'),
+        'submit-url' => update_all_instructor_individual_assignments_path,
+        'week-options' => @presenter.week_options.to_json
+      }
+    ) %>

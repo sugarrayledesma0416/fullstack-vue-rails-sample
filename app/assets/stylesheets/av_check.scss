@@ -1,0 +1,112 @@
+@import 'music/library/v1/base/main';
+
+/*
+  Bring Mute button on video stream player in AV Check modal
+  to visibility when it gets focus.
+*/
+.av-results-modal {
+  .OT_publisher:focus-within .OT_bar,
+  .OT_subscriber:focus-within .OT_bar,
+  .OT_publisher .OT_edge-bar-item.OT_mute:focus,
+  .OT_subscriber .OT_edge-bar-item.OT_mute:focus {
+    opacity: 1;
+    top: 0;
+  }
+}
+
+.av-results-modal {
+  .av-test-results-cnt {
+    max-width: 100%;
+    width: rpx(664);
+  }
+
+  .av-video-summary,
+  .av-audio-summary {
+    margin-left: rpx(16);
+    margin-right: rpx(16);
+    padding: rpx(16) rpx(16);
+  }
+
+  #my-subscribed-media {
+    max-width: 100%;
+  }
+
+  .audio-bar-cnt {
+    text-align: left;
+  }
+
+  .audio-bar-canvas {
+    max-width: 100%;
+  }
+
+  @include viewport-max('md') {
+    .subscribed-media-cnt {
+      width: 100%;
+    }
+
+    .audio-bar-cnt,
+    .av-video-summary,
+    .av-audio-summary {
+      margin-left: rpx(8);
+      margin-right: rpx(8);
+      width: 100%;
+    }
+  }
+
+  @include viewport-max('sm') {
+    .modal-heading {
+      padding: rpx(16) rpx(16);;
+    }
+
+    .av-test-results-cnt {
+      padding: rpx(8) rpx(16);
+    }
+
+    .av-test-results-video,
+    .av-test-results-audio {
+      margin: 0 0;
+    }
+
+    .subscribed-media-cnt {
+      padding: 0 0;
+    }
+
+    .OT_publisher,
+    .OT_subscriber {
+      max-width: 100%;
+    }
+
+    .av-video-summary,
+    .av-audio-summary,
+    .audio-bar-cnt {
+      margin-left: 0;
+      margin-right: 0;
+      padding: rpx(16) 0;
+    }
+
+    .audio-bar-cnt {
+      text-align: center;
+    }
+  }
+}
+
+.av-progress-bar-modal {
+  .c-modal__box {
+    @include viewport-max('sm') {
+      overflow: auto;
+    }
+  }
+
+  .c-modal__body {
+    @include viewport-max('sm') {
+      padding: rpx(16);
+    }
+  }
+
+  .progress-label {
+    font-weight: bold;
+    left: 45%;
+    position: absolute;
+    top: rpx(4);
+  }
+}

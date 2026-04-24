@@ -1,0 +1,148 @@
+
+<% content_for(:css_head, stylesheet_link_tag('dev_examples')) %>
+
+<% content_for(:body_classes, 'ns-music-v1  t-supersites-jr
+                               t-supersites-jr--student') %>
+
+<style>
+/* These styles need to be updated in the corresp. stylesheets: */
+#boost .c-progress-jr__avatar-name {
+  color: var(--ui-neutral-medium);
+  font-size: var(--font-5);
+}
+</style>
+
+<div id="boost" class="ns-supersites-jr">
+
+  <div class="l-container-fluid  u-mar-24  u-bg-white  u-pad-32  u-bord-1  u-bord-gray-c">
+    <h1 class="sg-heading-1">Supersites Jr Style Specimen Page</h1>
+    <p>Also see <a href="javascript">JavaScript Dev Examples</a></p>
+
+    <div class="l-grid">
+      <div class="l-col-6">
+      <h2 class="sg-heading-2">Headings</h2>
+        <h1 class="u-txt-lt c-heading--page-title">Page Title</h1>
+        <h2 class="u-txt-lt c-heading--greeting">Greeting</h2>
+        <h2 class="u-txt-lt c-heading--activity-dl">Direction Line</h2>
+      </div>
+      <div class="col-3">
+        <h2 class="sg-heading-2">Tags</h2>
+        <div class="l-stack">
+          <div class="c-tag  c-tag--due-today">Due Today</div>
+          <div class="c-tag  c-tag--complete">Complete</div>
+          <div class="c-tag  c-tag--pending">Pending</div>
+          <div class="c-tag  c-tag--todo">To Do</div>
+          <div class="c-tag  c-tag--due-date">Due Sep 22</div>
+          <div>&uarr; <code class="u-txt-16">c-tag--due-date</code></div>
+        </div>
+        </div> <!-- / col-3 -->
+        <div class="col-3">
+          <h2 class="sg-heading-2">Progress Jr Avatar</h2>
+          <div class="c-progress-jr__avatar">
+            <img alt="Your avatar" class="c-progress-jr__avatar-image" height="184" width="184" src="/assets/jr/progress_bear_avatar-cc16a2bfe8a63960696813e5a4b02731b7fc8a98e02b0d3b04ba427a8055b1fc.svg">
+            <div class="c-progress-jr__avatar-name">
+              Noel Vandervort
+            </div>
+          </div>
+        </div> <!-- / col-3 -->
+    </div> <!-- /grid -->
+
+
+    <h2 class="sg-heading-2">Buttons</h2>
+
+    <%
+      tclass = 'c-button  c-button--jr  c-button--jr'
+      sclass = 'sg-jr-button'
+
+      button_themes = [
+        { name: 'choco', example: 'Go', class: '-primary' },
+        { name: 'moogle', example: 'Go', class: '-close' },
+        { name: 'cloud', example: 'Go', class: ''},
+        { name: 'incomplete', example: 'Go', class: '-incomplete' }
+      ]
+
+      button_states = [
+        { name: 'default', disabled: false, class: '' },
+        { name: 'hover', disabled: false, class: '-hover' },
+        { name: 'active', disabled: false, class: '-active'},
+        { name: 'focus', disabled: false, class: '-focus' },
+        { name: 'focus-visible', disabled: false, class: '-focus-visible' },
+        { name: 'disabled', disabled: true, class: '' }
+      ]
+    %>
+
+    <table class="c-table  sg-button-table">
+      <thead>
+        <th></th>
+        <% button_states.each do |state| %>
+        <th scope="col">
+          <%= state[:name] %>
+        </th>
+        <% end %>
+      </thead>
+
+      <tbody>
+        <% button_themes.each do |theme| %>
+        <tr>
+          <th scope="row" class="u-txt-lt">
+            <%= theme[:name] %>
+            <div class="sg-button-classname"><%= tclass %><%= theme[:class] %></div>
+          </th>
+          <% button_states.each do |state| %>
+          <td>
+            <%
+              if (state == 'default')
+                class_list = "#{tclass}  #{sclass}"
+              else 
+                class_list = "#{tclass}#{theme[:class]}  #{sclass}#{state[:class]}"
+              end
+            %>
+            <%= button_tag theme[:example],
+                        type: 'button',
+                        class: class_list,
+                        disabled: state[:disabled]
+            %>
+          </td>
+          <% end %>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+
+    <h2 class="sg-heading-2">Simple Nav</h2>
+
+    <nav>
+      <ul class=" c-simple-nav test-supersite-junior-program-nav">
+        <li class="c-simple-nav__item">
+          <a class="c-simple-nav__link  l-stack  l-stack--xs  l-stack--ctr  is-active" href="javascript://">
+            <div role="presentation" class="c-simple-nav__image  c-simple-nav__image--dashboard"></div>
+            <span class="c-simple-nav__label">Dashboard</span>
+          </a>
+        </li>
+
+        <li class="c-simple-nav__item">
+          <a class="c-simple-nav__link  l-stack  l-stack--xs  l-stack--ctr" href="javascript://">
+            <div role="presentation" class="c-simple-nav__image  c-simple-nav__image--content"></div>
+            <span class="c-simple-nav__label">Content</span>
+          </a>
+        </li>
+
+        <li class="c-simple-nav__item">
+          <a class="c-simple-nav__link  l-stack  l-stack--xs  l-stack--ctr" href="javascript://">
+            <div role="presentation" class="c-simple-nav__image  c-simple-nav__image--progress"></div>
+            <span class="c-simple-nav__label">Progress</span>
+          </a>
+        </li>
+
+        <li class="c-simple-nav__item">
+          <a class="c-simple-nav__link  l-stack  l-stack--xs  l-stack--ctr" href="javascript://">
+            <div role="presentation" class="c-simple-nav__image  c-simple-nav__image--grownups"></div>
+            <span class="c-simple-nav__label">Grown-ups</span>
+          </a>
+        </li>
+
+      </ul>
+    </nav>
+  </div>
+</div>

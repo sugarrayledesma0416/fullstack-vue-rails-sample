@@ -1,0 +1,76 @@
+<% content_for(:body_classes, "  ns-newcsslib   ns-responsive  standard_layout") %>
+<% content_for(:css_head, stylesheet_link_tag("music/features/toc/main") )%>
+
+<div id="main_content" class="ns-music-v1">
+  <% if @presenter.entries.present? %>
+    <div class="c-box  c-box--bubble-wrap">
+      <table class="c-table">
+        <thead>
+          <tr class="c-header-row">
+            <th>Lesson</th>
+            <th>Strand</th>
+            <th>Activity</th>
+            <th>Question</th>
+            <th>Student response</th>
+            <th>Explanation</th>
+            <th>Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @presenter.entries.each do |entry| %>
+            <% entry[:explanations].each_with_index do |explanation, index| %>
+              <tr class="c-row">
+                <% if index == 0 %>
+                  <td>
+                    <%= link_to(
+                        entry[:activity].lesson.name.html_safe,
+                        entry[:lesson_path],
+                      ) %>
+                  </td>
+                  <td>
+                    <%= entry[:activity].lesson_strand_label %>
+                  </td>
+                  <td>
+                    <%= content_tag(
+                          :a,
+                          entry[:activity].title.html_safe,
+                          {
+                            href: activity_path(entry[:activity]),
+                          }
+                        ) %>
+                  </td>
+                  <td>
+                    <%= entry[:question_label] %>
+                  </td>
+                  <td>
+                    <%= entry[:student_response].html_safe %>
+                  </td>
+                <% else %>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                <% end %>
+                <td>
+                  <%= explanation %>
+                </td>
+                <td>
+                  <%= content_tag(
+                        :a,
+                        'Details',
+                        {
+                          href: entry[:details_path]
+                        }
+                      ) %>
+                </td>
+              </tr>
+            <% end %>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  <% else %>
+    No overall comment or grading suggestion have been rejected.
+  <% end %>
+</div>

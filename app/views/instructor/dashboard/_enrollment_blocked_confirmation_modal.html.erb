@@ -1,0 +1,33 @@
+<div 
+  class="c-modal  c-modal--md  js-modal  js-delete-dialog 
+         js-block-enrollment-section-<%= section.id %>-modal  u-hidden">
+  <% enrollment_status = section.open_to_students? ? 'open' : 'closed' %>
+  <div role="dialog" aria-label="Enrollment confirmation modal" class="c-modal__box  js-modal-box  js-modal-a11y">
+    <button class="c-modal__close-button  c-no-button  js-x-close  js-modal-close">
+      <span class="c-icon  c-icon--md  c-icon--close"></span>
+      <span class="u-screen-reader-only">Close dialog</span>
+    </button>
+    <div role="document" class="js-modal-content">
+      <div class="c-panel  c-panel--padded  u-mar-0">
+        <div class="c-modal__body">
+          <h3 class="c-heading--md"><span class="js-modal-title-status"><%= enrollment_status.capitalize %></span> Enrollment</h3>
+          <p>
+            <strong><%= section.name %></strong> is currently
+            <span class="js-modal-message-status"><%= enrollment_status %></span> to student enrollment.</br>
+            Are you sure you want to
+            <span class="js-modal-message-question">
+            <%= section.open_to_students? ?  'prevent further student enrollment?' : 'allow students to enroll?'%>
+            </span>
+          </p>
+        </div>
+        <div class="c-panel__footer">
+          <div class="c-button-group  u-mar-0  u-txt-rt">
+            <button type="button" class="c-button  js-modal-close  js-cancel-button">Cancel</button>
+            <button type="button" class="c-button  c-button--primary  js-accept-button">Confirm</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="u-screen-reader-only" tabindex="-1">Dialog end</button>
+  </div>
+</div>

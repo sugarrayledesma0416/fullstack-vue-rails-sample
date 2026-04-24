@@ -1,0 +1,65 @@
+<activity activity_type="virtual_chat" language="es" title="Preguntas personales - Virtual chat">
+  <dl>One of your classmates wants to know about what you like to do on vacation. Listen to his questions and record your answers.</dl>
+  <items>
+    <style>
+      <item_numbers>hide</item_numbers>
+      <avatar><image id="120966"/></avatar>
+    </style>
+    <reference type="model">
+      <body>
+        <b>Your classmate asks:</b> ¿Qué tiempo hace hoy?<br/>
+        <b>You say:</b> Hoy hace mucho frío.<br/>
+        <br/>
+        <b>Your classmate asks:</b> ¿Qué te gusta hacer en las vacaciones?<br/>
+        <b>You say:</b> En las vacaciones me gusta viajar y nadar.<br/>
+      </body>
+      <audio id="120955"/>
+    </reference>
+    <item>
+      <turns>
+        <turn>
+          <audio id="120956" gender="male"/>
+          <audio id="109678" gender="female"/>
+        </turn>
+        <turn>
+          <audio id="120957" gender="male"/>
+          <audio id="109679" gender="female"/>
+        </turn>
+        <turn>
+          <audio id="120958" gender="male"/>
+          <audio id="109680" gender="female"/>
+        </turn>
+        <turn>
+          <audio id="120959" gender="male"/>
+          <audio id="109681" gender="female"/>
+        </turn>
+        <!-- not using these for now to keep activity shorter
+        <turn>
+          <audio id="120960" gender="male"/>
+          <audio id="109682" gender="female"/>
+        </turn>
+        <turn>
+          <audio id="120961" gender="male"/>
+          <audio id="109683" gender="female"/>
+        </turn>
+        <turn>
+          <audio id="120962" gender="male"/>
+          <audio id="109684" gender="female"/>
+        </turn>
+        <turn>
+          <audio id="120963" gender="male"/>
+          <audio id="109685" gender="female"/>
+        </turn>
+        <turn>
+          <audio id="120964" gender="male"/>
+          <audio id="109686" gender="female"/>
+        </turn>
+        <turn>
+          <audio id="120965" gender="male"/>
+          <audio id="109687" gender="female"/>
+        </turn>    
+        -->
+      </turns>
+    </item>
+  </items>
+</activity>

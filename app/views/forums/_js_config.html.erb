@@ -1,0 +1,8 @@
+<% content_for(:js_head) do %>
+  <script type="text/javascript">
+    VHL.ForumsConfig = {
+      baseDir: 'forums/',
+      audioEndpoint: '<%= Rails.application.config.multimedia.forums.recording_endpoint %>'
+    };
+  </script>
+<% end %>

@@ -1,0 +1,84 @@
+<% content_for(:css_head, wicked_pdf_stylesheet_link_tag("pdf_course_summary")) %>
+
+<div data-course="info" class="summary_info ui-helper-clearfix">
+  <div data-course="name" class="course_name hidden_helper"><%= @course.name %></div>
+  <div class="summary_dates">
+  <div data-course="start_date" class="summary_start_date"><span class="summary_label">Start date</span><%= format_date_time(@course.start_date) %></div>
+  <div data-course="end_date" class="summary_end_date"><span class="summary_label">End date</span><%= format_date_time(@course.end_date) %></div>
+  </div>
+</div>
+
+<div data-course="lessons" class="summary_lessons">
+  <div data-course="first_unit"><span class="summary_label">First <%= (current_program.unit_label || 'Unit').downcase %></span><%= @course.first_unit.name %></div>
+  <div data-course="last_unit" class="last_unit"><span class="summary_label">Last <%= (current_program.unit_label || 'Unit').downcase %></span><%= @course.last_unit.name %></div>
+
+  <div data-course="access_level">
+    <span class="summary_label">Access level</span>
+    <%= @course_packages_names.to_sentence %>
+  </div>
+</div>
+
+<div data-course="gradebook" class="summary_categories"><span class="summary_label">Gradebook</span>
+  <% @course.categories.each do |category| -%>
+  <div data-course="category_<%= category.id %>" class="summary_each_category">
+    <div class="summary_category_info ui-helper-clearfix">
+      <div data-course="category_name" class="summary_category_name"><%= category.name %></div>
+      <div data-course="category_weighting_percent" class="summary_category_weight"><%= "#{category.weighting_percent}%" %></div>
+    </div>
+
+    <div class="category_settings ui-helper-clearfix">
+      <div data-course="category_organization" class="category_setting_title">
+        <span>Organization:</span>
+      </div>
+
+      <div class="category_setting_settings">
+        <div data-course="category_credit_only">
+          <%= "For all assignments in this category, students will receive full credit regardless of their score: #{(category.credit_only? ? 'Yes' : 'No')}" %>
+        </div>
+      </div>
+    </div>
+
+    <div class="category_settings ui-helper-clearfix">
+      <div data-course="category_grading" class="category_setting_title">
+        <span>Grading:</span>
+      </div>
+
+      <div class="category_setting_settings">
+      <div data-course="category_max_attempts"><%= "Maximum Attempts: #{category_max_attempts(category)}" %></div>
+      <div data-course="drop_low_scores"><%= "Number of lowest grades dropped: #{category.drop_low_scores}" %></div>
+      <div data-course="grading_strictness" class="summary_grading_strictness"><span>Grading Strictness</span>
+        <ul class="grading">
+          <li data-course="grading_accents"><%= "Accents must match: #{(category.current_scoring_ruleset.ignore_accents? ? 'No' : 'Yes')}" %></li>
+          <li data-course="grading_capitalization"><%= "Capitalization must match: #{(category.current_scoring_ruleset.ignore_capitalization? ? 'No' : 'Yes')}"  %></li>
+          <li data-course="grading_punctuation"><%= "Punctuation must match: #{(category.current_scoring_ruleset.ignore_punctuation? ? 'No' : 'Yes')}" %></li>
+        </ul>
+      </div>
+      <div data-course="enhanced_feedback" class="summary_enhanced_feedback"><span>Fill in the Blank Feedback: </span><div data-course="fib_feedback" class="fib_feedback"><%= (category.enhanced_feedback_disabled? ? 'Disabled (recommended for assessment items)' : 'Show where errors are') %></div>
+      </div>
+    </div>
+    </div>
+
+    <div class="category_settings ui-helper-clearfix">
+      <div data-course="category_lateness" class="category_setting_title">
+        <span>Lateness:</span>
+      </div>
+
+      <div class="category_setting_settings">
+        <div data-course="category_accept_late_work">
+          <%= "Students can submit overdue assignments for credit.: #{(category.accept_late_work? ? 'Yes' : 'No')}" %>
+        </div>
+        <% if category.accept_late_work? -%>
+        <div data-course="category_late_penalty">
+          <%= "Penalty assessed: #{category.late_work_penalty.humanize}" %>
+        </div>
+          <% if category.late_work_penalty != 'none' %>
+            <div data-course="category_penalty_percent">
+              <%= "Penalty amount: #{category.penalty_percent}%" %>
+            </div>
+          <% end %>
+        <% end -%>
+    </div>
+    </div>
+  </div>
+  <% end -%>
+</div>

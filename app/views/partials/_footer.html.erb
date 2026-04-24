@@ -1,0 +1,19 @@
+<div role="contentinfo" class="c-footer ns-music-v1  c-chat-activity-dis-none-on-sm  js-footer  <%= test_class('footer') %>" id="footer">
+  <p class="support_footer">
+    <% if @show_tech_support_link -%>For technical support click <%= link_to 'support.vhlcentral.com', 'https://support.vhlcentral.com', class: 'c-footer__link' %>, or submit <%= link_to 'help request', 'https://support.vhlcentral.com/hc/en-us/requests/new', target: '_blank', class: 'c-footer__link' %><% end -%>&nbsp;
+  </p>
+  <p class="copyright">
+    &copy; <%= Date.today.year %>
+    <%= link_to 'VISTA Higher Learning, Inc.', 'https://vistahigherlearning.com/', target: '_blank', class: 'c-footer__link' %> |
+    <% unless ssjr_student? %>
+      <%= link_to 'Store', 'https://vistahigherlearning.com/students', target: '_blank', class: 'c-footer__link' %> |
+    <% end %>
+    <%= link_to 'Terms of use', 'https://www.vhlcentral.com/terms_of_use', target: '_blank', class: 'c-footer__link' %> |
+    <%= link_to 'Privacy policy', privacy_policy_url, target: '_blank', class: 'c-footer__link'  %>
+  </p>
+</div>
+<% if analytics_enabled? %>
+  <%= render partial: 'partials/analytics' %>
+<% end -%>
+
+<!-- end footer -->

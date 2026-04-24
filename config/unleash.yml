@@ -1,0 +1,20 @@
+development:
+  url: "https://us.app.unleash-hosted.com/usll0023/api"
+  app_name: "m3-development"
+
+staging:
+  url: "https://us.app.unleash-hosted.com/usll0023/api"
+  app_name: "m3-staging"
+
+qa:
+  url: "https://us.app.unleash-hosted.com/usll0023/api"
+  app_name: "m3-qa"
+
+production:
+  url: "https://us.app.unleash-hosted.com/usll0023/api"
+  app_name: "m3-production"
+
+live:
+  url: "https://us.app.unleash-hosted.com/usll0023/api"
+  app_name: "m3-production"
+

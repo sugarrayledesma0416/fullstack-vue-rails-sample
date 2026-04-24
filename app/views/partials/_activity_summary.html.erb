@@ -1,0 +1,10 @@
+<% if activity_question_summary.present? && activity_question_summary.count > 1 %>
+  <div data-total-question-count="<%= total_number_of_questions %>" class="activity_type">Total Questions = <%= total_number_of_questions || 0 %></div>
+  <% activity_question_summary.each do |question_type, question_count| %>
+    <div data-activity-count="<%= question_count %>"><%= question_count %> <%= Activity.humanize_activity_type(question_type.to_s) %></div>
+  <% end %>
+<% end %>
+<% if activity_word_list %>
+  <div class="activity_type">Words:</div>
+  <div><%= activity_word_list %></div>
+<% end %>

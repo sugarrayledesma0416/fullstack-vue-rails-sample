@@ -1,0 +1,11 @@
+<div class="instructor-action-bar  instructor-action-bar--non-bg  ns-music-v1  c-mobile-tabs-view__reference-content  js-instructor-action-bar  <%= 'u-hidden' if @activity.santillana? %>">
+  <% if show_instructor_notes_link_for?(current_user, params[:controller]) %>
+    <%= render 'layouts/flash_banner', {
+      variant_selector: "instructor-note",
+      dismiss_text: "Cancel Instructor Note",
+      msg_text: "Choose the selectable area to add your Instructor Note. <br>
+                This note will appear to all students in all of your courses."
+    } %>
+    <%= render 'instructor_notes/instructor_note_controls' %>
+  <% end %>
+</div>

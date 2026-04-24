@@ -1,0 +1,61 @@
+<%= vite_javascript_tag 'entrypoints/section_navbar_select/dropdown' %>
+<% unless @hide_header %>
+
+  <%# This container has a z-index of 1 to bring it in front of
+        #page_container so the top of #page_container's (SuperSites-only)
+        box-shadow is hidden from view, making it appear that
+        the masthead & page container form one seamless sheet. %>
+  <div class="c-navbar  c-navbar--program  <%= 'c-navbar--program-jr' if supersite_junior? %>">
+
+    <div class="l-container-fluid  l-container-fluid--program-bar">
+
+      <%= render 'app_shell/navbar_program/focus_widget' %>
+
+      <% course_section_name = current_section.section_zero? ?
+        '' : "#{current_section.course.name} | #{current_section.name}" %>
+
+      <% if supersite_junior? %>
+        <%# Supersites-Jr-only  program navbar: %>
+        <div class="l-griddle  l-griddle--12  l-griddle--md-2-10  flex-align-ctr-lg  c-navbar-wrapper">
+          <div class="c-logo">
+            <%= format_program_logo_link(current_program,
+                                         current_user,
+                                         current_section) %>
+
+            <%= render partial: 'app_shell/navbar_program/course_section_selector',
+                       locals: { current_section: current_section, course_section_name: course_section_name } %>
+
+          </div> <%# / first column %>
+
+          <div class="c-user-main-menu-wrapper  u-flex-align-bottom">
+
+            <%= yield :navigation %>
+
+          </div> <%# / second column %>
+        </div>
+      <% else %>
+        <%# Everything BUT Supersites-Jr program navbar: %>
+        <div class="l-grid">
+          <div class="l-col-2  c-navbar-wrapper">
+
+            <div class="c-logo">
+              <%= format_program_logo_link(current_program,
+                                           current_user,
+                                           current_section) %>
+            </div>
+
+            <%= render partial: 'app_shell/navbar_program/course_section_selector',
+                       locals: { current_section: current_section, course_section_name: course_section_name } %>
+
+          </div> <%# / left column %>
+          <div class="l-col-10  c-user-main-menu-wrapper  u-flex-align-bottom">
+
+            <%= yield :navigation %>
+
+          </div> <%# / right column %>
+        </div> <%# / grid %>
+      <% end %>
+
+    </div> <%# / container-fluid %>
+  </div> <%# / program navbar %>
+<% end %>

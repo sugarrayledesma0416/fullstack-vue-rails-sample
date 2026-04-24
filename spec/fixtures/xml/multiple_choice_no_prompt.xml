@@ -1,0 +1,20 @@
+<activity activity_type="multiple_choice" language="es" title="title text">
+	<dl>Instructions</dl>
+	<items>
+    <style>
+      	<item_numbers>show</item_numbers>
+    </style>
+    <item>
+			<choices>
+				<distractor>wrong answer</distractor>
+				<answer>right answer</answer>
+			</choices>
+		</item>
+		<item>
+			<choices>
+				<answer>right answer</answer>
+				<distractor>wrong answer</distractor>
+			</choices>
+		</item>
+	</items>
+</activity>

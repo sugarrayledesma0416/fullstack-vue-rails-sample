@@ -1,0 +1,518 @@
+@mixin chinese-setup {
+  font-size: $font-size-24;
+}
+
+@mixin english-setup {
+  font-size: $font-size-16;
+}
+
+@mixin activity-chinese-setup {
+  input[type="text"] {
+    margin-bottom: rpx(4);
+    vertical-align: unset;
+  }
+
+  input[type="radio"] {
+    margin-top: 0;
+    vertical-align: middle;
+  }
+
+  .ns-fill-in-the-blanks-questions {
+    .questions {
+      vertical-align: top;
+      margin-top: rpx(-11);
+    }
+  }
+
+  .answers,
+  .c-list-reference__list,
+  .items,
+  .ns-recording-v2-questions, 
+  .student_response_area .auto_graded_question {
+    > ::marker {
+      font-size: $font-size-16;
+      vertical-align: top;
+    }
+
+    .partial,
+    .pending,
+    .warn {
+      background-position: 0 rpx(5);
+    }
+  }
+
+  .response_score_and_comment {
+    @include english-setup();
+    vertical-align: top;
+  }
+
+  .c-audio-transcript-container.c-transcripts {
+    font-size: $font-size-14;
+  }
+
+  .c-question-number {
+    @include english-setup();
+    vertical-align: top;
+  }
+
+  .ns-multiple-choice {
+    .question_heading {
+      @include chinese-setup();
+    }
+  }
+
+  .ns-dropdown-questions {
+    .correct,
+    .incorrect {
+      background-position: 0 rpx(14);
+    }
+
+    .correct,
+    .incorrect,
+    .c-select {
+      line-height: var(--default-chinese-line-height);
+    }
+
+    &.answers li {
+      line-height: var(--default-chinese-line-height);
+    }
+
+    .answer_positioning {
+      line-height: var(--default-chinese-line-height);
+
+      :lang(en) {
+        .correct,
+        .incorrect,
+        .c-select {
+          line-height: var(--select-line-height, normal);
+        }
+      }
+    }
+  }
+
+  .ns-fill-in-the-blanks-questions {
+    .answer_positioning {
+      line-height: var(--default-chinese-line-height);
+
+      .response_score_and_comment {
+        line-height: normal;
+      }
+
+      input[type="text"] {
+        line-height: var(--default-chinese-line-height);
+      }
+
+      &:has(:lang(en)) {
+        line-height: normal;
+      }
+    }
+  }
+
+  .ns-multiple-answer {
+    .answer_positioning {
+      .answer_incorrect {
+        @include english-setup;
+      }
+    }
+  }
+
+  .ns-reference-table {
+    .openended_readonly *:not(.incorrect),
+    .sample_answer_container {
+      @include chinese-setup;
+    }
+
+    .c-table-wrapper {
+      overflow-wrap: normal;
+    }
+    
+    .c-table,
+    .c-table--agenda {
+      .c-header-row > th,
+      .c-row > td {
+        @include chinese-setup;
+      }
+
+      .c-row > td:lang(en) {
+        @include english-setup;
+      }
+    }
+
+    .c-table-wrapper .c-header-row {
+      th:lang(en) {
+        @include english-setup;
+      }
+    }
+  }
+
+  .c-transcript-visibility-toggle {
+    font-size: var(--font-3, $font-size-14);
+  }
+
+  .ns-recording-v2,
+  .ns-recording-v2-questions {
+    .c-recording-controls,
+    .c-media-button-wrapper {
+      font-size: var(--font-3, $font-size-10);
+    }
+
+    .c-grade-status {
+      &::marker {
+        font-size: var(--font-3, $font-size-16);
+      }
+    }
+  }
+
+  .ns-composition {
+    .fr-element {
+      @include chinese-setup();
+      font-family: var(--default-font-stack);
+    }
+  }
+
+  .ns-open-ended-questions {
+    .c-student-answer-disclosure {
+      .openended_fieldset {
+        margin-top: 0;
+      }
+    }
+
+    .sample_answer_toggle {
+      line-height: var(--default-chinese-line-height);
+    }
+  }
+
+  .ns-dialogue-v2 {
+    line-height: var(--default-chinese-line-height);
+
+    .f-reference-chat-message__bubble :lang(zh) {
+      word-break: normal;
+      line-break: normal;
+    }
+  }
+
+  .ns-exam-reference {
+    .c-number-box {
+      @include english-setup();
+    }
+
+    .reference-exam-body> :lang(zh) {
+      line-height: var(--default-chinese-line-height);
+    }
+  }
+  
+  .ns-inline-open-ended-questions {
+    .inline label {
+      margin-left: rpx(0);
+      line-height: var(--default-chinese-line-height);
+
+      span {
+        vertical-align: top;
+      }
+    }
+  }
+
+  .c-list-reference {
+    li {
+      @include chinese-setup();
+      line-height: var(--default-chinese-line-height);
+    }
+
+    :lang(en) {
+      @include english-setup();
+    }
+  }
+
+  #vhlmmp-transcript-eng-wrapper {
+    @include english-setup();
+  }
+
+  #vhlmmp-transcript-spa-wrapper {
+    .vhlmmp-turnName {
+      @include english-setup();
+      line-height: normal;
+    }
+
+    .vhlmmp-turnContent {
+      line-height: var(--default-chinese-line-height);
+      overflow-wrap: anywhere;
+    }
+
+    .vhlmmp-transcript-scrollable {
+      overflow-x: auto;
+    }
+  }
+
+  .instructor_feedback .c-media-button-wrapper {
+    font-size: var(--font-3, $font-size-10);
+  }
+
+  .c-help-request, 
+  .c-grading-sidebar, 
+  .sbs_question_prompt {
+    @include english-setup();
+  }
+
+  .assessment-section {
+    :lang(en) {
+      i {
+        vertical-align: baseline;
+      }
+    }
+  }
+}
+
+@mixin activity-english-setup {
+  .response_score_and_comment {
+    @include english-setup();
+  }
+
+  .question-number {
+    @include english-setup();
+    vertical-align: top;
+  }
+
+  .ns-multiple-choice {
+    .question_heading {
+      @include english-setup();
+    }
+  }
+
+  .ns-multiple-answer {
+    .c-multi-answer-label--selected {
+      background-position-y: center;
+    }
+  }
+
+  .c-transcript-visibility-toggle {
+    font-size: var(--font-3, $font-size-14);
+  }
+
+  .ns-recording-v2,
+  .ns-recording-v2-questions {
+    .c-recording-controls,
+    .c-media-button-wrapper {
+      font-size: var(--font-3, $font-size-10);
+    }
+
+    .c-grade-status {
+      &::marker {
+        font-size: var(--font-3, $font-size-16);
+      }
+    }
+  }
+
+  .ns-checkbox-survey {
+    .c-checkbox-survey--heading {
+      font-size: $font-size-20;
+    }
+  }
+
+  .ns-dialogue-v2 {
+    :lang(zh) {
+      line-height: var(--default-chinese-line-height);
+    }
+  }
+                    
+  .ns-exam-reference {
+    .reference-exam-body > :lang(zh) {
+      line-height: var(--default-chinese-line-height);
+    }
+  }
+
+  .instructor_feedback .c-media-button-wrapper {
+    font-size: var(--font-3, $font-size-10);
+  }
+
+  .c-list-reference {
+    :lang(zh) {
+      line-height: var(--default-chinese-line-height);
+    }
+  }
+
+  .ns-reference-id-card {
+    .id-card__extra-info>p,
+    .id-card__extra-info>p * {
+      font-size: var(--font-3, $font-size-16);
+    }
+  }
+}
+
+&.ns-chinese-program {
+  --default-font-stack: #{$default-font-stack};
+  --default-chinese-line-height: 2em;
+
+  .c-activity-context {
+    :lang(zh) {
+      @include chinese-setup();
+    }
+    
+    .c-activity-context__directions {
+      :lang(en) {
+        @include english-setup();
+      }
+    }
+  }
+
+  .c-activity-content:lang(zh) .c-activity-main, 
+  .c-review-work-content:lang(zh) { 
+    @include chinese-setup();
+    @include activity-chinese-setup();
+  }
+
+  .c-activity-content:lang(en) .c-activity-main,
+  .c-review-work-content:lang(en) {
+    @include english-setup();
+    @include activity-english-setup();
+  }
+
+  :where(.c-activity-content .c-activity-main),
+  :where(.c-activity-content .c-activity-main) *,
+  :where(.c-review-work-content),
+  :where(.c-review-work-content) * {
+    font-size: var(--lang-font-size);
+
+    :where([lang="en"]),
+    :where([lang^="zh-"]) {
+      --lang-font-size: #{rpx(16)};
+    }
+
+    :where([lang="zh"]) {
+      --lang-font-size: #{rpx(24)};
+      vertical-align: baseline;
+    }
+
+    /*
+      Values for VideoJS controls obtained from non chinese programs.
+     */
+    .video-js {
+      --lang-font-size: #{rpx(10)};
+
+      .vjs-big-play-button {
+        --lang-font-size: #{rpx(30)};
+      }
+
+      .vjs-menu li {
+        --lang-font-size: #{rpx(12)};
+      }
+
+      .vjs-text-track-cue,
+      .vjs-progress-control:hover .vjs-progress-holder {
+        --lang-font-size: normal;
+      }
+    }
+
+    .instructor_comment_area.recorded_comment,
+    .instructor_feedback .c-media-button-wrapper,
+    .c-media-record-box .c-media-button-wrapper {
+      --lang-font-size: #{rpx(10)};
+    }
+
+    .c-video-recording-container {
+      --lang-font-size: #{rpx(18)};
+
+      .fine-uploader-container {
+        --lang-font-size: #{rpx(14)};
+      }
+    }
+
+    .f-reference-module__heading {
+      @include english-setup();
+    }
+    
+    .ns-exam-reference {
+      .reference_exam {
+        color: $gray-3;
+        font-size: $font-size-16;
+      }
+    }
+
+    .ns-multiple-answer {
+      .c-form-item__label--multi-answer {
+        color: $gray-3;
+      }
+    }
+
+    .f-reference-email {
+      .f-reference-email--header-content--address {
+        font-size: $font-size-16;
+      }
+    }
+
+    .ns-reference-id-card {
+      .id-card__extra-info--barcode-txt,
+      .id-card__extra-info--barcode-txt > * {
+        font-size: rpx(6);
+      }
+    }
+
+    :lang(en) > .f-reference-social-media {
+      .post-name {
+        --lang-font-size: #{rpx(20)};
+      }
+
+      .commenter-name:lang(en) {
+        --lang-font-size: #{rpx(16)};
+      }
+    }
+
+    :lang(zh) > .f-reference-social-media {
+      .post-name {
+        font-size: #{rpx(30)};
+      }
+    }
+
+    .ns-media-item-image {
+      --lang-font-size: #{rpx(16)};
+    }
+  }
+
+  .c-activity-content, 
+  .c-review-work-content { 
+    .c-chat-activity-container {
+      .c-chat-message__bubble,
+      .c-form-item__input--new-chat-message {
+        font-size: #{rpx(24)};
+      }
+
+      .c-form-item__input--new-chat-message::placeholder {
+        font-size: #{rpx(16)};
+      }
+
+      .c-form-item-group--chat {
+        flex-wrap: nowrap;
+      }
+    }
+
+    &:lang(zh) {
+      .c-activity-main,
+      .rw_activity_container {
+        line-height: var(--default-chinese-line-height);
+        overflow-wrap: anywhere;
+      }
+    }
+
+    .vchat-container {
+      .c-media-button-wrapper {
+        font-size: var(--font-3, $font-size-10);
+      }
+      
+      .turn-index {
+        font-size: var(--font-2, $font-size-16);
+      }
+    }
+  }
+
+  :lang(zh){
+    #dropdown_activity_menu_layer,
+    ul.auto_graded_question li, 
+    ol.items li, 
+    ol.answers li {
+      @include chinese-setup();
+    }
+  }
+
+  #dropdown_activity_menu_layer {
+    @include chinese-setup();
+  }
+}

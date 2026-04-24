@@ -1,0 +1,26 @@
+<!-- vanillify vhlModal jQuery plugin ? -->
+<%= render layout: 'modal', locals: { js_class: 'edit-section-modal' } do %>
+  <div class="c-modal__body">
+    <h3 class="c-heading--md">Edit Section</h3>
+
+    <div class= "u-allow-scroll u-sp">
+      <div class="js-form-component--section-subform-collection" data-path="create_section"> </div>
+      </div>
+    </div>
+
+    <div class="c-panel__footer  u-mar-rt-48  u-mar-lt-48">
+      <div class="c-button-group  u-mar-0  u-float-lt">
+        <button type="button"
+                class="c-button  c-button--border  js-delete-section-button  js-store-selected-course-id">
+          Delete
+        </button>
+        <%= render partial: 'modal_confirm_delete' %>
+      </div>
+
+      <div class="c-button-group  u-pad-8  u-txt-rt">
+        <button type="button" class="c-button  js-modal-close">Cancel</button>
+        <button type="button" class="c-button  c-button--primary  fc-submit-button  js-store-selected-course-id">Save</button>
+      </div>
+    </div>
+  </div>
+<% end %>

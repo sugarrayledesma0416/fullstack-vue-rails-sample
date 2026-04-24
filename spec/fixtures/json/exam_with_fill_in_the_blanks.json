@@ -1,0 +1,90 @@
+{
+ "activities": [
+  {
+   "FillInTheBlanksContent": {
+    "activity_type": "fill_in_the_blanks",
+    "question_count": 0,
+    "style": {
+     "Style": {
+      "item_numbers": true
+     }
+    },
+    "assessment_type": null,
+    "callout_icon": null,
+    "config": null,
+    "diagnostic_reference": null,
+    "dl": {
+     "node_text": ""
+    },
+    "dl_audio": null,
+    "exam_reference": {
+     "Exam": {
+      "body": {
+       "node_text": ""
+      },
+      "header": {
+       "node_text": ""
+      },
+      "rank": 1,
+      "sidebar_ref": null
+     }
+    },
+    "external_references": [],
+    "ignore_title": null,
+    "included_content": null,
+    "is_bonus": null,
+    "items": [
+     {
+      "Exam": {
+       "body": {
+        "node_text": "b"
+       },
+       "header": {
+        "node_text": "a"
+       },
+       "rank": 1,
+       "sidebar_ref": null
+      }
+     },
+     {
+      "Item": {
+       "points_possible": 2,
+       "prompt": {
+        "Prompt": {
+         "node": {
+          "node_text": " abc<wol ref=\"1\"/> def"
+         },
+         "wols": [
+          {
+           "WriteOnLine": {
+            "answers": [
+             "a",
+             "b"
+            ],
+            "ref": "1"
+           }
+          }
+         ]
+        }
+       },
+       "question_number": 1,
+       "rank": 1,
+       "sidebar_ref": null
+      }
+     }
+    ],
+    "language": "",
+    "media_items": [],
+    "points_per_response": null,
+    "strict_media_requirements": null,
+    "title": ""
+   }
+  }
+ ],
+ "activity_type": "exam",
+ "external_references": [],
+ "inline_external_references": [],
+ "language": "es",
+ "media_items": [],
+ "question_count": 0
+}

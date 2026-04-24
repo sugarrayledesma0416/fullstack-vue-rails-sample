@@ -1,0 +1,50 @@
+<% content_for(:js_head, javascript_packs_with_chunks_tag('institution_admin/external_item_templates')) %>
+
+<div class="ns-music-v1  js-external-item-templates">
+  <h1 class="c-heading--page-title">External Items</h1>
+  <%= Music::Components.button(
+        text: Music::Components.icon(
+                variant: 'add',
+                text: 'Add External Item',
+                size: 'sm'
+              ),
+        variant: 'border',
+        classes: ['u-mar-rt-0', 'u-mar-bot-32', 'js-add-external-item']
+      ) %>
+
+  <% @external_items_by_lesson.each do |lesson_name, external_items| %>
+    <div class="u-txt-gray-9  u-txt-upper"><%= lesson_name %></div>
+    <table class="u-bord-1  u-bord-gray-d">
+      <thead>
+        <tr class="c-header-row  u-txt-bold">
+          <td class="l-span-2" scope="col">Title</td>
+          <td class="l-span-2" scope="col">Category</td>
+          <td class="l-span-2" scope="col">Points Possible</td>
+          <td class="l-span-2" scope="col" colspan="2">Due Date</td>
+        </tr>
+      </thead>
+      <tbody>
+        <% external_items.each do |external_item| %>
+          <tr class="c-row">
+            <td><%= external_item[:title] %></td>
+            <td><%= external_item[:category] %></td>
+            <td><%= external_item[:points_possible] %></td>
+            <td><%= external_item[:due_date_display] %></td>
+            <td><a class="js-edit-external-item"
+                   data-external-activity-id="<%= external_item[:external_activity_id] %>"
+                   data-title="<%= external_item[:title] %>"
+                   data-category-id="<%= external_item[:category_id] %>"
+                   data-lesson-id="<%= external_item[:lesson_id] %>"
+                   data-points-possible="<%= external_item[:points_possible] %>"
+                   data-due-date="<%= external_item[:due_date] %>"
+                   href="#">
+                   <%= Music::Components.icon(variant: 'edit') %>
+                </a></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
+
+  <%= render 'institution_admin/external_item_templates/external_item_modal' %>
+</div>

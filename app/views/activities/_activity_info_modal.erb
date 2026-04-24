@@ -1,0 +1,142 @@
+<% student_activity_display_name = @activity.student_display_title
+   has_deadline = defined? @activity_presenter&.assignment&.due_date_time
+   assignment = @workset&.assignment_by_activity(@activity) || @classwork&.assignment(@activity)
+   overdue = if assignment
+               @workset&.overdue?(@activity, assignment) || @classwork&.overdue?(@activity)
+             end
+   # Chinese uses English lesson names
+   language_code = @program&.language_code == 'zh' ? 'en' : @program&.language_code %>
+<div class="c-modal  c-modal--md  c-activity-info-modal  js-modal  js-modal-a11y  js-activity-info-modal  u-hidden">
+  <div role="dialog"
+       aria-label="Details"
+       class="c-modal__box  js-modal-box  u-oflow-hid">
+    <button class="c-modal__close-button  c-no-button  js-x-close  js-modal-close  js-modal-a11y__default-focus">
+      <% if supersite_junior? %>
+        <%= Music::Components.icon(variant: 'close') %>
+      <% else %>
+        <span class="c-icon  c-icon--md  c-icon--close"></span>
+      <% end %>
+      <span class="u-screen-reader-only">Close dialog</span>
+    </button>
+    <div role="document" class="js-modal-content">
+      <div class="c-panel  c-panel--padded  c-activity-info-modal__panel  u-mar-0">
+        <div class="c-panel__header">
+          <h2 class="c-heading--modal  js-modal-a11y__header">
+            <% if supersite_junior? %>
+              Activity Details
+            <% else %>
+              <span lang="<%= language_code %>">
+                <% if current_user.student? && @activity.assessment? %>
+                  <%= sanitize(student_activity_display_name, tags: %w[span], attributes: %w[lang]) %>
+                <% else %>
+                  <%= single_line_title(@activity.title.to_s) %>
+                <% end %>
+              </span>
+            <% end %>
+            <span class="u-no-visual" lang="en">
+              <%= Activity.humanize_activity_type(@activity.activity_type)%> Activity
+            </span>
+          </h2>
+        </div>
+        <div class="c-panel__body  js-modal-a11y__content  u-pad-top-24  u-mar-bot-16">
+
+          <div class="c-activity-info-modal__section">
+            <% if supersite_junior? %>
+              <div class="c-activity-info__lesson-and-strand">
+                <span class="u-txt-bold">
+                  <%= @lesson_header[:lesson].to_s.html_safe %>:
+                </span>
+                <span>
+                  <%= @lesson_header[:strand].to_s.html_safe %>
+                </span>
+              </div>
+            <% else %>
+              <h3
+                lang="<%= language_code %>"
+                class="c-activity-info-modal__strand  u-pos-rel  u-pad-lt-8  u-txt-black"
+                style="--stripe-color: <%= @activity&.concept&.background_color %>" >
+                <%= @lesson_header[:strand].to_s.html_safe %>
+              </h3>
+              <p lang="<%= language_code %>" class="u-mar-lt-8"><%= @lesson_header[:lesson].to_s.html_safe %></p>
+            <% end %>
+            <% if defined? @activity_presenter.assignment.due_date_time %>
+              <p class="u-mar-bot-0  <%= test_class('activity-modal-due-date') %>">
+                <span class="c-activity-info-modal__due-date">
+                  <%= supersite_junior? ? 'Due Date' : 'Due' %>
+                </span>
+                <% if supersite_junior? %>
+                  <br>
+                <% end %>
+                <%= @activity_presenter.ordinalized_due_date_time %>
+                <% if has_deadline && overdue %>
+                  <span class="c-activity-context__late-tag">late</span>
+                <% end %>
+              </p>
+            <% end %>
+          </div>
+
+          <% if @activity_presenter.track_group %>
+            <% if @activity_presenter.track_group&.objective.present? %>
+              <div class="c-activity-info-modal__section  c-activity-info-modal__objective">
+                <h3>Objective</h3>
+                <%# not all activities have dl defined. %>
+                <%= @activity_presenter.track_group.objective.html_safe %>
+              </div>
+            <% end %>
+          <% end %>
+
+          <div class="c-activity-info-modal__section  c-activity-info-modal__grade-settings">
+            <h3>Grade Settings</h3>
+            <p class="u-mar-bot-0">
+              This is a <%= (@activity_presenter.activity_gradable? ? 'graded' : 'credit') %> activity.
+              <% if @activity_presenter.submittable? && !@activity_presenter.answer_key_mode? %>
+                <strong class="u-txt-bold">You have <%= @activity_presenter.attempts_remaining %> remaining.</strong>
+              <% end %>
+              <% if @activity_presenter.activity_assigned? -%>
+                For this activity, late work is <%= (@activity_presenter.late_work_accepted? ? '' : 'not') %> accepted.
+              <% end -%>
+              <% if @activity.strictness? %>
+                <%= format_scoring_ruleset(@attempt.effective_scoring_ruleset, current_program.language_code) %>
+              <% end %>
+            </p>
+          </div>
+
+          <% if @activity.page_range.present? || !@activity.hide_external_references? %>
+            <div class="c-activity-info-modal__section  c-activity-info-modal__helpful-links">
+              <h3>Helpful Links</h3>
+              <div class="c-activity-info-modal__page-number  u-mar-bot-16">
+                <%= render 'activities/page_number' %>
+              </div>
+              <% unless @activity.hide_external_references? %>
+                <ul class="c-activity-info-modal__helpful-links-list  u-pad-0">
+                  <% @activity.external_references.each do |ref| %>
+                    <li class="c-activity-info-modal__helpful-links-list-item">
+                      <%= external_reference_link(ref, current_section_id, current_program.id) %>
+                    </li>
+                  <% end %>
+                </ul>
+              <% end %>
+              <% if current_program&.has_reference_links? && !@activity.assessment? %>
+                <ul class="c-activity-info-modal__helpful-links-list  u-pad-0">
+                <% format_selectable_reference_links(current_program, @activity.lesson_id).each do |item| %>
+                  <% if item.is_a?(String) %>
+                    <h4 class="u-screen-reader-only"><%= item %></h4>
+                  <% else %>
+                    <li class="c-activity-info-modal__helpful-links-list-item">
+                      <%= link_to(item[1], class: 'c-activity-info-modal__helpful-link  js-ref-tool-link') do %>
+                        <%= item[0] %>
+                      <% end %>
+                    </li>
+                  <% end %>
+                <% end %>
+                </ul>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
+    </div>
+    <button class="u-screen-reader-only" tabindex="-1">Dialog end</button>
+  </div>
+</div>

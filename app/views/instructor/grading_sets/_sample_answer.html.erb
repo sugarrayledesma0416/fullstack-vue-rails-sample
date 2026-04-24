@@ -1,0 +1,13 @@
+<%- if question.respond_to?(:sample_answer) && question.sample_answer.present? && question.sample_answer.first.strip.size > 0 -%>
+
+  <%- if question.prompt %>
+  <br />
+  <% end%>
+  <div class="sample_answer">
+    <span class="sample_answer_title">Sample Answer:</span>
+    <div class="sample_answer_text">
+      <%= format_sample_answer(question.sample_answer) %>
+    </div>
+  </div>
+
+<%- end -%>

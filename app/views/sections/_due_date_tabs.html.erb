@@ -1,0 +1,53 @@
+<ul class="c-plain-list  js-summaries">
+  <% assignment_summaries.each do |summary| %>
+    <% isListExpanded = presenter.show_expanded?(summary) %>
+    <li class="u-mar-bot-10  js-due-date  <%= 'is-expanded' if isListExpanded %>"
+      data-duedate-url="<%= presenter.assignments_details_url(summary) %>">
+      <div class="c-box  u-mar-bot-0  js-duedate-expander" role="button" tabindex="0" aria-expanded="<%= isListExpanded %>">
+        <div class="c-date-box  u-float-lt  u-mar-rt-10" title="<%= summary.formatted_due_date %>">
+          <div class="c-date-box__month">
+            <abbr title='<%= summary.month_name%>'><%= summary.month_name_abbrev %></abbr>
+          </div>
+          <div class="c-date-box__day">
+            <%= summary.day_short %>
+          </div>
+        </div> <!-- / c-date-box -->
+        <div class="u-dis-flex  flex-justify-between"> <!-- / box__body -->
+          <div>
+            <div class="u-mar-bot-0  u-txt-bold">
+              Due <%= summary.day_name %>
+            </div>
+            <% if presenter.section&.course_show_estimated_times? %>
+            <div>
+              <span class="u-screen-reader-only">Estimated completion time:</span>
+                <% if summary.estimated_completion_time == '' %>
+                  -
+                <% else %>
+                  <%= summary.estimated_completion_time %>
+                <% end %>
+            </div>
+            <% end %>
+          </div>
+          <div>
+            <div class="u-txt-rt  <%= test_class('assignment-count') %>">
+              <%= summary.activities_remaining %> activities
+            </div>
+            <div class="u-txt-rt">
+              <%= summary.percentage_complete %>% complete
+            </div>
+          </div>
+        </div><!-- / box__body -->
+      </div> <!-- /c-box -->
+
+      <div class='c-strands-container  js-strands-container' > <!-- strands_container begin-->
+        <% if isListExpanded %>
+          <%= render partial: 'sections/assignments_by_concepts',
+                    locals: { assignment_groups: presenter.assignment_groups(summary),
+                              due_date: summary.due_date,
+                              program_language: presenter.program_language } %>
+        <% end %>
+      </div> <!-- js-strands_container end-->
+
+    </li>
+  <% end %>
+</ul> <!-- /c-list -->

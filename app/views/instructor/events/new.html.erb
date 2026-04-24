@@ -1,0 +1,16 @@
+<% content_for(:css_head, stylesheet_link_tag("dashboard")) %>
+<div data-container="event_wizard" class="event_wizard">
+  <%= form_for([:instructor, @event], :url => {:action => :create} ) do |form| %>
+  <div id="jquery_modal_error_status" class="ui-state-error ui-corner-all" data-container="jquery_modal_error_status" style="display: none;"></div>
+    <%= render 'form', :form => form %>
+  <% end %>
+
+  <div id="additional_links">
+    <div class="cancel_link">
+      <%= link_to "cancel", "#", :onclick => '$(this).event_wizard("close"); return false;'%>
+    </div>
+    <div class="link_savechanges">
+      <%= submit_tag 'save', :id => 'save-button', 'data-button' => 'submit', :onclick => 'return $(this).event_wizard("submit");', :class => "red-button prevent-default"  %>
+    </div>
+  </div>  
+</div>

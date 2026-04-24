@@ -1,0 +1,60 @@
+<div class="js-widget <%= test_class('widget')%>">
+  <% if item_position == 'summary' %>
+    <% if section.next_assignment_due %>
+      <%= link_to(
+            instructor_assignments_path(
+              program_id: section.program.id,
+              month: "#{section.next_assignment_due.due_date.strftime('%Y-%m')}"
+            ),
+            class: 'c-duedate') do %>
+            <span><%= section.next_assignment_due.due_date.strftime('%b') %></span>
+            <span><%= section.next_assignment_due.due_date.strftime('%d') %></span>
+      <% end %>
+    <% else %>
+      <div class="c-no-assignments-due">
+        -- --
+      </div>
+    <% end %>
+    <%= render 'days_to_show_due_date', section: section, display_class: 'js-due-date-scheduled'%>
+  <% else %>
+    <div class="c-cumulative-item">
+      <span class="c-section-detail__item-icon">
+        <%= inline_svg_tag("instructor_dashboard/icons/assignment_calendar.svg") %>
+      </span>
+      <% if section.next_assignment_due %>
+        <%= link_to(
+              'Next due date',
+              section.next_assignment_due ? instructor_assignments_path(
+                program_id: section.program.id,
+                month: "#{section.next_assignment_due.due_date.strftime('%Y-%m')}"
+              ) : 'javascript://',
+              class: 'c-section-detail__item-button--mobile'
+            ) %>
+        <%= link_to(
+            instructor_assignments_path(
+              program_id: section.program.id,
+              month: section.next_assignment_due.due_date.strftime('%Y-%m')
+            ),
+            class: 'c-section-average--number  c-duedate') do %>
+            <span><%= section.next_assignment_due.due_date.strftime('%b') %></span>
+            <span><%= section.next_assignment_due.due_date.strftime('%d') %></span>
+        <% end %>
+      <% else%>
+        <span class="u-txt-gray-6  c-no-assignments-due">
+          No assignments due.
+        </span>
+      <% end %>
+    </div>
+    <%= link_to(
+          'Next due date',
+          section.next_assignment_due ? instructor_assignments_path(
+            program_id: section.program.id,
+            month: "#{section.next_assignment_due.due_date.strftime('%Y-%m')}"
+          ) : 'javascript://',
+          class: "c-button  c-button--border  c-section-detail__item-button  is-navigable #{!section.next_assignment_due ? 'is-disabled' : ''}"
+        ) %>
+    
+    <%= render :partial => 'days_to_show_due_date' ,:locals => {section: section }%>
+  <% end %>
+</div>
+

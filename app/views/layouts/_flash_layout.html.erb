@@ -1,0 +1,28 @@
+<%#
+    Pass in local vars:
+    key:      'warning', 'error', 'success' (or leave blank)
+    classes:  Any extra classes to add to the parent.
+%>
+
+<div class='c-flash-banner  c-flash-banner--<%= key %>  js-flash-banner  <%= classes ||= '' %> <%= test_class("flash-#{key}") %>'>
+
+  <a class="c-flash-banner__close-link"
+     href="javascript://"
+     onclick="$(this).parents('.js-flash-banner').setState('hidden');">
+    <span class="u-screen-reader-only">Close</span>
+    <span aria-hidden="true">&times;</span>
+  </a>
+
+  <div class="l-media">
+    <% unless key.blank? %>
+      <div class="l-media__img">
+        <span class="c-flash-banner__icon  c-flash-banner__icon--<%= key %>"></span>
+        <span class="u-screen-reader-only"><%= key %></span>
+      </div>
+    <% end %>
+    <div class="l-media__body">
+      <span><%= yield %></span>
+    </div>
+  </div> <!-- / l-media -->
+
+</div> <!-- / c-flash-banner -->

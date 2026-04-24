@@ -1,0 +1,19 @@
+<activity activity_type="composition_recording" title="Prova orale" language="it">
+  <dl>
+    Leggi le seguenti domande e scegline una a cui rispondere. Registra la tua risposta specificando all'inizio quale domanda hai scelto. Quando hai finito, invia la registrazione al tuo insegnante.
+  </dl>
+  <items>
+    <style> <!-- style block is optional -->
+    </style>
+    <reference type="text">
+      <body>
+        <ol class="normal_list" style="list-style-type: decimal;">
+        <li>Se dopo la laurea tu non trovassi il tuo lavoro ideale, accetteresti un lavoro che non ti piace pur di lavorare oppure preferiresti aspettare e continuare a cercare? Ci sono lavori che richiedono, per esempio, grandi forzi fisici o turni di notte o tanti straordinari. Ci sono lavori che proprio non vorresti fare? Dai esempi specifici e spiega il perché.</li>
+
+       <li>Preferiresti essere un impiegato o il proprietario di un'azienda? Presenta i pro e i contro di ciascuna delle due posizioni e poi di' quale preferiresti e perché. Se hai già lavorato, di' cosa hai fatto e quali erano i pro e i contro di quella posizione.</li>
+       </ol>
+      </body>
+    </reference>
+    <item/>
+  </items>
+</activity>

@@ -1,0 +1,11 @@
+/* CSS Specific to live chat */
+
+/*
+  hide-live-chat-pane is used to prevent TAB navigation
+  when live chat panel is hidden.
+  As html is shared with pchat/gchat etc so this class
+  selectively targets the live chat usecase only.
+*/
+.c-live-chat-container .hide-live-chat-pane {
+  display: none;
+}

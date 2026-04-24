@@ -1,0 +1,1034 @@
+<% content_for( :css_head, stylesheet_link_tag('maestro_activity_engine/interactive_video/main')) %>
+<% content_for( :css_head, stylesheet_link_tag('layout')) %>
+<% content_for( :css_head, stylesheet_link_tag('vol_overrides')) %>
+<% content_for( :css_head, stylesheet_link_tag('application')) %>
+<% content_for( :css_head, stylesheet_link_tag('activities')) %>
+
+<% content_for(:body_classes, "notranslate  ns-responsive  ns-activity  activities  standard_layout  interactive_video  ns-interactive-video  vol  t-vol") %>
+
+<div id="page_container" class="c-page-container  ui-helper-clearfix  js-page-container">
+    <div id="column_wrapper">
+      <div id="activity_wrapper" class="c-activity-wrapper">
+        <div id="main_content">
+          <div class="c-activity-content" role="main" id="activity_shell" lang="es">
+            <div class="c-activity-body" id="activity_body">
+              <div class="c-form  c-form--activity">
+                <form id="activity_form" autocomplete="off" class="c-activity-form"
+                  accept-charset="UTF-8" method="post">
+                  <div id="testFrame" class="ui-helper-clearfix  c-activity-main  js-activity-main">
+                    <!-- Begin Specimen page-->
+                    <div class="ns-music-v1  ns-interactive-video  ns-diagnostic">
+                      <div class="l-stack  u-pad-top-48">
+                        <h1 class="c-heading--lg">Enhance feedback specimen page</h1>
+                        <h2 class="c-heading--page-title ">Feedback Cases</h2>
+                        <p class="u-txt-16  u-mar-bot-48">
+                          This section shows enhanced feedback cases. These case are shown separately in order to distinguish
+                          isolated feedback cases. However, they can be mixed in the same item.
+                        </p>
+                        <h3 class="c-heading--md">Correct</h3>
+                        <div class="l-stack  c-diagnostic">
+                          <ol class="c-diagnostic--list  c-diagnostic--list-review">
+                            <li class="c-diagnostic--list__item  c-diagnostic-review--correct" value="">
+                              <span class="u-screen-reader-only">Correct</span>
+                              <div class="c-diagnostic--feedback">
+                                Mis hijos no comen verduras.
+                                <div class="c-diagnostic-review--correction-feedback">
+                                  <span class="u-screen-reader-only">You answered Los míos</span>
+                                  <div class="c-diagnostic-review--best-answer">
+                                    <span class="c-diagnostic__answer  c-diagnostic__answer--correct">Los míos</span>
+                                  </div>
+                                </div>
+                                no comen verduras
+                              </div>
+                            </li>
+
+                          </ol>
+                        </div>
+                        <h3 class="c-heading--md">Partial</h3>
+                        <div class="l-stack  c-diagnostic">
+                          <ol class="c-diagnostic--list  c-diagnostic--list-review">
+                            <li class="c-diagnostic--list__item  c-diagnostic-review--partial" value="">
+                              <span class="u-screen-reader-only">partial</span>
+                              <div class="c-diagnostic--feedback">
+                                Mis hijos no comen verduras.
+                                <div class="c-diagnostic-review--correction-feedback">
+                                  <span class="u-screen-reader-only">You answered Los míos</span>
+                                  <div class="c-diagnostic-review--best-answer">
+                                    <span class="c-diagnostic__answer  c-diagnostic__answer--correct">Los míos</span>
+                                  </div>
+                                </div>
+                                no
+                                <div class="c-diagnostic-review--correction-feedback">
+                                  <span class="u-screen-reader-only">You Answered blank</span>
+                                  <div class="c-diagnostic-review--student-answer">
+                                    <span class="c-diagnostic__answer--blank"></span>
+                                  </div>
+                                  <div class="c-diagnostic-review--best-answer">
+                                    <span class="u-screen-reader-only" lang='en'>Correct answer is</span>
+                                    <span class="c-diagnostic__answer">comen</span>
+                                  </div>
+
+                                </div>
+                                verduras
+                              </div>
+                            </li>
+
+                          </ol>
+                        </div>
+
+                        <h3 class="c-heading--md">Blank</h3>
+                        <div class="l-stack  c-diagnostic">
+                          <ol class="c-diagnostic--list c-diagnostic--list-review">
+                            <li class="c-diagnostic--list__item  c-diagnostic-review--incorrect" value="">
+                              <span class="u-screen-reader-only">incorrect</span>
+                              <div class="c-diagnostic--feedback">
+                                
+                                <!-- Question is here -->
+                                Mis hijos no comen verduras.
+                                <div class="c-diagnostic-review--correction-feedback">
+                                  <span class="u-screen-reader-only">You Answered blank</span>
+                                  <div class="c-diagnostic-review--student-answer">
+                                    <span class="c-diagnostic__answer--blank"></span>
+                                  </div>
+                                  <div class="c-diagnostic-review--best-answer">
+                                    <span class="u-screen-reader-only" lang='en'>Correct answer is</span>
+                                    <span class="c-diagnostic__answer">Los míos</span>
+                                  </div>
+
+                                </div>
+                                no comen verduras
+                              </div>
+                            </li>
+
+                          </ol>
+                        </div>
+                        <h3 class="c-heading--md">Missing Punctuation</h3>
+                        <div class="l-stack  c-diagnostic">
+                          <ol class="c-diagnostic--list c-diagnostic--list-review">
+                            <li class="c-diagnostic--list__item  c-diagnostic-review--incorrect" value="">
+                              <span class="u-screen-reader-only">incorrect</span>
+                              <div class="c-diagnostic--feedback">
+                                
+                                <!-- Question is here -->
+                                Buscamos las mochilas de Elena y Jorge. Buscamos
+                                <div class="c-diagnostic-review--correction-feedback">
+                                  <span class="u-screen-reader-only" lang='en'>You answered las suyas</span>
+                                  <div class="c-diagnostic-review--student-answer">
+                                    <span class="c-diagnostic__answer">las suyas</span>
+                                    <span class="c-diagnostic__answer--incorrect-punctuation  u-txt-white"
+                                      title="missing punctuation" aria-hidden="true">.</span>
+                                    <span class="u-screen-reader-only" lang='en'>missing punctuation</span>
+                                  </div>
+                                  <div class="c-diagnostic-review--best-answer">
+                                    <span class="u-screen-reader-only" lang='en'>Correct answer is</span>
+                                    <span class="c-diagnostic__answer">las suyas.</span>
+                                  </div>
+
+                                </div>
+
+                              </div>
+                            </li>
+
+                          </ol>
+                        </div>
+                        <h3 class="c-heading--md">Incorrect Punctuation</h3>
+                        <div class="l-stack  c-diagnostic">
+                          <ol class="c-diagnostic--list c-diagnostic--list-review">
+                            <li class="c-diagnostic--list__item  c-diagnostic-review--incorrect" value="">
+                              <span class="u-screen-reader-only">incorrect</span>
+                              <div class="c-diagnostic--feedback">
+                                <!-- Question is here -->
+                                ¿Cómo está usted?
+                                <div class="c-diagnostic-review--correction-feedback">
+                                  <span class="u-screen-reader-only" lang='en'>You Answered Muy, bien gracias</span>
+                                  <div class="c-diagnostic-review--student-answer">
+                                    
+                                    <span class="c-diagnostic__answer">Muy</span>
+                                    <span class="c-diagnostic__answer--incorrect-punctuation"
+                                      title="Incorrect or extra punctuation">,</span>
+                                    <span class="u-screen-reader-only" lang='en'>Incorrect or extra punctuation</span>
+                                    <span class="c-diagnostic__answer">bien</span>
+                                    <span class="c-diagnostic__answer--incorrect-punctuation u-txt-white"
+                                      title="missing punctuation" aria-hidden="true">.</span>
+                                    <span class="u-screen-reader-only" lang='en'>missing punctuation</span>
+                                    <span class="c-diagnostic__answer">gracias</span>
+                                    <span class="c-diagnostic__answer">.</span>
+                                  </div>
+                                  <div class="c-diagnostic-review--best-answer">
+                                    <span class="u-screen-reader-only" lang='en'>Correct answer is</span>
+                                    <span class="c-diagnostic__answer">Muy</span>
+                                    <span class="c-diagnostic__answer">bien,</span>
+                                    <span class="c-diagnostic__answer">gracias.</span>
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+                          </ol>
+                        </div>
+
+                        <h3 class="c-heading--md">Incorrect Word</h3>
+                        <div class="l-stack  c-diagnostic">
+                          <ol class="c-diagnostic--list c-diagnostic--list-review">
+                            <li class="c-diagnostic--list__item  c-diagnostic-review--incorrect" value="">
+                              <span class="u-screen-reader-only">incorrect</span>
+                              <div class="c-diagnostic--feedback">
+                                Su volante está descompuesto. Deben arreglar el carro
+                                <div class="c-diagnostic-review--correction-feedback">
+                                  <span class="u-screen-reader-only" lang='en'>You Answered blah</span>
+                                  <div class="c-diagnostic-review--student-answer">
+                                    <span class="c-diagnostic__answer--incorrect">blah</span>
+                                    <span class="u-screen-reader-only" lang="en">Incorrect or extra word</span>
+                                  </div>
+                                  <div class="c-diagnostic-review--best-answer">
+                                    <span class="u-screen-reader-only" lang='en'>Correct answer is</span>
+                                    <span class="c-diagnostic__answer">suyo.</span>
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+
+                          </ol>
+                        </div>
+                        <h3 class="c-heading--md">Missing Word</h3>
+                        <div class="l-stack  c-diagnostic">
+                          <ol class="c-diagnostic--list c-diagnostic--list-review">
+                            <li class="c-diagnostic--list__item  c-diagnostic-review--incorrect" value="">
+                              <span class="u-screen-reader-only">incorrect</span>
+                              <div class="c-diagnostic--feedback">
+                                <!-- Question is here -->
+                                ¿Cómo te llamas?
+                                <div class="c-diagnostic-review--correction-feedback">
+                                  <span class="u-screen-reader-only" lang='en'>You Answered Me pepe.</span>
+                                  <div class="c-diagnostic-review--student-answer">
+                                    <span class="c-diagnostic__answer">Me</span>
+                                    <span class="c-diagnostic__answer--missing-word" title="Missing word">llamo</span>
+                                    <span class="u-screen-reader-only" lang="en">Missing word</span>
+                                    <span class="c-diagnostic__answer">Pepe</span>
+                                    <span class="c-diagnostic__answer">.</span>
+                                  </div>
+                                  <div class="c-diagnostic-review--best-answer">
+                                    <span class="u-screen-reader-only" lang='en'>Correct answer is</span>
+                                    <span class="c-diagnostic__answer">Me</span>
+                                    <span class="c-diagnostic__answer">llamo</span>
+                                    <span class="c-diagnostic__answer">Pepe</span>
+                                    <span class="c-diagnostic__answer">.</span>
+                                  </div>
+                                </div>
+
+                              </div>
+                            </li>
+
+                          </ol>
+                        </div>
+                        <h3 class="c-heading--md">Accent or capitalization</h3>
+                        <div class="l-stack  c-diagnostic">
+                          <ol class="c-diagnostic--list c-diagnostic--list-review">
+                            <li class="c-diagnostic--list__item  c-diagnostic-review--incorrect" value="">
+                              <span class="u-screen-reader-only">incorrect</span>
+                              <div class="c-diagnostic--feedback">
+                                <!-- Question is here -->
+                                ¿Cómo te llamas?
+                                <div class="c-diagnostic-review--correction-feedback">
+                                  <span class="u-screen-reader-only" lang='en'>You Answered Soy de argentina</span>
+                                  <div class="c-diagnostic-review--student-answer">
+                                    <span class="c-diagnostic__answer">Soy</span>
+                                    <span class="c-diagnostic__answer">de</span>
+                                    <span class="c-diagnostic__answer  c-diagnostic__answer--non-font-size">
+                                      <span class="c-diagnostic__answer--accent  c-diagnostic__answer--txt">a</span>
+                                      <span class="u-screen-reader-only" lang="en">Incorrect accent or capitalization</span>
+                                      <span class="c-diagnostic__answer--txt">r</span>
+                                      <span class="c-diagnostic__answer--txt">g</span>
+                                      <span class="c-diagnostic__answer--txt">e</span>
+                                      <span class="c-diagnostic__answer--txt">n</span>
+                                      <span class="c-diagnostic__answer--txt">t</span>
+                                      <span class="c-diagnostic__answer--txt">i</span>
+                                      <span class="c-diagnostic__answer--txt">n</span>
+                                      <span class="c-diagnostic__answer--txt">a</span>
+                                    </span>
+                                    <span class="c-diagnostic__answer">.</span>
+                                  </div>
+                                  <div class="c-diagnostic-review--best-answer">
+                                    <span class="u-screen-reader-only" lang='en'>Correct answer is</span>
+                                    <span class="c-diagnostic__answer">Soy</span>
+                                    <span class="c-diagnostic__answer">de</span>
+                                    <span class="c-diagnostic__answer">Argentina</span>
+                                    <span class="c-diagnostic__answer">.</span>
+                                  </div>
+                                </div>
+
+                              </div>
+                            </li>
+
+                          </ol>
+                        </div>
+                        <h3 class="c-heading--md">Multiple correct answers</h3>
+                        <div class="l-stack  c-diagnostic">
+                          <ol class="c-diagnostic--list c-diagnostic--list-review">
+                            <li class="c-diagnostic--list__item  c-diagnostic-review--incorrect">
+                              <span class="u-screen-reader-only" lang="en">incorrect</span>
+                              <div class="c-diagnostic--feedback">
+                                <div class="c-diagnostic--feedback">
+                                  ¿De 
+                                  <span class="student_answer">
+                                    <div class="c-diagnostic-review--correction-feedback">
+                                      <span class="u-screen-reader-only">You Answered blank</span>
+                                      <div class="c-diagnostic-review--student-answer">
+                                        <span class="c-diagnostic__answer--blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                      </div>
+                                      <div class="c-diagnostic-review--best-answer">
+                                        <span class="u-screen-reader-only" lang="en">Correct answer is</span>
+                                        <span class="c-diagnostic__answer">dónde</span>
+                                      </div>
+                                    </div>
+                                  </span> 
+                                  eres? Soy de 
+                                  <span class="student_answer">
+                                    <div class="c-diagnostic-review--correction-feedback">
+                                      <span class="u-screen-reader-only" lang="en">You Answered Peru</span>
+                                      <div class="c-diagnostic-review--student-answer">
+                                          <span class="c-diagnostic__answer  c-diagnostic__answer--non-font-size">
+                                            <span class="c-diagnostic__answer--txt">P</span>
+                                            <span class="c-diagnostic__answer--txt">e</span>
+                                            <span class="c-diagnostic__answer--txt">r</span>
+                                            <span class="c-diagnostic__answer--accent  c-diagnostic__answer--txt">u</span>
+                                            <span class="u-screen-reader-only" lang="en">Incorrect accent or capitalization</span>
+                                          </span>
+                                      </div>
+                                      <div class="c-diagnostic-review--best-answer">
+                                        <span class="u-screen-reader-only" lang="en">Correct answer is</span>
+                                        <span class="c-diagnostic__answer">Perú.</span>
+                                      </div>
+                                      <span class="u-txt-reg  u-txt-ital" lang="en">or</span>
+                                      <div class="c-diagnostic-review--best-answer">
+                                        <span class="u-screen-reader-only" lang="en">Correct answer is</span>
+                                        <span class="c-diagnostic__answer">Perú</span>
+                                      </div>
+                                    </div>
+                                  </span> 
+                                </div>
+                              </div>
+                            </li>
+                          </ol>
+                        </div>
+                        <h2 class="c-heading--page-title ">Layout Variations</h2>
+                        <p class="u-txt-16  u-mar-bot-48">This section shows all possible ways that enhanced feedback can laid out for diagnstic and fill in the blanks activity type.
+                          <b> Some variations can only found in the old fill in the blanks. </b>
+                        </p>
+                        
+                        <!-- Begin table example-->
+                        <h3 class="c-heading--md">Table example</h3>
+                        <p class="u-txt-ital">* Fill in the blanks variation</p>
+                        <div class="l-stack  c-diagnostic">
+                          <ol class="c-diagnostic--list c-diagnostic--list-review">
+                            <li class="c-diagnostic--list__item  c-diagnostic-review--partial" value="">
+                              <div>
+                                <div class="response_score_and_comment ui-helper-clearfix">
+                                  <div class="item_score  c-grade-status__label">
+                                    Score: 6 out of 30 points
+                                  </div>
+                                </div>
+                              <span class="u-screen-reader-only">partial</span>
+                              <table class="c-table  c-table--content" data-a11y="true">
+                                <thead>
+                                  <tr class="c-header-row">
+                                    <th scope="col">Infinitivo</th>
+                                    <th scope="col">yo</th>
+                                    <th scope="col">tú</th>
+                                    <th scope="col">Ud./él/ella</th>
+                                    <th scope="col">nosotros/as</th>
+                                    <th scope="col">Uds./ellos/ellas</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr class="c-row">
+                                    <td>cantar</td>
+                                    <td>
+                                      <div class="c-diagnostic--feedback">
+                                        <div class="c-diagnostic-review--correction-feedback">
+                                          <span class="u-screen-reader-only">You Answered canto</span>
+                                          <div class="c-diagnostic-review--best-answer">
+                                            <span class="u-screen-reader-only" lang='en'>Correct answer is</span>
+                                            <span class="c-diagnostic__answer  c-diagnostic__answer--correct">canto</span>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </td>
+                                    <td>
+                                      <div class="c-diagnostic--feedback">
+                                        <div class="c-diagnostic-review--correction-feedback">
+                                          <span class="u-screen-reader-only">You Answered blank</span>
+                                          <div class="c-diagnostic-review--student-answer">
+                                            <span class="c-diagnostic__answer--blank"></span>
+                                          </div>
+                                          <div class="c-diagnostic-review--best-answer">
+                                            <span class="u-screen-reader-only" lang='en'>Correct answer is</span>
+                                            <span class="c-diagnostic__answer">cantas</span>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </td>
+                                    <td>
+                                      <div class="c-diagnostic--feedback">
+                                        <div class="c-diagnostic-review--correction-feedback">
+                                          <span class="u-screen-reader-only">You Answered .canta</span>
+                                          <div class="c-diagnostic-review--student-answer">
+                                            <span class="c-diagnostic__answer--incorrect-punctuation"
+                                              title="Incorrect or extra punctuation">.</span>
+                                            <span class="u-screen-reader-only" lang='en'>Incorrect or extra punctuation</span>
+                                            <span class="c-diagnostic__answer">canta</span>
+                                          </div>
+                                          <div class="c-diagnostic-review--best-answer">
+                                            <span class="u-screen-reader-only" lang='en'>Correct answer is</span>
+                                            <span class="c-diagnostic__answer">canta</span>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </td>
+                                    <td>
+                                      <div class="c-diagnostic--feedback">
+                                        <div class="c-diagnostic-review--correction-feedback">
+                                          <span class="u-screen-reader-only">You Answered blah</span>
+                                          <div class="c-diagnostic-review--student-answer">
+                                            <span class="c-diagnostic__answer--incorrect">blah</span>
+                                            <span class="u-screen-reader-only" lang="en">Incorrect or extra word</span>
+                                          </div>
+                                          <div class="c-diagnostic-review--best-answer">
+                                            <span class="u-screen-reader-only" lang='en'>Correct answer is</span>
+                                            <span class="c-diagnostic__answer">cantamos.</span>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </td>
+                                    <td>
+                                      <div class="c-diagnostic--feedback">
+                                        <div class="c-diagnostic-review--correction-feedback">
+                                          <span class="u-screen-reader-only">You Answered hola mundo</span>
+                                          <div class="c-diagnostic-review--student-answer">
+                                            <span class="u-screen-reader-only" lang='en'>Incorrect or extra word</span>
+                                            <span class="c-diagnostic__answer--incorrect">hola</span>
+                                            <span class="u-screen-reader-only" lang='en'>Incorrect or extra word</span>
+                                            <span class="c-diagnostic__answer--incorrect">mundo</span>
+                                          </div>
+                                          <div class="c-diagnostic-review--best-answer">
+                                            <span class="u-screen-reader-only" lang='en'>Correct answer is</span>
+                                            <span class="c-diagnostic__answer">cantan</span>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </td>
+                                  </tr>
+                                  <tr class="c-row">
+                                    <td>
+                                      <div class="c-diagnostic-review--correction-feedback">
+                                        <span class="u-screen-reader-only">You Answered préguntar</span>
+                                        <div class="c-diagnostic-review--student-answer">
+                                          <span class="c-diagnostic__answer  c-diagnostic__answer--non-font-size">
+                                            <span class="c-diagnostic__answer--txt">p</span>
+                                            <span class="c-diagnostic__answer--txt">r</span>
+                                            <span class="c-diagnostic__answer--accent  c-diagnostic__answer--txt">é</span>
+                                            <span class="u-screen-reader-only" lang="en">Incorrect accent or capitalization</span>
+                                            <span class="c-diagnostic__answer--txt">g</span>
+                                            <span class="c-diagnostic__answer--txt">u</span>
+                                            <span class="c-diagnostic__answer--txt">n</span>
+                                            <span class="c-diagnostic__answer--txt">t</span>
+                                            <span class="c-diagnostic__answer--txt">a</span>
+                                            <span class="c-diagnostic__answer--txt">r</span>
+                                          </span>
+                                        </div>
+                                        <div class="c-diagnostic-review--best-answer">
+                                          <span class="u-screen-reader-only" lang='en'>Correct answer is</span>
+                                          <span class="c-diagnostic__answer">preguntar</span>
+                                        </div>
+                                      </div>
+                                    </td>
+                                    <td>pregunto</td>
+                                    <td>
+                                      <div class="c-diagnostic--feedback">
+                                        <div class="c-diagnostic-review--correction-feedback">
+                                          <span class="u-screen-reader-only">You Answered pregu</span>
+                                          <div class="c-diagnostic-review--student-answer">
+                                            <span class="u-screen-reader-only" lang='en'>Incorrect or extra word</span>
+                                            <span class="c-diagnostic__answer--incorrect">pregu</span>
+                                          </div>
+                                          <div class="c-diagnostic-review--best-answer">
+                                            <span class="u-screen-reader-only" lang='en'>Correct answer is</span>
+                                            <span class="c-diagnostic__answer">preguntas</span>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </td>
+                                    <td>
+                                      <div class="c-diagnostic-review--correction-feedback">
+                                        <span class="u-screen-reader-only">You Answered Pregunta</span>
+                                        <div class="c-diagnostic-review--student-answer">
+                                          <span class="u-screen-reader-only" lang='en'>You Answered</span>
+                                          <span class="c-diagnostic__answer  c-diagnostic__answer--non-font-size">
+                                            <span class="c-diagnostic__answer--accent  c-diagnostic__answer--txt">P</span>
+                                            <span class="u-screen-reader-only" lang="en">Incorrect accent or capitalization</span>
+                                            <span class="c-diagnostic__answer--txt">r</span>
+                                            <span class="c-diagnostic__answer--txt">e</span>
+                                            <span class="c-diagnostic__answer--txt">g</span>
+                                            <span class="c-diagnostic__answer--txt">u</span>
+                                            <span class="c-diagnostic__answer--txt">n</span>
+                                            <span class="c-diagnostic__answer--txt">t</span>
+                                            <span class="c-diagnostic__answer--txt">a</span>
+                                          </span>
+                                        </div>
+                                        <div class="c-diagnostic-review--best-answer">
+                                          <span class="u-screen-reader-only" lang='en'>Correct answer is</span>
+                                          <span class="c-diagnostic__answer">pregunta</span>
+                                        </div>
+                                      </div>
+                                    </td>
+                                    <td>
+                                      <div class="c-diagnostic--feedback">
+                                        <div class="c-diagnostic-review--correction-feedback">
+                                          <span class="u-screen-reader-only">You Answered PregUnta</span>
+                                          <div class="c-diagnostic-review--student-answer">
+                                            <span class="u-screen-reader-only" lang='en'>Incorrect or extra word</span>
+                                            <span class="c-diagnostic__answer--incorrect">PregUnta</span>
+                                          </div>
+                                          <div class="c-diagnostic-review--best-answer">
+                                            <span class="u-screen-reader-only" lang='en'>Correct answer is</span>
+                                            <span class="c-diagnostic__answer">preguntamos</span>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </td>
+                                    <td>
+                                      <div class="c-diagnostic--feedback">
+                                        <div class="c-diagnostic-review--correction-feedback">
+                                          <span class="u-screen-reader-only">You Answered contesto</span>
+                                          <div class="c-diagnostic-review--student-answer">
+                                            <span class="u-screen-reader-only" lang='en'>Incorrect or extra word</span>
+                                            <span class="c-diagnostic__answer--incorrect">contesto</span>
+                                          </div>
+                                          <div class="c-diagnostic-review--best-answer">
+                                            <span class="u-screen-reader-only" lang='en'>Correct answer is</span>
+                                            <span class="c-diagnostic__answer">preguntan</span>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </td>
+                                  </tr>
+                                  <tr class="c-row">
+                                    <td>
+                                      <div class="c-diagnostic--feedback">
+                                        <div class="c-diagnostic-review--correction-feedback">
+                                          <span class="u-screen-reader-only">You Answered Cóntesto,</span>
+                                          <div class="c-diagnostic-review--student-answer">
+                                            <span class="u-screen-reader-only" lang='en'>Incorrect or extra word</span>
+                                            <span class="c-diagnostic__answer--incorrect">Cóntesto</span>
+                                            <span class="c-diagnostic__answer--incorrect-punctuation"
+                                              title="Incorrect or extra punctuation">,</span>
+                                            <span class="u-screen-reader-only" lang='en'>Incorrect or extra punctuation</span>
+                                          </div>
+                                          <div class="c-diagnostic-review--best-answer">
+                                            <span class="u-screen-reader-only" lang='en'>Correct answer is</span>
+                                            <span class="c-diagnostic__answer">contestar</span>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </td>
+                                    <td>
+                                      <div class="c-diagnostic--feedback">
+                                        <div class="c-diagnostic-review--correction-feedback">
+                                          <span class="u-screen-reader-only">You Answered contesto</span>
+                                          <div class="c-diagnostic-review--best-answer">
+                                            <span class="u-screen-reader-only" lang='en'>Correct answer is</span>
+                                            <span
+                                              class="c-diagnostic__answer  c-diagnostic__answer--correct">contesto</span>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </td>
+                                    <td>contestas</td>
+                                    <td>
+                                      <div class="c-diagnostic--feedback">
+                                        <div class="c-diagnostic-review--correction-feedback">
+                                          <span class="u-screen-reader-only">You Answered blank</span>
+                                          <div class="c-diagnostic-review--student-answer">
+                                            <span class="c-diagnostic__answer--blank"></span>
+                                          </div>
+                                          <div class="c-diagnostic-review--best-answer">
+                                            <span class="u-screen-reader-only" lang='en'>Correct answer is</span>
+                                            <span class="c-diagnostic__answer">contesta</span>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </td>
+                                    <td>
+                                      <div class="c-diagnostic--feedback">
+                                        <div class="c-diagnostic-review--correction-feedback">
+                                          <span class="u-screen-reader-only">You Answered cuntestamos</span>
+                                          <div class="c-diagnostic-review--student-answer">
+                                            <span class="u-screen-reader-only" lang='en'>Incorrect or extra word</span>
+                                            <span class="c-diagnostic__answer--incorrect">cuntestamos</span>
+                                          </div>
+                                          <div class="c-diagnostic-review--best-answer">
+                                            <span class="u-screen-reader-only" lang='en'>Correct answer is</span>
+                                            <span class="c-diagnostic__answer">contestamos</span>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </td>
+                                    <td>
+                                      
+                                      <div class="c-diagnostic--feedback">
+                                        <div class="c-diagnostic-review--correction-feedback">
+                                          <span class="u-screen-reader-only">You Answered contestan</span>
+                                          <div class="c-diagnostic-review--best-answer">
+                                            <span class="u-screen-reader-only" lang='en'>Correct answer is</span>
+                                            <span
+                                              class="c-diagnostic__answer  c-diagnostic__answer--correct">contestan</span>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                            </li>
+                          </ol>
+                        </div>
+                        <!-- Ends table example-->
+                        <h3 class="c-heading--md">Multiple inputs example</h3>
+                        <div class="l-stack  c-diagnostic">
+                          <ol class="c-diagnostic--list c-diagnostic--list-review">
+                            <li class="c-diagnostic--list__item  c-diagnostic-review--incorrect" value="">
+                              <span class="u-screen-reader-only">incorrect</span>
+                              <div class="c-diagnostic--feedback">
+                                <!-- Question is here -->
+                                Hoy es martes. Mañana es
+                                <div class="c-diagnostic-review--correction-feedback">
+                                  <span class="u-screen-reader-only">You Answered Miercoles</span>
+                                  <div class="c-diagnostic-review--student-answer">
+                                    <span class="c-diagnostic__answer  c-diagnostic__answer--non-font-size">
+                                      <span class="c-diagnostic__answer--accent  c-diagnostic__answer--txt">M</span>
+                                      <span class="u-screen-reader-only" lang="en">Incorrect accent or capitalization</span>
+                                      <span class="c-diagnostic__answer--txt">i</span>
+                                      <span class="c-diagnostic__answer--accent  c-diagnostic__answer--txt">e</span>
+                                      <span class="u-screen-reader-only" lang="en">Incorrect accent or capitalization</span>
+                                      <span class="c-diagnostic__answer--txt">r</span>
+                                      <span class="c-diagnostic__answer--txt">c</span>
+                                      <span class="c-diagnostic__answer--txt">o</span>
+                                      <span class="c-diagnostic__answer--txt">l</span>
+                                      <span class="c-diagnostic__answer--txt">e</span>
+                                      <span class="c-diagnostic__answer--txt">s</span>
+                                    </span>
+                                  </div>
+                                  <div class="c-diagnostic-review--best-answer">
+                                    <span class="u-screen-reader-only" lang='en'>Correct answer is</span>
+                                    <span class="c-diagnostic__answer">miércoles</span>
+                                  </div>
+                                </div>
+                                .Ayer fue (Yesterday was)
+                                <div class="c-diagnostic-review--correction-feedback">
+                                  <span class="u-screen-reader-only">You Answered blank</span>
+                                  <div class="c-diagnostic-review--student-answer">
+                                    <span class="c-diagnostic__answer--blank"></span>
+                                  </div>
+                                  <div class="c-diagnostic-review--best-answer">
+                                    <span class="u-screen-reader-only" lang='en'>Correct answer is</span>
+                                    <span class="c-diagnostic__answer">lunes</span>
+                                  </div>
+                                </div>
+                              </div>
+                              .
+                            </li>
+                            <li class="c-diagnostic--list__item  c-diagnostic-review--incorrect" value="">
+                              <span class="u-screen-reader-only">incorrect</span>
+                              <div class="c-diagnostic--feedback">
+                                Ayer fue sábado. Mañana es
+                                <div class="c-diagnostic-review--correction-feedback">
+                                  <span class="u-screen-reader-only">You Answered domingo</span>
+                                  <div class="c-diagnostic-review--student-answer">
+                                    <span class="c-diagnostic__answer--incorrect">domingo</span>
+                                  </div>
+                                  <div class="c-diagnostic-review--best-answer">
+                                    <span class="u-screen-reader-only" lang='en'>Correct answer is</span>
+                                    <span class="c-diagnostic__answer">lunes</span>
+                                  </div>
+                                </div>
+                                .Ayer fue (Yesterday was)
+                                <div class="c-diagnostic-review--correction-feedback">
+                                  <span class="u-screen-reader-only">You Answered hola mundo</span>
+                                  <div class="c-diagnostic-review--student-answer">
+                                    <span class="u-screen-reader-only" lang='en'>Incorrect or extra word</span>
+                                    <span class="c-diagnostic__answer--incorrect">hola</span>
+                                    <span class="u-screen-reader-only" lang='en'>Incorrect or extra word</span>
+                                    <span class="c-diagnostic__answer--incorrect">mundo</span>
+                                  </div>
+                                  <div class="c-diagnostic-review--best-answer">
+                                    <span class="u-screen-reader-only" lang='en'>Correct answer is</span>
+                                    <span class="c-diagnostic__answer">domingo</span>
+                                  </div>
+                                </div>
+                              </div>
+                              .
+                            </li>
+                            <li class="c-diagnostic--list__item  c-diagnostic-review--correct" value="">
+                              <span class="u-screen-reader-only">correct</span>
+                              <div class="c-diagnostic--feedback">
+                              Ayer fue domingo. Hoy es 
+                              <div class="c-diagnostic-review--correction-feedback">
+                                <span class="u-screen-reader-only">You Answered lunes</span>
+                                <div class="c-diagnostic-review--best-answer">
+                                  <span class="u-screen-reader-only" lang='en'>Correct answer is</span>
+                                  <span class="c-diagnostic__answer  c-diagnostic__answer--correct">lunes</span>
+                                </div>
+                              </div>
+                              . Mañana es
+                              <div class="c-diagnostic-review--correction-feedback">
+                                <div class="c-diagnostic-review--best-answer">
+                                  <span class="u-screen-reader-only" lang='en'>Correct answer is</span>
+                                  <span class="c-diagnostic__answer  c-diagnostic__answer--correct">martes</span>
+                                </div>
+                              </div>
+                              .
+                            </div>
+                            </li>
+                            
+                        </div>
+                        </ol>
+                        <h3 class="c-heading--md">Multiple inputs in a row without text between</h3>
+                        <div class="l-stack  c-diagnostic">
+                          <ol class="c-diagnostic--list c-diagnostic--list-review">
+                            <li class="c-diagnostic--list__item  c-diagnostic-review--correct" value="">
+                              <span class="u-screen-reader-only">correct</span>
+                              <div class="c-diagnostic--feedback">
+                              Mañana es viernes. 
+                              <div class="c-diagnostic-review--correction-feedback">
+                                <span class="u-screen-reader-only">You Answered Hoy</span>
+                                <div class="c-diagnostic-review--best-answer">
+                                  <span class="u-screen-reader-only" lang='en'>Correct answer is</span>
+                                  <span class="c-diagnostic__answer  c-diagnostic__answer--correct">Hoy</span>
+                                </div>
+                              </div>
+                              <div class="c-diagnostic-review--correction-feedback">
+                                <span class="u-screen-reader-only">You Answered es</span>
+                                <div class="c-diagnostic-review--best-answer">
+                                  <span class="u-screen-reader-only" lang='en'>Correct answer is</span>
+                                  <span class="c-diagnostic__answer  c-diagnostic__answer--correct">es</span>
+                                </div>
+                              </div>
+                              <div class="c-diagnostic-review--correction-feedback">
+                                <span class="u-screen-reader-only">You Answered jueves.</span>
+                                <div class="c-diagnostic-review--best-answer">
+                                  <span class="u-screen-reader-only" lang='en'>Correct answer is</span>
+                                  <span class="c-diagnostic__answer  c-diagnostic__answer--correct">jueves.</span>
+                                </div>
+                              </div>
+                               Ayer fue miércoles.
+                            </div>
+                            </li>
+                            <li class="c-diagnostic--list__item  c-diagnostic-review--incorrect" value="">
+                              <span class="u-screen-reader-only">incorrect</span>
+                              <div class="c-diagnostic--feedback">
+                              Mañana es viernes. 
+                              <div class="c-diagnostic-review--correction-feedback">
+                                <span class="u-screen-reader-only">You Answered blank</span>
+                                <div class="c-diagnostic-review--student-answer">
+                                  <span class="c-diagnostic__answer--blank"></span>
+                                </div>
+                                <div class="c-diagnostic-review--best-answer">
+                                  <span class="u-screen-reader-only" lang='en'>Correct answer is</span>
+                                  <span class="c-diagnostic__answer">Hoy</span>
+                                </div>
+                              </div>
+                              <div class="c-diagnostic-review--correction-feedback">
+                                <span class="u-screen-reader-only">You Answered blank</span>
+                                <div class="c-diagnostic-review--student-answer">
+                                  <span class="c-diagnostic__answer--blank"></span>
+                                </div>
+                                <div class="c-diagnostic-review--best-answer">
+                                  <span class="u-screen-reader-only" lang='en'>Correct answer is</span>
+                                  <span class="c-diagnostic__answer">es</span>
+                                </div>
+                              </div>
+                              <div class="c-diagnostic-review--correction-feedback">
+                                <div class="c-diagnostic-review--student-answer">
+                                  <span class="u-screen-reader-only" lang='en'>Incorrect or extra word</span>
+                                  <span class="c-diagnostic__answer--incorrect">blah.</span>
+                                </div>
+                                <div class="c-diagnostic-review--best-answer">
+                                  <span class="u-screen-reader-only" lang='en'>Correct answer is</span>
+                                  <span class="c-diagnostic__answer">jueves.</span>
+                                </div>
+                              </div>
+                              Ayer fue miércoles.
+                            </div>
+                            </li>
+                            <li class="c-diagnostic--list__item  c-diagnostic-review--incorrect" value="">
+                              <span class="u-screen-reader-only">incorrect</span>
+                              <div class="c-diagnostic--feedback">
+                              Mañana es viernes. 
+                              <div class="c-diagnostic-review--correction-feedback">
+                                <span class="u-screen-reader-only">You Answered blank</span>
+                                <div class="c-diagnostic-review--student-answer">
+                                  <span class="c-diagnostic__answer--missing-word" title="Missing word">Hoy</span>
+                                  <span class="u-screen-reader-only" lang="en">Missing word</span>
+                                </div>
+                                <div class="c-diagnostic-review--best-answer">
+                                  <span class="u-screen-reader-only" lang='en'>Correct answer is</span>
+                                  <span class="c-diagnostic__answer">Hoy</span>
+                                </div>
+                              </div>
+                              <div class="c-diagnostic-review--correction-feedback">
+                                <span class="u-screen-reader-only">You Answered es,</span>
+                                <div class="c-diagnostic-review--student-answer">
+                                  <span class="c-diagnostic__answer">es</span>
+                                    <span class="c-diagnostic__answer--incorrect-punctuation"
+                                      title="Incorrect or extra punctuation">,</span>
+                                    <span class="u-screen-reader-only" lang='en'>Incorrect or extra punctuation</span>
+                                </div>
+                                <div class="c-diagnostic-review--best-answer">
+                                  <span class="u-screen-reader-only" lang='en'>Correct answer is</span>
+                                  <span class="c-diagnostic__answer">es</span>
+                                </div>
+                              </div>
+                              <div class="c-diagnostic-review--correction-feedback">
+                                <span class="u-screen-reader-only">You Answered jueves</span>
+                                <div class="c-diagnostic-review--student-answer">
+                                  <span class="c-diagnostic__answer  c-diagnostic__answer--non-font-size">
+                                    <span class="c-diagnostic__answer--accent  c-diagnostic__answer--txt">J</span>
+                                    <span class="u-screen-reader-only" lang="en">Incorrect accent or capitalization</span>
+                                    <span class="c-diagnostic__answer--txt">u</span>
+                                    <span class="c-diagnostic__answer--txt">e</span>
+                                    <span class="c-diagnostic__answer--txt">v</span>
+                                    <span class="c-diagnostic__answer--txt">e</span>
+                                    <span class="c-diagnostic__answer--txt">s</span>
+                                  </span>
+                                  <span class="c-diagnostic__answer--incorrect-punctuation u-txt-white"
+                                    title="missing punctuation" aria-hidden="true">.</span>
+                                    <span class="u-screen-reader-only" lang='en'>missing punctuation</span>
+                                </div>
+                                <div class="c-diagnostic-review--best-answer">
+                                  <span class="u-screen-reader-only" lang='en'>Correct answer is</span>
+                                  <span class="c-diagnostic__answer">jueves.</span>
+                                </div>
+                              </div>
+                              Ayer fue miércoles.
+                            </div>
+                            </li>
+                        </div>
+                        </ol>
+                      </div>
+                      <h3 class="c-heading--md">Multiple inputs staring and ending with input</h3>
+                        <div class="l-stack  c-diagnostic">
+                          <ol class="c-diagnostic--list c-diagnostic--list-review">
+                            <li class="c-diagnostic--list__item  c-diagnostic-review--correct" value="">
+                              <span class="u-screen-reader-only">correct</span>
+                              <div class="c-diagnostic--feedback">
+                              <div class="c-diagnostic-review--correction-feedback">
+                                <span class="u-screen-reader-only">You Answered Mañana</span>
+                                <div class="c-diagnostic-review--best-answer">
+                                  <span class="u-screen-reader-only" lang='en'>Correct answer is</span>
+                                  <span class="c-diagnostic__answer  c-diagnostic__answer--correct">Mañana</span>
+                                </div>
+                              </div>
+                              es viernes. Hoy es jueves. Ayer fue
+                              <div class="c-diagnostic-review--correction-feedback">
+                                <span class="u-screen-reader-only">You Answered  miércoles.</span>
+                                <div class="c-diagnostic-review--best-answer">
+                                  <span class="u-screen-reader-only" lang='en'>Correct answer is</span>
+                                  <span class="c-diagnostic__answer  c-diagnostic__answer--correct">miércoles.</span>
+                                </div>
+                              </div>
+                            </div>
+                            </li>
+                            <li class="c-diagnostic--list__item  c-diagnostic-review--incorrect" value="">
+                              <span class="u-screen-reader-only">incorrect</span>
+                              <div class="c-diagnostic--feedback">
+                              <div class="c-diagnostic-review--correction-feedback">
+                                <span class="u-screen-reader-only">You Answered blank</span>
+                                <div class="c-diagnostic-review--student-answer">
+                                  <span class="c-diagnostic__answer--blank"></span>
+                                </div>
+                                <div class="c-diagnostic-review--best-answer">
+                                  <span class="u-screen-reader-only" lang='en'>Correct answer is</span>
+                                  <span class="c-diagnostic__answer">Mañana</span>
+                                </div>
+                              </div>
+                              es viernes. Hoy es jueves. Ayer fue
+                              <div class="c-diagnostic-review--correction-feedback">
+                                <div class="c-diagnostic-review--student-answer">
+                                  <span class="u-screen-reader-only" lang='en'>Incorrect or extra word</span>
+                                  <span class="c-diagnostic__answer--incorrect">blah.</span>
+                                </div>
+                                <div class="c-diagnostic-review--best-answer">
+                                  <span class="u-screen-reader-only" lang='en'>Correct answer is</span>
+                                  <span class="c-diagnostic__answer">miércoles.</span>
+                                </div>
+                              </div>
+                            </div>
+                            </li>
+                            <li class="c-diagnostic--list__item  c-diagnostic-review--incorrect" value="">
+                              <span class="u-screen-reader-only">incorrect</span>
+                              <div class="c-diagnostic--feedback">
+                              <div class="c-diagnostic-review--correction-feedback">
+                                <span class="u-screen-reader-only">You Answered Mañana,</span>
+                                <div class="c-diagnostic-review--student-answer">
+                                  <span class="c-diagnostic__answer">Mañana</span>
+                                    <span class="c-diagnostic__answer--incorrect-punctuation"
+                                      title="Incorrect or extra punctuation">,</span>
+                                    <span class="u-screen-reader-only" lang='en'>Incorrect or extra punctuation</span>
+                                </div>
+                                <div class="c-diagnostic-review--best-answer">
+                                  <span class="u-screen-reader-only" lang='en'>Correct answer is</span>
+                                  <span class="c-diagnostic__answer">Mañana</span>
+                                </div>
+                              </div>
+                              es viernes. Hoy es jueves. Ayer fue
+                              <div class="c-diagnostic-review--correction-feedback">
+                                <span class="u-screen-reader-only">You Answered Miercoles</span>
+                                <div class="c-diagnostic-review--student-answer">
+                                  <span class="c-diagnostic__answer  c-diagnostic__answer--non-font-size">
+                                    <span class="c-diagnostic__answer--accent  c-diagnostic__answer--txt">M</span>
+                                    <span class="u-screen-reader-only" lang="en">Incorrect accent or capitalization</span>
+                                    <span class="c-diagnostic__answer--txt">i</span>
+                                    <span class="c-diagnostic__answer--accent  c-diagnostic__answer--txt">é</span>
+                                    <span class="u-screen-reader-only" lang="en">Incorrect accent or capitalization</span>
+                                    <span class="c-diagnostic__answer--txt">r</span>
+                                    <span class="c-diagnostic__answer--txt">c</span>
+                                    <span class="c-diagnostic__answer--txt">o</span>
+                                    <span class="c-diagnostic__answer--txt">l</span>
+                                    <span class="c-diagnostic__answer--txt">e</span>
+                                    <span class="c-diagnostic__answer--txt">s</span>
+                                  </span>
+                                  <span class="c-diagnostic__answer--incorrect-punctuation u-txt-white"
+                                    title="missing punctuation" aria-hidden="true">.</span>
+                                    <span class="u-screen-reader-only" lang='en'>missing punctuation</span>
+                                </div>
+                                <div class="c-diagnostic-review--best-answer">
+                                  <span class="u-screen-reader-only" lang='en'>Correct answer is</span>
+                                  <span class="c-diagnostic__answer">jueves.</span>
+                                </div>
+                              </div>
+                            </div>
+                            </li>
+                        
+                        </ol>
+                      </div>
+                      <h3 class="c-heading--md">Paragraph example</h3>
+                      <p class="u-txt-ital">* Fill in the blanks variation</p>
+                        <div class="l-stack  c-diagnostic">
+                          <ol class="c-diagnostic--list c-diagnostic--list-review">
+                            <li class="c-diagnostic--list__item  c-diagnostic-review--partial" value="">
+                              <div>
+                                <div class="response_score_and_comment ui-helper-clearfix">
+                                  <div class="item_score  c-grade-status__label">
+                                    Score: 4 out of 18 points
+                                  </div>
+                                </div>
+                              <span class="u-screen-reader-only">partial</span>
+                              <div class="c-diagnostic--feedback">
+                                <!-- Question is here -->
+                                Teresa y yo 
+                                <div class="c-diagnostic-review--correction-feedback">
+                                  <span class="u-screen-reader-only">You Answered estudiamos</span>
+                                  <div class="c-diagnostic-review--best-answer">
+                                    <span class="u-screen-reader-only" lang='en'>Correct answer is</span>
+                                    <span class="c-diagnostic__answer  c-diagnostic__answer--correct">estudiamos</span>
+                                  </div>
+                                </div>
+                                en la Universidad Autónoma de Madrid. Teresa
+                                <div class="c-diagnostic-review--correction-feedback">
+                                  <span class="u-screen-reader-only">You Answered estudiamos</span>
+                                  <div class="c-diagnostic-review--student-answer">
+                                    <span class="c-diagnostic__answer--blank"></span>
+                                  </div>
+                                  <div class="c-diagnostic-review--best-answer">
+                                    <span class="u-screen-reader-only" lang='en'>Correct answer is</span>
+                                    <span class="c-diagnostic__answer">estudia</span>
+                                  </div>
+                                </div>
+                                lenguas extranjeras. Ella
+                                <div class="c-diagnostic-review--correction-feedback">
+                                  <span class="u-screen-reader-only">You Answered désea</span>
+                                  <div class="c-diagnostic-review--student-answer">
+                                    <span class="u-screen-reader-only" lang='en'>You Answered</span>
+                                    <span class="c-diagnostic__answer  c-diagnostic__answer--non-font-size">
+                                      <span class="c-diagnostic__answer--txt">d</span>
+                                      <span class="c-diagnostic__answer--accent  c-diagnostic__answer--txt">é</span>
+                                      <span class="u-screen-reader-only" lang="en">Incorrect accent or capitalization</span>
+                                      <span class="c-diagnostic__answer--txt">s</span>
+                                      <span class="c-diagnostic__answer--txt">e</span>
+                                      <span class="c-diagnostic__answer--txt">a</span>
+                                    </span>
+                                  </div>
+                                  <div class="c-diagnostic-review--best-answer">
+                                    <span class="u-screen-reader-only" lang='en'>Correct answer is</span>
+                                    <span class="c-diagnostic__answer">desea</span>
+                                  </div>
+                                </div>
+                                trabajar en las Naciones Unidas (<i>United Nations</i>). Yo 
+                                <div class="c-diagnostic-review--correction-feedback">
+                                  <span class="u-screen-reader-only">You Answered tomo.</span>
+                                  <div class="c-diagnostic-review--student-answer">
+                                    <span class="c-diagnostic__answer">tomo</span>
+                                    <span class="c-diagnostic__answer--incorrect-punctuation"
+                                      title="Incorrect or extra punctuation">.</span>
+                                    <span class="u-screen-reader-only" lang='en'>Incorrect or extra punctuation</span>
+                                  </div>
+                                  <div class="c-diagnostic-review--best-answer">
+                                    <span class="u-screen-reader-only" lang='en'>Correct answer is</span>
+                                    <span class="c-diagnostic__answer">tomo</span>
+                                  </div>
+                                </div>
+                                clases de periodismo. También me gusta
+                                <div class="c-diagnostic-review--correction-feedback">
+                                  <span class="u-screen-reader-only">You Answered blank</span>
+                                  <div class="c-diagnostic-review--student-answer">
+                                    <span class="c-diagnostic__answer--incorrect">bailar</span>
+                                  </div>
+                                  <div class="c-diagnostic-review--best-answer">
+                                    <span class="u-screen-reader-only" lang='en'>Correct answer is</span>
+                                    <span class="c-diagnostic__answer">cantar</span>
+                                  </div>
+                                </div>
+                                y 
+                                <div class="c-diagnostic-review--correction-feedback">
+                                  <span class="u-screen-reader-only">You Answered bailar</span>
+                                  <div class="c-diagnostic-review--best-answer">
+                                    <span class="u-screen-reader-only" lang='en'>Correct answer is</span>
+                                    <span class="c-diagnostic__answer--correct">bailar</span>
+                                  </div>
+                                </div>
+                                  Los sábados
+                                <div class="c-diagnostic-review--correction-feedback">
+                                  <span class="u-screen-reader-only">You Answered Canto</span>
+                                  <div class="c-diagnostic-review--student-answer">
+                                    <span class="u-screen-reader-only" lang='en'>You Answered</span>
+                                    <span class="c-diagnostic__answer  c-diagnostic__answer--non-font-size">
+                                      <span class="c-diagnostic__answer--accent  c-diagnostic__answer--txt">C</span>
+                                      <span class="u-screen-reader-only" lang="en">Incorrect accent or capitalization</span>
+                                      <span class="c-diagnostic__answer--txt">a</span>
+                                      <span class="c-diagnostic__answer--txt">n</span>
+                                      <span class="c-diagnostic__answer--txt">t</span>
+                                      <span class="c-diagnostic__answer--txt">o</span>
+                                    </span>
+                                  </div>
+                                  <div class="c-diagnostic-review--best-answer">
+                                    <span class="u-screen-reader-only" lang='en'>Correct answer is</span>
+                                    <span class="c-diagnostic__answer">canto</span>
+                                  </div>
+                                </div>
+                                  con una tuna.
+                              </div>
+                            </div>
+                            </li>
+                          </ol>
+                        </div>
+                  </div>
+                  <!-- End Specien page-->
+              </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>

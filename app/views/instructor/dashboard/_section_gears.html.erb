@@ -1,0 +1,174 @@
+<div class="c-menu__item  c-gear-menu-wraper  js-gear-wrapper">
+  <a
+    href="javascript://"
+    aria-haspopup="true"
+    aria-expanded="false"
+    class="c-menu__title  c-icon-gear  js-gear  <%= test_class('gear') %>">
+    <%= inline_svg_tag("instructor_dashboard/icons/gear.svg") %>
+    <span class="u-screen-reader-only">Section options</span>
+  </a>
+  <ul class="c-menu__inner  c-menu__inner--right-align  c-menu__inner--instructor  js-gear-menu"
+      role="menu" data-visually-hidden="true">
+    <li class="c-menu__subitem  <%= test_class('gear-option') %>" role="none">
+      <% if !assistant_role_policy.is_instructor_or_co_instructor?(section.id) %>
+        <span
+          class="c-gear-del-link--disabled  js-tooltip-auto  test-aw-asst-message"
+          title="You must be the owner of the section to make changes.">
+            Assignment Wizard
+        </span>
+      <% elsif @presenter.assignment_wizard_enabled?(course) %>
+        <% if course.open? %>
+          <%= link_to 'Assignment Wizard',
+                      instructor_assignment_wizard_index_path(presenter.program,
+                                                              course,
+                                                              section_id: section.id),
+                      class: 'js-gear-menu-link',
+                      'data-link-type': 'assignment wizard' %>
+        <% else %>
+          <span
+            class="c-gear-del-link--disabled  js-tooltip-auto  test-aw-closed-section-message"
+            title="You cannot modify assignments for closed section.">
+              Assignment Wizard
+          </span>
+        <% end %>
+      <% else %>
+        <span
+          class="c-gear-del-link--disabled  js-tooltip-auto  test-aw-closed-section-message"
+          title="You need at least one other course or section with assignments.">
+              Assignment Wizard
+        </span>
+      <% end %>
+    </li>
+    <li class="c-menu__subitem  <%= test_class('gear-option') %>" role="none">
+      <% if course.editable? && assistant_role_policy.is_instructor?(section.id) %>
+        <%=
+          link_to(
+            'Edit Section',
+            edit_instructor_course_section_path(presenter.program, course, section),
+            class: "#{test_class("section-edit-link-#{section.id}")}  js-gear-menu-link",
+            'data-link-type' => 'edit section'
+          )
+        %>
+      <% else %>
+        <% if course.editable? %>
+          <span
+            class="c-gear-del-link--disabled  js-tooltip-auto  test-edit-section-asst-message"
+            title="You must be the owner of the section to make changes.">
+              Edit Section
+          </span>
+        <% else %>
+          <span
+            class="c-gear-del-link--disabled  js-tooltip-auto  test-edit-section-closed-section-message"
+            title="You cannot edit a closed section.">
+              Edit Section
+          </span>
+        <% end %>
+      <% end %>
+    </li>
+    <% if current_section.section_instructors.exists?(role: SectionInstructor::RESPONSIBLE_ROLES.values, user_id: current_user.id) %>
+      <li class="c-menu__subitem  <%= test_class('gear-option') %>" role="none">
+          <%= link_to(
+              'Student Interaction Settings',
+              section_student_settings_show_path(
+                program_id: current_program.id,
+                section_id: current_section.id
+              ),
+              class: 'js-gear-menu-link',
+              id: appcues_id('student_interaction_settings')
+          ) %>
+      </li>
+    <% end %>
+    <li class="c-menu__subitem  <%= test_class('gear-option') %>" role="none">
+      <% if current_user.clever? or current_user.rostering? %>
+        <span
+          class="c-gear-del-link--disabled  js-tooltip-auto  test-edit-section-asst-message"
+          title="Instructions not required for this section.">
+            Instructions for Students
+        </span>
+      <% elsif course.editable? %>
+        <%= link_to(
+              'Instructions for Students',
+              ua_host_url(:student_instructions, section_guid: section.guid),
+              class: 'js-gear-menu-link',
+              target: '_blank',
+              'data-link-type': 'student instruction'
+            ) %>
+      <% else %>
+        <span
+          class="c-gear-del-link--disabled  js-tooltip-auto  test-edit-section-asst-message"
+          title="You cannot print instructions for a closed section.">
+            Instructions for Students
+        </span>
+      <% end -%>
+    </li>
+    <li class="c-menu__subitem  <%= test_class('gear-option') %>" role="none">
+      <% if course.editable? %>
+        <%= link_to(
+              'View As Sample Student',
+              ua_host_url(:login_as_with_redirect, section: section, return_to: "//#{request.host}#{request.original_fullpath}"),
+              'data-content-type': 'sample_student_login_as_link',
+              class: 'js-gear-menu-link'
+            ) %>
+      <% else %>
+        <span
+            class="c-gear-del-link--disabled  js-tooltip-auto  test-edit-section-asst-message"
+            title="You cannot have a Sample Student for a closed section.">
+              View As Sample Student
+        </span>
+      <% end %>
+    </li>
+    <li class="c-menu__subitem  <%= test_class('gear-option') %>" role="none">
+      <%= link_to(
+            'Accessibility Guide',
+            'https://support.vhlcentral.com/hc/en-us/articles/33659853886103-vhlcentral-Platform-Content-Accessibility-Features-Educator-Guide',
+            'data-content-type': 'accessibility guide',
+            class: 'js-gear-menu-link',
+            target: '_blank'
+          ) %>
+    </li>
+    <li class="c-menu__subitem  c-menu__subitem--delete  <%= test_class('gear-option') %>" role="none">
+      <% if course.editable? -%>
+        <% if course.owned_by?(current_user) && !presenter.clever_section_linked?(section) -%>
+          <% if @presenter.has_one_roster_linked_user? && !@presenter.has_lti_roster_linked_user? %>
+            <% delete_section_path = one_roster_instructor_course_path(presenter.program, course) %>
+            <%= render 'one_roster/instructor/sections/delete_modal', program: presenter.program, section: section %>
+          <% else %>
+            <% delete_section_path = instructor_course_section_path(presenter.program, course, section) %>
+            <%= render 'delete_confirmation_modal', item: section %>
+          <% end %>
+          <%= button_to('Delete Section',
+                        delete_section_path,
+                        class: "c-no-button  c-course-del-link  js-section-del-link  js-delete-link  #{test_class('section-del-link')} js-gear-menu-link",
+                        form_class: "js-delete-section-#{section.id}",
+                        'data-link-type' => 'section',
+                        'data-item-id' => section.id,
+                        method: :delete) %>
+        <% elsif presenter.clever_section_error?(section) %>
+          <span
+            class="c-gear-del-link--disabled  js-tooltip-auto  test-edit-section-asst-message"
+            title="Section data inaccessible. This will be resolved within 24 hours.">
+              Delete Section
+          </span>
+        <% elsif presenter.clever_section_linked?(section) %>
+          <span
+            class="c-gear-del-link--disabled  js-tooltip-auto  test-edit-section-asst-message"
+            title="Sections with linked enrollments cannot be deleted. Unlink this section to allow deletion.">
+              Delete Section
+          </span>
+        <% else %>
+          <span
+            class="c-gear-del-link--disabled  js-tooltip-auto  test-edit-section-asst-message"
+            title="You must be the course owner to delete a section.">
+              Delete Section
+          </span>
+        <% end %>
+      <% else %>
+        <span
+          class="c-gear-del-link--disabled  js-tooltip-auto  test-edit-section-asst-message"
+          title="You cannot delete a closed section.">
+            Delete Section
+        </span>
+      <% end %>
+    </li>
+  </ul>
+</div>

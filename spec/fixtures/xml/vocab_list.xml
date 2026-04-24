@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<activity activity_type="vocab_list" title="Vocabulary list: Hola, &#xBF;qu&#xE9; tal?" language="es">
+<!--In the line above, enter the proper code in quotes after language attribute: es - Spanish, fr - French, it - Italian, de - German.-->
+  <dl>Click on each word to hear its pronunciation.</dl>
+
+  <title><b>Vocabulary list</b>: Hola, &#xBF;qu&#xE9; tal?</title>
+  <items>
+    <style>
+      <!--Insert 6-character alphanumeric RGB code in quotes.-->
+      <overall_group_color/>
+    </style>
+<!--if you want all of the vocab group headers to have the same color, use the style tag above; if you want a different color for each header, delete the entire style tag and use the vocab_group color tag below.-->
+    <vocab_column>
+    <!--Insert vocab group media ID in quotes. If no OVERALL_GROUP_COLOR specified, include color codes here.-->
+    <!--This template has two columns, each with one group. Copy VOCAB_GROUP tag to add more groups.-->
+      <vocab_group id="1000" color="#ed1c24"/>
+      <vocab_group id="1000" color="#9a258f"/>
+      <vocab_group id="1000" color="#0083cb"/>
+      <vocab_group id="1000" color="#ed1c24"/>
+      <vocab_group id="1000" color="#9a258f"/>
+      <vocab_group id="1000" color="#02b196"/>
+
+    </vocab_column>
+    <vocab_column>
+      <vocab_group id="1000" color="#02b196"/>
+      <vocab_group id="1000" color="#ed1c24"/>
+      <vocab_group id="1000" color="#0083cb"/>
+      <vocab_group id="1000" color="#f7941e"/>
+      <vocab_group id="1000" color="#02b196"/>
+
+    </vocab_column>
+  </items>
+</activity>

@@ -1,0 +1,107 @@
+<div class="ns-enterprise__course-card u-dis-flex  u-pad-24  <%= test_class("course-card-#{course.id}") %>">
+  <div class="ns-enterprise__card-header">
+    <h3 class="u-txt-body-1  u-txt-semibold  u-mar-0  u-txt-nowrap  u-oflow-hid  ns-enterprise-text-ellipsis">
+      <% if course.closed? %>
+        <div class='c-pill'>Closed</div>
+      <% end %>
+      <span <% if course.closed? %>class="u-txt-ital"<% end %>>
+        <%= course.name %>
+      </span>
+    </h3>
+    <% if course.is_enterprise? %>
+      <ul class="c-menubar  js-nav-system">
+        <li class="c-menu__item  js-nav-system__item">
+          <a href="#" aria-haspopup="true" aria-expanded="false" class="c-menu__title  js-nav-system__link">
+            <span><music-icon-three-dots></music-icon-three-dots></span>
+          </a>
+          <ul class="c-menu__inner  js-nav-system__subnav  u-bord-radius-16  u-menu"
+              role="menu" data-visually-hidden="false">
+            <li class="u-mar-bot-12">
+              <% if course.open? %>
+                <%= link_to(
+                      edit_institution_admin_course_path(
+                        id: course.id,
+                        program_id: course.program_id,
+                        school_id: course.school_id
+                      ),
+                      class: 'u-txt-black  u-txt-nodec  u-txt-bold  u-enterprise__hover'
+                 ) do %>
+                    Edit
+                <% end %>
+              <% else %>
+                <music-bubble-alert-v3 class="info-bubble" variant="info" placement="top">
+                  <span class="u-txt-true-gray-300  u-txt-nodec  u-txt-bold" tooltip-target>
+                    Edit
+                  </span>
+                  <span class="u-txt-legal">
+                    Closed courses cannot be edited.
+                  </span>
+                </music-bubble-alert-v3>
+              <% end %>
+            </li>
+            <li>
+              <% if course.sections.any? %>
+                <music-bubble-alert-v3 class="info-bubble" variant="info" placement="top">
+                  <span class="u-txt-true-gray-300  u-txt-nodec  u-txt-bold" tooltip-target>
+                    Delete
+                  </span>
+                  <span class="u-txt-legal">
+                    Courses with sections cannot be deleted. Delete all sections to enable course deletion.
+                  </span>
+                </music-bubble-alert-v3>
+              <% else %>
+                <a class="u-txt-black  u-txt-nodec  u-txt-bold  u-enterprise__hover  <%= test_class('delete-course-btn') %>"
+                   onclick="$('.js-confirm-destroy-model-<%= course.id %>').vhlModal('open')">
+                  Delete
+                </a>
+              <% end %>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    <% end %>
+    <%= render 'confirm_destroy', course: course %>
+  </div>
+  <div>
+    <span class="u-txt-font-regular"><%= course.start_end_date %></span>
+  </div>
+  <div class="u-dis-flex  u-mar-rt-32  u-mar-top-24">
+    <div class="c-avatar">
+      <%= image_tag(course.owner.avatar_image_url, role: 'presentation', class: 'c-avatar') %>
+    </div>
+    <div class="u-mar-lt-10">
+      <div class="u-txt-font-body-2   u-txt-semibold">
+        <%= course.owner.last_name_first %>
+      </div>
+      <div class="u-txt-lt  u-txt-gray-a  u-txt-regular">
+        Course owner
+      </div>
+    </div>
+  </div>
+  <div class="u-dis-flex  u-mar-top-16" style="gap: 30px;">
+    <% duration = presenter.duration_in_weeks_and_days(course) %>
+    <p>
+      <span class="u-txt-body-1"><%= duration[:weeks] %></span>
+      <span class="u-txt-body-2  u-txt-regular  u-txt-gray-a">Week<%= 's' if duration[:weeks] > 1 %></span>
+      <% if duration[:days] > 0 %>
+        <span class="u-txt-body-1"><%= duration[:days] %></span>
+        <span class="u-txt-body-2  u-txt-regular  u-txt-gray-a">Day<%= 's' if duration[:days] > 1 %></span>
+      <% end %>
+    </p>
+    <p>
+      <span class="u-txt-body-1"><%= course.sections_count %></span>
+      <span class="u-txt-body-2  u-txt-regular  u-txt-gray-a">Section<%= 's' if course.sections_count > 1 %></span>
+    </p>
+  </div>
+  <% if course.is_enterprise? %>
+    <div class="u-dis-flex  u-justify-content-end">
+      <%= link_to 'Manage', institution_admin_sections_path(
+        course_id: course.id,
+        program_id: presenter.program.id,
+        school_id: presenter.school.id
+      ),
+        class: 'c-button-v3  c-button-v3--primary  c-button-v3--sm  u-txt-white'
+      %>
+    </div>
+  <% end %>
+</div>

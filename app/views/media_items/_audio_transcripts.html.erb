@@ -1,0 +1,74 @@
+<% if @transcript_settings&.show_transcripts %>
+  <%#
+    Safety checks are needed because this partial is rendered from
+    partials inside maestro_activity_engine that don't pass a reference,
+    or from the Model reference where the reference doesn't support the
+    transcript_unneeded? method that Audio references define.
+  %>
+  <%
+    transcript_unneeded = if defined?(reference) && reference&.respond_to?(:transcript_unneeded?)
+                         reference.transcript_unneeded?
+                       else
+                         false
+                       end
+
+    # Extract transcript mode from reference.audio if available
+    transcript_mode = if defined?(reference) && reference&.respond_to?(:audio)
+                        reference.audio&.transcript_mode
+                      else
+                        nil
+                      end
+
+    # Determine transcript display strategy
+    show_in_body_message = transcript_unneeded ||
+                          (transcript_mode == 'in_body' && @activity_presenter&.allow_audio_transcripts?)
+
+    show_transcript_disclosure = @activity_presenter&.allow_audio_transcripts? &&
+                                media_item&.transcript.present? &&
+                                (transcript_mode == 'visible' || transcript_mode.nil?)
+
+    # Render if any valid display condition is met
+    should_render = show_in_body_message || show_transcript_disclosure
+  %>
+
+  <% if should_render %>
+    <% if show_in_body_message %>
+      <%# Show in-body message for transcript_mode 'in_body' or legacy transcript_unneeded %>
+      <div class="ns-music-v1  c-transcripts">
+        <% if supersite_junior? %>
+          Audio text is below.
+        <% else %>
+          The transcript of the audio is in the content that follows.
+        <% end %>
+      </div>
+    <% elsif show_transcript_disclosure %>
+      <% unless defined?(@audio_transcript_included) %>
+        <% content_for(:js_head, javascript_include_tag('media_item') ) %>
+        <% @audio_transcript_included = true %>
+      <% end %>
+
+      <%# Show transcript in disclosure for transcript_mode 'visible' or legacy fallback %>
+      <div class="ns-music-v1 c-audio-transcript-container c-transcripts">
+        <div class="c-disclosure js-disclosure <%= test_class('transcript-disclosure') %>">
+          <button
+            type="button"
+            class="c-disclosure__header c-button  c-button--border <%= test_class('transcript-disclosure__header') %>"
+            lang="en">
+            Show Audio Transcript
+          </button>
+
+          <div class="c-disclosure__body">
+            <div class="c-panel c-panel--padded">
+              <div class="c-panel__header">
+                <h3>Audio Transcript</h3>
+              </div>
+              <div class="c-panel__body">
+                <%= format_transcript(media_item.transcript) %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>

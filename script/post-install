@@ -1,0 +1,31 @@
+#!/bin/sh
+
+set -e
+
+passenger-config restart-app /opt/m3 || true
+
+logpath=/tmp/post-install.log
+
+# Import QA snapshot when deploying to a QA server.
+if [ -e /usr/local/bin/import-m3-snapshot ]
+then
+    /usr/local/bin/import-m3-snapshot
+    sudo -u deploy sh -c ". /home/deploy/.bash_profile && cd /opt/m3 && bundle exec rake dynamodb:migrate 2>&1 | tee -a $logpath"
+fi
+
+if [ -s "${logpath}" ]; then
+    aws logs put-log-events --region=us-east-1 --log-group-name post-install-log --log-stream-name post-install-m3 --log-events timestamp=$(date +%s000),message=$(tr -d '[:space:]' < $logpath | jq -sR)
+fi
+
+if [ "$(cat /etc/db-migrator)" = "yes" ]
+then
+    sudo -u deploy sh -c '. /home/deploy/.bash_profile && cd /opt/m3 && bundle exec rake db:deploy'
+fi
+
+# This script will run on both web and job servers, so to prevent an
+# error on web servers we have to check for the existence of the
+# sidekiq-m3 service.
+if systemctl list-unit-files | grep sidekiq-m3.service > /dev/null
+then
+    systemctl restart sidekiq-m3.service
+fi

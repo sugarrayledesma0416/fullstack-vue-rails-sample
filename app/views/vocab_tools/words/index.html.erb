@@ -1,0 +1,53 @@
+<% content_for(:js_head, javascript_include_tag('vocab_tools_bootstrap')) %>
+<% content_for(:js_head, javascript_include_tag('storage')) %>
+
+<% content_for(:css_head, stylesheet_link_tag("music/features/vocab_lists", media: 'all')) %>
+<% content_for(:css_head, stylesheet_link_tag('music/features/flashcards/main', media: 'all')) %>
+<% content_for(:body_classes, '  ns-full-width  ns-flashcards') %>
+<%
+  content_for(
+    :js_head,
+    javascript_packs_with_chunks_tag('vocab_tools/words')
+  )
+
+  content_for(
+    :css_head,
+    stylesheet_packs_with_chunks_tag('vocab_tools/words')
+  )
+%>
+
+<% if accent_bar_enabled? %>
+  <div class="u-mar-0  js-accent-bar-container--activity">
+    <%= render 'music/partials/accent_bar_component', {language: current_program.language_code} %>
+  </div>
+<% end %>
+
+<% if current_program&.language_code == 'zh' %>
+  <% content_for(:css_head, stylesheet_link_tag("music/features/chinese/theme/fonts/AdobeKaitiRegular") ) %>
+  <% content_for(:body_classes, '  ns-chinese-program') %>
+<% end %>
+
+<% if ssjr_student? %>
+  <% content_for(:navigation) do %>
+    <% render('app_shell/navbar_program/supersite_junior') %>
+  <% end %>
+
+  <div id="main_content" class="ns-jr-vocab-words-index">
+    <div class="js-vocabulary-tools"
+         data-from-dom="<%= {
+          flip_icon_path: asset_path('jr/flip.svg'),
+          magnifying_glass_icon_path: asset_path('jr/magnifying_glass.svg'),
+          flashcard_start_icon_path: asset_path('jr/flashcard_start.svg')
+        }.to_json  %>">
+    </div>
+  </div>
+  <input type="hidden" class="js-vocab-tools-words" data-ssjr-view="true">
+<% else %>
+  <div class="ns-view">
+    <div>
+      <%= render(partial: 'activities/return_to') %>
+    </div>
+    <div class="js-vocabulary-tools"> </div>
+  </div> <!-- / vocab_tools app -->
+<% end %>
+

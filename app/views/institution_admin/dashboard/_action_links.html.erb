@@ -1,0 +1,75 @@
+<div class="action-links  l-container-fluid  u-bg-util-white">
+  <div class="u-txt-16  u-pad-top-10  u-pad-bot-10">
+    <div class="l-line  l-line--debug  u-justify-content-space-between  u-align-items-center">
+      <div class="l-grid">
+        <div class="u-pad-lt-0">
+          <div class="u-mar-lt-64  u-dis-flex">
+            <%= link_to action_link, class: 'c-button-v3  c-button-v3--quaternary  c-button-v3--xs  u-mar-top-6  u-height-40  u-pad-top-8  u-pad-bot-8  u-pad-lt-16  u-pad-rt-16  u-txt-nodec' do %>
+              <music-icon-arrow rotate="2" class="u-fill-true-gray-900"></music-icon-arrow>
+              <p class="c-enterprise__paragraph  u-txt-true-gray-900  u-mar-0"><%= text_link %></p>
+            <% end %>
+
+            <% if (local_assigns.key?(:display_dropdowns) ? local_assigns[:display_dropdowns] : true) %>
+              <div class="u-mar-lt-32  u-mar-8  u-dis-flex">
+                <!-- Program Dropdown -->
+                <sl-dropdown>
+                  <button class="c-button-v3  c-button-v3--tertiary" slot="trigger">
+                    <music-icon-program-edition size="md" class="u-fill-widget-red-700  u-mar-bot-4"></music-icon-program-edition>
+                    <span class="u-mar-lt-16  c-enterprise__paragraph  u-txt-true-gray-700">
+                      <%= current_program.title %>
+                    </span>
+                    <sl-icon name="chevron-down" library="untitled-ui" />
+                  </button>
+                  
+                  <sl-menu>
+                    <sl-menu-item>
+                      <a href="<%= institution_admin_dashboard_path %>">Admin Dashboard</a>
+                    </sl-menu-item>
+                    <% @presenter.admin_program_options.each do |option| %>
+                      <sl-menu-item>
+                        <a href="<%= institution_admin_courses_current_path(program_id: option[:program_id], school_id: option[:school_id]) %>">
+                          <%= option[:program_title] %>
+                        </a>
+                      </sl-menu-item>
+                    <% end %>
+                  </sl-menu>
+                </sl-dropdown>
+
+                <!-- Year Dropdown -->
+                <sl-dropdown class="u-mar-lt-16">
+                  <button class="c-button-v3  c-button-v3--tertiary" slot="trigger">
+                    <music-icon-calendar size="md" class="u-fill-widget-blue-700  u-mar-bot-4"></music-icon-calendar>
+                    <span class="c-enterprise__paragraph  u-txt-true-gray-700">
+                      <%= @presenter.selected_year_label %>
+                    </span>
+                    <sl-icon name="chevron-down" library="untitled-ui" />
+                  </button>
+                  <sl-menu>
+                    <% @presenter.current_past_select_options do |year, year_label, program_id, school_id| %>
+                      <sl-menu-item>
+                        <a href="<%= institution_admin_courses_current_path(program_id: program_id, school_id: @presenter.school.id, year: year) %>">
+                          <%= year_label %>
+                        </a>
+                      </sl-menu-item>
+                    <% end %>
+                  </sl-menu>
+                </sl-dropdown>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <% if (local_assigns.key?(:display_dropdowns) ? local_assigns[:display_dropdowns] : true) &&
+            !(defined?(hide_close_btn) && hide_close_btn) %>
+        <div class="l-grid">
+          <%= link_to institution_admin_dashboard_path,
+              class: 'c-button-v3  c-button-v3--primary-clear  c-button-v3--sm  u-txt-nodec' do %>
+            <span class="u-txt-true-gray-900"><%= @presenter.school.name %></span>
+            <music-icon-x-v3 class="u-fill-true-gray-900  u-mar-2"></music-icon-x-v3>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <hr>
+</div>

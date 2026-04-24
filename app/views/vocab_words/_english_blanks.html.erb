@@ -1,0 +1,15 @@
+<h1>My Vocabulary study sheet</h1>
+<table>
+  <thead>
+    <tr>
+      <td class="col_1">English</td>
+      <td class="col_2">(fill in yourself)</td>
+    </tr>
+  </thead>
+<% vocab_words.each do |vocab_word| %>
+  <tr>
+    <td class="col_1"><%= vocab_word.base_word %></td>
+    <td class="col_2 blank"></td>
+  </tr>
+<% end %>
+</table>

@@ -1,0 +1,12 @@
+<% if section.due_date_scheduled? %>
+<div class="ns-music-v1  u-txt-10  u-pad-top-3  ">
+    <button type="button"
+            title="assignments displayed to students"
+            class="c-no-button  u-txt-nodec  u-txt-gray-9"
+            disabled>
+      <span class="u-screen-reader-only">Assignments displayed to students</span>
+      <%= feature_icon('music/v1/icons/features/eye', ['c-embedded-icon--md']) %>
+      <%= section.days_to_show_assignment_due_date %> Days
+    </button>
+  </div>
+<% end %>

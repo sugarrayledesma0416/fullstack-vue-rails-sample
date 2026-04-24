@@ -1,0 +1,43 @@
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  border:1px solid #CCC;
+}
+
+p {
+  margin-top:15px;
+}
+
+thead td {
+  font-weight:bold;
+}
+
+thead td {
+  border:1px #CCC solid;
+}
+
+tr {
+  height:30px;
+}
+
+tr:nth-child(even) {
+  background-color:#E0E0E0;
+}
+
+.col_1 {
+  padding-right:10px;
+  padding-left:10px;
+}
+
+.col_2, .col_3 {
+  border-left:1px #CCC solid;
+  padding-right:10px;
+  padding-left:10px;
+}
+
+.blank {
+  min-width:200px;
+}
+
+
+

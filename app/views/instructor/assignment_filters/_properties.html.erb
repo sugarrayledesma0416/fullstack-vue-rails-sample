@@ -1,0 +1,41 @@
+<% filter = presenter.filter %>
+<div id="properties" class="filter_groups ui-helper-clearfix">
+  <div class="disabled hidden_helper"></div>
+  <h3>Properties</h3>
+  <span class="summary_sentence"><%= presenter.summary_sentences[:properties].html_safe %></span>
+  <div class="edit_summary_sentence"><%= link_to 'edit >', '#', 'data-js-link' => 'toggle_filters_properties' %></div>
+  <div class="filter_options hidden_helper">
+    <div id="content_type">
+      <%= f.label :content_type, 'Content Type' %>
+      <div data-js-select="content_type" class="select_wrapper  u-dis-inline-block">
+        <%= f.select(:content_type, presenter.content_types,
+                    { :selected_key => filter.selected_content_type },
+                    { class: "c-select  c-select--assignment-filter" } ) %>
+      </div>
+    </div>
+    <div id="activity_type">
+      <%= f.label :activity_type, 'Activity Type' %>
+      <div data-js-select="activity_type" class="select_wrapper  u-dis-inline-block">
+        <%= f.select(:activity_type,
+                    presenter.activity_types.to_a,
+                    {:include_blank => 'All types',
+                     :selected_key => filter.activity_type },
+                    { class: "c-select  c-select--assignment-filter" } ) %>
+      </div>
+    </div>
+    <div id="grading_method">
+      <%= f.label :grading_method, 'Grading method' %>
+      <div data-js-select="method" class="select_wrapper  u-dis-inline-block">
+      <%= f.select(:grading_method,
+                    Activity.all_grading_methods,
+                    {:include_blank => 'All grading methods',
+                     :selected_key => filter.grading_method },
+                    { class: "c-select  c-select--assignment-filter" } ) %>
+      </div>
+    </div>
+  </div>
+  <div class="filter_links hidden_helper">
+    <%= link_to 'cancel', '#', :class => 'cancel', 'data-js-link' => 'toggle_filters_properties' %>
+    <%= f.submit "apply", :id => 'properties_filter_submit', :class => 'red-button' %>
+  </div>
+</div>

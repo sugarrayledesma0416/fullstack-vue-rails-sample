@@ -1,0 +1,70 @@
+<nav>
+  <ul class="c-simple-nav  <%= test_class('supersite-junior-program-nav') %>">
+
+      <% if current_section&.non_zero? %>
+        <li class="c-simple-nav__item">
+          <%= link_to(
+                main_app.jr_course_section_path(
+                  course_id: current_section.course_id,
+                  section_id: current_section.id
+                ),
+                class: "c-simple-nav__link  l-stack  l-stack--xs  l-stack--ctr
+                        #{main_nav_active('dashboard')}"
+
+              ) do %>
+                <div role="presentation" class="c-simple-nav__image  c-simple-nav__image--dashboard"></div>
+                <span class="c-simple-nav__label">Dashboard</span>
+          <% end %>
+        </li>
+      <% end %>
+
+      <li class="c-simple-nav__item">
+        <%= link_to(
+              main_app.jr_section_program_content_path(
+                section_id: current_section.id,
+                program_id: current_program.id
+              ),
+              class: "c-simple-nav__link  l-stack  l-stack--xs  l-stack--ctr
+                      #{main_nav_active('content')}"
+
+            ) do %>
+              <div role="presentation" class="c-simple-nav__image  c-simple-nav__image--content"></div>
+              <span class="c-simple-nav__label">Content</span>
+        <% end %>
+      </li>
+
+      <% if current_section&.non_zero? %>
+        <li class="c-simple-nav__item">
+          <%= link_to(
+                gradebook_engine.jr_section_progress_path(
+                  program_id: current_program.id, 
+                  section_id: current_section.id
+                ),
+                class: "c-simple-nav__link  l-stack  l-stack--xs  l-stack--ctr
+                        #{main_nav_active('progress')}"
+
+              ) do %>
+                <div role="presentation" class="c-simple-nav__image  c-simple-nav__image--progress"></div>
+                <span class="c-simple-nav__label">Progress</span>
+          <% end %>
+        </li>
+      <% end %>
+
+      <% if current_section&.non_zero? %>
+        <li class="c-simple-nav__item">
+          <%= link_to(
+                main_app.jr_section_grownups_path(section_id: current_section.id),
+                class: "c-simple-nav__link  l-stack  l-stack--xs  l-stack--ctr
+                        #{main_nav_active('grownups')}"
+
+              ) do %>
+                <div role="presentation" class="c-simple-nav__image  c-simple-nav__image--grownups"></div>
+                <%# JAWS needs pronunciation help: %>
+                <span class="c-simple-nav__label" aria-hidden="true">Grown-ups</span>
+                <span class="u-screen-reader-only">Grown ups</span>
+          <% end %>
+        </li>
+      <% end %>
+
+  </ul>
+</nav>

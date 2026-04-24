@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <activity language="es" title="Learning engine: Subject pronouns and the verb être" activity_type="learning_engine">
+  <dl>Example Learning Engine Activity Direction Line</dl>
+  <items>
+    <reference type="video">
+      <video id="1578" />
+    </reference>
+    <watch_and_repeat>
+      <repeat_prompt>
+        <image id="136798" />
+        <audio id="136827" />
+        <text>Hola a todos</text>
+      </repeat_prompt>
+
+      <repeat_prompt>
+        <image id="136801" />
+        <audio id="136819" />
+        <text>Adiosillo</text>
+      </repeat_prompt>
+    </watch_and_repeat>
+  </items>

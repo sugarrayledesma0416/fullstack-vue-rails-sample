@@ -1,0 +1,169 @@
+<a
+  href="javascript://"
+  class="c-menu__title  c-menu__title--program  js-nav-system__link
+         test-content-menu  <%= main_nav_active('content') %>"
+  aria-expanded="false"
+  aria-controls="assign-subnav"
+  id="tour-guide-nav-content"
+  role="button">
+    Assign
+  <span aria-hidden="true">
+    <%= Music::Components.icon(variant: 'caret', classes: ['c-menu__title--icon']) %>
+  </span>
+</a>
+
+<ul
+  class="c-menu__inner  c-menu__inner--program  js-nav-system__subnav  test-content-submenu"
+  id="assign-subnav">
+
+  <% if program_has_activities? %>
+    <li class="js-nav-system__subnav__item">
+      <%= link_to main_app.instructor_toc_path(current_program, {}),
+                  class: 'c-menu__item  c-menu__item--program  js-nav-system__subnav__link' do %>
+            <%= render(
+                  'app_shell/menu_item',
+                  item_icon: 'activities',
+                  item_name: 'Activities',
+                  item_description: 'Assign activities or create custom activities.'
+                ) %>
+      <% end %>
+    </li>
+  <% end %>
+
+  <% if program_has_assessment? %>
+    <li class="js-nav-system__subnav__item">
+      <%= link_to main_app.instructor_assessments_path(current_program, {}),
+                  class: 'c-menu__item  c-menu__item--program  js-nav-system__subnav__link' do %>
+            <%= render(
+                  'app_shell/menu_item',
+                  item_icon: 'assessments',
+                  item_name: 'Assessments',
+                  item_description: 'Assign assessments or create custom assessments.'
+                ) %>
+       <% end %>
+    </li>
+  <% end %>
+
+  <% if program_has_my_content? %>
+    <li class="js-nav-system__subnav__item">
+      <%= link_to main_app.instructor_mycontent_path(current_program, @path_options),
+                  class: 'c-menu__item  c-menu__item--program  js-nav-system__subnav__link' do %>
+            <%= render(
+                  'app_shell/menu_item',
+                  item_icon: 'my_content',
+                  item_name: 'My Content',
+                  item_description: 'Create, manage, and share instructor-created activities.'
+                ) %>
+      <% end %>
+    </li>
+  <% end %>
+ <li class="js-nav-system__subnav__item">
+    <%= link_to main_app.instructor_assignments_path(current_program),
+                class: 'c-menu__item  c-menu__item--program  js-nav-system__subnav__link' do %>
+          <%= render(
+                'app_shell/menu_item',
+                item_icon: 'assignment_calendar',
+                item_name: 'Assignment Calendar',
+                item_description: 'View and edit assignments by date.'
+              ) %>
+    <% end %>
+  </li>
+
+  <% if show_standards_assigning_link? %>
+    <li class="js-nav-system__subnav__item">
+      <% if (disabled_reason = disabled_standards_based_assigning_reason(@course)) %>
+        <span class="c-menu__item  c-menu__item--program  disabled  js-nav-system__subnav__link  <%= test_class('standards-assign-disabled') %>"
+              title="<%= disabled_reason %>">
+              <%= render(
+                'app_shell/menu_item',
+                item_icon: 'standards_based_assigning',
+                item_name: 'Standards-based Assigning',
+                item_description: 'Search and assign content by learning standard'
+              ) %>
+        </span>
+      <% else %>
+        <%= link_to main_app.instructor_standards_assigning_path(current_program),
+          class: "c-menu__item  c-menu__item--program  js-nav-system__subnav__link  #{test_class('standards-assign')}" do %>
+          <%= render(
+            'app_shell/menu_item',
+            item_icon: 'standards_based_assigning',
+            item_name: 'Standards-based Assigning',
+            item_description: 'Search and assign content by learning standard'
+          ) %>
+        <% end %>
+      <% end %>
+    </li>
+  <% end %>
+
+  <li class="js-nav-system__subnav__item">
+    <% if assistant_role_policy.is_assistant? -%>
+      <span class="c-menu__item  c-menu__item--program  disabled  js-nav-system__subnav__link"
+            title="Start Assingning is not available to Assistants">
+       <%= render(
+            'app_shell/menu_item',
+            item_icon: 'start_assigning',
+            item_name: 'Start Assigning',
+            item_description: 'Search for and assign specific types of activities.'
+          ) %>
+      </span>
+    <% else %>
+      <%= link_to main_app.instructor_new_assignments_path(current_program),
+                  class: 'c-menu__item  c-menu__item--program  js-nav-system__subnav__link' do %>
+            <%= render(
+                'app_shell/menu_item',
+                item_icon: 'start_assigning',
+                item_name: 'Start Assigning',
+                item_description: 'Search for and assign specific types of activities.'
+              ) %>
+      <% end %>
+    <% end %>
+  </li>
+
+  <li class="js-nav-system__subnav__item">
+    <% if (disabled_reason = disabled_individual_assigning_reason(@course, @presenter)) -%>
+      <span class="c-menu__item  c-menu__item--program  disabled  js-nav-system__subnav__link"
+            title="<%= disabled_reason %>">
+        <%= render(
+                'app_shell/menu_item',
+                item_icon: 'individual_assigning',
+                item_name: 'Individual Assigning',
+                item_description: 'Assign activities only to specific students.'
+              ) %>
+      </span>
+    <% else %>
+      <%= link_to main_app.instructor_individual_assignments_path(current_program),
+            class: 'c-menu__item  c-menu__item--program  js-nav-system__subnav__link' do %>
+            <%= render(
+                  'app_shell/menu_item',
+                  item_icon: 'individual_assigning',
+                  item_name: 'Individual Assigning',
+                  item_description: 'Assign activities only to specific students.'
+                ) %>
+      <% end %>
+    <% end %>
+  </li>
+
+  <li class="js-nav-system__subnav__item">
+    <% if (disabled_reason = disabled_assignment_reorder_reason(@course, @presenter)) -%>
+      <span class="c-menu__item  c-menu__item--program  disabled  js-nav-system__subnav__link"
+            title="<%= disabled_reason %>">
+            <%= render(
+                 'app_shell/menu_item',
+                 item_icon: 'assignment_reordering',
+                 item_name: 'Assignment Reordering',
+                 item_description: 'Change the order of assigned activities.'
+              ) %>
+      </span>
+    <% else %>
+      <%= link_to main_app.instructor_assignment_sets_path(current_program),
+            class: 'c-menu__item  c-menu__item--program  js-nav-system__subnav__link' do %>
+            <%= render(
+                 'app_shell/menu_item',
+                 item_icon: 'assignment_reordering',
+                 item_name: 'Assignment Reordering',
+                 item_description: 'Change the order of assigned activities.'
+              ) %>
+      <% end %>
+    <% end %>
+  </li>
+</ul>

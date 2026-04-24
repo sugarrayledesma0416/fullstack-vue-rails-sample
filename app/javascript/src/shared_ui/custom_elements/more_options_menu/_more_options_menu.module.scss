@@ -1,0 +1,37 @@
+@use 'MusicV3/v3/styles/base' as *;
+
+m3-more-options-menu {
+  .more-ptions-menu__trigger{
+    font-size: var(--music-space-5);
+
+    &:hover:not([aria-disabled='true'], :focus-visible) {
+      &::part(base) { 
+        border-radius: 50%;
+        color: var(--music-true-gray-900);
+        font-weight: var(--music-font-bold);
+        background: var(--music-true-gray-50);
+      }
+    }
+  }
+
+  sl-menu-item {
+    &:hover:not([aria-disabled='true'], :focus-visible) {
+      &::part(base) {
+        text-decoration: underline;
+      }
+    }
+
+    &.is-selected::part(base) {
+      background: var(--music-gray-600);
+      color: var(--music-util-white)
+    }
+  }
+
+  :global {
+    sl-menu-item.is-selected::part(base) {
+      background: var(--music-gray-600);
+      color: var(--music-util-white)
+    }
+  }
+}
+  

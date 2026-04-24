@@ -1,0 +1,30 @@
+<% course_sections = student_active_sections_for_program %>
+
+<% if current_user.is_student? && !course_section_name.blank? %>
+  <% if course_sections.one? %>
+    <div class="c-navbar-course-section">
+      <span class="js-tooltip-auto  <%= test_class('course-section-name-tooltip') %>" title="<%= course_section_name %>">
+        <%= course_section_name %>
+      </span>
+    </div>
+  <% else %>
+    <div class="c-form-item  u-pad-top-16">
+      <%= select_tag 'sections',
+        options_for_select(
+          course_sections.flat_map do |course_section|
+            section = course_section[:section]
+            course = course_section[:course]
+            [
+              ["#{course.name} - #{section.name}",
+               student_dashboard_path(course.program, section),
+               { selected: section.id == current_section.id }]
+            ]
+          end
+        ),
+        class: 'c-select c-navbar-course-section-select js-select-sections',
+        aria: { label: 'sections', description: 'Select a section' }
+      %>
+
+    </div>
+  <% end %>
+<% end %>

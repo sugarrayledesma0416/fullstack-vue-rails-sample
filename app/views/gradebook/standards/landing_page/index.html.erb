@@ -1,0 +1,51 @@
+<% content_for(:body_classes, 'ns-full-width  ns-gradebook  ns-analytics  ns-standards') %>
+<% content_for(:css_head, stylesheet_link_tag('standards_reports')) %>
+<% content_for(:css_head, stylesheet_link_tag('music/features/sorted_table/main')) %>
+<% content_for(:js_head, javascript_packs_with_chunks_tag('gradebook/standards/landing_page/index')) %>
+<% content_for(:js_head, javascript_include_tag("maestro_activity_engine/recording_v2/bootstrap")) %>
+<%= render 'partials/gradebook_shared_subnav', active_subnav: 'analytics' %>
+
+<div class="u-mar-rt-neg-16  u-mar-lt-neg-16">
+  <div class="l-container-fluid  c-standards-reporting__container  u-pad-top-8">
+    <div
+      class="js-landing-standards-reports-app"
+      # standard report data
+      data-available-sets="<%= @student_detail_report_presenter&.available_sets || '[]'%>"
+      data-config="<%= @student_detail_report_presenter&.chart_data&.to_json || '{}' %>"
+      data-error-icon-path="<%= image_url('music/icons/flash-banners/icon-error.svg') %>"
+
+      <% if @student_id.present? %>
+        data-grade-categories-url="<%= gradebook_standards_grade_categories_path(standard_set_id: @standard_set_id, student_id: @student_id, unit_id: '') %>"
+        data-review-path="<%= gradebook_standards_student_detail_report_review_path(standard_set_id: @standard_set_id, student_id: @student_id) %>"
+        data-roster-path="<%= gradebook_standards_roster_path(standard_set_id: @standard_set_id, student_id: @student_id) %>"
+      <% end %>
+
+      data-roster-student-list="<%= @students %>"
+      data-selected-standard-guid="<%= @data_for_student_detail_report[:standard_guid] %>"
+      data-standard-set="<%= @student_detail_report_presenter&.standard_set&.id || '' %>"
+      data-standards-assigning-url="<%= instructor_standards_assigning_path(current_program.id)%>"
+      data-student-id="<%= @student_id %>"
+      data-standards-landing-page-path="<%= gradebook_standards_landing_page_path(
+                                                                          course_id: current_section.course.id,
+                                                                          program_id: current_program.id,
+                                                                          section_id: current_section.id) %>"
+      data-success-icon-path="<%= image_url('music/icons/flash-banners/icon-success.svg') %>"
+      data-unit-selected="<%= @data_for_student_detail_report[:unit].to_json %>"
+      # Section report data
+      data-standard-sets="<%= @section_report_presenter.standard_sets_for_select.map { |standard_set| standard_set[0] } %>"
+      data-selected-standard-set="<%= @section_report_presenter.standard_set_display_name.to_s %>"
+      data-lessons="<%= @section_report_presenter.lessons_for_select %>"
+      data-selected-lesson="<%= @section_report_presenter.lesson_id %>"
+      data-program-id="<%= @section_report_presenter.program_information[:program_id] %>"
+      data-course-id="<%= @section_report_presenter.program_information[:course_id] %>"
+      data-section-id="<%= @section_report_presenter.program_information[:section_id] %>"
+      data-previously-selected-activity-id-strings="<%= @section_report_presenter.activity_ids %>"
+      data-standards-export-csv-base-url="<%= gradebook_standards_export_csv_path %>"
+      data-section-report-path="<%= gradebook_standards_section_report_path(sort: 'standard', direction: 'asc') %>"
+      data-gradebook-standards-students-csv-path="<%= gradebook_standards_students_csv_path %>"
+      data-new-instructor-enrollment-path="<%= new_instructor_enrollment_path(program_id: current_program.id, return_to: section_roster_path(current_program, current_section)) %>"
+      data-student-report-data-path="<%= gradebook_standards_student_report_data_path %>"
+      data-pmr-standard-reports-allowed="<%= @program.pmr_standard_reports_allowed? %>">
+    </div>
+  </div>
+</div>

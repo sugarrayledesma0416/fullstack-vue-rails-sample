@@ -1,0 +1,7 @@
+<activity activity_type="static_book" language="es" title="Static Book">
+  <items>
+    <learning_package
+      path="/400451_400451_LAU1-1/resources/u1"
+    />
+  </items>
+</activity>

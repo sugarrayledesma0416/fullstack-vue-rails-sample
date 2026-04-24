@@ -1,0 +1,26 @@
+<% content_for(:body_classes, "standard_layout help_requests_page") %>
+<% content_for(:css_head, stylesheet_link_tag("communication")) %>
+<%= content_for(:navigation, render(:partial => 'app_shell/navbar_section/main', :locals => { :section => current_section, :program => current_program })) %>
+<% status_closed = @presenter.status_scope == 'closed' %>
+<div id="main_content  l-container-fluid">
+
+ <div class="ns-music-v1">
+  <div class="u-mar-bot-16  u-mar-top-neg-12">
+    <%= link_to course_section_path(@current_section.course, current_section),
+                class: "u-mar-bot-16" do %>
+      <%= Music::Components.icon(variant: 'return', text: '') %>
+      Return to Dashboard
+    <% end %>
+  </div>
+  <ol class="c-subnav  u-pad-lt-0  u-mar-bot-12  js-subnav  js-nav-system">
+    <li><a class="c-subnav__link  <%= 'is-current' if !status_closed  %> " href=" <%= help_requests_index_path(current_section, status: 'open') %> ">Open</a></li>
+    <li><a class="c-subnav__link  <%= 'is-current' if status_closed  %>" href=" <%= help_requests_index_path(current_section, status: 'closed') %> ">Closed</a></li>
+  </ol>
+  </div>
+</div>
+  <% if @presenter.help_requests_info.any?  %>
+    <%= render partial: 'help_requests/requests_table', locals: { presenter: @presenter } %>
+  <% else %>
+    <span>You don't have any <%= params[:status].present? ? params[:status] : 'open' %> help requests for this course. Use the Ask Your Instructor feature within an activity to request help from your instructor.</span>
+  <% end %>
+</div>

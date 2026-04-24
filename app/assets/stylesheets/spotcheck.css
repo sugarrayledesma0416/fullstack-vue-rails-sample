@@ -1,0 +1,37 @@
+#spotcheck_style_options {
+	padding: 5px 0px 15px 0px;
+}
+
+.wrap_table {
+  margin-left: 0px;
+  margin-top: 10px;
+}
+
+.spotcheck_student_list th, .spotcheck_student_list td {
+  padding: 5px 10px;
+}
+
+.spotcheck_student_list th.names, .spotcheck_student_list td.names {
+  text-align: left;
+}
+
+.spotcheck_student_list th {
+	font-size: 10px;
+	font-weight: bold;
+}
+
+.spotcheck_student_list th span {
+	font-size: 13px;
+}
+
+#spot_check_submit_button {
+	float: right;
+	margin: -2px 0 0 0;
+}
+#num_of_students_selector {float: left;}
+
+a.help {
+	left: 860px;
+	position: absolute;
+	top: 90px;
+	}

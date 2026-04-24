@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      lang="en">
+  <head>
+    <%= render('partials/google_tag_manager') %>
+    <%= render partial: 'layouts/common_header', locals: { disable_zendesk_chat: true } %>
+  </head>
+
+  <body class="notranslate  ns-activity  ns-responsive  activities  activity_popup  js-activity-popup
+               <%= yield :body_classes %>  <%= yield :theme_classes %>
+               <%= 'js-activity-popup-via-vtext' if @activity_via_vtext %> "
+        <%= yield :angular_tags %>>
+    <div class="ns-masthead  ns-music-v1  <%= yield :theme_classes %>">
+      <%= render 'app_shell/masthead',
+                  section_header: nil,
+                  course: nil,
+                  section: nil %>
+    </div>
+    <div id="page_container" class="c-page-container  js-page-container  ui-helper-clearfix">
+      <h1 class="page_title  c-mobile-tabs-view__reference-content"><%= @page_title if @page_title -%></h1>
+      <div id="column_wrapper">
+        <div class="js-vue-flash-banner"></div>
+          <%= yield :help_request_message_container %>
+          <%= render 'layouts/flash', flash: flash -%>
+          <%= yield %>
+        </div> <!-- end column_wrapper -->
+
+        <%= render :partial => 'partials/footer', :locals => { :show_vocab_footer => @show_vocab_footer } %>
+      </div>
+
+      <%= render :partial => 'activities/help_request' %>
+      <%= yield :js_foot %>
+      <script class="js-browser-not-supported" type="text/x-handlebars-template">
+        <%= render 'maestro_activity_engine/activities/partials/supported_browsers_message' %>
+      </script>
+
+      <% if @activity&.virtual_chat? ||
+           @activity&.video_virtual_chat? ||
+           @activity&.partner_chat? ||
+           @activity&.group_chat?  %>
+        <%= render 'mobile_tabs_view/tabs_template' %>
+      <% end %>
+      <%= render 'layouts/inactivity_timeout' %>
+  </body>
+</html>

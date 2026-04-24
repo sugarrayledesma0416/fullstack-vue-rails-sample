@@ -1,0 +1,30 @@
+<% content_for(:js_head, javascript_packs_with_chunks_tag("dev_examples/javascript/component_with_subcomponents")) %>
+<details>
+  <summary>
+    <h3>Component with subcomponents</h3>
+    <div class="purpose">
+      <ul>
+        <li>Shows a single-file component that includes subcomponents.</li>
+        <li>Demonstrates passing values to the subcomponent through props.</li>
+        <li>Adds CSS to the subcomponent via <code>&lt;style&gt;</code>.</li>
+      </ul>
+    </div>
+  </summary>
+  <div class="details">
+    <p>The mechanics of loading the Javascript for this example and mounting it on an element are the same as in the "Component mounted on an element" example.</p>
+    <p>To use another component in the <code>&lt;template&gt;</code>, the <code>&lt;script&gt;</code> at least needs to
+       <ul>
+         <li>import the other component (line 8 below) </li>
+         <li>include the other component in the value for a <code>components</code> key in the exported object (lines 12-14 below)</li>
+       </ul>
+    </p>
+    <p>Note that the <code>thing-number</code> attribute in the <code>&lt;Thing&gt;</code> tag is hyphenated. It corresponds to the camel-cased prop <code>thingNumber</code> in the subcomponent.
+    <%= code_example('app/javascript/src/dev_examples/javascript/component_with_subcomponents/ComponentWithSubcomponents.vue', 'vue') %>
+    <p>To capture the value of the hyphenated <code>thing-number</code> above and use it in the <code>&lt;template&gt;</code>, the <code>Thing</code> component needs to declare <code>thingNumber</code> and map it to a type in the value for the <code>props</code> key in the exported object (lines 10-12 below).</p>
+    <%= code_example('app/javascript/src/dev_examples/javascript/component_with_subcomponents/Thing.vue', 'vue') %>
+    <p><strong>Result:</strong></p>
+    <div class="live-example">
+      <div id="component_with_subcomponents"></div>
+    </div>
+  </div>
+</details>

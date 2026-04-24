@@ -1,0 +1,64 @@
+<% class_prefix = (user == original_user) ? 'user' : 'partner' %>
+<% id_prefix = "partner_#{user.id}_#{class_prefix}" %>
+
+<% if user.instructor? %>
+<div class="<%= class_prefix %>_container">
+  <div id="<%= id_prefix %>" class="<%= partner_chat_class(user, original_user) %> not_gradeable">
+    <div class="<%= class_prefix %>_name"><%= user.full_name %></div>
+    <div id="<%= id_prefix %>_grading" class="ui-helper-clearfix">
+      <div class="cannot_grade_explanation">Instructors cannot be graded.</div>
+    </div>
+  </div>
+</div>
+
+<% elsif presenter.gradeable?(user) %>
+<div class="<%= class_prefix %>_container">
+  <div class="<%= partner_chat_class(user, original_user) %>">
+    <div class="<%= class_prefix %>_name"><%= user.full_name %></div>
+
+    <% if presenter.partner_is_practicing?(user, original_user) %>
+      <%= hidden_field_tag "practice_mode[#{user.id}]", true %>
+      <span class="practicing">
+        This student completed <br />
+        activity as 'practice', <br />
+        and therefore cannot <br />
+        be graded.
+      </span>
+    <% else %>
+      <div class="user_grading  u-width-full">
+        <%= render(
+              'instructor/grading_sets/score_controls',
+              view_manager: ScoreControlsViewManager.new(
+                question,
+                feedback,
+                results,
+                presenter.response_id(user, question),
+                params
+              ),
+              user_id: user.id
+            )
+        %>
+      </div>
+
+      <div class="user_comments <%= class_prefix %>_comments">
+        <%= render 'instructor/grading_sets/all_instructor_comments',
+              question: question,
+              response_id: presenter.response_id(user, question),
+              feedback_item: feedback,
+              recording_path: recording_path,
+              is_new_recording: presenter.new_recording?(user, question) %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<% else %>
+<div class="<%= class_prefix %>_container">
+  <div id="<%= id_prefix %>" class="<%= partner_chat_class(user, original_user) %> not_gradeable">
+    <div class="<%= class_prefix %>_name"><%= user.full_name %></div>
+    <div id="<%= id_prefix %>_grading">
+      <div class="cannot_grade_explanation">You cannot grade this student because (s)he are not in your section.</div>
+    </div>
+  </div>
+</div>
+<% end %>

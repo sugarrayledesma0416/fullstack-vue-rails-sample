@@ -1,0 +1,27 @@
+<ul class="c-menu__inner  u-bg-gray-6  js-nav-system__subnav" role="menu">
+  <li class="js-nav-system__subnav__item" role="none">
+    <%= link_to('Overview',
+                analytics_overview_link,
+                class: 'c-menu__item  c-menu__item--program  js-nav-system__subnav__link', 'role':'menuitem') %>
+  </li>
+  <li class="js-nav-system__subnav__item" role="none">
+    <%= link_to('Progress',
+                analytics_progress_link,
+                class: 'c-menu__item  c-menu__item--program  js-nav-system__subnav__link', 'role':'menuitem') %>
+  </li>
+  <% if current_program.practice_test_analytics_enabled? %>
+    <li class="js-nav-system__subnav__item" role="none">
+      <%= link_to('Practice Test',
+                  analytics_practice_test_link,
+                  class: 'c-menu__item  c-menu__item--program  js-nav-system__subnav__link', 'role':'menuitem') %>
+    </li>
+  <% end %>
+
+  <% if current_program.supports_standards? %>
+    <li class="js-nav-system__subnav__item" role="none">
+      <%= form_with url: analytics_standards_link, method: :post, class: "c-menu__item  c-menu__item--program  js-nav-system__subnav__link", role: 'menuitem' do %>
+        <%= button_tag 'Assess to Learn', class: 'c-no-button' %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>

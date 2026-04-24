@@ -1,0 +1,6 @@
+development: &DEV
+  local_port: 8000
+  spawn_local: false
+
+test:
+  <<: *DEV

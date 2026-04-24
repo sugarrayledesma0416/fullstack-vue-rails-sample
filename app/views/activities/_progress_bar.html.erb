@@ -1,0 +1,4 @@
+<% if @activity.content_object.respond_to?(:progress_bar_elements) %>
+  <% elements = @activity.content_object.progress_bar_elements %>
+  <%= render('maestro_activity_engine/activities/progress_bar', elements:) %>
+<% end %>

@@ -1,0 +1,176 @@
+@import 'music/library/v1/base/main';
+/* ================================================================== *
+
+    Graded Activities
+
+* =================================================================== */
+
+span.answer_wrapper {
+  display: inline-block;
+  padding: 0 0 rpx(8);
+  position: relative;
+  vertical-align: top;
+}
+
+span.answer_input {
+  display: inline-block;
+  position: relative;
+  vertical-align: top;
+}
+
+.general_comments {
+  border-top: rpx(1) solid #DEDEDE;
+  margin-top: rpx(10);
+  padding-top: rpx(8);
+}
+
+.comment_title {
+  font-weight: bold;
+}
+
+/* Scoring */
+.item_score {
+  display: inline-block;
+  font-weight: bold;
+  padding: 0 rpx(5);
+  line-height: 2em;
+  margin-right: rpx(15);
+}
+
+.item_score.recording {
+  margin-bottom: rpx(7);
+}
+
+.item_score .pts {
+  display: none;
+}
+
+.response_score_and_comment {
+  display: block;
+  margin-bottom: rpx(10);
+  
+  @include viewport-min('sm') {
+    display: inline-block;
+    vertical-align: top;
+  }
+}
+
+/* Correction Feedback Tables */
+.correction_feedback {
+  border: none;
+  display: inline-block;
+  margin-top: rpx(-4);
+  position: relative;
+  vertical-align: top;
+}
+
+.correction_feedback td {
+  border:none;
+  padding: rpx(3) rpx(5) 0 rpx(5);
+}
+
+.correction_feedback td.aligned_word {
+  padding: rpx(3) rpx(5) 0 rpx(5);
+}
+
+/* Don't put padding around chinese words */
+.ns-activity.ns-chinese-program {
+  .c-activity-content:lang(zh) .c-activity-main {
+    .ns-fill-in-the-blanks-questions {
+      .correction_feedback td {
+        padding-right: 0;
+        padding-left: 0;
+      }
+
+      .correction_feedback td.aligned_word {
+        padding-right: 0;
+        padding-left: 0;
+      }
+    }
+  }
+}
+
+.correction_feedback tr.best_answers td {
+  padding: 0 rpx(5) 0 rpx(5);
+}
+
+.correction_feedback td .incorrect {
+  border-bottom: rpx(2) solid $error;
+  padding-bottom: rpx(2);
+}
+
+.correction_feedback td .incorrect.blank {
+  display: inline-block;
+  overflow: hidden;
+  min-width: rpx(50);
+  text-indent: -999em;
+  width: 100%;
+}
+
+
+.grading_tasks .correction_feedback {
+margin-top: rpx(60);
+}
+
+/* Instructor edits styles for Open Ended and Compostion Activities */
+.instructor_deletion {
+  color: #A60F0F !important;
+  text-decoration: line-through !important;
+  @include theme-opt-in('supersites-jr') {
+    color: #6005BC !important;
+  }
+}
+
+.instructor_addition {
+  background-color: white !important;
+  color: var(--tracking-font-color) !important;
+  font-weight: bold !important;
+  text-decoration: underline;
+  @include theme-opt-in('supersites-jr') {
+    color: #6005BC !important;
+  }
+}
+
+.instructor_no_correction {
+  color: black !important;
+  font-weight: normal !important;
+}
+
+.deletion_decor {
+  cursor: pointer !important;
+}
+
+.recording_decor {
+  cursor:pointer !important;
+}
+
+.instructor_comment {
+  background-color:red !important;
+  border: rpx(1) solid red;
+  color: white !important;
+  font-size: rpx(12);
+  font-style: normal;
+  font-weight: bold !important;
+  margin-right: rpx(2);
+  text-decoration: none;
+  text-decoration: none !important;
+}
+
+/* Instructor Comments */
+.instructor_feedback {
+  width: 100%;
+
+  @include viewport-min('sm') {
+    width: rpx(840);
+  }
+}
+
+.comment_fieldset {
+  margin-right: rpx(20);
+  min-height: rpx(82);
+  width: auto;
+}
+
+.comment_legend {
+  font-size: rpx(12);
+}

@@ -1,0 +1,14 @@
+{
+  "links" :{
+    "next": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards?fields%5Bstandards%5D=*&offset=10",
+    "last": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards?fields%5Bstandards%5D=*&offset=7400",
+    "self": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards?fields%5Bstandards%5D=*"
+  },
+  "data" :[],
+  "meta": {
+    "offset": 10,
+    "limit": 10,
+    "took": 143,
+    "count": 10
+  }
+}

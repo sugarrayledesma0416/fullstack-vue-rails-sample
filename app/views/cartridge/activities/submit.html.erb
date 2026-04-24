@@ -1,0 +1,81 @@
+<%= render 'activities/include' %>
+<% content_for(:js_head, javascript_include_tag('record_view_time_spent.js')) %>
+<% content_for(:js_head, javascript_include_tag('ckeditor_basepath_override.js')) %>
+
+<% content_for :submit_buttons do %>
+  <%= render 'cartridge/activities/activity_footer',
+              disabled: @read_only,
+              buttons: (@attempt_track.practice? ? 'practice_activity' : 'save_submit'),
+              activity_id: @activity.id,
+              section_id: current_section.id,
+              activity_content: @activity.content_object,
+              activity_allows_reference_links: !@activity.assessment?,
+              blank_submission_protection_enabled: true,
+              enable_accentbar: true
+  %>
+  <%= hidden_field_tag('practice', 'yes') if @attempt_track.practice? %>
+<% end %>
+
+<% if @activity.composition?  || @activity.has_composition_activities? %>
+  <% content_for(:js_head, javascript_include_tag('composition_activity')) %>
+<% end %>
+
+<%= render 'cartridge/activities/show_header_content' %>
+<div class="u-hidden  js-mobile-tabset-container"></div>
+<% if @activity -%>
+  <div id="activity_wrapper" class="c-activity-wrapper">
+    <div id="main_content">
+      <% if @activity.content_object -%>
+
+        <div class="c-activity-info">
+          <%= render 'activities/activity_context',
+                      activity: @activity,
+                      attempt_track: @attempt_track,
+                      classwork: @classwork,
+                      workset: @workset,
+                      attempt: @attempt,
+                      score: nil,
+                      instructor_feedback: nil,
+                      section: @section
+          %>
+        </div>
+        <div role="main" id="activity_shell" class="c-activity-content" lang="<%= @activity.language %>">
+          <% if @show_not_enrolled_warning %>
+            <%= render 'activities/not_enrolled_warning' %>
+          <% end %>
+          <div id="activity_body" class="c-activity-body">
+            <% if @attempt_track.practice? %>
+              <% form_url = practice_cartridge_section_activity_path(current_section_id, @activity) %>
+              <% form_parameters = { method: :get, id: 'activity_form', class: 'c-activity-form', autocomplete: "off" } %>
+            <% else %>
+              <% form_url = cartridge_section_activity_path(current_section_id,  @activity) %>
+              <% form_parameters = { method: :post, id: 'activity_form', class: 'c-activity-form', autocomplete: "off" } %>
+            <% end %>
+
+            <% if @activity_presenter.timed_assessment? %>
+              <%= render 'activities/assessment_auto_submit'%>
+            <% end %>
+
+            <%= form_for( :activity, url: form_url, html: form_parameters ) do |form| %>
+              <% if @activity.content_object.is_a?(MaestroActivityEngine::ActivityContent::Content) %>
+                <div id="testFrame" class="c-activity-main">
+                  <%= render "maestro_activity_engine/activities/submitted/" + @activity.content_object.partial_name,
+                              content_object: @activity.content_object,
+                              activity_id: @activity.id,
+                              read_only_status: @activity.read_only?,
+                              results: @results,
+                              classwork: @classwork,
+                              attempt_complete: @attempt.complete?
+                  %>
+                </div>
+                <%= render partial: 'maestro_activity_engine/activities/partials/sidebar',
+                           collection: @activity.content_object.sidebars, as: :sidebar %>
+                <%= yield :submit_buttons if @activity.content_object.submittable? %>
+              <% end -%>
+            <% end -%>
+          </div>
+        </div>
+      <% end -%>
+    </div>
+  </div>
+<% end -%>

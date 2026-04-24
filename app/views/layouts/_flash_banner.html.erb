@@ -1,0 +1,24 @@
+<div class="ns-music-v1">
+  <div class='c-flash-banner-group  u-hidden  <%= "c-#{variant_selector}-flash js-#{variant_selector}-flash" %>  <%= test_class("#{variant_selector}-flash-banner") %>' >
+    <div class="c-flash-banner  c-flash-banner--warning" role="alert">
+      <div class="l-media">
+        <div class="l-media__img">
+          <span class="c-flash-banner__icon  c-flash-banner__icon--warning"></span>
+          <span class="u-screen-reader-only">warning</span>
+        </div>
+        <div class="l-media__body  <%= test_class("#{variant_selector}-body") %> ">
+          <div class="js-<%= variant_selector %>-flash-msg">
+            <%= (defined? msg_text) ? raw(msg_text) : "" %>
+          </div>
+          <div class="u-mar-top-12">
+            <%= Music::Components.button(
+              text: dismiss_text,
+              variant: "border",
+              classes: ["js-#{variant_selector}-cancel"]
+            ) %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

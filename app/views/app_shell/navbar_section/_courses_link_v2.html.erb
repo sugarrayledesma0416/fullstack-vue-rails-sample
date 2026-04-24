@@ -1,0 +1,15 @@
+<% if section && section.non_zero? %>
+  <%= link_to(
+        'Dashboard',
+        main_app.course_section_path(section.course, section),
+        class: "c-menu__title  c-menu__title--program  c-menu__title--program-no-menu
+                js-nav-system__link  #{main_nav_active('dashboard')}"
+      ) %>
+<% else %>
+  <%= link_to(
+        'Dashboard',
+        main_app.no_section_student_dashboard_path(0, current_program),
+        class: "c-menu__title  c-menu__title--program  c-menu__title--program-no-menu
+		            js-nav-system__link  #{main_nav_active('dashboard')}"
+      ) %>
+<% end %>

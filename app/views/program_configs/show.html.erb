@@ -1,0 +1,19 @@
+<% content_for(:css_head, stylesheet_link_tag('full_width_content'))%>
+
+<div id="main_content">
+  <div id="full_width_header">
+    <h2><%= @program.title.html_safe %> <span>current M3 configuration</span></h2>
+  </div>
+  <div id="full_width_body">
+    <div>
+      <%= link_to 'Configuration history', program_config_versions_path(@program) %>
+    </div>
+    <div>
+      <%= render 'program_config_details', program_config: @program_config %>
+    </div>
+    <div>
+      <%= link_to 'Back', "#{UA_URL}/support/programs_configs" %>
+    </div>
+  </div>
+</div>
+

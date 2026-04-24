@@ -1,0 +1,79 @@
+<% content_for(:css_head, stylesheet_link_tag("music/features/forums/main")) %>
+<%= render 'forums/js_config' %>
+<% content_for :js_head, javascript_include_tag('jquery_common/deletion_modal') %>
+<% content_for :js_head, javascript_include_tag('forums') %>
+<% content_for(:body_classes, "ns-forums") %>
+
+<% if accent_bar_enabled? %>
+  <div class="u-mar-0  js-accent-bar-container--activity">
+    <%= render 'music/partials/accent_bar_component', {language: current_program.language_code} %>
+  </div>
+<% end %>
+
+<% if current_user.instructor? %>
+  <%= hidden_field_tag 'instructor_id', current_user.id %>
+  <% content_for(:navigation, render(partial: 'app_shell/navbar_program/main')) %>
+<% end -%>
+
+  <% if current_user.instructor? && !current_focus.has_atleast_one_actionable_section? %>
+    <%= render 'instructor/partials/no_actionable_course_or_section' %>
+  <% else %>
+    <%= form_for(
+          @forum,
+          url: forums_path(current_program, current_section),
+          html: { class: 'js-new-forum' }
+        ) do |form| %>
+    <%= render(
+      'partials/form_errors',
+      header_message: nil,
+      object: @forum
+    ) %>
+
+    <div class="c-form-item">
+      <h3 class="c-heading--modal">This is <%= @course.name %></h3>
+    </div>
+
+    <div class="c-form-item">
+      <%= form.label :section_id,
+                      class: 'c-form-item__label  u-txt-reg  u-pad-0' %>
+      <%= form.collection_select :section_id,
+                                  @available_sections,
+                                  :id,
+                                  :name,
+                                  {},
+                                  class: 'c-select' %>
+    </div>
+
+    <div class="c-form-item">
+      <%= form.label 'Forum Name',
+                      class: 'c-form-item__label' %>
+      <%= form.text_field :name,
+                          class: 'c-form-item__input  c-form-item__input--forums' %>
+    </div>
+
+    <%= form.fields_for :first_post do |post_fields| %>
+      <%= post_fields.hidden_field :audio_path, 'data-audio-path' => "" %>
+      <%= post_fields.label 'Create the First Post',
+                            class: 'c-form-item__label' %>
+
+      <div class="c-form-item">
+        <div class="c-panel  c-panel--forums  u-bord-1  u-bord-gray-d">
+          <div class="c-panel__body  u-pad-16">
+            <%= render partial: 'forums/audio_controls',
+                       locals: {
+                         'form': post_fields
+                       } %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
+    <div>
+      <%= form.submit 'Save',
+                       class: 'c-button  c-button--primary  u-no-width' %>
+      <%= link_to('Cancel',
+                   forums_path(current_program, current_section),
+                   class: 'c-button') %>
+    </div>
+  <% end %>
+<% end %>

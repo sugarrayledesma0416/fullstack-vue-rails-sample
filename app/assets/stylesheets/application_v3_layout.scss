@@ -1,0 +1,34 @@
+html {
+  overflow: auto;
+}
+
+body {
+  margin: 0px;
+}
+
+.l-application-v3 {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  // TODO: This background color is temporary until the u-bg-gray-50 utility class exists.
+  background-color: var(--music-util-light-bg, #f6f6f6) !important;
+
+  .l-header {
+    flex-shrink: 0;
+  }
+
+  .l-content {
+    flex-grow: 1;
+    padding-top: 40px;
+  }
+
+  .l-footer {
+    flex-shrink: 0;
+  }
+}
+
+// This is an override for the background applied by ns-music-v3.
+.ns-music-v3.sl-toast-stack {
+  background-color: transparent !important;
+}

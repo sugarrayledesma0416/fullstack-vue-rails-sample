@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<activity activity_type="video_virtual_chat" language="de" title="la novia">
+  <!--Enter the proper code in quotes after language attribute: es - Spanish, fr - French, it - Italian, de - German.-->
+  <dl>Answer the questions.</dl>
+  <items>
+    <style>
+    </style>
+    <reference type="text">
+      <body>¿Cómo te llamas?
+      </body>
+    </reference>
+    <item>
+      <turns>
+        <!-- you can set multiple turn nodes -->
+        <turn>
+          <image id="171436" />
+          <!-- <image id="171435" /> jpg file -->
+          <!-- <image id="171436" /> png file -->
+          <video id="171457" gender="female" />
+          <video id="171426" gender="male" />
+        </turn>
+        <turn>
+          <image id="171436" />
+          <video id="171458" gender="female" />
+          <video id="171427" gender="male" />
+        </turn>
+        <turn>
+          <image id="171436" />
+          <video id="171459" gender="female" />
+          <video id="171427" gender="male" />
+        </turn>
+        <turn>
+          <image id="171436" />
+          <video id="171460" gender="female" />
+          <video id="171429" gender="male" />
+        </turn>
+      </turns>
+    </item>
+  </items>
+</activity>

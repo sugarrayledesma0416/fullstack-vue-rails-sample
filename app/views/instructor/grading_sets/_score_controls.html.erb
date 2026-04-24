@@ -1,0 +1,27 @@
+<div class="js-grading-group">
+  <div class="score_controls js-manual-grading-controls
+              <%= @presenter.has_rubric? ? 'u-hidden' : '' %>">
+      <div class="score_option">
+        Total
+        <a href="#"
+           id="<%= "score_button_zero_#{view_manager.response_id}" %>"
+           class="scoring_button  zero_credit  c-link">0%</a>
+            |
+        <a href="#"
+           id="<%= "score_button_fullcred_#{view_manager.response_id}" %>"
+           class="scoring_button  full_credit  c-link">100%</a>
+        <div class="u-float-rt">
+          <%= text_field_tag view_manager.score_field,
+              view_manager.question_points,
+              class: 'score-field  js-score-field  test-score-field',
+              size: 3,
+              'data-validate': view_manager.score_field,
+              'data-points-possible': view_manager.points_possible %>
+          / <span class="points_possible"><%= view_manager.points_possible %></span>
+          <%= hidden_field_tag "points_possible_for_#{view_manager.response_id}",
+              view_manager.points_possible,
+              id: "points_possible_for_#{view_manager.response_id}" %>
+        </div>
+      </div>
+  </div>
+</div>

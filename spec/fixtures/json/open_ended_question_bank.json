@@ -1,0 +1,147 @@
+{
+  "activity_type":"exam",
+  "assessment_type":null,
+  "callout_icon":null,
+  "config":null,
+  "diagnostic_reference":null,
+  "dl":{
+    "node_text":"Write your answer to the prompts below."
+  },
+  "dl_audio":null,
+  "exam_reference":null,
+  "external_references":[],
+  "ignore_title":null,
+  "included_content":null,
+  "inline_external_references":[],
+  "is_bonus":null,
+  "language":"es",
+  "media_items":[],
+  "non_randomizable":false,
+  "points_per_response":null,
+  "question_count":0,
+  "strict_media_requirements":null,
+  "title":"Escribir - Open ended",
+  "style":{
+    "Style":{
+      "item_numbers":"show"
+    }
+  },
+  "activities":[
+    {
+      "OpenEndedContent":{
+        "activity_type":"open_ended",
+        "assessment_type":null,
+        "callout_icon":null,
+        "config":null,
+        "diagnostic_reference":null,
+        "dl":{
+          "node_text":"Write your answer to the prompts below."
+        },
+        "dl_audio":null,
+        "exam_reference":null,
+        "external_references":[],
+        "ignore_title":null,
+        "included_content":null,
+        "inline_external_references":[],
+        "is_bonus":null,
+        "language":null,
+        "media_items":[],
+        "non_randomizable":false,
+        "points_per_response":null,
+        "question_count":0,
+        "strict_media_requirements":null,
+        "title":"Escribir - Open ended",
+        "style":{
+          "Style":{
+            "item_numbers":"show",
+            "answer_size":"medium"
+          }
+        },
+        "items":[
+          {
+            "Exam":{
+              "rank":1,
+              "sidebar_ref":null,
+              "header":{
+                "node_text":"Escribir - Open ended"
+              },
+              "body":{
+                "node_text":"Write your answer to the prompts below."
+              }
+            }
+          },
+          {
+            "Item":{
+              "prompt":{
+                "node_text":"You are meeting a classmate for the first time. Write five questions you would ask him/her and then five answers he/she would give you. Include at least four <b>-ar</b> verbs in present tense."
+              },
+              "sample_answer":null,
+              "answer_size":null,
+              "rank":2,
+              "concept":"",
+              "sidebar_ref":null,
+              "question_number":1,
+              "points_possible":10
+            }
+          },
+          {
+            "Item":{
+              "prompt":{
+                "node_text":"Imagine you are helping a classmate to find five locations on campus. Write five sentences describing how he/she can get to those places. Include at least four <b>-ar</b> verbs in present tense."
+              },
+              "sample_answer":null,
+              "answer_size":null,
+              "rank":3,
+              "concept":"",
+              "sidebar_ref":null,
+              "question_number":2,
+              "points_possible":10
+            }
+          },
+          {
+            "Item":{
+              "prompt":{
+                "node_text":"Write a paragraph about a typical day on campus. Mention what time you get there, how you get to your classes, what you do on your free time, etc. Include at least four <b>-ar</b> verbs in present tense."
+              },
+              "sample_answer":null,
+              "answer_size":null,
+              "rank":4,
+              "concept":"",
+              "sidebar_ref":null,
+              "question_number":3,
+              "points_possible":10
+            }
+          },
+          {
+            "Item":{
+              "prompt":{
+                "node_text":"Write a short description of your favorite course. What day and time of the week does it start? Which subject matters are studied? How does the professor teach? Include at least four <b>-ar</b> verbs in present tense."
+              },
+              "sample_answer":null,
+              "answer_size":null,
+              "rank":5,
+              "concept":"",
+              "sidebar_ref":null,
+              "question_number":4,
+              "points_possible":10
+            }
+          },
+          {
+            "Item":{
+              "prompt":{
+                "node_text":"Write five sentences describing what your teacher and classmates do on a typical day of class. Include at least four <b>-ar</b> verbs in present tense."
+              },
+              "sample_answer":null,
+              "answer_size":null,
+              "rank":6,
+              "concept":"",
+              "sidebar_ref":null,
+              "question_number":5,
+              "points_possible":10
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

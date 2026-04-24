@@ -1,0 +1,1 @@
+import '~/src/views/instructor/student_grace_periods/student_grace_periods.js';

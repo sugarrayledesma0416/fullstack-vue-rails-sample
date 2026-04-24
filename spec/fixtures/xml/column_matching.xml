@@ -1,0 +1,22 @@
+<activity activity_type="column_matching" language="en" title="Column Matching">
+  <dl>Match the items from the first column to the items in the second.</dl>
+  <items>
+    <item>
+      <tile><image id="1" /></tile>
+      <tile><label>choice1</label></tile>
+    </item>
+    <item>
+      <tile><image id="2" /></tile>
+      <tile><label>choice2</label></tile>
+    </item>
+    <item>
+      <tile><image id="3" /></tile>
+      <tile><label>choice3</label></tile>
+    </item>
+    <item>
+      <tile><image id="4" /></tile>
+      <tile><label>choice4</label></tile>
+    </item>
+  </items>
+</activity>
+

@@ -1,0 +1,23 @@
+<% content_for(:navigation) do %>
+  <% render('app_shell/navbar_program/supersite_junior') %>
+<% end %>
+
+<%= render('app_shell/navbar_section/supersite_junior_grownups') %>
+
+<h1 class="u-screen-reader-only">Calendar</h1>
+
+<% if @calendar_presenter -%>
+  <% content_for(:body_classes, '  ns-student-calendar-page') %>
+  <% content_for(
+      :css_head,
+      stylesheet_link_tag('music/features/assignment_calendar/student/main')
+    ) %>
+
+  <div class="c-study-schedule-page">
+    <div class="c-calendar-wrapper  js-calendar-container">
+      <%= render 'calendar/event_calendar', calendar_presenter: @calendar_presenter  %>
+    </div>
+  </div>
+<% else -%>
+  There is no Assignment Calendar for this course.
+<% end -%>

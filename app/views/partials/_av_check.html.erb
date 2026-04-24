@@ -1,0 +1,134 @@
+<div class='js-av-check  ns-music-v1'>
+  <%= stylesheet_link_tag("av_check") %>
+  <div class='c-modal  c-modal--md  u-hidden  js-modal  js-av-check-loading-modal'>
+    <div class='c-modal__box  js-modal-box'>
+      <div role="document" class="js-modal-content">
+        <div class="c-modal__body">
+          <h3 class="c-heading--md">Loading the audio-video check&hellip;</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class='c-modal  c-modal--md  u-hidden  js-modal  js-av-run-test-modal  js-modal-a11y'>
+    <div
+      role='dialog'
+      class='c-modal__box  js-modal-box'
+      aria-labelledby="a11y-avcheck-step1"
+      aria-modal="true">
+      <div role="document" class="js-modal-content">
+        <div class="c-modal__body">
+          <h3 class="c-heading--md" id="a11y-avcheck-step1">Audio/video check</h3>
+          <%= Music::Components.button(text: 'Run test',
+                                        variant: 'primary',
+                                        classes: ['js-run-av-test', 'js-modal-a11y__first-focus-element']) %>
+          <button class="c-modal__close-button  c-no-button  js-x-close  js-modal-close  js-modal-a11y__last-focus-element">
+            <span class="c-icon  c-icon--md  c-icon--close"></span>
+            <span class="u-screen-reader-only">Close dialog</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class='c-modal  c-modal--md  u-hidden  av-progress-bar-modal  js-av-progress-bar-modal'>
+    <div class='l-span-6  c-modal__box'>
+      <div role="document" class="js-modal-content"  tabindex="0">
+        <div class="c-modal__body">
+          <h3 class="c-heading--md">Checking your audio/video connection&hellip;</h3>
+          <p class="u-txt-12">This is to ensure that your computer, browser and internet connection supports real-time video/audio connections.</p>
+          <div class='ui-progressbar' style='position: relative;'>
+            <div class='progress-label'></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div
+    role='dialog'
+    class='ns-chat  av-results-modal  c-modal  c-modal--md  u-hidden  u-txt-lt  js-av-results-modal  js-modal-a11y'
+    aria-labelledby="a11y-avcheck-step2"
+    aria-modal="true">
+    <div class='c-modal__box  c-panel  c-panel--padded  c-modal__box--scrollable  c-modal__box--chat-activity' tabindex="0">
+      <h2 class="modal-heading  c-heading--modal" id="a11y-avcheck-step2">
+        <span>Expected call quality</span>
+      </h2>
+
+      <button class="c-modal__close-button  c-no-button  js-av-check-done  js-modal-a11y__first-focus-element  u-pad-0  u-pad-8">
+        <span class="c-icon  c-icon--md  c-icon--close"></span>
+        <span class="u-screen-reader-only">Close dialog</span>
+      </button>
+
+      <!-- Wrapping the test results in a div prevents the modal
+        from changing width if the disclosures are opened. -->
+      <div class="av-test-results-cnt">
+        <div class="l-grid  av-test-results-video" id="video-results">
+          <div class="subscribed-media-cnt  l-col-6  u-txt-ctr">
+            <div id="my-subscribed-media" class="u-mar-auto"></div>
+            <div class="c-icon  c-icon--toggle-video  c-icon--lg"></div>
+          </div>
+
+          <div class="av-video-summary  l-col-6  js-av-video-summary" id='video-summary'>
+            <h2 class="c-heading--modal  u-mar-bot-16"></h2>
+            <div class="u-hidden" id='video-details'>
+              <div class="c-disclosure  c-disclosure--end  js-disclosure-video">
+                <button class="c-no-button c-disclosure__header  u-mar-lt-0  "
+                      role="button"
+                      aria-expanded="false"
+                      aria-controls="video-details-disclosure-body">
+                  View details
+                  <div class="c-disclosure__marker"></div>
+                </button>
+                <p id="video-details-disclosure-body" class="c-disclosure__body  u-mar-lt-0  js-av-video-details">
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <dl class="dl-horizontal"></dl>
+
+        <div class="l-grid  av-test-results-audio" id="audio-results">
+          <div class="audio-bar-cnt  l-col-6  u-mar-top-16">
+            <div> <!-- to force display: block -->
+              <canvas id="audio-bar" class="audio-bar-canvas" height="30" style="display: none; margin: 0; border:3px solid lightgrey;"></canvas>
+            </div>
+            <div class="c-icon  c-icon--toggle-audio  c-icon--lg"></div>
+          </div>
+
+          <div class="av-audio-summary  l-col-6  js-av-audio-summary" id='audio-summary'>
+            <h2 class="c-heading--modal  u-mar-bot-16"></h2>
+            <div class="u-hidden" id='audio-details'>
+              <div class="c-disclosure  c-disclosure--end  js-disclosure-audio">
+                <button class="c-no-button c-disclosure__header  u-mar-lt-0"
+                        role="button"
+                        aria-expanded="false"
+                        aria-controls="audio-details-disclosure-body">
+                  View details
+                  <div class="c-disclosure__marker"></div>
+                </button>
+                <p id="audio-details-disclosure-body" class="c-disclosure__body  u-mar-lt-0  js-av-audio-details">
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr class="u-pad-0">
+
+        <h3 class="c-heading--modal  u-pad-top-0">Having trouble?</h3>
+        <a aria-label="Having trouble? Contact our technical support center"
+          class="u-txt-under" href="https://support.vhlcentral.com/hc/en-us/requests/new" target="blank">
+          Contact our technical support center
+        </a>
+
+        <div class="c-button-group  u-mar-top-32">
+          <%= Music::Components.button(text: 'Done',
+                                        variant: 'primary',
+                                        classes: ['js-av-check-done', 'js-modal-a11y__last-focus-element']) %>
+        </div>
+      </div> <!-- end of div that wraps the grid -->
+    </div>
+  </div>
+</div>

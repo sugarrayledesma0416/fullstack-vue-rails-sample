@@ -1,0 +1,18 @@
+<% content_for(:body_classes, "ns-communication") %>
+<% content_for(:navigation, render(partial: 'app_shell/navbar_section/main',
+                                   locals: { section: @section, return_label: @return_label })) %>
+<% content_for(:css_head, stylesheet_link_tag('music/features/communication/main')) %>
+
+<div class="u-mar-bot-32  u-mar-top-neg-12">
+  <%= link_to(
+        @return_url,
+        class: "js-activity_return_link  #{test_class('activity-return-link')}"
+      ) do %>
+    <%= Music::Components.icon(variant: 'return', text: '') %>
+    <%= @return_label %>
+  <% end %>
+</div>
+
+<div>
+  <%= render('common_show') %>
+</div>

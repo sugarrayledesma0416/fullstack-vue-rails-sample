@@ -1,0 +1,137 @@
+<activity activity_type="cumulative_matching" title="Cumulative Matching Example" language="es">
+  <dl/>
+  <items>
+    <dictionary_entry>
+      <id>137024</id>
+      <image id="137024"/>
+      <audio id="120989"/>
+      <target>hacer las maletas</target>
+      <annotated_target>annotated_target_x</annotated_target>
+      <descriptor>descriptor_x</descriptor>
+      <language>es</language>
+      <translation>translation_x</translation>
+      <exclusion_entry_ids></exclusion_entry_ids>
+    </dictionary_entry>
+    <dictionary_entry>
+      <id>137025</id>
+      <image id="137025"/>
+      <audio id="120989"/>
+      <target>ir en barco</target>
+      <annotated_target>annotated_target_x</annotated_target>
+      <descriptor>descriptor_x</descriptor>
+      <language>es</language>
+      <translation>translation_x</translation>
+      <exclusion_entry_ids></exclusion_entry_ids>
+    </dictionary_entry>
+    <dictionary_entry>
+      <id>137026</id>
+      <image id="137026"/>
+      <audio id="120989"/>
+      <target>la estación de autobuses</target>
+      <annotated_target>annotated_target_x</annotated_target>
+      <descriptor>descriptor_x</descriptor>
+      <language>es</language>
+      <translation>translation_x</translation>
+      <exclusion_entry_ids></exclusion_entry_ids>
+    </dictionary_entry>
+    <dictionary_entry>
+      <id>137027</id>
+      <image id="137027"/>
+      <audio id="120989"/>
+      <target>la llave</target>
+      <annotated_target>annotated_target_x</annotated_target>
+      <descriptor>descriptor_x</descriptor>
+      <language>es</language>
+      <translation>translation_x</translation>
+      <exclusion_entry_ids></exclusion_entry_ids>
+    </dictionary_entry>
+    <dictionary_entry>
+      <id>137028</id>
+      <image id="137028"/>
+      <audio id="120989"/>
+      <target>el pasaje (de ida y vuelta)</target>
+      <annotated_target>annotated_target_x</annotated_target>
+      <descriptor>descriptor_x</descriptor>
+      <language>es</language>
+      <translation>translation_x</translation>
+      <exclusion_entry_ids></exclusion_entry_ids>
+    </dictionary_entry>
+    <dictionary_entry>
+      <id>137029</id>
+      <image id="137029"/>
+      <audio id="120989"/>
+      <target>confirmar una reservación</target>
+      <annotated_target>annotated_target_x</annotated_target>
+      <descriptor>descriptor_x</descriptor>
+      <language>es</language>
+      <translation>translation_x</translation>
+      <exclusion_entry_ids></exclusion_entry_ids>
+    </dictionary_entry>
+    <dictionary_entry>
+      <id>137030</id>
+      <image id="137030"/>
+      <audio id="120989"/>
+      <target>ir en motocicleta</target>
+      <annotated_target>annotated_target_x</annotated_target>
+      <descriptor>descriptor_x</descriptor>
+      <language>es</language>
+      <translation>translation_x</translation>
+      <exclusion_entry_ids></exclusion_entry_ids>
+    </dictionary_entry>
+    <dictionary_entry>
+      <id>137031</id>
+      <image id="137031"/>
+      <audio id="120989"/>
+      <target>Soy de los Estados Unidos de California.</target>
+      <annotated_target>annotated_target_x</annotated_target>
+      <descriptor>descriptor_x</descriptor>
+      <language>es</language>
+      <translation>translation_x</translation>
+      <exclusion_entry_ids></exclusion_entry_ids>
+    </dictionary_entry>
+    <dictionary_entry>
+      <id>137032</id>
+      <image id="137032"/>
+      <audio id="120989"/>
+      <target>está de vacaciones</target>
+      <annotated_target>annotated_target_x</annotated_target>
+      <descriptor>descriptor_x</descriptor>
+      <language>es</language>
+      <translation>translation_x</translation>
+      <exclusion_entry_ids></exclusion_entry_ids>
+    </dictionary_entry>
+    <dictionary_entry>
+      <id>137033</id>
+      <image id="137033"/>
+      <audio id="120989"/>
+      <target>montar a caballo</target>
+      <annotated_target>annotated_target_x</annotated_target>
+      <descriptor>descriptor_x</descriptor>
+      <language>es</language>
+      <translation>translation_x</translation>
+      <exclusion_entry_ids></exclusion_entry_ids>
+    </dictionary_entry>
+    <dictionary_entry>
+      <id>137034</id>
+      <image id="137034"/>
+      <audio id="120989"/>
+      <target>ir de vacaciones</target>
+      <annotated_target>annotated_target_x</annotated_target>
+      <descriptor>descriptor_x</descriptor>
+      <language>es</language>
+      <translation>translation_x</translation>
+      <exclusion_entry_ids></exclusion_entry_ids>
+    </dictionary_entry>
+    <dictionary_entry>
+      <id>137035</id>
+      <image id="137035"/>
+      <audio id="120989"/>
+      <target>la inspectora de aduanas</target>
+      <annotated_target>annotated_target_x</annotated_target>
+      <descriptor>descriptor_x</descriptor>
+      <language>es</language>
+      <translation>translation_x</translation>
+      <exclusion_entry_ids></exclusion_entry_ids>
+    </dictionary_entry>
+  </items>
+</activity>

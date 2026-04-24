@@ -1,0 +1,44 @@
+@use 'MusicV3/v3/styles/base' as *;
+
+.c-add-student-wrapper {
+  padding: 0 var(--music-space-5);
+  margin-bottom: var(--music-space-11);
+
+  .c-add-student-header {
+    
+    @include viewport-max(md) { 
+      flex-direction: column;
+    }
+  }
+
+  .c-add-students__heading {
+    color: var(--music-true-gray-600);
+    font-size: var(--music-font-heading-2);
+  }
+
+  .c-add-students__heading-info {
+    font-weight: 500;
+  }
+
+  .c-add-students__table-heading {
+    font-size: var(--music-space-5);
+    color: var(--music-true-gray-600);
+  }
+}
+
+.c-add-student__search-icon {
+  color: var(--music-util-white);
+  background-color: var(--music-true-gray-900);
+  border-radius: 50%;
+  padding: rpx(6);
+  margin-right: rpx(1);
+}
+
+.c-add-student-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: var(--music-util-white);
+  padding: var(--music-space-3) var(--music-space-6);
+}

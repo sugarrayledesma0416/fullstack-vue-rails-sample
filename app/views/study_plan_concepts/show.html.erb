@@ -1,0 +1,7 @@
+<% content_for(:body_classes, ' ns-newcsslib') %>
+
+<% if @presenter.study_plan_version == 'v1' %>
+  <%= render 'study_plan_v1' %>
+<% else %>
+  <%= render 'study_plan_v2' %>
+<% end %>

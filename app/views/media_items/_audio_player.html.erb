@@ -1,0 +1,19 @@
+<% if defined?(reference_in_artifact) && reference_in_artifact %>
+  <div class="player">  
+    <div class="portfolio-audio-reference" ></div>
+  </div>
+<% else %>
+  <div class="player">
+    <audio id="<%= next_audio_player_id %>" controls controlsList="nodownload">
+      <source type="audio/mpeg" src="<%= media_item.public_filename %>"/>
+    </audio>
+  </div>
+<% end %>
+
+<%= render(
+      'media_items/audio_transcripts',
+      media_item: media_item,
+      # Safety check is needed because this partial is rendered by views
+      # that do not pass a reference.
+      reference: defined?(reference) && reference
+    ) %>

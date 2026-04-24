@@ -1,0 +1,38 @@
+<div id="chat_request_container_template">
+  <div class="chat_request_receive" id="chat_request_receive_container">
+    <div class="request_inner">
+      <span class="student_info"></span>
+      <span class="user_request">
+        Receiving request for {{purpose}}...
+      </span>
+
+      <div class="chat_avatar">
+        <div class="user_avatar"></div>
+        <span class="student_name">{{from}}
+          <span id="inviter_course" class="hidden_helper tutorial_hover">
+            <span class="tutorial_arrow_right"></span>
+            {{from}} from {{course}} is sending you an invitation to a {{purpose}}.
+            <span class={{practice}}> You will be doing this activity in practice mode. </span>
+          </span>
+        </span>
+      </div>
+
+      <div class="request_video">
+        <div class="checkbox {{checkbox_state}}" id="video_request_checkbox"></div> Show my video
+      </div>
+
+      <div class="request_controls">
+        <div class="cancel_request">
+          <a href="#" class="cancel_link" id="decline_partner_chat_link">decline</a>
+        </div>
+        <div class="accept_request">
+          <a href="#" id="accept_chat_request" class="red-button">accept</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <audio id="invitation_sound">
+    <source src="/correct.mp3" type="audio/mpeg" />
+    <source src="/correct.ogg" type="audio/ogg" />
+  </audio>
+</div>

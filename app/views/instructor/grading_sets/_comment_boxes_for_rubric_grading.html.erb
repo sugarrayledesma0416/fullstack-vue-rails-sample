@@ -1,0 +1,5 @@
+<% # render comment boxes here. They will be initialized by js outside of GradingControlsApp.vue.
+   # Next, GradingControlsApp moves them to the appropriate visual location via onMounted call. %>
+<% @comment_boxes.each do |comment| %>
+  <%= comment %>
+<% end %>

@@ -1,0 +1,33 @@
+<% if presenter.past_assignments.present? -%>
+<table class="c-table  c-table--assesments">
+  <thead>
+    <tr class="c-header-row  c-header-row--assesments">
+      <th scope="col">Assessment</th>
+      <th scope="col">Grade</th>
+      <th scope="col">Due Date</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% presenter.past_assignments.each do |assignment| %>
+    <tr class="c-row  c-row--assesments" data-past-assessment-id="activity_<%= assignment.assignable_id %>">
+      <% tooltip_message = presenter.grade_availability_description(assignment) -%>
+      <td
+        data-content-type="activity_title"
+        class="<%= test_class('past-assessment-title') %>">
+        <%= format_assessment_assignment_title( assignment, presenter.section, presenter.score_for(assignment), :title => tooltip_message ) %>
+      </td>
+      <td>
+        <span data-content-type="activity_grade">
+          <%= format_assessment_assignment_score_as_link( assignment, presenter.section, presenter.score_for(assignment), :title => tooltip_message ) %>
+        </span>
+      </td>
+      <td>
+        <span data-content-type="assignment_due_date">
+          <%= format_due_date_time(presenter.score_for(assignment), :toc_due_date_with_time) %>
+        </span>
+      </td>
+    </tr>
+  <% end -%>
+  </tbody>
+</table>
+<% end -%>

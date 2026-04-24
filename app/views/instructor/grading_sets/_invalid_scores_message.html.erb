@@ -1,0 +1,6 @@
+  <% unless @presenter.invalid_scores.empty? -%>
+    <div id="grading_error_message">
+      <p>Changes could not be saved because there were problems with <%= @presenter.invalid_scores.size %> of the submitted scores.<br /> 
+      Scores must be numbers between 0 and the possible points for each question.</p>
+    </div>
+  <% end -%>

@@ -1,0 +1,68 @@
+<% content_for(:js_head, javascript_include_tag("uploadable") ) %>
+
+<%= render(
+      'partials/form_errors',
+      header_message: nil,
+      object: announcement
+    ) %>
+<div class="title_and_body_container  js-accent_bar_container">
+  <div id="title_container">
+    <div class="dialog_course" data-content-type="course_name"><span>Course:</span> <%= @course_name %> </div>
+    <div class="dialog_section" data-content-type="section_name"><span>Sections:</span>  <%= format_announcement_section_name(announcement) %> </div>
+    <%= form.label :title, "Title" %>
+    <%= form.text_field :title, :maxlength => 48, :size => '50', 'data-js-accent-input' => '' %>
+  </div>
+  <div id="body_container">
+    <%= form.label :body, "Announcement text", :class => 'announcement_text' %>
+    <%= form.text_area :body, 'data-js-accent-input' => '' %>
+  </div>
+  <div id="calendar_day_container" class="u-dis-inline-block">
+    <%= form.label :show_on, "Show announcement on calendar (optional)", :class => 'announcement_text' %>
+    <%= form.text_field :show_on, class: 'datepicker has_datepicker  js-calendar-input', autocomplete: 'off' %>
+
+    <div class="ns-music-v1  u-dis-inline-block  u-pad-lt-24">
+      <div class="c-form-item">
+        <%= form.check_box :class_cancelled, class: 'c-form-item__checkbox  js-cancel-class' %>
+        <%= form.label :class_cancelled, "Cancel Class", class: "c-form-item__label #{ test_class('cancel-class') }" %>
+      </div>
+    </div>
+  </div>
+  <p class="u-txt-error  u-dis-none  js-calendar-error-label  <%= test_class('calendar-error-label') %>">Incorrect date format. Please enter as mm/dd/yy</p>
+  <ul class="announcement_uploads  u-pad-0">
+    <li data-container="link_title">
+      <%= form.label :external_link_title, "Link title" %>
+      <%= form.text_field :external_link_title, :maxlength => 255, :size => '50', 'data-js-accent-input' => '' %>
+    </li>
+    <li data-container="link_url">
+      <%= form.label :external_link_url, "Link URL" %>
+      <%= form.text_field :external_link_url, :maxlength => 255, :size => '50' %>
+    </li>
+    <% if announcement.has_file? %>
+      <ul data-container="file_info" class="detail">
+        <li class="resource_title">Uploaded file Information:</li>
+        <li class="resource_title">Name: <%= announcement.file_name %></li>
+        <li class="resource_title">Size: <%= number_to_human_size(announcement.file_size) %></li>
+        <li class="resource_title">Upload date: <%= announcement.updated_at.to_date %></li>
+        <li data-content-type="announcement_download_link">
+          <%= link_to 'Download current file', download_announcement_attachment_path(current_focus.sections.first, announcement) %>
+        </li>
+        <li data-container="replace_file_link">
+      	  <a href="#" onclick="VHL.uploadable.file_container_switch('show'); return false;">Replace current file</a>
+	      </li>
+      </ul>
+    <% end %>
+    <li data-container="file_field">
+      <%= label_tag :uploaded_file, "File" %>
+      <%= file_field_tag :uploaded_file %>
+      <%= hidden_field_tag(:file_uploading, (announcement.new_record? ? "needed" : "dismissed"), :id => "file_uploading") %>
+    </li>
+  </ul>
+</div>
+
+<%= hidden_field_tag(:has_file, (announcement.has_file? ? "has_file" : "no_file"), :id => "has_file") %>
+<% if accent_bar_enabled? %>
+  <div class="u-mar-0  js-accent-bar-container--activity  ns-music-v1">
+    <%= render 'music/partials/accent_bar_component', language: current_program.language_code %>
+  </div>
+  <% content_for(:js_head, javascript_include_tag('accent_bar_component_wrapper')) %>
+<% end %>

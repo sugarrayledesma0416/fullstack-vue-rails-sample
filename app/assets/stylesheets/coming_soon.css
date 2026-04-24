@@ -1,0 +1,10 @@
+div.coming_soon_modal {
+  display:none;
+}
+
+.coming_soon_modal div{
+	margin-top: 10px;
+  font-weight:bold;
+  font-size:12px;
+}
+

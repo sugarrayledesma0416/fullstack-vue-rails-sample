@@ -1,0 +1,6 @@
+<% unless enrollment_map.empty? -%>
+  <div id="flash_<%= type %>" class="flash-notice">
+    <div class='flash-detail'> <b><%= pluralize(enrollment_map[:success].count, 'Student') %> </b><%= pluralize_without_count(enrollment_map[:success].count, 'was') %> enrolled in section <b> <%= selected_section.name %></b>.  </div>
+  </div>
+<% end -%>
+

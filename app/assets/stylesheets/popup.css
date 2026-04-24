@@ -1,0 +1,43 @@
+/* added by VHL devs to style text that pops up in a contextual help popup window */
+
+//= resetbase
+//= components
+
+html {background: #fff;}
+
+body {
+	background: #fff;
+	color: #333;
+	font-size: 62.5%;
+	padding: 0;
+	text-align: center;
+}
+
+[id="page_container"] {
+	font-size: 1.3em;
+	line-height: 1.385em;
+	background: transparent url(../images/bg_pagecontainer.png) repeat-y 0 0;
+	margin: 10px 15px 10px 10px;
+	padding: 0 10px 10px 15px;
+	text-align: left;
+	width: auto;
+}
+
+h2 {
+  color: #B10F0C;
+  font-size: 1.231em;
+  text-align: left;
+  text-transform: lowercase;
+  border-bottom:1px dotted #0026A5;
+  padding: 25px 0;
+  margin-bottom:1em;  
+}
+
+h2 span{
+  font-weight: normal;
+}
+
+p {
+  padding: 5px 15px 5px 15px;
+}  
+

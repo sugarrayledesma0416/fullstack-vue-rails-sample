@@ -1,0 +1,23 @@
+<table class="c-section_widget_table  js-section-widget-table">
+  <% if show_category_averages %>
+    <% section.categories.each do |category| %>
+      <tr class="c-section-category">
+        <td class="c-category-name"><%= category.name %></td>
+        <td class="c-category-grade">
+          <%= link_to(
+                "",
+                gradebook_category_link(section.id, category),
+                class: "js-section-#{section.id}-category-#{category.id}-average
+                       #{test_class("section-#{section.id}-category-#{category.id}-average")}"
+              ) %>
+        </td>
+      </tr>
+    <% end %>
+  <% else %>
+    <tr>
+      <td class="c-category-name" colspan="2">
+        View student scores for this section.
+      </td>
+    </tr>
+  <% end %>
+</table>

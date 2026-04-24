@@ -1,0 +1,71 @@
+<script id="roster-template" type="text/x-handlebars-template">
+
+  {{#each courses}}
+    {{#if (ifChatActivityShowCurrentProgramOnly programId) }}
+      {{#each sections}}
+        <li>
+        {{#if (showCourseInRoster  ../chat_level)}}
+          {{#if users.length}}
+            <!--
+              # u-mar-0 is used to override the styles applied on disclosures
+              # by the views in the background of live-chat.
+            -->
+            <div class="c-disclosure  c-disclosure--end  js-disclosure  js-disclosure--roster">
+              <button class="c-no-button  c-button--showhide  c-disclosure__header  c-heading--chat-section js-disclosure--roster__btn u-mar-0"
+                  aria-expanded="true"
+                  aria-controls="disclosure-body-roster">
+                  {{ courseAndSectionName ../name name }}
+                  <div class="c-disclosure__marker"></div>
+              </button>
+              <div id="disclosure-body-roster" class="c-disclosure__body  u-pad-4  u-mar-0">
+                <ol class="c-plain-list  u-mar-bot-0">
+                  {{#each users}}
+                    <li class="c-roster__user-item">
+                      <button type="button"
+                              data-otheruserid="{{ uuid }}"
+                              data-sectionId="{{ ../sectionId }}"
+                              class="c-button--roster-user  c-no-button
+                                      js-roster-user  js-conv-{{ ../sectionId }}-{{ uuid }}
+                                      js-chat-status-{{ state }}" 
+                              aria-label="{{ firstName }} {{lastName }} {{ state }}, Press enter to chat">
+                        <div class="c-roster__user">
+                          <div class="c-roster__user-details">
+                            <div class="c-icon  c-icon--status-{{ state }}  u-mar-lt-2  u-mar-rt-8"></div>
+                            <div class="c-roster__username  c-roster__username--{{ state }}">{{ firstName }} {{ lastName }}</div>
+                            <div class="c-roster__marks">
+                              <span title="Messages"
+                                    class="c-icon  c-icon--lg  c-icon--bubble  c-roster__unread-mark">
+                              </span>
+                              {{#if completedActivity}}
+                                <span title="Activity Completed"
+                                      class="c-icon  c-icon--md  c-icon--ok">
+                                </span>
+                              {{/if}}
+                            </div>
+                          </div>
+                        </div>
+                      </button>
+                    </li>
+                  {{/each}} {{!-- users --}}
+                </ol>
+              </div>
+            </div>
+          {{else}}
+            <h3 class="c-heading--chat-section  c-heading--chat-section--no-users">
+              {{ courseAndSectionName ../name name }}
+              <div class="u-txt-plain  u-mar-top-16">
+                There is no one online in this section.
+              </div>
+            </h3>
+          {{/if}}
+        {{else}}
+          <h3 class="c-heading--chat-section  c-heading--chat-section--no-users" title="{{ chatLevelToolTipMsg }}">
+            {{ courseAndSectionName ../name name }}
+          </h3>
+        {{/if}} {{!-- /if showCourseInRoster --}}
+        </li>
+      {{/each}} {{!-- sections --}}
+    {{/if}}
+  {{/each}} {{!-- courses --}}
+
+</script>

@@ -1,0 +1,13 @@
+<% partial_sufix = @from_my_content ? '' : '_toc' %>
+
+if (!$('.js-modal-delete-created-activity').length) {
+  $('body').append(
+    "<%= j(render("modal#{partial_sufix}", class_selector: 'js-modal-delete-created-activity', aria_label: 'Remove my content'))%>"
+  );
+}
+
+$('.js-modal-delete-created-activity')
+  .find('.js-modal-content').html("<%= j(render("confirm_destroy#{partial_sufix}", activity: @created_activity)) %>");
+
+$('.js-modal-delete-created-activity').vhlModal('init');
+$('.js-modal-delete-created-activity').vhlModal('open');

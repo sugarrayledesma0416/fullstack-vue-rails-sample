@@ -1,0 +1,163 @@
+<activity activity_type="multi_type" title="Repaso">
+  <dl>Complete the following activity.</dl>
+  <items>
+    <style>
+      <item_numbers>show</item_numbers>
+    </style>
+    <activity activity_type="fill_in_the_blanks" title="¡Manos a la obra!">
+      <dl></dl>
+      <items>
+        <style>
+          <wol_size>words_standard</wol_size>
+        </style>
+        <reference type="text">
+          <body>Provide the present tense forms of <b>cerrar</b>.</body>
+        </reference>
+        <reference type="model">
+          <body> Ustedes <b>cierran</b>.<br />
+          Mi abuela no <b>duerme</b>.</body>
+        </reference>
+        <reference type="text">
+          <body>cerrar (e:ie)</body>
+        </reference>
+        <item>
+          <prompt>Ustedes <wol/>.</prompt>
+          <answers>
+            <answer>cierran</answer>
+          </answers>
+        </item>
+        <item>
+          <prompt>Tú <wol/>.</prompt>
+          <answers>
+            <answer>cierras</answer>
+          </answers>
+          </item>
+          <item>
+          <prompt>Nosotros <wol/>.</prompt>
+          <answers>
+            <answer>cerramos</answer>
+          </answers>
+        </item>
+        <item>
+          <prompt>Mi hermano <wol/>.</prompt>
+          <answers>
+            <answer>cierra</answer>
+          </answers>
+        </item>
+        <item>
+          <prompt>Yo <wol/>.</prompt>
+          <answers>
+            <answer>cierro</answer>
+          </answers>
+        </item>
+        <item>
+          <prompt>Usted <wol/>.</prompt>
+          <answers>
+            <answer>cierra</answer>
+          </answers>
+        </item>
+        <item>
+          <prompt>Los chicos <wol/>.</prompt>
+          <answers>
+            <answer>cierran</answer>
+          </answers>
+        </item>
+        <item>
+          <prompt>Ella <wol/>.<br /><br /></prompt>
+          <answers>
+            <answer>cierra</answer>
+          </answers>
+        </item>
+      </items>
+    </activity>
+    <activity activity_type="multiple_choice" title="Escoger">
+      <dl></dl>
+      <items>
+        <style>
+         <item_numbers>show</item_numbers>
+        </style>
+        <reference type="text">
+          <body><span lang="en-US">Choose the word or phrase in each group that doesn't belong.</span></body>
+        </reference>
+        <item>
+          <prompt/>
+          <choices>
+            <distractor>Buenas tardes.</distractor>
+            <distractor>Buenos días.</distractor>
+            <distractor>Hola.</distractor>
+            <answer>Regular.</answer>
+          </choices>
+        </item>
+        <item>
+          <prompt/>
+          <choices>
+            <distractor>Adiós.</distractor>
+            <distractor>Hasta luego.</distractor>
+            <answer>Lo siento.</answer>
+            <distractor>Nos vemos.</distractor>
+          </choices>
+        </item>
+        <item>
+          <prompt/>
+          <choices>
+            <distractor>¿Cómo está usted?</distractor>
+            <distractor>¿Cómo estás?</distractor>
+            <answer>¿Cómo te llamas?</answer>
+            <distractor>¿Qué tal?</distractor>
+          </choices>
+        </item>
+        <item>
+          <prompt/>
+          <choices>
+            <distractor>Encantado.</distractor>
+            <distractor>Igualmente.</distractor>
+            <distractor>Mucho gusto.</distractor>
+            <answer>Soy de México.</answer>
+          </choices>
+        </item>
+        <item>
+          <prompt/>
+          <choices>
+            <distractor>Bien, gracias.</distractor>
+            <answer>Es la una.</answer>
+            <distractor>No muy bien.</distractor>
+            <distractor>Regular.</distractor>
+          </choices>
+        </item>
+      </items>
+    </activity>
+    <activity activity_type="drop_down" title="¿Lógico o ilógico?">
+      <dl></dl>
+      <items>
+        <reference type="text">
+          <body>Listen to each conversation and indicate whether what you hear is <b>lógico</b> or <b>ilógico.</b></body>
+        </reference>
+        <item>
+          <prompt><wol/></prompt>
+          <choices>
+            <answer>lógico</answer>
+            <distractor>ilógico</distractor>
+          </choices>
+        </item>
+        <item>
+          <prompt>Partly <wol ref="1"/> and partly <wol ref="2"/></prompt>
+          <choices ref="1">
+            <answer>lógico</answer>
+            <distractor>ilógico</distractor>
+          </choices>
+          <choices ref="2">
+            <distractor>lógico</distractor>
+            <answer>ilógico</answer>
+          </choices>
+        </item>
+        <item>
+          <prompt><wol/></prompt>
+          <choices>
+            <distractor>lógico</distractor>
+            <answer>ilógico</answer>
+          </choices>
+        </item>
+      </items>
+    </activity>
+  </items>
+</activity>

@@ -1,0 +1,58 @@
+<% content_for(:js_head) do -%>
+	<%= javascript_tag do -%>
+		$(document).ready(function() {
+			// initially hide courses for programs user doesn't have access to
+			$('.no_access').hide();
+		});
+	<% end -%>
+<% end -%>
+
+<h3>Courses</h3>
+
+<% if school_programs.empty? -%>
+	<p>No courses are currently available</p>
+<% else -%>
+	<%= form_for :courses, school_programs, :url => course_add_path, :html => {:id => '_course_list'} do |course| %>
+	<table id="course-table" class="sortable">
+	<% school_programs.each do |program| -%>
+    <%
+      user_has_access = user_programs.include?(program)
+      courses = (courses_by_program[program.id] || Array.new)
+
+      course_row_class = 'no_access'
+      course_row_class = 'has_access' if user_has_access
+    -%>
+		<tr class="divider">
+			<td colspan="3"></td>
+		</tr>
+		<tr class="course-header">
+			<td colspan="3">
+				<img src="<%= program.small_image_path %>" width="50" onclick="toggle_course_list(<%= program.id %>);" />
+				<div class="program_title"><%= program.title %></div>
+				<% unless user_has_access -%>
+				<span class="passcode_purchase">Code purchase required for this program</span>
+				<%= tag(:div, :id => "course_list_toggle_#{program.id}") %>
+				<%= javascript_tag( "display_course_list_toggle(#{program.id},true);") %>
+				<% else-%>
+				<%= tag(:div, :id => "course_list_toggle_#{program.id}") %>
+				<%= javascript_tag( "display_course_list_toggle(#{program.id},false);") %>
+				<% end -%>
+			</td>
+		</tr>
+		<tr class="section_header program_<%= program.id %> <%= course_row_class %>">
+			<th class="instructor ascending">Instructor</th>
+			<th class="course">Course</th>
+			<th class="section">Section</th>
+		</tr>
+		<%  sections = courses.map { |course| course.sections }.flatten
+		    sections.sort! { |a,b|  a.instructor_last_names <=> b.instructor_last_names } -%>
+		<%= render :partial => 'courses/section', :collection => sections, :locals => {
+                                                                       :program_id => program.id,
+                                                                       :course_row_class => course_row_class,
+                                                                       :user_has_access => user_has_access
+                                                                     } %>
+	<% end -%>
+	</table>
+	<p><%= submit_tag("select course", :class => "red-button", :onclick => "return confirm_course_add(#{active_sections.to_json});") %></p>
+	<% end -%>
+<% end -%>

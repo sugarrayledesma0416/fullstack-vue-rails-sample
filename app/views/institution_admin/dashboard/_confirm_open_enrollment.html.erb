@@ -1,0 +1,33 @@
+<div class="c-modal  c-modal--md  js-modal  js-confirm-open-enrollment-model-<%= section.id %>  u-hidden">
+  <div role="dialog" aria-label="Small modal" class="c-modal__box  c-modal__box--radius  js-modal-box  js-modal-a11y">
+    <div role="document" class="js-modal-content">
+
+      <div class="c-modal__body  u-pad-0  c-modal__body--margin">
+        <div class="u-txt-lt">
+          <div class="l-line  l-line--debug  u-justify-content-space-between  u-mar-bot-16  u-bord-bot-1">
+            <h3 class="u-txt-widget-red-700  c-modal__header  u-txt-heading-2">Open Enrollment</h3>
+            <music-icon-close size="lg" class="u-fill-black  u-mar-top-6  js-x-close  js-modal-close  u-enterprise__hover"></music-icon-close>
+          </div>
+
+          <div>
+            <p class="u-mar-top-24  c-modal__paragraph">
+              Allow new students to enroll in this section?
+            </p>
+          </div>
+
+          <div class="l-line  l-line--debug  u-justify-content-space-between  u-txt-bold  u-mar-bot-0  u-mar-top-48">
+            <button class="c-button-v3  c-button-v3--tertiary  c-button-v3--sm  u-bord-solid  u-bord-1  u-bord-gray-6  u-txt-bold  u-pad-8  u-pad-lt-16  u-pad-rt-16  js-modal-close">
+              Cancel
+            </button>
+            <%= link_to 'Enable',
+              institution_admin_open_enrollment_section_path(section: { id: section.id },
+                                                             school_id: school_id),
+                                                             method: :post,
+                                                             class: 'c-button-v3  c-button-v3--primary  c-button-v3--sm  u-txt-white  u-pad-8  u-pad-lt-16  u-pad-rt-16  u-mar-0  js-modal-confirm' %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="u-screen-reader-only" tabindex="-1">Dialog end</button>
+  </div>
+</div>

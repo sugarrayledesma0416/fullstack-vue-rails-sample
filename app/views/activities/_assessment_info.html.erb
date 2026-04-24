@@ -1,0 +1,25 @@
+<% content_for(:js_head, javascript_packs_with_chunks_tag('assessment/info')) %>
+<% content_for(:css_head, stylesheet_packs_with_chunks_tag('assessment/info')) %>
+<div class="ns-music-v1">
+  <%= content_tag(
+    :div,
+    '',
+    class: "js-assessment-info",
+    'data-is-timed-assessment': activity_presenter.timed_assessment?,
+    'data-assessment-time-limit': activity_presenter.assessment_time_limit,
+    'data-rules': activity_presenter.ruleset.respected_features_list.to_json,
+    'data-icons': activity_presenter.activity.icon,
+    'data-question-summary': activity_presenter.activity.question_summary.to_json,
+    'data-require-unlocking': activity_presenter.requires_unlocking?(session[:unlocked_assessments]),
+    'data-request-path': request.fullpath,
+    'data-return-url': @return_url,
+    'data-begin-assessment-url': section_activity_path(current_section_id, @activity, begin_work: true),
+    'data-is-supersite-jr': activity_presenter.section.program.supersite_junior?,
+    'data-pretest-type': activity_presenter.pretest_type,
+    'data-technical-support-path': main_app.reported_problems_path(current_program)
+  ) %>
+</div>
+<!-- This is also in _time_tracker_hooks.html.erb -->
+<%= hidden_field_tag('start_time', @start_time) %>
+<%= hidden_field_tag('form_id', @form_id) %>
+<%= hidden_field_tag('activity_time_tracker_url_base', section_activity_path(current_section_id, @activity) ) %>
