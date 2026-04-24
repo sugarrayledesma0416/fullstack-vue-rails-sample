@@ -1,0 +1,23 @@
+<div class="l-page-title-block">
+  <div class="l-page-title-block__above">
+    <%= yield :above_page_title %>
+  </div>
+
+  <div class="l-page-title-block__row">
+    <div class="l-page-title-block__row-left">
+      <%= yield :left_of_page_title %>
+    </div>
+
+    <% unless @page_title.blank? || @no_app_shell %>
+    <h1 class="c-heading--page-title" id="a11y-page-title"><%= @page_title %></h1>
+    <% end %>
+
+    <div class="l-page-title-block__row-right">
+      <%= yield :right_of_page_title %>
+    </div>
+  </div>
+
+  <div class="l-page-title-block__below">
+    <%= yield :below_page_title %>
+  </div>
+</div>

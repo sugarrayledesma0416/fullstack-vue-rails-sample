@@ -1,0 +1,146 @@
+<% content_for(:js_head, javascript_include_tag("jquery.hoverIntent.minified.js") ) %>
+
+<% content_for(:css_head, stylesheet_link_tag("add_assignments_dialog.css") ) %>
+
+<% content_for(:js_head, javascript_include_tag("jquery.vhl-checkboxes.js") ) %>
+<% content_for(:js_head, javascript_include_tag("table_of_contents.js") ) %>
+<% content_for(:js_head, javascript_include_tag("load_table_of_contents.js") ) %>
+<% content_for(:js_head, javascript_include_tag("history.js")) %>
+<% content_for(:js_head, javascript_include_tag("jquery.address-1.4.min.js") ) %>
+
+<% content_for(:body_classes, "  ns-music-v1  ns-full-width  ns-responsive
+                                 ns-toc  ns-toc-student  toc activities_page") %>
+
+<% content_for(:css_head, stylesheet_link_tag("music/features/toc/main") )%>
+<% content_for(:css_head, stylesheet_link_tag("layout/hovers.css") )%>
+
+<%= hidden_field_tag :return_to, request.fullpath %>
+
+<% unless @presenter.section && @presenter.section.non_zero? %>
+  <% content_for(:body_classes, " no_section_student") %>
+<% end %>
+
+<% if current_program&.language_code == 'zh' %>
+  <% content_for(:css_head, stylesheet_link_tag("music/features/chinese/theme/fonts/AdobeKaitiRegular") ) %>
+  <% content_for(:body_classes, '  ns-chinese-program') %>
+<% end %>
+
+<div class="c-column-wrapper">
+  <div id="modal_box"></div>
+  <div id="toc" class="ns-toc">
+
+    <div class="l-grid">
+      <div class="c-toc-sidebar  l-col-12  l-col-lg-3">
+
+        <!-- a header for mobile and tablet screen containing title and lesson name
+             It toggles filter(sidenav) on click -->
+
+        <p id="nav-toggle-label" class="u-hidden">Toggle Lesson and Strand selectors</p>
+
+        <button class="c-toc-nav-disclosure  c-no-button  u-dis-lg-none  js-toc-nav-disclosure"
+                aria-labelledby="nav-toggle-label"
+                data-target="toc-sidenav"
+                aria-controls="toc-sidenav"
+                aria-expanded="false">
+          <header class="c-activities-module__header">
+            <h1 class="c-heading--page-title  c-heading--page-title-activities  u-mar-bot-0">Activities</h1>
+            <div class="u-dis-inline-flex">
+              <h2 class="c-heading--lesson-strand">
+                <span class="u-screen-reader-only" lang="en"><%= @presenter.display_lesson.name %></span>
+                <span class="c-toc-current-lesson" aria-hidden="true">
+                <%= @presenter.current_lesson_label.html_safe %>
+                </span>
+              </h2>
+              <div>
+                <%= Music::Components.icon(variant: 'caret', size: 'lg', classes: 'c-toc-disclosure-caret') %>
+              </div>
+            </div>
+          </header>
+        </button>
+
+        <div class="c-toc-sidenav  js-toc-sidenav" id="toc-sidenav">
+          <div class="u-mar-bot-16">
+            <%= render 'partials/lesson_selector', presenter: @presenter %>
+          </div>
+
+          <h3 class="c-heading--caps  u-txt-reg"><%= spr? ? 'Lessons' : 'Strands' %></h3>
+
+          <nav id="topics_list" aria-labelledby="a11y_topics_list_heading">
+            <h3 id="a11y_topics_list_heading" class="u-hidden" lang="en">
+              Topics in selected lesson
+            </h3>
+
+            <%= render('partials/lesson_topics',
+                       presenter: @presenter,
+                       display_lesson: @presenter.display_lesson,
+                       current_strand: @presenter.current_strand,
+                       current_topic: @presenter.current_topic,
+                       start_unit: @presenter.start_unit) -%>
+          </nav>
+          <div class="u-txt-ctr">
+            <button type="button" class="c-toc-nav-close  u-dis-lg-none  u-mar-bot-16  js-toc-nav-close">Close</button>
+          </div>
+        </div>
+
+      </div> <!-- /c-toc-sidebar -->
+
+      <div class="c-toc-main  l-col-12  l-col-lg-9  u-bg-gray-f5">
+
+        <div class="c-activities-module  <%= test_class('activity-module') %>">
+
+          <header class="c-activities-module__header  u-pad-bot-12  u-dis-xs-none  u-dis-lg-block">
+
+            <h1 class="c-heading--page-title  c-heading--page-title-activities  u-mar-bot-0">Activities</h1>
+
+            <h2 class="c-heading--lesson-strand" lang="<%= @presenter.program_language %>">
+              <span class="u-screen-reader-only" lang="en"><%= @presenter.display_lesson.name %></span>
+
+              <span class="c-toc-current-lesson" aria-hidden="true">
+                <%= @presenter.current_lesson_label.html_safe %>
+              </span>
+            </h2>
+
+          </header>
+
+          <div class="c-all-or-assigned-wrapper">
+            <%= render 'partials/activity_visibility_selector' %>
+          </div>
+
+          <nav class="c-activities-module__list  <%= test_class('activity-list') %>" id="activities_list" aria-labelledby="a11y_activities_list_heading">
+            <h3 id="a11y_activities_list_heading" class="u-screen-reader-only" lang="en">Activities in selected topic</h3>
+            <% if @presenter.display_unit_viewable? -%>
+
+              <% if @presenter.activities.present? -%>
+                <%= render 'activities', presenter: @presenter %>
+              <% else %>
+              No activities to show.
+              <% end -%>
+            <% else -%>
+              <div class="unreleased_activities">
+                We're currently developing content for this <%= @presenter.program.toc_unit_label %>. Thank you for your patience.
+              </div>
+            <% end -%>
+          </nav>
+
+          <div class="hidden">
+            <form action="none" method="get" accept-charset="utf-8" id="hidden_activity_form">
+            </form>
+          </div> <!-- /hidden form-->
+
+        </div> <!-- end c-activities-module -->
+
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<div class="unassignable_activity_msg_student  unassignable_activity_msg
+            results_table_hover  hidden_helper  js-unassignable_activity_msg_student">
+  This content is not available with the code that has been redeemed.
+  <br />
+  <a href="javascript:void(0)" class="prevent-default  more_info  js-unassignable-msg-student-link">
+    More info</a>
+  <div class="results_table_hover_arrow"></div>
+</div>
+<%= render 'partials/access_additional_content_model' %>

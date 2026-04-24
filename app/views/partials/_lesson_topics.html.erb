@@ -1,0 +1,13 @@
+<ul class="c-vtabset  <%= test_class('strand-list') %>"
+  data-show-strands="<%= presenter.display_unit_viewable? ? 'yes' : 'no' %>">
+  <% display_lesson.strands.each do |toc_entry| -%>
+    <%= render('partials/topics',
+               presenter: presenter,
+               start_unit: start_unit,
+               display_lesson: display_lesson,
+               toc_entry: toc_entry,
+               current_strand: current_strand,
+               current_topic: current_topic,
+               is_parent: true ) -%>
+  <% end -%>
+</ul>

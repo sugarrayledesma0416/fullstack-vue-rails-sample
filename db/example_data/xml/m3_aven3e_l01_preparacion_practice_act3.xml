@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<activity activity_type="drop_down_true_false" title="Una fiesta" language="es">
+  <dl>Margarita is having an all-day party to celebrate her twentieth birthday. Listen to the conversations and indicate whether each guest is arriving (<b>llega</b>) or leaving (<b>sale</b>).</dl>
+  <items>
+    <style>
+        <item_numbers>show</item_numbers>
+    </style>
+    <item>
+      <prompt><wol /> Ramiro</prompt>
+      <choices>
+        <answer>llega</answer>
+        <distractor>sale</distractor>        
+      </choices>
+    </item>
+    <item>
+      <prompt><wol /> Sra. Sánchez</prompt>
+      <choices>
+        <distractor>llega</distractor>
+        <answer>sale</answer>
+      </choices>
+    </item>
+    <item>
+      <prompt><wol /> Luisa</prompt>
+      <choices>
+        <answer>llega</answer>
+        <distractor>sale</distractor>        
+      </choices>
+    </item>
+    <item>
+      <prompt><wol /> Vicente</prompt>
+      <choices>
+        <distractor>llega</distractor>
+        <answer>sale</answer>
+      </choices>
+    </item>
+    <item>
+      <prompt><wol /> Profesor Lado</prompt>
+      <choices>
+        <answer>llega</answer>
+        <distractor>sale</distractor>        
+      </choices>
+    </item>
+    <item>
+      <prompt><wol /> Sr. Torres</prompt>
+      <choices>
+        <distractor>llega</distractor>
+        <answer>sale</answer>
+      </choices>
+    </item>     
+  </items>   
+</activity>

@@ -1,0 +1,28 @@
+<div id="activity_direction_line_container" class="ui-helper-clearfix">
+<div class="grey-frame">
+  <div id="activity_prompt">
+  <div class="c-activity-directions  c-activity-directions--grading" id="activity_title_and_direction_line">
+    <span id="activity_title"><%= activity.title %></span>
+
+    <% if activity.direction_line.present? %>
+      <p id="directions-frame" data-helpable-type="direction_line" data-page-element="activity_directions"><%= activity.direction_line.html_safe %></p>
+    <% elsif activity.partner_chat? %>
+      <!-- Do not show direction line for Partner Chat -->
+    <% else %>
+      <p id="directions-frame" data-helpable-type="direction_line" data-page-element="activity_directions">(No Directions Provided)</p>
+    <% end %>
+  </div> <!-- /#activity_title_and_direction_line -->
+
+  <% if instructor_feedback %>
+    <div id="activity_title_and_direction_line">
+      <span id="activity_title">General Comment</span>
+      <p id="activity_direction_line"><%= instructor_feedback.comment %></p>
+    </div> <!-- /#activity_title_and_direction_line -->
+  <% end %>
+  </div>
+  </div>
+
+  <!-- #Help Request is not visible in Grading Student by Student View. -->
+  <!-- #<div data-page-element="direction_line_vtext_requests" class="dl_requests_container"></div> -->
+
+</div> <!-- /#activity_direction_line_container -->

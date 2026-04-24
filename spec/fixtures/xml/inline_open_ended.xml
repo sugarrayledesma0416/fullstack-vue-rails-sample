@@ -1,0 +1,33 @@
+<activity activity_type="inline_open_ended" language="es" title="sample_inline_open_ended_title">
+  <dl>instructions_go_here</dl>
+  <items>
+    <reference type="wordbank">
+      <body sorted="yes"><word>Mucho gusto.</word>
+      <word>Chau.</word>
+      <word>Nada.</word>
+      <word>Lo siento.</word>
+      <word>Bien, gracias.</word>
+      <word>Soy de los Estados Unidos.</word></body>
+    </reference>
+    <style>
+        <item_numbers>show</item_numbers>
+	<wol_size>words_small</wol_size>
+    </style>
+    <item>
+      <prompt>prompt_for_question_1<wol /></prompt>
+    </item>
+    <item>
+      <prompt>prompt_for_question_2<wol /></prompt>
+      <sample_answer>optional_sample_answer_text1</sample_answer>
+      <sample_answer>optional_sample_answer_text2</sample_answer>
+    </item>
+    <item>
+      <prompt>prompt_for_question_3<wol /></prompt>
+      <sample_answer>optional_sample_answer_text3</sample_answer>
+    </item>
+    <item>
+      <prompt>prompt_for_question_4<wol /></prompt>
+      <sample_answer>optional_sample_answer_text4</sample_answer>
+    </item>
+  </items>
+</activity>

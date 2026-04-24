@@ -1,0 +1,48 @@
+<% if view_manager.smartbook_response.present? %>
+  <% if view_manager.smartbook_audio_recording_question? %>
+    <audio controls controlsList="nodownload" src="<%= smartbook_audio_playback_url(view_manager.response) %>" type="audio/mpeg">
+      Your browser does not support HTML5 audio.
+    </audio>
+  <% elsif view_manager.smartbook_matching_question? %>
+    <%= render(
+      'instructor/grading_sets/smartbook_matching_question',
+      question: view_manager.question,
+      smartbook_response: view_manager.smartbook_response.response_parser
+    ) %>
+  <% elsif view_manager.smartbook_drawing_question? %>
+    <%= render(
+      'instructor/grading_sets/smartbook_drawing_question',
+      question: view_manager.question,
+      smartbook_response: view_manager.smartbook_response
+    ) %>
+  <% else %>
+    <%
+      language = current_program.language_code
+      character_list = (AccentBarEnhanced.characters(language) || {}).to_json
+    %>
+
+    <div class="ns-composition  u-dis-flex  flex-justify-end">
+      <span
+        id="shortcut_<%= "student_response_#{view_manager.response_id}_feedback" %>"
+        name="shortcut_<%= "student_response_#{view_manager.response_id}_feedback" %>"
+        lang="en"
+        aria-label=""
+        class="composition-toolbar-access">
+        Toolbar Access <span class="js-froala-toolbar-access-shortcut"></span>
+      </span>
+    </div>
+
+    <textarea
+      class="js-grading-editor-textarea
+             js-text-editor-<%= view_manager.response_id %>
+             u-mar-bot-32"
+      data-accent-bar-characters="<%= character_list %>"
+      data-accent-bar-language="<%= language %>"
+      name="<%= view_manager.inline_corrections_field %>"
+      id="<%= "student_response_#{view_manager.response_id}_feedback" %>">
+        <%= format_inline_corrections(view_manager.inline_corrections).html_safe %>
+    </textarea>
+  <% end %>
+<% else %>
+  <div class="incorrect">No student response</div>
+<% end %>

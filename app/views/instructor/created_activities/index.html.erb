@@ -1,0 +1,172 @@
+<% content_for(:js_head, javascript_include_tag("jquery.hoverIntent.minified.js") ) %>
+
+<% content_for( :css_head, stylesheet_link_tag("add_assignments_dialog.css") ) %>
+<% content_for( :css_head, stylesheet_link_tag("my_content.css") ) %>
+<% content_for( :css_head, stylesheet_link_tag("my_content_pagination.css")  ) %>
+<% content_for( :css_head, stylesheet_link_tag("my_content_buttons.css") ) %>
+<% content_for( :css_head, stylesheet_link_tag("shared_content") ) %>
+
+<% content_for(:js_head, javascript_include_tag("jquery.vhl-checkboxes.js") ) %>
+<% content_for(:js_head, javascript_include_tag("table_of_contents.js") ) %>
+<% content_for(:js_head, javascript_include_tag("load_table_of_contents.js") ) %>
+<% content_for(:js_head, javascript_include_tag("history.js")) %>
+<% content_for(:js_head, javascript_include_tag("jquery.address-1.4.min.js") ) %>
+<% content_for(:js_head, javascript_include_tag("course_library.js") ) %>
+<% content_for(:js_head, javascript_include_tag("igc_copy.js") ) %>
+<% content_for(:js_head, javascript_packs_with_chunks_tag('instructor/created_activities/filter')) %>
+
+<% if content_sharing_enabled_in_program? %>
+  <% content_for(:js_head, javascript_packs_with_chunks_tag('instructor/created_activities/share')) %>
+<% end %>
+
+<% content_for(:body_classes, "ns-newcsslib  ns-my-content  ns-full-width  ns-music-v1  toc activities_page standard_layout instructor") %>
+<% content_for(:css_head, stylesheet_link_tag("program_toc") )%>
+<% content_for(:css_head, stylesheet_link_tag("jquery.cluetip") )%>
+<% content_for(:css_head, stylesheet_link_tag("music/features/toc/main") )%>
+<% content_for(:css_head, stylesheet_link_tag("music/features/igc_copy/main") )%>
+
+<%= content_for(:navigation, render(:partial => 'app_shell/navbar_program/main', :locals => { :program => @presenter.program })) %>
+
+<div id="spinner" class="hidden"><%= image_tag('loading_32.gif') %></div>
+
+<div id="main_content" class="u-mar-0">
+  <div id ="modal_box"></div>
+
+  <div id="toc" class="ns-music-v1">
+    <% if current_user&.instructor? %>
+      <ol class="c-subnav  js-subnav  js-nav-system  u-bord-bot-0  u-float-lt">
+        <li>
+          <%= link_to 'My Content', "#{@alternative_content_info[:url_mycontent]}#{@my_content_params}",
+            class: "c-subnav__link#{ @alternative_content_info[:content] == 'my_content' ? '  is-current' : '' }" %>
+        </li>
+        <% if content_sharing_enabled_in_program? %>
+          <li>
+            <%= link_to 'Shared With Me', "#{@alternative_content_info[:url_shared_content]}#{@my_content_params}",
+              class: "c-subnav__link#{ @alternative_content_info[:content] == 'shared_content' ? '  is-current' : '' }" %>
+          </li>
+      <% end %>
+      </ol>
+    <% end %>
+    <% unless @instructor_activities.present? || @alternative_content_info[:has_filters] %>
+      <div class="u-clearfix"></div>
+      <%= render "empty_#{@alternative_content_info[:content]}" %>
+    <% else %>
+      <% if controller.action_name == 'index' && @presenter.can_edit_course_library? %>
+        <div class="u-float-rt  u-mar-top-4  u-mar-rt-64  u-pad-rt-32">
+          <%= render 'partials/new_activity_create_links', presenter: @presenter.new_activity_link_presenter(self) %>
+        </div>
+      <% end %>
+      <div class="u-clearfix  u-pad-bot-16"></div>
+      <div>
+        <div class="js-my-content-filter-app"></div>
+        <div
+          class="js-my-content-filter-data"
+          data-from-dom="<%= {
+            program_id: @presenter.program.id,
+            two_tier: @presenter.program.two_tier?,
+            lesson_label: @presenter.program.two_tier? ? 'Unit' : 'Lesson',
+            lessons: @presenter.lessons,
+            lessons_by_units:  @presenter.program.two_tier? ? @presenter.lessons_by_units : [],
+            strands_by_lesson: @presenter.strands_by_lesson,
+            types: Instructor::CreatedActivity::FilterActivityTypePresenter.new(self).formatted_activity_types,
+            shared_activity_creators:
+              @presenter.respond_to?(:shared_activity_creators) ?
+                @presenter.shared_activity_creators : nil
+          }.to_json  %>">
+        </div>
+      <div class="js-my-content-share-activities-app"></div>
+      <div class="u-pad-top-16">
+        <% if @instructor_activities.present? %>
+          <table class="c-table  c-table--content  u-width-full">
+            <%= render 'table_headers' %>
+            <tbody>
+              <% @instructor_activities.each do |activity| %>
+                <% is_shared_activity = @presenter.is_shared_activity?(activity.id) %>
+                <tr
+                  class="c-row  u-bord-lt-4"
+                  style="border-left-color: <%= @presenter.activity_background_color(activity) %>;"
+                >
+                  <td class="js-activity-cell"
+                      data-activity-id="<%= activity.id %>"
+                      data-is-shared="<%= is_shared_activity %>"
+                      data-is-draft="<%= activity.draft? %>"
+                  >
+                    <div class="u-mar-lt-8">
+                      <% if activity.draft? %>
+                        <span class="c-pill">Draft</span>
+                      <% end %>
+                      <span class="u-txt-bold"><%= @presenter.clickable_activity_link(activity) %></span><br>
+                      <span><%= activity.lesson_and_strand_label %> </span>
+                      <span class="u-mar-lt-6"><%= @presenter.format_activity_icons(activity) %></span>
+                    </div>
+                  </td>
+                  <td class="u-txt-ctr"><%= activity.updated_at.strftime("%m/%d/%y") %></td>
+                  <% if controller.action_name == 'index' %>
+                    <td class="u-txt-ctr">
+                      <span class="js-tooltip-auto" title="<%= @presenter.assigned_courses_title(activity) %>">
+                        <%= activity.assignment_courses.uniq.size %></td>
+                      </span>
+                    <td class="u-txt-ctr">
+                      <%= Music::Components.icon(variant: 'checkmark') if is_shared_activity %>
+                    </td>
+                    <td class="u-txt-rt">
+                      <li class="c-menu__item  js-nav-system__item  actions-menu  u-txt-bold">
+                        <a href="#" aria-haspopup="true" aria-expanded="false" class="c-menu__title  js-nav-system__link">
+                          <span><music-icon-three-dots></music-icon-three-dots></span>
+                        </a>
+                        <ul class="c-menu__inner  js-nav-system__subnav  u-bord-radius-16  content-menu  u-txt-lt"
+                            role="menu" data-visually-hidden="false">
+                          <li>
+                            <%= @presenter.edit_activity_link(activity) %>
+                          </li>
+                          <% if content_sharing_enabled_in_program? %>
+                            <li id="share_activity_<%= activity.id %>" title="Edit sharing options">
+                            </li>
+                          <% end %>
+                          <li>
+                            <%= @presenter.confirm_remove_activity_link(activity) %>
+                          </li>
+                        </ul>
+                      </li>
+                    </td>
+                  <% else %>
+                    <td class="u-txt-ctr  u-pad-lt-64">
+                      <div class="ns-shared-content">
+                        <div class="c-content-container  u-dis-flex  u-mar-rt-32">
+                          <div class="c-avatar  u-bg-gray-c">
+                            <% if activity.instructor_avatar.present? %>
+                              <%= image_tag(activity.instructor_avatar, role: 'presentation', class: 'c-avatar') %>
+                            <% else %>
+                              <span><%= activity.instructor_initials %></span>
+                            <% end %>
+                          </div>
+                          <div class="u-mar-lt-10">
+                            <div class="u-txt-gray-3  u-txt-16">
+                              <%= activity.instructor_full_name %>
+                            </div>
+                            <div class="u-txt-lt">
+                              <%= activity.created_at.strftime("%m/%d/%y") %>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <%= @presenter.copy_to_mycontent(activity) %>
+                    </td>
+                  <% end %>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+          <%= pagination(@instructor_activities) %>
+        <% else %>
+          <div class="u-pad-16  u-txt-default-size">
+            <h1 class="u-txt-reg" style="font-size: 1.5rem;">No Results Found</h1>
+            <p>There are no items that match the selected filters. Clear all filters and try again.</p>
+          </div>
+        <% end %>
+     </div>
+    <% end %>
+  </div>
+</div>

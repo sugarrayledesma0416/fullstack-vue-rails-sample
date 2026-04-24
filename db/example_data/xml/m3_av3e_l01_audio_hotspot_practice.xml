@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<activity activity_type="audio_hotspots" title="Come sono?" language="es">
+  <dl>Click on the icons to hear vocabulary words from this lesson.</dl>
+  <items>
+    <topic>
+      <image id="100501" />
+    </topic>
+    <style>
+      <unplayed>
+        <image id="100274"/>
+      </unplayed>
+      <played>
+        <image id="100275"/>
+      </played>
+
+      <toggle_text_button>
+      <show>show text</show>
+      <hide>hide text</hide>
+      </toggle_text_button>
+    </style>
+
+    <hotspot x="39" y="187">
+      <target>paziente</target>
+      <base>patient</base>
+      <audio id="100522"/>
+    </hotspot>
+
+    <hotspot x="123" y="177">
+      <target>il proprietario</target>
+      <base>owner</base>
+      <audio id="100524"/>
+    </hotspot>
+
+    <hotspot x="196" y="177">
+      <target>veloce</target>
+      <base>fast</base>
+      <audio id="100526"/>
+    </hotspot>
+
+    <hotspot x="202" y="130">
+      <target>forte</target>
+      <base>strong</base>
+      <audio id="100518"/>
+    </hotspot>
+
+    <hotspot x="287" y="115">
+      <target>il cameriere</target>
+      <base>waiter</base>
+      <audio id="100516"/>
+    </hotspot>
+
+    <hotspot x="276" y="218">
+      <target>discreta</target>
+      <base>discreet</base>
+      <audio id="100517"/>
+    </hotspot>
+
+    <hotspot x="188" y="267">
+      <target>stanca</target>
+      <base>tired</base>
+      <audio id="100525"/>
+    </hotspot>
+
+    <hotspot x="347" y="349">
+      <target>geloso</target>
+      <base>jealous</base>
+      <audio id="100519"/>
+    </hotspot>
+
+    <hotspot x="90" y="506">
+      <target>preoccupata</target>
+      <base>worried</base>
+      <audio id="100523"/>
+    </hotspot>
+
+    <hotspot x="284" y="527">
+      <target>lamentoso</target>
+      <base>whiny</base>
+      <audio id="100527"/>
+    </hotspot>
+
+    <hotspot x="444" y="160">
+      <target>la parrucchiera</target>
+      <base>hairdresser</base>
+      <audio id="100521"/>
+    </hotspot>
+
+    <hotspot x="629" y="464">
+      <target>il musicista</target>
+      <base>musician</base>
+      <audio id="100520"/>
+      </hotspot>
+  </items>
+</activity>
+

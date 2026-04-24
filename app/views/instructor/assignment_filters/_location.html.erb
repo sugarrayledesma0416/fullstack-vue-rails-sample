@@ -1,0 +1,54 @@
+<% lessons            = presenter.lessons
+   filter             = presenter.filter
+   strands            = presenter.strands
+   components         = presenter.components
+   summary_sentences  = presenter.summary_sentences
+%>
+<div id="location" class="filter_groups ui-helper-clearfix">
+  <div class="disabled hidden_helper"></div>
+  <h3>Location</h3>
+  <span class="summary_sentence"><%= summary_sentences[:location].html_safe %></span>
+  <div class="edit_summary_sentence"><%= link_to 'edit >', '#', 'data-js-link' => 'toggle_filters_location' %></div>
+  <div id="disabled_explanation" style="display:none;" >Please select a lesson to enable this filter</div>
+
+<div class="filter_options hidden_helper">
+  <div id="lessons">
+    <%  lesson_label = "Lesson"
+        lesson_label = current_program.lesson_label unless current_program.lesson_label.blank?%>
+    <%= f.label :lesson_id, lesson_label %>
+
+    <div data-js-select="lesson" class="select_wrapper  u-dis-inline-block">
+    <%= f.select(:lesson_id,
+      lessons.collect {|lesson| [lesson.name.html_safe, lesson.id]},
+      {:include_blank => "All #{lesson_label}s"},
+      { 'data-js-lesson' => (filter.lesson_id || lessons.first.id),
+       'data-js-change' => 'filter_lesson',
+        class: "c-select  c-select--assignment-filter" } ) %>
+      </div>
+  </div>
+  <div id="strands">
+    <%= f.label :toc_entry_location, "Section" %>
+    <div data-js-select="strand" class="select_wrapper  u-dis-inline-block">
+    <%= f.select(:toc_entry_location,
+      strands.collect {|s| [s.name.html_safe, s.location.to_i]},
+      {:include_blank => 'All Sections'},
+      {:disabled => !filter.lesson_id, class: "c-select  c-select--assignment-filter" } ) %>
+      </div>
+  </div>
+  <div id="component">
+    <%= f.label :component, "Component" %>
+    <div data-js-select="component" class="select_wrapper  u-dis-inline-block">
+    <%= f.select(:component,
+      components.collect {|c_c_name| [c_c_name, c_c_name]},
+     {:include_blank => 'All Components'},
+     {:disabled => !filter.lesson_id, class: "c-select  c-select--assignment-filter" } ) %>
+     </div>
+  </div>
+</div>
+
+<div class="filter_links hidden_helper">
+  <%= link_to 'cancel', '#', :class => 'cancel', 'data-js-link' => 'toggle_filters_location' %>
+  <%= f.submit "apply", :id => 'location_filter_submit', :class => 'red-button' %>
+</div>
+
+</div>

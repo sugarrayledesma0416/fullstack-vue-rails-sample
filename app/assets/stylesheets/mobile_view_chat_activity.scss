@@ -1,0 +1,435 @@
+/* ======================================================================= *
+
+    Mobile view for PChat, Group Chat, Solo Video Recording
+
+ * ======================================================================= */
+/* This file has CSS to fix various UI issues which appeared 
+   in pchat mobile view due to existing css. */
+
+@import 'music/library/v1/base/main';
+
+@mixin hide-by-display() {
+  display: none;
+}
+
+@mixin show-by-vis() {
+  visibility: visible;
+}
+
+.c-mobile-chat-activity-start-container {
+  display: none;
+}
+
+.c-chat-widget__back-button[disabled] {
+  visibility: hidden;
+}
+
+.ns-chat-activity-mobile-tabs-view {
+  /* CSS to relocate/ fix video elements */
+  .c-chat-video-element__overlay { 
+    bottom: 100%;
+    display: flex;
+    justify-content: center;
+    opacity: 1; 
+    padding-top: rpx(10);
+    padding-bottom: rpx(10);
+  }
+
+  &.c-mobile-tabs-view--active-with-tabset-visible .c-header--chat {
+    margin-bottom: rpx(42);
+  }
+
+  .c-vertical-line {
+    background-color: $gray-d;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    width: rpx(1);
+  }
+  
+  .chat_container {
+    width: 100%;
+    max-width: rpx(500);
+  }
+  
+  .item_score {
+    margin-top: rpx(10);
+  }
+
+  .video-js {
+    width: 100%;
+  }
+}
+
+@include viewport-max('lg') {
+
+  .ns-chat-activity-mobile-tabs-view {
+
+    .col-sidebar,
+    .col-main {
+      /* This stacks columns vertically*/
+      width: 100%;
+    }
+
+    .activity_reference_block.group-chat,
+    .activity_reference_block.pchat {
+      float: none;
+    }
+  }
+}
+
+@include viewport-max('sm') {
+
+  .ns-chat-activity-mobile-tabs-view {
+
+    /* Class to hide element on 'sm' screen for pchat. */
+    .c-chat-activity-dis-none-on-sm {
+      display: none !important;
+    }
+    
+    &.c-mobile-chat-activity-landing-page .c-mobile-chat-activity-start-container {
+      background-color: $white;
+      display: block;
+      padding-bottom: 3rem;
+      position: relative;
+      text-align: center;
+      width: 100%;
+    }
+    
+    
+    /* !important added to override u-hidden, which was added to avoid regression in other activities */
+    .c-close-mobile-chat-button {
+      display: inline-block !important;
+    }
+
+    &.c-chat-call-ongoing .c-mobile-chat-activity-hidden-when-call-ongoing  {
+      @include hide-by-display();
+    }
+
+    .c-mobile-chat-activity-sticky-footer {
+      @include hide-by-display();
+    }
+
+    /* CSS related to show footer at the bottom */
+    &.c-mobile-chat-activity-show-footer .c-mobile-chat-activity-sticky-footer {
+      background-color: $white;
+      bottom: 0;
+      display: block;
+      left: 0;
+      padding: 0;
+      width: 100%;
+    }
+
+    .c-media-record-box {
+      background-color: $white;
+      border-bottom: $border-width-1 solid $gray-c;
+      bottom: 0;
+      height: auto;
+      left: 0;
+      /* Overriding observed margin: 0 -1rem; to fix UI distortion in mobile */
+      margin: 0;
+      padding: 1rem 1rem 0.5rem 1rem;
+      width: 100%;
+    }
+
+    &.c-mobile-chat-activity-show-footer .c-media-record-box {
+      /* FIXME: This is hardcoded value based on observation of height of footer with buttons.*/
+      bottom: rpx(43);
+    } 
+
+    .c-chat-activity-container {
+      border: 0;
+      height: 100vh;
+      /* This is to fix horizontal scroll: earlier observed margin-right: 2rem; */
+      margin-right: 0;
+      width: 100%;
+    }
+
+    /* This is to fix overlapping of reference content and av controls.
+        Fixing it via z-index: 1; on c-chat-activity-container was creating regression, in safari */
+    .reference_model_content {
+      position: static;
+    }
+
+    /* This is required to show av controls on all tabs, for safari */
+    .c-chat-widget.is-open {
+      overflow: visible;
+    }
+
+    .c-panel__header--chat {
+      border-bottom: none;
+    }
+
+    &.ns-pchat.c-mobile-tabs-view--active-with-tabset-visible.c-chat-call-ongoing.c-mobile-tabs-view--show-primary-content .c-chat-activity-container {
+      /* Hardcoded based on observed height of c-mobile-tabset-container = 58, c-media-record-box = 98, activityFooterWrap = 43 */
+      height: calc(100vh - 199px);
+      min-height: calc(100vh - 199px);
+    }
+
+    &.c-mobile-tabs-view--active-with-tabset-hidden .c-page-container {
+      min-height: calc(100vh - 38px);
+      overflow: hidden;
+    }
+
+    &.c-mobile-tabs-view--active-with-tabset-visible .c-page-container {
+      min-height: 100vh;
+    }
+
+    &.c-mobile-tabs-view--active-with-tabset-visible.c-chat-call-ongoing.c-mobile-tabs-view--show-primary-content .c-page-container {
+      overflow: hidden;
+    }
+
+    /* Hide text-chat when call is connected */
+    &.ns-pchat.c-mobile-tabs-view--active-with-tabset-visible .c-panel__body--chat,
+    &.ns-pchat.c-mobile-tabs-view--active-with-tabset-visible .c-panel__footer--chat {
+      display: none;
+    }
+
+    &.c-mobile-tabs-view--active-with-tabset-visible.c-mobile-tabs-view--show-reference-content [id="main_content"] {
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+    }
+
+    [id="testFrame"] {
+      padding-bottom: 0;
+    }
+    
+    &.activity_popup #column_wrapper {
+      padding-bottom: 0;
+    }
+    
+    .c-panel__body--chat {
+      border-bottom: 0;
+    }
+
+    .c-chat-invitation-wrapper {
+      left: 5%;
+      width: 90%;
+    }
+
+    /* This is to fix horizontal scroll: earlier observed margin: 0 -32px; */
+    &.standard_layout.activities.vol .instructor-action-bar {
+      margin: 0 0;
+    }
+
+    #activityFooterWrap,
+    .c-activity-footer-wrap {
+      height: auto;
+      padding: rpx(5) 0;
+    }
+
+    #activity_attempts {
+      display: block;
+    }
+  
+    .what-counts, 
+    .notifications_link {
+      margin-left: 0;
+    }
+
+    #notification_listing {
+      left: 0;
+      right: auto;
+    }
+
+    /* This is to fix 'content touching left/right boundaries in after submit views'*/
+    .activity-header [class*='col-']:first-child {padding-left: 1rem;}
+    .activity-header [class*='col-']:last-child {padding-right: 1rem;}
+    
+    /* This is to fix horizontal scroll: which was coming because of observed margin: 0 -1rem; in child div.l-grid.
+        !important is applied to override utility classes u-pad-lt-0, u-pad-rt-0 */
+    .activity-header {
+      padding-left: 1rem !important;
+      padding-right: 1rem !important;
+    }
+
+    .chat_container {
+      width: 94%;
+      margin-left: rpx(10);
+    }
+
+    .item_score {
+      margin-left: rpx(15);
+    }
+
+    /* This is to fix horizontal scroll created by large reference images */
+    &.info_gap_partner_chat {
+      .c-chat-activity-container {
+        flex: none;
+      }
+
+      .c-chat-activity-references img,
+      .c-info-gap-references img {
+        min-width: unset;
+      }
+    }
+    
+    #activity_shell {
+      /* !important is applied to override padding-bottom applied via js method setActivityHeight() */
+      padding-bottom: rpx(32) !important;
+    }
+
+    /* Hiding 'return to dashboard' etc elements in screens when roster pane view or when call is connected */
+    &.c-mobile-tabs-view--active-with-tabset-hidden.c-mobile-tabs-view--show-primary-content,
+    &.c-chat-call-ongoing {
+      .instructions-frame {
+        @include hide-by-display();
+      }
+    }
+
+    .c-activity-footer {
+      display: none;
+      padding-bottom: 0;
+    }
+
+    /* Avoid hiding footer for assessment view. */
+    &.ns-multi-type .c-activity-footer,
+    &.ns-exam .c-activity-footer {
+      display: block;
+    }
+
+    .c-form--activity {
+      display: block;
+    }
+
+    &.c-chat-call-ongoing.c-mobile-tabs-view--show-primary-content .c-activity-footer {
+      display: block;
+    }
+
+    &.c-mobile-chat-activity-show-footer .c-activity-footer {
+      display: block;
+    }
+
+    /* Fix double scroll in roster panel by making chat-widget
+       position relative */
+    &.c-mobile-tabs-view--show-primary-content {
+      .c-chat-activity-container {
+        height: auto;
+
+        .c-chat-widget {
+          position: relative;
+        }
+
+        .c-chat-widget .c-chat-widget__content {
+          position: relative;
+        }
+
+        .c-chat-widget .c-panel--roster {
+          position: relative;
+        }
+
+        .c-chat-widget.has-conversation {
+          position: absolute;
+        }
+
+        .c-chat-widget.has-conversation .c-chat-widget__content {
+          position: absolute;
+        }
+
+        .c-chat-widget.has-conversation .c-panel--roster {
+          position: absolute;
+        }
+      }
+    }
+
+    &.c-mobile-tabs-view--show-primary-content.chat-widget-has-conversation {
+      .c-chat-activity-container {
+        height: 80vh;
+      }
+    }
+
+    /* Enable text chat in group chat while call is going on. */
+    &.ns-group-chat.c-chat-call-ongoing {
+      .c-chat-activity-container {
+        height: auto;
+
+        .c-chat-widget.has-conversation {
+          position: relative;
+        }
+
+        .c-chat-widget.is-open {
+          box-shadow: none;
+        }
+
+        .c-chat-widget .c-chat-widget__content {
+          position: relative;
+        }
+
+        .c-panel--conversation {
+          position: relative;
+        }
+      }
+
+      .c-panel__footer--chat {
+        padding: 0 0.5rem;
+      }
+
+      .c-form--activity {
+        margin-top: 0;
+        padding-top: 0.5rem;
+      }
+
+      .c-activity-footer {
+        margin-top: 0rem;
+      }
+    }
+
+    &.c-mobile-tabs-view--show-primary-content.c-mobile-chat-activity-show-footer {
+      .c-page-container {
+        overflow: hidden;
+      }
+    }
+  }
+
+  body.ns-chat-activity-mobile-tabs-view.vol.activities #activity_wrapper {
+    box-shadow: none;
+  }
+
+  body.ns-chat-activity-mobile-tabs-view.vol {
+    background-color: $white;
+  }
+
+  body.ns-chat-activity-mobile-tabs-view.vol.activities.workset {
+    background-color: $white;
+  }
+
+  /* This is to remove a 1px line which was coming otherwise on landing page */
+  body.ns-chat-activity-mobile-tabs-view.vol.activities [id="page_container"] {
+    background-color: $white;
+  }
+
+  .ns-group-chat .c-help-menu-container,
+  .ns-pchat .c-help-menu-container {
+    display: none;
+  }
+
+  .ns-group-chat.c-mobile-chat-activity-landing-page .c-help-menu-container,
+  .ns-pchat.c-mobile-chat-activity-landing-page .c-help-menu-container {
+    display: block;
+    border-bottom: none;
+  }
+
+  .ns-group-chat .c-button--group-chat-invite {
+    margin-bottom: 0;
+  }
+
+  .ns-solo-video-recording.c-mobile-tabs-view--show-primary-content .c-activity-footer {
+    display: block;
+  }
+
+  :root > .t-supersites {
+    background-color: $white;
+  }
+
+  :root > .t-supersites [id="page_container"],
+  :root > .t-supersites .c-page-container {
+    border: 0;
+  }
+}
+
+@include viewport-max('md') {
+  .c-chat-invitation-wrapper {
+    right: rpx(10);
+    left: rpx(10);
+  } 
+}

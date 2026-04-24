@@ -1,0 +1,69 @@
+<%= vite_client_tag %>
+<% if !@in_institution_admin || @show_institution_admin_header %>
+  <div class="ns-music-v3">
+    <nav class="<%= "c-masthead-v3  #{@in_institution_admin ? 'theme-light' : 'theme-dark' }  js-navbar--account" %>" aria-label="Account navigation">
+        <ul class="l-line-v3  c-masthead-v3__list  u-mar-bot-0  js-nav-system">
+          <li class="c-account-home-link  js-account-home-link  js-nav-system__item">
+            <%= link_to(ua_host_url(:home)) do %>
+              <music-icon-vhl-central-logo-v3 class="c-icon-v3  c-masthead-v3__icon--logo  theme-dark" label="Return to Homepage"></music-icon-vhl-central-logo-v3>
+            <% end %>
+          </li>
+          <li class="l-line-v3__splitter" aria-hidden="true"></li>
+          <% if current_program && !supersite_junior? %>
+            <li class="js-chat-tab  u-hidden">
+              <button
+                class="c-menu--chat__btn  js-nav-system__link  js-open-chat-btn
+                        js-tooltip-auto  <%= test_class('live-chat') %>"
+                role="button"
+                title="Open Chat"
+                aria-pressed="false"
+                data-tooltip-placement="bottom">
+                <sl-icon class="js-chat-button-icon" name="chat-available"></sl-icon>
+                <span class="u-dis-md-inline-block  <%= test_class('chat-name') %>">Chat</span>
+              </button>
+            </li>
+          <% end %>
+
+          <li>
+            <music-user-menu-v3 theme="dark" username="<%= current_user.full_name %>">
+                <sl-menu>
+                  <sl-menu-item>
+                    
+                    <a href="<%= ua_host_url(:my_account) %>">
+                      Settings
+                    </a>
+                    <sl-icon slot="prefix" name="settings"></sl-icon>
+                  </sl-menu-item>
+                  <sl-menu-item>
+                    <a href="<%= screencast_url %>" target="_blank">
+                      How-To Videos
+                    </a>
+                    <sl-icon slot="prefix" name="play-square"></sl-icon>
+                  </sl-menu-item>
+                  <sl-menu-item>
+                    <a href="http://support.vhlcentral.com" target="_blank">
+                      Support Center
+                    </a>
+                    <sl-icon slot="prefix" name="annotation-alert"></sl-icon>
+                  </sl-menu-item>
+                  <sl-menu-item footer>
+                    <a href="<%= ua_host_url(:logout) %>">
+                      Logout
+                    </a>
+                    <sl-icon slot="prefix" name="log-out"></sl-icon>
+                  </sl-menu-item>
+                </sl-menu>
+              </music-user_menu-v3>
+          </li>
+      </ul>
+    </nav>
+  </div>
+<% end %>
+<div class="c-live-chat-container  js-live-chat-container">
+  <%= stylesheet_link_tag("live_chat") %>
+  <%= render 'chat/chat_widget' %>
+</div>
+
+<div class="js-av-check-container">
+  <%= render :partial => 'partials/av_check' %>
+</div>

@@ -1,0 +1,14 @@
+<label class="c-form-item__label  u-dis-inline  u-txt-12  u-pad-rt-8 <%= test_class('unit-selector') %>"
+       for="unit-select">
+  View By
+</label>
+<%= select(
+      'unit',
+      'unit_id',
+      presenter.units.collect { |unit| [ unit.name, unit.id ] },
+      { selected: presenter.selected_unit_id },
+      {
+        data: presenter.set_data,
+        class: 'c-select  js-unit-select'
+      }
+    ) %>

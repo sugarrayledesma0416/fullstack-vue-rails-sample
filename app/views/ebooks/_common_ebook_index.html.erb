@@ -1,0 +1,58 @@
+<% if @presenter.use_smartbanner? %>
+  <% content_for(:meta, tag(:meta, name: 'apple-itunes-app',
+                            content: "app-id=#{@presenter.ios_ebook.id}")) %>
+  <% content_for(:css_head, stylesheet_link_tag('jquery.smartbanner')) %>
+  <% content_for(:js_head, javascript_include_tag('mobile_smartbanner')) %>
+<% end %>
+
+<% content_for(:css_head, stylesheet_link_tag('mobile_app_page')) %>
+
+<div class="c-box  c-box--lozenge  c-box--lozenge-max-width">
+  <% if !@presenter.ebook_released? %>
+    <div class="new_book_message">The <%= current_program.title %> eBook will
+      be available for download in the near future. Look for an announcement on
+      your vhlcentral.com home page when it is ready. In the meantime, you
+      can access the online vText, under the Content menu.</div>
+  <% elsif @presenter.vitalsource_ebook? %>
+    <% if demo_user? %>
+      This is not an active account. The eBook is accessible to active
+      (non-demo) instructors and students.
+    <% else %>
+      <div class="app_description">
+        <p>
+        <%= link_to(
+              'Click here to download your eBook.',
+              go_to_vitalsource_ebook_path(
+                current_program,
+                current_section,
+                @presenter.vitalsource_book_id
+              )
+            ) %>
+        </p>
+      </div>
+    <% end %>
+  <% else %>
+    <div class="app_description">
+      <%= image_tag(
+            "/ebooks/app/#{current_program.id}.jpg",
+            title: 'lesson summary',
+            size: '318x225'
+          ) %>
+
+      <p>1. Download* the <%= current_program.title %> eBook now at
+        <%= link_to(@presenter.ios_ebook.display_url) %></p>
+      <p><small>(Works on iPad&reg; only)</small></p>
+      <p><small>* Requires a wifi connection</small></p>
+    </div>
+
+    <div class="app_description">
+      <%= image_tag(
+            "/ebooks/login/#{current_program.id}.png",
+            title: 'sign in',
+            size: '318x225'
+          ) %>
+      <p>2. After opening the app—you will be prompted to "sign in"</p>
+      <p>Enter your vhlcentral Supersite username and password.</p>
+    </div>
+  <% end %>
+</div>

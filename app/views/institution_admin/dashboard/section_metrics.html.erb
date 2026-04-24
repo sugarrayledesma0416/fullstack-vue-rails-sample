@@ -1,0 +1,133 @@
+<% content_for(:body_classes, "ns-full-width  ns-admin-dashboard") %>
+<% content_for(:css_head, stylesheet_link_tag('music/features/admin_dashboard/main')) %>
+<% content_for(:css_head, stylesheet_link_tag('institution_admin/dashboard/section_metrics')) %>
+<% content_for(:js_head, javascript_packs_with_chunks_tag("institution_admin/dashboard/section_metrics")) %>
+
+<%= render partial: 'action_links', locals: {
+  current_program: @presenter.program,
+  hide_close_btn: true,
+  school_id: @presenter.school.id,
+  action_link: institution_admin_courses_current_path(school_id: params[:school_id]),
+  text_link: 'Back to Courses'
+} %>
+
+<div class="ns-music-v3  u-pad-24">
+  <h2 class="c-heading-v3  c-heading-v3--2  u-txt-true-gray-600">Progress</h2>
+  <% if @presenter.courses.blank? %>
+    <div class="no-course-msg  u-pad-bot-24  u-txt-ctr">
+      This program doesn't have any courses yet!
+    </div>
+  <% else %>
+    <div class="l-line-v3  u-gap-32  u-mar-top-12">
+      <% if current_user.institution_admin? %>
+        <a class="c-button-v3  c-button-v3--primary-clear  c-button-v3--sm  u-pad-8"
+          href="<%= institution_admin_configure_view_path(params[:program_id], school_id: params[:school_id], origin: 'progress') %>">
+          <music-icon-eye-v3 aria-hidden="true" class="u-fill-red-500"></music-icon-eye-v3>
+          <span class="u-txt-red-500  u-mar-0">Configure view</span>
+        </a>
+      <% end %>
+
+      <a disabled="true"
+        class="c-button-v3  c-button-v3--primary-clear  c-button-v3--sm  u-pad-8  js-metrics-export-button">
+        <span aria-hidden="true">
+          <%= feature_icon('icons/icon-section-metrics-export', ['c-embedded-icon--lg']) %>
+        </span>  
+        <span class="u-txt-red-500  u-mar-0">Export</span>
+      </a>
+    </div>
+
+    <a href="" download="<%= @presenter.csv_filename %>" class="u-hidden  js-csv-link"></a>
+
+    <% @presenter.courses.each do |course| %>
+      <section class="u-mar-0  u-mar-top-48  u-mar-bot-48">
+        <h3 class="c-heading-v3  c-heading-v3--4  u-txt-true-gray-600"><%= course.name %></h3>
+
+        <table
+          class="c-table-v3  u-width-full  u-txt-black"
+          aria-label="Course metrics per section for course <%= course.name %>">
+          <thead>
+            <tr class="u-txt-true-gray-900">
+              <th scope="col" class="c-table-v3__th  u-width-400  u-bg-true-gray-50" scope="col"></th>
+              <% if current_user.institution_admin? %>
+                <th scope="col" class="c-table-v3__th  u-bg-true-gray-50  u-txt-ctr  u-txt-bold">Assignments</th>
+              <% end %>
+              <th scope="col" class="c-table-v3__th  u-bg-true-gray-50  u-txt-ctr  u-txt-bold">Idle Students</th>
+              <th scope="col" class="c-table-v3__th  u-bg-true-gray-50  u-txt-ctr  u-txt-bold">Avg. Time Spent</th>
+              <th scope="col" class="c-table-v3__th  u-bg-true-gray-50  u-txt-ctr  u-txt-bold">Grade Avg.</th>
+              <th scope="col" class="c-table-v3__th  u-bg-true-gray-50  u-txt-ctr  u-txt-bold">Needs Grading</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% if course.sections.empty? %>
+              <tr class="c-row  u-txt-16">
+                <td colspan="6" class="c-table-v3__td  u-pad-32">
+                  This course doesn't have any sections yet!
+                </td>
+              </tr>
+            <% else %>
+              <% course.sections.each do |section| %>
+                <tr class="c-row  u-txt-16  js-section-metrics-data" data-section-id="<%= section.id %>">
+                  <td scope="row" class="c-table-v3__td  u-pad-4">
+                    <div class="u-pad-8  u-dis-flex  u-align-items-center  u-mar-lt-16">
+                      <div>
+                        <div class="u-mar-4  u-mar-bot-8  u-txt-body-1  u-txt-semibold  u-txt-true-gray-900"><%= section.name %></div>
+                        <l-line-v3 gap="xs" wrap="true" align-x="start">
+                          <% @presenter.section_owners(section).each do |instructor_hash| %>
+                            <div class="u-dis-flex  u-mar-rt-20">
+                              <sl-avatar image="<%= instructor_hash[:instructor].avatar_thumb_url %>" label="Instructor Avatar"></sl-avatar>
+                              <div class="u-mar-top-2  u-mar-lt-8">
+                                <sl-tooltip content="<%= instructor_hash[:role] %> <%= instructor_hash[:instructor].email %>">
+                                  <a href="mailto:<%= instructor_hash[:instructor].email %>" class="u-txt-black  u-mar-top-2">
+                                    <%= instructor_hash[:instructor].full_name %>
+                                  </a>
+                                </sl-tooltip>
+                              </div>
+                            </div>
+                          <% end %>
+                        </l-line-v3>
+                      </div>
+                    </div>
+                  </td>
+
+                  <% if current_user.institution_admin? %>
+                    <td class="c-table-v3__td  u-txt-ctr  js-assignments-<%= section.id %>">
+                      <div class="ns-chat  js-assignments-<%= section.id %>">
+                        <%= render 'chat/pulser', size: 'sm', classes: 'u-mar-auto' %>
+                      </div>
+                    </td>
+                  <% end %>
+
+                  <td class="c-table-v3__td  u-txt-ctr  js-idle_students_with_link-<%= section.id %>">
+                    <div class="ns-chat  js-idle-students-pulser-<%= section.id %>">
+                      <%= render 'chat/pulser', size: 'sm', classes: 'u-mar-auto' %>
+                    </div>
+                  </td>
+
+                  <td class="c-table-v3__td  u-txt-ctr  js-avg_time_spent_per_student-<%= section.id %>">
+                    <div class="ns-chat  js-avg-time-spent-pulser-<%= section.id %>">
+                      <%= render 'chat/pulser', size: 'sm', classes: 'u-mar-auto' %>
+                    </div>
+                  </td>
+
+                  <td class="c-table-v3__td  u-txt-ctr  js-section_average-<%= section.id %>">
+                    <div class="ns-chat  js-section-average-pulser-<%= section.id %>">
+                      <%= render 'chat/pulser', size: 'sm', classes: 'u-mar-auto' %>
+                    </div>
+                  </td>
+
+                  <td class="c-table-v3__td  u-txt-ctr  js-needs_grading-<%= section.id %>">
+                    <div class="ns-chat  js-needs-grading-pulser-<%= section.id %>">
+                      <%= render 'chat/pulser', size: 'sm', classes: 'u-mar-auto' %>
+                    </div>
+                  </td>
+                </tr>
+              <% end %>
+            <% end %>
+          </tbody>
+        </table>
+      </section>
+    <% end %>
+  <% end %>
+</div>
+
+<%= render 'breadcrumb', presenter: @presenter %>

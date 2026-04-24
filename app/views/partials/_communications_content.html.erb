@@ -1,0 +1,23 @@
+<%
+  # Avoid loading js twice if this partial is rendered multiple times on
+  # the same page.
+  unless @communications_content_js_loaded
+    content_for(
+      :js_head,
+      javascript_packs_with_chunks_tag('partials/communications_content')
+    )
+    content_for(
+      :css_head,
+      stylesheet_pack_tag('partials/communications_content')
+    )
+    @communications_content_js_loaded = true
+  end
+%>
+
+<div class="js-student-notification-list"
+     <%= %(data-page-size="#{page_size}").html_safe if defined?(page_size) %>
+     <%= %(data-variant="#{variant}").html_safe if defined?(variant) %>
+     data-source-url="<%= json_index_section_notifications_path(
+                            section_id: current_section.id
+                          ) %>"
+     data-list-type="<%= communication_type %>"></div>

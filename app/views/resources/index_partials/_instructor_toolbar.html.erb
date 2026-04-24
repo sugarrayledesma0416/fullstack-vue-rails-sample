@@ -1,0 +1,29 @@
+<% is_assistant = assistant_role_policy.is_assistant? %>
+<% link_class = is_assistant ? '' : 'js-visibility-action' %>
+
+<a href="#"
+   data-js-instructor-id="<%= current_user.id %>"
+   data-action="shown"
+   class="c-toolbar__item  c-toolbar__actions  u-pad-lt-0  <%= link_class %>  <%= test_class('show-to-student') %>"
+   <%= 'disabled' if is_assistant %>>show</a>
+<a href="#"
+   data-js-instructor-id="<%= current_user.id %>"
+   data-action="hidden"
+   class="c-toolbar__item  c-toolbar__actions  u-pad-lt-0  <%= link_class %> <%= test_class('hide-from-student') %>"
+   <%= 'disabled' if is_assistant %>>hide</a>
+
+<% if is_assistant %>
+  <a href="#"
+     class="c-toolbar__item  c-toolbar__actions  u-bord-lt-1  u-bord-gray-d  is-disabled"
+     id="new_resource_link"
+     title="Assistants are not permitted to make changes to resources"
+     disabled="disabled"><%= Music::Components.icon(variant: 'add', text: 'Add Resource') %></a>
+<% else %>
+  <%= link_to new_resource_path(current_program, return_to: @return_to), {
+              class: 'c-toolbar__item  c-toolbar__actions  u-bord-lt-1  u-bord-gray-d',
+              id: 'new_resource_link',
+              title: 'Add new resource'
+  } do %>
+    <%= Music::Components.icon(variant: 'add', text: 'Add Resource') %>
+  <% end %>
+<% end %>

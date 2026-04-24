@@ -1,0 +1,26 @@
+<%= vite_javascript_tag 'student_settings' %>
+
+<div
+  class="student-settings"
+  data-from-dom="<%= {
+    students: @presenter.student_data,
+    programId: @presenter.program.id,
+    programLanguageName: @presenter.program.language_name,
+    programLanguageCode: @presenter.program.language_code,
+    courseId: @presenter.section.course_id,
+    sectionId: @presenter.section.id,
+    sectionName: @presenter.section.name,
+    hasAiVirtualChatActivities: @presenter.program.has_ai_virtual_chat_activities?,
+    sectionVideoTranscriptLanguages: @presenter.section_video_transcript_languages,
+    sectionVideoSubtitleLanguages: @presenter.section_video_subtitle_languages,
+    sectionAudioTranscript: @presenter.section_audio_transcript,
+    sectionInputMode: @presenter.section_input_mode,
+    aiInputModes: @presenter.ai_input_modes,
+    aiInputModeValues: @presenter.ai_input_mode_values,
+    backToLink: @presenter.back_to_link,
+    rosterUrl: section_roster_path(@presenter.program, @presenter.section),
+    updateStudentsUrl: section_student_settings_update_students_path(@presenter.program, @presenter.section),
+    updateSectionDefaultsUrl: section_student_settings_update_section_defaults_path(@presenter.program, @presenter.section),
+    rostering: @presenter.rostering?
+  }.to_json %>">
+</div>

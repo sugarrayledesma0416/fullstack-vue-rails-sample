@@ -1,0 +1,15 @@
+<% if admin_district.nil? %>
+  <% if current_user.data_admin? %>
+    <p>The school <%= admin_schools.first.name %> does not have an assigned district.</p>
+  <% end %>
+<% else %>
+  <div class="u-mar-bot-16">
+    <h2 class="c-heading--md"><%= admin_district.name %></h2>
+  </div>
+  <%= render partial: 'program_table',
+             locals: { programs: current_user.admin_district_programs(admin_district),
+                       school: nil,
+                       admin_district: admin_district }
+  %>
+<% end %>
+

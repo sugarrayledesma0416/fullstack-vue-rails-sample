@@ -1,0 +1,162 @@
+<% content_for(:css_head, stylesheet_link_tag('dev_examples')) %>
+<% content_for(:body_classes, 'ns-music-v1') %>
+<% content_for(:js_head, javascript_include_tag('maestro_activity_engine/pompom_animation_party')) %>
+<% content_for(:js_head, javascript_include_tag('maestro_activity_engine/pompom_animation_fireworks')) %>
+<% content_for(:js_head, javascript_include_tag('maestro_activity_engine/pompom_animation_confetti')) %>
+<div class="l-container-fluid  u-mar-48  u-txt-gray-6">
+  <h1 class="c-heading--page-title">Internavigable Activities: Interstitial and finished images.</h1>
+  <ul class="c-plain-list">
+    <li class="l-stack  l-stack--lg">
+      <h2 class="c-heading-md">Vocabulary tutorial</h2>
+      <!-- Replace this div with intranav stuff 
+        TODO: VT intranav is not shared_intranav in mae.  -->
+      <div class="c-intranav-activity-action">
+        <h3 class="u-txt-gray-6">Intranav</h3>
+        <h4>Senior</h4>
+        <% @intranav_config = {
+                  icon_path: 'maestro_activity_engine/features/vocabulary_tutorial/icons/actions',
+                  items: {
+                    listen_repeat: {
+                      name: 'listen-repeat',
+                      label: 'Listen & Repeat',
+                      state: 'current'
+                    },
+                    match: {
+                      name: 'match',
+                      label: 'Match',
+                      state: 'navigable'
+                    },
+                    say_it: {
+                      name: 'say-it',
+                      label: 'Say It',
+                      state: 'navigable'
+                    },
+                  }
+                } %>
+        <%= render('maestro_activity_engine/activities/partials/intranav_shared/intranav', intranav_config: @intranav_config) %>
+        <h4>Junior</h4>
+        ** TODO:  Add Junior intranav here
+      </div>
+      <div class="l-line l-line--lg l-line--wrap">
+        <div class="c-intranav-activity-action">
+          <h3 class="u-txt-gray-6">Listen and repeat</h3>
+          <h4>Senior</h4>
+          <img class="c-intranav-activity-image" src="<%= image_url('maestro_activity_engine/features/vocabulary_tutorial/illustrations/listen-repeat.svg')%>" alt=""/>
+          <h4>Junior</h4>
+          <img class="c-intranav-activity-image" src="<%= image_url('maestro_activity_engine/features/vocabulary_tutorial/illustrations/jr-listen-repeat.svg')%>" alt=""/>
+        </div>
+        <div class="c-intranav-activity-action">
+          <h3 class="u-txt-gray-6">Match</h3>
+          <h4>Senior</h4>
+          <img class="c-intranav-activity-image" src="<%= image_url('maestro_activity_engine/features/vocabulary_tutorial/illustrations/match.svg')%>" alt=""/>
+          <h4>Junior</h4>
+          <img class="c-intranav-activity-image" src="<%= image_url('maestro_activity_engine/features/vocabulary_tutorial/illustrations/jr-match.svg')%>" alt=""/>
+        </div>
+        <div class="c-intranav-activity-action">
+          <h3 class="u-txt-gray-6">Say it</h3>
+          <h4>Senior</h4>
+          <img class="c-intranav-activity-image" src="<%= image_url('maestro_activity_engine/features/vocabulary_tutorial/illustrations/say-it.svg')%>" alt=""/>
+          <h4>Junior</h4>
+          <img class="c-intranav-activity-image" src="<%= image_url('maestro_activity_engine/features/vocabulary_tutorial/illustrations/jr-say-it.svg')%>" alt=""/>
+        </div>
+      </div>
+    </li>
+    <li class="l-stack  l-stack--lg">
+      <h2 class="c-heading-md">Interactive video</h2>
+      <!-- Replace this div with intranav stuff -->
+      <div class="c-intranav-activity-action">
+        <h3 class="u-txt-gray-6">Intranav</h3>
+        <h4>Senior</h4>
+        <% @intranav_config = {
+                  icon_path: 'maestro_activity_engine/features/interactive_video/icons',
+                  items: {
+                    interactive_video: {
+                      name: 'interactive-video',
+                      label: 'Video',
+                      state: 'current'
+                    },
+                    diagnostic: {
+                      name: 'diagnostic',
+                      label: 'Diagnostic',
+                      state: 'navigable'
+                    }
+                  }
+                } %>
+        <%= render('maestro_activity_engine/activities/partials/intranav_shared/intranav', intranav_config: @intranav_config) %>
+        <h4>Junior</h4>
+        ** TODO:  Add Junior intranav here
+      </div>
+      <div class="l-line l-line--lg l-line--wrap">
+        <div class="c-intranav-activity-action">
+          <h3 class="u-txt-gray-6">Video</h3>
+          <h4>Senior</h4>
+          <img class="c-intranav-activity-image" src="<%= image_url('maestro_activity_engine/features/interactive_video/intro-interactive-video.svg')%>" alt=""/>
+          <h4>Junior</h4>
+          <img class="c-intranav-activity-image" src="<%= image_url('maestro_activity_engine/features/interactive_video/ssjr-intro-interactive-video.svg')%>" alt=""/>
+        </div>
+        <div class="c-intranav-activity-action">
+          <h3 class="u-txt-gray-6">Diagnostic</h3>
+          <h4>Senior</h4>
+          <img class="c-intranav-activity-image" src="<%= image_url('maestro_activity_engine/features/interactive_video/intro-diagnostic.svg')%>" alt=""/>
+          <h4>Junior</h4>
+          <img class="c-intranav-activity-image" src="<%= image_url('maestro_activity_engine/features/interactive_video/ssjr-intro-diagnostic.svg')%>" alt=""/>
+        </div>
+        <div class="c-intranav-activity-action">
+          <h3 class="u-txt-gray-6">Finished without diagnostic</h3>
+          <h4>Senior</h4>
+          <img class="c-intranav-activity-image" src="<%= image_path('maestro_activity_engine/activity-complete-sr.svg') %>" alt=""/>
+          <h4>Junior</h4>
+          <div class="c-intranav-activity-animation" id="pompom"></div>
+          <script type="text/javascript">
+          document.addEventListener('DOMContentLoaded', () => {
+            let event = new Event('StartPomPomAnimation');
+            window.dispatchEvent(event);
+          });
+          </script>
+        </div>
+      </div>
+    </li>
+    <li class="l-stack  l-stack--lg">
+      <h2 class="c-heading-md">Dialogue listen and repeat</h2>
+      <!-- Replace this div with intranav stuff -->
+      <div class="c-intranav-activity-action">
+        <h3 class="u-txt-gray-6">Intranav</h3>
+        <h4>Senior</h4>
+        <% @intranav_config = {
+                icon_path: 'maestro_activity_engine/features/dialogue_listen_repeat/icons',
+                items: {
+                  video: {
+                    name: 'video',
+                    label: 'Video',
+                    state: 'current'
+                  },
+                  dialogue_repeat: {
+                    name: 'dialogue_repeat',
+                    label: 'Listen and Repeat',
+                    state: 'navigable'
+                  }
+                }
+              } %>
+        <%= render('maestro_activity_engine/activities/partials/intranav_shared/intranav', intranav_config: @intranav_config) %>
+        <h4>Junior</h4>
+        ** TODO:  Add Junior intranav here
+      </div>
+      <div class="l-line l-line--lg l-line--wrap">
+        <div class="c-intranav-activity-action">
+          <h3 class="u-txt-gray-6">Video</h3>
+          <h4>Senior</h4>
+          <img src="<%= image_url('maestro_activity_engine/features/dialogue_listen_repeat/intro_video.svg')%>" alt=""/>
+          <h4>Junior</h4>
+          <img class="c-intranav-activity-image" src="<%= image_url('maestro_activity_engine/features/interactive_video/ssjr-intro-interactive-video.svg')%>" alt=""/>
+        </div>
+        <div class="c-intranav-activity-action">
+          <h3 class="u-txt-gray-6">Listen and repeat</h3>
+          <h4>Senior</h4>
+          <img src="<%= image_url('maestro_activity_engine/features/vocabulary_tutorial/illustrations/listen-repeat.svg')%>" alt=""/>
+          <h4>Junior</h4>
+           <img class="c-intranav-activity-image" src="<%= image_url('maestro_activity_engine/features/vocabulary_tutorial/illustrations/jr-listen-repeat.svg')%>" alt=""/>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>

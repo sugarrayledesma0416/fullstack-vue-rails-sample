@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <%= render('partials/google_tag_manager') %>
+    <script type="text/javascript">
+      var VISTA_ONLINE_LEARNING = <%= vista_online_learning? %>;
+    </script>
+    <%= render :partial => 'layouts/common_header' %>
+  </head>
+
+  <body class="<%= yield :body_classes %>  <%= yield :theme_classes %>" <%= yield :angular_tags %>>
+
+    <div class="ns-masthead  ns-music-v1  <%= yield :theme_classes %>">
+      <%= render 'app_shell/masthead',
+                  section_header: @section_header,
+                  course: @course,
+                  section: @section,
+                  flash: flash
+      %>
+    </div>
+
+    <div id="page_container" class="c-page-container  js-page-container  student_grades">
+      <div id="column_wrapper">
+
+        <div id="main_content">
+          <% if @page_header %>
+            <h1 class="page_title"><%= @page_header.html_safe %></h1>
+          <% end %>
+          <%= yield %>
+        </div>
+      </div><!-- end column_wrapper -->
+      <%= render :partial => 'partials/footer' %>
+    </div>
+    <%= render 'layouts/inactivity_timeout' %>
+  </body>
+</html>

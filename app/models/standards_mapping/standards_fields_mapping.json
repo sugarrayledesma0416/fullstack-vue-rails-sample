@@ -1,0 +1,79 @@
+{
+  "properties": {
+    "standard_id": {
+      "type": "integer"
+    },
+    "vendor_guid": {
+      "type": "keyword"
+    },
+    "label": {
+      "type": "text"
+    },
+    "name": {
+      "type": "text"
+    },
+    "number": {
+      "type": "keyword"
+    },
+    "description": {
+      "type": "text"
+    },
+    "vendor_standard_set_guid": {
+      "type": "keyword"
+    },
+    "issuer:": {
+      "type": "keyword"
+    },
+    "display_name:": {
+      "type": "keyword"
+    },
+    "searchable:": {
+      "type": "boolean"
+    },
+    "parent": {
+       "properties": {
+        "standard_id": {
+          "type": "integer"
+        },
+        "vendor_guid": {
+          "type": "keyword"
+        },
+        "label": {
+          "type": "text"
+        },
+        "name": {
+          "type": "text"
+        },
+        "number": {
+          "type": "keyword"
+        },
+        "description": {
+          "type": "text"
+        },
+        "vendor_standard_set_guid": {
+          "type": "keyword"
+        },
+        "issuer:": {
+          "type": "keyword"
+        },
+        "display_name:": {
+          "type": "keyword"
+        }
+      }
+    },
+    "grade_levels": {
+      "properties": {
+        "grade_level": {
+          "type": "keyword"
+        }
+      }
+    },
+    "ancestors": {
+      "properties": {
+        "vendor_guid": {
+          "type": "keyword"
+        }
+      }
+    }
+  }
+}

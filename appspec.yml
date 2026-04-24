@@ -1,0 +1,8 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /opt/m3
+hooks:
+  AfterInstall:
+    - location: script/post-install

@@ -1,0 +1,3063 @@
+{
+  "links": {
+    "next": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards?fields%5Bstandards%5D=*&offset=10",
+    "last": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards?fields%5Bstandards%5D=*&offset=7400",
+    "self": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards?fields%5Bstandards%5D=*"
+  },
+  "data": [
+    {
+      "relationships": {
+        "breakout_origins": {
+          "data": []
+        },
+        "origins": {
+          "data": []
+        },
+        "replaced_by": {
+          "data": []
+        },
+        "peer_derivatives": {
+          "data": []
+        },
+        "course_standards": {
+          "data": []
+        },
+        "breakouts": {
+          "data": []
+        },
+        "parent": {
+          "data": {
+            "type": "standards",
+            "id": "F919464D-0824-418C-86EA-0A7ED578B548"
+          },
+          "links": {
+            "related": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards/00169BE1-B953-4115-BC34-656E3D1850E5/parent"
+          }
+        },
+        "peers": {
+          "data": []
+        },
+        "children": {
+          "data": []
+        },
+        "topics": {
+          "data": []
+        },
+        "concepts": {
+          "data": []
+        },
+        "ancestors": {
+          "data": [
+            {
+              "type": "standards",
+              "id": "d6ae62e0-61e2-11ed-9202-0e4957e617a9"
+            },
+            {
+              "id": "E14C0B2F-C3A7-4A67-9471-03FA2BD5C95E",
+              "type": "standards"
+            },
+            {
+              "id": "F919464D-0824-418C-86EA-0A7ED578B548",
+              "type": "standards"
+            }
+          ],
+          "links": {
+            "related": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards/00169BE1-B953-4115-BC34-656E3D1850E5/ancestors"
+          }
+        },
+        "crosswalks": {
+          "data": []
+        },
+        "replaces": {
+          "data": []
+        },
+        "related_courses": {
+          "data": []
+        },
+        "contexts": {
+          "data": [
+            {
+              "id": "d6ae62e0-61e2-11ed-9202-0e4957e617a9",
+              "type": "standards"
+            }
+          ],
+          "links": {
+            "related": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards/00169BE1-B953-4115-BC34-656E3D1850E5/contexts"
+          }
+        },
+        "derivatives": {
+          "data": []
+        }
+      },
+      "id": "00169BE1-B953-4115-BC34-656E3D1850E5",
+      "type": "standards",
+      "attributes": {
+        "utilizations": [
+          {
+            "guid": "6A044B04-BF8B-4FBF-BC96-ECA0EAE447A2",
+            "type": "example"
+          }
+        ],
+        "level": 4,
+        "in_list": "N",
+        "has_list": "N",
+        "date_modified_utc": "2022-11-16 19:59:28",
+        "section": {
+          "date_modified_utc": "2022-11-17 02:23:27",
+          "obsolete_year": null,
+          "revision_year": null,
+          "adopt_year": "2020",
+          "descr": "Grades 6-8",
+          "guid": "8B4EE553-5F87-11ED-9202-0E4957E617A9",
+          "label": null,
+          "number": null,
+          "implementation_year": null,
+          "disciplines": {
+            "primary_subject": {
+              "code": "ELD",
+              "guid": "F37B095B-5ED4-11ED-9202-0E4957E617A9",
+              "descr": "English Language Development"
+            }
+          },
+          "seq": 7,
+          "assessment_year": null
+        },
+        "topic_organizer": null,
+        "document": {
+          "source_url": "https://wida.wisc.edu/teach/standards/eld/2020",
+          "revision_year": null,
+          "adopt_year": "2020",
+          "descr": "Language Expectations by WIDA ELD Standard Statements and Grade-Level Cluster",
+          "publication": {
+            "authorities": [
+              {
+                "acronym": null,
+                "descr": "WIDA",
+                "guid": "B2869AF4-11A5-11ED-9063-FE177750DCE7"
+              },
+              {
+                "acronym": null,
+                "descr": "Board of Regents of the University of Wisconsin System",
+                "guid": "4A719B52-5EC6-11ED-9202-0E4957E617A9"
+              }
+            ],
+            "publication_type": "standard",
+            "descr": "WIDA English Language Development Standards Framework",
+            "source_url": "https://wida.wisc.edu/teach/standards/eld/2020",
+            "guid": "50CF8C2F-5EC7-11ED-9202-0E4957E617A9",
+            "regions": [
+              {
+                "code": "US",
+                "type": "country",
+                "guid": "91273AE8-F1B9-11E5-862E-0938DC287387",
+                "descr": "United States of America"
+              }
+            ],
+            "extended_descr": "WIDA: WIDA English Language Development Standards Framework",
+            "acronym": null
+          },
+          "date_modified_utc": "2022-11-18 16:11:31",
+          "obsolete_year": null,
+          "assessment_year": null,
+          "disciplines": {
+            "primary_subject": {
+              "descr": "English Language Development",
+              "guid": "F37B095B-5ED4-11ED-9202-0E4957E617A9",
+              "code": "ELD"
+            }
+          },
+          "guid": "912B82CC-5F82-11ED-9387-F0A169E7CC7F",
+          "implementation_year": null
+        },
+        "status": "active",
+        "standard_type": "extender",
+        "legends": [],
+        "date_deleted_utc": null,
+        "statement": {
+          "addendums": [
+            {
+              "position": "before",
+              "add_context": "Y",
+              "descr": "Develop coherence and cohesion throughout text through…",
+              "seq": 3
+            }
+          ],
+          "combined_descr": "Develop coherence and cohesion throughout text through… Nominalization to condense clauses (it rained year after year=annual floods) or summarize key ideas",
+          "descr": "Nominalization to condense clauses (it rained year after year=annual floods) or summarize key ideas"
+        },
+        "disciplines": {
+          "subjects": [
+            {
+              "guid": "F37B095B-5ED4-11ED-9202-0E4957E617A9",
+              "code": "ELD",
+              "descr": "English Language Development"
+            },
+            {
+              "code": "ESL",
+              "guid": "F1FCD9C6-3B53-11E0-B042-495E9DFF4B22",
+              "descr": "English as Second Language"
+            }
+          ],
+          "genres": [],
+          "ece_domains": [],
+          "strands": []
+        },
+        "number": {
+          "root_enhanced": null,
+          "raw": null,
+          "enhanced": null,
+          "prefix_enhanced": null
+        },
+        "label": "Language Feature",
+        "key_ideas": [],
+        "seq": 55,
+        "guid": "00169BE1-B953-4115-BC34-656E3D1850E5",
+        "education_levels": {
+          "grades": [
+            {
+              "seq": 80,
+              "code": "6",
+              "guid": "F1FA49AE-3B53-11E0-B042-495E9DFF4B22",
+              "descr": "6th Grade"
+            },
+            {
+              "descr": "7th Grade",
+              "guid": "F1FA56F6-3B53-11E0-B042-495E9DFF4B22",
+              "seq": 90,
+              "code": "7"
+            },
+            {
+              "seq": 100,
+              "code": "8",
+              "guid": "F1FA642A-3B53-11E0-B042-495E9DFF4B22",
+              "descr": "8th Grade"
+            }
+          ],
+          "ece_ages": []
+        },
+        "alt_identifiers": [],
+        "captured_by": "AB",
+        "extensions": [],
+        "uri": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards/00169BE1-B953-4115-BC34-656E3D1850E5"
+      }
+    },
+    {
+      "relationships": {
+        "ancestors": {
+          "links": {
+            "related": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards/0030B561-DA3A-4168-BAC6-8E529E0E55B9/ancestors"
+          },
+          "data": [
+            {
+              "type": "standards",
+              "id": "7795B0B2-FE68-4B74-999E-8A78ABDF3207"
+            }
+          ]
+        },
+        "concepts": {
+          "data": []
+        },
+        "topics": {
+          "data": []
+        },
+        "children": {
+          "data": [
+            {
+              "type": "standards",
+              "id": "C9371C29-BD2D-4E82-A812-BDED47C41D16"
+            },
+            {
+              "id": "BEB3C460-B085-4482-8D01-B6D855C479DE",
+              "type": "standards"
+            },
+            {
+              "id": "C9E99AE4-AE88-4DE4-AAA8-E46FB5672DB6",
+              "type": "standards"
+            }
+          ],
+          "links": {
+            "related": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards/0030B561-DA3A-4168-BAC6-8E529E0E55B9/children"
+          }
+        },
+        "contexts": {
+          "links": {
+            "related": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards/0030B561-DA3A-4168-BAC6-8E529E0E55B9/contexts"
+          },
+          "data": [
+            {
+              "type": "standards",
+              "id": "7795B0B2-FE68-4B74-999E-8A78ABDF3207"
+            }
+          ]
+        },
+        "related_courses": {
+          "data": []
+        },
+        "derivatives": {
+          "data": []
+        },
+        "replaces": {
+          "data": []
+        },
+        "crosswalks": {
+          "data": []
+        },
+        "peer_derivatives": {
+          "data": []
+        },
+        "course_standards": {
+          "data": []
+        },
+        "origins": {
+          "data": []
+        },
+        "replaced_by": {
+          "data": []
+        },
+        "breakout_origins": {
+          "data": []
+        },
+        "breakouts": {
+          "data": []
+        },
+        "peers": {
+          "data": []
+        },
+        "parent": {
+          "data": {
+            "id": "7795B0B2-FE68-4B74-999E-8A78ABDF3207",
+            "type": "standards"
+          },
+          "links": {
+            "related": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards/0030B561-DA3A-4168-BAC6-8E529E0E55B9/parent"
+          }
+        }
+      },
+      "id": "0030B561-DA3A-4168-BAC6-8E529E0E55B9",
+      "attributes": {
+        "alt_identifiers": [],
+        "uri": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards/0030B561-DA3A-4168-BAC6-8E529E0E55B9",
+        "extensions": [],
+        "captured_by": "AB",
+        "key_ideas": [],
+        "seq": 38,
+        "guid": "0030B561-DA3A-4168-BAC6-8E529E0E55B9",
+        "education_levels": {
+          "grades": [
+            {
+              "code": "3",
+              "seq": 50,
+              "guid": "F1FA221C-3B53-11E0-B042-495E9DFF4B22",
+              "descr": "3rd Grade"
+            }
+          ],
+          "ece_ages": []
+        },
+        "document": {
+          "date_modified_utc": "2022-03-24 06:43:31",
+          "obsolete_year": null,
+          "publication": {
+            "publication_type": "standard",
+            "authorities": [
+              {
+                "descr": "Florida DOE",
+                "acronym": "FDOE",
+                "guid": "9127FF50-F1B9-11E5-862E-0938DC287387"
+              }
+            ],
+            "source_url": "https://www.cpalms.org/Public/search/Standard",
+            "descr": "Benchmarks for Excellent Student Thinking Standards",
+            "extended_descr": "Florida: Benchmarks for Excellent Student Thinking Standards",
+            "regions": [
+              {
+                "descr": "United States of America",
+                "type": "country",
+                "guid": "91273AE8-F1B9-11E5-862E-0938DC287387",
+                "code": "US"
+              },
+              {
+                "guid": "A832E0B8-901A-11DF-A622-0C319DFF4B22",
+                "type": "state",
+                "code": "FL",
+                "descr": "Florida"
+              }
+            ],
+            "guid": "ad9c9705-4834-11ea-bb5b-0e20088bb29a",
+            "acronym": "B.E.S.T."
+          },
+          "adopt_year": "2020",
+          "revision_year": null,
+          "descr": "English Language Arts",
+          "source_url": "https://www.cpalms.org/Public/search/Standard",
+          "guid": "E2ECA2DE-4834-11EA-AC9D-835EAB753378",
+          "implementation_year": null,
+          "disciplines": {
+            "primary_subject": {
+              "code": "LANG",
+              "guid": "F1FAC302-3B53-11E0-B042-495E9DFF4B22",
+              "descr": "Language Arts"
+            }
+          },
+          "assessment_year": "2022"
+        },
+        "status": "active",
+        "disciplines": {
+          "strands": [
+            {
+              "guid": "81C38420-046C-11E0-9AE1-661C9DFF4B22",
+              "descr": "Reading"
+            }
+          ],
+          "subjects": [
+            {
+              "descr": "Language Arts",
+              "code": "LANG",
+              "guid": "F1FAC302-3B53-11E0-B042-495E9DFF4B22"
+            }
+          ],
+          "ece_domains": [],
+          "genres": []
+        },
+        "statement": {
+          "addendums": [],
+          "combined_descr": "Reading Across Genres",
+          "descr": "Reading Across Genres"
+        },
+        "date_deleted_utc": null,
+        "label": "Standard",
+        "number": {
+          "root_enhanced": "ELA.3.R.3",
+          "raw": "ELA.3.R.3",
+          "enhanced": "ELA.3.R.3",
+          "prefix_enhanced": "ELA.3.R.3"
+        },
+        "legends": [],
+        "standard_type": "theme",
+        "level": 2,
+        "date_modified_utc": "2020-02-07 15:37:40",
+        "in_list": "N",
+        "has_list": "N",
+        "utilizations": [],
+        "topic_organizer": null,
+        "section": {
+          "descr": "3rd Grade",
+          "label": null,
+          "number": null,
+          "disciplines": {
+            "primary_subject": {
+              "code": "LANG",
+              "guid": "F1FAC302-3B53-11E0-B042-495E9DFF4B22",
+              "descr": "Language Arts"
+            }
+          },
+          "date_modified_utc": "2020-07-17 19:21:49",
+          "obsolete_year": null,
+          "adopt_year": "2020",
+          "revision_year": null,
+          "guid": "3BC675A8-4835-11EA-BB5B-0E20088BB29A",
+          "implementation_year": "2022",
+          "seq": 4,
+          "assessment_year": "2022"
+        }
+      },
+      "type": "standards"
+    },
+    {
+      "attributes": {
+        "key_ideas": [
+          {
+            "guid": "70A7B8CC-D232-11DE-8EF1-B44B9DFF4B22",
+            "concepts": [
+              {
+                "guid": "0A279CA8-3BA2-11E1-A29D-011A9DFF4B22",
+                "descr": "Analysis of Text"
+              },
+              {
+                "descr": "Text Structure",
+                "guid": "0A3AEC5E-3BA2-11E1-A29D-011A9DFF4B22"
+              },
+              {
+                "descr": "Author Purpose",
+                "guid": "0A95DF1A-3BA2-11E1-A29D-011A9DFF4B22"
+              }
+            ]
+          }
+        ],
+        "education_levels": {
+          "ece_ages": [],
+          "grades": [
+            {
+              "seq": 60,
+              "code": "4",
+              "guid": "F1FA2F50-3B53-11E0-B042-495E9DFF4B22",
+              "descr": "4th Grade"
+            }
+          ]
+        },
+        "guid": "00323363-B9F3-487E-9873-DBD06D2E3EE6",
+        "seq": 67,
+        "alt_identifiers": [],
+        "uri": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards/00323363-B9F3-487E-9873-DBD06D2E3EE6",
+        "extensions": [],
+        "captured_by": "AB",
+        "in_list": "N",
+        "has_list": "N",
+        "date_modified_utc": "2017-09-07 18:42:37",
+        "level": 2,
+        "utilizations": [
+          {
+            "type": "alignable",
+            "guid": "3A6BCD99-F093-4782-9708-5E65F2DEC3F2"
+          }
+        ],
+        "topic_organizer": null,
+        "section": {
+          "number": "110.6.",
+          "label": null,
+          "disciplines": {
+            "primary_subject": {
+              "code": "LANG",
+              "guid": "F1FAC302-3B53-11E0-B042-495E9DFF4B22",
+              "descr": "Language Arts"
+            }
+          },
+          "descr": "Grade 4",
+          "assessment_year": "2021",
+          "implementation_year": "2019",
+          "guid": "AEE7AABC-917D-11E7-B3DE-712FCDC8CA83",
+          "seq": 810,
+          "adopt_year": "2017",
+          "revision_year": null,
+          "obsolete_year": null,
+          "date_modified_utc": "2021-10-11 16:06:12"
+        },
+        "status": "active",
+        "document": {
+          "publication": {
+            "guid": "99354D80-C0DA-11DA-ACF8-B4C4D78ECB74",
+            "extended_descr": "Texas: Essential Knowledge and Skills",
+            "regions": [
+              {
+                "code": "US",
+                "guid": "91273AE8-F1B9-11E5-862E-0938DC287387",
+                "type": "country",
+                "descr": "United States of America"
+              },
+              {
+                "type": "state",
+                "guid": "A8363358-901A-11DF-A622-0C319DFF4B22",
+                "code": "TX",
+                "descr": "Texas"
+              }
+            ],
+            "acronym": "TEKS",
+            "publication_type": "standard",
+            "authorities": [
+              {
+                "guid": "912830F6-F1B9-11E5-862E-0938DC287387",
+                "acronym": "TEA",
+                "descr": "Texas Education Agency"
+              }
+            ],
+            "source_url": "https://tea.texas.gov/academics/curriculum-standards/teks/texas-essential-knowledge-and-skills",
+            "descr": "Essential Knowledge and Skills"
+          },
+          "date_modified_utc": "2021-12-03 13:01:46",
+          "obsolete_year": null,
+          "source_url": "https://texreg.sos.state.tx.us/public/readtac$ext.ViewTAC?tac_view=4&ti=19&pt=2&ch=110",
+          "revision_year": null,
+          "adopt_year": "2017",
+          "descr": "English Language Arts and Reading",
+          "disciplines": {
+            "primary_subject": {
+              "descr": "Language Arts",
+              "code": "LANG",
+              "guid": "F1FAC302-3B53-11E0-B042-495E9DFF4B22"
+            }
+          },
+          "guid": "E54BB6DA-8F51-11E7-9841-3E19CDC8CA83",
+          "implementation_year": "2019",
+          "assessment_year": "2021"
+        },
+        "number": {
+          "enhanced": "4.10.B",
+          "prefix_enhanced": "LA.4.10.B",
+          "root_enhanced": "LA.4.10.B",
+          "raw": "(B)"
+        },
+        "label": "Knowledge/Skill",
+        "date_deleted_utc": null,
+        "disciplines": {
+          "strands": [
+            {
+              "guid": "81C38420-046C-11E0-9AE1-661C9DFF4B22",
+              "descr": "Reading"
+            }
+          ],
+          "ece_domains": [],
+          "genres": [],
+          "subjects": [
+            {
+              "descr": "Language Arts",
+              "guid": "F1FAC302-3B53-11E0-B042-495E9DFF4B22",
+              "code": "LANG"
+            }
+          ]
+        },
+        "statement": {
+          "addendums": [
+            {
+              "add_context": "N",
+              "descr": "The student is expected to:",
+              "position": "before",
+              "seq": 2
+            }
+          ],
+          "descr": "explain how the use of text structure contributes to the author's purpose;",
+          "combined_descr": "The student is expected to: explain how the use of text structure contributes to the author's purpose;"
+        },
+        "standard_type": "objective",
+        "legends": []
+      },
+      "type": "standards",
+      "id": "00323363-B9F3-487E-9873-DBD06D2E3EE6",
+      "relationships": {
+        "replaces": {
+          "data": []
+        },
+        "crosswalks": {
+          "data": [
+            {
+              "type": "standards",
+              "id": "1C8F5039-EAD5-4B37-8BBB-5A9B62953473"
+            }
+          ],
+          "links": {
+            "related": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards/00323363-B9F3-487E-9873-DBD06D2E3EE6/crosswalks"
+          }
+        },
+        "derivatives": {
+          "data": [
+            {
+              "id": "1C8F5039-EAD5-4B37-8BBB-5A9B62953473",
+              "type": "standards",
+              "meta": {
+                "same_text": "Y",
+                "same_concepts": "Y"
+              }
+            }
+          ],
+          "links": {
+            "related": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards/00323363-B9F3-487E-9873-DBD06D2E3EE6/derivatives"
+          }
+        },
+        "contexts": {
+          "data": []
+        },
+        "related_courses": {
+          "data": []
+        },
+        "children": {
+          "data": []
+        },
+        "ancestors": {
+          "links": {
+            "related": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards/00323363-B9F3-487E-9873-DBD06D2E3EE6/ancestors"
+          },
+          "data": [
+            {
+              "id": "755E03D3-2A9C-4C46-99CE-E12F69009957",
+              "type": "standards"
+            }
+          ]
+        },
+        "topics": {
+          "links": {
+            "related": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards/00323363-B9F3-487E-9873-DBD06D2E3EE6/topics"
+          },
+          "data": [
+            {
+              "type": "topics",
+              "id": "6C7A4C0A-5108-11E0-AF0E-ED519DFF4B22"
+            },
+            {
+              "id": "FE365ED0-4E7A-11E0-8CFE-71069DFF4B22",
+              "type": "topics"
+            }
+          ]
+        },
+        "concepts": {
+          "links": {
+            "related": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards/00323363-B9F3-487E-9873-DBD06D2E3EE6/concepts"
+          },
+          "data": [
+            {
+              "type": "concepts",
+              "id": "0A279CA8-3BA2-11E1-A29D-011A9DFF4B22"
+            },
+            {
+              "id": "0A3AEC5E-3BA2-11E1-A29D-011A9DFF4B22",
+              "type": "concepts"
+            },
+            {
+              "type": "concepts",
+              "id": "0A95DF1A-3BA2-11E1-A29D-011A9DFF4B22"
+            }
+          ]
+        },
+        "parent": {
+          "links": {
+            "related": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards/00323363-B9F3-487E-9873-DBD06D2E3EE6/parent"
+          },
+          "data": {
+            "type": "standards",
+            "id": "755E03D3-2A9C-4C46-99CE-E12F69009957"
+          }
+        },
+        "peers": {
+          "data": []
+        },
+        "breakouts": {
+          "data": []
+        },
+        "breakout_origins": {
+          "data": []
+        },
+        "origins": {
+          "data": []
+        },
+        "replaced_by": {
+          "data": [],
+          "links": {
+            "related": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards/00323363-B9F3-487E-9873-DBD06D2E3EE6/replaced_by"
+          }
+        },
+        "course_standards": {
+          "data": []
+        },
+        "peer_derivatives": {
+          "data": [
+            {
+              "id": "1C8F5039-EAD5-4B37-8BBB-5A9B62953473",
+              "type": "standards",
+              "meta": {
+                "same_concepts": "Y",
+                "same_text": "Y"
+              }
+            }
+          ],
+          "links": {
+            "related": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards/00323363-B9F3-487E-9873-DBD06D2E3EE6/peer_derivatives"
+          }
+        }
+      }
+    },
+    {
+      "relationships": {
+        "derivatives": {
+          "data": []
+        },
+        "contexts": {
+          "data": [
+            {
+              "id": "cf19aa04-61e2-11ed-9202-0e4957e617a9",
+              "type": "standards"
+            }
+          ],
+          "links": {
+            "related": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards/0036EC6A-C0B4-462F-B380-8D83DDEE0668/contexts"
+          }
+        },
+        "related_courses": {
+          "data": []
+        },
+        "crosswalks": {
+          "data": []
+        },
+        "replaces": {
+          "data": []
+        },
+        "concepts": {
+          "data": []
+        },
+        "topics": {
+          "data": []
+        },
+        "ancestors": {
+          "links": {
+            "related": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards/0036EC6A-C0B4-462F-B380-8D83DDEE0668/ancestors"
+          },
+          "data": [
+            {
+              "id": "cf19aa04-61e2-11ed-9202-0e4957e617a9",
+              "type": "standards"
+            },
+            {
+              "id": "35AAE38E-0B8C-46CC-AD50-0A43FC2FB6D8",
+              "type": "standards"
+            },
+            {
+              "type": "standards",
+              "id": "B4ED00B0-6C93-43CB-8FA4-D705804D2206"
+            }
+          ]
+        },
+        "children": {
+          "data": []
+        },
+        "peers": {
+          "data": []
+        },
+        "parent": {
+          "links": {
+            "related": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards/0036EC6A-C0B4-462F-B380-8D83DDEE0668/parent"
+          },
+          "data": {
+            "type": "standards",
+            "id": "B4ED00B0-6C93-43CB-8FA4-D705804D2206"
+          }
+        },
+        "breakouts": {
+          "data": []
+        },
+        "course_standards": {
+          "data": []
+        },
+        "peer_derivatives": {
+          "data": []
+        },
+        "breakout_origins": {
+          "data": []
+        },
+        "replaced_by": {
+          "data": []
+        },
+        "origins": {
+          "data": []
+        }
+      },
+      "id": "0036EC6A-C0B4-462F-B380-8D83DDEE0668",
+      "type": "standards",
+      "attributes": {
+        "utilizations": [
+          {
+            "type": "example",
+            "guid": "6A044B04-BF8B-4FBF-BC96-ECA0EAE447A2"
+          }
+        ],
+        "date_modified_utc": "2022-11-16 03:40:08",
+        "in_list": "N",
+        "has_list": "N",
+        "level": 4,
+        "section": {
+          "date_modified_utc": "2022-11-17 02:08:55",
+          "obsolete_year": null,
+          "adopt_year": "2020",
+          "revision_year": null,
+          "descr": "Grades 4-5",
+          "disciplines": {
+            "primary_subject": {
+              "guid": "F37B095B-5ED4-11ED-9202-0E4957E617A9",
+              "code": "ELD",
+              "descr": "English Language Development"
+            }
+          },
+          "seq": 6,
+          "label": null,
+          "guid": "85AB4361-5F87-11ED-9202-0E4957E617A9",
+          "number": null,
+          "implementation_year": null,
+          "assessment_year": null
+        },
+        "topic_organizer": null,
+        "status": "active",
+        "document": {
+          "assessment_year": null,
+          "disciplines": {
+            "primary_subject": {
+              "descr": "English Language Development",
+              "guid": "F37B095B-5ED4-11ED-9202-0E4957E617A9",
+              "code": "ELD"
+            }
+          },
+          "implementation_year": null,
+          "guid": "912B82CC-5F82-11ED-9387-F0A169E7CC7F",
+          "source_url": "https://wida.wisc.edu/teach/standards/eld/2020",
+          "descr": "Language Expectations by WIDA ELD Standard Statements and Grade-Level Cluster",
+          "adopt_year": "2020",
+          "revision_year": null,
+          "publication": {
+            "guid": "50CF8C2F-5EC7-11ED-9202-0E4957E617A9",
+            "extended_descr": "WIDA: WIDA English Language Development Standards Framework",
+            "regions": [
+              {
+                "descr": "United States of America",
+                "type": "country",
+                "guid": "91273AE8-F1B9-11E5-862E-0938DC287387",
+                "code": "US"
+              }
+            ],
+            "acronym": null,
+            "publication_type": "standard",
+            "authorities": [
+              {
+                "guid": "B2869AF4-11A5-11ED-9063-FE177750DCE7",
+                "acronym": null,
+                "descr": "WIDA"
+              },
+              {
+                "guid": "4A719B52-5EC6-11ED-9202-0E4957E617A9",
+                "descr": "Board of Regents of the University of Wisconsin System",
+                "acronym": null
+              }
+            ],
+            "source_url": "https://wida.wisc.edu/teach/standards/eld/2020",
+            "descr": "WIDA English Language Development Standards Framework"
+          },
+          "obsolete_year": null,
+          "date_modified_utc": "2022-11-18 16:11:31"
+        },
+        "legends": [],
+        "standard_type": "extender",
+        "label": "Language Feature",
+        "number": {
+          "raw": null,
+          "root_enhanced": null,
+          "enhanced": null,
+          "prefix_enhanced": null
+        },
+        "statement": {
+          "addendums": [
+            {
+              "seq": 3,
+              "descr": "Generalize commonalities and differences across cases through…",
+              "add_context": "Y",
+              "position": "before"
+            }
+          ],
+          "combined_descr": "Generalize commonalities and differences across cases through… Conditional clauses (when, if) to extend conjecture (If you remember the inverse operations, you can figure out the missing quantity by…)",
+          "descr": "Conditional clauses (when, if) to extend conjecture (If you remember the inverse operations, you can figure out the missing quantity by…)"
+        },
+        "disciplines": {
+          "strands": [],
+          "genres": [],
+          "ece_domains": [],
+          "subjects": [
+            {
+              "code": "ELD",
+              "guid": "F37B095B-5ED4-11ED-9202-0E4957E617A9",
+              "descr": "English Language Development"
+            },
+            {
+              "descr": "English as Second Language",
+              "code": "ESL",
+              "guid": "F1FCD9C6-3B53-11E0-B042-495E9DFF4B22"
+            }
+          ]
+        },
+        "date_deleted_utc": null,
+        "key_ideas": [],
+        "education_levels": {
+          "ece_ages": [],
+          "grades": [
+            {
+              "guid": "F1FA2F50-3B53-11E0-B042-495E9DFF4B22",
+              "code": "4",
+              "seq": 60,
+              "descr": "4th Grade"
+            },
+            {
+              "descr": "5th Grade",
+              "guid": "F1FA3C84-3B53-11E0-B042-495E9DFF4B22",
+              "code": "5",
+              "seq": 70
+            }
+          ]
+        },
+        "guid": "0036EC6A-C0B4-462F-B380-8D83DDEE0668",
+        "seq": 113,
+        "alt_identifiers": [],
+        "captured_by": "AB",
+        "extensions": [],
+        "uri": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards/0036EC6A-C0B4-462F-B380-8D83DDEE0668"
+      }
+    },
+    {
+      "id": "0038CF77-527D-4C8E-898C-D9A2D0F95585",
+      "relationships": {
+        "children": {
+          "data": []
+        },
+        "ancestors": {
+          "data": [
+            {
+              "id": "6B5A2DCE-8019-4CF1-8F07-D0A03AD96F15",
+              "type": "standards"
+            }
+          ],
+          "links": {
+            "related": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards/0038CF77-527D-4C8E-898C-D9A2D0F95585/ancestors"
+          }
+        },
+        "topics": {
+          "data": [
+            {
+              "type": "topics",
+              "id": "DA86A164-4E7C-11E0-BF76-96CAD51F4EFC"
+            },
+            {
+              "id": "28f444df-1b46-484d-92fd-204fabac232a",
+              "type": "topics"
+            }
+          ],
+          "links": {
+            "related": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards/0038CF77-527D-4C8E-898C-D9A2D0F95585/topics"
+          }
+        },
+        "concepts": {
+          "data": [
+            {
+              "id": "0A4DD648-3BA2-11E1-A29D-011A9DFF4B22",
+              "type": "concepts"
+            },
+            {
+              "id": "0AEE0EBA-3BA2-11E1-A29D-011A9DFF4B22",
+              "type": "concepts"
+            },
+            {
+              "type": "concepts",
+              "id": "0B610BA4-3BA2-11E1-A29D-011A9DFF4B22"
+            },
+            {
+              "id": "0B8C8180-3BA2-11E1-A29D-011A9DFF4B22",
+              "type": "concepts"
+            },
+            {
+              "type": "concepts",
+              "id": "0BE702FE-3BA2-11E1-A29D-011A9DFF4B22"
+            }
+          ],
+          "links": {
+            "related": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards/0038CF77-527D-4C8E-898C-D9A2D0F95585/concepts"
+          }
+        },
+        "replaces": {
+          "links": {
+            "related": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards/0038CF77-527D-4C8E-898C-D9A2D0F95585/replaces"
+          },
+          "data": []
+        },
+        "crosswalks": {
+          "data": [
+            {
+              "id": "7FECD078-7440-11DF-93FA-01FD9CFF4B22",
+              "type": "standards"
+            }
+          ],
+          "links": {
+            "related": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards/0038CF77-527D-4C8E-898C-D9A2D0F95585/crosswalks"
+          }
+        },
+        "related_courses": {
+          "data": []
+        },
+        "contexts": {
+          "data": []
+        },
+        "derivatives": {
+          "data": [],
+          "links": {
+            "related": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards/0038CF77-527D-4C8E-898C-D9A2D0F95585/derivatives"
+          }
+        },
+        "origins": {
+          "data": []
+        },
+        "breakout_origins": {
+          "data": []
+        },
+        "replaced_by": {
+          "links": {
+            "related": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards/0038CF77-527D-4C8E-898C-D9A2D0F95585/replaced_by"
+          },
+          "data": []
+        },
+        "peer_derivatives": {
+          "data": [],
+          "links": {
+            "related": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards/0038CF77-527D-4C8E-898C-D9A2D0F95585/peer_derivatives"
+          }
+        },
+        "course_standards": {
+          "data": []
+        },
+        "breakouts": {
+          "data": []
+        },
+        "parent": {
+          "data": {
+            "id": "6B5A2DCE-8019-4CF1-8F07-D0A03AD96F15",
+            "type": "standards"
+          },
+          "links": {
+            "related": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards/0038CF77-527D-4C8E-898C-D9A2D0F95585/parent"
+          }
+        },
+        "peers": {
+          "data": []
+        }
+      },
+      "type": "standards",
+      "attributes": {
+        "section": {
+          "assessment_year": "2021",
+          "number": "110.7.",
+          "implementation_year": "2019",
+          "guid": "DAFC2650-917D-11E7-B4A2-0163BF03DF2F",
+          "label": null,
+          "seq": 920,
+          "disciplines": {
+            "primary_subject": {
+              "descr": "Language Arts",
+              "guid": "F1FAC302-3B53-11E0-B042-495E9DFF4B22",
+              "code": "LANG"
+            }
+          },
+          "descr": "Grade 5",
+          "revision_year": null,
+          "adopt_year": "2017",
+          "obsolete_year": null,
+          "date_modified_utc": "2021-10-11 16:06:27"
+        },
+        "topic_organizer": null,
+        "utilizations": [
+          {
+            "type": "alignable",
+            "guid": "3A6BCD99-F093-4782-9708-5E65F2DEC3F2"
+          }
+        ],
+        "in_list": "N",
+        "has_list": "N",
+        "date_modified_utc": "2017-09-07 19:39:40",
+        "level": 2,
+        "standard_type": "objective",
+        "legends": [],
+        "number": {
+          "enhanced": "5.1.A",
+          "prefix_enhanced": "LA.5.1.A",
+          "raw": "(A)",
+          "root_enhanced": "LA.5.1.A"
+        },
+        "label": "Knowledge/Skill",
+        "date_deleted_utc": null,
+        "statement": {
+          "addendums": [
+            {
+              "seq": 2,
+              "descr": "The student is expected to:",
+              "add_context": "N",
+              "position": "before"
+            }
+          ],
+          "descr": "listen actively to interpret verbal and non-verbal messages, ask relevant questions, and make pertinent comments;",
+          "combined_descr": "The student is expected to: listen actively to interpret verbal and non-verbal messages, ask relevant questions, and make pertinent comments;"
+        },
+        "disciplines": {
+          "ece_domains": [],
+          "genres": [],
+          "subjects": [
+            {
+              "guid": "F1FAC302-3B53-11E0-B042-495E9DFF4B22",
+              "code": "LANG",
+              "descr": "Language Arts"
+            }
+          ],
+          "strands": [
+            {
+              "descr": "Speaking, Listening, and Viewing",
+              "guid": "81C3F0E0-046C-11E0-9AE1-661C9DFF4B22"
+            }
+          ]
+        },
+        "status": "active",
+        "document": {
+          "publication": {
+            "publication_type": "standard",
+            "authorities": [
+              {
+                "acronym": "TEA",
+                "descr": "Texas Education Agency",
+                "guid": "912830F6-F1B9-11E5-862E-0938DC287387"
+              }
+            ],
+            "source_url": "https://tea.texas.gov/academics/curriculum-standards/teks/texas-essential-knowledge-and-skills",
+            "descr": "Essential Knowledge and Skills",
+            "regions": [
+              {
+                "descr": "United States of America",
+                "guid": "91273AE8-F1B9-11E5-862E-0938DC287387",
+                "type": "country",
+                "code": "US"
+              },
+              {
+                "descr": "Texas",
+                "code": "TX",
+                "guid": "A8363358-901A-11DF-A622-0C319DFF4B22",
+                "type": "state"
+              }
+            ],
+            "extended_descr": "Texas: Essential Knowledge and Skills",
+            "guid": "99354D80-C0DA-11DA-ACF8-B4C4D78ECB74",
+            "acronym": "TEKS"
+          },
+          "date_modified_utc": "2021-12-03 13:01:46",
+          "obsolete_year": null,
+          "source_url": "https://texreg.sos.state.tx.us/public/readtac$ext.ViewTAC?tac_view=4&ti=19&pt=2&ch=110",
+          "adopt_year": "2017",
+          "revision_year": null,
+          "descr": "English Language Arts and Reading",
+          "disciplines": {
+            "primary_subject": {
+              "guid": "F1FAC302-3B53-11E0-B042-495E9DFF4B22",
+              "code": "LANG",
+              "descr": "Language Arts"
+            }
+          },
+          "guid": "E54BB6DA-8F51-11E7-9841-3E19CDC8CA83",
+          "implementation_year": "2019",
+          "assessment_year": "2021"
+        },
+        "guid": "0038CF77-527D-4C8E-898C-D9A2D0F95585",
+        "education_levels": {
+          "ece_ages": [],
+          "grades": [
+            {
+              "guid": "F1FA3C84-3B53-11E0-B042-495E9DFF4B22",
+              "code": "5",
+              "seq": 70,
+              "descr": "5th Grade"
+            }
+          ]
+        },
+        "seq": 2,
+        "key_ideas": [
+          {
+            "guid": "35AC7498-D231-11DE-B3B6-B44B9DFF4B22",
+            "concepts": [
+              {
+                "guid": "0A4DD648-3BA2-11E1-A29D-011A9DFF4B22",
+                "descr": "Active Listening"
+              },
+              {
+                "guid": "0B8C8180-3BA2-11E1-A29D-011A9DFF4B22",
+                "descr": "Ask and Answer Questions"
+              }
+            ]
+          },
+          {
+            "concepts": [
+              {
+                "guid": "0A4DD648-3BA2-11E1-A29D-011A9DFF4B22",
+                "descr": "Active Listening"
+              },
+              {
+                "descr": "Interpreting Speaker Messages",
+                "guid": "0AEE0EBA-3BA2-11E1-A29D-011A9DFF4B22"
+              }
+            ],
+            "guid": "367DE956-D231-11DE-B3B6-B44B9DFF4B22"
+          },
+          {
+            "guid": "D5B86F9C-D230-11DE-B3B6-B44B9DFF4B22",
+            "concepts": [
+              {
+                "guid": "0A4DD648-3BA2-11E1-A29D-011A9DFF4B22",
+                "descr": "Active Listening"
+              },
+              {
+                "descr": "Nonverbal Message",
+                "guid": "0B610BA4-3BA2-11E1-A29D-011A9DFF4B22"
+              }
+            ]
+          },
+          {
+            "guid": "E8FAEEAE-D230-11DE-B3B6-B44B9DFF4B22",
+            "concepts": [
+              {
+                "guid": "0A4DD648-3BA2-11E1-A29D-011A9DFF4B22",
+                "descr": "Active Listening"
+              },
+              {
+                "guid": "0BE702FE-3BA2-11E1-A29D-011A9DFF4B22",
+                "descr": "Make and Respond to Comments"
+              }
+            ]
+          }
+        ],
+        "extensions": [],
+        "captured_by": "AB",
+        "uri": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards/0038CF77-527D-4C8E-898C-D9A2D0F95585",
+        "alt_identifiers": []
+      }
+    },
+    {
+      "attributes": {
+        "seq": 25,
+        "education_levels": {
+          "grades": [
+            {
+              "guid": "F1FA14D4-3B53-11E0-B042-495E9DFF4B22",
+              "code": "2",
+              "seq": 40,
+              "descr": "2nd Grade"
+            }
+          ],
+          "ece_ages": []
+        },
+        "guid": "003A0DBF-1104-468A-A3C4-4BD545100FFF",
+        "key_ideas": [
+          {
+            "guid": "903E217C-D231-11DE-B512-B44B9DFF4B22",
+            "concepts": [
+              {
+                "descr": "Spelling Patterns",
+                "guid": "0A47DE32-3BA2-11E1-A29D-011A9DFF4B22"
+              },
+              {
+                "descr": "Multisyllabic Words",
+                "guid": "0D18CB9E-3BA2-11E1-A29D-011A9DFF4B22"
+              }
+            ]
+          }
+        ],
+        "extensions": [],
+        "captured_by": "AB",
+        "uri": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards/003A0DBF-1104-468A-A3C4-4BD545100FFF",
+        "alt_identifiers": [],
+        "section": {
+          "adopt_year": "2017",
+          "revision_year": null,
+          "obsolete_year": null,
+          "date_modified_utc": "2021-10-11 16:05:31",
+          "assessment_year": "2021",
+          "seq": 600,
+          "implementation_year": "2019",
+          "guid": "C4315CCA-917C-11E7-9BB5-462ECDC8CA83",
+          "descr": "Grade 2",
+          "disciplines": {
+            "primary_subject": {
+              "guid": "F1FAC302-3B53-11E0-B042-495E9DFF4B22",
+              "code": "LANG",
+              "descr": "Language Arts"
+            }
+          },
+          "number": "110.4.",
+          "label": null
+        },
+        "topic_organizer": null,
+        "utilizations": [
+          {
+            "type": "alignable",
+            "guid": "3A6BCD99-F093-4782-9708-5E65F2DEC3F2"
+          }
+        ],
+        "level": 3,
+        "in_list": "Y",
+        "has_list": "N",
+        "date_modified_utc": "2017-09-07 00:03:17",
+        "standard_type": "sub-objective",
+        "legends": [],
+        "date_deleted_utc": null,
+        "statement": {
+          "addendums": [],
+          "descr": "spelling multisyllabic words with multiple sound-spelling patterns;",
+          "combined_descr": "spelling multisyllabic words with multiple sound-spelling patterns;"
+        },
+        "disciplines": {
+          "strands": [
+            {
+              "descr": "Writing",
+              "guid": "81C3E35C-046C-11E0-9AE1-661C9DFF4B22"
+            }
+          ],
+          "subjects": [
+            {
+              "guid": "F1FAC302-3B53-11E0-B042-495E9DFF4B22",
+              "code": "LANG",
+              "descr": "Language Arts"
+            }
+          ],
+          "genres": [],
+          "ece_domains": []
+        },
+        "number": {
+          "enhanced": "2.2.C.iv",
+          "prefix_enhanced": "LA.2.2.C.iv",
+          "raw": "(iv)",
+          "root_enhanced": "LA.2.2.C.iv"
+        },
+        "label": null,
+        "document": {
+          "assessment_year": "2021",
+          "disciplines": {
+            "primary_subject": {
+              "descr": "Language Arts",
+              "guid": "F1FAC302-3B53-11E0-B042-495E9DFF4B22",
+              "code": "LANG"
+            }
+          },
+          "guid": "E54BB6DA-8F51-11E7-9841-3E19CDC8CA83",
+          "implementation_year": "2019",
+          "source_url": "https://texreg.sos.state.tx.us/public/readtac$ext.ViewTAC?tac_view=4&ti=19&pt=2&ch=110",
+          "adopt_year": "2017",
+          "revision_year": null,
+          "descr": "English Language Arts and Reading",
+          "publication": {
+            "descr": "Essential Knowledge and Skills",
+            "source_url": "https://tea.texas.gov/academics/curriculum-standards/teks/texas-essential-knowledge-and-skills",
+            "authorities": [
+              {
+                "acronym": "TEA",
+                "descr": "Texas Education Agency",
+                "guid": "912830F6-F1B9-11E5-862E-0938DC287387"
+              }
+            ],
+            "publication_type": "standard",
+            "acronym": "TEKS",
+            "guid": "99354D80-C0DA-11DA-ACF8-B4C4D78ECB74",
+            "extended_descr": "Texas: Essential Knowledge and Skills",
+            "regions": [
+              {
+                "guid": "91273AE8-F1B9-11E5-862E-0938DC287387",
+                "type": "country",
+                "code": "US",
+                "descr": "United States of America"
+              },
+              {
+                "code": "TX",
+                "guid": "A8363358-901A-11DF-A622-0C319DFF4B22",
+                "type": "state",
+                "descr": "Texas"
+              }
+            ]
+          },
+          "date_modified_utc": "2021-12-03 13:01:46",
+          "obsolete_year": null
+        },
+        "status": "active"
+      },
+      "type": "standards",
+      "id": "003A0DBF-1104-468A-A3C4-4BD545100FFF",
+      "relationships": {
+        "ancestors": {
+          "data": [
+            {
+              "id": "BD7CEE50-DE9A-4C76-9F53-A026A157C61D",
+              "type": "standards"
+            },
+            {
+              "type": "standards",
+              "id": "9B56C5AA-0E7F-49B1-863C-74DCBBA705DE"
+            }
+          ],
+          "links": {
+            "related": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards/003A0DBF-1104-468A-A3C4-4BD545100FFF/ancestors"
+          }
+        },
+        "concepts": {
+          "data": [
+            {
+              "type": "concepts",
+              "id": "0A47DE32-3BA2-11E1-A29D-011A9DFF4B22"
+            },
+            {
+              "id": "0D18CB9E-3BA2-11E1-A29D-011A9DFF4B22",
+              "type": "concepts"
+            }
+          ],
+          "links": {
+            "related": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards/003A0DBF-1104-468A-A3C4-4BD545100FFF/concepts"
+          }
+        },
+        "topics": {
+          "data": [
+            {
+              "type": "topics",
+              "id": "9E4F09F2-4E72-11E0-96A8-A6CAD51F4EFC"
+            }
+          ],
+          "links": {
+            "related": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards/003A0DBF-1104-468A-A3C4-4BD545100FFF/topics"
+          }
+        },
+        "children": {
+          "data": []
+        },
+        "related_courses": {
+          "data": []
+        },
+        "contexts": {
+          "data": []
+        },
+        "derivatives": {
+          "data": [],
+          "links": {
+            "related": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards/003A0DBF-1104-468A-A3C4-4BD545100FFF/derivatives"
+          }
+        },
+        "replaces": {
+          "data": []
+        },
+        "crosswalks": {
+          "links": {
+            "related": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards/003A0DBF-1104-468A-A3C4-4BD545100FFF/crosswalks"
+          },
+          "data": [
+            {
+              "id": "7E543486-7440-11DF-93FA-01FD9CFF4B22",
+              "type": "standards"
+            }
+          ]
+        },
+        "peer_derivatives": {
+          "links": {
+            "related": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards/003A0DBF-1104-468A-A3C4-4BD545100FFF/peer_derivatives"
+          },
+          "data": []
+        },
+        "course_standards": {
+          "data": []
+        },
+        "origins": {
+          "data": []
+        },
+        "breakout_origins": {
+          "data": []
+        },
+        "replaced_by": {
+          "links": {
+            "related": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards/003A0DBF-1104-468A-A3C4-4BD545100FFF/replaced_by"
+          },
+          "data": []
+        },
+        "breakouts": {
+          "data": []
+        },
+        "parent": {
+          "links": {
+            "related": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards/003A0DBF-1104-468A-A3C4-4BD545100FFF/parent"
+          },
+          "data": {
+            "id": "9B56C5AA-0E7F-49B1-863C-74DCBBA705DE",
+            "type": "standards"
+          }
+        },
+        "peers": {
+          "data": [
+            {
+              "id": "7E543486-7440-11DF-93FA-01FD9CFF4B22",
+              "type": "standards"
+            },
+            {
+              "id": "89E7BA94-9C51-43AD-AC86-2A9EC6B51B6D",
+              "type": "standards"
+            }
+          ],
+          "links": {
+            "related": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards/003A0DBF-1104-468A-A3C4-4BD545100FFF/peers"
+          }
+        }
+      }
+    },
+    {
+      "relationships": {
+        "peers": {
+          "data": []
+        },
+        "parent": {
+          "links": {
+            "related": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards/004F2532-8E49-4EAB-A967-1E85F990D244/parent"
+          },
+          "data": {
+            "id": "66A1AC21-939F-4E65-AC8A-AC1A820953FB",
+            "type": "standards"
+          }
+        },
+        "breakouts": {
+          "data": []
+        },
+        "breakout_origins": {
+          "data": []
+        },
+        "origins": {
+          "data": []
+        },
+        "replaced_by": {
+          "data": []
+        },
+        "course_standards": {
+          "data": []
+        },
+        "peer_derivatives": {
+          "links": {
+            "related": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards/004F2532-8E49-4EAB-A967-1E85F990D244/peer_derivatives"
+          },
+          "data": []
+        },
+        "crosswalks": {
+          "links": {
+            "related": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards/004F2532-8E49-4EAB-A967-1E85F990D244/crosswalks"
+          },
+          "data": []
+        },
+        "replaces": {
+          "data": []
+        },
+        "derivatives": {
+          "data": [],
+          "links": {
+            "related": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards/004F2532-8E49-4EAB-A967-1E85F990D244/derivatives"
+          }
+        },
+        "related_courses": {
+          "data": []
+        },
+        "contexts": {
+          "data": []
+        },
+        "children": {
+          "data": []
+        },
+        "topics": {
+          "links": {
+            "related": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards/004F2532-8E49-4EAB-A967-1E85F990D244/topics"
+          },
+          "data": [
+            {
+              "type": "topics",
+              "id": "D5541CA0-4C13-11E0-90D7-B46D9DFF4B22"
+            }
+          ]
+        },
+        "concepts": {
+          "links": {
+            "related": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards/004F2532-8E49-4EAB-A967-1E85F990D244/concepts"
+          },
+          "data": [
+            {
+              "id": "0A3BEFFA-3BA2-11E1-A29D-011A9DFF4B22",
+              "type": "concepts"
+            },
+            {
+              "id": "0A3C0B48-3BA2-11E1-A29D-011A9DFF4B22",
+              "type": "concepts"
+            },
+            {
+              "type": "concepts",
+              "id": "0A40B5BC-3BA2-11E1-A29D-011A9DFF4B22"
+            },
+            {
+              "id": "0A4A309C-3BA2-11E1-A29D-011A9DFF4B22",
+              "type": "concepts"
+            },
+            {
+              "type": "concepts",
+              "id": "0AB53766-3BA2-11E1-A29D-011A9DFF4B22"
+            }
+          ]
+        },
+        "ancestors": {
+          "links": {
+            "related": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards/004F2532-8E49-4EAB-A967-1E85F990D244/ancestors"
+          },
+          "data": [
+            {
+              "id": "66A1AC21-939F-4E65-AC8A-AC1A820953FB",
+              "type": "standards"
+            }
+          ]
+        }
+      },
+      "id": "004F2532-8E49-4EAB-A967-1E85F990D244",
+      "type": "standards",
+      "attributes": {
+        "seq": 26,
+        "education_levels": {
+          "ece_ages": [],
+          "grades": [
+            {
+              "seq": 110,
+              "code": "9",
+              "guid": "F1FA7154-3B53-11E0-B042-495E9DFF4B22",
+              "descr": "9th Grade"
+            },
+            {
+              "guid": "F1FA7E92-3B53-11E0-B042-495E9DFF4B22",
+              "seq": 120,
+              "code": "10",
+              "descr": "10th Grade"
+            },
+            {
+              "code": "11",
+              "seq": 130,
+              "guid": "F1FA8BD0-3B53-11E0-B042-495E9DFF4B22",
+              "descr": "11th Grade"
+            },
+            {
+              "guid": "F1FA9904-3B53-11E0-B042-495E9DFF4B22",
+              "code": "12",
+              "seq": 140,
+              "descr": "12th Grade"
+            }
+          ]
+        },
+        "guid": "004F2532-8E49-4EAB-A967-1E85F990D244",
+        "key_ideas": [
+          {
+            "concepts": [
+              {
+                "descr": "Types of Writing",
+                "guid": "0A4A309C-3BA2-11E1-A29D-011A9DFF4B22"
+              },
+              {
+                "descr": "Interacting With Texts",
+                "guid": "0AB53766-3BA2-11E1-A29D-011A9DFF4B22"
+              }
+            ],
+            "guid": "240671C8-AF80-11E7-9EF8-6342BF03DF2F"
+          },
+          {
+            "guid": "425F5B34-AF72-11E7-8ED9-77C8CCC8CA83",
+            "concepts": [
+              {
+                "descr": "Art Form",
+                "guid": "0A3C0B48-3BA2-11E1-A29D-011A9DFF4B22"
+              },
+              {
+                "guid": "0AB53766-3BA2-11E1-A29D-011A9DFF4B22",
+                "descr": "Interacting With Texts"
+              }
+            ]
+          },
+          {
+            "guid": "CF74B1DE-7AB5-11E0-8B62-F5129DFF4B22",
+            "concepts": [
+              {
+                "guid": "0A40B5BC-3BA2-11E1-A29D-011A9DFF4B22",
+                "descr": "Note Taking"
+              },
+              {
+                "descr": "Interacting With Texts",
+                "guid": "0AB53766-3BA2-11E1-A29D-011A9DFF4B22"
+              }
+            ]
+          },
+          {
+            "concepts": [
+              {
+                "guid": "0A3BEFFA-3BA2-11E1-A29D-011A9DFF4B22",
+                "descr": "Journal Writing"
+              },
+              {
+                "descr": "Interacting With Texts",
+                "guid": "0AB53766-3BA2-11E1-A29D-011A9DFF4B22"
+              }
+            ],
+            "guid": "CF74BFF8-7AB5-11E0-8B62-F5129DFF4B22"
+          }
+        ],
+        "uri": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards/004F2532-8E49-4EAB-A967-1E85F990D244",
+        "captured_by": "AB",
+        "extensions": [],
+        "alt_identifiers": [],
+        "topic_organizer": null,
+        "section": {
+          "revision_year": null,
+          "adopt_year": "2017",
+          "obsolete_year": null,
+          "date_modified_utc": "2021-12-03 12:57:56",
+          "assessment_year": "2021",
+          "implementation_year": "2020",
+          "guid": "649C0164-917E-11E7-9244-5C63BF03DF2F",
+          "seq": 2410,
+          "descr": "English I",
+          "number": "110.36.",
+          "label": null,
+          "disciplines": {
+            "primary_subject": {
+              "guid": "F1FAC302-3B53-11E0-B042-495E9DFF4B22",
+              "code": "LANG",
+              "descr": "Language Arts"
+            }
+          }
+        },
+        "level": 2,
+        "has_list": "N",
+        "in_list": "N",
+        "date_modified_utc": "2017-09-08 15:23:46",
+        "utilizations": [
+          {
+            "guid": "3A6BCD99-F093-4782-9708-5E65F2DEC3F2",
+            "type": "alignable"
+          }
+        ],
+        "date_deleted_utc": null,
+        "statement": {
+          "combined_descr": "The student is expected to: interact with sources in meaningful ways such as notetaking, annotating, freewriting, or illustrating;",
+          "descr": "interact with sources in meaningful ways such as notetaking, annotating, freewriting, or illustrating;",
+          "addendums": [
+            {
+              "position": "before",
+              "descr": "The student is expected to:",
+              "add_context": "N",
+              "seq": 2
+            }
+          ]
+        },
+        "disciplines": {
+          "subjects": [
+            {
+              "descr": "Language Arts",
+              "code": "LANG",
+              "guid": "F1FAC302-3B53-11E0-B042-495E9DFF4B22"
+            }
+          ],
+          "ece_domains": [],
+          "genres": [],
+          "strands": [
+            {
+              "descr": "Reading",
+              "guid": "81C38420-046C-11E0-9AE1-661C9DFF4B22"
+            }
+          ]
+        },
+        "number": {
+          "enhanced": "E1.5.E",
+          "prefix_enhanced": "LA.9-12.E1.5.E",
+          "raw": "(E)",
+          "root_enhanced": "LA.9-12.E1.5.E"
+        },
+        "label": "Knowledge/Skill",
+        "standard_type": "objective",
+        "legends": [],
+        "document": {
+          "descr": "English Language Arts and Reading",
+          "revision_year": null,
+          "adopt_year": "2017",
+          "source_url": "https://texreg.sos.state.tx.us/public/readtac$ext.ViewTAC?tac_view=4&ti=19&pt=2&ch=110",
+          "obsolete_year": null,
+          "date_modified_utc": "2021-12-03 13:01:46",
+          "publication": {
+            "authorities": [
+              {
+                "guid": "912830F6-F1B9-11E5-862E-0938DC287387",
+                "descr": "Texas Education Agency",
+                "acronym": "TEA"
+              }
+            ],
+            "publication_type": "standard",
+            "descr": "Essential Knowledge and Skills",
+            "source_url": "https://tea.texas.gov/academics/curriculum-standards/teks/texas-essential-knowledge-and-skills",
+            "extended_descr": "Texas: Essential Knowledge and Skills",
+            "regions": [
+              {
+                "code": "US",
+                "guid": "91273AE8-F1B9-11E5-862E-0938DC287387",
+                "type": "country",
+                "descr": "United States of America"
+              },
+              {
+                "descr": "Texas",
+                "code": "TX",
+                "type": "state",
+                "guid": "A8363358-901A-11DF-A622-0C319DFF4B22"
+              }
+            ],
+            "guid": "99354D80-C0DA-11DA-ACF8-B4C4D78ECB74",
+            "acronym": "TEKS"
+          },
+          "assessment_year": "2021",
+          "implementation_year": "2019",
+          "guid": "E54BB6DA-8F51-11E7-9841-3E19CDC8CA83",
+          "disciplines": {
+            "primary_subject": {
+              "code": "LANG",
+              "guid": "F1FAC302-3B53-11E0-B042-495E9DFF4B22",
+              "descr": "Language Arts"
+            }
+          }
+        },
+        "status": "active"
+      }
+    },
+    {
+      "id": "0056368C-4217-4EDA-AF14-4242F6CA8124",
+      "relationships": {
+        "peer_derivatives": {
+          "data": []
+        },
+        "course_standards": {
+          "data": []
+        },
+        "origins": {
+          "data": []
+        },
+        "replaced_by": {
+          "data": []
+        },
+        "breakout_origins": {
+          "data": []
+        },
+        "breakouts": {
+          "data": []
+        },
+        "parent": {
+          "data": {
+            "type": "standards",
+            "id": "4A0C0AE0-976C-4B59-B5EB-3C6092FC6A27"
+          },
+          "links": {
+            "related": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards/0056368C-4217-4EDA-AF14-4242F6CA8124/parent"
+          }
+        },
+        "peers": {
+          "data": []
+        },
+        "concepts": {
+          "data": []
+        },
+        "topics": {
+          "data": []
+        },
+        "ancestors": {
+          "data": [
+            {
+              "type": "standards",
+              "id": "d6b67125-61e2-11ed-9202-0e4957e617a9"
+            },
+            {
+              "type": "standards",
+              "id": "7E2725EE-0ACC-48AE-B587-3F2AF93377A5"
+            },
+            {
+              "type": "standards",
+              "id": "4A0C0AE0-976C-4B59-B5EB-3C6092FC6A27"
+            }
+          ],
+          "links": {
+            "related": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards/0056368C-4217-4EDA-AF14-4242F6CA8124/ancestors"
+          }
+        },
+        "children": {
+          "data": []
+        },
+        "related_courses": {
+          "data": []
+        },
+        "contexts": {
+          "data": [
+            {
+              "id": "d6b67125-61e2-11ed-9202-0e4957e617a9",
+              "type": "standards"
+            }
+          ],
+          "links": {
+            "related": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards/0056368C-4217-4EDA-AF14-4242F6CA8124/contexts"
+          }
+        },
+        "derivatives": {
+          "data": []
+        },
+        "crosswalks": {
+          "data": []
+        },
+        "replaces": {
+          "data": []
+        }
+      },
+      "type": "standards",
+      "attributes": {
+        "topic_organizer": null,
+        "section": {
+          "disciplines": {
+            "primary_subject": {
+              "code": "ELD",
+              "guid": "F37B095B-5ED4-11ED-9202-0E4957E617A9",
+              "descr": "English Language Development"
+            }
+          },
+          "seq": 7,
+          "label": null,
+          "guid": "8B4EE553-5F87-11ED-9202-0E4957E617A9",
+          "implementation_year": null,
+          "number": null,
+          "assessment_year": null,
+          "date_modified_utc": "2022-11-17 02:23:27",
+          "obsolete_year": null,
+          "adopt_year": "2020",
+          "revision_year": null,
+          "descr": "Grades 6-8"
+        },
+        "has_list": "N",
+        "in_list": "N",
+        "date_modified_utc": "2022-11-17 01:31:00",
+        "level": 4,
+        "utilizations": [
+          {
+            "guid": "6A044B04-BF8B-4FBF-BC96-ECA0EAE447A2",
+            "type": "example"
+          }
+        ],
+        "number": {
+          "raw": null,
+          "root_enhanced": null,
+          "prefix_enhanced": null,
+          "enhanced": null
+        },
+        "label": "Language Feature",
+        "date_deleted_utc": null,
+        "statement": {
+          "addendums": [
+            {
+              "seq": 3,
+              "add_context": "Y",
+              "descr": "Establish perspective for communicating outcomes, consequences, or documentation through…",
+              "position": "before"
+            }
+          ],
+          "combined_descr": "Establish perspective for communicating outcomes, consequences, or documentation through… Declarative statements to evaluate and interpret events (Feudalism was the ultimate system of control for medieval society.)",
+          "descr": "Declarative statements to evaluate and interpret events (Feudalism was the ultimate system of control for medieval society.)"
+        },
+        "disciplines": {
+          "subjects": [
+            {
+              "descr": "English Language Development",
+              "code": "ELD",
+              "guid": "F37B095B-5ED4-11ED-9202-0E4957E617A9"
+            },
+            {
+              "guid": "F1FCD9C6-3B53-11E0-B042-495E9DFF4B22",
+              "code": "ESL",
+              "descr": "English as Second Language"
+            }
+          ],
+          "ece_domains": [],
+          "genres": [],
+          "strands": []
+        },
+        "standard_type": "extender",
+        "legends": [],
+        "status": "active",
+        "document": {
+          "source_url": "https://wida.wisc.edu/teach/standards/eld/2020",
+          "descr": "Language Expectations by WIDA ELD Standard Statements and Grade-Level Cluster",
+          "revision_year": null,
+          "adopt_year": "2020",
+          "publication": {
+            "descr": "WIDA English Language Development Standards Framework",
+            "source_url": "https://wida.wisc.edu/teach/standards/eld/2020",
+            "authorities": [
+              {
+                "acronym": null,
+                "descr": "WIDA",
+                "guid": "B2869AF4-11A5-11ED-9063-FE177750DCE7"
+              },
+              {
+                "descr": "Board of Regents of the University of Wisconsin System",
+                "acronym": null,
+                "guid": "4A719B52-5EC6-11ED-9202-0E4957E617A9"
+              }
+            ],
+            "publication_type": "standard",
+            "acronym": null,
+            "regions": [
+              {
+                "descr": "United States of America",
+                "code": "US",
+                "guid": "91273AE8-F1B9-11E5-862E-0938DC287387",
+                "type": "country"
+              }
+            ],
+            "extended_descr": "WIDA: WIDA English Language Development Standards Framework",
+            "guid": "50CF8C2F-5EC7-11ED-9202-0E4957E617A9"
+          },
+          "obsolete_year": null,
+          "date_modified_utc": "2022-11-18 16:11:31",
+          "assessment_year": null,
+          "disciplines": {
+            "primary_subject": {
+              "descr": "English Language Development",
+              "guid": "F37B095B-5ED4-11ED-9202-0E4957E617A9",
+              "code": "ELD"
+            }
+          },
+          "implementation_year": null,
+          "guid": "912B82CC-5F82-11ED-9387-F0A169E7CC7F"
+        },
+        "guid": "0056368C-4217-4EDA-AF14-4242F6CA8124",
+        "education_levels": {
+          "grades": [
+            {
+              "guid": "F1FA49AE-3B53-11E0-B042-495E9DFF4B22",
+              "seq": 80,
+              "code": "6",
+              "descr": "6th Grade"
+            },
+            {
+              "guid": "F1FA56F6-3B53-11E0-B042-495E9DFF4B22",
+              "seq": 90,
+              "code": "7",
+              "descr": "7th Grade"
+            },
+            {
+              "descr": "8th Grade",
+              "seq": 100,
+              "code": "8",
+              "guid": "F1FA642A-3B53-11E0-B042-495E9DFF4B22"
+            }
+          ],
+          "ece_ages": []
+        },
+        "seq": 186,
+        "key_ideas": [],
+        "uri": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards/0056368C-4217-4EDA-AF14-4242F6CA8124",
+        "captured_by": "AB",
+        "extensions": [],
+        "alt_identifiers": []
+      }
+    },
+    {
+      "id": "00594D38-A417-4F83-B3B1-FFBC9CE11E7C",
+      "relationships": {
+        "concepts": {
+          "data": []
+        },
+        "topics": {
+          "data": []
+        },
+        "ancestors": {
+          "data": [
+            {
+              "type": "standards",
+              "id": "4CB5683E-F6D8-4BA2-A802-65B2ADD090A2"
+            },
+            {
+              "id": "B8BEECAA-75E8-4864-9E31-5F35B32F8F27",
+              "type": "standards"
+            },
+            {
+              "id": "4686E803-4F2C-4570-9086-1D90777EC06D",
+              "type": "standards"
+            }
+          ],
+          "links": {
+            "related": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards/00594D38-A417-4F83-B3B1-FFBC9CE11E7C/ancestors"
+          }
+        },
+        "children": {
+          "data": []
+        },
+        "derivatives": {
+          "data": []
+        },
+        "contexts": {
+          "data": [
+            {
+              "type": "standards",
+              "id": "4CB5683E-F6D8-4BA2-A802-65B2ADD090A2"
+            }
+          ],
+          "links": {
+            "related": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards/00594D38-A417-4F83-B3B1-FFBC9CE11E7C/contexts"
+          }
+        },
+        "related_courses": {
+          "data": []
+        },
+        "crosswalks": {
+          "data": []
+        },
+        "replaces": {
+          "data": []
+        },
+        "course_standards": {
+          "data": []
+        },
+        "peer_derivatives": {
+          "data": []
+        },
+        "origins": {
+          "data": []
+        },
+        "replaced_by": {
+          "data": []
+        },
+        "breakout_origins": {
+          "data": []
+        },
+        "peers": {
+          "data": []
+        },
+        "parent": {
+          "data": {
+            "type": "standards",
+            "id": "4686E803-4F2C-4570-9086-1D90777EC06D"
+          },
+          "links": {
+            "related": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards/00594D38-A417-4F83-B3B1-FFBC9CE11E7C/parent"
+          }
+        },
+        "breakouts": {
+          "data": []
+        }
+      },
+      "attributes": {
+        "uri": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards/00594D38-A417-4F83-B3B1-FFBC9CE11E7C",
+        "captured_by": "AB",
+        "extensions": [],
+        "alt_identifiers": [],
+        "education_levels": {
+          "grades": [
+            {
+              "guid": "F1FA078C-3B53-11E0-B042-495E9DFF4B22",
+              "code": "1",
+              "seq": 30,
+              "descr": "1st Grade"
+            }
+          ],
+          "ece_ages": []
+        },
+        "guid": "00594D38-A417-4F83-B3B1-FFBC9CE11E7C",
+        "seq": 19,
+        "key_ideas": [],
+        "number": {
+          "root_enhanced": null,
+          "raw": null,
+          "prefix_enhanced": null,
+          "enhanced": null
+        },
+        "label": "Language Feature",
+        "date_deleted_utc": null,
+        "disciplines": {
+          "strands": [],
+          "ece_domains": [],
+          "genres": [],
+          "subjects": [
+            {
+              "guid": "F37B095B-5ED4-11ED-9202-0E4957E617A9",
+              "code": "ELD",
+              "descr": "English Language Development"
+            },
+            {
+              "guid": "F1FCD9C6-3B53-11E0-B042-495E9DFF4B22",
+              "code": "ESL",
+              "descr": "English as Second Language"
+            }
+          ]
+        },
+        "statement": {
+          "addendums": [
+            {
+              "seq": 3,
+              "add_context": "Y",
+              "descr": "Engage and adjust for audience through…",
+              "position": "before"
+            }
+          ],
+          "combined_descr": "Engage and adjust for audience through… Pictures and other graphics to complement the storyline",
+          "descr": "Pictures and other graphics to complement the storyline"
+        },
+        "standard_type": "extender",
+        "legends": [],
+        "status": "active",
+        "document": {
+          "source_url": "https://wida.wisc.edu/teach/standards/eld/2020",
+          "adopt_year": "2020",
+          "revision_year": null,
+          "descr": "Language Expectations by WIDA ELD Standard Statements and Grade-Level Cluster",
+          "publication": {
+            "source_url": "https://wida.wisc.edu/teach/standards/eld/2020",
+            "descr": "WIDA English Language Development Standards Framework",
+            "publication_type": "standard",
+            "authorities": [
+              {
+                "acronym": null,
+                "descr": "WIDA",
+                "guid": "B2869AF4-11A5-11ED-9063-FE177750DCE7"
+              },
+              {
+                "guid": "4A719B52-5EC6-11ED-9202-0E4957E617A9",
+                "descr": "Board of Regents of the University of Wisconsin System",
+                "acronym": null
+              }
+            ],
+            "acronym": null,
+            "regions": [
+              {
+                "descr": "United States of America",
+                "guid": "91273AE8-F1B9-11E5-862E-0938DC287387",
+                "type": "country",
+                "code": "US"
+              }
+            ],
+            "extended_descr": "WIDA: WIDA English Language Development Standards Framework",
+            "guid": "50CF8C2F-5EC7-11ED-9202-0E4957E617A9"
+          },
+          "date_modified_utc": "2022-11-18 16:11:31",
+          "obsolete_year": null,
+          "assessment_year": null,
+          "disciplines": {
+            "primary_subject": {
+              "descr": "English Language Development",
+              "code": "ELD",
+              "guid": "F37B095B-5ED4-11ED-9202-0E4957E617A9"
+            }
+          },
+          "guid": "912B82CC-5F82-11ED-9387-F0A169E7CC7F",
+          "implementation_year": null
+        },
+        "topic_organizer": null,
+        "section": {
+          "revision_year": null,
+          "adopt_year": "2020",
+          "descr": "Grade 1",
+          "date_modified_utc": "2022-11-18 16:11:31",
+          "obsolete_year": null,
+          "assessment_year": null,
+          "label": null,
+          "guid": "79D949AF-5F87-11ED-9202-0E4957E617A9",
+          "implementation_year": null,
+          "number": null,
+          "disciplines": {
+            "primary_subject": {
+              "guid": "F37B095B-5ED4-11ED-9202-0E4957E617A9",
+              "code": "ELD",
+              "descr": "English Language Development"
+            }
+          },
+          "seq": 4
+        },
+        "has_list": "N",
+        "in_list": "N",
+        "date_modified_utc": "2022-11-11 05:23:36",
+        "level": 4,
+        "utilizations": [
+          {
+            "guid": "6A044B04-BF8B-4FBF-BC96-ECA0EAE447A2",
+            "type": "example"
+          }
+        ]
+      },
+      "type": "standards"
+    },
+    {
+      "relationships": {
+        "concepts": {
+          "links": {
+            "related": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards/00641815-A3A5-45DF-AB85-29293EA5944B/concepts"
+          },
+          "data": [
+            {
+              "type": "concepts",
+              "id": "0A279CA8-3BA2-11E1-A29D-011A9DFF4B22"
+            },
+            {
+              "type": "concepts",
+              "id": "0A39F9DE-3BA2-11E1-A29D-011A9DFF4B22"
+            },
+            {
+              "type": "concepts",
+              "id": "0A3B0EB4-3BA2-11E1-A29D-011A9DFF4B22"
+            },
+            {
+              "id": "0A729014-3BA2-11E1-A29D-011A9DFF4B22",
+              "type": "concepts"
+            },
+            {
+              "id": "0A729DDE-3BA2-11E1-A29D-011A9DFF4B22",
+              "type": "concepts"
+            },
+            {
+              "id": "0A72ABF8-3BA2-11E1-A29D-011A9DFF4B22",
+              "type": "concepts"
+            },
+            {
+              "type": "concepts",
+              "id": "0A72D52E-3BA2-11E1-A29D-011A9DFF4B22"
+            },
+            {
+              "id": "0A72E280-3BA2-11E1-A29D-011A9DFF4B22",
+              "type": "concepts"
+            },
+            {
+              "id": "0A8E8274-3BA2-11E1-A29D-011A9DFF4B22",
+              "type": "concepts"
+            },
+            {
+              "type": "concepts",
+              "id": "0A8E905C-3BA2-11E1-A29D-011A9DFF4B22"
+            },
+            {
+              "type": "concepts",
+              "id": "0A90ABF8-3BA2-11E1-A29D-011A9DFF4B22"
+            },
+            {
+              "id": "0B020794-3BA2-11E1-A29D-011A9DFF4B22",
+              "type": "concepts"
+            }
+          ]
+        },
+        "topics": {
+          "data": [
+            {
+              "id": "9F83E3F2-4C0A-11E0-968F-B66D9DFF4B22",
+              "type": "topics"
+            }
+          ],
+          "links": {
+            "related": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards/00641815-A3A5-45DF-AB85-29293EA5944B/topics"
+          }
+        },
+        "ancestors": {
+          "data": [
+            {
+              "type": "standards",
+              "id": "A45537C8-A234-49CF-BBC7-D94D1575E875"
+            },
+            {
+              "id": "AEC0E490-C4D3-47E1-B61D-27389C379DCD",
+              "type": "standards"
+            },
+            {
+              "type": "standards",
+              "id": "756E2DAC-63A4-4DB8-BE79-99A9327A9255"
+            }
+          ],
+          "links": {
+            "related": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards/00641815-A3A5-45DF-AB85-29293EA5944B/ancestors"
+          }
+        },
+        "children": {
+          "data": [
+            {
+              "id": "5CA00D30-8C1B-4FDD-9C52-E970EA3B1D12",
+              "type": "standards"
+            },
+            {
+              "type": "standards",
+              "id": "6F41F16A-C6AE-4AE2-BDEC-87C5A65AB2D8"
+            }
+          ],
+          "links": {
+            "related": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards/00641815-A3A5-45DF-AB85-29293EA5944B/children"
+          }
+        },
+        "related_courses": {
+          "links": {
+            "related": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards/00641815-A3A5-45DF-AB85-29293EA5944B/related_courses"
+          },
+          "data": []
+        },
+        "contexts": {
+          "data": [
+            {
+              "id": "A45537C8-A234-49CF-BBC7-D94D1575E875",
+              "type": "standards"
+            },
+            {
+              "id": "756E2DAC-63A4-4DB8-BE79-99A9327A9255",
+              "type": "standards"
+            }
+          ],
+          "links": {
+            "related": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards/00641815-A3A5-45DF-AB85-29293EA5944B/contexts"
+          }
+        },
+        "derivatives": {
+          "data": []
+        },
+        "crosswalks": {
+          "data": [
+            {
+              "type": "standards",
+              "id": "80FAAF30-7440-11DF-93FA-01FD9CFF4B22"
+            },
+            {
+              "type": "standards",
+              "id": "80FF9BB2-7440-11DF-93FA-01FD9CFF4B22"
+            },
+            {
+              "type": "standards",
+              "id": "1C496A54-AB10-4003-AF77-FFC6CD085CC9"
+            },
+            {
+              "id": "7557D585-8BD5-42C6-BE36-982265108C39",
+              "type": "standards"
+            },
+            {
+              "type": "standards",
+              "id": "CB30C87C-0678-4A0F-8421-7B5F6A7CE5EC"
+            }
+          ],
+          "links": {
+            "related": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards/00641815-A3A5-45DF-AB85-29293EA5944B/crosswalks"
+          }
+        },
+        "replaces": {
+          "data": []
+        },
+        "peer_derivatives": {
+          "data": []
+        },
+        "course_standards": {
+          "data": []
+        },
+        "origins": {
+          "data": []
+        },
+        "breakout_origins": {
+          "data": []
+        },
+        "replaced_by": {
+          "data": []
+        },
+        "breakouts": {
+          "data": []
+        },
+        "peers": {
+          "data": [
+            {
+              "id": "80A3960A-7440-11DF-93FA-01FD9CFF4B22",
+              "type": "standards"
+            },
+            {
+              "id": "80A50A12-7440-11DF-93FA-01FD9CFF4B22",
+              "type": "standards"
+            },
+            {
+              "type": "standards",
+              "id": "80A6750A-7440-11DF-93FA-01FD9CFF4B22"
+            },
+            {
+              "id": "80AC2E78-7440-11DF-93FA-01FD9CFF4B22",
+              "type": "standards"
+            },
+            {
+              "id": "80B0EC2E-7440-11DF-93FA-01FD9CFF4B22",
+              "type": "standards"
+            },
+            {
+              "type": "standards",
+              "id": "80B2E038-7440-11DF-93FA-01FD9CFF4B22"
+            },
+            {
+              "id": "80D9E106-7440-11DF-93FA-01FD9CFF4B22",
+              "type": "standards"
+            },
+            {
+              "id": "6513218B-59E1-4CD3-B711-3222EC65A6D4",
+              "type": "standards"
+            },
+            {
+              "type": "standards",
+              "id": "1C496A54-AB10-4003-AF77-FFC6CD085CC9"
+            },
+            {
+              "type": "standards",
+              "id": "FB008755-C7A1-41E0-BCA9-C0CF1625FDBB"
+            },
+            {
+              "type": "standards",
+              "id": "E408CED7-08AE-4DA1-B542-6303D54DD26A"
+            },
+            {
+              "id": "3324412C-B58B-4E4E-BB97-E55D47008395",
+              "type": "standards"
+            },
+            {
+              "id": "AE2F851D-B4D3-47AB-90BD-2EC849BE7BF1",
+              "type": "standards"
+            },
+            {
+              "type": "standards",
+              "id": "E40F1080-32F3-43A7-883F-A3AA0954460C"
+            },
+            {
+              "type": "standards",
+              "id": "E2EBD928-0560-4FBC-9868-383E894A8E0A"
+            },
+            {
+              "type": "standards",
+              "id": "DAC5E207-36F1-4F05-B8B5-2E3798214CFE"
+            },
+            {
+              "type": "standards",
+              "id": "87701036-F41B-4D33-8FB8-2666CBE4EEE3"
+            },
+            {
+              "type": "standards",
+              "id": "D0616D44-74D9-43F0-9746-C021E3B18C53"
+            },
+            {
+              "type": "standards",
+              "id": "0B8335E6-E874-4DEE-86DD-48594F568E40"
+            },
+            {
+              "type": "standards",
+              "id": "DE3CC153-FEC8-450B-889A-D2B4688D0459"
+            },
+            {
+              "type": "standards",
+              "id": "35DEB1A9-F5C4-44ED-B00F-66BE2A4BDECE"
+            },
+            {
+              "id": "14507607-DFE5-4627-A160-D0E8AF4D2550",
+              "type": "standards"
+            },
+            {
+              "type": "standards",
+              "id": "149BD64B-22D9-4DB2-8066-4034773A21E3"
+            }
+          ],
+          "links": {
+            "related": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards/00641815-A3A5-45DF-AB85-29293EA5944B/peers"
+          }
+        },
+        "parent": {
+          "links": {
+            "related": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards/00641815-A3A5-45DF-AB85-29293EA5944B/parent"
+          },
+          "data": {
+            "id": "756E2DAC-63A4-4DB8-BE79-99A9327A9255",
+            "type": "standards"
+          }
+        }
+      },
+      "id": "00641815-A3A5-45DF-AB85-29293EA5944B",
+      "type": "standards",
+      "attributes": {
+        "uri": "https://api.abconnect.certicaconnect.com/rest/v4.1/standards/00641815-A3A5-45DF-AB85-29293EA5944B",
+        "extensions": [],
+        "captured_by": "AB",
+        "alt_identifiers": [],
+        "guid": "00641815-A3A5-45DF-AB85-29293EA5944B",
+        "education_levels": {
+          "ece_ages": [],
+          "grades": [
+            {
+              "guid": "F1FA56F6-3B53-11E0-B042-495E9DFF4B22",
+              "seq": 90,
+              "code": "7",
+              "descr": "7th Grade"
+            }
+          ]
+        },
+        "seq": 31,
+        "key_ideas": [
+          {
+            "concepts": [
+              {
+                "descr": "Analysis of Text",
+                "guid": "0A279CA8-3BA2-11E1-A29D-011A9DFF4B22"
+              },
+              {
+                "guid": "0A90ABF8-3BA2-11E1-A29D-011A9DFF4B22",
+                "descr": "Tone"
+              },
+              {
+                "guid": "0B020794-3BA2-11E1-A29D-011A9DFF4B22",
+                "descr": "Metaphors"
+              }
+            ],
+            "guid": "3F9761D0-96CE-11EA-BA31-ED9D37C020E1"
+          },
+          {
+            "concepts": [
+              {
+                "guid": "0A279CA8-3BA2-11E1-A29D-011A9DFF4B22",
+                "descr": "Analysis of Text"
+              },
+              {
+                "guid": "0A39F9DE-3BA2-11E1-A29D-011A9DFF4B22",
+                "descr": "Idioms"
+              },
+              {
+                "guid": "0A3B0EB4-3BA2-11E1-A29D-011A9DFF4B22",
+                "descr": "Constructing Meaning"
+              }
+            ],
+            "guid": "3b37034a-7e6a-49a2-812e-4b2ebef6c097"
+          },
+          {
+            "concepts": [
+              {
+                "descr": "Analysis of Text",
+                "guid": "0A279CA8-3BA2-11E1-A29D-011A9DFF4B22"
+              },
+              {
+                "guid": "0A729014-3BA2-11E1-A29D-011A9DFF4B22",
+                "descr": "Onomatopoeia"
+              },
+              {
+                "descr": "Tone",
+                "guid": "0A90ABF8-3BA2-11E1-A29D-011A9DFF4B22"
+              }
+            ],
+            "guid": "4193FF0C-96CE-11EA-9E8A-DF96FC8ACD5E"
+          },
+          {
+            "guid": "43C372BC-96CE-11EA-8476-88E3E5E35E1D",
+            "concepts": [
+              {
+                "descr": "Analysis of Text",
+                "guid": "0A279CA8-3BA2-11E1-A29D-011A9DFF4B22"
+              },
+              {
+                "descr": "Constructing Meaning",
+                "guid": "0A3B0EB4-3BA2-11E1-A29D-011A9DFF4B22"
+              },
+              {
+                "descr": "Onomatopoeia",
+                "guid": "0A729014-3BA2-11E1-A29D-011A9DFF4B22"
+              }
+            ]
+          },
+          {
+            "guid": "45D44E82-96CE-11EA-A781-ED9B6283126B",
+            "concepts": [
+              {
+                "descr": "Analysis of Text",
+                "guid": "0A279CA8-3BA2-11E1-A29D-011A9DFF4B22"
+              },
+              {
+                "descr": "Personification",
+                "guid": "0A72E280-3BA2-11E1-A29D-011A9DFF4B22"
+              },
+              {
+                "descr": "Tone",
+                "guid": "0A90ABF8-3BA2-11E1-A29D-011A9DFF4B22"
+              }
+            ]
+          },
+          {
+            "guid": "45F6F7FC-96CE-11EA-931F-B9001EB4F9C1",
+            "concepts": [
+              {
+                "descr": "Analysis of Text",
+                "guid": "0A279CA8-3BA2-11E1-A29D-011A9DFF4B22"
+              },
+              {
+                "guid": "0A3B0EB4-3BA2-11E1-A29D-011A9DFF4B22",
+                "descr": "Constructing Meaning"
+              },
+              {
+                "guid": "0A72E280-3BA2-11E1-A29D-011A9DFF4B22",
+                "descr": "Personification"
+              }
+            ]
+          },
+          {
+            "guid": "476C6E46-96CE-11EA-8AF5-B254CFBB0DA7",
+            "concepts": [
+              {
+                "guid": "0A279CA8-3BA2-11E1-A29D-011A9DFF4B22",
+                "descr": "Analysis of Text"
+              },
+              {
+                "guid": "0A39F9DE-3BA2-11E1-A29D-011A9DFF4B22",
+                "descr": "Idioms"
+              },
+              {
+                "guid": "0A90ABF8-3BA2-11E1-A29D-011A9DFF4B22",
+                "descr": "Tone"
+              }
+            ]
+          },
+          {
+            "guid": "487687FE-96CE-11EA-8EC5-CFC18C316469",
+            "concepts": [
+              {
+                "descr": "Analysis of Text",
+                "guid": "0A279CA8-3BA2-11E1-A29D-011A9DFF4B22"
+              },
+              {
+                "guid": "0A72ABF8-3BA2-11E1-A29D-011A9DFF4B22",
+                "descr": "Hyperbole"
+              },
+              {
+                "descr": "Tone",
+                "guid": "0A90ABF8-3BA2-11E1-A29D-011A9DFF4B22"
+              }
+            ]
+          },
+          {
+            "concepts": [
+              {
+                "descr": "Analysis of Text",
+                "guid": "0A279CA8-3BA2-11E1-A29D-011A9DFF4B22"
+              },
+              {
+                "descr": "Constructing Meaning",
+                "guid": "0A3B0EB4-3BA2-11E1-A29D-011A9DFF4B22"
+              },
+              {
+                "descr": "Hyperbole",
+                "guid": "0A72ABF8-3BA2-11E1-A29D-011A9DFF4B22"
+              }
+            ],
+            "guid": "4948CFAC-96CE-11EA-AB78-CEB34BE70E0C"
+          },
+          {
+            "guid": "4B818462-96CE-11EA-B834-FBC188A34698",
+            "concepts": [
+              {
+                "guid": "0A279CA8-3BA2-11E1-A29D-011A9DFF4B22",
+                "descr": "Analysis of Text"
+              },
+              {
+                "guid": "0A729DDE-3BA2-11E1-A29D-011A9DFF4B22",
+                "descr": "Similes"
+              },
+              {
+                "descr": "Tone",
+                "guid": "0A90ABF8-3BA2-11E1-A29D-011A9DFF4B22"
+              }
+            ]
+          },
+          {
+            "guid": "4BA366B8-96CE-11EA-9297-E09C0B0A64DA",
+            "concepts": [
+              {
+                "guid": "0A279CA8-3BA2-11E1-A29D-011A9DFF4B22",
+                "descr": "Analysis of Text"
+              },
+              {
+                "guid": "0A3B0EB4-3BA2-11E1-A29D-011A9DFF4B22",
+                "descr": "Constructing Meaning"
+              },
+              {
+                "descr": "Similes",
+                "guid": "0A729DDE-3BA2-11E1-A29D-011A9DFF4B22"
+              }
+            ]
+          },
+          {
+            "guid": "A8DE2F8E-679E-11EA-9F09-86B0CBE08291",
+            "concepts": [
+              {
+                "guid": "0A279CA8-3BA2-11E1-A29D-011A9DFF4B22",
+                "descr": "Analysis of Text"
+              },
+              {
+                "guid": "0A8E905C-3BA2-11E1-A29D-011A9DFF4B22",
+                "descr": "Figurative Language"
+              },
+              {
+                "guid": "0A90ABF8-3BA2-11E1-A29D-011A9DFF4B22",
+                "descr": "Tone"
+              }
+            ]
+          },
+          {
+            "guid": "C2D56128-D230-11DE-B3B6-B44B9DFF4B22",
+            "concepts": [
+              {
+                "guid": "0A279CA8-3BA2-11E1-A29D-011A9DFF4B22",
+                "descr": "Analysis of Text"
+              },
+              {
+                "guid": "0A8E8274-3BA2-11E1-A29D-011A9DFF4B22",
+                "descr": "Allusion"
+              }
+            ]
+          },
+          {
+            "guid": "C8649714-76E5-11E7-B095-97B7BF03DF2F",
+            "concepts": [
+              {
+                "guid": "0A279CA8-3BA2-11E1-A29D-011A9DFF4B22",
+                "descr": "Analysis of Text"
+              },
+              {
+                "descr": "Constructing Meaning",
+                "guid": "0A3B0EB4-3BA2-11E1-A29D-011A9DFF4B22"
+              },
+              {
+                "guid": "0B020794-3BA2-11E1-A29D-011A9DFF4B22",
+                "descr": "Metaphors"
+              }
+            ]
+          },
+          {
+            "guid": "CE354760-96D1-11EA-B220-AE0EFDEA0D6E",
+            "concepts": [
+              {
+                "descr": "Analysis of Text",
+                "guid": "0A279CA8-3BA2-11E1-A29D-011A9DFF4B22"
+              },
+              {
+                "descr": "Constructing Meaning",
+                "guid": "0A3B0EB4-3BA2-11E1-A29D-011A9DFF4B22"
+              },
+              {
+                "descr": "Alliteration",
+                "guid": "0A72D52E-3BA2-11E1-A29D-011A9DFF4B22"
+              }
+            ]
+          },
+          {
+            "guid": "CF53B410-96D1-11EA-A71C-92CC75D9F1C5",
+            "concepts": [
+              {
+                "guid": "0A279CA8-3BA2-11E1-A29D-011A9DFF4B22",
+                "descr": "Analysis of Text"
+              },
+              {
+                "descr": "Alliteration",
+                "guid": "0A72D52E-3BA2-11E1-A29D-011A9DFF4B22"
+              },
+              {
+                "guid": "0A90ABF8-3BA2-11E1-A29D-011A9DFF4B22",
+                "descr": "Tone"
+              }
+            ]
+          },
+          {
+            "concepts": [
+              {
+                "descr": "Analysis of Text",
+                "guid": "0A279CA8-3BA2-11E1-A29D-011A9DFF4B22"
+              },
+              {
+                "guid": "0A3B0EB4-3BA2-11E1-A29D-011A9DFF4B22",
+                "descr": "Constructing Meaning"
+              },
+              {
+                "guid": "0A8E905C-3BA2-11E1-A29D-011A9DFF4B22",
+                "descr": "Figurative Language"
+              }
+            ],
+            "guid": "E95843D2-D236-11DE-B375-394D9DFF4B22"
+          }
+        ],
+        "number": {
+          "enhanced": "ELA.7.R.3.1",
+          "prefix_enhanced": "ELA.7.R.3.1",
+          "raw": "ELA.7.R.3.1:",
+          "root_enhanced": "ELA.7.R.3.1"
+        },
+        "label": "Benchmark",
+        "date_deleted_utc": null,
+        "disciplines": {
+          "strands": [
+            {
+              "guid": "81C38420-046C-11E0-9AE1-661C9DFF4B22",
+              "descr": "Reading"
+            }
+          ],
+          "genres": [],
+          "ece_domains": [],
+          "subjects": [
+            {
+              "guid": "F1FAC302-3B53-11E0-B042-495E9DFF4B22",
+              "code": "LANG",
+              "descr": "Language Arts"
+            }
+          ]
+        },
+        "statement": {
+          "addendums": [],
+          "combined_descr": "Analyze how figurative language contributes to tone and meaning and explain examples of allusions in text(s).",
+          "descr": "Analyze how figurative language contributes to tone and meaning and explain examples of allusions in text(s)."
+        },
+        "standard_type": "objective",
+        "legends": [],
+        "status": "active",
+        "document": {
+          "publication": {
+            "authorities": [
+              {
+                "guid": "9127FF50-F1B9-11E5-862E-0938DC287387",
+                "acronym": "FDOE",
+                "descr": "Florida DOE"
+              }
+            ],
+            "publication_type": "standard",
+            "descr": "Benchmarks for Excellent Student Thinking Standards",
+            "source_url": "https://www.cpalms.org/Public/search/Standard",
+            "extended_descr": "Florida: Benchmarks for Excellent Student Thinking Standards",
+            "regions": [
+              {
+                "code": "US",
+                "guid": "91273AE8-F1B9-11E5-862E-0938DC287387",
+                "type": "country",
+                "descr": "United States of America"
+              },
+              {
+                "descr": "Florida",
+                "guid": "A832E0B8-901A-11DF-A622-0C319DFF4B22",
+                "type": "state",
+                "code": "FL"
+              }
+            ],
+            "guid": "ad9c9705-4834-11ea-bb5b-0e20088bb29a",
+            "acronym": "B.E.S.T."
+          },
+          "date_modified_utc": "2022-03-24 06:43:31",
+          "obsolete_year": null,
+          "source_url": "https://www.cpalms.org/Public/search/Standard",
+          "revision_year": null,
+          "adopt_year": "2020",
+          "descr": "English Language Arts",
+          "disciplines": {
+            "primary_subject": {
+              "code": "LANG",
+              "guid": "F1FAC302-3B53-11E0-B042-495E9DFF4B22",
+              "descr": "Language Arts"
+            }
+          },
+          "guid": "E2ECA2DE-4834-11EA-AC9D-835EAB753378",
+          "implementation_year": null,
+          "assessment_year": "2022"
+        },
+        "topic_organizer": null,
+        "section": {
+          "disciplines": {
+            "primary_subject": {
+              "descr": "Language Arts",
+              "guid": "F1FAC302-3B53-11E0-B042-495E9DFF4B22",
+              "code": "LANG"
+            }
+          },
+          "number": null,
+          "label": null,
+          "descr": "7th Grade",
+          "assessment_year": "2022",
+          "seq": 8,
+          "implementation_year": "2022",
+          "guid": "5FBBDDCB-4835-11EA-BB5B-0E20088BB29A",
+          "adopt_year": "2020",
+          "revision_year": null,
+          "obsolete_year": null,
+          "date_modified_utc": "2022-01-10 18:12:14"
+        },
+        "in_list": "N",
+        "has_list": "N",
+        "date_modified_utc": "2020-02-08 18:23:01",
+        "level": 4,
+        "utilizations": [
+          {
+            "type": "alignable",
+            "guid": "3A6BCD99-F093-4782-9708-5E65F2DEC3F2"
+          }
+        ]
+      }
+    }
+  ],
+  "meta": {
+    "offset": 0,
+    "limit": 10,
+    "took": 143,
+    "count": 10
+  }
+}

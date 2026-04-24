@@ -1,0 +1,45 @@
+#!/bin/bash
+
+# When pointing m3 at a branch of maestro_activity_engine in both
+# Gemfile and package.json, a bundle update picks up the correct
+# latest commit hash for mae, but yarn does not update the yarn.lock.
+# This script fixes that by deleting the mae entry from yarn.lock and
+# re-running yarn install, which will then pick up the latest commit hash.
+# Usage, from m3 root: nvm use && script/update-mae
+# Suggested bash alias:
+# alias umae='nvm use && script/update-mae'
+
+set -e
+
+# Update maestro_activity_engine bundle with conservative flag
+echo "Updating maestro_activity_engine bundle..."
+bundle update maestro_activity_engine --conservative
+
+# Remove the specified line and all following lines until next blank line from yarn.lock
+echo "Removing mae@https://github.com/vhl/mae line and following lines from yarn.lock..."
+if [ -f "yarn.lock" ]; then
+    # Create a temporary file
+    temp_file=$(mktemp)
+
+    # Use awk to process the file
+    awk '
+    BEGIN { skip = 0 }
+    /^"mae@https:\/\/github\.com\/vhl\/mae/ { skip = 1 }
+    /^$/ { skip = 0 }
+    skip == 0 { print }
+    ' yarn.lock > "$temp_file"
+
+    # Replace the original file with the processed content
+    mv "$temp_file" yarn.lock
+    echo "Successfully updated yarn.lock"
+else
+    echo "Warning: yarn.lock file not found"
+fi
+
+# Install yarn dependencies
+echo "Installing yarn dependencies..."
+yarn install
+
+# Show git diff
+echo "Showing git diff..."
+GIT_PAGER=cat git diff

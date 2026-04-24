@@ -1,0 +1,87 @@
+/* Question Guid Viwer css */
+@import 'music/library/v1/base/main';
+
+.guid-viewer__backdrop {
+  background: rgba(0, 0, 0, 0.2);
+  height: 100vh;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  z-index: 10000;
+}
+
+.guid-viewer__overlay {
+  align-items: center;
+  background: rgba(0, 107, 174, 0.15);
+  border: rpx(1) solid red;
+  border-radius: rpx(4);
+  color: #003366;
+  display: flex;
+  font-size: rpx(12);
+  justify-content: flex-end;
+  padding: 0 rpx(8);
+  pointer-events: auto;
+  position: absolute;
+  z-index: 10001;
+}
+
+.guid-viewer__header-overlay {
+  align-items: flex-start;
+  border: rpx(1) solid rgb(255, 96, 40);
+  border-radius: rpx(4);
+  background-color: rgba(255, 96, 40, 0.25);
+  color: white;
+  display: flex;
+  font-size: rpx(24);
+  font-weight: bold;
+  height: rpx(76);
+  justify-content: center;
+  left: 0;
+  padding: rpx(10) 0;
+  pointer-events: auto;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 10001;
+}
+
+.guid-viewer__msg-overlay {
+  align-items: center;
+  background-color: white;
+  border: rpx(1) solid rgb(255, 96, 40);
+  border-radius: rpx(4);
+  color: red;
+  display: flex;
+  font-size: rpx(20);
+  font-weight: bold;
+  justify-content: center;
+  left: 25%;
+  padding: 0 rpx(8);
+  pointer-events: auto;
+  position: absolute;
+  top: rpx(200);
+  width: 50%;
+  z-index: 10001;
+}
+
+.guid-viewer__copy-btn {
+  background: rgba(0, 107, 174, 0.75);
+  border: none;
+  border-radius: rpx(3);
+  color: #fff;
+  cursor: pointer;
+  font-size: rpx(14);
+  margin-left: rpx(8);
+  padding: rpx(8) rpx(16);
+}
+
+.guid-viewer__no-guid-btn {
+  background: rgba(255, 96, 40, 0.4);
+  border: none;
+  border-radius: rpx(3);
+  color: #fff;
+  cursor: pointer;
+  font-size: rpx(14);
+  margin-left: rpx(8);
+  padding: rpx(8) rpx(16);
+}

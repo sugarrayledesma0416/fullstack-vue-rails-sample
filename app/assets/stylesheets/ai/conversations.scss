@@ -1,0 +1,15 @@
+@import 'music/library/v1/base/main';
+
+.c-box--conversations {
+  flex: 1 1 0;
+  width: 0;
+}
+
+
+.c-box--skills {
+  border: rpx(2) solid $gray-blue;
+}
+
+.c-box--finish {
+  border: rpx(2) solid $light-blue;
+}

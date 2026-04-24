@@ -1,0 +1,140 @@
+<% content_for(:js_head, javascript_include_tag("uploadable") ) %>
+<% program_unit_label = resource.unit_label.downcase %>
+<%= hidden_field_tag 'valid_unit_label' , (program_unit_label.blank? ? 'unit' : program_unit_label) %>
+<%= form_for(
+      resource,
+      url: form_url,
+      html: {
+        class: 'ns-music-v1  '+ yield(:theme_classes),
+        enctype: 'multipart/form-data',
+        method: method
+      }
+    ) do |form| %>
+  <%= render(
+    'partials/form_errors',
+    header_message: nil,
+    object: resource
+  ) %>
+
+  <div class="c-form-item">
+    <label class="c-form-item__label">File</label>
+    <% unless resource.new_record?%>
+      <div data-container="file_info">
+        <div class="<%= test_class('uploaded_file_information') %>">
+          <div>
+            <span class="u-txt-bold"><%= resource.file_name %></span>
+          </div>
+          <div>Size: <%= number_to_human_size(resource.file_size) %></div>
+          <div>Upload date: <%= resource.updated_at.to_date %></div>
+        </div>
+      </div>
+    <% end %>
+    <div data-container="file_field"
+         class="<%= "fieldWithErrors" unless resource.errors[:file_name].blank? %> file_field">
+      <%= file_field_tag :uploaded_file, class: "c-file-input js-file-input" %>
+      <%= label_tag :uploaded_file do %>
+        Choose File
+      <% end %>
+      <span class="c-file-input-text  js-file-input-text"></span>
+      <%= hidden_field_tag(:file_uploading, (resource.new_record? ? "needed" : "dismissed"), id: "file_uploading") %>
+    </div>
+  </div>
+
+  <div class="js-accent_bar_container">
+    <div class="c-form-item">
+      <%= form.label :title, "Title", class: 'c-form-item__label' %>
+      <%= form.text_field :title, class: '' %>
+    </div>
+
+    <div class="c-form-item">
+      <label for="resource_description" , class="c-form-item__label">Description (optional)</label>
+      <%= form.text_area :description, rows: 10, class: '' %>
+    </div>
+  </div>
+
+  <div class="c-form-item">
+    <%= label_tag :unit_options, program_unit_label.capitalize, class: 'c-form-item__label' %>
+    <div>
+      <%= select_tag :unit_options,
+          options_for_select(units_filter_options(presenter.units), resource_index_link(start_unit_id: @start_unit_id)),
+          class: 'c-select  u-mar-rt-4  js-unit-options  ' + test_class('unit-options') %>
+      <span class="u-invisible js-multi-lesson-selects">
+        <%= form.label "first_#{program_unit_label}".to_sym, "First  Lesson", class: 'u-no-visual' %>
+        <%= form.collection_select("first_#{program_unit_label}".to_sym,
+                                   resource.program.units,
+                                   :id,
+                                   ->(unit) { sanitize(presenter.unit_title(unit, resource), tags: %w[span], attributes: %w[lang]) },
+                                   resource.start_unit ? {:selected => resource.start_unit_id} : {},
+                                   'data-js-change' => 'validate',
+                                   'data-js-unit' => "first_#{program_unit_label}",
+                                   class: 'c-select  u-mar-rt-4  js-start-unit' )  %>
+
+        <span class="u-mar-rt-4" style="line-height: 2.5">to</span>
+        <%= form.label "last_#{program_unit_label}".to_sym, "Last Lesson", class: 'u-no-visual' %>
+        <%= form.collection_select("last_#{program_unit_label}".to_sym,
+                                   resource.program.units,
+                                   :id,
+                                   ->(unit) { sanitize(presenter.unit_title(unit, resource), tags: %w[span], attributes: %w[lang]) },
+                                   {:include_blank => 'Choose a Lesson'},
+                                   {:selected => resource.end_unit_id,
+                                    'data-js-change' => 'validate',
+                                    'data-js-unit' => "last_#{program_unit_label}",
+                                    :class => 'c-select  u-mar-rt-4  js-end-unit'})  %>
+      </span>
+    </div>
+  </div>
+
+  <div class="c-form-item">
+    <%= form.label :resource_component_id, "Component", class: 'c-form-item__label' %>
+    <%= form.select :resource_component_id,
+                    options_for_select(formatted_resource_component_list(component_list),
+                    selected_component_id.to_s),
+                    {},
+                    class: 'c-select  ' + test_class('resource-resource-component-id')  %>
+  </div>
+
+  <% if current_user.is_resource_editor? %>
+    <div class="c-form-item  u-mar-top-16">
+      <%= form.check_box(:protected, class: 'c-form-item__checkbox') %>
+      <%= form.label(:protected, class: 'c-form-item__label  u-txt-upper') %>
+    </div>
+  <% end %>
+
+  <div class="c-form-item">
+      <%= label_tag 'resource_student_visibility',
+                    'Visibility',
+                    class: 'c-form-item__label' %>
+
+      <% student_viewable = resource.is_student_viewable?(current_user) %>
+
+      <%= radio_button_tag :resource_student_visibility,
+                           false,
+                           !student_viewable,
+                           class: 'c-form-item__radio' %>
+      <%= label_tag :resource_student_visibility_false,
+                    "Not Visible to Students",
+                    class: 'c-form-item__label  u-dis-block' %>
+      <%= radio_button_tag :resource_student_visibility,
+                           true,
+                           student_viewable,
+                           class: 'c-form-item__radio' %>
+      <%= label_tag :resource_student_visibility_true,
+                    "Visible to Students",
+                    class: 'c-form-item__label  u-dis-block' %>
+  </div>
+
+  <div class="c-button-group  flex-justify-start  u-mar-top-32">
+    <%= link_to "Cancel", "#{@return_to}", class: "c-button  c-button--secondary  u-txt-nodec" %>
+    <%= form.submit "Save", class: "c-button  c-button--primary" %>
+    <%= hidden_field_tag(:return_to, return_to) %>
+  </div>
+<% end %>
+
+<%= hidden_field_tag(:show_upload, ((resource.errors[:file_name].present? || resource.new_record?) ? "no_file" : "has_file"), :id => "show_upload") %>
+
+<% if accent_bar_enabled? %>
+  <div class="u-mar-0  js-accent-bar-container--activity  ns-music-v1">
+    <%= render 'music/partials/accent_bar_component', language: current_program.language_code %>
+  </div>
+  <% content_for(:js_head, javascript_include_tag('accent_bar_component_wrapper')) %>
+<% end %>

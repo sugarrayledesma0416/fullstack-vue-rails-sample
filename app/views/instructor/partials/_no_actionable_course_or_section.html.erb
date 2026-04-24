@@ -1,0 +1,15 @@
+<% if current_user.schools.empty? %>
+  <span id="no-school" class="no_course_or_section" >
+    You have not yet added a school. <%= link_to( 'Click here', ua_host_url(:add_school) )  %> to add a school.
+  </span>
+<% elsif !current_user.has_current_course_for?(current_program) %>
+  <span id="no-course" class="no_course_or_section" >
+    You currently don't have a course for this program. <%= link_to( 'Click here', instructor_new_course_path(current_program, current_user.schools.first) )  %> to create a course.
+  </span>
+<% else%>
+  <span id="no-section" class="no_course_or_section" >
+    <% if current_focus.course %>
+      Course  <b> <%= "#{current_focus.course.name}"%> </b> does not have a section. <%= link_to( 'Click here', new_instructor_course_section_path(current_program, current_focus.course))  %> to create a section.
+    <% end %>
+  </span>
+<% end %>

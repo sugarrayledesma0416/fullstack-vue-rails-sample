@@ -1,0 +1,144 @@
+<%= stylesheet_link_tag("music/library/v1/main") %>
+<%= stylesheet_link_tag("music/features/chat/main") %>
+<%= javascript_include_tag("chat/vhl-templater") %>
+<%= javascript_include_tag("chat/chat-view") %>
+<%= javascript_include_tag("chat/temp-data") %>
+
+<div class="ns-chat  ns-music-v1">
+
+  <div class="c-chat-widget  js-chat-widget">
+
+    <button type="button" class="c-chat-widget__open-button  js-open-chat">
+      <span>Chat</span>
+    </button>
+
+    <div class="c-panel  c-panel--roster  js-roster-panel">
+      <div class="c-panel__header  c-panel__header--chat">
+        <div class="c-header  c-header--roster">
+          <h2>Chat</h2>
+          <a href="javascript:void(0)" class="c-chat-widget__close  js-close-chat-btn" role="button" aria-label="Close Chat">
+            <%= Music::Components.icon(variant: 'close') %>
+          </a>
+        </div>
+      </div>
+
+      <div class="c-panel__body  c-panel__body--chat">
+        <ol class="c-roster  js-roster"></ol>
+      </div>
+
+    </div> <!-- roster panel -->
+
+
+    <div class="c-panel  c-panel--chat  js-conversation-panel  u-hidden">
+      <div class="c-panel__header  c-panel__header--chat">
+
+        <div class="c-chat-widget__header-bar">
+          <button type="button" class="c-chat-widget__back-button  c-no-button  js-go-chat-roster">
+            Back
+            <span class="u-screen-reader-only">Back to roster</span>
+          </button>
+          <h2 class="c-conversation__heading">
+            <span class="u-screen-reader-only">Chatting with</span>
+            <span class="c-conversation__other-username  js-chat-other-username">
+              Elle Capitan
+            </span>
+          </h2>
+          <a href="javascript:void(0)" class="c-chat-widget__close  js-close-chat" role="button" aria-label="Close Chat">
+            <%= Music::Components.icon(variant: 'close') %>
+          </a>
+        </div>
+
+      </div>
+
+      <div class="c-panel__body  c-panel__body--chat">
+        <ol class="c-conversation  js-conversation">
+
+          <!-- this should be inserted right before the first unread message: -->
+          <div class="c-conversation__new-message-marker  u-hidden">
+            <span>New messages</span>
+          </div>
+
+        </ol>
+      </div>
+
+      <div class="c-panel__footer  c-panel__footer--chat">
+        <div class="c-conversation__new-message-marker  is-floating  u-hidden">
+          <span>New messages</span>
+        </div>
+
+        <div class="c-form-item  c-form-item--chat  l-inline-group  l-inline-group--bottom">
+          <label class="u-screen-reader-only" for="new_chat_message">Type something.</label>
+          <input type="text"
+                 id="new_chat_message"
+                 class="c-form-input  c-form-input--new-chat-message  js-chat-new-message"
+                 placeholder="Type something.">
+
+          <button class="c-button  js-chat-send-button">Send</button>
+        </div>
+      </div>
+
+    </div> <!-- conversation panel -->
+  </div> <!-- chat-widget -->
+
+</div> <!-- ns-chat -->
+
+
+<!-- +=========================== Templates: ===========================+ -->
+
+<script id="message-template" type="x-template">
+
+  <li class="c-chat-message">
+    <div class="c-chat-message__image-wrapper">
+      <!-- img src=""
+           class="c-user-avatar  c-user-avatar--chat"
+           alt="{{ user.name }}"
+           title="{{ user.name }}" -->
+    </div>
+    <span class="u-screen-reader-only">
+      {{ user.name }}
+    </span>
+    <div class="c-chat-message__body">
+      <div class="c-chat-message__bubble">
+        {{ message_body }}
+      </div>
+      <div class="c-chat-message__time">{{ time }}</div>
+    </div>
+  </li>
+
+</script>
+
+
+<script id="roster-user-template" type="x-template">
+
+  <li role="button" class="c-roster__user  js-roster-user  {{ (new_msg_count > 0) ? 'has-unread' : '' }}">
+    <img ng-src="{{ avatarPath }}"
+         class="c-user-avatar  c-user-avatar--chat"
+         alt="{{ name }}"
+         title="{{ name }}"/>
+
+    <div class="c-roster-summary__user-details">
+      <div class="c-roster-summary__username">{{ name }}</div>
+      <div class="c-chat-status  c-chat-status--{{ status.toLowerCase() }}">
+        {{ status }}
+      </div>
+    </div>
+    <div class="c-roster__user-message-count">
+      {{ (new_msg_count > 0) ? new_msg_count + ' unread' : ''  }}
+    </div>
+  </li>
+
+</script>
+
+
+<script id="roster-all-template" type="x-template">
+
+  <div class="c-roster__rollup  js-roster-rollup  has-unread">
+    <div class="">All</div>
+    <div class="c-roster__total-new-count">
+      {{ new_msg_total + ' unread' }}
+    </div>
+  </div>
+
+</script>
+
+<!-- +=========================== END Templates ===========================+ -->

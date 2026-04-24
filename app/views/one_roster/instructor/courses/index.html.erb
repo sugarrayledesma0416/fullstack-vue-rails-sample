@@ -1,0 +1,139 @@
+<% content_for(:js_head, javascript_include_tag('one_roster/course_index')) %>
+<div class="ns-music-v1">
+  <div class="l-container-fluid">
+    <h4 class="c-heading--page-title">Add Courses</h4>
+    <dd>These are the courses with which you are associated.</dd>
+
+    <%= form_tag(one_roster_instructor_courses_path(current_program), method: :post, class: 'js-form') do -%>
+      <h5 class="u-mar-top-48  u-txt-gray-6 u-txt-reg">Available courses for creation:</h5>
+      <% enable_submit_button = false  %>
+      <% if @roster_assistant_sections['available_sections'].present? %>
+        <table class="c-table  c-table--content  u-width-full">
+          <thead>
+            <tr class="c-header-row">
+              <th scope="col">Course</th>
+              <th scope="col">Section</th>
+              <th scope="col">School</th>
+              <th scope="col">Start Date</th>
+              <th scope="col">End Date</th>
+            </tr>
+          </thead>
+          <tbody>
+          <% @roster_assistant_sections['available_sections'].each do |section_data| %>
+            <% enable_submit_button ||= section_data['school'].present?  %>
+            <tr class="c-row  js-checkbox-row">
+              <td>
+                <div class="c-form-item">
+                  <% checkbox_id = "course_section__#{section_data['section_identifier']}" %>
+                  <%= check_box_tag('selected_sections[]',
+                                    section_data['section_identifier'],
+                                    false,
+                                    class: "c-form-item__checkbox",
+                                    id: checkbox_id,
+                                    disabled: section_data['school'].blank?) %>
+                  <%= label('selected_sections_label',
+                            section_data['section_identifier'],
+                            section_data['course_title'],
+                            class: "c-form-item__label",
+                            for: checkbox_id) %>
+                </div>
+                <%= hidden_field_tag('sections[]section[class_external_id]',
+                                     section_data['sourced_id']) %>
+                <%= hidden_field_tag('sections[]section[course_external_id]',
+                                     section_data['course_sourced_id']) %>
+                <%= hidden_field_tag('sections[]section[salesforce_id]',
+                                     section_data['school_salesforce_id']) %>
+                <%= hidden_field_tag('sections[]section[academic_sessions]',
+                                     section_data['academic_sessions']) %>
+              </td>
+              <td><%= section_data['title'] %></td>
+              <td><%= section_data['school'] ? section_data['school'].name : 'N/A' %></td>
+              <td>
+                <div class="c-form-item">
+                  <input class="c-form-item__input  c-form-item__input--datepicker  <%= 'js-datepicker' unless section_data['start_date'] %>" type="text" id="<%= "start_date__#{section_data['section_identifier']}" %>" placeholder="MM-DD-YYYY" data-widget-classes="c-datepicker" value="<%= section_data['start_date'] %>" <%= 'disabled' if section_data['school'].blank? %> <%= 'readonly' if section_data['start_date'] %>>
+                  <input type="text" class="u-hidden  js-ruby-date-format" name="sections[]section[start_date]" value="<%= section_data['start_date'] %>"/>
+                </div>
+              </td>
+              <td>
+                <div class="c-form-item">
+                  <input class="c-form-item__input  c-form-item__input--datepicker  <%= 'js-datepicker' unless section_data['end_date'] %>" type="text" id="<%= "end_date__#{section_data['section_identifier']}" %>" placeholder="MM-DD-YYYY" data-widget-classes="c-datepicker" value="<%= section_data['end_date'] %>" <%= 'disabled' if section_data['school'].blank? %> <%= 'readonly' if section_data['end_date'] %>>
+                  <input type="text" class="u-hidden  js-ruby-date-format" name="sections[]section[end_date]" value="<%= section_data['end_date'] %>"/>
+                </div>
+              </td>
+            </tr>
+          <% end %>
+          </tbody>
+        </table>
+      <% else %>
+        <p class="u-mar-lt-12  no-courses-left  <%= test_class('no-courses-message') %>">
+          There are no courses left to create.
+        </p>
+      <% end %>
+      <% if @roster_assistant_sections['created_sections'].present? %>
+        <h5 class="u-mar-top-48  u-txt-gray-6  u-txt-reg">Courses already created:</h5>
+        <table class="c-table  c-table--content  u-width-full">
+          <thead>
+            <tr class="c-header-row">
+              <th scope="col">Course</th>
+              <th scope="col">Section</th>
+              <th scope="col">Program</th>
+              <th scope="col">School</th>
+              <th scope="col">Start Date</th>
+              <th scope="col">End Date</th>
+              <th scope="col">Instructor</th>
+            </tr>
+          </thead>
+          <tbody>
+          <% @roster_assistant_sections['created_sections'].each do |section_data| %>
+            <tr class="c-row  <%= test_class("existing-section-row-#{section_data['m3_section'].id}") %>">
+              <td><%= section_data['course_title'] %></td>
+              <td><%= section_data['title'] %></td>
+              <td><%= section_data['m3_section'].program.title.html_safe if section_data['m3_section'] %></td>
+              <td><%= section_data['school'] ? section_data['school'].name : 'N/A' %></td>
+              <td><%= section_data['start_date'] %></td>
+              <td><%= section_data['end_date'] %></td>
+              <td><%= section_data['m3_section'].instructor.last_name_first if section_data['m3_section'] %></td>
+            </tr>
+          <% end %>
+          </tbody>
+        </table>
+      <% end %>
+      <div class="actions">
+        <%= link_to 'Return to dashboard', instructor_dashboard_path(current_program), class: 'c-button' %>
+        <%= submit_tag('Confirm', class: 'c-button  c-button--primary  js-enter', data: { disable: true }, disabled: true) if enable_submit_button %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="c-modal  c-modal--lg  js-modal  js-confirmation-modal  u-hidden">
+    <div role="dialog" aria-label="Dialog with a panel" class="c-modal__box  js-modal-box">
+      <button class="c-modal__close-button  c-no-button  js-x-close  js-modal-close">
+        <span class="c-icon  c-icon--md  c-icon--close  js-modal-close"></span>
+        <span class="u-screen-reader-only">Close dialog</span>
+      </button>
+      <div role="document" class="js-modal-content">
+
+        <div class="c-panel  c-panel--padded  u-mar-0">
+          <div class="c-panel__header">
+            <h3 class="c-heading--modal">Course creation</h3>
+          </div>
+          <div class="c-panel__body">
+            <div class="l-span-5">
+              <p>
+              All selected courses will be added to <strong><%= current_program.title.html_safe %></strong>.
+              </p>
+            </div>
+          </div>
+          <div class="c-panel__footer">
+            <div class="c-button-group  u-mar-0  u-txt-rt">
+              <button type="button" class="c-button  js-modal-close">Cancel</button>
+              <button type="button" class="c-button  c-button--primary  js-main-action  js-accept-button" onclick="$('.js-form').submit(); this.disabled = true;">Ok</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <button class="u-screen-reader-only" tabindex="-1">Dialog end</button>
+    </div>
+  </div>
+</div>

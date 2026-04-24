@@ -1,0 +1,21 @@
+require_relative 'config/environment'
+require_relative 'etl/common'
+
+class UserSource < Source
+  def initialize(course_ids)
+    section_ids = ::Section.where(course_id: course_ids.split(',')).pluck('id')
+    user_ids = ::Enrollment.where(section_id: section_ids).pluck('user_id')
+    @records = ::User.where(id: user_ids)
+  end
+end
+
+class UserTransform < Transform
+  def initialize(model)
+    @common_fields = %w(first_name id last_name)
+    super(model)
+  end
+end
+
+source UserSource, ENV['COURSE_IDS']
+transform UserTransform, GradebookEngine::User
+destination RecordDestination

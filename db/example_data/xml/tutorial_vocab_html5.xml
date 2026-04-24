@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<activity title="Tutorial: Los saludos y las despedidas" language="es" activity_type="tutorial_vocab_html5">
+  <dl/>
+  <title><b>Tutorial</b>: Los saludos y las despedidas</title>
+  <items>
+    <tutorial>
+      <vocab_tutorial id="175691" />
+    </tutorial>
+  </items>
+</activity>

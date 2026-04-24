@@ -1,0 +1,179 @@
+@import 'music/library/v1/base/main';
+
+.ns-standards {
+  @import 'music/features/flashcards/tabs';
+
+  .u-section-name,
+  .u-students-heading {
+    font-size: rpx(22);
+  }
+
+  .u-unit-name {
+    font-size: 1rem;
+    font-weight: normal;
+  }
+
+  .u-return-button {
+    position: absolute;
+    float: left;
+  }
+
+  .u-table-container {
+    background: white;
+    border: 1px solid #CCCCCC;
+    border-radius: rpx(5);
+    box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.15);
+    box-sizing: border-box;
+    display: table;
+    padding: 8px 8px 0 8px;
+    width: 60%;
+  }
+
+  .u-section-table,
+  .u-student-table {
+    margin: 0 auto;
+
+    .c-header-row > th:first-child,
+    .c-row > th {
+      box-shadow: 3px 0px 9px rgba(0, 0, 0, 0.1);
+    }
+
+    tr:last-child {
+      td {
+        border-bottom: none;
+      }
+    }
+
+    th {
+      white-space: nowrap;
+    }
+  }
+
+  .c-reviewable-item:hover {
+    --reviewable-cell-color: rgba(0, 0, 0, 0.15);
+    background: #F2F9FF; //rgba(137, 196, 244, 0.3);
+    cursor: pointer;
+    box-shadow: 0 0 rpx(9) var(--reviewable-cell-color);
+  }
+
+  .u-search-button {
+    align-items: center;
+    border: 0;
+    border-radius: 0.5rem;
+    box-shadow: $box-shadow-1;
+    display: flex;
+    height: 2.5rem;
+    justify-content: center;
+    margin: auto;
+    padding: 0.25rem;
+    width: 2.5rem;
+
+
+    &:hover,
+    &:focus {
+      box-shadow: $box-shadow-3;
+    }
+  }
+
+  .u-percent-box {
+    display: inline-block;
+    border: rpx(1) solid $gray-e;
+    border-radius: rpx(5);
+    margin: auto;
+    padding: 0.15rem;
+    text-align: center;
+    min-width: 2.7rem;
+    line-height: 2.275rem;
+    background: $gray-e;
+    color: $gray-3;
+  }
+
+  .u-percent-box-pmr {
+    background: $gray-e;
+    border: rpx(1) solid $gray-e;
+    border-radius: rpx(5);
+    color: $gray-3;
+    display: inline-block;
+    height: rpx(20);
+    line-height: rpx(36);
+    margin: auto;
+    min-width: rpx(16);
+    padding: rpx(2);
+    text-align: center;
+    width: rpx(20);
+  }
+
+  .u-percent-90-to-100 {
+    background: #C5FFCE;
+    border-color: #007112;
+    color: inherit;
+  }
+
+  .u-percent-80-to-89 {
+    background: rgba(231, 255, 235, 0.939);
+    border-color: #16990B;
+    color: inherit;
+  }
+
+  .u-percent-70-to-79 {
+    background: #FFF598;
+    border-color: #D17100;
+    color: inherit;
+  }
+
+  .u-percent-60-to-69 {
+    background: #FFD7A8;
+    border-color: #E73700;
+    color: inherit;
+  }
+
+  .u-percent-0-to-59 {
+    background: #FFD7D7;
+    border-color: #A91313;
+    color: inherit;
+  }
+
+  .u-start-image-container {
+    width: rpx(360);
+    height: rpx(360);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .text {
+      text-align: center;
+      margin-top: auto;
+      margin-bottom: rpx(20);
+    }
+  }
+
+  .u-box-shadow {
+    box-shadow: 0 rpx(12) rpx(8) 0 rgba(0,0,0,0.14);
+    padding-bottom: rpx(4);
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: rpx(70);
+  }
+
+  .u-txt-lightest {
+    color: $lightest-text;
+  }
+
+  .c-export__container {
+    height: fit-content;
+    margin-bottom: 0;
+  }
+
+  .c-standards-reporting {
+    &__container {
+      background-color: #f5f5f5;
+    }
+    &__spacer {
+      border-top: rpx(1) $gray-e solid;
+    }
+  }
+}

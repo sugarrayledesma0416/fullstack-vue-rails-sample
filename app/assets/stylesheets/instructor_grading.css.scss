@@ -1,0 +1,653 @@
+@import 'music/library/v1/base/main';
+@import 'rubric_grading';
+
+/* Instructor Grading Pages */
+/* Moving Bits */
+
+#grading_set_static_wrap {
+  z-index: 100;
+}
+
+#grading_set_background_wrap {
+  padding-top: 10px;
+  background: #fff;
+}
+
+#grading_set_static_wrap.fix_at_top,
+#grading_set_static_wrap.fix_at_top_student {
+  margin: 0 auto;
+  position:fixed;
+  top:0;
+}
+
+
+/* Controls */
+
+.answer_key_link {
+  float: left;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.grading_tasks .instructor_player, .review_work .instructor_player {
+  margin-top:5px;
+  float: right;
+  height:68px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.c-grading-sidebar .instructor_player {
+  border: none;
+}
+
+/* Spotchecking */
+#finish_spotchecking input.red-button {
+  margin: 10px 0 11px 11px;
+}
+
+/* Question by Question */
+
+.student_answer_container {
+  padding: 20px 0;
+}
+
+.student_name {
+  font-weight: bold;
+}
+
+
+.score_option {
+  margin-bottom: 7px;
+}
+
+.score_option .score-field {
+  width:41px;
+}
+
+.original_student_answer {
+  width: 20px;
+  position: absolute;
+  right: 100%;         /* hangs outside left edge of container */
+  margin-right: -1px;  /* adjust position so image is flush with rule */
+}
+
+.original_answer_image {
+  background: url('/images/grading_original_student.png') no-repeat;
+  width: 20px;
+  height: 20px;
+  float: right;
+  overflow: hidden;
+  text-indent: -999px;
+}
+
+#instructor_editing_tools .hover_tools_explanation {
+  top: 55px;
+}
+
+#instructor_editing_tools .hover_tools_explanation {
+  top: 65px;
+}
+
+.hover_tools_explanation.comment {
+  left: -37px;
+}
+
+.hover_tools_explanation.correction {
+  left: 4px;
+}
+
+.hover_tools_explanation.record {
+  left: 47px;
+}
+
+.original_answer_arrow {
+  display: block;
+  background: url('images/darrowright.png') no-repeat;
+  height: 20px;
+  position: absolute;
+  right: -14px;
+  width: 14px;
+  top: 12px;
+}
+
+
+
+.c-grading-header {
+  background: url('/images/dots.png') top repeat-x;
+  display: block;
+}
+
+.c-grading-tasks__title {
+  background: url('/images/dots.png') bottom repeat-x;
+  display: block;
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
+}
+
+
+/* Buttons */
+
+#prev_next_buttons {
+  min-width: 165px;
+}
+
+.grading_pagination {
+  float: right;
+  margin-top: 10px;
+}
+
+#prev_next_buttons .next {
+  float: right;
+}
+
+#prev_next_buttons .prev {
+  float: right;
+  margin-right: 15px
+}
+
+.by_student .score_controls {
+  margin-top: 10px;
+}
+
+
+#question_prompt {
+  background: #f5f5f5;
+  border: 1px solid #d5d5d5;
+  border-top: 4px solid #f5f5f5;
+  padding: 10px;
+}
+
+#question_prompt .question_number,
+#question_prompt .sample_answer_title,
+.sbs_question_prompt .question_number,
+.sbs_question_prompt .sample_answer_title
+ {
+  color: #969696;
+  font-size: 14px;
+  float: left;
+}
+
+#question_prompt .question_prompt_text,
+#question_prompt .sample_answer_text,
+.sbs_question_prompt .question_prompt_text,
+.sbs_question_prompt .sample_answer_text
+{
+  margin-left: 130px;
+  color: #565656;
+}
+
+/* Student by Student */
+
+.by_student .student_name, .by_student .student_number {
+  font-weight: normal;
+  color: #565656;
+  font-style: normal;
+  font-size: 12px;
+  float: none;
+}
+
+#activity_prompt {
+  color: #1d3e6a;
+  width: 515px;
+}
+
+#activity_title {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#activity_direction_line, #directions-frame {
+  margin-top: 15px;
+}
+
+.by_student .toggle_question_control {
+  display: none;
+}
+
+.sbs_question_prompt {
+  margin-bottom: 10px;
+  background: #f5f5f5;
+  padding: 1rem;
+}
+
+.sbs_answer_container {
+  border-bottom: 4px solid #e5e5e5;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+/* Grading Control Bar */
+
+#grading_control_bar {
+  background-color: #ddd;
+  margin: 10px 0px 0px 0px;
+  padding: 10px;
+}
+
+#instructor_editing_tools {
+  position: relative;
+}
+
+.toggle_question_control {
+  font-size: 10px;
+  background: #f5f5f5;
+  border: 1px solid #d5d5d5;
+  border-top: 0;
+  border-radius: 0 0 3px 3px;
+  width: 115px;
+  margin-top: -1px;
+  color: #969696;
+  padding: 12px 5px 5px 5px;
+  text-align: center;
+  line-height: 1em;
+  cursor: pointer;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 2;
+}
+
+.toggle_question_control:hover {
+  background: #DFF09F;
+}
+
+.toggle_question_control .arrow {
+  display: inline-block;
+  height: 12px;
+  padding: 0px;
+  width: 16px;
+  vertical-align: middle;
+}
+
+.toggle_question_control .arrow.up {
+  background: url('/images/grading_question_arrow.png') top no-repeat;
+  margin: 0px 2px 2px 2px;
+}
+
+.toggle_question_control .arrow.down {
+  background: url('/images/grading_question_arrow.png') bottom no-repeat;
+  margin: 0px 2px 2px 2px;
+}
+
+/*
+  Moved question-tools button styles to more general style
+    in music:utilities/_states.scss.css
+*/
+*
+
+#instructor_display_controls {
+  border-left: 1px solid #c9c9c9;
+  padding-left: 10px;
+  font-size: 11px;
+}
+
+#instructor_display_controls label {
+  font-weight: normal;
+  margin: 0;
+  color: #949494;
+}
+
+/* Grading Progress Bar */
+
+#progress_bar_label {
+  margin: 2px 14px 3px 0px;
+  float: left;
+  font-weight: bold;
+  font-size: 10px;
+}
+
+#progress_bar li {
+  float: left;
+  margin: 0 1px 0 0;
+  background-color: #f6f6f6;
+  border: 1px solid #ed1c24;
+  position: relative;
+}
+
+#progress_bar li .activityIcon {
+  display: block;
+  height: 22px;
+  width: 25px;
+}
+
+#progress_bar li span {
+  display: block;
+  color: white;
+  background: url(../images/bkgd-states.png) transparent top left no-repeat;
+  height: 29px;
+  width: 25px;
+  text-indent: -222em;
+}
+
+#progress_bar li.current {
+  background-color: #bc2424;
+  border: 0;
+  height: 29px;
+}
+
+#progress_bar li.ungraded span {
+  background-position: -25px top;
+}
+
+#progress_bar li.incomplete span{
+  background-position: -50px top;
+}
+
+#progress_bar li.complete span {
+  background-position: top left;
+}
+
+#progress_bar li.ungraded.current span{background-position: -75px top;}
+#progress_bar li.incomplete.current span {background-position: -125px top;}
+#progress_bar li.complete.current span {background-position: -100px top;}
+
+#progress_bar li.current {
+  background-color: #ed1c24;
+}
+
+#progress_bar li .progressbar_hover {
+  background: url("../images/bkgd-activity-popUp.png") no-repeat scroll left top transparent;
+  bottom: 23px;
+  color: #969696;
+  display: none;
+  font-size: 11px;
+  height: 93px;
+  left: 0;
+  margin: 0 0 0 -86px;
+  overflow: hidden;
+  padding: 7px 12px 0px 10px;
+  position: absolute;
+  width: 178px;
+}
+
+#progress_bar li.current .progressbar_hover {bottom: 29px;}
+
+.progressbar_title, .progressbar_prompt, .progressbar_status{
+  padding: 2px 3px;
+}
+
+.progressbar_prompt{
+  color: #333333;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+#progress_bar li:hover .progressbar_hover {display: block;}
+
+/* MISC */
+textarea.instructor_comment_input {
+  box-sizing: border-box;
+  border-color: #DDD;
+  width: 100%;
+  height: 55px;
+  resize: vertical;
+  margin-top:5px;
+  padding:5px;
+}
+
+
+#modal_box .grant_grade {
+  margin: 10px;
+}
+
+#modal_box .comment {
+  margin-left: 10px;
+}
+
+span.red-button {
+  float: right;
+}
+
+#student_answers {
+  position: relative;
+}
+
+/* Adjusting Auto-Graded Sections of Recap Activities */
+.sbs_sub_activity_container {
+  margin-bottom: 10px;
+}
+
+.sbs_sub_activity_content_container li.incorrect,
+.sbs_sub_activity_content_container li.correct {
+  background-position: 5px 3px;
+  clear: both;
+  list-style: none;
+}
+
+.sbs_sub_activity_content_container li table td {
+  padding: 3px;
+}
+
+/* arc specific */
+
+.arc_media_player {
+  margin-bottom:75px;
+  margin-left:10px;
+}
+
+#question_and_sample_answer {
+  position: relative;
+}
+
+.sbs_question_prompt .arc_media_player,
+#question_and_sample_answer .arc_media_player {
+  margin-bottom:0px;
+  margin-left:0px;
+}
+
+/* multi-type */
+
+.multi_type .sbs_sub_activity_content_container li {
+  width:600px;
+  float:left;
+}
+
+.multi_type .score_controls {
+  margin-top:0px;
+  margin-bottom:15px;
+}
+
+
+/* instructor graded */
+
+
+/* "View Original Activity" Link */
+.view_original_activity {
+  display: inline-block;
+  margin-top: 5px;
+}
+
+/* Composition Overrides */
+/* Remove extra borders on Review Work for Composition Activities */
+.review_work.composition_grading .composition .box-frame {
+  border-bottom: 0px;
+}
+
+.composition_grading .qq-uploader {
+  clear: both;
+}
+
+.view_original_composition {
+  display: none;
+}
+
+.composition_grading .view_original_composition {
+  display: inline-block;
+}
+
+/* question correctness */
+div.correct
+{
+  background: image-url('icon_correct.png') transparent top left no-repeat;
+  padding-left: rpx(26); /* with of the icon plus a little extra padding */
+  color: $success;
+}
+div.incorrect
+{
+  background: image-url('icon_incorrect.png') transparent top left no-repeat;
+  padding-left: rpx(26); /* with of the icon plus a little extra padding */
+  color: $failure;
+}
+
+
+/* Different Size Containers for Different Types of Grading */
+
+
+.review_work .box-frame {
+  float: none;
+  padding-bottom: 10px;
+}
+
+
+.answer_text {
+}
+
+.review_work .answer_text {
+}
+
+.review_work .multi_type_question li,
+.review_work .auto_graded_question li {
+  max-width: 800px;
+  padding-top: 0px;
+}
+
+.review_work .auto_graded_question ul.answer_choices li.answer_correct span,
+.review_work .auto_graded_question ul.answer_choices li.answer_correction span {
+  color: #399656;
+}
+
+.review_work .multi_type_question li .answer_positioning,
+.review_work .auto_graded_question li .answer_positioning {
+  margin-top: 0px;
+  max-width: 500px;
+  padding-left: 0px;
+}
+
+.review_work .sbs_answer_container {
+  border-bottom: 0px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+
+
+.grading_tasks #directions-frame {
+  float: none;
+}
+
+.grading_tasks .cke_dialog .play.btn,
+.grading_tasks .cke_dialog .play.btn.btn-success.stop {
+  float: right;
+  margin-right: 20px;
+}
+
+.grading_tasks .cke_dialog .record.btn {
+  margin-left: 20px;
+}
+
+
+.grading_tasks .cke_dialog .delete.btn,
+.grading_tasks .cke_dialog .delete.btn.disabled  {
+  margin-bottom: 10px;
+  margin-left: 20px;
+}
+
+.grading_tasks .cke_dialog .volume {
+  width: 34px;
+  height: 34px;
+  position: absolute;
+}
+
+.grading_tasks .cke_dialog .volume_spinner {
+  margin-left: 30px;
+  width: 34px;
+  height: 34px;
+  position: absolute;
+}
+
+.c-composition-upload {
+  line-height: mod(0.7);
+  margin-top: mod(1);
+  border-radius: mod(0.625);
+  padding: mod(0.75);
+  margin-bottom: 1rem;
+
+  &.active {
+    border: rpx(1) solid $light-blue;
+    background-color: tint-saturate($light-blue, 90);
+  }
+
+  &--container {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 1rem;
+    row-gap: 0.75rem;
+  }
+}
+
+.reference-passage {
+  border-radius: rpx(8);
+  box-shadow: 0 rpx(1) rpx(4.8) rgba(0, 0, 0, 0.40);
+  margin-bottom: rpx(12);
+  margin-top: rpx(16);
+
+  @include viewport-min('sm') {
+    max-height: rpx(500);
+    overflow-y: auto;
+  }
+
+  img {
+    object-fit: contain;
+    width: 100%;
+  }
+}
+
+.answer_positioning {
+  .has-prompt-image {
+    padding-top: 0.8rem;
+  }
+}
+
+.reference-passage .reference_model_content {
+  font-size: var(--font-1, $font-size-14);
+}
+
+.reference-passage .fr-media-item-img {
+  &.fr-dii {
+    display: inline-block;
+    float: none;
+    margin-left: rpx(5);
+    margin-right: rpx(5);
+    max-width: calc(100% - (2 * 5px));
+    vertical-align: bottom;
+
+    &.fr-fil {
+      float: left;
+      margin: rpx(5) rpx(5) rpx(5) 0;
+      max-width: calc(100% - 5px);
+    }
+
+    &.fr-fir {
+      float: right;
+      margin: rpx(5) 0 rpx(5) rpx(5);
+      max-width: calc(100% - 5px);
+    }
+  }
+
+  &.fr-dib {
+    display: block;
+    float: none;
+    margin: rpx(5) auto;
+    vertical-align: top;
+
+    &.fr-fil {
+      margin-left: 0;
+      text-align: left;
+    }
+
+    &.fr-fir {
+      margin-right: 0;
+      text-align: right;
+    }
+  }
+}

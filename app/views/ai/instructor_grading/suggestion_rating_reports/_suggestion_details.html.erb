@@ -1,0 +1,131 @@
+<div class="c-box  c-box--bubble-wrap  c-foil-panel  u-dis-block">
+  <% if @presenter.activity_type_is_open_ended? %>
+    <div class="u-bg-light-orange  u-mar-bot-12  u-pad-12">
+      <span class="u-txt-bold">Question:</span> <%= @presenter.current_question.html_friendly_prompt %>
+      <br />
+      <span class="u-txt-bold">Example Answer:</span> <%= @presenter.current_question.sample_answer.to_s %>
+    </div>
+  <% end %>
+  <!-- Student Answer -->
+  <div class="u-dis-flex">
+    <div class="c-box  u-bg-white" style="width: 50%;">
+      <div class="u-txt-bold  u-mar-bot-12  u-txt-18">
+        Student Answer:
+      </div>
+      <div class="u-txt-reg">
+        <%= @presenter.full_sanitizer(@presenter.student_response(@presenter.current_question)) %>
+      </div>
+    </div>
+
+    <div class="c-box  u-bg-white  u-mar-bot-4" style="width: 50%;">
+      <!-- Overall Feedback -->
+      <div class="u-dis-flex" style="flex-direction: column;">
+        <% if @presenter.current_overall_comments.present? %>
+          <% @presenter.current_overall_comments.each do |comment| %>
+            <div class="l-container-fluid">
+              <div class="l-grid">
+                <div class="l-col-1  u-center" style="margin-top: 2em;">
+                  <% if comment.reviewed_status == "accepted" %>
+                    <music-icon-checkmark size="lg" class='u-fill-green'></music-icon-checkmark>
+                  <% elsif comment.reviewed_status == "rejected" %>
+                    <music-icon-close size="lg" class='u-fill-red'></music-icon-close>
+                  <% end %>
+                </div>
+
+                <div class="l-col-10">
+                  <span class="u-txt-bold  u-mar-bot-12  u-txt-18">Overall Feedback:
+                    <%= link_to comment.prompt.model, ai_grading_prompts_path, class: 'u-txt-reg  u-txt-blue  u-mar-lt-8' %>
+                  </span>
+                  <p><%= comment.evaluation_text["overall_comment"] + ": " + comment.evaluation_text["explanation"] %></p>
+                  <span class="u-txt-bold">Instructor Comment:</span>
+                  <p class="<%= comment.rating_comment ? 'u-txt-reg' : 'u-txt-gray-a' %>">
+                    <%= comment.rating_comment || "(<em>none</em>)".html_safe %>
+                  </p>
+                </div>
+
+                <div class="l-col-1  u-center" style="margin-top: 2em;">
+                  <% if comment.rating_category.present? %>
+                    <music-icon-flag size="lg" class='u-fill-red'></music-icon-star>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        <% else %>
+          <span class="u-txt-bold">Overall Feedback:</span>
+          <p>(<em>None</em>)</p>
+        <% end %>
+      </div>
+
+      <!-- Suggestions -->
+      <div class="u-dis-flex" style="flex-direction: column;">
+        <div class="l-grid  u-mar-bot-12">
+          <div class="l-col-1"></div>
+          <div class="l-col-10">
+            <span class="u-txt-bold  u-mar-bot-12  u-txt-18" style="margin-left: 1em;">
+              <% if @presenter.current_grading_suggestions.present? %>
+                Suggestions: <%= link_to @presenter.current_grading_suggestions.first.prompt.model, ai_grading_prompts_path, class: 'u-txt-reg  u-txt-blue  u-mar-lt-8' %>
+              <% else %>
+                <div style="margin-left: 1em;">
+                  <span class="u-txt-bold">Suggestions:</span>
+                  <p class="u-txt-gray-a  u-txt-reg  u-txt-14">(<em>none</em>)</p>
+                </div>
+              <% end %>
+            </span>
+          </div>
+          <div class="l-col-1"></div>
+        </div>
+        <% if @presenter.current_grading_suggestions.present? %>
+          <ol>
+            <% @presenter.current_grading_suggestions.each do |suggestion| %>
+              <div class="l-container-fluid">
+                <div class="l-grid  u-mar-bot-12">
+                  <div class="l-col-1  u-center  u-pad-0">
+                    <% if suggestion.reviewed_status == "accepted" %>
+                      <music-icon-checkmark size="lg" class='u-fill-green'></music-icon-checkmark>
+                    <% elsif suggestion.reviewed_status == "rejected" %>
+                      <music-icon-close class='u-fill-red'></music-icon-close>
+                    <% end %>
+                  </div>
+
+                  <div class="l-col-10">
+                    <li>
+                      <p style="margin: 2px 0;">Context: <%= suggestion.suggestion_text["incorrect_text"] %></p>
+                      <p style="margin: 2px 0;">Suggestion: <%= suggestion.suggestion_text["error_explanation"] %></p>
+                    </li>
+                    <% if suggestion.rating_comment.present? %>
+                      <span class="u-txt-bold  u-txt-16">Instructor Comment:</span>
+                      <p><%= suggestion.rating_comment %></p>
+                    <% end %>
+                  </div>
+
+                  <div class="l-col-1  u-center" style="margin-top: 0.5em;">
+                    <% if suggestion.rating_category.present? %>
+                      <music-icon-flag size="lg" class='u-fill-red'></music-icon-star>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </ol>
+        <% end %>
+      </div>
+      
+      <!-- Instructor Overall Comment -->
+      <div class="u-dis-flex" style="flex-direction: column;">
+        <div class="l-grid  u-mar-bot-12">
+          <div class="l-col-1"></div>
+          <div class="l-col-10">
+            <div style="margin-left: 1em;">
+              <span class="u-txt-bold  u-mar-bot-12  u-txt-18">Instructor Overall Comment:</span>
+              <p class="<%= @presenter.current_suggestion_rating.present? ? 'u-txt-reg' : 'u-txt-gray-a' %>">
+                <%= @presenter.current_suggestion_rating&.comment || "(<em>none</em>)".html_safe %>
+              </p>
+            </div>
+          </div>
+          <div class="l-col-1"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

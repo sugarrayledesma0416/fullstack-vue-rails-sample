@@ -1,0 +1,72 @@
+<% if @in_institution_admin && !@in_course_wizard_institution_admin %>
+  <div class="ns-music-v3  c-footer  u-width-full  l-line  l-line--debug  u-justify-content-space-between">
+    <div class="l-line  l-line--debug  u-justify-content-space-between">
+    <div>
+      <music-icon-vhl-logo-v3 size="lg" class="u-fill-red"></music-icon-logo-v3>
+    </div>
+      <%= link_to('About Us',
+                  'https://vistahigherlearning.com/about-us',
+                  target: '_blank',
+                  class: 'u-txt-widget-red-700  u-txt-12  u-mar-lt-8  u-mar-rt-8  c-footer__link') %>
+      <%= link_to('News & Events',
+                  'https://vistahigherlearning.com/community',
+                  target: '_blank',
+                  class: 'u-txt-widget-red-700  u-txt-12  u-mar-rt-8  c-footer__link') %>
+      <%= link_to('Store',
+                  'https://vistahigherlearning.com/students/',
+                  target: '_blank',
+                  class: 'u-txt-widget-red-700  u-txt-12  u-mar-rt-8  c-footer__link') %>
+      <%= link_to('Accessibility',
+                  'https://vistahigherlearning.com/support/accessibility',
+                  target: '_blank',
+                  class: 'u-txt-widget-red-700  u-txt-12  c-footer__link') %>
+    </div>
+    <div class="u-select-right">
+      <span class="u-mar-rt-4  u-txt-12">
+        &copy; <%= Date.today.year %> VISTA Higher Learning, Inc.
+      </span>
+      <span class="u-txt-12">|</span>
+      <%= link_to('Privacy Policy',
+                  privacy_policy_url,
+                  target: '_blank',
+                  class: 'u-txt-widget-red-700  u-txt-under  u-txt-12  u-mar-lt-4  u-mar-rt-4  c-footer__link') %>
+      <span class="u-txt-12">|</span>
+      <%= link_to('Terms of Use',
+                  'https://www.vhlcentral.com/terms_of_use',
+                  target: '_blank',
+                  class: 'u-txt-widget-red-700  u-txt-under  u-txt-12  u-mar-lt-4  c-footer__link') %>
+    </div>
+  </div>
+<% elsif !(@in_institution_admin || @in_course_wizard_institution_admin) %>
+  <li class="u-pad-rt-8">
+    &copy; <%= Date.today.year %>
+    <%= link_to "VISTA Higher Learning, Inc.",
+        "https://vistahigherlearning.com",
+        target: "_blank",
+        class: 'c-footer__link' %>
+  </li>
+
+  <li class="u-pad-rt-8">
+    <% if @show_tech_support_link -%>
+      <%= link_to('Support Center',
+                  'http://support.vhlcentral.com',
+          target: '_blank',
+          class: 'c-footer__link'
+          ) %>
+      |
+      <%= link_to('Store',
+          'https://vistahigherlearning.com/students/',
+          target: '_blank',
+          class: 'c-footer__link') %>
+    <% end -%>
+  </li> <!-- / footer column 2 -->
+
+  <li>
+    <%= link_to "Terms of Use", 'https://www.vhlcentral.com/terms_of_use',
+        target: "_blank",
+        class: "u-pad-rt-8  u-txt-upper  c-footer__link" %>
+    <%= link_to "Privacy Policy", privacy_policy_url,
+        target: "_blank",
+        class: "u-txt-upper  c-footer__link" %>
+ </li>
+<% end -%>

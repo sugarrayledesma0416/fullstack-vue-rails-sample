@@ -1,0 +1,19 @@
+<% if @presenter.all_courses.present? %>
+  <% display_progress = local_assigns.key?(:display_progress) ? local_assigns[:display_progress] : true %>
+  <div>
+    <a class="c-button-v3  c-button-v3--primary-clear  c-button-v3--md  u-pad-0"
+        href="<%= institution_admin_configure_view_path(school_id: @presenter.school) %>">
+      <music-icon-eye-v3 class="u-fill-red-500"></music-icon-eye-v3>
+      <p class="u-txt-red-500  c-enterprise__paragraph  u-mar-0">Configure view</p>
+    </a>
+  </div>
+  <div>
+    <a
+      class="c-button-v3  c-button-v3--primary-clear  c-button-v3--md  u-pad-0"
+      href="<%= institution_admin_section_metrics_path(school_id: @presenter.school) %>">
+        <vhl-progress-information-icon class="u-fill-red-500  u-mar-bot-8  u-mar-rt-8">
+        </vhl-progress-information-icon>
+        <p class="u-txt-red-500  c-enterprise__paragraph  u-mar-0">Progress</p>
+    </a>
+  </div>
+<% end %>

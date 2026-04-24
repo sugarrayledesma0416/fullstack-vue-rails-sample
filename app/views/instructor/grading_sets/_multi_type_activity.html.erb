@@ -1,0 +1,106 @@
+<% if view_manager.activity.multi_type_current_event? %>
+  <% content_for(:css_head, stylesheet_link_tag("music/features/current_events/main") )%>
+  <% content_for(:body_classes, "  ns-current-events") %>
+<% end %>
+
+<div id="student_answers" class="multi_type">
+  <% editor_index = 0 %>
+  <% activity_rank = 1 %>
+
+  <% unless @presenter.has_rubric? %>
+    <div class='u-txt-rt  u-mar-top-48'>
+      <b>Grade All</b>:&nbsp;
+      <a id='instructor-grading-set-all-zero' class='u-link'>
+        0%
+      </a>
+      |
+      <a id='instructor-grading-set-all-hundred' class='u-link'>
+        100%
+      </a>
+    </div>
+  <% end %>
+
+  <% view_manager.activity.sub_activities.each do |sub_activity|%>
+    <% format_activity_reference(sub_activity, show_auto_graded_questions, activity_rank) %>
+
+    <div class="sbs_sub_activity_container ui-helper-clearfix <%= sub_activity&.instructor_graded? ? 'instructor-graded' : 'auto-graded' %> <%= (sub_activity&.instructor_graded? || (!sub_activity&.true_false_enhanced? && show_auto_graded_questions)) ? '' : 'hidden_helper' %>" >
+      <% sub_activity.questions.each do |question| %>
+        <% if sub_activity.true_false_enhanced? %>
+          <%=
+            render(
+              'instructor/grading_sets/true_false_enhanced_grading',
+              question: question,
+              results: @presenter.results,
+              response_id: @presenter.question_response_id(question),
+              feedback_item: @presenter.feedback[@presenter.question_response_id(question)],
+              recording_path: view_manager.recording_path(question),
+              is_new_recording: view_manager.new_recording?(question),
+              params: params,
+              display_score_controls: true
+            )
+          %>
+        <% elsif sub_activity.instructor_graded? %>
+          <% editor_index += 1 %>
+          <%=
+            render(
+              '/instructor/grading_sets/question_to_grade',
+              editor_index: editor_index,
+              view_manager: view_manager.presenter.question_to_grade_view_manager(question),
+              content_object: sub_activity
+            )
+          %>
+        <% else %>
+          <div class="c-question-block">
+            <div class="sbs_answer_container  ui-helper-clearfix" id="<%= "answer_container_#{view_manager.current_response_id(question)}" %>">
+
+            <div class="grid">
+              <div class="col-9  u-mar-top-12">
+                <ol class="multi_type_question">
+                  <% partial_name = if view_manager.table_activity_question?(question)
+                                      "table_#{question.type}"
+                                    else
+                                      question.partial_name
+                                    end %>
+                  <%=
+                    format_question(
+                      "#{partial_name}/review",
+                      question,
+                      true,
+                      view_manager.results(question.label),
+                      nil,
+                      false,
+                      content_object: sub_activity
+                    ) %>
+                </ol>
+
+              </div> <!-- / col-9 -->
+              <div class="col-3  u-mar-top-12">
+
+                <div class="c-grading-sidebar">
+                  <%= render(
+                        '/instructor/grading_sets/score_controls',
+                        view_manager: ScoreControlsViewManager.new(
+                          question,
+                          view_manager.feedback_item(question),
+                          view_manager.results(question.label),
+                          view_manager.current_response_id(question),
+                          params
+                        )
+                      )
+                  %>
+                  <%= render '/instructor/grading_sets/all_instructor_comments',
+                             response_id: view_manager.current_response_id(question),
+                             feedback_item: view_manager.feedback_item(question),
+                             recording_path: view_manager.recording_path(question),
+                             is_new_recording: view_manager.new_recording?(question) %>
+                </div> <!-- /c-grading-sidebar -->
+              </div> <!-- /col-3 -->
+            </div> <!-- /grid -->
+            </div> <!-- /sbs_answer_container -->
+          </div> <!-- /c-question-block -->
+        <% end %>
+      <% end %>
+    </div>
+    <% activity_rank +=1 %>
+  <% end %>
+</div> <!-- /#student_answers -->

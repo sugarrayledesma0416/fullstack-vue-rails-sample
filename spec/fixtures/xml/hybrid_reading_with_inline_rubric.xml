@@ -1,0 +1,26 @@
+<activity activity_type="hybrid_reading" language="es" title="foo">
+  <title>Hybrid Reading title</title>
+  <dl>This is the direction line</dl>
+  <items>
+    <subheading>This is a subheading</subheading>
+    <paragraph>This is a paragraph.</paragraph>
+    <paragraph>To begin, take a look at the scoring rubric.</paragraph>
+    <inline_rubric>
+      <rubric id="1" rubric_revision_id="2">
+        <style>
+          <show_score>true</show_score>
+        </style>
+        <header_row>
+          <header_column id="1">col_header</header_column>
+        </header_row>
+        <criteria>
+          <title>old_criteria_title</title>
+          <performance header_id="1">
+            <description>old_description</description>
+            <score>30</score>
+          </performance>
+        </criteria>
+      </rubric>
+    </inline_rubric>
+  </items>
+</activity>

@@ -1,0 +1,122 @@
+<% assignment_list = @activity && @workset.present? && current_user.student? %>
+
+<% if assignment_list %>
+  <%= render 'activities/workset', workset: @workset, section: current_section, activity: @activity %>
+<% end %>
+
+<div class="ns-activity">
+  <div class="c-activity-header">
+    <% if @activity %>
+      <% if @return_url && (!@is_popup || @question_bank) -%>
+        <div class="ns-music-v1  c-activity-header__return-to  u-mar-rt-16">
+          <%= render 'activities/return_to' %>
+        </div>
+      <% end %>
+
+      <% if @activity.is_owner?(current_user) && @course_policy.can_edit? && !@activity.is_shared_copy? %>
+        <div class="c-activity-header__action  ns-music-v1">
+          <%= feature_icon('music/icons/edit') %>
+          <span class="c-activity-header__action-text" lang="en">
+            <%= link_to "Edit activity", edit_instructor_created_activity_path(:lesson_id => @activity.lesson.id, :toc_entry_id => @activity.toc_location, :program_id => @activity.program.id, :id => @activity, :popup => params['popup']), :class => 'edit-created-activity u-mar-lt-8' %>
+          </span>
+        </div>
+      <% end %>
+
+      <%# Do not show instructor buttons for santillana activities %>
+      <% if !@activity.santillana? && show_instructor_notes_link_for?(current_user, params[:controller]) %>
+        <button class="c-activity-header__action  add-instructor-note  js-add-instructor-note"
+                title="Add instructor note"
+                dialog-title="Add instructor note">
+          <%= feature_icon(get_activity_shell_icon_path('icon-apple'), ['c-activity-header__action-icon']) %>
+          <span class="c-activity-header__action-text" lang="en">Add instructor note</span>
+        </button>
+      <% end %>
+
+      <% if @activity.show_answer_key? && current_user.instructor? %>
+        <div class="c-activity-header__action">
+          <%= feature_icon(get_activity_shell_icon_path('icon-key'), ['c-activity-header__action-icon']) %>
+          <span class="c-activity-header__action-text" lang="en">
+            <%= format_answer_key_mode_link(current_user, controller, @activity, current_section_id, current_program.id, params) %>
+          </span>
+        </div>
+      <% end %>
+
+      <%# Don't show standards button for students, sections with no course or activities that don't have standards %>
+      <% if !current_user.student? && @activity.has_standards? && !current_focus.nil? && !current_focus.course.nil? %>
+        <% content_for(:js_head, javascript_packs_with_chunks_tag('activities/show_header_content/show_mapped_standards/index')) %>
+        <div
+          class="js-show-mapped-standards"
+          data-unit-id="<%= @activity.lesson.unit_id %>"
+          data-activity-id="<%= @activity.id %>"
+          data-instructor-standards-assigning-path="<%= instructor_standards_assigning_path(current_program.id) %>"
+          data-mapped-standards="<%= @activity_presenter.mapped_standards(current_focus.course).to_json %>">
+        </div>
+      <% end %>
+
+      <%# Do not show instructor buttons for santillana activities %>
+      <% if !current_user.student? && @activity.assessment? && !@activity.santillana? %>
+        <button class="c-activity-header__action  js-print-button">
+          <%= feature_icon(get_activity_shell_icon_path('icon-print'), ['c-activity-header__action-icon']) %>
+          <span class="c-activity-header__action-text" lang="en">Print</span>
+        </button>
+      <% end %>
+
+      <% if assignment_list %>
+        <button class="c-activity-header__action  c-action-assignment-list  js-toggle-workset
+                <%= test_class('show-assignments') %>"
+                aria-controls="assignment-workset">
+          <%= feature_icon(get_activity_shell_icon_path('icon-workset'), ['c-activity-header__action-icon']) %>
+          <span class="c-activity-header__action-text" aria-hidden="true">
+            <%= supersite_junior? ? 'Homework' : 'Assignment List' %>
+          </span>
+          <span class="u-screen-reader-only" lang="en">
+            <% if vista_online_learning? %>
+              Show all assigned activities in this strand.
+            <% else %>
+              Show all assigned activities for this due date.
+            <% end %>
+          </span>
+        </button>
+      <% end %>
+
+      <button class="c-activity-header__action  <%= 'c-action-info' if current_user.student? %>  js-toggle-activity-info-modal  <%= 'u-hidden' if @activity.santillana? %>">
+        <span aria-hidden="true">
+        <%= feature_icon(get_activity_shell_icon_path('icon-info'), ['c-activity-header__action-icon']) %>
+        </span>
+        <span class="c-activity-header__action-text" lang="en">Info</span>
+      </button>
+
+      <div class="ns-music-v1">
+        <%= render 'activities/activity_info_modal' %>
+      </div>
+
+      <% if @activity.page_range.present? %>
+        <div class="c-activity-header__action   <%= 'c-action-vtext' if current_user.student? %>">
+          <div class="c-activity-header__action-text">
+            <%= render 'activities/page_number' %>
+          </div>
+        </div>
+      <% end %>
+
+      <%= render 'activities/external_references', activity: @activity %>
+
+      <% if @activity.show_rubric? || @activity.has_external_rubric? %>
+        <%= render(
+              'maestro_activity_engine/activities/partials/rubric_link',
+              rubric: @activity.rubric
+            ) %>
+      <% end %>
+    <% end %>
+    <% unless ssjr_student? %>
+      <div class="ns-music-v3 c-activity-header__content-error-wrapper  js-content-request-mode-wrapper">
+        <sl-tooltip content="Report a content error" placement="bottom-end">
+          <sl-icon-button
+            name="annotation-alert"
+            library="untitled-ui"
+            class="c-activity-header__content-error  js-content-request-mode"></sl-icon-button>
+        </sl-tooltip>
+      </div>
+    <% end %>      
+    <hr class="c-activity-header__rule">
+  </div>
+</div>

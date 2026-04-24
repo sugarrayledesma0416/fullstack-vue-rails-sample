@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" class="<%= ' ns-supersites-jr  ' if ssjr_student? %>  <%= yield :html_classes %>">
+
+<head>
+  <%= render('partials/google_tag_manager') %>
+  <script>
+    const VISTA_ONLINE_LEARNING = <%= !!vista_online_learning? %>;
+  </script>
+  <%= render 'layouts/common_header', layout_version: 'v1', no_app_shell: @no_app_shell %>
+  <%= stylesheet_link_tag("music/vendor/jquery-ui/jquery-ui") %>
+</head>
+
+<body class="ns-music-v1  ns-responsive  has-no-page-border
+             <%= yield :body_classes %>
+             <%= yield :theme_classes %>
+             <%= 'ns-supersites-jr' if ssjr_student? %>">
+  <% unless @no_app_shell %>
+    <div class="ns-masthead  <%= yield :masthead_classes %> <%= yield :theme_classes %>">
+      <%= render 'app_shell/masthead',
+                 section_header: @section_header,
+                 course: @course,
+                 section: @section,
+                 flash: flash
+      %>
+    </div>
+  <% end %>
+
+  <div class="c-page-container  js-page-container">
+    <div class="l-container-fluid  u-pad-top-32  u-pad-bot-64">
+
+      <%= render('layouts/music_v1/page_title_block') %>
+      <main aria-labelledby="a11y-page-title">
+        <%= yield %>
+
+      </main>
+    </div>
+  </div>
+
+  <% unless @no_app_shell || @no_footer%>
+    <%= render 'layouts/music_v1/footer' %>
+  <% end %>
+  <%= render 'layouts/inactivity_timeout' %>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<% content_for(:body_classes, "standard_layout") %>
+
+<div style="display: table;">
+  <%= render(
+      'partials/form_errors',
+      header_message: nil,
+      object: @help_entry
+    ) %>
+
+  <%= form_for @help_entry do |form| -%>
+    <div>
+      <%= form.label(:page) %>
+      <%= form.text_field(:page, :size => 60) %>
+    </div>
+
+    <div>
+      <%= form.label(:url, 'URL') %>
+      <%= form.text_field(:url, :size => 100) %>
+    </div>
+
+    <div class="inline">
+      <br />
+      <%= form.label(:published, 'Published?') %>
+      <%= form.check_box(:published) %>
+    </div>
+
+    <%= form.submit submit_label, :class => 'red-button', :style => 'float: right;' %>
+
+    <div id="additional_links">
+      <%= link_to('Cancel', help_entries_path) %>
+    </div>
+
+    <div class="clear"></div>
+  <% end -%>
+</div>

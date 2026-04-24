@@ -1,0 +1,6 @@
+<% content_for(:navigation, render(:partial => 'app_shell/navbar_section/main', :locals => { :section => @section })) %>
+
+<div class="u-txt-ctr  u-txt-24  u-mar-top-64  u-mar-bot-64">
+  You need to be actively enrolled in a course in order to have a dashboard.<br />
+  <%= link_to "Enroll in a Course", ua_host_url(:enroll_in_a_course) %>
+</div>

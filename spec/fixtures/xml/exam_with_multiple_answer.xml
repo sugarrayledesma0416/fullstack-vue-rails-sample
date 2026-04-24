@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<activity activity_type="exam" assessment_type="exam" title="title text" language="es">
+  <dl>Master dl</dl>
+  <items>
+    <style>
+      <item_numbers>show</item_numbers>
+    </style>
+    <activity activity_type="multiple_choice" title="">
+      <dl/>
+      <items>
+        <style>
+          <item_numbers>show</item_numbers>
+        </style>
+        <reference type="exam">
+          <header>multiple-choice dl header text</header>
+          <body>multiple-choice dl body text</body>
+        </reference>
+        <item>
+          <prompt>prompt_for_question_1</prompt>
+          <choices>
+            <distractor>wrong answer</distractor>
+            <answer>right answer</answer>
+          </choices>
+        </item>
+      </items>
+    </activity>
+    <activity activity_type="multiple_answer" title="">
+      <dl />
+      <items>
+        <reference type="exam">
+          <header>multiple-answer dl header text</header>
+          <body>multiple-answer dl body text</body>
+        </reference>
+        <style>
+          <item_numbers>show</item_numbers>
+        </style>
+        <item>
+          <prompt>What is 2 plus 2?</prompt>
+          <answer>2 squared</answer>
+          <distractor>3 plus 2</distractor>
+          <answer>2 times 2</answer>
+          <distractor>5</distractor>
+        </item>
+      </items>
+    </activity>
+  </items>
+</activity>

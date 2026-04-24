@@ -1,0 +1,1 @@
+import '~/src/views/gradebook/enrollments/edit_collection/main.js';

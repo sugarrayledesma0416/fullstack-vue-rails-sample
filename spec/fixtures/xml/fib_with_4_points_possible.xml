@@ -1,0 +1,21 @@
+<activity activity_type="fill_in_the_blanks" language="es" title="activity title" points_per_response="4">
+  <dl>Instructions</dl>
+  <items>
+    <style>
+      <wol_size>words_standard</wol_size>
+      <item_numbers>show</item_numbers>
+    </style>
+    <item>
+      <prompt>Question1 <wol/></prompt>
+      <answers>
+        <answer>Answer1</answer>
+      </answers>
+    </item>
+    <item>
+      <prompt>Question2 <wol/></prompt>
+      <answers>
+        <answer>Answer2</answer>
+      </answers>
+    </item>
+  </items>
+</activity>

@@ -1,0 +1,29 @@
+<!-- vanillify vhlModal jQuery plugin ? -->
+<%= render layout: 'modal', locals: { js_class: 'create-section-modal' } do %>
+  <div class="c-modal__body">
+    <h3 class="c-heading--md">Create Section</h3>
+
+    <% # Dropdown to select count. May be rendered server-side and bound on DOMContentLoaded. %>
+    <% # On change, compile template with new count and replace existing HTML in scrollable element. %>
+    <% # Default selection is 1 and modal, on being shown, should display form for one section. %>
+    <% # When modal is hidden, count should reset to 1. %>
+    <div class= "u-allow-scroll u-sp">
+      <div class="c-form-item-group">
+        <div class="c-form-item">
+          <label class="c-form-item__label" for="section_count">Section count</label>
+          <%= select_tag('section_count',
+                         options_for_select((1..10).map { |section_count| [section_count, section_count] }),
+                         { id: 'section_count',
+                         class: 'c-dropdown--button  c-select  fc-section-count' }) %>
+        </div><!--end section count form-item -->
+      </div><!--end section count form-group -->
+      <div class="js-form-component--section-subform-collection" data-path="create_section"> </div>
+    </div>
+    <div class="c-panel__footer">
+      <div class="c-button-group  u-pad-8  u-txt-rt">
+        <button type="button" class="c-button  js-modal-close">Cancel</button>
+        <button type="button" class="c-button  c-button--primary  fc-submit-button  js-store-selected-course-id">Create</button>
+      </div>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,632 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<activity activity_type="study_plan_practice_test" title="Prueba de práctica" assessment_type="practice" language="es">
+<!--Enter the proper code in quotes after language attribute: es - Spanish, fr - French, it - Italian, de - German.-->
+  <!--Type a MASTER DL for the entire diagnostic here.-->
+  <dl>Check your understanding of the vocabulary and grammar topics in this lesson. After you submit, you will have the opportunity to do extra practice activities for the vocabulary and all grammar topics.</dl>
+  <items>
+    <style>
+    <item_numbers>show</item_numbers>
+    </style>
+
+
+
+  <diagnostic_concepts>
+    <diagnostic_concept ref="18">
+      <title>current events and media vocabulary</title>
+      <external_references>
+        <external_reference>
+          <title>Vocabulary list: Las actualidades</title>
+          <activity id="79365"/>
+        </external_reference>
+      </external_references>
+      <supplemental_activities>
+        <external_reference>
+          <title>Completar</title>
+          <activity id="90526"/>
+        </external_reference>
+      </supplemental_activities>
+      <vocabulary_link_label>Vocabulary</vocabulary_link_label>
+    </diagnostic_concept>
+
+
+
+    <diagnostic_concept ref="18.1">
+      <title><b>si</b> clauses</title>
+      <external_references>
+        <external_reference>
+          <title>Estructura 18.1</title>
+          <activity id="79812"/>
+        </external_reference>
+      </external_references>
+      <supplemental_activities>
+        <external_reference>
+          <title>Emparejar </title>
+          <activity id="90528"/>
+        </external_reference>
+      </supplemental_activities>
+    </diagnostic_concept>
+
+
+    <diagnostic_concept ref="18.2">
+      <title>summary of the uses of the subjunctive</title>
+      <external_references>
+        <external_reference>
+          <title>Estructura 18.2</title>
+          <activity id="79824"/>
+        </external_reference>
+      </external_references>
+      <supplemental_activities>
+        <external_reference>
+          <title>Escoger</title>
+          <activity id="90527"/>
+        </external_reference>
+      </supplemental_activities>
+    </diagnostic_concept>
+
+
+
+  </diagnostic_concepts>
+
+
+<activity activity_type="drop_down_same" title="{title activity}" language="">
+  <dl></dl>
+  <items>
+    <style>
+      <item_numbers>show</item_numbers>
+    </style>
+
+<reference type="diagnostic">
+  <header>Las actualidades</header>
+  <body>Match the definitions with the words.</body>
+</reference>
+
+    <choices>
+      <choice ref="a">choque</choice>
+    <choice ref="b">guerra</choice>
+      <choice ref="c">desempleo</choice>
+      <choice ref="d">huelga</choice>
+      <choice ref="e">violencia</choice>
+    </choices>
+
+
+    <item>
+      <prompt><wol answer_ref="c" concept="18"/>  faltar puestos de trabajo para una población</prompt>
+    </item>
+
+    <item>
+      <prompt><wol answer_ref="a" concept="18"/>  cuando dos objetos se encuentran con violencia </prompt>
+    </item>
+
+    <item>
+      <prompt><wol answer_ref="d" concept="18"/>  tiempo en que los empleados no trabajan para defender sus derechos </prompt>
+    </item>
+
+    <item>
+      <prompt><wol answer_ref="b" concept="18"/>  confrontación entre países por medio de armas </prompt>
+    </item>
+
+    <item>
+      <prompt><wol answer_ref="e" concept="18"/>  acto de luchar contra alguien </prompt>
+    </item>
+
+
+    </items>
+</activity>
+
+
+<activity activity_type="multiple_choice" title="{title of multiple choice activity}" language="">
+
+  <dl></dl>
+  <items>
+
+    <style>
+        <item_numbers>show</item_numbers>
+    </style>
+
+<reference type="diagnostic">
+  <header>Política</header>
+  <body>Select the best word to complete each sentence.</body>
+</reference>
+
+
+    <item>
+      <prompt>Se espera que el candidato reduzca los ____.</prompt>
+      <choices concept="18">
+      <answer>impuestos</answer>
+        <distractor>terremotos</distractor>
+        <distractor>acontecimientos</distractor>
+      </choices>
+    </item>
+
+    <item>
+      <prompt>El día de las ____ los ciudadanos salen a votar.</prompt>
+      <choices concept="18">
+        <distractor>inundaciones</distractor>
+        <distractor>desigualdades</distractor>
+        <answer>elecciones</answer>
+      </choices>
+    </item>
+
+    <item>
+      <prompt>En una democracia, votar debe ser un ____.</prompt>
+      <choices concept="18">
+        <distractor>crimen</distractor>
+        <answer>deber</answer>
+        <distractor>soldado</distractor>
+      </choices>
+    </item>
+
+    <item>
+      <prompt>Los noticieros emitieron el ____ del presidente sobre la paz.</prompt>
+      <choices concept="18">
+        <distractor>incendio</distractor>
+        <distractor>racismo</distractor>
+        <answer>discurso</answer>
+      </choices>
+    </item>
+
+    <item>
+      <prompt>Los ciudadanos deben luchar por sus ____.</prompt>
+      <choices concept="18">
+      <answer>derechos</answer>
+        <distractor>noticias</distractor>
+        <distractor>desastres</distractor>
+      </choices>
+    </item>
+
+
+
+  </items>
+</activity>
+
+
+
+<activity activity_type="drop_down_same" title="{title activity}" language="">
+  <dl></dl>
+  <items>
+    <style>
+      <item_numbers>show</item_numbers>
+    </style>
+
+<reference type="diagnostic">
+  <header>Emparejar</header>
+  <body>Match the descriptions with the words.</body>
+</reference>
+
+    <choices>
+      <choice ref="a">informe</choice>
+      <choice ref="b">ejército</choice>
+      <choice ref="c">incendios</choice>
+      <choice ref="d">discriminación</choice>
+      <choice ref="e">medios de comunicación</choice>
+    </choices>
+
+
+    <item>
+      <prompt><wol answer_ref="e" concept="18"/>  Prensa, radio, televisión e Internet son ejemplos de ellos. </prompt>
+    </item>
+
+    <item>
+      <prompt><wol answer_ref="b" concept="18"/>  Es el grupo de soldados que protege a los ciudadanos y a una nación. </prompt>
+    </item>
+
+    <item>
+      <prompt><wol answer_ref="d" concept="18"/>  Cuando las oportunidades no se ofrecen a todos con igualdad. </prompt>
+    </item>
+
+    <item>
+      <prompt><wol answer_ref="c" concept="18"/>  Los bomberos los combaten. </prompt>
+    </item>
+
+    <item>
+      <prompt><wol answer_ref="a" concept="18"/>  Es el reporte de un periodista sobre un acontecimiento. </prompt>
+    </item>
+
+
+    </items>
+</activity>
+
+
+<activity activity_type="fill_in_the_blanks" title="{title of FIB activity}" language="">
+    <dl></dl>
+    <items>
+        <style>
+            <wol_size>words_standard</wol_size>
+            <item_numbers>show</item_numbers>
+            <ruleset punctuation="false" capitalization="false" accents="false"/>
+        </style>
+
+<reference type="diagnostic">
+  <header>Los medios</header>
+  <body>Complete the sentences with words from the list.</body>
+</reference>
+
+<reference type="wordbank">
+<body sorted="yes">
+acontecimiento
+artículo
+locutor
+prensa
+reportaje
+</body>
+</reference>
+
+        <item>
+            <prompt>El <wol ref="1"/> de la revista hablaba del sexismo.</prompt>
+            <answers ref="1" concept="18">
+                <answer>artículo</answer>
+            </answers>
+        </item>
+
+        <item>
+            <prompt>Oímos en la radio un <wol ref="1"/> sobre el racismo.</prompt>
+            <answers ref="1" concept="18">
+                <answer>reportaje</answer>
+            </answers>
+        </item>
+
+        <item>
+            <prompt>El <wol ref="1"/> de radio está anunciando las noticias.</prompt>
+            <answers ref="1" concept="18">
+                <answer>locutor</answer>
+            </answers>
+        </item>
+
+        <item>
+            <prompt>Los candidatos se preocuparon por lo que publicó la <wol ref="1"/>.</prompt>
+            <answers ref="1" concept="18">
+                <answer>prensa</answer>
+            </answers>
+        </item>
+
+        <item>
+            <prompt>El <wol ref="1"/> del día fue el terremoto en Chile.</prompt>
+            <answers ref="1" concept="18">
+                <answer>acontecimiento</answer>
+            </answers>
+        </item>
+
+
+    </items>
+</activity>
+
+
+<activity activity_type="drop_down_same" title="{title activity}" language="">
+  <dl></dl>
+  <items>
+    <style>
+      <item_numbers>show</item_numbers>
+    </style>
+
+<reference type="diagnostic">
+  <header>Oraciones</header>
+  <body>Match the phrases to form logical sentences.</body>
+</reference>
+
+    <choices>
+      <choice ref="a">dañará casas y edificios.</choice>
+      <choice ref="b">mi familia se iría para otro país.</choice>
+      <choice ref="c">no habrían perdido el avión.</choice>
+      <choice ref="d">habría disfrutado del sol en la playa.</choice>
+      <choice ref="e">siempre leíamos los artículos sobre política.</choice>
+    </choices>
+
+
+    <item>
+      <prompt>Si una guerra empezara,  <wol answer_ref="b" concept="18.1"/></prompt>
+    </item>
+
+    <item>
+      <prompt>Si Carmen no se hubiera enfermado en el viaje,  <wol answer_ref="d" concept="18.1"/></prompt>
+    </item>
+
+    <item>
+      <prompt>Si nosotros comprábamos el diario,  <wol answer_ref="e" concept="18.1"/></prompt>
+    </item>
+
+    <item>
+      <prompt>Si el tornado cambia de dirección,  <wol answer_ref="a" concept="18.1"/></prompt>
+    </item>
+
+    <item>
+      <prompt>Si Nicolás y Pablo se hubieran apurado a salir del hotel,  <wol answer_ref="c" concept="18.1"/></prompt>
+    </item>
+
+
+    </items>
+</activity>
+
+
+
+<activity activity_type="multiple_choice" title="{title of multiple choice activity}" language="">
+
+  <dl></dl>
+  <items>
+
+    <style>
+        <item_numbers>show</item_numbers>
+    </style>
+
+<reference type="diagnostic">
+  <header>Seleccionar</header>
+  <body>Select the correct verb form to complete each sentence.</body>
+</reference>
+
+
+    <item>
+      <prompt>Si los ciudadanos ____ bien, el gobierno no se habría vuelto una dictadura.</prompt>
+      <choices concept="18.1">
+        <distractor>elegirían</distractor>
+        <distractor>han elegido</distractor>
+        <answer>hubieran elegido</answer>
+      </choices>
+    </item>
+
+    <item>
+      <prompt>Si Ana Sofía ____ el cambio climático, explicaría los desastres naturales. </prompt>
+      <choices concept="18.1">
+        <distractor>habría estudiado</distractor>
+        <answer>estudiara</answer>
+        <distractor>hubiera estudiado</distractor>
+      </choices>
+    </item>
+
+    <item>
+      <prompt>Si ustedes ____ descansar, vayan de vacaciones.</prompt>
+      <choices concept="18.1">
+        <distractor>hubieran querido</distractor>
+        <answer>quieren</answer>
+        <distractor>han querido</distractor>
+      </choices>
+    </item>
+
+    <item>
+      <prompt>Si Isabel y María ____ con Fernando, él las habría encontrado en el concierto.</prompt>
+      <choices concept="18.1">
+      <answer>hubieran chateado</answer>
+        <distractor>chatearan</distractor>
+        <distractor>habrían chateado</distractor>
+      </choices>
+    </item>
+
+    <item>
+      <prompt>Si los humanos ____ en su salud, ni fumarían ni consumirían alcohol.</prompt>
+      <choices concept="18.1">
+        <distractor>piensan</distractor>
+        <distractor>han pensado</distractor>
+        <answer>pensaran</answer>
+      </choices>
+    </item>
+
+
+
+  </items>
+</activity>
+
+
+<activity activity_type="fill_in_the_blanks" title="{title of FIB activity}" language="">
+    <dl></dl>
+    <items>
+        <style>
+            <wol_size>words_standard</wol_size>
+            <item_numbers>show</item_numbers>
+            <ruleset punctuation="false" capitalization="false" accents="false"/>
+        </style>
+
+<reference type="diagnostic">
+  <header>Completar</header>
+  <body>Complete the sentences with verbs from the list.</body>
+</reference>
+
+<reference type="wordbank">
+<body sorted="yes">
+deseas
+disfrutaría
+hubieran aprendido
+redujeran
+terminaban
+</body>
+</reference>
+
+        <item>
+            <prompt>Si se <wol ref="1"/> los choques en la calles, conducir sería más seguro.</prompt>
+            <answers ref="1"  concept="18.1">
+                <answer>redujeran</answer>
+            </answers>
+        </item>
+
+        <item>
+            <prompt>Te habría sorprendido si ellos no <wol ref="1"/> a hablar español en cuatro años. </prompt>
+            <answers ref="1"  concept="18.1">
+                <answer>hubieran aprendido</answer>
+            </answers>
+        </item>
+
+        <item>
+            <prompt>Si <wol ref="1"/> entrar al ejército primero, no podrás ir a la universidad. </prompt>
+            <answers ref="1"  concept="18.1">
+                <answer>deseas</answer>
+            </answers>
+        </item>
+
+        <item>
+            <prompt>Mis hijos jugaban videojuegos si <wol ref="1"/> las tareas. </prompt>
+            <answers ref="1"  concept="18.1">
+                <answer>terminaban</answer>
+            </answers>
+        </item>
+
+        <item>
+            <prompt>Si mi padre se jubilara a tiempo, <wol ref="1"/> más de su vejez. </prompt>
+            <answers ref="1"  concept="18.1">
+                <answer>disfrutaría</answer>
+            </answers>
+        </item>
+
+
+    </items>
+</activity>
+
+
+<activity activity_type="fill_in_the_blanks" title="{title of FIB activity}" language="">
+    <dl></dl>
+    <items>
+        <style>
+            <wol_size>words_standard</wol_size>
+            <item_numbers>show</item_numbers>
+            <ruleset punctuation="false" capitalization="false" accents="false"/>
+        </style>
+
+<reference type="diagnostic">
+  <header>Si...</header>
+  <body>Fill in the blanks with the correct verb forms.</body>
+</reference>
+
+
+
+        <item>
+            <prompt>Si nosotros no <wol ref="1"/> (comunicarse) con el representante, la noticia se sabrá en los medios. </prompt>
+            <answers ref="1" concept="18.1">
+                <answer>nos comunicamos</answer>
+            </answers>
+        </item>
+
+        <item>
+            <prompt>Si <wol ref="1"/> (ocurrir) un terremoto, la ciudad se quedaría sin luz. </prompt>
+            <answers ref="1" concept="18.1">
+                <answer>ocurriera</answer>
+            </answers>
+        </item>
+
+        <item>
+            <prompt>Si el candidato <wol ref="1"/> (hablar) más con los ciudadanos, habría sido presidente. </prompt>
+            <answers ref="1" concept="18.1">
+                <answer>hubiera hablado</answer>
+            </answers>
+        </item>
+
+        <item>
+            <prompt>Si los locutores <wol ref="1"/> (transmitir) desde la calle, siempre hablaban con los técnicos en la estación. </prompt>
+            <answers ref="1" concept="18.1">
+                <answer>transmitían</answer>
+            </answers>
+        </item>
+
+        <item>
+            <prompt>Si tú <wol ref="1"/> (oír) que va a haber un tornado, ve al sótano.</prompt>
+            <answers ref="1" concept="18.1">
+                <answer>oyes</answer>
+            </answers>
+        </item>
+
+
+    </items>
+</activity>
+
+
+<activity activity_type="drop_down_same" title="{title activity}" language="">
+  <dl></dl>
+  <items>
+    <style>
+      <item_numbers>show</item_numbers>
+    </style>
+
+<reference type="diagnostic">
+  <header>Preguntas y respuestas</header>
+  <body>Match the questions with the answers.</body>
+</reference>
+
+    <choices>
+      <choice ref="a">Se alegró de que el terremoto no dañara su casa.</choice>
+      <choice ref="b">Les molesta que los puestos no sean seguros.</choice>
+      <choice ref="c">Tiene miedo de que ocurra un choque.</choice>
+      <choice ref="d">Ruegan que el gobierno envíe ropa y comida</choice>
+      <choice ref="e">Aconseja que se contrate el mismo número de empleados y de empleadas.</choice>
+
+    </choices>
+
+
+    <item>
+      <prompt>¿Qué teme Enrique cuando se sube a una moto?  <wol answer_ref="c"  concept="18.2"/></prompt>
+    </item>
+
+    <item>
+      <prompt>¿Qué recomienda Andrea para luchar contra el sexismo?  <wol answer_ref="e"  concept="18.2"/></prompt>
+    </item>
+
+    <item>
+      <prompt>¿De qué se alegró José Luis?  <wol answer_ref="a"  concept="18.2"/></prompt>
+    </item>
+
+    <item>
+      <prompt>¿Qué piden las familias después de la inundación?  <wol answer_ref="d"  concept="18.2"/></prompt>
+    </item>
+
+    <item>
+      <prompt>¿Por qué entraron a huelga los empleados?  <wol answer_ref="b"  concept="18.2"/></prompt>
+    </item>
+
+
+    </items>
+</activity>
+
+
+<activity activity_type="fill_in_the_blanks" title="{title of FIB activity}" language="">
+    <dl></dl>
+    <items>
+        <style>
+            <wol_size>words_standard</wol_size>
+            <item_numbers>show</item_numbers>
+            <ruleset punctuation="false" capitalization="false" accents="false"/>
+        </style>
+
+<reference type="diagnostic">
+  <header>Subjuntivo</header>
+  <body>Fill in the blanks with the correct present or past subjunctive verb forms. </body>
+</reference>
+
+
+
+        <item>
+            <prompt>Elena esperaba que Sebastián <wol ref="1"/> (durar) otro año en el noticiero. </prompt>
+            <answers ref="1" concept="18.2">
+                <answer>durara</answer>
+            </answers>
+        </item>
+
+        <item>
+            <prompt>La policía busca a alguien que <wol ref="1"/> (informar) sobre el choque. </prompt>
+            <answers ref="1" concept="18.2">
+                <answer>informe</answer>
+            </answers>
+        </item>
+
+        <item>
+            <prompt>Los gobiernos van a invertir dinero hasta que <wol ref="1"/> (haber) una cura para el SIDA. </prompt>
+            <answers ref="1" concept="18.2">
+                <answer>haya</answer>
+            </answers>
+        </item>
+
+        <item>
+            <prompt>Valeria no quería salir a menos que yo la <wol ref="1"/> (invitar) al cine. </prompt>
+            <answers ref="1" concept="18.2">
+                <answer>invitara</answer>
+            </answers>
+        </item>
+
+        <item>
+            <prompt>El público aplaude para que el candidato <wol ref="1"/> (empezar) su discurso. </prompt>
+            <answers ref="1" concept="18.2">
+                <answer>empiece</answer>
+            </answers>
+        </item>
+
+
+    </items>
+</activity>
+
+
+
+  </items>
+</activity>

@@ -1,0 +1,151 @@
+.c-accent-bar-textbox-wrapper {
+   display: block;
+   width: 100%;
+}
+
+.header_container{
+  margin:10px 0px 0px 0px;
+}
+
+.show_check {
+    background: url("../images/toc-check.png") no-repeat scroll 0 0 #FFFFFF;
+}
+
+.resources_table td{
+  vertical-align: top;
+}
+
+#browse_by_component li, #browse_by_components li {
+  padding-bottom:7px;
+}
+
+#browse_resources_header{
+  font-weight:normal;
+  font-size: 15px;
+}
+
+.browse_by_header{
+  color: #565656;
+  font-weight:bold;
+  margin:15px 0px 0px 0px;
+  font-size:12px;
+}
+
+.resource_header {
+  float:left;
+  font-size: 15px;
+  font-weight: normal;
+  height: 24px;
+  margin: 0px;
+}
+
+.resources_clear {
+  display: inline-block;
+  float: left;
+  font-size: 15px;
+  font-weight: normal;
+  margin-left: 5px;
+}
+
+.reset_link {
+  font-size: 13px;
+}
+
+.resource_tools {
+  position: relative;
+}
+
+#resource_message {
+  background: #FFF;
+  border: 1px solid #CCC;
+  font-size: 12px;
+  line-height: 14px;
+  padding: 5px;
+  position: absolute;
+  right: 85px;
+  top: -12px;
+  width: 200px;
+}
+
+.resource_options {
+  display: inline-block;
+  float: right;
+  margin-right: 15px;
+  position: relative;
+  width: 95px;
+}
+
+.standard_layout.resources .set_due_date_link_box {
+  margin-left: 4px;
+  margin-top: -1px;
+}
+
+.standard_layout.resources .set_date_link.image,
+.standard_layout.resources .set_due_date_link.image {
+  background: url('/images/calendar_icon.png') right no-repeat;
+  height: 25px;
+  margin-top: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  text-indent: -999em;
+  width: 35px;
+}
+
+.standard_layout.resources .set_date_link,
+.standard_layout.resources .set_due_date_link {
+  background: transparent;
+  height: auto;
+  padding-right: 0px;
+  width: 90px;
+}
+
+.standard_layout.resources .set_due_date_link.hover {
+  height: 25px;
+  background: url('/images/calendar_icon.png') right no-repeat;
+  margin-top: -5px;
+  padding-top: 8px;
+  padding-right: 35px;
+}
+
+.standard_layout.resources .set_due_date_link.hover:hover {
+  background: url('/images/calendar_icon_hover.png') 94px no-repeat;
+}
+
+.standard_layout.resources a.set_date_link.image:hover,
+.standard_layout.resources a.set_due_date_link.image:hover {
+  background: url('/images/calendar_icon_hover.png') 4px no-repeat;
+}
+
+.standard_layout.resources span.set_due_date_link.image.disable_link_function:hover,
+.standard_layout.resources span.set_due_date_link.image.disable_link_function {
+  background: url('/images/calendar_icon_hover.png') -27px 1px no-repeat;
+}
+
+/* PREFIX THIS WITH .STANDARD_LAYOUT AND MOVE INTO LAYOUT.CSS WHEN PAGE IS REDONE */
+
+#resource_flash_warning{
+  background-color: #fbda3e;
+  border:1px solid #FFF;
+  outline: 1px solid #fbda3e;
+  width: 706px;
+  display: none;
+  color: #565656;
+  position: relative;
+  top: 0px;
+  margin:15px 30px 15px 160px;
+  padding: 5px;
+}
+
+#resource_flash_error {
+  background-color: #B40404;
+  border: 1px solid #FFFFFF;
+  color: #FFFFFF;
+  display: none;
+  margin: 15px 30px 15px 160px;
+  outline: 1px solid #B40404;
+  padding: 5px;
+  position: relative;
+  top: 0;
+  width: 706px;
+}
+

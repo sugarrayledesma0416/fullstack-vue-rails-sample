@@ -1,0 +1,26 @@
+@use 'MusicV3/v3/styles/base' as *;
+
+.ns-music-v3 {
+
+  .c-menu--chat__btn {
+    align-items: center;
+    background-color: transparent;
+    border: rpx(1) solid transparent;
+    color: var(--music-util-white);
+    display: flex;
+    font-family: Inter;
+    font-size: rpx(16);
+    gap: rpx(8);
+    padding: rpx(4) rpx(12);
+    &.is-open {
+      background-color: var(--music-true-gray-800);
+      border: rpx(1) solid var(--music-util-white);
+      border-radius: rpx(9999);
+    }
+    &:hover {
+      background-color: var(--music-true-gray-600);
+      border: rpx(1) solid var(--music-true-gray-600);
+      border-radius: rpx(9999);
+    }
+  }
+}

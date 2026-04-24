@@ -1,0 +1,65 @@
+@import 'music/library/v1/base/main';
+
+.c-error {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 75vh;
+  justify-content: center;
+  text-align: center;
+
+  .c-error-image {
+    content: image-url('server-error.svg');
+    margin-bottom: 3rem;
+
+    &::before {
+      content: image-url('server-error.svg');
+    }
+  }
+
+  .c-heading--xl--txt {
+    letter-spacing: rpx(5);
+  }
+
+  .c-heading--page-title--txt {
+    line-height: 2;
+    margin-bottom: 2rem;
+  }
+}
+
+hr {
+  width: 60%;
+}
+
+@include viewport-max(sm) {
+
+  .c-error {
+    height: auto;
+  }
+
+  .c-heading--xl--txt {
+    font-size: 2rem !important;
+  }
+
+  hr {
+    width: 90%;
+  }
+
+  .c-button-group--sm {
+    flex-direction: column;
+  }
+
+  .c-button--width {
+    width: 100%;
+  }
+}
+
+@include viewport-min(sm) {
+  .c-button-group--sm {
+    width: 60%;
+  }
+
+  .c-button---width {
+    width: 45%;
+  }
+}

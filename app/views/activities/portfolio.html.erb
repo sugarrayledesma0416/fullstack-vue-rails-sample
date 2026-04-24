@@ -1,0 +1,78 @@
+<%= render 'activities/artifact_assets' %>
+<%= render 'activities/include' %>
+<% if @attempt %>
+  <% content_for :activity_status do %>
+    <%= format_footer_score(
+          @score,
+          @results,
+          @activity_presenter.format_rubric_completed_link(points_earned_vs_possible(@score))
+        )
+    %>
+    <%= render 'activities/completion_progress', attempt: @attempt %>
+  <% end %>
+<% end %>
+
+<% if @activity -%>
+  <div id="activity_wrapper" class="c-activity-wrapper">
+    <div id="main_content">
+      <% if @activity.content_object -%>
+        <div class="c-activity-info  c-mobile-tabs-view__reference-content">
+            <%= render  :partial => 'activities/activity_context',
+                :locals => {  :activity => @activity,
+                  :attempt_track => @attempt_track,
+                  :classwork => @classwork,
+                  :attempt => @attempt,
+                  :workset => @workset,
+                  :score => @score,
+                  :instructor_feedback => @instructor_feedback,
+                  :section => current_section} %>
+        </div>
+        <div role="main" id="activity_shell" class="c-activity-content" lang="<%= @activity.language %>">
+          <% if @show_not_enrolled_warning %>
+            <%= render 'activities/not_enrolled_warning' %>
+          <% end %>
+          <div id="activity_body" class="c-activity-body">
+            <%= form_for(:activity, :url => section_activity_path(current_section_id, @activity), :html => { id: 'activity_form',
+                                                                                                            class: 'c-activity-form',
+                                                                                                            method: :post }) do |form| %>
+              <% complete = @attempt.complete? %>
+              <% if @activity.content_object.is_a?(MaestroActivityEngine::ActivityContent::Content) %>
+                <div id="testFrame" class="c-activity-main">
+                  <%  @output_buffer << render(:partial => "maestro_activity_engine/activities/complete/" + @activity.content_object.partial_name,
+                                    :locals => { :content_object => @activity.content_object,
+                                              :activity_id => @activity.id,
+                                              :section => current_section.present? ? current_section : nil,
+                                              :read_only_status => @activity.read_only?,
+                                              :results => @results,
+                                              :attempt => @attempt,
+                                              :attempt_complete => complete,
+                                              :display_score => !@attempt.practice?,
+                                              :classwork => @classwork} ) %>
+                </div>
+                <%= render :partial   => 'maestro_activity_engine/activities/partials/sidebar',
+                          :collection => @activity.content_object.sidebars, :as => :sidebar %>
+                <%=  yield :submit_buttons if @activity.content_object.submittable? %>
+              <% end -%>
+
+              <div class="c-activity-footer  c-mobile-tabs-view__always-visible-content  u-pad-top-32">
+                <% if content_for?(:activity_status) %>
+                  <div class="c-activity-footer__status">
+                    <% if supersite_junior? %>
+                      <div id="status">
+                        <%= yield :activity_status %>
+                      </div>
+                    <% else %>
+                      <div id="status" class="u-mar-0  u-mar-bot-24">
+                        <%= yield :activity_status %>
+                      </div>
+                    <% end %>
+                  </div>
+                <% end %>
+              </div>
+            <% end -%>
+          </div>
+        </div>
+      <% end -%>
+    </div>
+  </div>
+<% end -%>

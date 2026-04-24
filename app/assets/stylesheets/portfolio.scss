@@ -1,0 +1,199 @@
+@import 'music/library/v1/base/main';
+
+html {
+  font-size: 1rem;
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
+.c-page-container {
+  height: 100%;
+}
+
+#column_wrapper {
+  height: 100%;
+}
+
+.ns-solo-video-recording .chat-container-complete-mode {
+  width: 31.25rem;
+  height: 18.75rem;
+  background-color: black;
+}
+
+.c-student-answer-composition {
+  display: none;
+}
+
+.portfolio-composition-response {
+  border: rpx(1) solid $gray-3;
+  padding: rpx(32);
+}
+
+.ns-portfolio-artifact {
+  a[href]:not([href='javascript://']):not([href='javascript:void(0)']):not([href='']) {
+    color: $black;
+    cursor: default;
+    pointer-events: none;
+    text-decoration: none;
+  }
+}
+
+.hide-on-portfolio-artifact {
+  display: none;
+}
+
+.portfolio-response-audio-img,
+.portfolio-audio-reference {
+  background: transparent url('/images/activities/audio_reference_icon.png');
+  height: rpx(63);
+  margin-bottom: rpx(16);
+  margin-top: rpx(16);
+  width: rpx(338);
+}
+
+.portfolio-video-icon {
+  background: transparent url('/images/activities/video_chat_recording_icon.png');
+  height: rpx(209);
+  width: rpx(338);
+}
+
+.portfolio-response-file-icon {
+  background: transparent url('/images/activities/composition_response_file_icon.png');
+  height: rpx(35);
+  width: rpx(27);
+}
+
+.activity_reference_block.group-chat,
+.activity_reference_block.pchat {
+  float: none !important;
+  margin-top: 0;
+}
+
+.activity_reference_block .reference_model {
+  margin-bottom: rpx(16);
+  margin-top: rpx(16);
+  padding: 0;
+}
+
+.activity_reference_block .reference_model_content .media_item .error {
+  display: none;
+}
+
+.activity_reference_block .c-reference-wordbank {
+  border-bottom: 0;
+  padding: 0;
+}
+
+.activity_reference_block .c-reference-wordbank ul {
+  margin-left: 0 !important;
+}
+
+.activity_reference_block .c-reference-wordbank__content {
+  padding-left: 0 !important;
+}
+
+.activity_reference_block .reference_audio {
+  text-align: left;
+}
+
+.ns-video-virtual-chat  .c-start-activity-grid {
+  display: none;
+}
+
+.ns-video-virtual-chat .activity_reference_block {
+  margin-top: rpx(32);
+  max-width: 100%;
+}
+
+.ns-video-virtual-chat .ns-music-v1 .l-container-fluid,
+.ns-video-virtual-chat .ns-music-v1 .l-grid>* {
+  padding: 0;
+}
+
+.c-transcripts .c-disclosure__header {
+  display: none;
+}
+
+.ns-video-virtual-chat .ns-music-v1 .l-grid {
+  margin: 0;
+}
+
+.ns-composition ol.answers,
+.ns-composition ol.answers li {
+  margin: 0;
+  padding: 0;
+}
+
+.ns-composition li.pending {
+  background-image: none;
+}
+
+.ns-composition .composition_upload {
+  display: none;
+}
+
+.portfolio-composition-response>p {
+  margin: 0;
+}
+
+.ns-portfolio-artifact .item_score {
+  display: none;
+}
+
+.ns-portfolio-artifact  [id="testFrame"],
+.ns-portfolio-artifact .c-activity-content {
+  padding-bottom: 0 !important;
+}
+
+.c-activity-context__headline {
+  margin-bottom: rpx(32) !important;
+}
+
+.c-activity-context__title-text {
+  font-size: rpx(20) !important;
+}
+
+.c-activity-context__attempts-info {
+  font-size: rpx(14) !important;
+}
+
+.c-activity-context__directions {
+  border: rpx(1) solid $gray;
+  border-radius: rpx(8);
+  font-size: rpx(16) !important;
+  padding: rpx(16);
+}
+
+.f-reference-text__heading,
+.reference_model h3,
+.reference_model_content,
+.c-reference-wordbank__content,
+.composition_prompt {
+  font-size: rpx(16) !important;
+}
+
+li.composition-response-item {
+  list-style-type: none !important;
+}
+
+.portfolio-response-label {
+  font-size: rpx(16);
+  font-weight: bold;
+}
+
+.c-instructor-notes-container,
+.instructor_feedback,
+.instructor_composition_feedback,
+.student_answer_composition,
+#original_response_container,
+#composition_original_answer,
+#instructor_notes_container,
+#instructor-action-bar,
+.c-speed-control,
+.c-workset,
+.c-activity-footer {
+  display: none;
+}

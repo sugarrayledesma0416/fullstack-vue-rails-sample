@@ -1,0 +1,164 @@
+<%
+  # A number of the meta tags set in activities/include expect @activity
+  # to be assigned, and the virtual chat/video virtual chat code relies on
+  # those meta tags being present. @activity isn't assigned in the controller
+  # actions that render this view. In instructor/created_activities#edit
+  # and #update, # the @created_activity variable is assigned. In
+  # instructor/assessments#new and #create, @assessment is assigned.
+  @activity = @created_activity || @assessment
+%>
+<%= render 'activities/include' %>
+
+<%
+  content_for(:js_head, javascript_include_tag('maestro_activity_engine/instructor_note_audio_player'))
+  content_for(:js_head, javascript_include_tag("maestro_activity_engine/instructor_note_audio_recorder"))
+  content_for(:css_head, stylesheet_link_tag('maestro_activity_engine/recording'))
+  content_for(:css_head, stylesheet_link_tag('custom_assessments/main_temp.css'))
+  content_for(:css_head, stylesheet_link_tag('custom_assessments/icons.css'))
+
+  # needed to support display of virtual chat / video virtual chat
+  content_for(:css_head, stylesheet_link_tag('maestro_activity_engine/virtual_chat'))
+  content_for(:css_head, stylesheet_link_tag('maestro_activity_engine/chat_activity'))
+  content_for(:js_head, javascript_include_tag('maestro_activity_engine/bindable'))
+  unless @virtual_chat_bootstrapped
+    content_for(
+      :js_head,
+      javascript_include_tag('maestro_activity_engine/virtual_chat/bootstrap')
+    )
+    @virtual_chat_bootstrapped = true
+  end
+  unless @video_virtual_chat_bootstrapped
+    content_for(
+      :js_head,
+      javascript_include_tag('maestro_activity_engine/video_virtual_chat/bootstrap')
+    )
+    @video_virtual_chat_bootstrapped = true
+  end
+  content_for(:body_classes, ' vchat-video')
+
+  content_for(:body_classes, '  ns-music-v1  ns-full-width')
+  content_for(:js_head, javascript_packs_with_chunks_tag('instructor/created_activities/assessment_edit'))
+  content_for(:css_head, stylesheet_packs_with_chunks_tag('instructor/created_activities/assessment_edit'))
+%>
+
+<% unless defined? @video_player_js_loaded %>
+  <% content_for(:js_head, javascript_include_tag("maestro_activity_engine/video_player") ) %>
+  <% @video_player_js_loaded = true %>
+<% end %>
+
+<% content_for(:css_head, stylesheet_link_tag('instructor/created_activities/assessment_edit')) %>
+
+<input id="recording_server_host" type="hidden" value="<%= recording_configuration_instance.server_host %>">
+<% recording = Recording.new %>
+<input id="recording_file_prefix" type="hidden" value="<%= recording.generate_file_prefix %>">
+
+<input id="activity_type" type="hidden" value="video" />
+
+<%# Generate asset-fingerprinted icons for use in Vue.js: %>
+<script type="text/x-template" id="music_icon_close">
+  <%= Music::Components.icon(variant: 'close') %>
+</script>
+
+<script type="text/x-template" id="music_icon_add">
+  <%= Music::Components.icon(variant: 'add', size: 'lg') %>
+</script>
+<script type="text/x-template" id="music_icon_arrow-up">
+  <%= Music::Components.icon(variant: 'arrow-up', size: 'lg') %>
+</script>
+<script type="text/x-template" id="music_icon_arrow-down">
+  <%= Music::Components.icon(variant: 'arrow-down', size: 'lg') %>
+</script>
+<script type="text/x-template" id="music_icon_cancel">
+  <%= Music::Components.icon(variant: 'cancel', size: 'lg') %>
+</script>
+<script type="text/x-template" id="music_icon_delete">
+  <%= Music::Components.icon(variant: 'delete', size: 'lg') %>
+</script>
+<script type="text/x-template" id="music_icon_edit">
+  <%= Music::Components.icon(variant: 'edit', size: 'lg') %>
+</script>
+<script type="text/x-template" id="music_icon_ok">
+  <%= Music::Components.icon(variant: 'checkmark', size: 'lg') %>
+</script>
+<script type="text/x-template" id="music_icon_save">
+  <%= Music::Components.icon(variant: 'save', size: 'lg') %>
+</script>
+<script type="text/x-template" id="music_icon_shuffle">
+  <%= Music::Components.icon(variant: 'shuffle', size: 'lg') %>
+</script>
+<script type="text/x-template" id="music_icon_medium_save">
+  <%= Music::Components.icon(variant: 'checkmark', text: 'Save') %>
+</script>
+<script type="text/x-template" id="music_icon_small_close">
+  <%= Music::Components.icon(variant: 'close', size: 'sm') %>
+</script>
+<script type="text/x-template" id="music_icon_audio">
+  <%= feature_icon('music/toc/audio') %>
+</script>
+<script type="text/x-template" id="music_icon_instructor_graded">
+  <%= feature_icon('music/toc/icon_person') %>
+</script>
+<script type="text/x-template" id="music_icon_error">
+  <%= feature_icon('music/icons/flash-banners/icon-error') %>
+</script>
+<script type="text/x-template" id="drag_handle">
+  <%= image_tag('fib_drag_handle.png') %>
+</script>
+
+<div id="activity_wrapper" class="c-activity-wrapper  u-bg-gray-f5">
+  <div id="main_content">
+    <div class="l-container-fluid">
+
+      <div class="l-grid  u-mar-top-24  u-mar-bot-24">
+        <div class="l-col-12  u-bg-gray-f5  u-mar-top_24  u-pad-top-16  u-pad-bot-0  js-sticky-menu-bar-top">
+          <div class="ns-stick-menu">
+            <div class="u-dis-flex  flex-justify-ctr  js-sticky"></div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="js-custom-assessments-app"
+        data-activity-id="<%= created_activity.id %>"
+        data-allows-audio-transcripts="<%= current_program.has_audio_transcripts? %>"
+        data-course-allows-audio-transcripts="<%= current_focus.course&.allow_audio_transcripts? %>"
+        data-content-json="<%= created_activity.content_json %>"
+        data-default-title="<%= "#{created_activity.lesson_name} | #{created_activity.concept_name}" %>"
+        data-direction-line="<%= created_activity.direction_line %>"
+        data-draft="<%= created_activity.draft %>"
+        data-allows-question-banks="<%= current_program.question_banks_enabled? %>"
+        data-lesson-id="<%= created_activity.lesson_id %>"
+        data-lesson-name="<%= created_activity.lesson.name %>"
+        data-media-item-recording-endpoint="<%= Rails.application.config.multimedia.instructor_media_items.recording_endpoint %>"
+        data-media-lookup="<%= created_activity.media_lookup.to_json %>"
+        data-program-language="<%= {
+          code: current_program.language_code,
+          name: current_program.language_name
+        }.to_json %>"
+        data-recording-cdn-prefix="<%= Rails.application.config.multimedia.recording_v2.cdn_prefix %>"
+        data-recording-endpoint="<%= Rails.application.config.multimedia.recording_v2.recording_endpoint %>"
+        data-return-url="<%= instructor_assessments_path(current_program) %>"
+        data-start-unit="<%= created_activity.lesson.unit.rank %>"
+        data-strand-id="<%= created_activity.toc_location %>"
+        data-strand-name="<%= created_activity.strand.title %>"
+        data-student-title="<%= (
+                                  created_activity.student_title.presence ||
+                                  "#{created_activity.lesson_name} | #{created_activity.concept_name}"
+                                ) %>"
+        data-submit-url="<%= form_url %>"
+        data-title="<%= created_activity.title %>"
+        data-config-name="m3_assessment_builder"
+        ></div>
+
+    </div> <!-- l-container-fluid -->
+  </div> <!-- main_content -->
+</div> <!-- activity_wrapper -->
+
+<% if accent_bar_enabled? %>
+  <div class="u-mar-0  js-accent-bar-container--activity">
+    <%= render(
+          'music/partials/accent_bar_component',
+          language: current_program.language_code
+        ) %>
+  </div>
+  <%= render 'instructor/created_activities/accent_bar_chars', current_program: current_program %>
+<% end %>

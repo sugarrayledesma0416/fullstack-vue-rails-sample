@@ -1,0 +1,34 @@
+<div 
+  class="c-modal  c-modal--md  js-modal  js-delete-dialog  js-section-del-modal
+         js-<%= section.class.to_s.downcase %>-<%= section.id %>-modal  u-hidden">
+  <div role="dialog" aria-label="Delete course" class="c-modal__box  js-modal-box  js-modal-a11y">
+    <button class="c-modal__close-button  c-no-button  js-x-close  js-modal-close">
+      <span class="c-icon  c-icon--md  c-icon--close"></span>
+      <span class="u-screen-reader-only">Close dialog</span>
+    </button>
+    <div role="document" class="js-modal-content">
+      <div class="c-panel  c-panel--padded  u-mar-0">
+        <div class="c-modal__body">
+          <h3 class="c-dialog-heading">Remove Section and Course</h3>
+          <p>
+          <strong>This action will remove the selected section and course from the <%= program.title %> dashboard.</strong><br/>
+          It will continue to exist in the Roster Assistant and you may still add this section again,<br/>
+          but the current data may be deleted or lost after the removal process.
+          </p>
+          <p class="u-txt-bold  u-txt-danger">Proceed with removing the selected section and course?</p>
+        </div>
+        <div class="c-panel__footer">
+          <div class="c-button-group  u-mar-0  u-txt-rt">
+            <button 
+              type="button"
+              class="c-button  js-modal-close  js-cancel-button  <%= test_class('cancel-course-deletion') %>">Cancel</button>
+            <button 
+              type="button"
+              class="c-button  c-button--primary  js-accept-button <%= test_class('delete-course') %>">Confirm</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="u-screen-reader-only" tabindex="-1">Dialog end</button>
+  </div>
+</div>

@@ -1,0 +1,310 @@
+<% content_for(:js_head, javascript_include_tag('grading_tasks')) %>
+<% content_for(:css_head, stylesheet_link_tag("program_toc")) %>
+<% content_for(:css_head, stylesheet_link_tag("instructor_tasks")) %>
+<% content_for(:css_head, stylesheet_link_tag("spotcheck.css") ) %>
+<% content_for(:body_classes, "standard_layout grading_tasks spotcheck") %>
+<% content_for(:navigation, render(:partial => 'app_shell/navbar_program/main')) %>
+<div id="main_content">
+  <div class="c-grading-header">
+    <div class="c-grading-tasks__title">
+      <%= format_lesson_strand_label(@activity) -%> | <%= @activity.title -%>
+    </div>
+  </div>
+
+  <div id="spotcheck_form_container">
+    <div id="spotcheck_style_options">
+      <div class="u-float-lt">
+        How would you like to select students?
+        <%= form_tag(
+              instructor_spotcheck_update_style_path(current_program, @activity_id), 
+              class: 'student_select_form', 
+              id: 'spotcheck_style_form',
+              method: :put 
+            ) do -%>
+          <%= radio_button_tag(
+                :spotcheck_style, 
+                'random', 
+                (@spotcheck_style == 'random'), 
+                class: 'spotcheck_style'
+              ) %>
+          <%= label_tag :spotcheck_style_random, 'Random' %>
+          <%= radio_button_tag(
+                :spotcheck_style, 
+                'outliers', 
+                (@spotcheck_style == 'outliers'), 
+                class: 'spotcheck_style' 
+              ) %>
+          <%= label_tag :spotcheck_style_outliers, 'Outliers' %>
+          <%= radio_button_tag(
+                :spotcheck_style, 
+                'manual', 
+                (@spotcheck_style == 'manual' ), 
+                class: 'spotcheck_style'
+              ) %>
+          <%= label_tag :spotcheck_style_manual, 'Manual'%>
+        <% end -%>
+      </div>
+      <div class="u-clearfix"></div>
+    </div> <!-- /#spotcheck_options -->
+  </div> <!-- /#spotcheck__container -->
+
+  <div id="spotcheck_student_list">
+    <div id="random_student_list" 
+         class="student_list"
+         style="display: <%= @spotcheck_style == 'random' ? 'block' : 'none' %>">
+      <div id="num_of_students_selector">
+        <%= form_tag(
+              instructor_spotcheck_update_selected_students_count_path(
+                current_program, @activity_id
+              ), 
+              id: 'spotcheck_random_students_count_select_form',
+              method: :put
+            ) do -%>
+          <span>How many students would you like to randomly spotcheck?</span>
+          <%= select_tag(
+                'select_num_of_random_students',
+                format_student_count_list(
+                  @spotcheck_list.random_student_list,
+                  @num_random_students_count
+                )
+              ) %>
+        <% end -%>
+      </div>
+      <%= form_tag(
+            instructor_grading_sets_path(current_program), 
+            id: 'random_students_spotcheck_start',
+            method: :post 
+          ) do -%>
+        <%= hidden_field_tag(:activity_id, @activity.id) %>
+        <%= hidden_field_tag(:task_type, @task_type) %>
+        <%= submit_tag(
+              'Spotcheck', 
+              class: 'red-button',
+              id: "spot_check_submit_button", 
+              onclick: "return VHL.GradingTasks.confirm_select('random');"
+            ) %>
+        <br />
+        <div class="wrap_table">
+         <table id="random_student_table" class="spotcheck_student_list">
+            <tr>
+              <th class="names"><span class="sortable">Name</span></th>
+              <th><span class="sortable">Submission Length</span></th>
+              <th><span class="sortable">Time Spent<br/>(min:sec)</span></th>
+              <th><span class="sortable">No. Spotchecks</span></th>
+              <th><span class="sortable">Cumulative Grade</span></th>
+            </tr>
+            <% count = 0 %>
+            <% @spotcheck_list.random_student_list.each do |student| %>
+              <% 
+                row_classes = "students"
+                selected = false
+                if (@num_random_students_count == 'All' || 
+                    count < @num_random_students_count.to_i)
+                  row_classes += " selected"
+                  selected = true
+                  count = count + 1
+                end
+              %>
+              <tr id="student_row_<%= student.id %>" class='students <%= cycle('odd', 'even') %>'>
+                <td class="names">
+                  <span class="inline">
+                    <%= check_box_tag(
+                          'selected_students[]', 
+                          student.id, 
+                          selected, 
+                          id: "check_students_#{student.id}",
+                          class: 'random_student_selector',
+                          style: 'display: none;'
+                        ) %>
+                  <%= label_tag(
+                        "check_students_#{student.id}", 
+                        student.last_name_first, 
+                        style: 'font-weight: normal;'
+                      ) %>
+                  </span>
+                <td>
+                  <%= number_with_delimiter(
+                    @spotcheck_list.submission_length_for(student)
+                  ) %>
+                </td>
+                <td>
+                  <%= format_time_spent(
+                    @spotcheck_list.time_spent_for(student)
+                  ) %>
+                </td>
+                <td><%= student.spotcheck_count %></td>
+                <td><%= format_mark(@spotcheck_list.grade_for(student)) %></td>
+              </tr>
+            <% end  %>
+          </table>
+        </div>
+      <% end -%>
+    </div>
+    <div id="outliers_student_list" 
+         class="student_list"
+         style="display: <%= @spotcheck_style == 'outliers' ? 'block' : 'none' %>">
+      <div id="num_of_students_selector">
+        <%= form_tag(
+              instructor_spotcheck_update_selected_students_count_path(
+                current_program, @activity_id
+              ), 
+              id: 'spotcheck_outliers_count_select_form',
+              method: :put
+            ) do -%>
+          <span>How many outliers would you like to spotcheck?</span>
+          <%= select_tag(
+                'select_num_of_outliers', 
+                format_student_count_list(
+                  @spotcheck_list.outlier_student_list, @num_outliers_count
+                )
+              ) %>
+        <% end -%>
+      </div>
+      <%= form_tag(
+            instructor_grading_sets_path(current_program), 
+            id: 'outliers_spotcheck_start',
+            method: :post 
+          ) do -%>
+        <%= hidden_field_tag(:activity_id, @activity.id) %>
+        <%= hidden_field_tag(:task_type, @task_type) %>
+        <%= submit_tag(
+              'Spotcheck', 
+              class: 'red-button',
+              id: 'spot_check_submit_button', 
+              onclick: "return VHL.GradingTasks.confirm_select('outliers');"
+            ) %>
+        <br />
+        <div class="wrap_table">
+          <table id="outliers_student_table" class="spotcheck_student_list">
+            <tr>
+              <th class="names"><span class="sortable">Name</span></th>
+              <th><span class="sortable">Submission Length</span></th>
+              <th><span class="sortable">Time Spent<br/>(min:sec)</span></th>
+              <th><span class="sortable">No. Spotchecks</span></th>
+              <th><span class="sortable">Cumulative Grade</span></th>
+            </tr>
+            <% count = 0 %>
+            <% @spotcheck_list.outlier_student_list.each do |student| %>
+              <% 
+                row_classes = "students"
+                selected = false
+                if @num_outliers_count == 'All' || 
+                   count < @num_outliers_count.to_i
+                  row_classes += " selected"
+                  selected = true
+                  count = count + 1
+                end
+              %>
+              <tr id="student_row_<%= student.id %>" class='students <%= cycle('odd', 'even') %>'>
+                <td class="names">
+                  <span class="inline">
+                    <%= check_box_tag(
+                          'selected_students[]', 
+                          student.id, 
+                          selected, 
+                          id: "check_students_#{student.id}",
+                          class: 'outliers_student_selector',
+                          style: 'display: none;'
+                        ) %>
+                  <%= label_tag(
+                        "check_students_#{student.id}", 
+                        student.last_name_first, 
+                        style: 'font-weight: normal;'
+                      ) %>
+                  </span>
+                </td>
+                <td>
+                  <%= number_with_delimiter(
+                    @spotcheck_list.submission_length_for(student)
+                  ) %>
+                </td>
+                <td>
+                  <%= format_time_spent(
+                    @spotcheck_list.time_spent_for(student)
+                  ) %>
+                </td>
+                <td><%= student.spotcheck_count %></td>
+                <td><%= format_mark(@spotcheck_list.grade_for(student)) %></td>
+              </tr>
+            <% end  %>
+          </table>
+        </div>
+      <% end -%>
+    </div>
+    <div id="manual_student_list" 
+      class="student_list"
+      style="display: <%= @spotcheck_style == 'manual' ? 'block' : 'none' %>"
+    >
+      <div id="num_of_students_selector"></div>
+      <%= form_tag(
+            instructor_grading_sets_path(current_program), 
+            id: 'manual_students_spotcheck_start',
+            method: :post
+          ) do -%>
+        <%= hidden_field_tag(:activity_id, @activity.id) %>
+        <%= hidden_field_tag(:task_type, @task_type) %>
+        <%= submit_tag(
+              'Spotcheck', 
+              class: 'red-button', 
+              id: 'spot_check_submit_button', 
+              onclick: "return VHL.GradingTasks.confirm_select('manual');"
+            ) %>
+        <br />
+        <div class="wrap_table">
+          <table id="manual_student_table" class="spotcheck_student_list">
+            <tr>
+              <th class="names">
+                <span class="inline">
+                  <%= check_box_tag(
+                        'check_all', 
+                        'on', 
+                        false, 
+                        class: 'u-dis-inline', 
+                        'data-js-check' => 'all_students'
+                      ) %>
+                <%= label_tag('check_all', 'Select All') %>
+                </span>
+              </th>
+              <th><span class="sortable">Submission Length</span></th>
+              <th><span class="sortable">Time Spent<br/>(min:sec)</span></th>
+              <th><span class="sortable">No. Spotchecks</span></th>
+              <th><span class="sortable">Cumulative Grade</span></th>
+            </tr>
+            <% @spotcheck_list.manual_student_list.each do |student| %>
+              <tr id="student_row_<%= student.id %>" class='students <%= cycle('odd', 'even') %>'>
+                <td class="names">
+                  <span class="inline">
+                    <%= check_box_tag(
+                          'selected_students[]', 
+                          student.id, 
+                          false, 
+                          id: "check_students_#{student.id}",
+                          class: 'manual_student_selector  u-dis-inline' 
+                        ) %>
+                  <%= label_tag(
+                        "check_students_#{student.id}", 
+                        student.last_name_first, 
+                        style: 'font-weight: normal;'
+                      ) %>
+                  </span>
+                </td>
+                <td>
+                  <%= number_with_delimiter(
+                    @spotcheck_list.submission_length_for(student)
+                  ) %>
+                </td>
+                <td>
+                  <%= format_time_spent(
+                    @spotcheck_list.time_spent_for(student)
+                  ) %>
+                </td>
+                <td><%= student.spotcheck_count %></td>
+                <td><%= format_mark(@spotcheck_list.grade_for(student)) %></td>
+              </tr>
+            <% end  %>
+          </table>
+        </div>
+      <% end -%>
+    </div>
+  </div>
+</div> <!-- /#main_content -->

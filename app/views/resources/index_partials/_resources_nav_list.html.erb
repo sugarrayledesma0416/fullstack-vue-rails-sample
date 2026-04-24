@@ -1,0 +1,57 @@
+<div id="refine_elements" class="js-refine-elements  u-dis-lg-block" role="navigation" aria-label="Filter Resources">
+  <div id="browse_by_units" class="c-resources-fieldset  u-pad-bot-16">
+    <label for="browse_by_unit">Filter <%= presenter.units_dropdown_label %></label>
+    <%= select_tag 'browse_by_unit',
+      options_for_select(units_filter_options(units)), {
+        aria:{ 
+          label: 'select lesson'
+        },
+        class: 'c-select  js-select-lesson  u-width-full  u-mar-top-8  ' + test_class('browse-by-unit')
+      }
+    %>
+  </div>
+  <div id="browse_by_component" class="c-resources-fieldset">
+    <label id="filter-resources-by-component">Filter by Component</label>
+    <ul class="c-vtabset  u-mar-bot-32  u-mar-top-8  u-pad-lt-0">
+      <li class="c-vtabset__tab  <%= 'is-selected' if presenter.all_components_selected? %>">
+        <%= link_to(
+              resource_index_link(
+                lesson_id: selected_lesson_id,
+                program_id: current_program,
+                start_unit_id: selected_unit_id(units)
+              ),
+              class: 'c-button  c-button--strand  js-component-filter-link',
+              role: 'button',
+              aria: { describedby: 'filter-resources-by-component' }
+            ) do %>
+          <div class="u-dis-flex  flex-justify-between">All Components</div>
+        <% end %>
+      </li>
+      <% components.each do |component| %>
+        <% if presenter.component_exists?(component) %>
+          <li class="c-vtabset__tab  <%= 'is-selected' if presenter.component_selected?(component) %>">
+          <%= link_to(
+                resource_index_link(
+                  component_id: component.id,
+                  lesson_id: selected_lesson_id,
+                  program_id: current_program,
+                  start_unit_id: selected_unit_id(units)
+                ),
+                class: "c-button  c-button--strand  js-component-filter-link  js-component-filter-#{component.id}",
+                role: 'button',
+                aria: { describedby: 'filter-resources-by-component' }
+              ) do %>
+              <div class="u-dis-flex  flex-justify-between">
+                <span><%= component.name %></span>
+                <span class="u-pad-lt-16"><%= presenter.resource_count(component) %></span>
+              </div>
+            <% end %>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+  <div class="u-txt-ctr  u-dis-lg-none  u-pad-bot-24">
+    <button type="button" class="c-button  u-bord-1  u-bord-gray-d  js-resource-nav-disclosure-close"> Close </button>
+  </div>
+</div><!-- /#refine_elements -->

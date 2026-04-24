@@ -1,0 +1,18 @@
+<% if vista_online_learning? 
+   theme = 'dark' 
+  else
+    theme = 'light'
+  end %>
+
+<div class="c-menu__item--program__wrapper">
+  <span class="c-menu__item--program__icon">
+    <%= inline_svg_tag("program_navigation/menu_item_icons/#{theme}/#{item_icon}_icon.svg") %>
+  </span>
+  <div>
+    <span class="c-menu__item--program__title">
+      <%= item_name %>
+    </span>
+    <p class="c-menu__item--program__description"><%= item_description %></p>
+  </div>
+</div>
+

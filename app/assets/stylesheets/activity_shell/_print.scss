@@ -1,0 +1,201 @@
+@import 'music/library/v1/base/main';
+/* ================================================================== *
+
+    Print Styles
+
+* =================================================================== */
+
+@media print {
+
+  @page {
+    margin: rpx(20) 0;
+    size: A4;
+  }
+
+  body {
+    color-adjust: exact;
+  }
+
+  header,
+  footer,
+  .c-activity-footer,
+  .instructions-frame,
+  .instructor-action-bar,
+  .activity_icons,
+  .instructor_graded_icon,
+  .sidebar-wrapper,
+  .c-activity-header,
+  .ns-recording-v2,
+  .c-activity-context__notification,
+  .composition-response-choices-header,
+  .composition_upload,
+  .composition-separator-block {
+    display: none;
+  }
+
+  #vhlarccontainer,
+  #activityFooterWrap,
+  .c-activity-footer-wrap,
+  #footer {
+    display: none;
+  }
+
+  #activity_directions {
+    input[type="button"] {
+      display: none;
+    }
+  }
+
+  .activity-header {
+    .c-ruleset-frame {
+      display: none;
+    }
+  }
+
+  #page_container {
+    box-shadow: none;
+  }
+
+  .reference_model {
+    &.reference_diagnostic {
+      background: $white;
+      border: rpx(0);
+    }
+  }
+
+  .answer_positioning {
+    .drop-down-try {
+      border: 0;
+      border-bottom: $border-width-1 nth($border-styles, 1) $gray-c;
+      color: $white !important; /*Contrast overide it*/
+    }
+
+    textarea {
+      opacity: 0;
+      padding: rpx(40);
+    }
+
+    input[type="text"] {
+      border: 0;
+      border-bottom: $border-width-1 nth($border-styles, 1) $gray-c;
+      display: inline-block;
+      color: $transparent;
+    }
+
+  }
+
+  .f-reference-wordbank__print {
+    display: block;
+  }
+
+  .assessment-section-directive {
+    .reference_model.reference_modelo {
+      background: unset;
+    }
+  }
+
+  .assessment-section-directive[partial-name="multiple_choice"] {
+    li {
+      list-style: none;
+
+      fieldset {
+        border: 0;
+      }
+    }
+  }
+
+  .assessment-section-directive[partial-name="fill_in_the_blanks"] {
+    div{
+      &.questions {
+        all: unset;
+
+        input {
+          width: rpx(800);
+
+          &.input-print__full-line {
+            margin-bottom: rpx(40);
+          }
+
+          $input-size: 5,10,20,40,55;
+          @each $size in $input-size {
+            &[size="#{$size}" ] {
+              width: rpx($size * 14);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .assessment-section-directive[partial-name="drop_downs"] {
+    .answersblank {
+      all: unset;
+    }
+  }
+
+  .answers[data-question-type="composition"] {
+    .answer_positioning {
+      .composition_upload {
+        display: none;
+      }
+
+      label {
+        textarea {
+          display: block !important;
+          width: auto;
+          height: rpx(300);
+        }
+        .cke {
+          display: none;
+        }
+      }
+    }
+  }
+  .player{
+    width: rpx(150);
+    height: rpx(30);
+    border-radius: rpx(30);
+    background-color: $gray-e;
+    background-size: rpx(16) rpx(16);
+    color: $black;
+    display: flex;
+    align-items: center;
+    font-weight: normal;
+
+    &::after {
+      width: 100%;
+      margin: rpx(0) rpx(10);
+      content: 'Listening Activity';
+      text-align: right;
+    }
+
+    audio {
+      display: none;
+    }
+  }
+
+  // Prevent page breaks inside individual questions
+  .assessment-section {
+    li[assessment-question][data-question-guid] {
+      page-break-inside: avoid;
+    }
+  }
+
+  .assessment-section.assessment-section-directive.has-passage-reference {
+    .activity_reference_block {
+      .reference_model {
+        align-items: flex-start;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+      }
+    }
+  }
+
+  .c-footer {
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    background-color: $white;
+  }
+}

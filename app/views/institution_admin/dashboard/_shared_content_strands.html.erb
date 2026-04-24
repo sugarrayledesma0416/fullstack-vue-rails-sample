@@ -1,0 +1,67 @@
+<% presenter.strands(parent, all_lessons).each do |toc_entry| %>
+    <tbody>
+      <% if @content[:view] == 'library' %>
+      <tr class="c-header-row  c-shared-content-strand__row">
+        <% if parent.nil? %>
+          <% if presenter.activities_by_toc_entry(@content[:is_shared], toc_entry).present? %>
+            <td data-page-element="strand">
+              <span class="strand-color" style="background-color: <%= toc_entry.background_color %>;"></span>
+              <%= toc_entry.title.html_safe %>
+            </td>
+            <td class="created-by-header">Created By</td>
+            <td class="approved-by-header">Approved By</td>
+            <td class="type-header">Activity Type</td>
+            <td class="type-header u-txt-ctr">Allow Copy</td>
+            <td class="actions u-txt-ctr">Remove</td>
+          <% end %>
+          <%= render partial: 'shared_content_strands', locals: { parent: toc_entry, all_lessons: false, presenter: presenter }%>
+        <% else %>
+          <% if presenter.activities_by_toc_entry(@content[:is_shared], toc_entry).present? %>
+            <td class="substrand" data-page-element="substrand">
+              <span class="substrand-color"></span>
+              <%= parent.title.html_safe %> <br/>
+              <%= toc_entry.title.html_safe %>
+            </td>
+            <td class="created-by-header">Created By</td>
+            <td class="approved-by-header">Approved By</td>
+            <td class="type-header">Activity Type</td>
+            <td class="type-header u-txt-ctr">Allow Copy</td>
+            <td class="actions u-txt-ctr">Remove</td>
+          <% end %>
+        <% end %>
+      </tr>
+      <% elsif @content[:view] == 'queue' %>
+      <tr class="c-header-row  c-shared-content-strand__row">
+        <% if parent.nil? %>
+          <% if presenter.activities_by_toc_entry(@content[:is_shared], toc_entry).present? %>
+            <td class="approve  u-pad-lt-48  u-txt-bold  u-txt-ctr">Approve?</td>
+            <td data-page-element="strand">
+              <span class="strand-color" style="background-color: <%= toc_entry.background_color %>;"></span>
+              <%= toc_entry.descendant_activities.first.lesson.display_name %> |
+              <span class="u-txt-reg"><%= toc_entry.title.html_safe %></span>
+            </td>
+            <td class="created-by-header">Created By</td>
+            <td class="type-header">Activity Type</td>
+            <td class="actions">Created</td>
+          <% end %>
+          <%= render partial: 'shared_content_strands', locals: { parent: toc_entry, all_lessons: false, presenter: presenter }%>
+        <% else %>
+          <% if presenter.activities_by_toc_entry(@content[:is_shared], toc_entry).present? %>
+            <td class="approve  u-pad-lt-48  u-txt-bold  u-txt-ctr">Approve?</td>
+            <td class="substrand" data-page-element="substrand">
+              <span class="substrand-color"></span>
+              <%= toc_entry.descendant_activities.first.lesson.display_name %> |
+              <span class="u-txt-reg"><%= parent.title.html_safe %></span> <br/>
+              <span class="u-txt-reg"><%= toc_entry.title.html_safe %></span>
+            </td>
+            <td class="created-by-header">Created By</td>
+            <td class="type-header">Activity Type</td>
+            <td class="actions">Created</td>
+          <% end %>
+        <% end %>
+      </tr>
+      <% end %>
+    </tbody>
+    <%= render partial: 'shared_activities', locals: { activities_data: presenter.activities_by_toc_entry(@content[:is_shared], toc_entry),
+                                                       presenter: presenter } %>
+<% end %>

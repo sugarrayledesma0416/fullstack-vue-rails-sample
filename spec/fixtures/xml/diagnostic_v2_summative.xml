@@ -1,0 +1,544 @@
+<activity activity_type="diagnostic_v2" title="Prueba de práctica" assessment_type="practice" language="es">
+  <dl/>
+  <items>
+    <style>
+      <item_numbers>show</item_numbers>
+      <threshold>70</threshold>
+    </style>
+    <formative_activity id="67816" title="Recapitulación de vocabulario"/>
+    <diagnostic_concepts>
+      <diagnostic_concept ref="5"  type="vocabulary">
+        <!--Insert the title of the concept; supports HTML.-->
+        <title>Travel vocabulary</title>
+        <vocabulary_link_label>Study the vocabulary</vocabulary_link_label>
+        <supplemental_activities>
+          <external_reference>
+            <title>Practice</title>
+            <activity id="90466"/>
+          </external_reference>
+        </supplemental_activities>
+      </diagnostic_concept>
+      <diagnostic_concept ref="5.1" type="grammar">
+        <title><b>Estar</b> with conditions and emotions</title>
+        <external_references>
+          <external_reference>
+            <title>Review the grammar topic</title>
+            <activity id="67974"/>
+          </external_reference>
+        </external_references>
+        <supplemental_activities>
+          <external_reference>
+            <title>Practice</title>
+            <activity id="90467"/>
+          </external_reference>
+        </supplemental_activities>
+      </diagnostic_concept>
+      <diagnostic_concept ref="5.2" type="grammar">
+        <title>The present progressive</title>
+        <external_references>
+          <external_reference>
+            <title>Review the grammar topic</title>
+            <activity id="67975"/>
+          </external_reference>
+        </external_references>
+        <supplemental_activities>
+          <external_reference>
+            <title>Practice</title>
+            <activity id="90468"/>
+          </external_reference>
+        </supplemental_activities>
+      </diagnostic_concept>
+      <diagnostic_concept ref="5.3" type="grammar">
+        <title><b>Ser</b> and <b>estar</b></title>
+        <external_references>
+          <external_reference>
+            <title>Review the grammar topic</title>
+            <activity id="67976"/>
+          </external_reference>
+        </external_references>
+        <supplemental_activities>
+          <external_reference>
+            <title>Practice</title>
+            <activity id="90469"/>
+          </external_reference>
+        </supplemental_activities>
+      </diagnostic_concept>
+      <diagnostic_concept ref="5.4" type="grammar">
+        <title>Direct object nouns and pronouns</title>
+        <external_references>
+          <external_reference>
+            <title>Review the grammar topic</title>
+            <activity id="67977"/>
+          </external_reference>
+        </external_references>
+        <supplemental_activities>
+          <external_reference>
+            <title>Practice</title>
+            <activity id="90470"/>
+          </external_reference>
+        </supplemental_activities>
+      </diagnostic_concept>
+    </diagnostic_concepts>
+    <activity activity_type="fill_in_the_blanks" title="{title of FIB activity}" language="">
+      <dl/>
+      <items>
+        <style>
+          <wol_size>words_standard</wol_size>
+          <item_numbers>show</item_numbers>
+          <ruleset punctuation="false" capitalization="false" accents="false"/>
+        </style>
+        <reference type="diagnostic">
+          <header>Las vacaciones</header>
+          <body lang="en">Fill in the blanks with the appropriate words or phrases.</body>
+        </reference>
+        <reference type="wordbank">
+          <body sorted="yes">
+            agente de viajes
+            estación de autobuses
+            hacer un viaje
+            paisaje
+            pescar
+          </body>
+        </reference>
+        <item>
+          <prompt>La <wol ref="1"/> tiene el piso sucio.</prompt>
+          <answers ref="1" concept="5">
+            <answer>estación de autobuses</answer>
+          </answers>
+        </item>
+        <item>
+          <prompt>Los pasajeros esperan sacar fotos del <wol ref="1"/> del país.</prompt>
+          <answers ref="1" concept="5">
+            <answer>paisaje</answer>
+          </answers>
+        </item>
+        <item>
+          <prompt>Yo quiero <wol ref="1"/> en el mar.</prompt>
+          <answers ref="1" concept="5">
+            <answer>pescar</answer>
+          </answers>
+        </item>
+        <item>
+          <prompt>En verano vamos a <wol ref="1"/> a Bolivia.</prompt>
+          <answers ref="1" concept="5">
+            <answer>hacer un viaje</answer>
+          </answers>
+        </item>
+        <item>
+          <prompt>La <wol ref="1"/> confirma la reservación.</prompt>
+          <answers ref="1" concept="5">
+            <answer>agente de viajes</answer>
+          </answers>
+        </item>
+      </items>
+    </activity>
+    <activity activity_type="drop_down" title="{title of multiple choice activity}" language="">
+      <dl/>
+      <items>
+        <style>
+          <item_numbers>show</item_numbers>
+        </style>
+        <reference type="diagnostic">
+          <header>En el hotel</header>
+          <body lang="en">Select the best word or phrase to complete each sentence.</body>
+        </reference>
+        <item>
+          <prompt>Queremos una <wol ref="1"/> doble.</prompt>
+          <choices concept="5">
+            <distractor>fecha</distractor>
+            <distractor>llegada</distractor>
+            <answer>habitación</answer>
+          </choices>
+        </item>
+        <item>
+          <prompt>El ascensor está en la <wol ref="1"/>.</prompt>
+          <choices concept="5">
+            <answer>planta baja</answer>
+            <distractor>primavera</distractor>
+            <distractor>playa</distractor>
+          </choices>
+        </item>
+        <item>
+          <prompt>Los huéspedes tienen mucho <wol ref="1"/>.</prompt>
+          <choices concept="5">
+            <distractor>pasaporte</distractor>
+            <distractor>invierno</distractor>
+            <answer>equipaje</answer>
+          </choices>
+        </item>
+        <item>
+          <prompt>Mi maleta está en la <wol ref="1"/>.</prompt>
+          <choices concept="5">
+            <answer>cama</answer>
+            <distractor>pasaje</distractor>
+            <distractor>novena</distractor>
+          </choices>
+        </item>
+        <item>
+          <prompt>¿Dónde está mi <wol ref="1"/>?</prompt>
+          <choices concept="5">
+            <distractor>quinto</distractor>
+            <answer>llave</answer>
+            <distractor>nublado</distractor>
+          </choices>
+        </item>
+      </items>
+    </activity>
+    <activity activity_type="drop_down_same" title="{title activity}" language="">
+      <dl/>
+      <items>
+        <style>
+          <item_numbers>show</item_numbers>
+        </style>
+        <reference type="diagnostic">
+          <header>Emparejar</header>
+          <body lang="en">Match the adjectives with their sentences.</body>
+        </reference>
+        <choices>
+          <choice ref="a">lista</choice>
+          <choice ref="b">enojada</choice>
+          <choice ref="c">nervioso</choice>
+          <choice ref="d">cerrada</choice>
+          <choice ref="e">ocupado</choice>
+        </choices>
+        <item>
+          <prompt>Es invierno y la ventana está <wol answer_ref="d" concept="5.1"/>.</prompt>
+        </item>
+        <item>
+          <prompt>Cuando Marcos habla en público, está <wol answer_ref="c" concept="5.1"/>.</prompt>
+        </item>
+        <item>
+          <prompt>Camila estudia todo el tiempo. Está <wol answer_ref="a" concept="5.1"/> para el examen.</prompt>
+        </item>
+        <item>
+          <prompt>Juan no quiere llevar a Julia al cine. Ella está <wol answer_ref="b" concept="5.1"/>.</prompt>
+        </item>
+        <item>
+          <prompt>El hotel tiene cien huéspedes. Está <wol answer_ref="e" concept="5.1"/>.</prompt>
+        </item>
+      </items>
+    </activity>
+    <activity activity_type="drop_down" title="{title of multiple choice activity}" language="">
+      <dl/>
+      <items>
+        <style>
+          <item_numbers>show</item_numbers>
+        </style>
+        <reference type="diagnostic">
+          <header>Seleccionar</header>
+          <body lang="en">Select the best phrase to complete each sentence.</body>
+        </reference>
+        <item>
+          <prompt>Natalia <wol ref="1"/> porque no puede trabajar.</prompt>
+          <choices concept="5.1">
+            <distractor>estás limpia</distractor>
+            <answer>está preocupada</answer>
+            <distractor>estoy ocupada</distractor>
+          </choices>
+        </item>
+        <item>
+          <prompt>Cuando los empleados llegan a casa, <wol ref="1"/>.</prompt>
+          <choices concept="5.1">
+            <answer>están cansados</answer>
+            <distractor>estamos enamorados</distractor>
+            <distractor>estás listo</distractor>
+          </choices>
+        </item>
+        <item>
+          <prompt>Nosotras terminamos la tarea y <wol ref="1"/>.</prompt>
+          <choices concept="5.1">
+            <distractor>estás alegre</distractor>
+            <distractor>están sucias</distractor>
+            <answer>estamos contentas</answer>
+          </choices>
+        </item>
+        <item>
+          <prompt>Tú <wol ref="1"/> de tu novia Silvia, ¿verdad?</prompt>
+          <choices concept="5.1">
+            <distractor>está confundido</distractor>
+            <distractor>estoy desordenado</distractor>
+            <answer>estás enamorado</answer>
+          </choices>
+        </item>
+        <item>
+          <prompt>Yo pierdo mi diario y <wol ref="1"/>.</prompt>
+          <choices concept="5.1">
+            <distractor>está de buen amor</distractor>
+            <distractor>estás feliz</distractor>
+            <answer>estoy triste</answer>
+          </choices>
+        </item>
+      </items>
+    </activity>
+    <activity activity_type="drop_down" title="{title of multiple choice activity}" language="">
+      <dl/>
+      <items>
+        <style>
+          <item_numbers>show</item_numbers>
+        </style>
+        <reference type="diagnostic">
+          <header>Escoger</header>
+          <body lang="en">Select the correct verb forms.</body>
+        </reference>
+        <item>
+          <prompt>Yo <wol ref="1"/> del aeropuerto.</prompt>
+          <choices concept="5.2">
+            <distractor>estás saliendo</distractor>
+            <distractor>estamos saliendo</distractor>
+            <answer>estoy saliendo</answer>
+          </choices>
+        </item>
+        <item>
+          <prompt>Rodrigo y yo <wol ref="1"/> a las cartas.</prompt>
+          <choices concept="5.2">
+            <distractor>estás jugando</distractor>
+            <answer>estamos jugando</answer>
+            <distractor>está jugando</distractor>
+          </choices>
+        </item>
+        <item>
+          <prompt>Ana Paula <wol ref="1"/> los pasajes.</prompt>
+          <choices concept="5.2">
+            <distractor>estamos consiguiendo</distractor>
+            <answer>está consiguiendo</answer>
+            <distractor>estás consiguiendo</distractor>
+          </choices>
+        </item>
+        <item>
+          <prompt>Tú <wol ref="1"/> mentiras.</prompt>
+          <choices concept="5.2">
+            <distractor>estoy diciendo</distractor>
+            <answer>estás diciendo</answer>
+            <distractor>están diciendo</distractor>
+          </choices>
+        </item>
+        <item>
+          <prompt>Los huéspedes <wol ref="1"/> en sus habitaciones.</prompt>
+          <choices concept="5.2">
+            <answer>están durmiendo</answer>
+            <distractor>estás durmiendo</distractor>
+            <distractor>está durmiendo</distractor>
+          </choices>
+        </item>
+      </items>
+    </activity>
+    <activity activity_type="fill_in_the_blanks" title="{title of FIB activity}" language="">
+      <dl/>
+      <items>
+        <style>
+          <wol_size>words_standard</wol_size>
+          <item_numbers>show</item_numbers>
+          <ruleset punctuation="false" capitalization="false" accents="false"/>
+        </style>
+        <reference type="diagnostic">
+          <header>Completar</header>
+          <body lang="en">Fill in the blanks with the correct verb forms in the present progressive.</body>
+        </reference>
+        <item>
+          <prompt>Miguel Ángel y yo <wol ref="1"/> (leer) el periódico.</prompt>
+          <answers ref="1" concept="5.2">
+            <answer>estamos leyendo</answer>
+          </answers>
+        </item>
+        <item>
+          <prompt>Mónica y Ana <wol ref="1"/> (confirmar) la reservación.</prompt>
+          <answers ref="1" concept="5.2">
+            <answer>están confirmando</answer>
+          </answers>
+        </item>
+        <item>
+          <prompt>Tú <wol ref="1"/> (oír) al agente de viajes.</prompt>
+          <answers ref="1" concept="5.2">
+            <answer>estás oyendo</answer>
+          </answers>
+        </item>
+        <item>
+          <prompt>El aeropuerto <wol ref="1"/> (cerrar).</prompt>
+          <answers ref="1" concept="5.2">
+            <answer>está cerrando</answer>
+          </answers>
+        </item>
+        <item>
+          <prompt>Yo <wol ref="1"/> (escribir) sobre el campo.</prompt>
+          <answers ref="1" concept="5.2">
+            <answer>estoy escribiendo</answer>
+          </answers>
+        </item>
+      </items>
+    </activity>
+    <activity activity_type="drop_down_same" title="{title activity}" language="">
+      <dl/>
+      <items>
+        <style>
+          <item_numbers>show</item_numbers>
+        </style>
+        <reference type="diagnostic">
+          <header>¿Qué verbo?</header>
+          <body lang="en">Select the correct verb to complete each sentence.</body>
+        </reference>
+        <choices>
+          <choice ref="a">es</choice>
+          <choice ref="b">está</choice>
+          <choice ref="c">estamos</choice>
+          <choice ref="d">están</choice>
+          <choice ref="e">somos</choice>
+        </choices>
+        <item>
+          <prompt>Cecilia y yo <wol answer_ref="e" concept="5.3"/> empleados del hotel.</prompt>
+        </item>
+        <item>
+          <prompt>Las puertas y las ventanas <wol answer_ref="d" concept="5.3"/> cerradas.</prompt>
+        </item>
+        <item>
+          <prompt>David <wol answer_ref="b" concept="5.3"/> cómodo en la silla.</prompt>
+        </item>
+        <item>
+          <prompt>La cama <wol answer_ref="a" concept="5.3"/> de metal.</prompt>
+        </item>
+        <item>
+          <prompt>Nosotros <wol answer_ref="c" concept="5.3"/> caminando por la playa.</prompt>
+        </item>
+      </items>
+    </activity>
+    <activity activity_type="fill_in_the_blanks" title="{title of FIB activity}" language="">
+      <dl/>
+      <items>
+        <style>
+          <wol_size>words_standard</wol_size>
+          <item_numbers>show</item_numbers>
+          <ruleset punctuation="false" capitalization="false" accents="false"/>
+        </style>
+        <reference type="diagnostic">
+          <header>¿Ser o estar?</header>
+          <body lang="en">Fill in each blank with the correct form of <b>ser</b> or <b>estar</b> in the present tense. </body>
+        </reference>
+        <item>
+          <prompt>Gabriel, ¿dónde <wol ref="1"/> las tablas de surf?</prompt>
+          <answers ref="1" concept="5.3">
+            <answer>están</answer>
+          </answers>
+        </item>
+        <item>
+          <prompt>Sandra y Carmen <wol ref="1"/> de México.</prompt>
+          <answers ref="1" concept="5.3">
+            <answer>son</answer>
+          </answers>
+        </item>
+        <item>
+          <prompt>Yo <wol ref="1"/> bien, gracias.</prompt>
+          <answers ref="1" concept="5.3">
+            <answer>estoy</answer>
+          </answers>
+        </item>
+        <item>
+          <prompt>Luis y yo <wol ref="1"/> muy alegres hoy.</prompt>
+          <answers ref="1" concept="5.3">
+            <answer>estamos</answer>
+          </answers>
+        </item>
+        <item>
+          <prompt>El miércoles <wol ref="1"/> el primer día de primavera.</prompt>
+          <answers ref="1" concept="5.3">
+            <answer>es</answer>
+          </answers>
+        </item>
+      </items>
+    </activity>
+    <activity activity_type="drop_down" title="{title of multiple choice activity}" language="">
+      <dl/>
+      <items>
+        <style>
+          <item_numbers>show</item_numbers>
+        </style>
+        <reference type="diagnostic">
+          <header>Elegir</header>
+          <body lang="en">Select the correct direct object pronouns.</body>
+        </reference>
+        <item>
+          <prompt>Mis padres están tomando la habitación doble. Ellos <wol ref="1"/> están tomando.</prompt>
+          <choices concept="5.4">
+            <distractor>lo</distractor>
+            <answer>la</answer>
+            <distractor>las</distractor>
+          </choices>
+        </item>
+        <item>
+          <prompt>Yo hago las maletas para el viaje. Yo <wol ref="1"/> hago.</prompt>
+          <choices concept="5.4">
+            <distractor>los</distractor>
+            <distractor>la</distractor>
+            <answer>las</answer>
+          </choices>
+        </item>
+        <item>
+          <prompt>El equipo pierde el partido. El equipo <wol ref="1"/> pierde.</prompt>
+          <choices concept="5.4">
+            <distractor>los</distractor>
+            <answer>lo</answer>
+            <distractor>las</distractor>
+          </choices>
+        </item>
+        <item>
+          <prompt>Daniela visita monumentos. Ella <wol ref="1"/> visita.</prompt>
+          <choices concept="5.4">
+            <distractor>las</distractor>
+            <distractor>lo</distractor>
+            <answer>los</answer>
+          </choices>
+        </item>
+        <item>
+          <prompt>Vamos a perder el avión. <wol ref="1"/> vamos a perder.</prompt>
+          <choices concept="5.4">
+            <answer>Lo</answer>
+            <distractor>Los</distractor>
+            <distractor>La</distractor>
+          </choices>
+        </item>
+      </items>
+    </activity>
+    <activity activity_type="fill_in_the_blanks" title="{title of FIB activity}" language="">
+      <dl/>
+      <items>
+        <style>
+          <wol_size>words_standard</wol_size>
+          <item_numbers>show</item_numbers>
+          <ruleset punctuation="false" capitalization="false" accents="false"/>
+        </style>
+        <reference type="diagnostic">
+          <header>Llenar</header>
+          <body lang="en">Fill in the blanks with the correct direct object pronouns.</body>
+        </reference>
+        <item>
+          <prompt>Los viajeros compran los pasajes. Ellos <wol ref="1"/> compran.</prompt>
+          <answers ref="1" concept="5.4">
+            <answer>los</answer>
+          </answers>
+        </item>
+        <item>
+          <prompt>La agente de viajes confirma la reservación. Ella <wol ref="1"/> confirma.</prompt>
+          <answers ref="1" concept="5.4">
+            <answer>la</answer>
+          </answers>
+        </item>
+        <item>
+          <prompt>El empleado tiene las llaves. Él <wol ref="1"/> tiene.</prompt>
+          <answers ref="1" concept="5.4">
+            <answer>las</answer>
+          </answers>
+        </item>
+        <item>
+          <prompt>Yo escribo una carta. Yo <wol ref="1"/> escribo.</prompt>
+          <answers ref="1" concept="5.4">
+            <answer>la</answer>
+          </answers>
+        </item>
+        <item>
+          <prompt>Alejandra pierde el equipaje en el aeropuerto. Ella <wol ref="1"/> pierde.</prompt>
+          <answers ref="1" concept="5.4">
+            <answer>lo</answer>
+          </answers>
+        </item>
+      </items>
+    </activity>
+  </items>
+</activity>

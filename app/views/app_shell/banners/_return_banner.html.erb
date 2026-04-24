@@ -1,0 +1,9 @@
+<% if @fall_back_user %>
+<span class="ns-music-v3">
+  <music-return-action-v3 
+    button-description="Viewing as Student"
+    button-text="Return to Instructor View"
+    url="<%= ua_host_url(:instructor_log_back_in) %>">
+  </music-return-action-v3>
+</span>
+<% end -%>

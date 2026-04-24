@@ -1,0 +1,76 @@
+  @import '~MusicAssets/stylesheets/music/library/v1/base/main';
+
+  .embedded-icon {
+    $default-icon-size: 'md';
+
+    @include o-embedded-icon();
+    @include icon-size-props($default-icon-size);
+
+    @each $key, $val in $icon-sizes {
+      &--#{$key} {
+        @if ($key != $default-icon-size) {
+          @include icon-size-props($key);
+        }
+      }
+    }
+
+    // State colors and fallbacks:
+    --embedded-icon-default-color: var(--ui-neutral-darkest, #{$gray-4});
+    --embedded-icon-navigable-color: var(--ui-link-color, #{$blue});
+    --embedded-icon-hover-color: var(--ui-hover-color, #{$dark-blue});
+    --embedded-icon-active-color: var(--ui-current-color, #{$orange});
+    --embedded-icon-mousedown-color: var(--ui-mousedown-color, #{$black});
+    --embedded-icon-disabled-color: var(--ui-disabled-color, #{$disabled});
+    --embedded-icon-inverted-color: var(--white, #{$white});
+
+    /* Default fill color: */
+    &:deep(svg) { --fill: var(--embedded-icon-default-color) }
+
+    /* Default for icons on a dark background: */
+    &--inverted svg { --fill: var(--embedded-icon-inverted-color) }
+
+    /* Sizes */
+    /* - SVG element: */
+    &:deep(svg) {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .embedded-icon__label {
+    margin-left: rpx(2);
+  }
+
+  /* Non-scoped (global) styles: */
+  // For contextual parent-state styles:
+  $clickable-elements: '[href], button, [type="button"], [type="submit"],\
+  [type="reset"], .c-details__summary, summary';
+
+  #{$clickable-elements} {
+    .embedded-icon:deep(svg) { --fill: var(--embedded-icon-navigable-color) }
+    .embedded-icon--inverted:deep(svg) { --fill: var(--embedded-icon-inverted-color) }
+
+    &:hover,
+    &:focus {
+      .embedded-icon:not(.embedded-icon--inverted):deep(svg) {
+        --fill: var(--embedded-icon-hover-color)
+      }
+    }
+
+    /* Here 'active' means the mouse is down on the interactive element: */
+    &:active .embedded-icon:not(.embedded-icon--inverted):deep(svg) {
+      --fill: var(--embedded-icon-mousedown-color)
+    }
+
+    /* Has 'active', or 'current' status, not pointing-device-related: */
+    &.is-active .embedded-icon:not(.embedded-icon--inverted):deep(svg) {
+      --fill: var(--embedded-icon-active-color)
+    }
+
+    &:disabled,
+    &.is-disabled {
+      .c-embedded-icon:deep(svg) {
+        --fill: var(--embedded-icon-disabled-color)
+      }
+    }
+  }

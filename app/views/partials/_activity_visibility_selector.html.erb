@@ -1,0 +1,18 @@
+<% if current_section.non_zero? %>
+  <div class="ns-music-v1  <%= yield :theme_classes %>">
+    <div class="c-form-item">
+      <select name="visibility_selector"
+              aria-label="Filter Activities"
+              class="c-select  c-select--all-or-assigned  js-visibility-selector"
+              data-user-class="<%= current_user.class %>">
+        <%# Workaround for MobileSafari bug (2 options selected at the same time): %>
+        <optgroup disabled hidden></optgroup>
+
+        <option value="all" class="<%= test_class('visibility-all') %>">All Activities</option>
+        <option value="assigned" class="<%= test_class('visibility-assigned') %>">Assigned Only</option>
+      </select>
+    </div>
+  </div>
+<% end %>
+
+

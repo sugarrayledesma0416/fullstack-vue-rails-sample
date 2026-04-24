@@ -1,0 +1,19 @@
+<ul class="c-vtabset__subset  substrands">
+  <% toc_entry.children.each do |child|
+    substrand_selected = (child.location.to_s == current_topic) %>
+    <li id="toc_topic_<%= child.location %>"
+        class="c-vtabset__subtab  <%= substrand_selected ? 'is-selected' : '' %>  strand_track">
+      <% if child.location  =~ /^\d+$/ -%>
+        <%= link_to child.title.html_safe,
+                    presenter.strand_url(start_unit,
+                                        display_lesson,
+                                        child.location),
+                    {class: 'c-button  c-button--substrand', role: 'button'}
+        %>
+      <% else -%>
+        <span class="toc-entry"><%= child.title.html_safe %></span>
+      <% end -%>
+    </li>
+
+  <% end %>
+</ul>

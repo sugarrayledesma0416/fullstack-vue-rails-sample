@@ -1,0 +1,12 @@
+<% unless defined? @audio_player_js_loaded %>
+  <% content_for(:css_head, stylesheet_link_tag('maestro_activity_engine/MMP/MMP') ) %>
+  <% content_for(:css_head, stylesheet_link_tag('maestro_activity_engine/MMP/vocab_list') ) %>
+  <% content_for(:js_head, javascript_include_tag('maestro_activity_engine/jwplayer') ) %>
+  <% content_for(:js_head, javascript_tag("jwplayer.key = '#{JWPLAYER_KEY}';") ) %>
+  <% content_for(:js_head, javascript_include_tag('maestro_activity_engine/jwplayer.debug') ) %>
+  <% content_for(:js_head, javascript_include_tag('maestro_activity_engine/jquery.jwplayer') ) %>
+  <% content_for(:js_head, javascript_include_tag('maestro_activity_engine/jwplayer.html5') ) %>
+  <% content_for(:js_head, javascript_include_tag('maestro_activity_engine/jquery.vhlvocab') ) %>
+  <% content_for(:js_head, javascript_include_tag('maestro_activity_engine/audio_mmp_initializer') ) %>
+  <% @audio_player_js_loaded = true %>
+<% end %>

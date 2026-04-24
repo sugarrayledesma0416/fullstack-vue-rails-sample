@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<activity activity_type="map" title="Dalle Alpi alla Riviera" language="it">
+  <dl></dl>
+  <items>
+     <map_category>
+     <image id="100560" />
+     <label>Mappa</label>
+    <map>
+      <image id="100714" />
+    </map>
+    </map_category>
+    <map_category>
+      <image id="100561" />
+    <label>Stati</label>
+      <map_note>
+        <head>Valle d'Aosta</head>
+        <body>
+          <b>La regione in cifre</b><br/><br/>
+          <ul>
+            <li>Superficie: <i>3.263 kmq</i></li>
+            <li>Popolazione: <i>125.979</i></li>
+            <li>Città principali: <i>Aosta, Saint-Vincent, Donnas</i></li>
+          </ul><br/>
+          <b>Valdostani celebri</b><br/><br/>
+          <ul>
+            <li>Italo Mus, <i>pittore impressionista (1892–1967)</i></li>
+            <li>Gloriana Pellissier, <i>sci alpinista (ski mountaineer) (1976–)</i></li>
+          </ul>
+        </body>
+      </map_note>
+      <map_note>
+        <head>Piemonte</head>
+        <body>
+          <b>La regione in cifre</b><br/><br/>
+          <ul>
+<li>Superficie: <i>25.400 kmq</i></li>
+<li>Popolazione: <i>4.401.266</i></li>
+<li>Città principali: <i>Torino, Novara, Alessandria</i></li>
+      </ul><br/>
+        <b>Piemontesi celebri</b><br/><br/>
+      <ul>
+<li>Cesare Pavese, <i>scrittore e poeta (1908–1950)</i></li>
+<li>Carla Bruni, <i>cantautrice (singer-songwriter) e modella (1967–)</i></li>
+      </ul>
+        </body>
+      </map_note>
+      <map_note>
+        <head>Liguria</head>
+        <body>
+          <b>La regione in cifre</b><br/><br/>
+          <ul>
+<li>Superficie: <i>5.420 kmq</i></li>
+<li>Popolazione: <i>1.609.822</i></li>
+<li>Città principali: <i>Genova, La Spezia, Savona</i></li>
+      </ul><br/>
+        <b>Liguri celebri</b><br/><br/>
+      <ul>
+<li>Giuseppe Mazzini, <i>patriota, politico e filosofo (1805–1872)</i></li>
+<li>Vanessa Beecroft, <i>artista (1969–)</i></li>
+      </ul>
+        </body>
+      </map_note>
+      <map_note>
+        <head>Lombardia</head>
+        <body>
+          <b>La regione in cifre</b><br/><br/>
+          <ul>
+<li>Superficie: <i>23.863 kmq</i></li>
+<li>Popolazione: <i>9.642.406</i></li>
+<li>Città principali: <i>Milano, Brescia, Monza</i></li>
+      </ul><br/>
+        <b>Lombardi celebri</b><br/><br/>
+      <ul>
+<li>Veronica Gambara, <i>poetessa (1485–1550)</i></li>
+<li>Andrea Pirlo, <i>calciatore (1979–)</i></li>
+      </ul>
+        </body>
+      </map_note>
+    </map_category>
+    <map_category>
+      <label>Incredibile ma vero!</label>
+      <map_note>
+        <image id="100715" />
+        <head>Incredibile ma vero!</head>
+        <body>
+         <br/>Il Vesuvio è un vulcano attivo che si trova a Napoli. L’eruzione nel 79 d.C. ha distrutto completamente le città di Pompei, Ercolano e Stabia. Queste città sono state sepolte (<i>buried</i>) da sei metri di ceneri (<i>ashes</i>) e sono state riscoperte molti anni dopo. L’ultima eruzione è avvenuta (<i>occured</i>) nel 1944 e da allora il vulcano è in fase dormiente (<i>dormant</i>).
+        </body>
+      </map_note>
+    </map_category>
+    <map_category>
+      <label>Appunti culturali</label>
+      <map_note>
+        <image id="100718" />
+        <head>Lo sport</head>
+        <subhead>La Valle d’Aosta in inverno</subhead>
+        <body>
+         La Valle d’Aosta è una meta (<i>destination</i>) sciistica da non perdere! In Valle d’Aosta ci sono quattro delle più alte montagne europee: il Monte Bianco (alto più di 4.800 metri), il Cervino (<i>Matterhorn</i>), il Monte Rosa e il Gran Paradiso. Qui si trova anche Courmayeur, una delle località di montagna più famose in Europa e nel mondo. Uno sport sempre più famoso è lo scialpinismo. Come dice la parola, lo scialpinismo combina le tecniche dello sci e quelle dell’alpinismo, per un’esperienza invernale senza limiti!
+        </body>
+      </map_note>
+      <map_note>
+        <image id="100719" />
+        <head>La gastronomia</head>
+        <subhead>Un olio d’oliva davvero speciale</subhead>
+        <body>
+          L’Italia è uno dei maggiori produttori di olio in Europa e nel mondo, con più di 7,2 quintali (<i>quintals (one hundred kilograms)</i>) di olio d’oliva l’anno. Puglia, Calabria e Sicilia producono il 90% di tutto l’olio italiano. Inoltre, l’Italia produce olii di altissima qualità. Ci sono 37 olii DOP (denominazione di origine protetta) in Italia e il 40% degli olii DOP nella Comunità Europea sono olii italiani. L’olio, più usato nella cucina del sud che in quella del nord, ha più calorie del burro, ma, al contrario del burro, ha meno grassi saturi e non ha colesterolo.
+        </body>
+      </map_note>
+      <map_note>
+        <image id="100720" />
+        <head>La letteratura</head>
+        <subhead>Torino, una città di letterati</subhead>
+        <body>
+          Capitale d’Italia tra il 1861 e il 1865, Torino è diventata un centro culturale importante in cui molti artisti e scrittori hanno vissuto e lavorato. Tra i nomi più importanti ricordiamo Umberto Eco, Edmondo De Amicis, Antonio Gramsci, Cesare Pavese e Primo Levi. Torino è anche la sede di molte case editrici (<i>publishing companies</i>) che ne hanno fatto un centro culturale molto importante. L’Einaudi, fondata nel 1933 da Giulio Einaudi, è una delle più conosciute, ma molto note sono anche la Società Editrice Internazionale (SEI), la Loescher, la Paravia e la Utet.
+        </body>
+      </map_note>
+      <map_note>
+        <image id="100721" />
+        <head>L’industria</head>
+        <subhead>Fabbrica Italiana Automobili Torino</subhead>
+        <body>
+         La Fiat nasce a Torino nel 1899. La prima macchina è la "3½ HP" di cui, nel 1899, ne furono prodotti otto esemplari (<i>eight of them were made</i>). Uno dei modelli Fiat più famosi è la 500, che ha avuto molto successo grazie a una buona combinazione di dimensioni e prezzo. Negli anni ’30 la Fiat ha avuto quasi il monopolio del mercato e negli anni ’50, con le macchine 500 e 600, ha contribuito in modo incredibile al "miracolo economico" italiano. Oggi la Fiat produce macchine, SUV e furgoni (<i>vans</i>), di cui il Ducato è il più venduto in Europa.
+        </body>
+      </map_note>
+    </map_category>
+</items>
+</activity>

@@ -1,0 +1,23 @@
+<div class="u-pad-24">
+  <div class="u-dis-block">
+    <div class="l-stack-v3  l-stack-v3--strict  u-align-items-center  u-mar-top-48 u-mar-bot-64  u-pad-32">
+      <h3 class="u-txt-heading-3  u-txt-regular">No sections created</h3>
+      <% if @course.closed? %>
+        <p>This course is currently closed.</p>
+      <% else %>
+        <p>Add sections for this Enterprise course.</p>
+        <%=
+          link_to(
+            new_institution_admin_course_sections_path(
+              program_id: @course.program_id,
+              school_id: @course.school_id,
+              course_id: @course.id
+            ),
+            class: 'c-button-v3  c-button-v3--primary  c-button-v3--sm  c-button-v3--sm  c-button-v3--hover  u-txt-white  u-txt-nodec'
+          ) do %>
+            <music-icon-plus-v3></music-icon-plus-v3> Section
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

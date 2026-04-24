@@ -1,0 +1,201 @@
+.c-courses-wrapper {
+  padding: mod(1) mod(1) 0 0;
+  
+  @include viewport-min(md) {
+    border-right: rpx(1) solid $gray-a;
+  }
+
+  @include viewport-min(lg) {
+    border-right: 0;
+  }
+
+  @include viewport-max(lg) {
+    padding: 0;
+  }
+}
+
+.c-course--mobile-arrow {
+  .c-svg {
+    fill: $current
+  }
+}
+
+.c-course-title-wrapper {
+  display: flex;
+  align-items: center;
+  margin-top: mod(1);
+  padding: mod(0.5) mod(1) mod(2) mod(2);
+}
+
+.c-heading--page-title-course {
+  color: $contrasted-orange;
+  margin-bottom: 0;
+  letter-spacing: rpx(2);
+  text-transform: uppercase;
+}
+
+.c-course__no-course--wrapper {
+  margin-top: mod(2.5);
+  text-align: center;
+}
+
+.c-heading--page-title--no-course {
+  color: $gray-3;
+  font-weight: bold;
+}
+
+.c-course__no-courses--link {
+  color: $gray-6;
+}
+
+.c-course--add-button {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  color: $contrasted-orange;
+  border-color: $contrasted-orange;
+  margin: 0 auto;
+
+  &:last-child {
+    margin-right: auto;
+  }
+
+  svg {
+    width: rpx(33);
+    height: rpx(33);
+  }
+}
+
+.c-gear-menu-wraper {
+  cursor: pointer;
+  position: relative;
+  text-align: left;
+}
+
+.c-gear-menu-wraper--destkop {
+  display: none;
+
+  @include viewport-min(lg) {
+    display: revert;
+  }
+}
+
+.c-gear-menu-wraper--mobile {
+  @include viewport-min(lg) {
+    display: none;
+  }
+}
+
+.c-gear-del-link--disabled {
+  color: $disabled;
+  cursor: not-allowed;
+}
+
+// Course list
+.c-course-list-wrapper {
+  .c-course-list {
+    list-style: none;
+    padding: 0;
+
+    .c-icon-drag-and-drop {
+      display: none;
+
+      svg {
+        height: rpx(24);
+        width: rpx(24);
+      }
+    }
+
+    .c-school-course {
+      align-items: center;
+      border-radius: 0 rpx(7) rpx(7) 0;
+      cursor: pointer;
+      display: flex;
+      margin-bottom: 0.3rem;
+      padding: 1rem;
+
+      &.is-active {
+        background-color: rgba($color: $current, $alpha: 0.2);
+      }
+    
+      &:hover {
+        background-color: rgba($color: $current, $alpha: 0.1);
+        padding-left: 0;
+
+        .c-icon-drag-and-drop { 
+          display: inline;
+        }
+
+        .c-school-course__link {
+          svg {
+            margin-left: 0;
+          }
+        }
+      }
+    
+      .c-school-course__link {
+        align-items: center;
+        display: flex;
+        font-size: rpx(18);
+        width: 100%;
+    
+        &:hover,
+        &:visited,
+        &:link,
+        &:active {
+          text-decoration: none;
+        }
+    
+        svg {
+          width: rpx(44);
+          height: rpx(44);
+          min-height: rpx(44);
+          min-width: rpx(44);
+          margin-right: 0.5rem;
+          margin-left: 0.5rem;
+        }
+      }
+    
+      &-info {
+        display: block;
+    
+        :active,
+        :hover {
+          text-decoration: none;
+        }
+    
+        &__name {
+          display: block;
+          font-weight: 700;
+          color: $black;
+        }
+        &__dates {
+          display: block;
+          font-weight: 400;
+          color: $gray-6;
+          font-size: rpx(16);
+        }
+      }
+    
+      &__gear {
+        margin: auto;
+      }
+    }
+  }
+}
+
+.c-menu__inner--instructor {
+  padding: 0.5rem 0;
+
+  .c-course-del-link {
+      color: $red;
+  
+      &:hover {
+        color: $red;
+      }
+    }
+}
+
+.c-menu__subitem--delete {
+  border-top: rpx(1) solid $gray-d; 
+}

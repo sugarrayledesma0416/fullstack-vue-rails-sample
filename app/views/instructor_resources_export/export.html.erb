@@ -1,0 +1,18 @@
+<div class="ns-music-v1">
+  <h1> <%= @program.title%> </h1>
+  <div class="c-box c-box--outlined">
+    <p class="u-txt-bold">This program contains <%= @program.resources.count %> resource files.</p>
+    <% if @download_link.present? %>
+      <p class="<%= test_class('zip-file-date') %>">This zip file was generated on <%= @last_modified %></p>
+      <p>To create a new zip file, press the button 'Update zip', the updated download link will appear the next time you visit this page. </p>
+      <p class="<%= test_class('zip-file-size') %>"><strong> Download size: </strong> <%= @file_size %><p>
+      <%= link_to Music::Components.icon(variant: 'arrow-down', text: 'Download', invert: true), @download_link, class: 'c-button  c-button--primary  u-mar-bot-16'%>
+      <%= link_to Music::Components.icon(variant: 'circle-back', text: 'Update zip'),
+        generate_link_instructor_resources_export_path(program_id: @program.id), class: 'c-button  c-button--border  u-mar-bot-16' %>
+    <% else %>
+      <p>Press "Generate zip" to create a zip file with resources from this program.</p>
+      <%= link_to (Music::Components.icon(variant: 'add', text: 'Generate zip')),
+                   generate_link_instructor_resources_export_path(program_id: @program.id), class: 'c-button  c-button--border  u-mar-bot-16' %>
+    <% end %>
+  </div>
+</div>

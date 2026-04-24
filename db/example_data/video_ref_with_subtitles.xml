@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<activity language="es" title="Learning engine: Subject pronouns and the verb être" activity_type="learning_engine">
+  <dl>Example Learning Engine Activity Direction Line</dl>
+  <items>
+    <reference type="video">
+      <video id="119438" />
+      <subtitles>
+        <foreign_subtitles id="119605"/>
+        <english_subtitles id="119604"/>
+      </subtitles>
+    </reference>
+
+    <watch_and_repeat>
+      <repeat_prompt>
+        <image id="137739" />
+        <audio id="137819" />
+        <text>¿En qué puedo servirles?</text>
+      </repeat_prompt>
+      <repeat_prompt>
+        <image id="137745" />
+        <audio id="137813" />
+        <text>Tenemos una reservación.</text>
+      </repeat_prompt>
+      <repeat_prompt>
+        <image id="137739" />
+        <audio id="137790" />
+        <text>¿A nombre de quién?</text>
+      </repeat_prompt>
+    </watch_and_repeat>
+  </items>
+</activity>

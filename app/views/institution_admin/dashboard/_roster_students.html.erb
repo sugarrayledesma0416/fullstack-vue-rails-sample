@@ -1,0 +1,111 @@
+<%= vite_javascript_tag 'entrypoints/institution_admin/dashboard/roster_students' %>
+
+<% if @roster_presenter.student_data.empty? %>
+  <m3-subnavigation-header page-title="<%= "#{@course.name}  |  #{@section.name}" %>"></m3-subnavigation-header>
+  <l-stack-v3 align-x="center" align-y="center" gap="2" class="c-roster-empty-wrapper">
+    <h2 class="c-heading-v3--2  u-txt-true-gray-900">No Students Enrolled</h2>
+    <p  class="u-txt-true-gray-700">Students will appear here once they are enrolled.</p>
+    <% unless current_user.rostering? %>
+      <sl-button
+        href="<%= new_instructor_enrollment_path(current_program.id, return_to: request.fullpath) %>"
+        class="sl-button-v3  sl-button-v3--primary  u-mar-top-16  js-add-students">
+        <sl-icon
+          slot="prefix"
+          class="u-txt-util-white" 
+          name="plus"
+          library="untitled-ui"></sl-icon>
+        Add Students
+      </sl-button>
+    <% end %>
+  </l-stack-v3>
+<% else %>
+  <l-stack-v3 class="u-pad-rt-24  u-pad-lt-24  u-mar-top-neg-16">
+    <m3-subnavigation-header page-title="<%= "#{@course.name}  |  #{@section.name}" %>" description="<%= @roster_presenter.students_count_label %> ">
+      <% unless current_user.rostering? %>
+        <sl-button
+          href="<%= new_instructor_enrollment_path(current_program.id, return_to: request.fullpath) %>"
+          class="sl-button-v3  sl-button-v3--secondary js-add-students">
+          <sl-icon
+            slot="prefix"
+            class="u-txt-util-white" 
+            name="plus"
+            library="untitled-ui"></sl-icon>
+          Add
+        </sl-button>
+      <% end %>
+      <m3-more-options-menu>
+        <sl-menu>
+          <% unless current_user.clever? %>
+            <sl-menu-item data-page-element="email_link">
+              <%= link_to('Email Students',
+                    gradebook_email_students_path(program_id: current_program, return_to: request.fullpath),
+                    class: 'js-email-students-open-feature  u-txt-true-gray-900  u-txt-nodec') %>
+            </sl-menu-item>
+          <% end %>
+
+          <% if @grace_periods.allowed? && !current_user.clever? %>
+            <sl-menu-item>
+              <%= link_to('Manage Grace Periods',
+                    instructor_grant_student_grace_period_path(@program,
+                                                                @course,
+                                                                return_to: request.fullpath),
+                    class: 'u-txt-true-gray-900  u-txt-nodec') %>
+            </sl-menu-item>
+          <% end %>
+
+          <% unless current_user.rostering? %>
+            <sl-menu-item>
+              <%= link_to('Remove Students',
+                    gradebook_drop_students_edit_path(program_id: current_program.id, return_to: request.fullpath),
+                    class: 'u-txt-true-gray-900  u-txt-nodec  js-drop-students') %>
+            </sl-menu-item>
+          <% end %>
+        </sl-menu>
+      </m3-more-options-menu>
+    </m3-subnavigation-header>
+    <div class="c-table-roster-wrapper">
+      <table class="c-table-v3  c-table-roster">
+        <thead>
+          <tr>
+            <th class="c-table-v3__th">Name</th>
+            <% unless current_user.clever? %>
+              <th class="c-table-v3__th" >Email Address</th>
+            <% end %>
+              <th class="c-table-v3__th">Last Submission</th>
+          </tr>
+        </thead>
+        <tbody>
+            <% @roster_presenter.student_data.each do |student| %>
+              <tr>
+                <td class="c-table-v3__td">
+                  <l-line-v3 align-y="center">
+                  <% unless student[:sufficient_access] %>
+                    <sl-tooltip content="<%= student[:insufficient_access_message] %>">
+                      <sl-icon
+                        class="u-txt-util-error  u-txt-20" 
+                        name="alert-circle"
+                        library="untitled-ui"></sl-icon>
+                    </sl-tooltip>
+                  <% end %>
+                  <%= student[:name] %></td>
+                <% unless current_user.clever? %>
+                  <td class="c-table-v3__td  c-table-roster__email" >
+                    <%= link_to(student[:email],
+                            gradebook_email_students_path(program_id: current_program, return_to: request.fullpath)) %>
+                  </td>
+                <% end %>
+                <td class="c-table-v3__td" >
+                  <% if student[:last_submission][:date] != nil && student[:last_submission][:time] != nil %>
+                    <p class="u-mar-bot-0"><%= student[:last_submission][:date] %>,</p>
+                    <p class="u-mar-bot-0  u-txt-detail  u-txt-true-gray-400"><%= student[:last_submission][:time] %></p>
+                  <% else %>
+                    -
+                  <% end %>
+                </td>
+              </tr>
+            <% end %>
+        </tbody>
+      </table>
+    </div>
+  </l-stack-v3>
+<% end %>

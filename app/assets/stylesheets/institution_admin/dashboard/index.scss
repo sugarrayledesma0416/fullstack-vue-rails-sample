@@ -1,0 +1,34 @@
+@import 'music/library/v1/base/main';
+
+.c-enterprise__wrapper {
+  min-height: 90vh;
+}
+
+.ns-programs-table { 
+  .u-static-program-title { 
+    width: 20%;
+  } 
+}
+
+.u-img-program-size {
+  width: 90px;
+}
+
+.u-block-hidden {
+  display: block;
+  overflow: hidden;
+}
+
+.c-button-v3 {
+  border: 1px solid var(--music-true-gray-200) !important;
+  background: var(--music-util-white) !important;
+  color: var(--music-true-gray-700) !important;
+}
+
+.c-no-program {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: rpx(340);
+  justify-content: center;
+}

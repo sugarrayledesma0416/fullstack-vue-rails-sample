@@ -1,0 +1,7 @@
+<% if current_user.admin_school_programs(school).empty? %>
+  You don't have any programs yet!
+<% else %>
+  <%= render partial: 'program_table',
+             locals: { programs: current_user.admin_school_programs(school), school: school } %>
+<% end %>
+

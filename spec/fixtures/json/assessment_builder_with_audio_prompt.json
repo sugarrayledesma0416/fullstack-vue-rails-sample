@@ -1,0 +1,421 @@
+{
+  "activities": [
+    {
+      "OpenEndedContent": {
+        "activity_type": "open_ended",
+        "dl": {
+          "node_text": "Write your answer to the prompts below."
+        },
+        "title": "Escribir - Open ended",
+        "items": [
+          {
+            "Exam": {
+              "rank": 1,
+              "sidebar_ref": null,
+              "header": {
+                "node_text": "Escribir - Open ended"
+              },
+              "body": {
+                "node_text": "Write your answer to the prompts below."
+              }
+            }
+          },
+          {
+            "Item": {
+              "prompt": {
+                "node_text": "You are meeting a classmate for the first time. Write five questions you would ask him/her and then five answers he/she would give you. Include at least four <b>-ar</b> verbs in present tense.",
+                "audio": {
+                  "MediaLink": {
+                    "desired_media_item_id": "7723",
+                    "desired_media_type": "audio",
+                    "instructor_uploaded": false,
+                    "media_item_id": "7723"
+                  }
+                }
+              },
+              "sample_answer": null,
+              "answer_size": null,
+              "rank": 2,
+              "concept": "",
+              "sidebar_ref": null,
+              "question_number": 1,
+              "points_possible": 10
+            }
+          },
+          {
+            "Model": {
+              "audio": {
+              "MediaLink": {
+                "desired_media_item_id": "7723",
+                "desired_media_type": "audio",
+                "instructor_uploaded": false,
+                "media_item_id": "7723"
+              }
+              },
+              "body": {
+                "node_text": "Model Reference body text"
+              },
+              "header": {
+                "node_text": "Model Reference header text"
+              },
+              "rank": 2,
+              "sidebar_ref": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "FillInTheBlanksContent": {
+        "activity_type": "fill_in_the_blanks",
+        "items": [
+          {
+            "Exam": {
+              "body": {
+                "node_text": "<article><p>DL - FIB</p></article>"
+              },
+              "header": {
+                "node_text": "Section FIB"
+              },
+              "rank": 1
+            }
+          },
+          {
+            "Item": {
+              "points_possible": 2,
+              "prompt": {
+                "Prompt": {
+                  "node": {
+                    "node_text": "<article>Text for FIB &amp;amp; answer is&amp;nbsp;<wol ref=\"1\"/></article>"
+                  },
+                  "wols": [
+                    {
+                      "WriteOnLine": {
+                        "answers": [
+                          "1",
+                          "one"
+                        ],
+                        "ref": "1"
+                      }
+                    }
+                  ],
+                  "audio": {
+                    "MediaLink": {
+                      "desired_media_item_id": "7723",
+                      "desired_media_type": "audio",
+                      "instructor_uploaded": false,
+                      "media_item_id": "7723"
+                    }
+                  }
+                }
+              },
+              "question_guid": "583dda8b",
+              "rank": 2
+            }
+          }
+        ]
+      }
+    },
+    {
+      "MultipleChoiceSameContent": {
+        "activity_type": "multiple_choice_same",
+        "items": [
+          {
+            "Exam": {
+              "header": {
+                "node_text": "True False Activity"
+              },
+              "body": {
+                "node_text": "T/F direction line"
+              },
+              "rank": 0
+            }
+          },
+          {
+            "Item": {
+              "prompt": {
+                "audio": {
+                  "MediaLink": {
+                    "desired_media_item_id": "7723",
+                    "desired_media_type": "audio",
+                    "instructor_uploaded": false,
+                    "media_item_id": "7723"
+                  }
+                },
+                "node_text": "<article><p>Que 1</p></article>"
+              },
+              "question_number": 1,
+              "rank": 3,
+              "points_possible": 8,
+              "choices": [
+                {
+                  "Choice": {
+                    "text": {
+                      "node_text": "true"
+                    }
+                  }
+                },
+                {
+                  "Choice": {
+                    "text": {
+                      "node_text": "false"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "DropDownContent": {
+        "activity_type": "drop_down",
+        "question_count": 0,
+        "dl": {
+          "node_text": ""
+        },
+        "exam_reference": {
+          "Exam": {
+            "body": {
+              "node_text": ""
+            },
+            "header": {
+              "node_text": ""
+            },
+            "rank": 1
+          }
+        },
+        "external_references": [],
+        "items": [
+          {
+            "Exam": {
+              "header": {
+                "node_text": "Drop down Activity"
+              },
+              "body": {
+                "node_text": "Drop down direction line"
+              },
+              "rank": 4
+            }
+          },
+          {
+            "Item": {
+              "points_possible": 2,
+              "prompt": {
+                "Prompt": {
+                  "audio": {
+                    "MediaLink": {
+                      "desired_media_item_id": "7723",
+                      "desired_media_type": "audio",
+                      "instructor_uploaded": false,
+                      "media_item_id": "7723"
+                    }
+                  },
+                  "node": {
+                    "node_text": "<article>text<wol ref=\"1\"/></article>"
+                  },
+                  "menus": [
+                    {
+                      "Menu": {
+                        "options": [
+                          {
+                            "Choice": {
+                              "text": "op1",
+                              "is_correct": true
+                            }
+                          },
+                          {
+                            "Choice": {
+                              "text": "op2",
+                              "is_correct": false
+                            }
+                          }
+                        ],
+                        "ref": "1"
+                      }
+                    }
+                  ]
+                }
+              },
+              "question_guid": "e9752a9c-e0d5-4206-bff7-50b96bfe5b79",
+              "question_number": 1,
+              "rank": "2"
+            }
+          }
+        ],
+        "language": "",
+        "media_items": [],
+        "title": ""
+      }
+    },
+    {
+      "MultipleAnswerContent": {
+        "activity_type": "multiple_answer",
+        "question_count": 0,
+        "style": {
+          "Style": {
+            "item_numbers": true
+          }
+        },
+        "dl": {
+          "node_text": ""
+        },
+        "exam_reference": {
+          "Exam": {
+            "header": {
+              "node_text": "Multiple Answer Activity"
+            },
+            "body": {
+              "node_text": "Multiple Answer direction line"
+            },
+            "rank": 1
+          }
+        },
+        "external_references": [],
+        "items": [
+          {
+            "Exam": {
+              "body": {
+                "node_text": "<article><p>DL</p></article>"
+              },
+              "header": {
+                "node_text": "Multiple Answer"
+              },
+              "rank": 2
+            }
+          },
+          {
+            "Item": {
+              "choices": [
+                {
+                  "Choice": {
+                    "audio": {
+                      "MediaLink": {
+                        "desired_media_item_id": "7723",
+                        "desired_media_type": "audio",
+                        "instructor_uploaded": false,
+                        "media_item_id": "7723"
+                      }
+                    },
+                    "text": "C1",
+                    "is_correct": true
+                  }
+                },
+                {
+                  "Choice": {
+                    "text": "C2",
+                    "is_correct": true
+                  }
+                },
+                {
+                  "Choice": {
+                    "text": "C3",
+                    "is_correct": false
+                  }
+                }
+              ],
+              "points_possible": 2,
+              "prompt": {
+                "audio": {
+                  "MediaLink": {
+                    "desired_media_item_id": "7723",
+                    "desired_media_type": "audio",
+                    "instructor_uploaded": false,
+                    "media_item_id": "7723"
+                  }
+                },
+                "node_text": "<article><p>Q1</p></article>"
+              },
+              "question_guid": "758182d6-e0ed-4ac1-8b9c-3e277ccd99c1",
+              "question_number": 1,
+              "rank": 3
+            }
+          }
+        ],
+        "language": "",
+        "media_items": [],
+        "title": ""
+      }
+    },
+    {
+      "CompositionContent": {
+        "activity_type": "composition",
+        "question_count": 0,
+        "style": {
+          "Style": {
+            "item_numbers": false
+          }
+        },
+        "assessment_type": null,
+        "callout_icon": null,
+        "config": null,
+        "diagnostic_reference": null,
+        "dl": {
+          "node_text": ""
+        },
+        "dl_audio": null,
+        "exam_reference": {
+          "Exam": {
+            "body": {
+              "node_text": ""
+            },
+            "header": {
+              "node_text": ""
+            },
+            "rank": 1,
+            "sidebar_ref": null
+          }
+        },
+        "external_references": [
+          
+        ],
+        "ignore_title": null,
+        "included_content": null,
+        "is_bonus": null,
+        "items": [
+          {
+            "Exam": {
+              "body": {
+                "node_text": "<article><p>DL</p></article>"
+              },
+              "header": {
+                "node_text": "Composition Activity"
+              },
+              "rank": 1,
+              "sidebar_ref": null
+            }
+          },
+          {
+            "Item": {
+              "answer_size": null,
+              "concept": "",
+              "points_possible": 15,
+              "sample_answer": [
+                
+              ],
+              "prompt": {
+                "audio": {
+                  "MediaLink": {
+                    "desired_media_item_id": "7723",
+                    "desired_media_type": "audio",
+                    "instructor_uploaded": false,
+                    "media_item_id": "7723"
+                  }
+                },
+                "node_text": "<article><p>This is a question prompt</p></article>"
+              },
+              "question_guid": "52771ff1-7908-4619-bbab-c34e61367e8e",
+              "question_number": 1,
+              "rank": 1,
+              "sidebar_ref": null
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "activity_type": "exam",
+  "language": "en",
+  "title": "Assessment Spec"
+}

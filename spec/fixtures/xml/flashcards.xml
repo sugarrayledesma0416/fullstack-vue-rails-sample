@@ -1,0 +1,6 @@
+<activity activity_type="flashcards" title="flashcards title" language="es">
+	<dl>instructions</dl>
+	<items>
+    <vocab_group id="1000" />
+	</items>
+</activity>

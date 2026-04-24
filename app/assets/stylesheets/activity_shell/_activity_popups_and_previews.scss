@@ -1,0 +1,52 @@
+@import 'music/library/v1/base/main';
+/* ================================================================== *
+
+    Activity Popups and Previews
+
+* =================================================================== */
+
+/* Activity Preview */
+.c-activity-content {
+  padding-bottom: 2rem;
+}
+
+/* Activity Popup*/
+.activity_popup #column_wrapper {
+  margin-top: 0;
+}
+
+.activity_popup .c-activity-content {
+  padding: 0;
+}
+
+.activity_popup #footer {
+  display: none;
+}
+
+.activity_popup #return_to {
+  display: none;
+}
+
+/* Activity Popup Changes */
+.standard_layout.activities .c-logo__image,
+.standard_layout.activities a#vista_logo {
+  margin-left: rpx(5);
+  margin-top: 0;
+  padding-top: rpx(10);
+}
+
+/*SS Plus Only */
+div.ssplus_only {
+  color: #999;
+  display: block;
+  font-size: rpx(12);
+  font-style: italic;
+  font-weight: normal;
+  margin: 0 0 0 rpx(30);
+}
+
+
+#column_wrapper .help_this_page {
+  display: block;
+  margin: rpx(10) 0 0 rpx(30);
+}

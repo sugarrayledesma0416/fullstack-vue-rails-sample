@@ -1,0 +1,15 @@
+<% if presenter.allowed_to_create_content? %>
+  <ul class="<%= presenter.menubar_classes %>">
+    <li class="<%= presenter.menu_item_classes %>">
+      <a href="javascript://" aria-haspopup="true" aria-expanded="false" class="<%= presenter.menu_item_link_classes %>">
+        <%= presenter.button_icon %>
+        <%= presenter.button_label %>
+      </a>
+      <ul class="<%= presenter.menu_inner_classes %>" role="menu" data-visually-hidden="false">
+        <% presenter.formatted_activity_types.each do |activity_type, params| %>
+          <%= presenter.menu_subitem_element(activity_type, params) %>
+        <% end %>
+      </ul>
+    </li>
+  </ul>
+<% end %>

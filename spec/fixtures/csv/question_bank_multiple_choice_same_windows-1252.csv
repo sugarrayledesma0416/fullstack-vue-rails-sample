@@ -1,0 +1,16 @@
+group_topic_id,group_topic_name,bank_name,direction_line,item_type,dl_lang,prompt_lang,option_1,option_2,prompt,correct_answer
+,University and school,Indicar - ¿Lógico o ilógico?,Indicate whether each statement is **lógico** or **ilógico**.,binary_mc,en,es,Lógico,Ilógico,Los estudiantes juegan fútbol en el laboratorio.,Ilógico
+,,,,,,,,,Ana y Patricia estudian en la biblioteca.,Lógico
+,,,,,,,,,Vosotros compráis libros en la residencia estudiantil.,Ilógico
+,,,,,,,,,La contabilidad y la física son cursos.,Lógico
+,,,,,,,,,La profesora de geografía utiliza un mapa.,Lógico
+,,,,,,,,,El examen de biología es sobre Picasso.,Ilógico
+,,,,,,,,,El borrador es un día de la semana.,Ilógico
+,,,,,,,,,El reloj marca las 7:30 de la mañana.,Lógico
+,,,,,,,,,El profesor entra al salón de clases por la mesa.,Ilógico
+,,,,,,,,,Las compañeras de clase preparan la presentación.,Lógico
+,,,,,,,,,Mi compañero de cuarto vive solo.,Ilógico
+,,,,,,,,,Una semana tiene siete días.,Lógico
+,,,,,,,,,Hoy es martes. Mañana es miércoles.,Lógico
+,,,,,,,,,Mañana es domingo. Hoy es lunes.,Ilógico
+,,,,,,,,,El jueves y el viernes son compañeros de clase.,Ilógico

@@ -1,0 +1,253 @@
+#!/usr/bin/env ruby
+require 'json'
+require 'open3'
+
+# This script is a pre-push git hook that performs a variety of checks, mainly
+# prior to pushing to RELEASE_BRANCH. It is intended to be used by deployers.
+#
+# To install this script as a git hook, copy it to the .git/hooks directory, or create a symlink:
+#  m3 && ln -s ../../script/pre-push .git/hooks/pre-push
+# The script must be executable:
+#  chmod +x .git/hooks/pre-push 
+#
+# It will be run whenever you push. If any of the checks fail, the push will be aborted.
+
+RELEASE_BRANCH = 'release'.freeze
+MAIN_BRANCH = 'master'.freeze
+# These are the most commonly updated internal repos for gems and yarn packages
+INTERNAL_REPOS = %w[gradebook_engine mae maestro_client music].freeze
+
+SEMVER_REGEX = /^([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*))?(?:\+[0-9A-Za-z-]+)?$/ 
+
+GIT_BIN = '/usr/bin/git'.freeze
+YARN_BIN = '/usr/bin/yarn'.freeze
+
+# ANSI terminal colors
+GREEN = "\e[32m".freeze
+YELLOW = "\e[33m".freeze
+RED = "\e[31m".freeze
+WHITE_BOLD = "\e[1;37m".freeze
+RESET = "\e[0m".freeze
+
+@success_count = 0
+@error_count = 0
+@warning_count = 0
+
+def run_command(command)
+  stdout, stderr, status = Open3.capture3(command)
+  raise "#{command}\n#{stderr}" unless status.success?
+  stdout.strip
+end
+
+def top_level_directory
+  @top_level_directory ||= run_command("#{GIT_BIN} rev-parse --show-toplevel")
+end
+
+def print_msg(color, emoji, text)
+  puts "#{color}#{emoji} #{text}#{RESET}"
+end
+
+def topic_msg(text)
+  print_msg(WHITE_BOLD, '🔍', "#{File.basename($0)}: #{text}")
+end
+
+def error_msg(text)
+  print_msg(RED, '❌', text)
+  @error_count += 1
+end
+
+def warning_msg(text)
+  print_msg(YELLOW, '⚠️', text)
+  @warning_count += 1
+end
+
+def success_msg(text)
+  print_msg(GREEN, '✅', text)
+  @success_count += 1
+end
+
+def current_branch 
+  @current_branch ||= run_command("#{GIT_BIN} rev-parse --abbrev-ref HEAD")
+end
+
+def check_release_branch_against_master
+  # Peforms a check to ensure that the local release branch matches the main branch in origin.
+  # Deployers usually make at least one commit to the main branch before rebasing the main branch
+  # onto the release branch; those commits to the main branch must not remain local, or there
+  # will be problems for subsequent releases/deployers who do not have those commits.
+  topic_msg(__method__)
+  run_command("#{GIT_BIN} fetch origin master")
+
+  # Get the latest commit hash for local RELEASE_BRANCH and 'origin/MAIN_BRANCH'
+  release_hash = run_command("#{GIT_BIN} rev-parse #{RELEASE_BRANCH}")
+  master_hash = run_command("#{GIT_BIN} rev-parse origin/#{MAIN_BRANCH}")
+
+  # If the hashes do not match, show the diff
+  if release_hash != master_hash
+    error_msg("'#{RELEASE_BRANCH}' branch does not match origin/#{MAIN_BRANCH}")
+    puts "\ndiff between '#{RELEASE_BRANCH}' and '#{MAIN_BRANCH}"
+    puts run_command("#{GIT_BIN} diff #{RELEASE_BRANCH}..origin/#{MAIN_BRANCH} --compact-summary")
+  else
+    success_msg("'#{RELEASE_BRANCH}' branch matches '#{MAIN_BRANCH}' branch in origin")
+  end
+end
+
+def get_schema_timestamp(schema_contents)
+  schema_contents[/ActiveRecord::Schema\.define\(version: (\d{4}_\d{2}_\d{2}_\d{6})\) do/, 1].gsub('_', '')
+end
+
+def check_schema_against_migrations
+  # Peforms several timestamp-based checkons on db migrations files:
+  # - is the db/schema.rb file older than the last migration file?
+  # - is the timestamp in db/schema.rb older than the timestamp from the last migration?
+  # - is the timestamp in db/schema.rb older than the timestamp from the previous commit to db/schema.rb?
+  # These checks are run regardless of the current branch.
+  topic_msg(__method__)
+
+  # Get the timestamp of the db/schema.rb and last migration files
+  schema_file_timestamp = File.mtime('db/schema.rb')
+  last_migration_file = Dir['db/migrate/*.rb'].max_by { |f| File.basename(f) }
+  last_migration_file_timestamp = File.mtime(last_migration_file)
+
+  # Check if the db/schema.rb file is older than the last migration file
+  if schema_file_timestamp < last_migration_file_timestamp 
+    error_msg('File db/schema.rb is older than the last migration file. Please check and update db/schema.rb.')
+  else
+    success_msg('File db/schema.rb is the same age or newer than the last migration file.')
+  end
+
+  # Get the timestamp string from db/schema.rb 
+  schema_timestamp_string = get_schema_timestamp(File.read('db/schema.rb'))
+
+  # Get the timestamp string from the last migration
+  last_migration_timestamp_string = File.basename(last_migration_file)[/(\d+)_/, 1]
+
+  msg = "Timestamp in db/schema.rb (#{schema_timestamp_string}) is"
+  if schema_timestamp_string < last_migration_timestamp_string
+    warning_msg("#{msg} older than the timestamp from the last migration (#{last_migration_timestamp_string})")
+  else
+    success_msg("#{msg} the same age or newer than the timestamp from the last migration (#{last_migration_timestamp_string})")
+  end
+
+  # Get the timestamp string from the previous commit to db/schema.rb
+  previous_commit_hash = run_command("#{GIT_BIN} log -n 1 --skip 1 --pretty=format:%H -- db/schema.rb")
+  previous_schema_contents = run_command("#{GIT_BIN} show #{previous_commit_hash}:db/schema.rb")
+  previous_schema_timestamp_string = get_schema_timestamp(previous_schema_contents)
+
+  if previous_schema_timestamp_string > schema_timestamp_string
+    error_msg("Timestamp in db/schema.rb (#{schema_timestamp_string}) is older than the timestamp from the previous commit (#{previous_schema_timestamp_string})")
+  else
+    success_msg("Timestamp in db/schema.rb (#{schema_timestamp_string}) is the same age or newer than the timestamp from the previous commit (#{previous_schema_timestamp_string})")
+  end
+end
+
+def check_gems
+  # Performs several checks on the Gemfile and Gemfile.lock:
+  # - does `bundle check` pass?
+  # - are the Gemfile and Gemfile.lock in sync?
+  # - are the internal gem in the Gemfile pointing to a tagged release and semver?
+  topic_msg(__method__)
+
+  success_msg(run_command('bundle check'))
+
+  gemfile_diff = run_command("#{GIT_BIN}  diff --compact-summary -- Gemfile Gemfile.lock")
+  if gemfile_diff.empty?
+    success_msg('Gemfile and Gemfile.lock are in sync (not modified)')
+  else
+    error_msg('Gemfile or Gemfile.lock are out of sync (modified)')
+    puts "\n#{gemfile_diff}"
+  end
+
+  gemfile_contents = File.read('Gemfile')
+  INTERNAL_REPOS.each do |internal_repo|
+    internal_repo = gemfile_contents[/gem '.+',\s*git\: (vhl_repo\('#{internal_repo}'\).*)/]
+    unless internal_repo.nil?
+      internal_gem = internal_repo[/gem '([^']+)'/, 1]
+      tagged_release = internal_repo[/tag:\s*'(.*)'/, 1]
+      if tagged_release.nil? || tagged_release !~ SEMVER_REGEX
+        error_msg("gem '#{internal_gem}' not pointing to a tagged release or semver.")
+        puts "\n#{included_gem}"
+      else
+        success_msg("gem '#{internal_gem}' is included in the Gemfile with a tagged release '#{tagged_release}'")
+      end
+    end
+  end
+
+rescue Exception => e
+  error_msg(e.message)
+end
+
+def check_yarn_packages
+  # Performs several checks on the yarn.lock and package.json:
+  # - does `yarn install --check-files --silent` pass?
+  # - are the yarn.lock and package.json in sync?
+  # - are the internal packages in the package.json pointing to a tagged release and semver?
+  return unless File.exist?('yarn.lock') && File.exist?('package.json')
+  
+  topic_msg(__method__)
+  cmd = "#{YARN_BIN} install --check-files --silent"
+
+  yarn_check = run_command(cmd)
+  success_msg("#{cmd} completed successfully") if yarn_check.empty?
+
+  yarn_diff = run_command("#{GIT_BIN} diff --compact-summary -- package.json yarn.lock")
+  if yarn_diff.empty?
+    success_msg('package.json and yarn.lock are in sync (not modified)')
+  else
+    error_msg('package.json or yarn.lock are out of sync (modified)')
+    puts "\n#{yarn_diff}"
+  end
+
+  package_dependencies = JSON.parse(File.read('package.json'))['dependencies']
+  INTERNAL_REPOS.each do |internal_repo|
+    if package_dependencies.key?(internal_repo)
+      dep_value = package_dependencies[internal_repo]
+      version = dep_value[/github\.com\/vhl\/#{internal_repo}#(.*)$/, 1]
+
+      if version =~ SEMVER_REGEX
+        success_msg("package.json includes '#{internal_repo}' with version '#{version}'")
+      else
+        # non-semver version may indicate 
+        error_msg("package.json includes '#{internal_repo}' with bad path or version '#{version}")
+      end
+    end
+  end
+rescue Exception => ex
+  error_msg(ex.message)
+end
+
+def check_version_tags
+  # Check version tags
+  # - does the version in lib/<app>/version.rb have a corresponding tag in remote?
+  topic_msg(__method__)
+
+  app = File.basename(top_level_directory)
+  version_file = File.read("lib/#{app}/version.rb")
+  version = version_file[/VERSION\s*=\s*'([^']+)'/, 1]
+
+  tags = run_command("#{GIT_BIN} tag -l").split("\n")
+  if tags.include?(version)
+    success_msg("Version tag '#{version}' found in remote")
+  else
+    error_msg("Version tag '#{version}' not found in remote")
+  end
+end
+
+Dir.chdir(top_level_directory)
+
+if current_branch == RELEASE_BRANCH
+  check_release_branch_against_master
+  check_version_tags
+  check_gems
+  check_yarn_packages
+end
+
+check_schema_against_migrations
+
+puts "\n#{@success_count} check(s) passed, #{@warning_count} warning(s), #{@error_count} error(s)"
+
+if @error_count > 0
+  puts "Please fix the error(s) before pushing."
+  exit 1
+end
+exit 0

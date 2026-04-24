@@ -1,0 +1,14 @@
+@import 'music/library/v1/base/main';
+
+.ns-instructor-dashboard {
+  
+  font-size: $font-size-16;
+
+  @import 'add_link_component';
+  @import 'announcement';
+  @import 'courses_sidenav';
+  @import 'dashboard_layout';
+  @import 'pulser';
+  @import 'school_selector_component';
+  @import 'sections_container';
+}

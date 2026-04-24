@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <%= render('partials/google_tag_manager') %>
+    <%= render :partial => 'layouts/common_header' %>
+  </head>
+   <% if vista_online_learning? %>
+     <%= content_for(:body_classes, " vol") %>
+   <% end  %>
+  <body class="<%= yield :body_classes %>  <%= yield :theme_classes %>">
+  <% #query_review_output %>
+    <div id="page_container" class="ui-helper-clearfix student_grades">
+      <div id="column_wrapper">
+      <%= render :partial => 'layouts/flash', :locals => { :flash => flash } -%>
+
+      <%= yield %>
+      </div>
+  <!-- end column_wrapper -->
+    </div>
+    <%= render 'layouts/inactivity_timeout' %>
+  </body>
+</html>

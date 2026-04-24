@@ -1,0 +1,128 @@
+<%
+  content_category = @activity.component_name.downcase.parameterize
+%>
+
+<div class="ns-activity  ns-full-width  ns-music-v3">
+  <div class="c-activity-header
+              t-espirales
+              c-activity-header--<%= content_category %>">
+    <div class="c-activity-header__titles-and-info">
+      <div class="c-activity-header__titles">
+        <div div class="c-activity-header__titles-inner">
+          <h2>
+            <%# Title/Substrand Setup %>
+            <% strand = @activity.strand %>
+            <%= single_line_title(strand.short_title.presence || strand.title) %>
+
+            <%# Hide Substrand/Component name on smaller screens. %>
+            <span class="u-dis-none  u-dis-inline@md">
+              <% substrand = @activity.sub_strand %>
+
+              <% if substrand %>
+                &bull;
+                <%= single_line_title(substrand.title) %>
+              <% end %>
+
+              <% unless @activity.unlisted? %>
+                &bull;
+                <%= @activity.component_name %>
+              <% end %>
+            </span>
+          </h2>
+
+          <%
+            # TODO: See about extracting all of this to the presenter + dedupe from _Activity_Context.html.erb.
+            assignment = if current_user.cartridge?
+                            @classwork && @classwork.assignment(@activity)
+                          else
+                            (@workset && @workset.assignment_by_activity(@activity)) ||
+                            (@classwork && @classwork.assignment(@activity))
+                          end
+            overdue = if current_user.cartridge?
+                        @classwork && assignment && @classwork.overdue?(@activity)
+                      else
+                        (@workset && assignment && @workset.overdue?(@activity, assignment)) ||
+                        (@classwork && assignment && @classwork.overdue?(@activity))
+                      end
+            attempt_track = @attempt&.attempt_track
+            completed = attempt_track && (attempt_track.view_only? || attempt_track.complete?)
+          %>
+
+          <%# Deadline/Tooltip Setup %>
+          <% has_deadline = defined? @activity_presenter.assignment.due_date_time %>
+          <% due_date_label = "" %>
+          <% if has_deadline %>
+            <% due_date_label = "Due #{@activity_presenter.ordinalized_due_date_time}" %>
+          <% end %>
+          
+          <div class="c-activity-header__title-wrapper">
+            <%# Title is truncated on smaller screens, full title in info modal. %>
+            <% if has_deadline %>
+              <sl-tooltip class="c-activity-header__tooltip" placement="bottom" hoist>
+                <div slot="content">
+                  <% if completed %>
+                    <sl-tag class="c-activity-header__tooltip-pill  c-activity-header__tooltip-pill--submitted" size="small" pill>
+                      Submitted
+                    </sl-tag>
+                    <%= @activity_presenter.ordinalized_due_date_time %>
+                  <% elsif overdue %>
+                    <sl-tag class="c-activity-header__tooltip-pill  c-activity-header__tooltip-pill--late" size="small" pill>
+                      Late
+                    </sl-tag>
+                    Due <%= @activity_presenter.ordinalized_due_date_time %>
+                  <% else %>
+                    Due <%= @activity_presenter.ordinalized_due_date_time %>
+                  <% end %>
+                </div>
+            <% end %>
+
+            <button
+              aria-label="<%= due_date_label %>"
+              type="button"
+              class="c-plain-button-v3
+                     c-activity-header__tooltip-button
+                     js-activity-due-date-info-button
+                     js-toggle-activity-info-modal">
+              <div class="c-activity-header__tooltip-icon-wrapper">
+                <% if has_deadline && overdue %>
+                  <span class="c-activity-header__tooltip-icon-late"></span>
+                <% end %>
+                <sl-icon class="u-txt-util-white" name="info-circle" library="untitled-ui"></sl-icon>
+              </div>
+              <span class="u-screen-reader-only" lang="en">Info</span>
+            </button>
+            <% if has_deadline %>
+              </sl-tooltip>
+            <% end %>
+          </div>
+
+          <sl-icon-button
+            name="x-close"
+            label="<%= @return_label %>"
+            library="untitled-ui"
+            href="<%= vhl_return_to_sanitizer(@return_url) %>"
+            class="c-activity-header__close-activity-button">
+          </sl-icon-button>
+        </div>
+      </div>
+    </div>
+
+    <div class="ns-music-v1">
+      <%= render 'activities/activity_info_modal' %>
+    </div>
+
+    <% if @activity.show_answer_key? && current_user.instructor? %>
+      <button
+        class="c-button-v3
+               c-button-v3--tertiary-clear
+               c-button-v3--xs
+               u-mar-bot-12
+               u-mar-rt-8">
+        <%= feature_icon(get_activity_shell_icon_path('icon-key'), ['c-activity-header__action-icon']) %>
+        <span class="c-activity-header__action-text" lang="en">
+          <%= format_answer_key_mode_link(current_user, controller, @activity, current_section_id, current_program.id, params) %>
+        </span>
+      </button>
+    <% end %>
+  </div>
+</div>

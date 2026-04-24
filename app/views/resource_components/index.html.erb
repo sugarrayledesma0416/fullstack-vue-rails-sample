@@ -1,0 +1,46 @@
+<div class ="header_container">
+  <div id="resource_components_header_scroll">
+    <div id="resource_components_header_tools">
+      <h3 id="resource_header" class="resource_header">Resource Components</h3>
+      <div class="resource_tools">
+        <%= link_to 'Add new component', new_resource_component_path(current_program), { :id => 'new_resource_component_link', :title => 'Add new component'} %>
+      </div>
+
+      <div class="wrap_table">
+        <table id="resource_components" class="resource_components_table">
+          <thead>
+            <tr>
+              <th class="resource_name"><span class="resource_title_header">Component name</span></th>
+            </tr>
+            <% @presenter.components.each do |component| -%>
+              <tr>
+                <td class="<%= "component_name #{test_class('component-' + component.id.to_s)}"%>" >
+                  <%= component.name %> /
+                  <%= link_to 'edit this component', edit_resource_component_path(current_program, component.id), { :id => 'edit_resource_component_link', :title => 'Edit new component' } %> /
+                  <% if component.display_delete_link? %>
+                    <%= link_to(
+                          'delete this component',
+                          resource_component_path(current_program, component.id),
+                          id: 'delete_resource_component_link',
+                          title: 'Delete new component',
+                          method: :delete,
+                          data: { confirm: 'Are you sure?' }
+                        ) %>
+                  <% end %>
+                </td>
+              </tr>
+            <% end %>
+
+          </thead>
+        </table>
+        <div>
+          <br />
+            <%= link_to( 'Back to Resources', instructor_program_resources_path(current_program) ) %>
+        </div>
+      </div>
+
+
+    </div>
+    <div id="resource_components_header_shadow" style="display: none;"></div>
+  </div>
+</div>

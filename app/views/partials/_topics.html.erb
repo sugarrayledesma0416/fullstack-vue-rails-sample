@@ -1,0 +1,50 @@
+<%
+  strand_html_options = assign_strand_html_options(toc_entry, is_parent)
+  first_child_with_location = assign_first_child_with_location(toc_entry)
+-%>
+<% if first_child_with_location -%>
+  <% strand_selected = toc_entry.topic_location_in_children?(current_topic) %>
+  <li id="toc_topic_<%= toc_entry.location %>"
+      style="--stripe-color: <%= toc_entry.background_color %>"
+      class="c-vtabset__tab  has-children  with_substrand
+             <%= strand_selected ? 'is-selected' : '' %>"
+             lang="<%= presenter.program_language %>">
+    <% child_location = choose_first_child_with_activities(
+                          toc_entry,
+                          first_child_with_location,
+                          presenter&.sections || [presenter.section],
+                          current_user
+                        ) %>
+    <%= link_to(presenter.strand_url(start_unit,
+                                     display_lesson,
+                                     child_location),
+                                     strand_html_options.merge( strand_selected ? { aria: { current: "page" } } : {})) do %>
+      <%= toc_entry.title.html_safe %>
+      <%=
+        if (is_parent)
+          Music::Components.icon(variant: 'caret', classes: 'c-button--strand__caret')
+        end
+      %>
+    <% end %>
+
+    <%= render('partials/sub_topics',
+               start_unit: start_unit,
+               display_lesson: display_lesson,
+               toc_entry: toc_entry,
+               current_topic: current_topic,
+               presenter: presenter ) %>
+  </li>
+<% else -%>
+  <% strand_selected = (toc_entry.location == current_topic) %>
+  <li id="toc_topic_<%= toc_entry.location %>"
+      class="c-vtabset__tab  <%= strand_selected ? 'is-selected' : '' %>"
+      lang="<%= presenter.program_language %>">
+    <% if toc_entry.location  =~ /^\d+$/ -%>
+      <%= link_to(toc_entry.title.html_safe,
+                  presenter.strand_url(start_unit, display_lesson, toc_entry.location),
+                  strand_html_options.merge( strand_selected ? { aria: { current: "page" } } : {})) %>
+    <% else -%>
+      <span class="toc-entry"><%= toc_entry.title.html_safe %></span>
+    <% end -%>
+  </li>
+<% end -%>

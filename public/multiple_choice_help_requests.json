@@ -1,0 +1,3 @@
+[
+  { id: 123, helpable_item_id: "question_01", comment_text: "Some static text" }
+]

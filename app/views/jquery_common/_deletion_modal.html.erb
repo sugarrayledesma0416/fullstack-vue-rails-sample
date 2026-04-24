@@ -1,0 +1,31 @@
+<% unless defined?(@deletion_dialog_initialized) %>
+  <div class="c-modal  u-hidden  c-modal--delete-forum-post  js-modal  js-deletion-modal">
+    <div role="dialog" aria-label="Forums delete confirmation modal" class="c-modal__box  u-no-min-width  u-pad-0  js-modal-box  js-modal-a11y">
+      <button class="c-modal__close-button  c-no-button  js-x-close  js-modal-close">
+        <span class="c-icon  c-icon--md  c-icon--close"></span>
+        <span class="u-screen-reader-only">Close dialog</span>
+      </button>
+      <div role="document">
+        <div class="c-panel  c-panel--padded  u-mar-0">
+          <div class="c-panel__header  js-modal-a11y__header">
+            <h3 class="c-heading c-heading--md js-dialog-heading"></h3>
+          </div>
+          <div class="c-panel__body">
+            <p class="js-modal-content  js-modal-a11y__content"></p>
+          </div>
+        </div>
+        <div class="c-panel__footer">
+          <div class="c-button-group  u-mar-lt-16  u-mar-rt-16">
+            <%= Music::Components.button(text: 'CANCEL',
+                                         variant: 'secondary',
+                                         classes: ['js-modal-close  js-modal-a11y__default-focus  js-modal-a11y__first-focus-element']) %>
+            <%= form_tag('/', method: :delete, class: 'js-deletion-form') do %>
+              <button class="c-button  c-button--primary  js-confirm-delete  js-modal-a11y__last-focus-element">Delete</button>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% @deletion_dialog_initialized = true %>
+<% end %>

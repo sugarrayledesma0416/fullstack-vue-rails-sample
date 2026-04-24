@@ -1,0 +1,368 @@
+@import 'music/library/v1/base/main';
+
+.c-sections-wrapper {
+  background-color: $gray-f5;
+  display: flex;
+  flex-flow: column;
+
+  @include viewport-max(lg) {
+    padding: 0;
+  }
+}
+
+.c-courses--navigation-mobile {
+  background-color: rgba($color: $current, $alpha: 0.2);
+  color: $gray-3;
+  display: flex;
+  font-size: rpx(18);
+  font-weight: 700;
+  text-align: left;
+  width: 100%;
+
+  .c-courses--navigation-mobile-arrow {
+    background-color: $current;
+    transform: rotate(-180deg);
+
+    .c-svg {
+      margin: 1rem 0;
+      fill: $white
+    }
+  }
+
+  @include viewport-min(md) {
+    display: none;
+  }
+}
+
+.c-heading--course-name {
+  text-align: center;
+  display: none;
+
+  @include viewport-min(md) {
+    display: revert;
+  }
+}
+
+.c-courses--navigation-mobile__label {
+  margin: 1rem 0 1rem 1rem;
+}
+
+.c-sections-container { 
+  flex: 1 1 auto;
+}
+
+.c-sections-wrapper__no-section {
+  color: $gray-6;
+  max-width: rpx(400);
+  height: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+  margin: rpx(48) auto;
+  text-align: center;
+}
+
+.c-sections-wrapper__no-section--icon {
+  svg {
+    height: rpx(200);
+    width: rpx(200);
+  }
+}
+
+.c-table--sections {
+  --header-pad: 1.25rem;
+
+  background: $white;
+  border-collapse: unset;
+  border-collapse: separate;
+  border-spacing: 0;
+
+  @include viewport-min(lg) {
+    border: rpx(1) solid $gray-d;
+    border-radius: rpx(8);
+  }
+
+  thead {
+    th, td {
+      padding: 0 var(--header-pad);
+    }
+
+    tr th {
+      border-bottom: rpx(2) solid $gray-a;
+    }
+  }
+
+  tbody {
+    th, td {
+      padding: 0 var(--header-pad);
+    }
+
+    tr th,
+    tr td {
+      border-bottom: rpx(1) solid $gray-d;
+    }
+  }
+
+  .c-row-header--section-label {
+    width: 50%;
+    color: $gray-3;
+    font-weight: normal;
+    letter-spacing: 0.05rem;
+    text-transform: uppercase;
+
+    @include viewport-min(md) {
+      color: $dark-blue;
+      font-weight: 700;
+    }
+  }
+
+  .c-section-add-icon {
+    svg {
+      fill: $dark-blue;
+    }
+  }
+
+  .c-row-header--icons {
+    display: none;
+    width: 8%;
+    padding: var(--header-pad) 0;
+    text-align: center;
+
+    svg {
+      width: rpx(40);
+      height: rpx(40);
+    }
+    
+    @include viewport-min(lg) {
+      display: revert;
+    }
+  }
+
+  .c-row-header--icons-help {
+    display: revert;
+    
+    .c-row-header--icons-wrapper {
+      display: none;
+      @include viewport-min(lg) {
+        display: revert;
+      }
+    }
+
+    .c-row-header--icons__label {
+      font-weight: normal;
+      text-transform: uppercase;
+
+      @include viewport-min(lg) {
+        display: none;
+      }
+    }
+
+    .c-row-header--icons-help-wrapper {
+      @include viewport-max(lg) {
+        align-items: center;
+        display: flex;
+        background-color: rgba($color: $current, $alpha: 0.1);
+        border-radius: rpx(18);
+        font-size: $font-size-18;
+        font-weight: bold;
+        height: rpx(28);
+        justify-content: center;
+        margin: auto; 
+        width: rpx(36);
+      }
+    }
+  }
+
+  .c-row-header--icons-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .c-student-access-error {
+    vertical-align: middle;
+    
+    svg {
+      width: rpx(20);
+      height: rpx(20);
+    }
+  }
+
+  .c-row--summary {
+    cursor: pointer;
+
+    &:hover {
+      background-color: tint-saturate($blue, 95);
+    }
+
+    &.is-active {
+      background-color: $dark-blue;
+      
+      .c-section-name {
+        color: $white;
+      }
+
+      .c-section-summary__button-arrow {
+        transform: rotate(-90deg);
+
+        svg {
+          fill: $white;
+        }
+      }
+
+      .c-row-header--icons:not(.c-icon-gear--wrapper) > * {
+        display: none;
+      }
+
+      .c-row-header--icons.c-icon-gear--wrapper {
+        display: none;
+        @include viewport-min(md) {
+          display: revert;
+        }
+      }
+
+      .c-row-header--icons-help {
+        display: revert;
+
+        @include viewport-min(md) {
+          display: none;
+        }
+
+        @include viewport-min(lg) {
+          display: revert;
+        }
+      }
+
+      .c-icon-gear {
+        svg {
+          fill: $white;
+        }
+      }
+
+    }
+  }
+
+  .c-section-name {
+    font-weight: normal;
+  }
+
+  .c-section-summary__button-arrow {
+    margin-right: mod(1.5);
+    transform: rotate(90deg);
+
+    svg {
+      fill: $blue;
+    }
+  }
+
+  .c-section-detail-container {
+    padding: mod(1.5);
+  }
+  
+  .c-section-detail-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    @include viewport-min(lg) {
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-gap: rpx(16);
+    }
+  }
+
+  .c-section-detail__item {
+    min-height: auto;
+    
+    @include viewport-min(lg) {
+      min-height: rpx(250);
+    }
+
+    .c-section_widget_table {
+      display: none;
+
+      @include viewport-min(lg) {
+        display: revert;
+        width: 100%;
+      }
+
+      thead,
+      tbody {
+        th, td {
+          color: $gray-6;
+          font-weight: normal;
+          padding: 0;
+          border-bottom: 0;
+          line-height: rpx(30);
+        }
+      }
+    }
+
+    .c-section-detail__item-button {
+      display: none;
+      width: 100%;
+      margin-bottom: 0.25rem;
+      text-align: center;
+
+      @include viewport-min(lg) {
+        display: inline-block;
+      }
+    }
+
+    .c-section-detail__item-button--mobile {
+      @include viewport-min(lg) {
+        display: none;
+      }
+    }
+
+    .c-section-detail__item-icon {
+      margin-right: 0.5rem;
+
+      svg {
+        height: rpx(48);
+        width: rpx(48);
+      }
+    }
+
+    .c-cumulative-item {
+      display: flex;
+      align-items: center;
+    }
+
+    .c-section-average--number {
+      font-size: $font-size-16;
+      font-weight: bold;
+      margin-left: auto;
+      
+      @include viewport-min(lg) {
+        font-size: rpx(36);
+        font-weight: normal;
+        margin-left: 0;
+      }
+    }
+
+    .c-category-grade {
+      text-align: right;
+    }
+
+    .c-section-detail__item-sample-student {
+      color: $gray-6;
+      display: none;
+      
+      @include viewport-min(lg) {
+        display: revert;
+      }
+    }
+  }
+}
+
+.c-table--sections .c-icon-gear,
+.c-icon-gear {
+  display: flex;
+
+  svg {
+    fill: $blue;
+    margin: auto;
+    width: rpx(16);
+    height: rpx(16);
+  }
+}

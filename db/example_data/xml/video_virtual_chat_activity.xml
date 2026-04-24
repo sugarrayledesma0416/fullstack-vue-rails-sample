@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<activity activity_type="video_virtual_chat" language="de" title="title of virtual chat activity">
+  <!--Enter the proper code in quotes after language attribute: es - Spanish, fr - French, it - Italian, de - German.-->
+  <dl>Answer the questions.</dl>
+  <items>
+    <style>
+      <avatar><image id=""/></avatar>
+    </style>
+    <reference type="text">
+      <body>¿Cómo te llamas?
+      </body>
+    </reference>
+    <item>
+      <turns>
+        <!-- you can set multiple turn nodes -->
+        <turn>
+          <image id="REPLACEMEPLEASE" />
+          <!-- <image id="171435" /> jpg file -->
+          <!-- <image id="171436" /> png file -->
+          <video id="171426" />
+        </turn>
+        <turn>
+          <image id="REPLACEMEPLEASE" />
+          <video id="171427" />
+        </turn>
+        <turn>
+          <image id="REPLACEMEPLEASE" />
+          <video id="171428" />
+        </turn>
+        <turn>
+          <image id="REPLACEMEPLEASE" />
+          <video id="171429" />
+        </turn>
+      </turns>
+    </item>
+  </items>
+</activity>

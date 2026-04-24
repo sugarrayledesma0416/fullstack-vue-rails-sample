@@ -1,0 +1,280 @@
+/* Modifies entire #column_wrapper background-color */
+#column_wrapper {
+  background-color: #F6F6F6;
+}
+
+.my-content-wrapper {
+  border: 1px solid #808080;
+  margin-bottom: 50px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.my-content {
+  border-collapse: separate;
+  border-spacing: 0px 2px;
+  margin-bottom: -4px;
+  margin-top: -4px;
+  table-layout: fixed;
+}
+
+/* Widths for Columns */
+.activity-header {
+  font-size: 16px;
+  height: 25px;
+  line-height: 18px;
+  padding-left: 7px;
+  width: 430px;
+}
+
+.instructor-apple-icon {
+  background: url('/images/apple-icon.png') no-repeat;
+  display: inline-block;
+  height: 14px;
+  width: 12px;
+}
+
+.type-header,
+.modified-header,
+.location-header,
+.actions,
+.shared-submit {
+  font-size: 12px;
+  line-height: 14px;
+  width: 190px;
+}
+
+.actions-menu {
+  max-width: 120px;
+
+  .c-svg-icon {
+    pointer-events: none;
+  }
+}
+
+.actions {
+  width: 100px;
+}
+
+.actions.copy-to-mycontent {
+  text-align: center;
+  width: 140px;
+}
+
+.admin-activity-actions {
+  font-style: italic;
+}
+
+.admin-activity-actions a {
+  margin-right: 12px;
+}
+
+.admin-activity-actions.shared {
+  color: #427507;
+}
+
+.activity-actions-shared {
+  float: left;
+  position: relative;
+  left: 50%;
+}
+
+.activity-actions .remove.tooltip {
+  position: absolute;
+  top: 3px;
+  right: 31px;
+  width: 150px;
+}
+
+/* Row Background Colours */
+.table-header {
+  background-color: #D4D4D4;
+}
+
+.strand {
+  background-color: #E7E7E7;
+  color: #666;
+  font-size: 15px;
+  line-height: 17px;
+  padding-left: 7px;
+}
+
+.substrand {
+  background-color: #F2F2F2;
+  color: #666;
+  font-size: 14px;
+  line-height: 16px;
+  padding-left: 22px;
+}
+
+tr.activities {
+  vertical-align: top;
+  font-size: 15px;
+}
+
+tr.activities td {
+  background-color: #FFFFFF;
+  border-top: 1px solid #E6E6E6;
+  border-bottom: 1px solid #E6E6E6;
+}
+
+.activity-title {
+  padding-left: 50px;
+}
+
+.strand-color {
+  background-color: #999999;
+  display: inline-block;
+  height: 24px;
+  margin-top: -3px;
+  margin-right: 3px;
+  margin-bottom: -6px;
+  width: 6px;
+}
+
+.substrand-color {
+  display: inline-block;
+  margin-top: 6px;
+  height: 6px;
+  vertical-align: top;
+  width: 6px;
+}
+
+/* Hovers for Activity Locations */
+.courses-count {
+  cursor: pointer;
+}
+
+.course-hover {
+  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, .3);
+  position: absolute;
+}
+
+.course-name {
+  background: #808080;
+  border-top: 1px solid #FFF;
+  border-left: 1px solid #FFF;
+  border-right: 1px solid #FFF;
+  color: #FFF;
+  padding: 5px;
+}
+
+.course-name:last-child {
+  border-bottom: 1px solid #FFF;
+}
+
+/* Importing Content Modal */
+.content-import-wizard {
+  padding: 16px;
+}
+
+.assigning-message {
+  color: #808080;
+  float: right;
+  font-weight: normal;
+  width: 240px;
+}
+
+.no-content {
+  background: url('/images/icon-exclamation.png') top left no-repeat;
+  color: #808080;
+  height: 35px;
+  margin: 50px auto;
+  padding-left: 40px;
+  padding-top: 2px;
+  width: 200px;
+}
+
+.content-list {
+  border: 1px solid #808080;
+  padding: 5px;
+}
+
+.content-list #current_strand_name,
+.vol.toc .content-list #current_strand_name {
+  color: #808080;
+  margin-bottom: 10px;
+}
+
+.ns-music-v1 .menu__link,
+.ns-music-v1 .c-sorting-header {
+  color: black;
+  text-decoration: none;
+}
+
+.ns-music-v1 .menu__link:hover,
+.ns-music-v1 .c-sorting-header:hover{
+  color: var(--Buttons-PB-Hover, #922218);
+  text-decoration: none;
+}
+
+.my-content-table {
+  width: 100%;
+}
+
+.my-content-table .content-title { padding-left: 10px; width: 300px; }
+.my-content-table .content-type  { width: 130px; }
+
+.my-content-table .active   { background-color: #ECF6F9; }
+.my-content-table .inactive { background-color: #F8FBFD; color: #CCC; }
+
+.my-content-table td {
+  padding: 7px 3px;
+}
+
+.my-content-empty .c-menubar{
+  justify-content: center !important;
+  -ms-flex-pack: center !important;
+  -webkit-justify-content: center !important;
+}
+
+.content-title label {
+  font-weight: normal;
+  padding: 0px 3px;
+}
+
+.content-menu {
+  min-width: 6rem !important;
+}
+
+.ns-music-v1 .c-menu__item,
+.ns-music-v1 .c-menu__subitem {
+  padding: 0.3rem 1rem;
+}
+
+/** Fallback styles for filter **/
+.c-filter-bg-white {
+  background-color: #FFFFFF;
+}
+
+.c-filter-bg-white:hover {
+	background-color: #F8EFEE;
+}
+
+.c-filter-container .c-menu__inner {
+	height: 300px;
+	overflow: hidden;
+	width: 100%;
+	word-wrap: break-word;
+}
+
+.c-filter-container .c-menu__inner-scroll {
+	height: 100%;
+	overflow-y: auto;
+	padding-right: 10px;
+	padding-left: 5px;
+}
+
+.c-filter-container .c-menu__inner-scroll::-webkit-scrollbar {
+	width: .25rem;
+}
+
+.c-filter-container .c-menu__inner-scroll::-webkit-scrollbar-thumb {
+	background-color: #AA3127;
+	border-radius: .125rem;
+}
+
+.c-filter-container .c-menu__inner-scroll::-webkit-scrollbar-track {
+	background-color: #BFBFBF;
+	border-radius: .125rem;
+}

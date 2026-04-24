@@ -1,0 +1,161 @@
+/*standard cancel bottom left and action button bottom right*/
+
+#standard_cancel_action_links .cancel_link, #standard_cancel_action_links .cancel-btn {
+  font-weight:bold;
+  display:block;
+  margin-top:15px;
+  float:left;
+}
+
+#standard_cancel_action_links .red-button, #standard_cancel_action_links .confirm-btn {
+  float:right;
+}
+
+#standard_cancel_action_links .cancel_button {
+}
+
+#standard_cancel_action_links .close_btn {
+}
+
+#standard_cancel_action_links .confirm_btn {
+}
+
+/**** Buttons ****/
+
+/* Cancel, Save, Return to Dashboard, Etc Buttons */
+#additional_links {
+  clear: both;
+  font-weight: bold;
+  padding:20px 0px 0px 0px;
+}
+
+div.gradebook_grade_change_container a.cancel,
+#mid_links .delete a,
+#additional_links .delete_link a,
+#additional_links .cancel_link a, button.cancel-btn {
+  border: none;
+  display: block;
+  float: left;
+  font-size: 13px;
+  height: 19px;
+  padding: 5px 16px 5px 0px;
+  text-transform: lowercase;
+}
+
+button.cancel-btn {
+  background-color:#FFF;
+  color:#0083CB;
+  cursor:pointer;
+
+}
+
+#additional_links .unassign_link a {
+  display: block;
+  float: right;
+  height: 19px;
+  padding: 5px 16px;
+
+}
+
+#additional_links .reassign_link,
+#additional_links .link_savechanges {
+  float: right;
+}
+
+/* (no longer) Red Button */
+div.ui-dialog-buttonpane button.ui-button,
+input.disabled-button,
+a.red-button,
+span.red-button a,
+input.red-button, button.confirm-btn, button.red-button {
+  background-color: #006bae;
+  background-image: none;
+  border: 1px solid #006bae;
+  color: #FFF;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 13px;
+  font-weight: bold;
+  height: 17px;
+  padding: 5px 16px;
+  text-align: center;
+  text-transform: lowercase;
+  vertical-align: top;
+  width: auto;
+}
+
+button.confirm-btn {
+  height:auto;
+  margin-top:15px;
+}
+
+/* White Button */
+span.white-button a,
+input.white-button, button.white-button,
+a.white-button, button.white_button, div.ui-dialog-buttonpane button.ui-button.white-button {
+  background-color: #FFF;
+  background-image: none;
+  border: 1px solid #006bae;
+  color: #006bae;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 13px;
+  font-weight: bold;
+  height: 17px;
+  padding: 5px 16px;
+  text-align: center;
+  text-transform: lowercase;
+  vertical-align: top;
+  width: auto;
+}
+
+/* Disabled Button */
+span.disabled-button a,
+input.disabled-button,
+a.red-button.disabled,
+.vol .red-button.disabled,
+a.disabled-button,
+button.disabled-button,
+button.disabled,
+.red-button[disabled="disabled"] {
+  background-color: #ccc;
+  border-color: #ccc;
+  color: #FFF;
+  cursor: default!important;
+}
+
+/* Disabled White Button */
+span.disabled-white a,
+input.disabled-white,
+a.disabled-white {
+  background-color: #FFF;
+  border-color: #ccc;
+  color: #CCC;
+  cursor: default;
+}
+
+/* Hovers and Height Fix */
+div.ui-dialog-buttonpane button.ui-button,
+div.ui-dialog-buttonpane button.ui-button.white-button,
+input.disabled-button,
+input.red-button,
+input.white-button {
+  height: 29px;
+}
+
+.disabled-button:hover,
+.red-button:hover,
+.white-button:hover {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* Terms and Condition buttons */
+#inline_popup_content input.red-button{
+  float: left;
+  margin: 10px 5px 10px 0;
+}
+#inline_popup_content input.button_agree{
+  float: right;
+  margin-right: 28px;
+}

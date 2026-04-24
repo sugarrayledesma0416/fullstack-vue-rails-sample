@@ -1,0 +1,124 @@
+<activity activity_type="multi_type" language="es" title="MultiType Title">
+  <dl>Master dl</dl>
+  <items>
+    <style>
+      <item_numbers>show</item_numbers>
+    </style>
+    <activity activity_type="fill_in_the_blanks" title="activity title">
+      <dl>Instructions</dl>
+      <items>
+        <style>
+          <wol_size>words_standard</wol_size>
+          <item_numbers>show</item_numbers>
+        </style>
+        <reference type="text"><body>FIB Instructions</body></reference>
+        <item>
+          <prompt>Test <wol ref="1"/> with <wol ref="2"/> blanks</prompt>
+          <answers ref="1">
+            <answer>answer text 1</answer>
+          </answers>
+          <answers ref="2">
+            <answer>answer text 2</answer>
+            <answer>another answer 2</answer>
+          </answers>
+        </item>
+        <item>
+          <prompt><wol/></prompt>
+          <answers>
+            <answer>answer text 3</answer>
+          </answers>
+        </item>
+        <item>
+          <prompt><wol/></prompt>
+          <answers>
+            <answer>answer text 4</answer>
+          </answers>
+        </item>
+      </items>
+    </activity>
+    <activity activity_type="drop_down_same" title="cucumber_drop_down_same">
+      <dl/>
+      <items>
+        <style>
+          <item_numbers>show</item_numbers>
+        </style>
+        <reference type="text"><body>DD Instructions</body></reference>
+        <choices>
+          <choice ref="b">wrong answer</choice>
+          <choice ref="a">right answer</choice>
+        </choices>
+        <item>
+          <prompt><wol answer_ref="a"/> prompt_for_question_1</prompt>
+        </item>
+        <item>
+          <prompt><wol answer_ref="a"/> prompt_for_question_2</prompt>
+        </item>
+      </items>
+    </activity>
+    <activity activity_type="multiple_choice" title="title text">
+      <dl></dl>
+      <items>
+        <style>
+            <item_numbers>show</item_numbers>
+        </style>
+        <reference type="text"><body>MC Instructions</body></reference>
+        <item>
+          <prompt>prompt_for_question_1</prompt>
+          <choices>
+            <distractor>wrong answer 1</distractor>
+            <answer>right answer</answer>
+            <distractor>wrong answer 3</distractor>
+          </choices>
+        </item>
+        <item>
+          <prompt>prompt_for_question_2</prompt>
+          <choices>
+            <answer>right answer</answer>
+            <distractor>wrong answer 2</distractor>
+            <distractor>wrong answer 3</distractor>
+          </choices>
+        </item>
+        <item>
+          <prompt>prompt_for_question_3</prompt>
+          <choices>
+            <distractor>wrong answer 1</distractor>
+            <distractor>wrong answer 2</distractor>
+            <answer>right answer</answer>
+          </choices>
+        </item>
+      </items>
+    </activity>
+    <activity activity_type="fill_in_the_blanks" title="activity title">
+      <dl>Instructions</dl>
+      <items>
+        <style>
+          <wol_size>words_standard</wol_size>
+          <item_numbers>show</item_numbers>
+        </style>
+        <reference type="text"><body>FIB Instructions</body></reference>
+        <item>
+          <prompt>Test <wol ref="1"/> with <wol ref="2"/> blanks</prompt>
+          <answers ref="1">
+            <answer>answer text 1</answer>
+          </answers>
+          <answers ref="2">
+            <answer>answer text 2</answer>
+            <answer>another answer 2</answer>
+          </answers>
+        </item>
+        <item>
+          <prompt><wol/></prompt>
+          <answers>
+            <answer>answer text 3</answer>
+          </answers>
+        </item>
+        <item>
+          <prompt><wol/></prompt>
+          <answers>
+            <answer>answer text 4</answer>
+          </answers>
+        </item>
+      </items>
+    </activity>
+  </items>
+</activity>

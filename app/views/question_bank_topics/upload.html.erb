@@ -1,0 +1,43 @@
+<%= link_to(question_bank_topics_path) do %>
+  <%= Music::Components.icon(
+        variant: 'return',
+        text: 'Return to Topic List',
+        classes: ['c-embedded-icon--md', 'u-txt-16']
+      ) %>
+<% end %>
+
+<div class="ns-music-v1  u-mar-top-24">
+  <div class="l-span-9  u-pad-bot-32">
+    Topic upload files must be in comma separated values (CSV)
+    format and contain only the 'name', 'language' and 'level' columns.
+    <br /><br />
+    Values in the 'language' column must be one of the following (case sensitive):
+    <ul>
+      <li>english</li>
+      <li>french</li>
+      <li>german</li>
+      <li>italian</li>
+      <li>spanish</li>
+    </ul>
+
+    Values in the 'level' column must be one of the following (case sensitive):
+    <ul>
+      <li>intro</li>
+      <li>intermediate</li>
+    </ul>
+  </div>
+  <%= form_tag import_question_bank_topics_path,
+    method: :post,
+    multipart: true do %>
+    <input class="c-file-input  js-file-input" id="uploaded_file" name="uploaded_file" type="file">
+    <label for="uploaded_file" class="u-bord-1">
+      Choose Your File
+    </label>
+    <span class="c-file-input-text  js-file-input-text"></span>
+
+    <div class="c-button-group  u-pad-top-16">
+      <%= link_to "cancel", question_bank_topics_path, { class: 'c-button  c-button' } %>
+      <%= submit_tag 'Import',  class: 'c-button c-button--primary' %>
+    </div>
+  <% end %>
+</div>

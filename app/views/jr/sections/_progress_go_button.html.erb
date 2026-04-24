@@ -1,0 +1,13 @@
+<% aria_label ||= 'Go' %>
+
+<%= button_to(
+      'Go',
+      gradebook_engine.jr_section_progress_path(
+        program_id: current_program.id, 
+        section_id: current_section.id
+      ),
+      class: 'c-button  c-button--jr  c-button--jr-incomplete  u-no-width',
+      method: :get,
+      role: 'link',
+      'aria-label': aria_label
+    ) %>

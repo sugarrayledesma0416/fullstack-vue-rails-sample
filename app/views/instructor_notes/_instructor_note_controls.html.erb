@@ -1,0 +1,26 @@
+<% content_for(:js_head, javascript_include_tag('instructor_notes/instructor_notes_app_bootstrap.js')) %>
+<% content_for(:js_head, javascript_include_tag("maestro_activity_engine/instructor_note_audio_player")) %>
+<% content_for(:js_head, javascript_include_tag("maestro_activity_engine/instructor_note_audio_recorder")) %>
+<% content_for(:js_head, javascript_include_tag('ckeditor_basepath_override.js')) %>
+
+<% content_for(:js_head, javascript_include_tag('assessment.js')) %>
+<% content_for(:js_head, javascript_include_tag("#{MaestroActivityEngine::CDN_CKEDITOR_URL}/core/ckeditor.js") ) %>
+<% content_for(:css_head, stylesheet_link_tag("maestro_activity_engine/recording")) %>
+<% content_for(:css_head, stylesheet_link_tag("maestro_activity_engine/virtual_chat")) %>
+<% content_for(:instructor_notes_angular_tags, "data-ng-controller=\"ActivityNotesCtrl\"".html_safe) %>
+
+<% recording = Recording.new %>
+
+<div id="add_instructor_note" class="ns-music-v1  js-add-instructor-note-app"></div>
+
+<div id="instructor_notes_container">
+
+  <%= render layout: 'instructor_notes/instructor_notes' do %>
+    <div class="js-instructor-notes-rails-data"
+        data-from-dom="<%= { program_id: current_program.id,
+          activity_id: @activity.id }.to_json %>">
+    </div>
+  <% end %>
+
+</div>
+

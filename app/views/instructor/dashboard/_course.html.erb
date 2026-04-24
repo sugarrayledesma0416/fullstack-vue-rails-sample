@@ -1,0 +1,124 @@
+<div
+  class="c-course-info-wrapper  js-course-info  js-course-info-<%= course.id %>-wrapper
+         <%= test_class("course-info-#{course.id}-wrapper")%>">
+  <div class="js-course-id" id="<%= 'js_section_' + dom_id(course) %>" data-hover-container="<%= 'js_' + dom_id(course) %>" class="u-hidden"></div>
+  <h3 class="c-heading--lg  c-heading--course-name  <%= 'u-hidden' unless sections.present? %>"
+      id="js_course_heading_<%= course.id %>"
+      data-hover-url="<%= instructor_course_path(presenter.program, course) %>"
+      title="<%= format_date_time(course.start_date) %> - <%= format_date_time(course.end_date) %>">
+      <%= course.name %>
+  </h3>
+  <div
+    class="c-courses--navigation-mobile  js-courses-navigation-mobile"
+    tabindex="0">
+    <%= Music::Components.icon(
+      variant: 'caret',
+      size: 'lg',
+      classes: ['c-courses--navigation-mobile-arrow']) %>
+    <span class="c-courses--navigation-mobile__label"><%= course.name %></span>
+  </div>
+  <div class="c-course-content  js-course-content
+              <%= format_dashboard_selected_course(current_focus, presenter.open_courses_by_program, course)%> ui-helper-clearfix" id="course_<%= course.id %>_content">
+    <% if sections.present? %>
+      <table class="c-table  c-table--sections">
+        <thead>
+          <tr class="c-header-row--sections">
+            <th scope="col" class="c-row-header--section-label">
+              <span>Sections</span>
+              <% if course.editable? && course.owned_by?(current_user) %>
+                <% if enable_links && (!current_user.lti_rostering? && !current_user.one_roster_rostering?) %>
+                  <span class="c-add-link-wrapper  u-mar-lt-4">
+                    <%=
+                      link_to(
+                        new_instructor_course_section_path(course.program.id, course.id),
+                        class: "c-add-link #{test_class('section-add-link')}",
+                        'data-link-type' => 'add section') do %>
+                          <%= Music::Components.icon(variant: 'add', classes: ['c-add-link__icon']) %>
+                          <span class="u-screen-reader-only">Section</span>
+                          <span
+                            aria-hidden="true"
+                            class="c-add-link__text  u-mar-rt-8">
+                              Add
+                          </span>
+                    <% end %>
+                  </div>
+                <% end %>
+              <% end %>
+
+            </th>
+            <th scope="col" class="c-row-header--icons">
+              <span class="c-row-header--icons-wrapper  js-tooltip-auto" title="Section Average">
+                <%= inline_svg_tag("instructor_dashboard/icons/gradebook.svg") %>
+              </span>
+              <span class="c-row-header--icons-wrapper  u-screen-reader-only">Section Average</span>
+            </th>
+            <th scope="col" class="c-row-header--icons">
+              <span class="c-row-header--icons-wrapper  js-tooltip-auto" title="Assignments To Grade">
+                <%= inline_svg_tag("instructor_dashboard/icons/grading.svg") %>
+              </span>
+              <span class="u-screen-reader-only">Assignments To Grade</span>
+            </th>
+            <% unless supersite_junior? %>
+              <th scope="col" class="c-row-header--icons  c-row-header--icons-help">
+                <span class="c-row-header--icons-wrapper  js-tooltip-auto" title="Students Need Help">
+                  <%= inline_svg_tag("instructor_dashboard/icons/questions.svg") %>
+                </span>
+                <span class="u-screen-reader-only">Students Need Help</span>
+                <span class="c-row-header--icons__label" aria-hidden="true">Students Need Help</span>
+              </th>
+            <% end %>
+            <th scope="col" class="c-row-header--icons">
+              <span class="c-row-header--icons-wrapper  js-tooltip-auto" title="Students">
+                <%= inline_svg_tag("instructor_dashboard/icons/students.svg") %>
+              </span>
+              <span class="c-row-header--icons-wrapper  u-screen-reader-only">Students</span>
+            </th>
+            <th scope="col" class="c-row-header--icons">
+              <span aria-hidden="true" class="c-row-header--icons-wrapper  js-tooltip-auto" title="Next Due Date">
+                <%= inline_svg_tag("instructor_dashboard/icons/assignment_calendar.svg") %>
+              </span>
+              <span class="u-screen-reader-only">Next Due Date</span>
+            </th>
+            <th scope="col" class="c-row-header--icons">
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <% sections.each_with_index do |section, index| -%>
+            <% if index == 0 %>
+              <%= render 'section',
+                course: course,
+                section: section,
+                presenter: presenter,
+                block_enrollment_policy: Policy::Section::BlockEnrollment.new(current_user, section),
+                sample_student_button_id: 'tour-guide-sample-student' %>
+            <% else %>
+              <%= render 'section',
+                course: course,
+                section: section,
+                presenter: presenter,
+                block_enrollment_policy: Policy::Section::BlockEnrollment.new(current_user, section) %>
+            <% end %>
+          <% end -%>
+        </tbody>
+      </table>
+    <% elsif enable_links %>
+      <div class="c-sections-wrapper__no-section">
+        <span class="c-sections-wrapper__no-section--icon">
+        <%= inline_svg_tag("instructor_dashboard/icons/section.svg") %>
+        </span>
+        <p class="c-heading--page-title  u-txt-dark-blue">Your course has no sections.</p>
+        <%= link_to(
+              'How-to Videos',
+              ua_host_url(:instructor_screencasts),
+              class: 'u-txt-bold  u-mar-bot-16',
+              onclick: format_popup_onclick(width: 755, height: 675)
+            ) %>
+        <%= link_to(
+              'add section',
+              new_instructor_course_section_path(course.program_id, course.id),
+              class: 'c-button  c-button--border')%>
+      </div>
+    <% end %>
+  </div>
+</div>

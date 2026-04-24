@@ -1,0 +1,12 @@
+
+<l-stack-v3 class="u-pad-rt-24  u-pad-lt-24">
+  <l-line-v3 align-y="baseline">
+    <a
+    class="c-button-v3 c-button-v3--quaternary u-mar-bot-16"
+    href="<%= @return_path %>">
+      <sl-icon name="arrow-left" library="untitled-ui"></sl-icon>
+      Return to <%=  @course.name %> 
+    </a>
+  </l-line-v3>
+  <%= render partial: 'roster_students' %>
+</l-stack-v3>

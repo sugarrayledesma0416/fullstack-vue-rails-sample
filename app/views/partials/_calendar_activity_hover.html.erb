@@ -1,0 +1,14 @@
+<div class="activity_type">
+  <% activity_type = activity.activity_type
+    if activity.activity_type == 'exam'
+      activity_type = activity.singular_label
+    end -%>
+  <%= Activity.humanize_activity_type(activity_type) %>
+</div>
+<div class="activity_title"><%= activity.title.html_safe %></div>
+<div class="activity_name"><%= activity.list_header %></div>
+
+<%= render :partial => 'partials/activity_summary',
+           :locals => { total_number_of_questions: total_question_count(activity.question_summary),
+                        activity_question_summary: activity.question_summary,
+                        activity_word_list: activity.dictionary_words_list } %>

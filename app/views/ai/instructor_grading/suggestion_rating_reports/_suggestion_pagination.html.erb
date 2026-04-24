@@ -1,0 +1,29 @@
+<% content_for(:css_head, stylesheet_link_tag("ai/instructor_grading/suggestion_rating_reports/pagination") )%>
+
+<div class="c-grading-pagination-container  <%= flex_justify_end == 'true' ? 'flex-justify-end' : '' %>">
+  <span class="c-grading-pagination-info">
+    <%= @presenter.current_page %> of <%= @presenter.total_pages %>
+  </span>
+
+  <div class="c-grading-pagination-box">
+    <% if @presenter.previous_page %>
+    <%= link_to "&#9664;".html_safe, ai_program_instructor_grading_suggestion_rating_reports_question_path(
+      program_id: @presenter.program.id, 
+      activity_id: @presenter.activity.id, 
+      page: @presenter.previous_page
+    ), class: "c-grading-pagination-button  u-txt-nodec", aria: { label: "Previous page" } %>
+    <% else %>
+      <span class="c-grading-pagination-button disabled"><%= raw("&#9664;") %></span>
+    <% end %>
+
+    <% if @presenter.next_page %>
+      <%= link_to "&#9654;".html_safe, ai_program_instructor_grading_suggestion_rating_reports_question_path(
+        program_id: @presenter.program.id, 
+        activity_id: @presenter.activity.id, 
+        page: @presenter.next_page
+      ), class: "c-grading-pagination-button  u-txt-nodec", aria: { label: "Next page" } %>
+    <% else %>
+      <span class="c-grading-pagination-button disabled"><%= raw("&#9654;") %></span>
+    <% end %>
+  </div>
+</div>

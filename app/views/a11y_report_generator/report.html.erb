@@ -1,0 +1,41 @@
+<div class="ns-music-v1">
+  <h1>A11y Reports for <%= @program.title %> </h1>
+  <div class="l-stack">
+    <p>This tool generates reports with the accessibility rating of activities in this program.</p>
+    <p>The simplified report contains the accessibility rating, lesson, strand and link to the activity while the
+    detailed report also shows the activity type, subactivity type and list of issues.</p>
+  <div class="c-box  c-box--outlined">
+  <h2>Simplified Report</h2>
+  <% unless @reporter.simplified_report_url.nil? %>
+    <p class="<%= test_class('simplified-report-date') %>"><strong>This report was generated: </strong><%= @reporter.simplified_report_last_modified %>  </p>
+      <%= link_to Music::Components.icon(variant: 'arrow-down', text: 'Download', invert: true), @reporter.simplified_report_url,
+        class: 'c-button  c-button--primary  u-mar-bot-16  test-download-simplified' %>
+      <%= link_to Music::Components.icon(variant: 'circle-back', text: 'Update Report'),
+        generate_report_a11y_report_generator_path(program_id: @program.id),
+        class: 'c-button  c-button--border  u-mar-bot-16  test-update-simplified' %>
+      <p></p>
+    <% else %>
+      <p>Click the button below to generate a simplified report.</p>
+      <%= link_to (Music::Components.icon(variant: 'add', text: 'Generate Simplified Report')),
+        generate_report_a11y_report_generator_path(program_id: @program.id),
+        class: 'c-button  c-button--border  u-mar-bot-16  test-generate-simplified' %>
+    <% end %>
+  </div>
+    <div class="c-box  c-box--outlined">
+    <h2>Detailed Report</h2>
+    <% unless @reporter.detailed_report_url.nil? %>
+      <p class="<%= test_class('detailed-report-date') %>"><strong>This report was generated: </strong><%= @reporter.detailed_report_last_modified %></p>
+      <%= link_to Music::Components.icon(variant: 'arrow-down', text: 'Download', invert: true), @reporter.detailed_report_url,
+        class: 'c-button  c-button--primary  u-mar-bot-16  test-download-detailed' %>
+      <%= link_to Music::Components.icon(variant: 'circle-back', text: 'Update Report'),
+        generate_report_a11y_report_generator_path(program_id: @program.id, include_details: true),
+        class: 'c-button  c-button--border  u-mar-bot-16  test-update-detailed' %>
+    <% else %>
+      <p>Click the button below to generate a detailed report.</p>
+      <%= link_to (Music::Components.icon(variant: 'add', text: 'Generate Detailed Report')),
+        generate_report_a11y_report_generator_path(program_id: @program.id, include_details: true),
+        class: 'c-button  c-button--border  u-mar-bot-16  test-generate-detailed' %>
+    <% end %>
+  </div>
+   </div>
+</div>

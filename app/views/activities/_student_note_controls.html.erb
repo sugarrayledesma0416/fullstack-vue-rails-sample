@@ -1,0 +1,12 @@
+<% content_for(:js_head, javascript_include_tag("maestro_activity_engine/instructor_note_audio_player")) %>
+<% content_for(:js_head, javascript_include_tag('instructor_notes/instructor_notes_app_bootstrap.js')) %>
+<% content_for(:css_head, stylesheet_link_tag("maestro_activity_engine/recording")) %>
+<% content_for(:instructor_notes_angular_tags, 'data-ng-controller="ActivityNotesCtrl"'.html_safe) %>
+
+<div id="instructor_notes_container"  class="c-instructor-notes-container">
+  <%= render layout: 'instructor_notes/instructor_notes' do %>
+    <div class="js-instructor-notes-rails-data"
+         data-from-dom="<%= { activity_notes: @activity_presenter.activity_notes }.to_json %>" />
+    </div>
+  <% end %>
+</div>

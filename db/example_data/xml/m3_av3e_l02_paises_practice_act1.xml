@@ -1,0 +1,36 @@
+<activity activity_type="map" title="Map of the US and Canada" language="es">
+  <dl>Instructions</dl>
+  <items>
+      <map_category>
+      <label>Map</label>
+    <map>
+      <image id="55"/>
+    </map>
+    </map_category>
+    <map_category>
+      <label>Insert label</label>
+      <map_note>
+        <head>Header Text</head>
+        <subhead>Sub Header Text</subhead>
+        <body>
+          Map note body
+        </body>
+      </map_note>
+    </map_category>
+    <map_category>
+      <map_note>
+        <head>Header Text for another example</head>
+        <body>
+          <ul>
+            <li>
+              map note list item
+            </li>
+            <li>
+              map note list item
+            </li>
+          </ul>
+        </body>
+      </map_note>
+    </map_category>
+  </items>
+</activity>

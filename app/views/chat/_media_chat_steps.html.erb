@@ -1,0 +1,102 @@
+<!-- Dynamic information conveyed through screenreader -->
+
+<div class="u-screen-reader-only" aria-live="assertive">
+  <div class="js-media-chat-calling  u-hidden">
+    Calling {{ user.firstName }} {{ user.lastName }}...
+  </div>
+
+  <div class="js-media-chat-testing  u-hidden">
+     Test your microphone and video.
+  </div>
+
+  <div class="js-media-chat-testing  u-hidden">
+    Test your microphone and video.
+  </div>
+
+  <div class="js-media-chat-connecting  u-hidden">
+    Connecting...
+  </div>
+
+  <div class="js-submitted-box  u-hidden">
+    The activity has been successfully submitted.
+  </div>
+
+</div>
+
+<!-- Initial -->
+<div class="js-media-chat-step  js-media-chat-initial">
+  <button type="button" class="c-circle-button  c-circle-button--xl  u-hidden  u-bord-grey  js-start-btn  js-start-call"
+          title="Start call"
+          data-username="{{ user.firstName }} {{ user.lastName }}"
+          {{callButtonDisableState user.state }}>
+    <span class="c-icon  c-icon--start-call  c-icon--lg  js-start-call-icon"></span>
+  </button>
+
+  <%
+    if @activity&.content_object&.activity_type == 'group_chat'
+      start_chat_btn_text = 'Start Chat'
+      start_chat_btn_selector = 'js-start-group-chat-activity'
+    else
+      start_chat_btn_text = 'Start Partner Chat'
+      start_chat_btn_selector = 'js-start-pchat-activity'
+    end
+  %>
+
+  <button type="button" class="c-button  c-button--primary
+                               js-start-btn <%= start_chat_btn_selector %>  u-hidden"
+          data-username="{{ user.firstName }} {{ user.lastName }}"
+          {{callButtonDisableState user.state }}>
+    <%= start_chat_btn_text %>
+  </button>
+</div>
+
+
+<!-- Calling -->
+<div class="js-media-chat-step  js-media-chat-calling  u-hidden">
+  <p>Calling {{ user.firstName }} {{ user.lastName }}...</p>
+
+  <%= render 'chat/pulser', size: 'md', classes: 'u-mar-auto' %>
+
+  <p>
+    <button type="button" class="c-button  js-cancel-call">
+      Cancel
+    </button>
+  </p>
+</div>
+
+
+<!-- A/V Testing -->
+<div class="js-media-chat-step  js-media-chat-testing  u-hidden">
+  <p>Test your microphone and video.</p>
+
+  <div class="c-chat-media-wrapper  js-media-test-wrapper"></div>
+
+  <div class="c-button-group  c-button-group--ctr">
+    <button class="c-button  js-media-chat-cancel">Cancel</button>
+    <button class="c-button  js-media-chat-join">Join</button>
+  </div>
+</div>
+
+
+<!-- Connecting -->
+<div class="js-media-chat-step  js-media-chat-connecting  u-hidden">
+  <p>Connecting...</p>
+  <%= render 'chat/pulser', size: 'md', classes: 'u-mar-auto' %>
+</div>
+
+
+<!-- Chatting -->
+<div class="js-media-chat-step  js-media-chat-chatting  u-hidden">
+  <!-- video goes here: -->
+  <div class="c-chat-media-wrapper  js-media-chat-wrapper"></div>
+
+  <!-- show IF partner chat: -->
+  <div class="c-media-record-box  c-mobile-tabs-view__always-visible-content  js-record-box">
+  </div> <!-- / js-record-box -->
+
+</div> <%# / js-chat-media-step (chatting) %>
+
+<!-- show when activity is submitted: -->
+<div class="c-box  js-submitted-box  u-hidden">
+  The activity has been successfully submitted.
+ </div> <!-- / js-submitted -->

@@ -1,0 +1,53 @@
+<% content_for(:body_classes, '  ns-full-width  ns-gradebook  ns-practice-test-analytics') %>
+<%= render 'includes' %>
+<% content_for(
+    :js_head,
+     javascript_packs_with_chunks_tag('gradebook/analytics/practice_test/individual_student')
+   ) %>
+
+<h1 class="u-screen-reader-only">Gradebook Analytics Practice Test</h1>
+<% study_plan_presenter = get_study_plan_presenter(
+     @attempt,
+     @student_practice_test_presenter,
+     @student_practice_test_presenter.student_focus
+) %>
+<div class="c-study-plan c-study-plan--individual-analytics
+           <%= test_class('analytics-practice-test-individual') %>">
+  <div class="u-dis-flex  u-mar-top-20  c-lesson-navigation">
+    <h2 class="u-txt-24  u-mar-rt-24">
+      <%= @student_practice_test_presenter.student_focus.full_name %>
+    </h2>
+    <div class="c-form-item">
+      <%= hidden_field_tag 'two_tier_program', current_program.two_tier?, { class: 'js-two-tier-program'  } %>
+      <% if current_program.two_tier? %>
+        <%= render 'unit_selector', presenter: @student_practice_test_presenter %>
+      <% else %>
+        <%= render 'lesson_selector', presenter: @student_practice_test_presenter %>
+      <% end %>
+    </div>
+  </div>
+  <% if @student_practice_test_presenter.attempt.present? %>
+    <h2 class="c-heading--page-title  u-mar-top-24  u-mar-bot-8">
+      Vocabulary
+    </h2>
+    <% if @student_practice_test_presenter.activity %>
+      <div class="c-box  c-box--plain  c-practice-test-analytics-container  u-dis-inline-block">
+        <%= render(partial: "maestro_activity_engine/activities/diagnostic_v2/summative_activity_diagnostics_table",
+                   locals: { study_plan_presenter: study_plan_presenter,
+                   diagnostic_concept_type: 'vocabulary' })%>
+      </div>
+    <% end %>
+     <h2 class="c-heading--page-title  u-mar-bot-8">Grammar</h2>
+    <% if @student_practice_test_presenter.activity %>
+      <div class="c-box  c-box--plain  c-practice-test-analytics-container  u-dis-inline-block">
+        <%= render(partial: "maestro_activity_engine/activities/diagnostic_v2/summative_activity_diagnostics_table",
+            locals: { study_plan_presenter: study_plan_presenter,
+            diagnostic_concept_type: 'grammar' })%>
+      </div>
+    <% end %>
+  <% else %>
+    <div class="no-diagnostic-v2-activities  u-pad-top-16">
+      This student has not completed the activities.
+    </div>
+  <% end %>
+</div>

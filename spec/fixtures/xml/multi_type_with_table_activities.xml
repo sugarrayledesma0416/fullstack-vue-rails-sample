@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<activity activity_type="multi_type" title="MultiType with Tables" language="es">
+  <dl/>
+  <items>
+    <style>
+      <item_numbers>show</item_numbers>
+    </style>
+    <activity activity_type="table_activity" language="es" title="foo">
+      <dl>valid dl</dl>
+      <items>
+        <style>
+          <item_numbers>show</item_numbers>
+        </style>
+        <table_fill_in_the_blank>
+          <table>
+            <header_row>
+              <data>a</data>
+              <header>b</header>
+              <header>c</header>
+              <header>d</header>
+            </header_row>
+            <data_row>
+              <header>a1</header>
+              <data><wol ref="4" /></data>
+              <data><wol ref="1" /></data>
+              <data>a4</data>
+            </data_row>
+            <data_row>
+              <header>b1</header>
+              <data><wol ref="2" /></data>
+              <data>b3</data>
+              <data><wol ref="3" /></data>
+            </data_row>
+            <footer_row>
+              <header>c1</header>
+              <data>c2</data>
+              <data>c3</data>
+              <data>c4</data>
+            </footer_row>
+          </table>
+          <answers ref="1">
+            <answer>foo</answer>
+          </answers>
+          <answers ref="2">
+            <answer>foo</answer>
+          </answers>
+          <answers ref="3">
+            <answer>foo</answer>
+          </answers>
+          <answers ref="4">
+            <answer>foo</answer>
+          </answers>
+        </table_fill_in_the_blank>
+      </items>
+    </activity>
+
+    <activity activity_type="table_activity" language="es" title="foo">
+      <dl>valid dl</dl>
+      <items>
+        <style>
+          <item_numbers>show</item_numbers>
+        </style>
+        <table_drop_down>
+          <table>
+            <caption>a</caption>
+            <header_row>
+              <data>a</data>
+              <header>b</header>
+              <header>c</header>
+              <header>d</header>
+            </header_row>
+            <data_row>
+              <header>a1</header>
+              <data>a2</data>
+              <data><wol /></data>
+              <data>a4</data>
+            </data_row>
+            <data_row>
+              <header>b1</header>
+              <data>b2</data>
+              <data>b3</data>
+              <data>b4</data>
+            </data_row>
+            <footer_row>
+              <header>c1</header>
+              <data>c2</data>
+              <data>c3</data>
+              <data>c4</data>
+            </footer_row>
+          </table>
+          <choices>
+            <answer>foo</answer>
+            <distractor>bar</distractor>
+          </choices>
+        </table_drop_down>
+      </items>
+    </activity>
+
+    <activity activity_type="table_activity" language="es" title="foo">
+      <dl>valid dl</dl>
+      <items>
+        <style>
+          <item_numbers>show</item_numbers>
+        </style>
+
+        <table_inline_open_ended>
+          <table>
+            <caption>a</caption>
+            <header_row>
+              <data>a</data>
+              <header>b</header>
+              <header>c</header>
+              <header>d</header>
+            </header_row>
+            <data_row>
+              <header>a1</header>
+              <data>a2</data>
+              <data><wol ref="1"/></data>
+              <data>a4</data>
+            </data_row>
+            <data_row>
+              <header>b1</header>
+              <data><wol ref="2"/></data>
+              <data>b3</data>
+              <data>b4</data>
+            </data_row>
+            <footer_row>
+              <header>c1</header>
+              <data>c2</data>
+              <data>c3</data>
+              <data>c4</data>
+            </footer_row>
+          </table>
+        </table_inline_open_ended>
+      </items>
+    </activity>
+
+    <activity activity_type="fill_in_the_blanks" title="activity title" language="es">
+      <dl/>
+      <items>
+        <style>
+          <wol_size>words_small</wol_size>
+          <item_numbers>hide</item_numbers>
+        </style>
+        <reference type="wordbank">
+          <body sorted="yes">
+            examen
+            física
+            horario
+            humanidades
+            prueba
+            reloj
+            semana
+          </body>
+        </reference>
+        <item>
+          <prompt>
+            —Oye, mañana hay una (1) <wol ref="1"/> de ciencias, ¿no?
+            —¿De ciencias? ¿En qué clase... biología o (<i>or</i>) (2) <wol ref="2"/>?
+            —En la clase de biología.
+            —¡Ah, sí! Hay una de biología mañana y también (<i>also</i>) hay un (3) <wol ref="3"/> de sociología.
+            —Caramba. Es una (4) <wol ref="4"/> difícil (<i>difficult</i>).
+          </prompt>
+          <answers ref="1">
+            <answer>prueba</answer>
+          </answers>
+          <answers ref="2">
+            <answer>física</answer>
+          </answers>
+          <answers ref="3">
+            <answer>examen</answer>
+          </answers>
+          <answers ref="4">
+            <answer>semana</answer>
+          </answers>
+        </item>
+      </items>
+    </activity>
+  </items>
+</activity>

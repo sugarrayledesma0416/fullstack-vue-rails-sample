@@ -1,0 +1,28 @@
+<div class="ns-activity">
+  <div class="ns-music-v1  c-activity-header">
+    <% if @activity %>
+      <% if current_user.instructor? %>
+        <div class="c-activity-header__action">
+          <a href='#' > <%= Music::Components.icon(variant: 'list', classes: ['c-activity-header__action-icon']) %> </a>
+          <span class="c-activity-header__action-text" lang="en">
+          <%= link_to(
+              'View dashboard',
+              cartridge_instructor_section_grading_path(
+                section_id: current_section_id, id: @activity.id
+              ),
+              class: test_class('view-dashboard-link')
+          ) %>
+          </span>
+        </div>
+        <% if @activity.show_answer_key? %>
+          <div class="c-activity-header__action">
+            <%= feature_icon('music/features/activity-shell/icons/icon-key', ['c-activity-header__action-icon'] ) %>
+            <span class="c-activity-header__action-text" lang="en">
+              <%= format_answer_key_mode_link(current_user, controller, @activity, current_section_id, current_program.id, params) %>
+            </span>
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+</div>

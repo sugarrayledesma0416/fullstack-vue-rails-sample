@@ -1,0 +1,15 @@
+<div class="activities  <%= test_class('activity-tables') %>">
+  <% activities_by_component(presenter.activities) do |component_name, component_language, component_activities| -%>
+    <% if supersite_junior? 
+      partial_name = 'toc/activity_table_jr'
+    else
+      partial_name = 'toc/activity_table'
+    end %>
+    <%= render(partial_name,
+               component_activities: component_activities,
+               component_language: component_language,
+               component_name: component_name,
+               presenter: presenter) %>
+  <% end -%>
+</div>
+<!-- /activities -->

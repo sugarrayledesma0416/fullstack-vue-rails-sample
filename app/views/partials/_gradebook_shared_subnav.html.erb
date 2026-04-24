@@ -1,0 +1,106 @@
+<% content_for(
+     :js_head,
+     javascript_include_tag('music/features/horizontal_scrolling_nav_menu')
+   ) %>
+
+<% content_for(:subnav) do %>
+  <div class="c-subnav-container--scroll  js-subnav-container
+              <%= test_class('gradebook-subnav') %>">
+    <ol class="c-subnav  c-subnav--scroll  js-subnav  js-nav-system">
+      <li>
+        <span class="c-subnav__context">Gradebook</span>
+      </li>
+
+      <li>
+        <%
+          path = if params[:section_id]
+                   gradebook_engine.course_section_scores_path(filter_params)
+                 else
+                   gradebook_engine.course_path(
+                     params.permit(%i[program_id course_id]).to_h.merge(
+                       active_subnav: 'scores', feature: 'scores'
+                     )
+                   )
+                 end
+        %>
+        <%= link_to 'Scores', path,
+            class: "c-subnav__link#{ '  is-current' if active_subnav == 'scores' }",
+            aria: { current: active_subnav == 'scores' ? 'page' : nil } %>
+      </li>
+
+      <li>
+        <%
+          path = if params[:section_id]
+                   main_app.section_roster_path(filter_params)
+                 else
+                   main_app.course_roster_path(
+                     params.permit(%i[program_id course_id]).to_h
+                   )
+                 end
+        %>
+        <%= link_to path,
+            class: "c-subnav__link#{ '  is-current' if active_subnav == 'roster' }",
+            aria: { current: active_subnav == 'roster' ? 'page' : nil } do %>
+          Roster
+          <span class="c-icon  c-icon--error-circle
+                       <% unless @has_access_problem %>u-hidden<% end %>"
+                title="One or more students do not meet the course access requirements.">
+          </span>
+        <% end %>
+      </li>
+
+      <li>
+        <%
+          # If a section ID is present, we can format the late-work path.
+          # Otherwise, we need to prompt the user to choose a section.
+          path = if params[:section_id]
+                   gradebook_engine.course_section_show_late_work_path(filter_params)
+                 else
+                   path = gradebook_engine.course_path(
+                     params.permit(%i[program_id course_id]).to_h.merge(
+                       active_subnav: 'accept_late_work', feature: 'late work'
+                     )
+                   )
+                 end
+        %>
+        <%= link_to(
+              'Late Work',
+              path,
+              class: "c-subnav__link#{ '  is-current' if active_subnav == 'accept_late_work' }",
+              aria: { current: active_subnav == 'accept_late_work' ? 'page' : nil }
+            ) %>
+      </li>
+
+      <li>
+        <%
+          path = if params[:section_id]
+                   gradebook_engine.course_reports_path(filter_params)
+                 else
+                   gradebook_engine.course_show_reports_path(
+                     @course.id, program_id: params[:program_id]
+                   )
+                 end
+        %>
+        <%= link_to(
+              'Reports',
+              path,
+              class: "c-subnav__link#{'  is-current' if active_subnav == 'reports'}",
+              aria: { current: active_subnav == 'reports' ? 'page' : nil }
+            ) %>
+      </li>
+
+      <% if enable_analytics? || @course&.gradebook_analytics_enabled? %>
+        <li class="js-nav-system__item">
+          <%= link_to 'Analytics', "#",
+            class: "c-subnav__link#{ '  is-current' if active_subnav == 'analytics' } js-nav-system__link  #{test_class('analytics-tab')}",
+            aria: { current: active_subnav == 'analytics' ? 'page' : nil } %>
+          <%= render 'partials/gradebook_analytics_subnav', params: params, filter_params: filter_params %>
+        </li>
+      <% end %>
+    </ol>
+
+    <div class="c-subnav-scroll-arrow  js-subnav-scroll  u-dis-none">
+      <%= feature_icon('music/icons/horizontal-arrow' ) %>
+    </div>
+  </div>
+<% end %>

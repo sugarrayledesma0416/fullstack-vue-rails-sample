@@ -1,0 +1,30 @@
+  <h1 class="c-heading--xl  c-heading--xl--txt">Activity Preview Test</h1>
+  <hr/>
+  <%= form_tag('/process_preview', method: :post) do %>
+    <div class="c-panel__body">
+      <h3 class="c-heading--md">Activity Content</h3>
+      <div class="c-form-item">
+        <textarea
+          id="content"
+          name="activity[content]"
+          class="c-form-item__textarea  u-width-full"
+          rows="10"
+          cols="100"
+          placeholder="Paste or type xml here."></textarea>
+      </div>
+      <div class="c-form-item">
+        <label class="c-form-item__label" for="activity_type">Type</label><br/>
+        <input class="c-form-item__input" type="text" name="activity[activity_type]" id="activity_type"/>
+      </div>
+    </div>
+    <input type="hidden" name="program_id" id="program_id" value="79"/>
+    <input type="hidden" name="activity[cms_revision_id]" id="cms_revision_id" value="123"/>
+    <input type="hidden" name="activity[concept_id]" id="concept_id" value="187165"/>
+    <input type="hidden" name="activity[lesson_id]" id="lesson_id" value="960"/>
+    <div class="c-panel__footer">
+      <div class="c-button-group  u-mar-0  u-txt-rt">
+        <button type="reset" class="c-button  js-modal-close">Cancel</button>
+        <button type="submit" class="c-button  c-button--primary">Preview</button>
+      </div>
+    </div>
+  <% end %>

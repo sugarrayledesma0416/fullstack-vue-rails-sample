@@ -1,0 +1,1868 @@
+<activity activity_type="reference_activity" title="sample_reference_activity_title" language="es">
+  <dl>instructions_go_here</dl>
+
+  <items>
+    <headline level="1" number="4.2">Stem changing verbs:</headline>
+    <headline level="2"> e -> ie, o -> ue</headline>
+    <headline level="3">TBD</headline>
+    <paragraph starting_point="ANTE TODO">
+      Stem changing verbs deviate from the normal pattern of regular verbs. When stem changing verbs are conjugated, they have a vowel change in the last syllable of the stem
+    </paragraph>
+    <paragraph bullet="true">
+      <attention /> In many verbs, such as <b>empezar</b> <i>(to begin)</i>, the stem vowel changes from <b>e</b> to <b>ie</b>.
+      Note that the <b>nosotros/as</b> and <b>vosotros/as</b> forms don't have a stem change.
+    </paragraph>
+
+    <language_example column_hint="2" sidebar_ref="1">
+      <example_group>
+        <image id='247' alt_txt='alt_text_here' />
+        <example>
+          <foreign>La <exception>habitación</exception> <b>está</b> sucia.</foreign>
+          <english>The room is dirty.</english>
+        </example>
+
+        <example>
+          <foreign>La puerta <b>está</b> cerrada.</foreign>
+          <english>The door is closed.</english>
+        </example>
+      </example_group>
+      <example_group>
+        <image id='248' alt_txt='alt_text_here' />
+        <example>
+          <foreign>column 2</foreign>
+          <english>row 1</english>
+        </example>
+        <example>
+          <foreign>column 2</foreign>
+          <english>row 2</english>
+        </example>
+      </example_group>
+    </language_example>
+
+
+    <conjugation_chart type="boot" title="Chart 1">
+      <infinitive>
+        <verb>empezar</verb>
+        <stem>emp</stem>
+        <ending>ezar</ending>
+        <meaning>to begin</meaning>
+      </infinitive>
+
+      <singular>
+        <conjugation>
+          <stem>emp</stem>
+          <ending highlight="ie">iezo</ending>
+          <pronoun>yo</pronoun>
+          <conj>empiezo</conj>
+          <audio id="137798"></audio>
+          <meaning></meaning>
+        </conjugation>
+        <conjugation>
+          <stem>emp</stem>
+          <ending highlight="ie">iezas</ending>
+          <pronoun>tu</pronoun>
+          <conj>empiezas</conj>
+          <meaning></meaning>
+          <audio id="137798"></audio>
+        </conjugation>
+        <conjugation>
+          <stem>emp</stem>
+          <ending highlight="ie">ieza</ending>
+          <pronoun>Ud/el/ella</pronoun>
+          <conj>empieza</conj>
+          <meaning></meaning>
+          <audio id="137817"></audio>
+        </conjugation>
+      </singular>
+
+      <plural>
+        <conjugation>
+          <stem>emp</stem>
+          <ending>ezamos</ending>
+          <pronoun>nosotros/as</pronoun>
+          <conj>empezamos</conj>
+          <meaning></meaning>
+          <audio id="137760"></audio>
+        </conjugation>
+        <conjugation>
+          <stem>emp</stem>
+          <ending>ezais</ending>
+          <pronoun>vosotros</pronoun>
+          <conj>empezais</conj>
+          <audio id="137760"></audio>
+          <meaning></meaning>
+        </conjugation>
+        <conjugation>
+          <stem>emp</stem>
+          <ending highlight="ie">iezan</ending>
+          <pronoun>Uds/ellos/ellas</pronoun>
+          <conj>empiezan</conj>
+          <meaning></meaning>
+          <audio id="137760"></audio>
+        </conjugation>
+      </plural>
+    </conjugation_chart>
+    
+        <conjugation_chart_group title="Chart 2">
+      <conjugation_chart type="standard" title="Chart 2">
+        <infinitive>
+          <verb>comer</verb>
+          <stem>com</stem>
+          <ending highlight="er">er</ending>
+          <meaning>to eat</meaning>
+          <audio id="137760"></audio>
+        </infinitive>
+
+        <singular>
+          <conjugation>
+            <stem>com</stem>
+            <ending highlight="o">o</ending>
+            <pronoun>yo</pronoun>
+            <conj>como</conj>
+            <meaning></meaning>
+            <audio id="137760"></audio>
+          </conjugation>
+          <conjugation>
+            <stem>com</stem>
+            <ending highlight="es">es</ending>
+            <pronoun>tu</pronoun>
+            <conj>comes</conj>
+            <meaning></meaning>
+            <audio id="137760"></audio>
+          </conjugation>
+          <conjugation>
+            <stem>com</stem>
+            <ending highlight="e">e</ending>
+            <pronoun>Ud/el/ella</pronoun>
+            <conj>come</conj>
+            <meaning></meaning>
+            <audio id="137760"></audio>
+          </conjugation>
+        </singular>
+
+        <plural>
+          <conjugation>
+            <stem>com</stem>
+            <ending highlight="emos">emos</ending>
+            <pronoun>nosotros/as</pronoun>
+            <conj>comemos</conj>
+            <meaning></meaning>
+            <audio id="137760"></audio>
+          </conjugation>
+          <conjugation>
+            <stem>com</stem>
+            <ending highlight="eis">eis</ending>
+            <pronoun>vosotros</pronoun>
+            <conj>comeis</conj>
+            <meaning></meaning>
+            <audio id="137760"></audio>
+          </conjugation>
+          <conjugation>
+            <stem>com</stem>
+            <ending highlight="en">en</ending>
+            <pronoun>Uds/ellos/ellas</pronoun>
+            <conj>comen</conj>
+            <meaning></meaning>
+            <audio id="137760"></audio>
+          </conjugation>
+        </plural>
+      </conjugation_chart>
+
+      <conjugation_chart type="boot" title="Chart 3">
+        <infinitive>
+          <verb>escribir</verb>
+          <stem>escrib</stem>
+          <ending highlight="ir">ir</ending>
+          <meaning>to write</meaning>
+          <audio id="137824"></audio>
+        </infinitive>
+
+        <singular>
+          <conjugation>
+            <stem>escrib</stem>
+            <ending highlight="o">o</ending>
+            <pronoun>yo</pronoun>
+            <conj>escribo</conj>
+            <meaning></meaning>
+            <audio id="137760"></audio>
+          </conjugation>
+          <conjugation>
+            <stem>escrib</stem>
+            <ending highlight="es">es</ending>
+            <pronoun>tu</pronoun>
+            <conj>escribes</conj>
+            <meaning></meaning>
+            <audio id="137760"></audio>
+          </conjugation>
+          <conjugation>
+            <stem>escrib</stem>
+            <ending highlight="e">e</ending>
+            <pronoun>Ud/el/ella</pronoun>
+            <conj>escribe</conj>
+            <meaning></meaning>
+            <audio id="137760"></audio>
+          </conjugation>
+        </singular>
+
+        <plural>
+          <conjugation>
+            <stem>escrib</stem>
+            <ending highlight="imos">imos</ending>
+            <pronoun>nosotros/as</pronoun>
+            <conj>escribimos</conj>
+            <meaning></meaning>
+            <audio id="137760"></audio>
+          </conjugation>
+          <conjugation>
+            <stem>escrib</stem>
+            <ending highlight="is">is</ending>
+            <pronoun>vosotros</pronoun>
+            <conj>escribis</conj>
+            <meaning></meaning>
+            <audio id="137760"></audio>
+          </conjugation>
+          <conjugation>
+            <stem>escrib</stem>
+            <ending highlight="en">en</ending>
+            <pronoun>Uds/ellos/ellas</pronoun>
+            <conj>escriben</conj>
+            <meaning></meaning>
+            <audio id="137760"></audio>
+          </conjugation>
+        </plural>
+      </conjugation_chart>
+    </conjugation_chart_group>
+    
+      <category_vocab_chart title="Category Vocab Chart" show_l1_first="false">
+      <category></category>
+      <category>Category 1</category>
+      <category></category>
+      <category>Category 2</category>
+
+      <column_break />
+
+      <header>Header 1</header>
+      <vocab_group>
+        <hint>o:ue</hint>
+
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <translation>to remember</translation>
+          <target>acordarse</target>
+          <annotated_target>abierto</annotated_target>
+          <language>es</language>
+          <image id="136303" />
+          <audio id="137760" />
+        </dictionary_entry>
+
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <translation>to remember</translation>
+          <target>acordarse de</target>
+          <annotated_target>abierto</annotated_target>
+          <language>es</language>
+          <image id="136303" />
+          <audio id="137760" />
+        </dictionary_entry>
+      </vocab_group>
+
+      <vocab_group>
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <target>acostarse</target>
+          <hint>o:ue</hint>
+          <annotated_target>alegre</annotated_target>
+          <translation>happy; joyful</translation>
+          <language>es</language>
+          <audio id="137761" />
+          <image id="136303" />
+          <exclusion_entry_ids></exclusion_entry_ids>
+        </dictionary_entry>
+      </vocab_group>
+
+      <vocab_group>
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <target>cepillarse</target>
+          <annotated_target></annotated_target>
+          <translation>to brush</translation>
+          <language>es</language>
+          <audio id="137761" />
+          <image id="136303" />
+          <exclusion_entry_ids></exclusion_entry_ids>
+        </dictionary_entry>
+      </vocab_group>
+
+      <column_break />
+
+      <header>Header 2</header>
+      <vocab_group>
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <target>afeitarse</target>
+          <annotated_target></annotated_target>
+          <translation>to shave</translation>
+          <language>es</language>
+          <audio id="137761" />
+          <image id="136303" />
+          <exclusion_entry_ids></exclusion_entry_ids>
+        </dictionary_entry>
+      </vocab_group>
+
+      <vocab_group>
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <target>bañarse</target>
+          <annotated_target></annotated_target>
+          <translation>to bathe; to take a bath</translation>
+          <language>es</language>
+          <audio id="137761" />
+          <image id="136303" />
+          <exclusion_entry_ids></exclusion_entry_ids>
+        </dictionary_entry>
+      </vocab_group>
+
+      <vocab_group>
+        <target>despedirse (de)</target>
+        <hint>e:i</hint>
+
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <translation>to say goodbye</translation>
+          <target>despedirse</target>
+          <annotated_target>abierto</annotated_target>
+          <language>es</language>
+          <image id="136303" />
+          <audio id="137760" />
+          <exclusion_entry_ids></exclusion_entry_ids>
+        </dictionary_entry>
+
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <translation>to say goodbye to</translation>
+          <target>despiderse de</target>
+          <annotated_target>abierto</annotated_target>
+          <language>es</language>
+          <image id="136303" />
+          <audio id="137760" />
+          <exclusion_entry_ids></exclusion_entry_ids>
+        </dictionary_entry>
+      </vocab_group>
+    </category_vocab_chart>
+    
+
+    <regional_variations>
+        <paragraph>Items are presented for recognition purposes only.</paragraph>
+        <variant>
+          <word>Buenos días.<audio id="137760" /></word>
+          <variation>Buenas.<audio id="137761" /></variation>
+        </variant>
+        <variant>
+          <word>De nada.<audio id="137760" /></word>
+          <variation>A la orden.<audio id="137761" /></variation>
+        </variant>
+        <variant>
+          <word>Lo siento.<audio id="137760" /></word>
+          <variation>Perdón.<audio id="137761" /></variation>
+        </variant>
+        <variant>
+          <word>¿Qué tal?<audio id="137760" /></word>
+          <variation>¿Qué hubo?<note>(Col.)</note><audio id="137760" /></variation>
+        </variant>
+        <variant>
+          <word>Chau<audio id="137760" /></word>
+          <variation>Ciao<audio id="137760" /></variation>
+          <variation>Chao<audio id="137761" /></variation>
+        </variant>
+      </regional_variations>
+  
+
+      <example_chart sidebar_ref="3">
+        <title>Uses of <b>ser</b></title>
+        <example_group>
+          <category number="1.">Nationality</category>
+          <example>Juan Carlos <b>es</b> argentino.</example>
+          <example>Es de Buenos Aires</example>
+        </example_group>
+        <example_group>
+          <category number="2.">Profession</category>
+          <example>Adela es agente de viajes.</example>
+          <example>Francisco es medico.</example>
+        </example_group>
+      </example_chart>
+    
+    <imagebank>
+      <image id='248' alt_txt="alt_text_here">
+        <caption>Caption Here</caption>
+        <audio id="2345"></audio>
+      </image>
+    </imagebank>
+
+
+
+    <sidebar ref="1">
+      <title>Common Reflexive Verbs</title>
+     
+    <conjugation_chart type="boot" title="Chart 1">
+      <infinitive>
+        <verb>empezar</verb>
+        <stem>emp</stem>
+        <ending>ezar</ending>
+        <meaning>to begin</meaning>
+
+      </infinitive>
+
+      <singular>
+        <conjugation>
+          <stem>emp</stem>
+          <ending highlight="ie">iezo</ending>
+          <pronoun>yo</pronoun>
+          <conj>empiezo</conj>
+          <meaning></meaning>
+
+        </conjugation>
+        <conjugation>
+          <stem>emp</stem>
+          <ending highlight="ie">iezas</ending>
+          <pronoun>tu</pronoun>
+          <conj>empiezas</conj>
+          <meaning></meaning>
+          <audio id="137798"></audio>
+        </conjugation>
+        <conjugation>
+          <stem>emp</stem>
+          <ending highlight="ie">ieza</ending>
+          <pronoun>Ud/el/ella</pronoun>
+          <conj>empieza</conj>
+          <meaning></meaning>
+          <audio id="137817"></audio>
+        </conjugation>
+      </singular>
+
+      <plural>
+        <conjugation>
+          <stem>emp</stem>
+          <ending>ezamos</ending>
+          <pronoun>nosotros/as</pronoun>
+          <conj>empezamos</conj>
+          <meaning></meaning>
+          <audio id="4"></audio>
+        </conjugation>
+        <conjugation>
+          <stem>emp</stem>
+          <ending>ezais</ending>
+          <pronoun>vosotros</pronoun>
+          <conj>empezais</conj>
+          <audio id="5"></audio>
+          <meaning></meaning>
+        </conjugation>
+        <conjugation>
+          <stem>emp</stem>
+          <ending highlight="ie">iezan</ending>
+          <pronoun>Uds/ellos/ellas</pronoun>
+          <conj>empiezan</conj>
+          <meaning></meaning>
+          <audio id="137760"></audio>
+        </conjugation>
+      </plural>
+    </conjugation_chart>
+
+      <separator />
+
+      <regional_variations>
+        <paragraph>Items are presented for recognition purposes only.</paragraph>
+        <variant>
+          <word>Buenos días.<audio id="137824" /></word>
+          <variation>Buenas.<audio id="137824" /></variation>
+        </variant>
+        <variant>
+          <word>De nada.<audio id="137824" /></word>
+          <variation>A la orden.<audio id="137824" /></variation>
+        </variant>
+        <variant>
+          <word>Lo siento.</word>
+          <variation>Perdón.</variation>
+        </variant>
+        <variant>
+          <word>¿Qué tal?<audio id="137824" /></word>
+          <variation>¿Qué hubo?<note>(Col.)</note><audio id="137824" /></variation>
+        </variant>
+        <variant>
+          <word>Chau</word>
+          <variation>Ciao<audio id="137824" /></variation>
+          <variation>Chao<audio id="137824" /></variation>
+        </variant>
+      </regional_variations>
+    </sidebar>
+
+
+    <headline level="1" number="3.3">Present tense of <b>-er</b> and <b>-ir</b> verbs:</headline>
+    <headline level="3">TBD</headline>
+    <paragraph starting_point="ANTE TODO">
+      In <b>Leccion 2</b>, you learned how to form the present tense of regular <b>-ar</b> verbs.
+      You also learned about the importance of verb forms, which change to show who is performing
+      the action.  The chart below shows the forms from two other important groups,<b>-er</b> verbs
+      and <b>-ir</b> verbs.
+    </paragraph>
+
+
+    <headline level="1" number="2.1">Present tense of -ar verbs</headline>
+    <paragraph starting_point="ANTE TODO">
+      In order to talk about activities, you need to use verbs. Verbs express actions or states of being.
+      In English and Spanish, the infinitive is the base form of the verb. In English, the infinitive is preceded
+      by the word <i>to</i>: <i>to study, to be</i>. The infinitive in Spanish is a one-word form and can be recognized
+      by its endings: <b>-ar</b>, <b>-er</b>, or <b>-ir</b>.
+    </paragraph>
+    <paragraph bullet="true">
+      In this lesson, you will learn the forms of regular <b>-ar</b> verbs.
+    </paragraph>
+
+    <conjugation_chart type="standard" title="Chart 4">
+      <infinitive>
+        <verb>estudiar</verb>
+        <stem>estudi</stem>
+        <ending>ar</ending>
+        <meaning>to study</meaning>
+      </infinitive>
+
+      <singular>
+        <conjugation>
+          <stem>estudi</stem>
+          <ending>o</ending>
+          <pronoun>yo</pronoun>
+          <conj>estudio</conj>
+          <meaning>I study</meaning>
+        </conjugation>
+        <conjugation>
+          <stem>estudi</stem>
+          <ending>as</ending>
+          <pronoun>tu</pronoun>
+          <conj>estudias</conj>
+          <meaning>you (fam.) study</meaning>
+        </conjugation>
+        <conjugation>
+          <stem>estudi</stem>
+          <ending>a</ending>
+          <pronoun>Ud/el/ella</pronoun>
+          <conj>estudia</conj>
+          <meaning>you (form.) study; they study</meaning>
+        </conjugation>
+      </singular>
+
+      <plural>
+        <conjugation>
+          <stem>estudi</stem>
+          <ending>amos</ending>
+          <pronoun>nosotros/as</pronoun>
+          <conj>estudiamos</conj>
+          <meaning>we study</meaning>
+        </conjugation>
+        <conjugation>
+          <stem>estudi</stem>
+          <ending>áis</ending>
+          <pronoun>vosotros</pronoun>
+          <conj>estudiáis</conj>
+          <meaning>you (fam.) study</meaning>
+        </conjugation>
+        <conjugation>
+          <stem>estudi</stem>
+          <ending>an</ending>
+          <pronoun>Uds/ellos/ellas</pronoun>
+          <conj>estudian</conj>
+          <meaning>you (form.) study; they study</meaning>
+        </conjugation>
+      </plural>
+    </conjugation_chart>
+
+    <vocab_chart title="Adjectives that describe emotions and conditions" column_hint="3" show_l1_first="false">
+      <vocab_group>
+      </vocab_group>
+
+      <vocab_group>
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <target>abierto</target>
+          <annotated_target></annotated_target>
+          <translation>open</translation>
+          <language>es</language>
+          <image id="136303" />
+          <audio id="137760" />
+        </dictionary_entry>
+
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <target>abierta</target>
+          <annotated_target></annotated_target>
+          <translation>open</translation>
+          <language>es</language>
+          <image id="136303" />
+          <audio id="137759" />
+        </dictionary_entry>
+      </vocab_group>
+
+      <vocab_group>
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <target>aburrido</target>
+          <translation>bored</translation>
+          <annotated_target></annotated_target>
+          <language>es</language>
+          <image id="136303" />
+          <audio id="137760" />
+        </dictionary_entry>
+
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <target>aburrida</target>
+          <translation>bored</translation>
+          <annotated_target></annotated_target>
+          <language>es</language>
+          <image id="136303" />
+          <audio id="137760" />
+        </dictionary_entry>
+      </vocab_group>
+
+      <vocab_group>
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <target>alegre</target>
+          <annotated_target>alegre</annotated_target>
+          <translation>happy; joyful</translation>
+          <language>es</language><audio id="137761" /><image id="136303" />
+        </dictionary_entry>
+      </vocab_group>
+
+      <vocab_group>
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <translation>embarrassed</translation>
+          <target>avergonzado</target>
+          <annotated_target></annotated_target>
+          <language>es</language>
+          <image id="136303" />
+          <audio id="137760" />
+        </dictionary_entry>
+
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <translation>embarrassed</translation>
+          <target>avergonzada</target>
+          <annotated_target></annotated_target>
+          <language>es</language>
+          <image id="136303" />
+          <audio id="137760" />
+        </dictionary_entry>
+      </vocab_group>
+
+      <vocab_group>
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <translation>tired</translation>
+          <target>cansado</target>
+          <annotated_target></annotated_target>
+          <language>es</language>
+          <image id="136303" />
+          <audio id="137760" />
+        </dictionary_entry>
+
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <translation>tired</translation>
+          <target>cansada</target>
+          <annotated_target></annotated_target>
+          <language>es</language>
+          <image id="136303" />
+          <audio id="137760" />
+        </dictionary_entry>
+      </vocab_group>
+
+      <vocab_group>
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <translation>closed</translation>
+          <annotated_target></annotated_target>
+          <target>cerrado</target>
+          <language>es</language>
+          <image id="136303" />
+          <audio id="137760" />
+        </dictionary_entry>
+
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <translation>closed</translation>
+          <annotated_target></annotated_target>
+          <target>cerrada</target>
+          <language>es</language>
+          <image id="136303" />
+          <audio id="137760" />
+        </dictionary_entry>
+      </vocab_group>
+
+      <vocab_group>
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <translation>comfortable</translation>
+          <annotated_target></annotated_target>
+          <target>cómodo</target>
+          <language>es</language>
+          <image id="136303" />
+          <audio id="137760" />
+        </dictionary_entry>
+
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <translation>comfortable</translation>
+          <annotated_target></annotated_target>
+          <target>cómoda</target>
+          <language>es</language>
+          <image id="136303" />
+          <audio id="137760" />
+        </dictionary_entry>
+      </vocab_group>
+
+      <vocab_group>
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <translation>confused</translation>
+          <annotated_target></annotated_target>
+          <target>confundido</target>
+          <language>es</language>
+          <image id="136303" />
+          <audio id="137760" />
+        </dictionary_entry>
+
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <translation>confused</translation>
+          <annotated_target></annotated_target>
+          <target>confundida</target>
+          <language>es</language>
+          <image id="136303" />
+          <audio id="137760" />
+        </dictionary_entry>
+      </vocab_group>
+
+      <vocab_group>
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <translation>happy; content</translation>
+          <annotated_target></annotated_target>
+          <target>contento</target>
+          <language>es</language>
+          <image id="136303" />
+          <audio id="137760" />
+        </dictionary_entry>
+
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <translation>happy; content</translation>
+          <annotated_target></annotated_target>
+          <target>contenta</target>
+          <language>es</language>
+          <image id="136303" />
+          <audio id="137760" />
+        </dictionary_entry>
+      </vocab_group>
+
+      <vocab_group>
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <translation>disorderly</translation>
+          <annotated_target></annotated_target>
+          <target>desordenado</target>
+          <language>es</language>
+          <image id="136303" />
+          <audio id="137760" />
+        </dictionary_entry>
+
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <translation>disorderly</translation>
+          <annotated_target></annotated_target>
+          <target>desordenada</target>
+          <language>es</language>
+          <image id="136303" />
+          <audio id="137760" />
+        </dictionary_entry>
+      </vocab_group>
+
+      <vocab_group>
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <translation>in love</translation>
+          <annotated_target></annotated_target>
+          <target>enamorado</target>
+          <language>es</language>
+          <image id="136303" />
+          <audio id="137760" />
+        </dictionary_entry>
+
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <translation>in love</translation>
+          <annotated_target></annotated_target>
+          <target>enamorada</target>
+          <language>es</language>
+          <image id="136303" />
+          <audio id="137760" />
+        </dictionary_entry>
+
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <translation>in love with</translation>
+          <annotated_target></annotated_target>
+          <target>enamorado de</target>
+          <language>es</language>
+          <image id="136303" />
+          <audio id="137760" />
+        </dictionary_entry>
+
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <translation>in love with</translation>
+          <annotated_target></annotated_target>
+          <target>enamorada de</target>
+          <language>es</language>
+          <image id="136303" />
+          <audio id="137760" />
+        </dictionary_entry>
+      </vocab_group>
+
+      <vocab_group>
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <translation>mad; angry</translation>
+          <annotated_target></annotated_target>
+          <target>enojado</target>
+          <language>es</language>
+          <image id="136303" />
+          <audio id="137760" />
+        </dictionary_entry>
+
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <translation>mad; angry</translation>
+          <annotated_target></annotated_target>
+          <target>enojada</target>
+          <language>es</language>
+          <image id="136303" />
+          <audio id="137760" />
+        </dictionary_entry>
+      </vocab_group>
+
+      <vocab_group>
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <translation>wrong</translation>
+          <annotated_target></annotated_target>
+          <target>equivocado</target>
+          <language>es</language>
+          <image id="136303" />
+          <audio id="137760" />
+        </dictionary_entry>
+
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <translation>wrong</translation>
+          <annotated_target></annotated_target>
+          <target>equivocada</target>
+          <language>es</language>
+          <image id="136303" />
+          <audio id="137760" />
+        </dictionary_entry>
+      </vocab_group>
+
+      <vocab_group>
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <target>feliz</target>
+          <annotated_target>feliz</annotated_target>
+          <translation>happy</translation>
+          <language>es</language>
+          <audio id="137761" />
+          <image id="136303" />
+        </dictionary_entry>
+      </vocab_group>
+
+      <vocab_group>
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <translation>clean</translation>
+          <annotated_target></annotated_target>
+          <target>limpio</target>
+          <language>es</language>
+          <image id="136303" />
+          <audio id="137760" />
+        </dictionary_entry>
+
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <translation>clean</translation>
+          <annotated_target></annotated_target>
+          <target>limpia</target>
+          <language>es</language>
+          <image id="136303" />
+          <audio id="137760" />
+        </dictionary_entry>
+      </vocab_group>
+
+      <vocab_group>
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <translation>ready</translation>
+          <annotated_target></annotated_target>
+          <target>listo</target>
+          <language>es</language>
+          <image id="136303" />
+          <audio id="137760" />
+        </dictionary_entry>
+
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <translation>ready</translation>
+          <annotated_target></annotated_target>
+          <target>lista</target>
+          <language>es</language>
+          <image id="136303" />
+          <audio id="137760" />
+        </dictionary_entry>
+      </vocab_group>
+
+      <vocab_group>
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <translation>nervous</translation>
+          <annotated_target></annotated_target>
+          <target>nervioso</target>
+          <language>es</language>
+          <image id="136303" />
+          <audio id="137760" />
+        </dictionary_entry>
+
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <translation>nervous</translation>
+          <annotated_target></annotated_target>
+          <target>nerviosa</target>
+          <language>es</language>
+          <image id="136303" />
+          <audio id="137760" />
+        </dictionary_entry>
+      </vocab_group>
+
+      <vocab_group>
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <translation>busy</translation>
+          <annotated_target></annotated_target>
+          <target>ocupado</target>
+          <language>es</language>
+          <image id="136303" />
+          <audio id="137760" />
+        </dictionary_entry>
+
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <translation>busy</translation>
+          <annotated_target></annotated_target>
+          <target>ocupada</target>
+          <language>es</language>
+          <image id="136303" />
+          <audio id="137760" />
+        </dictionary_entry>
+      </vocab_group>
+
+      <vocab_group>
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <translation>orderly</translation>
+          <annotated_target></annotated_target>
+          <target>ordenado</target>
+          <language>es</language>
+          <image id="136303" />
+          <audio id="137760" />
+        </dictionary_entry>
+
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <translation>orderly</translation>
+          <annotated_target></annotated_target>
+          <target>ordenada</target>
+          <language>es</language>
+          <image id="136303" />
+          <audio id="137760" />
+        </dictionary_entry>
+      </vocab_group>
+
+      <vocab_group>
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <translation>worried</translation>
+          <annotated_target></annotated_target>
+          <target>preocupado</target>
+          <language>es</language>
+          <image id="136303" />
+          <audio id="137760" />
+        </dictionary_entry>
+
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <translation>worried</translation>
+          <annotated_target></annotated_target>
+          <target>preocupada</target>
+          <language>es</language>
+          <image id="136303" />
+          <audio id="137760" />
+        </dictionary_entry>
+
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <translation>worried about</translation>
+          <annotated_target></annotated_target>
+          <target>preocupado por</target>
+          <language>es</language>
+          <image id="136303" />
+          <audio id="137760" />
+        </dictionary_entry>
+
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <translation>worried about</translation>
+          <annotated_target></annotated_target>
+          <target>preocupada por</target>
+          <language>es</language>
+          <image id="136303" />
+          <audio id="137760" />
+        </dictionary_entry>
+      </vocab_group>
+
+      <vocab_group>
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <translation>sure</translation>
+          <annotated_target></annotated_target>
+          <target>seguro</target>
+          <language>es</language>
+          <image id="136303" />
+          <audio id="137760" />
+        </dictionary_entry>
+
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <translation>sure</translation>
+          <annotated_target></annotated_target>
+          <target>segura</target>
+          <language>es</language>
+          <image id="136303" />
+          <audio id="137760" />
+        </dictionary_entry>
+      </vocab_group>
+
+      <vocab_group>
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <translation>dirty</translation>
+          <annotated_target></annotated_target>
+          <target>sucio</target>
+          <language>es</language>
+          <image id="136303" />
+          <audio id="137760" />
+        </dictionary_entry>
+
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <translation>dirty</translation>
+          <annotated_target></annotated_target>
+          <target>sucia</target>
+          <language>es</language>
+          <image id="136303" />
+          <audio id="137760" />
+        </dictionary_entry>
+      </vocab_group>
+
+      <vocab_group>
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <target>triste</target>
+          <annotated_target></annotated_target>
+          <translation>sad</translation>
+          <language>es</language>
+          <audio id="137761" />
+          <image id="136303" />
+        </dictionary_entry>
+      </vocab_group>
+    </vocab_chart>
+
+    <vocab_chart title="Los números 0 a 30" column_hint="3" show_l1_first="true">
+      <vocab_group>
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <target>uno</target>
+          <annotated_target>uno</annotated_target>
+          <translation>1</translation>
+          <language>es</language>
+          <audio id="137761" />
+          <image id="136303" />
+        </dictionary_entry>
+      </vocab_group>
+
+      <vocab_group>
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <target>dos</target>
+          <annotated_target>dos</annotated_target>
+          <translation>2</translation>
+          <language>es</language>
+          <audio id="137761" />
+          <image id="136303" />
+        </dictionary_entry>
+      </vocab_group>
+
+      <vocab_group>
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <target>tres</target>
+          <annotated_target>tres</annotated_target>
+          <translation>3</translation>
+          <language>es</language>
+          <audio id="137761" />
+          <image id="136303" />
+        </dictionary_entry>
+      </vocab_group>
+
+      <vocab_group>
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <target>cuatro</target>
+          <annotated_target>cuatro</annotated_target>
+          <translation>4</translation>
+          <language>es</language>
+          <audio id="137761" />
+          <image id="136303" />
+        </dictionary_entry>
+      </vocab_group>
+
+      <vocab_group>
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <target>cinco</target>
+          <annotated_target>cinco</annotated_target>
+          <translation>5</translation>
+          <language>es</language>
+          <audio id="137761" />
+          <image id="136303" />
+        </dictionary_entry>
+      </vocab_group>
+
+      <vocab_group>
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <target>seis</target>
+          <annotated_target>seis</annotated_target>
+          <translation>6</translation>
+          <language>es</language>
+          <audio id="137761" />
+          <image id="136303" />
+        </dictionary_entry>
+      </vocab_group>
+
+      <vocab_group>
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <target>siete</target>
+          <annotated_target>siete</annotated_target>
+          <translation>7</translation>
+          <language>es</language>
+          <audio id="137761" />
+          <image id="136303" />
+        </dictionary_entry>
+      </vocab_group>
+
+      <vocab_group>
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <target>ocho</target>
+          <annotated_target>ocho</annotated_target>
+          <translation>8</translation>
+          <language>es</language>
+          <audio id="137761" />
+          <image id="136303" />
+        </dictionary_entry>
+      </vocab_group>
+
+      <vocab_group>
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <target>nueve</target>
+          <annotated_target>nueve</annotated_target>
+          <translation>9</translation>
+          <language>es</language>
+          <audio id="137761" />
+          <image id="136303" />
+        </dictionary_entry>
+      </vocab_group>
+
+      <vocab_group>
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <target>diez</target>
+          <annotated_target>diez</annotated_target>
+          <translation>10</translation>
+          <language>es</language>
+          <audio id="137761" />
+          <image id="136303" />
+        </dictionary_entry>
+      </vocab_group>
+
+      <vocab_group>
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <target>once</target>
+          <annotated_target>once</annotated_target>
+          <translation>11</translation>
+          <language>es</language>
+          <audio id="137761" />
+          <image id="136303" />
+        </dictionary_entry>
+      </vocab_group>
+
+      <vocab_group>
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <target>doce</target>
+          <annotated_target>doce</annotated_target>
+          <translation>12</translation>
+          <language>es</language>
+          <audio id="137761" />
+          <image id="136303" />
+        </dictionary_entry>
+      </vocab_group>
+
+      <vocab_group>
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <target>trece</target>
+          <annotated_target>trece</annotated_target>
+          <translation>13</translation>
+          <language>es</language>
+          <audio id="137761" />
+          <image id="136303" />
+        </dictionary_entry>
+      </vocab_group>
+
+      <vocab_group>
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <target>catorce</target>
+          <annotated_target>catorce</annotated_target>
+          <translation>14</translation>
+          <language>es</language>
+          <audio id="137761" />
+          <image id="136303" />
+        </dictionary_entry>
+      </vocab_group>
+
+      <vocab_group>
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <target>quince</target>
+          <annotated_target>quince</annotated_target>
+          <translation>15</translation>
+          <language>es</language>
+          <audio id="137761" />
+          <image id="136303" />
+        </dictionary_entry>
+      </vocab_group>
+
+      <vocab_group>
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <target>dieciséis</target>
+          <annotated_target>dieciséis</annotated_target>
+          <translation>16</translation>
+          <language>es</language>
+          <audio id="137761" />
+          <image id="136303" />
+        </dictionary_entry>
+      </vocab_group>
+
+      <vocab_group>
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <target>diecisiete</target>
+          <annotated_target>diecisiete</annotated_target>
+          <translation>17</translation>
+          <language>es</language>
+          <audio id="137761" />
+          <image id="136303" />
+        </dictionary_entry>
+      </vocab_group>
+
+      <vocab_group>
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <target>dieciocho</target>
+          <annotated_target>dieciocho</annotated_target>
+          <translation>18</translation>
+          <language>es</language>
+          <audio id="137761" />
+          <image id="136303" />
+        </dictionary_entry>
+      </vocab_group>
+
+      <vocab_group>
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <target>diecinueve</target>
+          <annotated_target>diecinueve</annotated_target>
+          <translation>19</translation>
+          <language>es</language>
+          <audio id="137761" />
+          <image id="136303" />
+        </dictionary_entry>
+      </vocab_group>
+
+      <vocab_group>
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <target>veinte</target>
+          <annotated_target>veinte</annotated_target>
+          <translation>20</translation>
+          <language>es</language>
+          <audio id="137761" />
+          <image id="136303" />
+        </dictionary_entry>
+      </vocab_group>
+
+      <vocab_group>
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <target>veintiuno</target>
+          <annotated_target>veintiuno</annotated_target>
+          <translation>21</translation>
+          <language>es</language>
+          <audio id="137761" />
+          <image id="136303" />
+        </dictionary_entry>
+      </vocab_group>
+
+      <vocab_group>
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <target>veintidós</target>
+          <annotated_target>veintidós</annotated_target>
+          <translation>22</translation>
+          <language>es</language>
+          <audio id="137761" />
+          <image id="136303" />
+        </dictionary_entry>
+      </vocab_group>
+
+      <vocab_group>
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <target>veintitrés</target>
+          <annotated_target>veintitrés</annotated_target>
+          <translation>23</translation>
+          <language>es</language>
+          <audio id="137761" />
+          <image id="136303" />
+        </dictionary_entry>
+      </vocab_group>
+
+      <vocab_group>
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <target>veinticuatro</target>
+          <annotated_target>veinticuatro</annotated_target>
+          <translation>24</translation>
+          <language>es</language>
+          <audio id="137761" />
+          <image id="136303" />
+        </dictionary_entry>
+      </vocab_group>
+
+      <vocab_group>
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <target>veinticinco</target>
+          <annotated_target>veinticinco</annotated_target>
+          <translation>25</translation>
+          <language>es</language>
+          <audio id="137761" />
+          <image id="136303" />
+        </dictionary_entry>
+      </vocab_group>
+
+      <vocab_group>
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <target>veintiséis</target>
+          <annotated_target>veintiséis</annotated_target>
+          <translation>26</translation>
+          <language>es</language>
+          <audio id="137761" />
+          <image id="136303" />
+        </dictionary_entry>
+      </vocab_group>
+
+      <vocab_group>
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <target>veintisiete</target>
+          <annotated_target>veintisiete</annotated_target>
+          <translation>27</translation>
+          <language>es</language>
+          <audio id="137761" />
+          <image id="136303" />
+        </dictionary_entry>
+      </vocab_group>
+
+      <vocab_group>
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <target>veintiocho</target>
+          <annotated_target>veintiocho</annotated_target>
+          <translation>28</translation>
+          <language>es</language>
+          <audio id="137761" />
+          <image id="136303" />
+        </dictionary_entry>
+      </vocab_group>
+
+      <vocab_group>
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <target>veintinueve</target>
+          <annotated_target>veintinueve</annotated_target>
+          <translation>29</translation>
+          <language>es</language>
+          <audio id="137761" />
+          <image id="136303" />
+        </dictionary_entry>
+      </vocab_group>
+
+      <vocab_group>
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <target>treinta</target>
+          <annotated_target>treinta</annotated_target>
+          <translation>30</translation>
+          <language>es</language>
+          <audio id="137761" />
+          <image id="136303" />
+        </dictionary_entry>
+      </vocab_group>
+    </vocab_chart>
+
+    <vocab_chart title="Common reflexive verbs" column_hint="2" show_l1_first="false">
+      <vocab_group>
+        <hint>o:ue</hint>
+
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <translation>to remember</translation>
+          <target>acordarse</target>
+          <annotated_target>abierto</annotated_target>
+          <language>es</language>
+          <image id="136303" />
+          <audio id="137760" />
+        </dictionary_entry>
+
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <exclusion_entry_ids></exclusion_entry_ids>
+          <translation>to remember</translation>
+          <target>acordarse de</target>
+          <annotated_target>abierto</annotated_target>
+          <language>es</language>
+          <image id="136303" />
+          <audio id="137760" />
+        </dictionary_entry>
+      </vocab_group>
+
+      <vocab_group>
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <target>acostarse</target>
+          <hint>o:ue</hint>
+          <annotated_target>alegre</annotated_target>
+          <translation>happy; joyful</translation>
+          <language>es</language>
+          <audio id="137761" />
+          <image id="136303" />
+          <exclusion_entry_ids></exclusion_entry_ids>
+        </dictionary_entry>
+      </vocab_group>
+
+      <vocab_group>
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <target>afeitarse</target>
+          <annotated_target></annotated_target>
+          <translation>to shave</translation>
+          <language>es</language>
+          <audio id="137761" />
+          <image id="136303" />
+          <exclusion_entry_ids></exclusion_entry_ids>
+        </dictionary_entry>
+      </vocab_group>
+
+      <vocab_group>
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <target>bañarse</target>
+          <annotated_target></annotated_target>
+          <translation>to bathe; to take a bath</translation>
+          <language>es</language>
+          <audio id="137761" />
+          <image id="136303" />
+          <exclusion_entry_ids></exclusion_entry_ids>
+        </dictionary_entry>
+      </vocab_group>
+
+      <vocab_group>
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <target>cepillarse</target>
+          <annotated_target></annotated_target>
+          <translation>to brush</translation>
+          <language>es</language>
+          <audio id="137761" />
+          <image id="136303" />
+          <exclusion_entry_ids></exclusion_entry_ids>
+        </dictionary_entry>
+      </vocab_group>
+
+      <vocab_group>
+        <target>despedirse (de)</target>
+        <hint>e:i</hint>
+
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <translation>to say goodbye</translation>
+          <target>despedirse</target>
+          <annotated_target>abierto</annotated_target>
+          <language>es</language>
+          <image id="136303" />
+          <audio id="137760" />
+          <exclusion_entry_ids></exclusion_entry_ids>
+        </dictionary_entry>
+
+        <dictionary_entry>
+          <id>1</id>
+          <descriptor></descriptor>
+          <translation>to say goodbye to</translation>
+          <target>despiderse de</target>
+          <annotated_target>abierto</annotated_target>
+          <language>es</language>
+          <image id="136303" />
+          <audio id="137760" />
+          <exclusion_entry_ids></exclusion_entry_ids>
+        </dictionary_entry>
+      </vocab_group>
+    </vocab_chart>
+
+    <compare_and_contrast title="Compare And Contrast">
+      <paragraph>
+        Unlike English, a number of verbs in Spanish can be reflexive or non-reflexive. If the verb acts upon the subject, the reflexive form is used. If the verb acts upon something other than the subject, the non-reflexive form is used. Compare these sentences.
+      </paragraph>
+
+      <paragraph>
+        As the preceding sentences show, reflexive verbs sometimes have different meanings than their non-reflexive counterparts. For example, <b>lavar</b> means <i>to wash</i>, while <b>lavarse</b> means <i>to wash oneself, to wash up</i>.
+      </paragraph>
+    </compare_and_contrast>
+
+    <sidebar ref="1">
+      <title>Common Reflexive Verbs</title>
+      <vocab_chart title="Common reflexive verbs" column_hint="2" show_l1_first="false">
+        <vocab_group>
+          <hint>o:ue</hint>
+
+          <dictionary_entry>
+            <id>1</id>
+            <descriptor></descriptor>
+            <exclusion_entry_ids></exclusion_entry_ids>
+            <translation>to remember</translation>
+            <target>acordarse</target>
+            <annotated_target>abierto</annotated_target>
+            <language>es</language>
+            <image id="136303" />
+            <audio id="137760" />
+          </dictionary_entry>
+
+          <dictionary_entry>
+            <id>1</id>
+            <descriptor></descriptor>
+            <exclusion_entry_ids></exclusion_entry_ids>
+            <translation>to remember</translation>
+            <target>acordarse de</target>
+            <annotated_target>abierto</annotated_target>
+            <language>es</language>
+            <image id="136303" />
+            <audio id="137760" />
+          </dictionary_entry>
+        </vocab_group>
+
+        <vocab_group>
+          <dictionary_entry>
+            <id>1</id>
+            <descriptor></descriptor>
+            <target>acostarse</target>
+            <hint>o:ue</hint>
+            <annotated_target>alegre</annotated_target>
+            <translation>happy; joyful</translation>
+            <language>es</language>
+            <audio id="137761" />
+            <image id="136303" />
+            <exclusion_entry_ids></exclusion_entry_ids>
+          </dictionary_entry>
+        </vocab_group>
+
+        <vocab_group>
+          <dictionary_entry>
+            <id>1</id>
+            <descriptor></descriptor>
+            <target>afeitarse</target>
+            <annotated_target></annotated_target>
+            <translation>to shave</translation>
+            <language>es</language>
+            <audio id="137761" />
+            <image id="136303" />
+            <exclusion_entry_ids></exclusion_entry_ids>
+          </dictionary_entry>
+        </vocab_group>
+
+        <vocab_group>
+          <dictionary_entry>
+            <id>1</id>
+            <descriptor></descriptor>
+            <target>bañarse</target>
+            <annotated_target></annotated_target>
+            <translation>to bathe; to take a bath</translation>
+            <language>es</language>
+            <audio id="137761" />
+            <image id="136303" />
+            <exclusion_entry_ids></exclusion_entry_ids>
+          </dictionary_entry>
+        </vocab_group>
+
+        <vocab_group>
+          <dictionary_entry>
+            <id>1</id>
+            <descriptor></descriptor>
+            <target>cepillarse</target>
+            <annotated_target></annotated_target>
+            <translation>to brush</translation>
+            <language>es</language>
+            <audio id="137761" />
+            <image id="136303" />
+            <exclusion_entry_ids></exclusion_entry_ids>
+          </dictionary_entry>
+        </vocab_group>
+
+        <vocab_group>
+          <target>despedirse (de)</target>
+          <hint>e:i</hint>
+
+          <dictionary_entry>
+            <id>1</id>
+            <descriptor></descriptor>
+            <translation>to say goodbye</translation>
+            <target>despedirse</target>
+            <annotated_target>abierto</annotated_target>
+            <language>es</language>
+            <image id="136303" />
+            <audio id="137760" />
+            <exclusion_entry_ids></exclusion_entry_ids>
+          </dictionary_entry>
+
+          <dictionary_entry>
+            <id>1</id>
+            <descriptor></descriptor>
+            <translation>to say goodbye to</translation>
+            <target>despiderse de</target>
+            <annotated_target>abierto</annotated_target>
+            <language>es</language>
+            <image id="136303" />
+            <audio id="137760" />
+            <exclusion_entry_ids></exclusion_entry_ids>
+          </dictionary_entry>
+        </vocab_group>
+      </vocab_chart>
+    </sidebar>
+
+  </items>
+</activity>

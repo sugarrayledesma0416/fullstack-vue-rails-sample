@@ -1,0 +1,8 @@
+<% unless stats.empty? %>
+  <div class="u-mar-bot-16">
+    <div><b>Total Rated:</b> <%= stats.total_count %></div>
+    <% stats.categories.each do |category| %>
+      <div><b><%= category[:label] %></b>: <%= category[:percentage] %>%</div>
+    <% end %>
+  </div>
+<% end %>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lesson id="207">
+  <toc_entry title="PREPARACIÓN" background_color="#ED1C24" page="" location="2245">
+      <toc_entry title="Health and medical conditions" page="252" location="224500000" />
+	  <toc_entry title="Parts of the body" page="252" location="" />
+	  <toc_entry title="ORTOGRAFÍA: El acento y las sílabas fuertes" page="257" location="224800000" />
+  </toc_entry>
+  <toc_entry title="AVENTURAS" background_color="#007DC6" page="" location="2246">
+      <toc_entry title="FOTONOVELA: ¡Uf! ¡Qué dolor!" page="258" location="224600000" />
+  </toc_entry>
+  <toc_entry title="EXPLORACIÓN" background_color="#E0861B" page="" location="2249">
+      <toc_entry title="BAJO LA LUPA: Servicios de salud" page="260" location="" />
+	  <toc_entry title="FLASH CULTURA: La salud" page="261" location="224900000" />
+  </toc_entry>
+  <toc_entry title="GRAMÁTICA" background_color="#17A46A" page="" location="2251">
+      <toc_entry title="10.1 The imperfect tense" page="262" location="225101559" />
+      <toc_entry title="10.2 Constructions with &lt;b&gt;&lt;i&gt;se&lt;/i&gt;&lt;/b&gt;" page="264" location="225101560" />
+      <toc_entry title="10.3 Adverbs" page="266" location="225101561" />
+      <toc_entry title="REPASO Y VIDEO CLIP" page="268" location="" />
+  </toc_entry>
+  <toc_entry title="LECTURA" background_color="#5B57A6" page="" location="2252">
+      <toc_entry title="El consultorio" page="272" location="225200000" />
+  </toc_entry>
+  <toc_entry title="VOCABULARIO" background_color="#FFD503" page="" location="2255">
+      <toc_entry title="End of lesson vocabulary" page="274" location="225500000" />
+  </toc_entry>
+  <toc_entry title="AVENTURAS EN LOS PAÍSES HISPANOS" background_color="#BD1547" short_title="PAÍSES HISPANOS" page="" location="2253">
+      <toc_entry title="Suramérica II" page="275" location="225301640" />
+      <toc_entry title="Argentina" page="" location="225301653" />
+      <toc_entry title="Chile" page="" location="225301654" />
+      <toc_entry title="Uruguay" page="" location="225301655" />
+      <toc_entry title="Paraguay" page="" location="225301656" />
+      <toc_entry title="Bolivia" page="" location="225301657" />
+  </toc_entry>
+</lesson>

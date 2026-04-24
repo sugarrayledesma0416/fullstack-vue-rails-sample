@@ -1,0 +1,12 @@
+<%= render :partial => 'courses/section_row', :locals => { :program_id => program_id,
+                                                    :course_row_class => course_row_class,
+                                                    :section => section,
+                                                    :user_has_access => user_has_access
+                                                   } %>
+<% unless user_has_access %>
+  <tr id="purchase_required_<%= section.id %>" class="purchase_required_warning" style="display: none;">
+    <td colspan="3">
+      <div>You must redeem a Code to access this course.</div>
+    </td>
+  </tr>
+<% end %>

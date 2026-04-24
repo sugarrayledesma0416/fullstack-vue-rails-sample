@@ -1,0 +1,45 @@
+<% content_for(:js_head, javascript_include_tag('maestro_activity_engine/d3.v3.min')) %>
+<% content_for(:js_head, javascript_include_tag('moment-with-langs.min.js')) %>
+<% content_for(:js_head, javascript_include_tag('twix.min')) %>
+<% content_for(:js_head, javascript_packs_with_chunks_tag('instructor/courses/new')) %>
+<% content_for(:css_head, stylesheet_packs_with_chunks_tag('instructor/courses/new')) %>
+
+<% content_for(:meta) do %>
+  <meta name="VHL.course_school_id" content="<%= @school&.id %>"/>
+<% end %>
+
+<% if @in_institution_admin %>
+  <% content_for :meta do %>
+    <meta name="VHL.in_institution_admin" content="true">
+  <% end %>
+  <div class="ns-music-v1 u-mar-bot-16">
+    <%= link_to request.referer do %>
+      <%= Music::Components.icon(variant: 'return', text: 'Return to Admin Templates') %>
+    <% end %>
+  </div>
+<% else %>
+  <% content_for :meta do %>
+    <meta name="VHL.in_institution_admin" content="false">
+  <% end %>
+<% end %>
+
+<div>
+  <%= render(partial: 'activities/return_to') %>
+</div>
+
+<div class="js-course-wizard"></div>
+<div class="js-course-wizard-data"
+     data-from-dom="<%= {
+       can_share_to_google_classroom_for_school: @school&.can_share_to_google_classroom?,
+       current_user: current_user.to_json,
+       gradebook_categories: format_screencast_context_link(32, 'Show me how to add a gradebook category to my new course'),
+       has_ai_virtual_chat_activities: current_program.has_ai_virtual_chat_activities?,
+       has_vocab_tutorials: current_program.has_vocab_tutorials?,
+       institution_supports_chat: @school.has_chat_support_enabled?,
+       is_current_program_supersite_junior: supersite_junior?,
+       is_vol: current_program.vista_online_learning?,
+       language_code: current_program.language_code,
+       loading_icon_path: asset_path('/images/loading_32.gif'),
+       program_has_audio_transcripts: program_has_audio_transcripts?,
+     }.to_json  %>">
+</div>

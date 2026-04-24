@@ -1,0 +1,39 @@
+<% if courses_and_sections.blank? -%>
+  <div class="c-course-focus__no-courses  no_courses">
+    None at this time
+  </div>
+<% else -%>
+  <div class="<%= focus_menu_table_css_class %>">
+    <div class="c-course-focus-list-wrapper" id="focus_list">
+      <ul class="c-course-focus-list">
+      <% courses_and_sections.each do |course, sections| -%>
+        <li>
+          <a id="js_course_<%= course.id %>"
+             class="c-course-focus-list__item  c-course-focus-list__course
+                    course_header test-course-header
+                    <%= focused == "course_#{course.id}" ?
+                      'is-active  focused' : 'bar-hover'  %>"
+             href="#"
+             onclick="javascript:VHL.focus.update_focus(this)">
+            <span><%= course.name %></span>
+            <span class="start_date"><%= format_date_time(course.start_date, :tiny) %></span>&mdash;
+            <span class="end_date"><%= format_date_time(course.end_date, :tiny) %></span>
+          </a>
+        </li>
+        <% sections.each do |section| -%>
+          <li>
+            <a id="js_section_<%= section.id %>"
+               class="c-course-focus-list__item  section_row test-section-row
+                      <%= focused == "section_#{section.id}" ?
+                        'is-active  focused' : 'bar-hover' %>  <%= test_class("section_#{section.id}") %>"
+                href="#" onclick="javascript:VHL.focus.update_focus(this);"
+                data-focus-course-id="<%= course.id %>">
+              <%= section.name %>
+            </a>
+          </li>
+        <% end -%>
+      <% end -%>
+      </ul>
+    </div>
+  </div>
+<% end -%>

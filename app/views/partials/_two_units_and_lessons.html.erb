@@ -1,0 +1,16 @@
+<% visible_unit_ranks = presenter.units.map(&:rank) -%>
+
+<div class="slide_bracket_placeholder_l"></div>
+<div class="slide_bracket_placeholder_r"></div>
+
+
+<div class="carousel ui-helper-clearfix units-2">
+  <% presenter.units.each do |unit| -%>
+    <% unit_carousel_member_for(unit.rank, presenter.start_unit, visible_unit_ranks) do -%>
+      <div class="slide_wrapper">
+        <%= render :partial => "partials/carousel_tile", :locals => {:presenter => presenter, :unit => unit} %>
+      </div><!-- .slide_wrapper -->
+    <% end -%>
+  <% end -%>
+</div><!-- /carousel -->
+

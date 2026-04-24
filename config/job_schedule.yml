@@ -1,0 +1,41 @@
+drop_low_scores:
+  cron: "25 * * * * America/New_York"
+  class: "GradebookDropLowScoresSchedulerWorker"
+  queue: medium_priority
+
+session_audit_cleaner:
+  cron: "0 1-23 * * * America/New_York"
+  class: "SessionAuditCleanerWorker"
+  queue: default
+
+composition_drafts_cleaner:
+  cron: "0 4 * * * America/New_York"
+  class: "CompositionDraftsCleanerWorker"
+  queue: default
+
+# Run daily 12:55 AM
+lti_gradebook_syncer:
+  cron: "55 0 * * * America/New_York"
+  class: "GradebookLtiSyncWorker"
+  queue: default
+
+prune_scores:
+  cron: "0 2 * * * America/New_York"
+  class: "GradebookPruneScoresSchedulerWorker"
+  queue: default
+
+delete_scores:
+  cron: "0 3 * * * America/New_York"
+  class: "GradebookDeleteScoresSchedulerWorker"
+  queue: default
+
+archive_courses:
+  cron: "45 23 * * * America/New_York"
+  class: "Cartridge::ArchiveClosedCoursesWorker"
+  queue: default
+
+# run daily @ 12:30AM, 2:30AM, 4:30AM and 6:30AM
+lti_launch_cleanup:
+  cron: "30 0,2,4,6 * * * America/New_York"
+  class: "Lti::LaunchesCleanupWorker"
+  queue: default

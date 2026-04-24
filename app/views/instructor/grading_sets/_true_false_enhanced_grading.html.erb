@@ -1,0 +1,36 @@
+<ol class="multi_type_question">
+  <div class="col-9">
+    <%= render(
+      'maestro_activity_engine/activities/true_false_enhanced/review',
+      attempt: nil,
+      display_score: false,
+      instructor_viewing: true,
+      is_read_only: true,
+      item: question,
+      question_number: question.question_number,
+      results: results
+    ) %>
+  </div>
+  <% if display_score_controls %>
+  <div class="col-3  c-grading-sidebar">
+    <%= render(
+          'instructor/grading_sets/score_controls',
+          view_manager: ScoreControlsViewManager.new(
+            question,
+            feedback_item,
+            results,
+            response_id,
+            params
+          )
+        )
+    %>
+    <%= render(
+      'instructor/grading_sets/all_instructor_comments',
+      feedback_item: feedback_item,
+      is_new_recording: is_new_recording,
+      recording_path: recording_path,
+      response_id: response_id
+    ) %>
+  </div>
+  <% end %>
+</ol>

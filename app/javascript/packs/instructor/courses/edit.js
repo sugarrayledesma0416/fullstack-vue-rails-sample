@@ -1,0 +1,1 @@
+import 'instructor/courses/edit';

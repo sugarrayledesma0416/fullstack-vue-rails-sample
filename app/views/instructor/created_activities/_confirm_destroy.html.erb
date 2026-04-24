@@ -1,0 +1,33 @@
+<div class="u-txt-lt">
+  <div class="u-mar-bot-10  u-bord-bot-1">
+    <h3 class="u-txt-red u-txt-bold u-txt-24">Delete content</h3>
+  </div>
+
+  <% if activity.all_courses.empty? %>
+    <div class="u-txt-bold  u-txt-red">
+      <p>
+        Content will be deleted and will not be available in any course.</br>
+        Proceed with permantently deleting this content?
+      </p>
+    </div>
+  <% else %>
+    <div>
+      <p>This instructor created content is currently assigned in the following courses:</p>
+      <%= render 'activity_courses', activity: activity %>
+    </div>
+    <div class="u-txt-bold  u-txt-red">
+      <p>
+      Deleting it will remove any student attempts from the gradebook.</br>
+        Are you sure you want to permanently delete this content?
+      </p>
+    </div>
+  <% end %>
+
+  <div class="m4-button-group--space-between  u-txt-bold  u-mar-bot-0  u-mar-top-32">
+    <button class="u-txt-reg  u-txt-upper  u-bg-white  u-bord-solid  u-bord-1  m4-button--round  u-bord-gray-6  u-txt-gray-6  u-pad-8  u-pad-lt-24  u-pad-rt-24  js-modal-close">
+      Cancel
+    </button>
+      <%= button_to 'Delete', instructor_my_content_path(id: activity.id, program_id: activity.program.id, from_my_content: true),
+        method: :delete, class: 'c-button  m4-button--primary  js-modal-confirm' %>
+  </div>
+</div>

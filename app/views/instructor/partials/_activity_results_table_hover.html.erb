@@ -1,0 +1,44 @@
+<%
+if hover_type == :calendar
+  arrow_class = 'results_table_hover_arrow_left'
+  hover_partial = 'partials/calendar_activity_hover'
+else
+  arrow_class = 'results_table_hover_arrow'
+  hover_partial = 'partials/activity_hover'
+end
+%>
+
+<div data-hover-container="<%= dom_id(activity) %>" class="results_table_hover  results_table_hover--hide  hidden_helper">
+  <div class="results_table_hover_assign hidden_helper">
+    <div>
+      <%= link_to(
+        'Assign', '#',
+        id: "set_due_date_link_#{dom_id(activity)}",
+        class: "set_due_date_link",
+        title: 'Assign',
+        onclick: 'VHL.ContentLibrary.assignment_wizard(this); return false;')
+        %>
+    </div>
+
+    <% if hover_type != :calendar && hover_type != :assessment_activity && can_edit_course_library %>
+      <div class="activity-visible">
+        <%= link_to('Hide', '#', 'data-activity-view' => 'hide', 'data-activity-id' => activity.id, 'class' => "make_invisible #{'hidden_helper' if !activity_in_course_library}") %>
+
+        <%= link_to('Show', '#', 'data-activity-view' => 'show', 'data-activity-id' => activity.id, 'class' => "make_visible #{'hidden_helper' if activity_in_course_library}") %>
+      </div>
+    <% end -%>
+  </div>
+
+  <div class="<%= arrow_class %>"></div>
+  <% if unassignable_reason == AssignmentValidator::UNASSIGNABLE_DRAFT_ACTIVITY %>
+    <div class="draft_activity_msg  u-txt-ital  u-pad-top-4  u-pad-bot-10">
+      <b>This is a draft</b>. Drafts cannot be assigned.
+    </div>
+  <% elsif unassignable_reason.present? %>
+    <div class="unassignable_activity_msg">
+      <a href="#" class="more_info prevent-default js-unassignable-msg-link" js-data-unassignable-reason="<%= unassignable_reason %>">Not assignable. Learn why.</a>
+    </div>
+  <% end %>
+
+  <%= render hover_partial, activity: activity %>
+</div>

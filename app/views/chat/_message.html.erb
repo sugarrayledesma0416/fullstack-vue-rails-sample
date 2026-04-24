@@ -1,0 +1,22 @@
+<script id="message-template" type="text/x-handlebars-template">
+
+  <div class="c-chat-message  js-chat-message  {{isCurrentUser fromMe}}" data-userid="{{ fromUuid }}">
+    <div class="c-chat-message__image-wrapper">
+    </div>
+    <span class="u-screen-reader-only">
+      {{messageFrom}}
+    </span>
+    <div class="c-chat-message__body">
+      {{#if isGroupChat}}
+        <div class="c-chat-message__sender-name  {{#if fromMe}}u-txt-rt  u-pad-rt-16{{/if}}">
+          {{messageFrom}}
+        </div>
+      {{/if}}
+      <div class="c-chat-message__bubble">
+        {{ body }}
+      </div>
+      <!-- <div class="c-chat-message__time">{{ time }}</div> -->
+    </div>
+  </div>
+
+</script>

@@ -1,0 +1,28 @@
+<% content_for(:js_head, javascript_include_tag('phantom_activity_fixer')) %>
+<div class="ns-music-v1">
+  <h1 class="c-heading--md">Phantom Activities</h1>
+  <%= form_tag(controller: :phantom_activity_fixer, action: :create, method: :post, onsubmit: "return confirmSubmit();") do %>
+    <div class="c-form-item">
+      <label class="c-form-item__label" for="select-phantom-activity">Choose the scenario</label>
+      <select id="select-phantom-activity" class="c-select  js-select-phantom-activity">
+        <option value="1">Activity does not assign to a Student and does not duplicate</option>
+        <option value="2">Activity assign to a Student and duplicates</option>
+      </select>
+    </div>
+
+    <div class="c-form-item  js-activity-id-first">
+      <label class="c-form-item__label" for="activity_first">M3 Activity Loser ID</label>
+      <input class="c-form-item__input" name="activity_first" type="number" id="activity_first" placeholder="Activity id valid" required>
+    </div>
+    <div class="c-form-item  u-hidden  js-activity-id-second">
+      <label class="c-form-item__label" for="activity_second">M3 Activity Winner ID</label>
+      <input class="c-form-item__input  js-activity-second" name="activity_second" type="number" id="activity_second" placeholder="Activity id valid">
+    </div>
+
+    <%= Music::Components.button(
+      classes: ['u-mar-top-16'],
+      text: 'Submit',
+      variant: 'primary',
+      type: 'submit') %>
+  <% end %>
+</div>

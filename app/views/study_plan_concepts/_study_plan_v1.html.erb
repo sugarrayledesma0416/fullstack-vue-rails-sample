@@ -1,0 +1,108 @@
+<% content_for(:js_head, javascript_include_tag('maestro_activity_engine/radialProgress')) %>
+<% content_for(:js_head, javascript_include_tag('maestro_activity_engine/d3.v3.min')) %>
+<% content_for(:js_head, javascript_include_tag('donut_chart')) %>
+<% content_for(:js_head, javascript_include_tag('shapes')) %>
+<% content_for(:js_head, javascript_include_tag('study_plans/study_plan')) %>
+<% content_for(:css_head, stylesheet_link_tag('music/features/study_plan')) %>
+
+<div id="activity_wrapper" class="c-activity-wrapper">
+  <div id="main_content">
+
+    <h1 class="c-activity-title">
+      <%= @activity.lesson_display_name.to_s.html_safe %> - <%= @activity.concept_name.to_s.html_safe %> | <%= @activity.title.to_s.html_safe  %>
+    </h1>
+
+    <div class="c-study-plan  <%= test_class('study-plan-v1') %>">
+
+      <table class="c-study-plan__table" data-element-type="study-plan-table">
+        <thead class="c-study-plan__header">
+          <tr>
+            <th class="c-study-plan__column-results" scope="col">
+              <span class="c-study-plan__label  c-block-pointer
+              c-block-pointer--header  js-pointer"
+                    data-pointer="whole">
+                Your Results
+              </span>
+            </th>
+            <th class="c-study-plan__column-actions" scope="col">
+              <span class="c-study-plan__label  c-block-pointer
+              c-block-pointer--header  js-pointer"
+                    data-pointer="whole">
+                Action Steps
+              </span>
+            </th>
+            <!-- No js-pointer on this one; just a plain rectangle. -->
+            <th class="c-study-plan__column-ready" scope="col">
+              <span class="c-study-plan__label  c-block-pointer
+              c-block-pointer--header">
+                Are You Ready?
+              </span>
+            </th>
+          </tr>
+        </thead>
+        <% @presenter.concepts.each do |concept| %>
+          <tbody class="c-study-plan__body"
+                 data-concept="<%= concept.reference_id %>"
+                 data-needs-reading="<%= concept.needs_reading? %>"
+                 data-complete="<%= concept.complete? %>">
+                 <!-- Revised version for Finished -->
+                 <!-- ie, concept.complete? is true -->
+                 <tr class="c-study-plan__concept" data-concept-title>
+                   <td class="c-study-plan__column-results">
+                     <span class="c-concept-tag c-concept-tag--study-plan">
+                       <%= concept.reference_id %>
+                     </span>
+                     <%= concept.title.html_safe %>
+                   </td>
+                   <td class="c-study-plan__column-actions"> </td>
+                   <td class="c-study-plan__column-ready"> </td>
+                 </tr>
+
+                 <tr data-concept-progress>
+                   <td class="c-study-plan__column-results  c-data">
+                     <div class="c-block-pointer  u-center-vertical-flex  js-pointer" data-concept-chart>
+                       <div class="c-pie-chart">
+                         <svg class="c-pie-chart__svg  c-pie-chart--xs  js-pie-chart"
+                              data-value="<%= "#{concept.score}%" %>" data-value2="<%= "#{(100 - concept.score)}%" %>">
+                         </svg>
+                       </div>
+                     </div>
+                   </td>
+                   <td class="c-study-plan__column-actions">
+                     <div data-concept-readings>
+                       <ul class="c-activity-list" data-concept-reading-list>
+                         <% concept.readings.each do |reading| -%>
+                         <% next unless reading.viewable? %>
+                           <li>
+                             <%= link_to reading.title,
+                                         reading.path,
+                                         onclick: "popup_activity_maestro2_size('#{reading.title}'); return false;",
+                                         target: '_blank',
+                                         class: (reading.viewed?) ? 'is-complete' : 'is-incomplete',
+                                         'data-user-reading-path' => user_reading_path(concept.program_id, reading.id) %>
+                         </li>
+                       <% end %>
+                       </ul>
+                       <!-- end -->
+                     </div>
+                   </td>
+                   <td class="c-study-plan__column-ready  u-txtC">
+                     <span class="c-icon  c-icon--xl" data-concept-check-mark>
+                       <span class="u-no-visual">Ready</span>
+                     </span>
+                   </td>
+                 </tr>
+          </tbody>
+        <% end %>
+      </table>
+    </div> <!-- / c-study-plan -->
+
+    <span class="c-button-group  c-button-group--terminator">
+        <%= link_to 'Practice Test', section_activity_path(@section.id, @activity.id), class: 'c-button  c-button--primary' %>
+        <%= link_to 'Dashboard', @return_url, class: 'c-button  c-button--primary' %>
+    </span>
+
+  </div> <!-- / main-content -->
+
+
+</div>

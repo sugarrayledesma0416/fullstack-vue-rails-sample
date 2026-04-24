@@ -1,0 +1,44 @@
+<% assignment = (workset && workset.assignment_by_activity(activity)) || classwork && classwork.assignment(activity)
+   overdue = (workset && assignment && workset.overdue?(activity, assignment)) || classwork && assignment && classwork.overdue?(activity)
+   %>
+
+
+<% if assignment -%>
+  <div id="activity_date" class="c-activity-date  c-chat-activity-dis-none-on-sm">
+    <div id="activity_due_date" class="ui-helper-clearfix">
+      <div class="calendar">
+      <%= format_activity_due_date(assignment.due_date_time, overdue, :show_spans) %>
+      </div>
+      <div class="u-dis-flex  u-flex-wrap">
+        <div class="due-time"><%= @activity_presenter.due_time_with_zone %></div>
+        <% if overdue %>
+          <div class="activity-is-late">(late)</div>
+        <% end -%>
+      </div>
+    </div>
+  </div>
+<% end -%>
+
+
+<% unless attempt_track.nil? %>
+  <div id="activity_attempts" class="c-activity-attempts  u-dis-md-block "><%= format_remaining(attempt) %></div>
+<% end -%>
+<a href="javascript://" class="what-counts">Grade settings</a>
+
+<div class="hidden_helper">
+  <div id="activity_details" title="Grade settings">
+    <div tabindex="0">This is a <%= (@activity_presenter.activity_gradable? ? 'graded' : 'credit') %> activity.</div>
+    <% if @activity_presenter.submittable? %>
+      <div>You have <%= @activity_presenter.attempts_remaining %> remaining.</div>
+    <% end %>
+  <% if @activity_presenter.activity_assigned? -%>
+    <div>For this activity, late work is <%= (@activity_presenter.late_work_accepted? ? '' : 'not') %> accepted.</div>
+  <% end -%>
+  <% if activity.strictness? %>
+    <div id="activity_strictness">
+      <%= format_scoring_ruleset(attempt.effective_scoring_ruleset) %>
+    </div>
+  <% end %>
+  </div>
+</div>
+

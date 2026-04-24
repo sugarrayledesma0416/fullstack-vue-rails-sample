@@ -1,0 +1,81 @@
+/* ======================================================================= *
+
+    Pulser
+    Copied from chat.
+    Animated elements shown during network operations, etc.
+
+ * ======================================================================= */
+
+$pulser-color: $gray-a;
+
+// Time for one complete "pulse" of animation:
+$pulser-duration: 0.6s;
+
+// Time offset so the animation per element is staggered:
+$pulser-offset: $pulser-duration * 0.333333;
+
+// Each element is just under a third of the width of the pulser,
+// with the remainder used for space in between the elements:
+$pulser-element-size: 28%;
+
+// Be default, the pulser is 100% of its parent.
+// Optional fixed width modifiers:
+$pulser-size-sm: 2rem;
+$pulser-size-md: 4rem;
+$pulser-size-lg: 8rem;
+
+.c-pulser {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  min-width: 2rem;
+}
+
+.c-pulser--inline {
+  display: inline-flex;
+  margin-bottom: 0;
+}
+
+.c-pulser--round {
+  border-radius: 50%;
+}
+
+.c-pulser__element {
+  border-radius: 50%;
+  width: $pulser-element-size;
+  padding-top: $pulser-element-size;
+  background-color: $pulser-color;
+  opacity: 0;
+  transform: scale(0.1);
+
+  animation: pulse $pulser-duration infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+
+  @each $num in (1, 2, 3) {
+    $val: $pulser-offset * $num;
+
+    &:nth-child(#{$num}) {
+      animation-delay: #{$val};
+    }
+  }
+}
+
+.c-pulser--sm {
+  width: $pulser-size-sm;
+}
+
+.c-pulser--md {
+  width: $pulser-size-md;
+}
+
+.c-pulser--lg {
+  width: $pulser-size-lg;
+}
+
+@keyframes pulse {
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

@@ -1,0 +1,21 @@
+<activity activity_type="click_and_reveal" language="en" title="Click and Reveal">
+  <dl>Make matches. Remember things.</dl>
+  <items>
+    <pair>
+      <tile><image id="1" /></tile>
+      <tile><label>choice1</label></tile>
+    </pair>
+    <pair>
+      <tile><image id="2" /></tile>
+      <tile><label>choice2</label></tile>
+    </pair>
+    <pair>
+      <tile><image id="3" /></tile>
+      <tile><label>choice3</label></tile>
+    </pair>
+    <pair>
+      <tile><image id="4" /></tile>
+      <tile><label>choice4</label></tile>
+    </pair>
+  </items>
+</activity>

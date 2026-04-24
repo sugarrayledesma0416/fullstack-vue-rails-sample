@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<activity activity_type="multiple_choice_true_false" title="¿Cierto o falso?" language="es">
+  <dl>Indicate if each statement is <b>cierto</b> or <b>falso</b>, according to the episode.</dl>
+  <items>
+    <style>
+        <item_numbers>show</item_numbers>
+    </style>
+    <item>
+      <prompt>Javier y Álex son pasajeros.</prompt>
+      <choices>
+        <answer>cierto</answer>
+        <distractor>falso</distractor>        
+      </choices>
+    </item>
+    <item>
+      <prompt>Javier Gómez Lozano es el conductor.</prompt>
+      <choices>
+        <distractor>cierto</distractor>
+        <answer>falso</answer>
+      </choices>
+    </item>
+    <item>
+      <prompt>Inés Ayala Loor es de la agencia Ecuatur.</prompt>
+      <choices>
+        <distractor>cierto</distractor>
+        <answer>falso</answer>
+      </choices>
+    </item>    
+    <item>
+      <prompt>Javier es de Puerto Rico.</prompt>
+      <choices>
+        <answer>cierto</answer>
+        <distractor>falso</distractor>   
+      </choices>
+    </item>    
+    <item>
+      <prompt>Álex es del Ecuador.</prompt>
+      <choices>
+        <distractor>cierto</distractor>
+        <answer>falso</answer>
+      </choices>
+    </item>    
+  </items>
+</activity>

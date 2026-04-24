@@ -1,0 +1,24 @@
+const criteriasWithOrderedPerformances = "[{\"title\":\"Content\",\"max_score\":\"5\",\"performances\":[{\"description\":\"The brochure uses a sufficient amount of lesson vocabulary to describe in detail the suggested activities.\",\"header_id\":\"1\",\"score\":5},{\"description\":\"The brochure uses some lesson vocabulary to describe the activities.\",\"header_id\":\"2\",\"score\":3},{\"description\":\"The brochure uses little lesson vocabulary, suggests few activities.\",\"header_id\":\"3\",\"score\":1}]},{\"title\":\"Organization\",\"max_score\":\"5\",\"performances\":[{\"description\":\"The brochure is well organized and visually engaging, with various attractive visuals.\",\"header_id\":\"1\",\"score\":5},{\"description\":\"The brochure is somewhat organized and includes few interesting visuals.\",\"header_id\":\"2\",\"score\":4},{\"description\":\"The brochure is not well organized and does not include interesting visuals.\",\"header_id\":\"3\",\"score\":3}]},{\"title\":\"Accuracy\",\"max_score\":\"5\",\"performances\":[{\"description\":\"The lesson vocabulary (activities, dates, locations) is used correctly.\",\"header_id\":\"1\",\"score\":5},{\"description\":\"The lesson vocabulary (activities, dates, locations) is mostly used correctly.\",\"header_id\":\"2\",\"score\":4},{\"description\":\"The use of lesson vocabulary is limited (activities, dates, locations) and often incorrect.\",\"header_id\":\"3\",\"score\":3}]}]";
+
+const criteriaColumnHeaders = "[{\"id\":\"1\",\"label\":\"5 points\"},{\"id\":\"2\",\"label\":\"4 points\"},{\"id\":\"3\",\"label\":\"3 points\"}]";
+
+const rubricLinkJson = "\"\\u003ca role=\\\"button\\\" onclick=\\\"if( !this.hasAttribute('disabled') ){ var w=window.open(this.href,'preview_rubric','directories=no,height=600,location=no,menubar=no,resizable=yes,scrollbars=yes,status=yes,toolbar=no,width=985'); w.focus(); }; return false;\\\" target=\\\"_blank\\\" rel=\\\"noopener\\\" href=\\\"/sections/0/activities/994528/rubric?by_cms_revision=true\\u0026amp;from=grading\\\"\\u003e\\u003cspan class=\\\"rubric-link-text  u-pad-rt-8\\\"\\u003eView\\u003c/span\\u003e\\u003cspan class=\\\"c-embedded-icon  c-embedded-icon--reference  c-embedded-icon--md  u-txt-plain\\\"\\u003e\\n  \\u003csvg xmlns=\\\"http://www.w3.org/2000/svg\\\" viewBox=\\\"0 0 14 14\\\" class=\\\"c-svg\\\"\\u003e\\n  \\u003cg fill=\\\"inherit\\\" fill-rule=\\\"evenodd\\\"\\u003e\\n    \\u003cpath d=\\\"M7.558.218h5.827V6.28l-2.239-2.238-3.384 3.383L6.27 5.931l3.47-3.47\\\"\\u003e\\u003c/path\\u003e\\n    \\u003cpath d=\\\"M5.27.268H.293v12.934h12.979V8.275h-1.97v2.962H2.294V2.24H5.26z\\\"\\u003e\\u003c/path\\u003e\\n  \\u003c/g\\u003e\\n\\u003c/svg\\u003e\\n\\n    \\u003cspan class=\\\"u-screen-reader-only\\\"\\u003eReference\\u003c/span\\u003e\\n\\u003c/span\\u003e\\n\\u003c/a\\u003e\"";
+
+const userScoresWithRubric = "[{\"user_id\":1,\"student_name\":\"Fooname Barname\",\"gradable\":true,\"instructor\":false,\"practicing\":false,\"comment_box_class\":\".js-comment-for-question_1-student-1\",\"attempt_id\":1,\"rubric\":\"{\\\"Content\\\":\\\"1\\\",\\\"Organization\\\":\\\"2\\\",\\\"Accuracy\\\":\\\"3\\\"}\",\"manual\":null,\"input_name\":\"score_for_question_1_student_1\"}]";
+const userScoresWithManual = "[{\"user_id\":1,\"student_name\":\"Fooname Barname\",\"gradable\":true,\"instructor\":false,\"practicing\":null,\"comment_box_class\":\".js-comment-for-question_1-student-1\",\"attempt_id\":1,\"manual\":14,\"rubric\":null,\"input_name\":\"score_for_question_1_student_1\"}]";
+const userScoresWithEmptyScores = "[{\"user_id\":1,\"student_name\":\"Fooname Barname\",\"gradable\":true,\"instructor\":false,\"practicing\":null,\"comment_box_class\":\".js-comment-for-question_1-student-1\",\"attempt_id\":1,\"rubric\":null,\"manual\":null,\"input_name\":\"score_for_question_1_student_1\"}]";
+const userScoresWithInstructor = "[{\"user_id\":1,\"student_name\":\"Lolita Stracke\",\"gradable\":null,\"instructor\":true,\"practicing\":null,\"comment_box_class\":null,\"attempt_id\":null,\"rubric\":null,\"manual\":null,\"input_name\":\"score_for_question_1_student_1\"}]";
+const userScoresNotGradable = "[{\"user_id\":1,\"student_name\":\"Fooname Barname\",\"gradable\":false,\"instructor\":false,\"practicing\":false,\"comment_box_class\":null,\"attempt_id\":1,\"rubric\":null,\"manual\":null,\"input_name\":\"score_for_question_1_student_1\"}]";
+const userScoresPracticing = "[{\"user_id\":1,\"student_name\":\"Fooname Barname\",\"gradable\":true,\"instructor\":false,\"practicing\":true,\"comment_box_class\":null,\"attempt_id\":1,\"rubric\":null,\"manual\":null,\"input_name\":\"score_for_question_1_student_1\"}]";
+
+export {
+  criteriasWithOrderedPerformances,
+  criteriaColumnHeaders,
+  rubricLinkJson,
+  userScoresWithRubric,
+  userScoresWithManual,
+  userScoresWithEmptyScores,
+  userScoresWithInstructor,
+  userScoresNotGradable,
+  userScoresPracticing,
+}

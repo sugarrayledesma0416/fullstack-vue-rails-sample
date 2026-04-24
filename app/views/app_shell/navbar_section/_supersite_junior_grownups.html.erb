@@ -1,0 +1,48 @@
+<% content_for(
+     :js_head,
+     javascript_include_tag('music/features/horizontal_scrolling_nav_menu')
+   ) %>
+
+<% content_for(:above_page_title) do %>
+  <div class="c-grownups-nav  c-subnav-container--scroll  c-subnav-wrapper
+              js-subnav-container">
+    <nav>
+      <ul class="c-subnav  c-subnav--scroll  js-subnav">
+        <li class="c-sub-nav__item  <%= 'is-active' if @sub_location == 'home' %>">
+          <%= link_to(
+                'Home',
+                main_app.jr_section_grownups_path(section_id: current_section.id),
+                class: "c-sub-nav__link  #{'is-active' if @sub_location == 'home'}"
+              ) %>
+        </li>
+        <li class="c-sub-nav__item  <%= 'is-active' if @sub_location == 'calendar' %>">
+          <%= link_to(
+                'Calendar',
+                main_app.jr_section_study_schedule_path(section_id: current_section.id),
+                class: "c-sub-nav__link  #{'is-active' if @sub_location == 'calendar'}"
+              ) %>
+        </li>
+        <li class="c-sub-nav__item  <%= 'is-active' if @sub_location == 'grades' %>">
+          <%= link_to(
+                'Grades',
+                gradebook_engine.jr_section_user_summary_path(
+                  current_program.id, current_section.id, current_user.id
+                ),
+                class: "c-sub-nav__link  #{'is-active' if @sub_location == 'grades'}"
+              ) %>
+        </li>
+        <li class="c-sub-nav__item  <%= 'is-active' if @sub_location == 'resources' %>">
+          <%= link_to(
+                'Resources',
+                main_app.jr_resources_path(program_id: current_program.id, section_id: current_section.id),
+                class: "c-sub-nav__link  #{'is-active' if @sub_location == 'resources'}"
+              ) %>
+        </li>
+      </ul>
+
+      <div class="c-subnav-scroll-arrow  js-subnav-scroll  u-dis-none">
+        <%= feature_icon('music/icons/horizontal-arrow' ) %>
+      </div>
+    </nav>
+  </div>
+<% end %>

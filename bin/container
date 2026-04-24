@@ -1,0 +1,4 @@
+#!/bin/sh
+
+sudo docker build -t m3 $PWD && \
+    sudo docker run -it --name=m3 --publish=3001:80 --link=api:api -v $PWD:/home/app/m3 m3

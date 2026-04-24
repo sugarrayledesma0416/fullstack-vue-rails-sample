@@ -1,0 +1,1 @@
+../../app/assets/javascripts/error_page.js

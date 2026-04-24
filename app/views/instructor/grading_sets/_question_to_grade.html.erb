@@ -1,0 +1,307 @@
+<div class="sbs_answer_container ui-helper-clearfix" id="<%= "answer_container_#{view_manager.current_response_id}" %>">
+  <% if view_manager.show_question_prompt? %>
+    <% if view_manager.has_prompt? %>
+      <div class="sbs_question_prompt ui-helper-clearfix">
+        <span class="question_number">Question <%= view_manager.question_number %>:</span>
+        <div
+          class="question_prompt_text
+          ui-helper-clearfix"
+          id="<%= view_manager.question.label %>_prompt"
+          data-helpable-type="question_prompt">
+          <div class="arc_steps_container play">
+            <% if view_manager.activity_true_false_enhanced? %>
+                <%= format_mc_prompt(view_manager.prompt).vhl_nl2br.html_safe %>
+            <% end %>
+
+            <% unless (defined? (hide_duplicate_reference)) && hide_duplicate_reference %>
+              <% view_manager.text_prompt_content do %>
+                <%=
+                  view_manager.html_friendly_prompt do |formatter, *args|
+                    self.send(formatter, *args)
+                  end
+                %>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+
+        <div class="sbs_question_and_sample_answer">
+          <% view_manager.sample_answer_content do |template| %>
+            <%= render :partial => template, :locals => {:question => view_manager.question} -%>
+          <% end %>
+        </div>
+      </div>
+    <% elsif view_manager.activity.has_sub_activities? && view_manager.column_matching_question? %>
+      <%# MAE-68402: workaround for Encuentros, which has a column-matching activity in some exams. %>
+      <div class="sbs_question_prompt ui-helper-clearfix">
+        <span class="question_number">
+          Column-Matching Question <%= view_manager.question_number %>: <%= view_manager.question.tiles.first.label %>
+        </span>
+      </div>
+    <% elsif view_manager.show_no_prompt_message? %>
+      <span class="no-answer">(No Prompt) <%= view_manager.question.label %></span>
+    <% end %>
+  <% elsif view_manager.inline_open_ended_table_question? %>
+    <%# renders a read-only version of the table below the toolbar for reference %>
+    <%= render(
+      'maestro_activity_engine/activities/table_inline_open_ended/instructor_grading',
+      content_object: content_object || view_manager.question_content_object,
+      is_read_only: true,
+      item: view_manager.question,
+      results: @presenter.current_student_attempt.results
+    ) %>
+  <% end %>
+
+  <% unless view_manager.activity_auto_graded? %>
+    <span data-helpable-type="whole_question" id="<%= view_manager.question.label %>_whole_question" ></span>
+  <% end %>
+
+  <div class="box-frame ui-helper-clearfix student_answer_container" data-content-type="answer_container" data-js-first_load=true>
+    <% if !view_manager.arc_activity? %>
+      <div data-content-type="show_student_response_link" class="original_student_answer" id="show_student_response_link_cke_<%= editor_index %>" style="display: <%= view_manager.feedback_has_inline_corrections? ? '' : 'none' -%>">
+       <%= format_original_answer_student_link(view_manager) %>
+        <div class="hover_original_answer hidden_helper">View original student answer<div class="original_answer_arrow"></div></div>
+      </div>
+    <% end -%>
+
+    <% if view_manager.table_activity_question? %>
+      <div class="u-mar-top-10">
+        <% if view_manager.inline_open_ended_table_question? %>
+          <% view_manager.question.wols.each do |wol| -%>
+            <%=
+              render(
+                'instructor/grading_sets/student_response_for_question',
+                content_object: content_object || view_manager.activity.content_object,
+                view_manager: StudentResponseForInlineWolViewManager.new(
+                  activity: view_manager.activity,
+                  attempt: view_manager.current_student_attempt,
+                  editor_index: editor_index,
+                  feedback_item: view_manager.current_student_attempt.feedback_item(wol.label),
+                  instructor: @presenter.instructor,
+                  grading_suggestion_data: @presenter.grading_suggestion_data_for(
+                    view_manager.current_student_attempt, wol.label
+                  ),
+                  instructor_comment_recording_path: view_manager.recording_path(
+                    view_manager.current_student, wol
+                  ),
+                  is_new_recording: view_manager.new_recording?(
+                    view_manager.current_student, wol
+                  ),
+                  params: params,
+                  question: wol,
+                  response_id: view_manager.current_response_id,
+                  student: view_manager.current_student
+                )
+              ) %>
+          <% end -%>
+        <% else %>
+          <% # table_fill_in_the_blank or table_drop_down %>
+          <%=
+            render(
+              'instructor/grading_sets/student_response_for_question',
+              view_manager: StudentResponseForQuestionViewManager.new(
+                activity: view_manager.activity,
+                attempt: view_manager.current_student_attempt,
+                editor_index: editor_index,
+                feedback_item: view_manager.current_student_attempt.feedback_item(
+                  view_manager.question.label
+                ),
+                instructor: @presenter.instructor,
+                grading_suggestion_data: @presenter.grading_suggestion_data_for(
+                  view_manager.current_student_attempt, view_manager.question.label
+                ),
+                instructor_comment_recording_path: view_manager.recording_path(
+                  view_manager.current_student, view_manager.question
+                ),
+                is_new_recording: view_manager.new_recording?(
+                  view_manager.current_student, view_manager.question
+                ),
+                params: params,
+                question: view_manager.question,
+                response_id: view_manager.current_response_id,
+                student: view_manager.current_student
+              ),
+              content_object: content_object,
+            ) %>
+        <% end %>
+      </div>
+    <% elsif view_manager.current_question_is_partner_chat_type? %>
+      <%=
+        render(
+          '/instructor/grading_sets/partner_chat_response_for_question',
+          student: view_manager.current_student,
+          question: view_manager.question,
+          results: view_manager.current_student_attempt.results,
+          presenter: view_manager.presenter,
+          partner_chat_view_manager: @presenter.partner_chat_view_manager(
+            view_manager.current_student, view_manager.question
+          )
+        )
+      %>
+      <% elsif view_manager.is_solo_video_recording_question? %>
+        <%= render  :partial => '/instructor/grading_sets/solo_video_recording_response_for_question',
+                    :locals => {:student => view_manager.current_student,
+                                :question => view_manager.question,
+                                :results => view_manager.current_student_attempt.results,
+                                :presenter => @presenter,
+                                :solo_video_recording_view_manager => @presenter.solo_video_recording_view_manager(view_manager.current_student,
+                                                                                                                   view_manager.question) } %>
+    <% elsif view_manager.activity_group_chat? %>
+        <%= render '/instructor/grading_sets/group_chat_response_for_question',
+              student: view_manager.current_student,
+              question: view_manager.question,
+              results: view_manager.current_student_attempt.results,
+              presenter: @presenter,
+              group_chat_view_manager: @presenter.group_chat_view_manager(view_manager.current_student, view_manager.question) %>
+
+    <% elsif view_manager.is_virtual_chat_type? || view_manager.current_question_is_virtual_chat_type? %>
+      <%= render(
+            '/instructor/grading_sets/common_virtual_chat_response_for_question',
+            student: view_manager.current_student,
+            question: view_manager.question,
+            results: view_manager.current_student_attempt.results,
+            presenter: view_manager.presenter,
+            virtual_chat_partial: view_manager.virtual_chat_partial,
+            editor_index: editor_index
+          ) %>
+    <% elsif view_manager.activity.activity_type == 'column_matching' %>
+      <%= render(
+            'maestro_activity_engine/activities/complete/column_matching',
+            activity_id: view_manager.activity.id,
+            content_object: view_manager.activity.content_object,
+            results: view_manager.current_student_attempt.results,
+          ) %>
+    <% elsif view_manager.activity_auto_graded? && !view_manager.activity.santillana? %>
+      <div class="grid">
+        <div class="col-9">
+          <div class="answer_text">
+            <div class="student_response_area" lang="<%= @presenter.activity.language %>">
+              <ul class="auto_graded_question">
+                <%
+                  partial_name = if view_manager.table_activity_question?
+                                   "table_#{view_manager.question.type}"
+                                 else
+                                   view_manager.question.partial_name
+                                 end
+                %>
+                <%=
+                  format_question(
+                    "#{partial_name}/review",
+                    view_manager.question,
+                    true,
+                    view_manager.current_student_attempt.results_for_question(
+                      view_manager.question_label
+                    ),
+                    nil,
+                    false,
+                    # For a multi-type/exam activity, the content object of
+                    # the sub_activity for the current question needs
+                    # to be specified.
+                    content_object: view_manager.question_content_object
+                  )
+                %>
+              </ul>
+            </div>
+          </div>
+
+        </div> <!-- / col-9 -->
+        <div class="col-3">
+
+          <div class="c-grading-sidebar">
+            <%= render(
+                  '/instructor/grading_sets/score_controls',
+                  view_manager: ScoreControlsViewManager.new(
+                    view_manager.question,
+                    view_manager.feedback[view_manager.current_response_id],
+                    view_manager.current_student_attempt.results_for_question(view_manager.question_label),
+                    view_manager.current_response_id,
+                    params
+                  )
+                ) %>
+            <div class="original_score_control"></div>
+            <div class="ui-helper-clearfix"> </div>
+
+              <div class="box-frame-comments  ui-helper-clearfix">
+                <%= render  :partial => '/instructor/grading_sets/all_instructor_comments',
+                    :locals => {:response_id => view_manager.current_response_id,
+                                :feedback_item => view_manager.feedback[view_manager.current_response_id],
+                                :recording_path => view_manager.recording_path(view_manager.current_student, view_manager.question),
+                                :is_new_recording => view_manager.new_recording?(view_manager.current_student, view_manager.question) } %>
+              </div>
+            </div> <!-- / c-grading-sidebar -->
+
+          </div> <!-- / col-3 -->
+      </div> <!-- / grid -->
+    <% elsif view_manager.activity.speech_rec_listen_repeat? %>
+      <div class="grid">
+        <div class="col-9">
+        <%= render 'maestro_activity_engine/activities/speech_rec_listen_repeat/review',
+          { question: view_manager.question,
+            results: view_manager.current_student_attempt.results_for_question(view_manager.question_label)} %>
+        </div>
+        <div class="col-3">
+
+          <div class="c-grading-sidebar">
+            <%= render(
+                  '/instructor/grading_sets/score_controls',
+                  view_manager: ScoreControlsViewManager.new(
+                    view_manager.question,
+                    view_manager.feedback[view_manager.current_response_id],
+                    view_manager.current_student_attempt.results_for_question(view_manager.question_label),
+                    view_manager.current_response_id,
+                    params
+                  )
+                ) %>
+            <div class="original_score_control"></div>
+            <div class="ui-helper-clearfix"> </div>
+
+              <div class="box-frame-comments  ui-helper-clearfix">
+                <%= render  :partial => '/instructor/grading_sets/all_instructor_comments',
+                    :locals => {:response_id => view_manager.current_response_id,
+                                :feedback_item => view_manager.feedback[view_manager.current_response_id],
+                                :recording_path => view_manager.recording_path(view_manager.current_student, view_manager.question),
+                                :is_new_recording => view_manager.new_recording?(view_manager.current_student, view_manager.question) } %>
+              </div>
+            </div> <!-- / c-grading-sidebar -->
+
+          </div> <!-- / col-3 -->
+      </div>
+    <% else %>
+      <%= render(
+            'instructor/grading_sets/student_response_for_question',
+            content_object: content_object || view_manager.activity.content_object,
+            view_manager: StudentResponseForQuestionViewManager.new(
+              activity: view_manager.activity,
+              attempt: view_manager.current_student_attempt,
+              editor_index: editor_index,
+              feedback_item: view_manager.feedback[view_manager.current_response_id],
+              instructor: @presenter.instructor,
+              grading_suggestion_data: @presenter.grading_suggestion_data_for(
+                view_manager.current_student_attempt, view_manager.question.label
+              ),
+              instructor_comment_recording_path: view_manager.recording_path(view_manager.current_student, view_manager.question),
+              is_new_recording: view_manager.new_recording?(view_manager.current_student, view_manager.question),
+              params: params,
+              question: view_manager.question,
+              response_id: view_manager.current_response_id,
+              student: view_manager.current_student
+            )
+          ) %>
+    <% end -%>
+  </div>
+
+  <% if view_manager.has_student_attachment? %>
+    <div class="grid">
+      <div class="col-9">
+        <div class="composition_upload grading">
+          <span class="instructor_comment_label upload">Upload a response</span>
+          <% response_id = "#{view_manager.question.label}_student_#{view_manager.current_student.id}" %>
+          <%= show_uploader_controls(view_manager.feedback_attachment, response_id, @allowed_file_types) %>
+
+          <div class="close_link hidden_helper"><a href="#" data-link="close_container">close</a></div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+<div style="clear: both;"></div>

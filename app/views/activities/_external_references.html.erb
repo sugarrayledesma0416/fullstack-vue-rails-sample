@@ -1,0 +1,15 @@
+<% references = external_reference_links(activity, current_section_id, current_program.id) %>
+<% if references %>
+  <div class="c-external-references  external-references  c-chat-activity-dis-none-on-sm">
+    <% references.each do |reference| %>
+      <span class="c-external-references__reference">
+        <span aria-hidden="true">
+           <%= feature_icon('music/features/activity-shell/icons/icon-external-reference', ['c-external-references__reference-icon'] ) %>
+        </span>
+        <span class="c-external-references__reference-link">
+          <%= reference %>
+        </span>
+      </span>
+    <% end %>
+  </div>
+<% end %>

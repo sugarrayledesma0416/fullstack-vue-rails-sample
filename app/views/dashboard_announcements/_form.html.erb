@@ -1,0 +1,53 @@
+<% content_for(:js_head, javascript_include_tag('checkboxes')) %>
+<% content_for(:js_head, javascript_include_tag('dashboard_announcement')) %>
+
+<% vol_visible = @visible[:vol].present? %>
+<% supersite_visible = @visible[:supersite].present? %>
+
+<%= render(
+      'partials/form_errors',
+      header_message: nil,
+      object: @dashboard_announcement
+    ) %>
+<div class=" <%= "js-vol-#{vol_visible}" %>  <%= "js-ss-#{supersite_visible}" %>">
+  <div class="c-form-item">
+    <%= form.label :title, "Title", { class: 'c-form-item__label' }  %>
+    <%= form.text_field :title, { class: 'c-form-item__input' } %>
+  </div>
+  <div class="c-form-item">
+    <%= form.label :body, "Announcement text", { class: 'c-form-item__label' } %>
+    <%= form.text_area :body, { class: 'c-form-item__textarea', cols: '50', rows: '5' }  %>
+  </div>
+  <div class="c-form-item">
+    <%= form.label :external_url, "URL", { class: 'c-form-item__label' } %>
+    <%= form.text_field :external_url, { class: 'c-form-item__input' } %>
+  </div>
+
+  <div class="c-form-item">
+    <%= form.label :link_text, "Link text", { class: 'c-form-item__label' } %>
+    <%= form.text_field :link_text, { class: 'c-form-item__input' } %>
+  </div>
+
+  <div class="c-form-group">
+    <label class="c-form-item__label u-pad-top-12">Make visible</label>
+    <div class="c-form-item">
+      <%= form.check_box(:supersite, { class: 'c-form-item__checkbox js-supersite', type: 'checkbox' }) %>
+      <%= form.label :supersite, 'Supersite', { class: 'c-form-item__label' } %>
+    </div>
+
+    <div class="c-form-item">
+      <%= form.check_box(:vol, { class: 'c-form-item__checkbox js-vol', type: 'checkbox' }) %>
+      <%= form.label :vol, 'Portales/Prime', { class: 'c-form-item__label' } %>
+    </div>
+  </div>
+
+  <div class='c-button-group'>
+    <%= link_to "cancel", dashboard_announcements_path, { class: 'c-button  c-button' } %>
+    <% if supersite_visible || vol_visible %>
+      <%= render partial: 'modal' %>
+      <%= form.submit 'Save',  class: 'c-button c-button--primary js-check-visibility' %>
+    <% else %>
+      <%= form.submit 'Save',  class: 'c-button c-button--primary' %>
+    <% end %>
+  </div>
+</div>

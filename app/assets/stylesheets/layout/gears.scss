@@ -1,0 +1,121 @@
+@import 'music/universal/modules/layers';
+@import 'music/library/v1/base/settings/units';
+
+$white: #fff;
+$gray-b: #bbb;
+$black: #000;
+$transparent: transparent;
+
+/* Gear Menus */
+ul.section li .section_gear {
+  padding: 0 rpx(7);
+  margin-top: rpx(3);
+  margin-left: rpx(2);
+  display: inline-block;
+  position: relative;
+}
+
+ul.section.expanded li .section_gear {
+  background: none;
+  float: right;
+  position: relative;
+  padding: 5px 10px 1px 15px;
+  display: block;
+  height: 24px;
+  width: 25px;
+}
+
+/* Section Gear Icons */
+.course_gear {
+  padding: 0 rpx(9);
+  margin-top: rpx(10);
+  display: inline-block;
+  position: relative;
+}
+
+.gear {
+  display: inline-block;
+  box-sizing: border-box;
+  width: rpx(26);
+  height: rpx(26);
+  cursor: pointer;
+  padding: rpx(4) rpx(5);
+  border: rpx(1) solid $transparent;
+  
+  &:hover, 
+  &.active {
+    background: $white;
+    border-color: $gray-b;
+
+    svg {
+      fill: $black;
+    }
+  }
+}
+
+.gear svg {
+  fill: $gray-b;
+}
+
+.course_gear.overall a.gear.disabled.active:hover,
+.course_gear.overall a.gear.disabled.active,
+.course_gear.overall a.gear.active:hover,
+.course_gear.overall a.gear.active {
+  border-top: 1px solid #BDBDBD;
+  border-left: 1px solid #BDBDBD;
+  border-right: 1px solid #BDBDBD;
+  height: 17px;
+  margin: 0px;
+  width: 25px;
+  z-index: 105;
+}
+
+
+a.gear.active:hover {
+  border-bottom: 0px;
+}
+
+.resources .course_gear.overall .gear_menu {
+  right: -2px;
+  top: 17px;
+}
+
+/* Gear Menus */
+.gear_menu {
+  background: #FFF;
+  border: 1px solid #bdbdbd;
+  width: 125px;
+  font-size: 10px;
+  position: absolute;
+  padding: 5px;
+  top: 24px;
+  right: rpx(9);
+  z-index: z(menu);
+  display: none;
+}
+
+ul.section li .section_gear li.gear_option {
+  background: #FFF;
+}
+
+.gear_option a,
+.gear_option input {
+  color: #0083CB;
+  font-size: 11px;
+  display: block;
+}
+
+.gear_option input {
+  border: none;
+  background-color: #FFF;
+  margin-bottom: 2px;
+  margin-top: 1px;
+}
+
+.gear_option input:hover {
+  text-decoration:underline;
+}
+
+.course_gear .gear_menu {
+  top: rpx(20);
+}

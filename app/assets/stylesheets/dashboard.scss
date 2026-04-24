@@ -1,0 +1,804 @@
+  @import 'music/library/v1/base/tools/functions/length_functions';
+/* Page Layout */
+
+.dashboard #column_one {
+  width: rpx(300);
+  float: left;
+  margin: 0;
+}
+
+.dashboard #column_two {
+  width: rpx(550);
+  float: right;
+  margin: rpx(3) 0 0 0;
+}
+
+.no_course_or_section {
+  color: #000;
+}
+
+#dashboard_accordion {
+  margin-top: rpx(27);
+  margin-bottom: rpx(40);
+}
+
+/* Sidebar School Header & Collapse */
+.school_header {
+  display: flex;
+  height: rpx(20);
+  padding: rpx(5);
+  color: #BABABA;
+  width: rpx(290);
+}
+
+.school_header.closed {
+  background: url('/images/closed_school.png') bottom no-repeat;
+  padding-bottom: rpx(7);
+  margin-bottom: rpx(5);
+  -webkit-box-shadow: rpx(0) rpx(4) rpx(2) rpx(-2) #c8c8c8;
+  -moz-box-shadow: rpx(0) rpx(4) rpx(2) rpx(-2) #c8c8c8;
+  box-shadow: rpx(0) rpx(4) rpx(2) rpx(-2) #c8c8c8;
+}
+
+.school_accordion {
+  background: url('/images/arrows-grey-small.png') rpx(-1) top no-repeat;
+  width: rpx(18);
+  height: rpx(18);
+  float: left;
+  display: block;
+  margin-top: rpx(4);
+  margin-left: rpx(1);
+}
+
+.school_accordion.one_school {
+  background-image:none;
+}
+
+.school_accordion.closed {
+  background: url('/images/arrows-grey-small.png') right top no-repeat;
+}
+
+.school_name {
+  font-size: rpx(13);
+  font-weight: normal;
+  float: left;
+  line-height: rpx(15);
+  margin-left: rpx(10);
+  margin-top: rpx(7);
+  overflow: hidden;
+}
+
+/* Sidebar Add Course / Section */
+
+.dash_add_course {
+  width: rpx(95);
+  height: rpx(20);
+  float: right;
+  display: block;
+  margin-left: auto;
+  margin-right: rpx(2);
+  margin-top: rpx(5);
+}
+
+a.add_section,
+.dash_add_course a {
+  color: #1B3D6B;
+  display: block;
+  font-size: rpx(9);
+  font-weight: bold;
+  height: rpx(20);
+  text-align: left;
+  width: rpx(108);
+}
+
+.dash_add_course a        { background: url('/images/indash_btn_add.png') rpx(90) rpx(-24) no-repeat; }
+.dash_add_course a:hover  { background: url('/images/indash_btn_add.png') rpx(90)   rpx(1) no-repeat; }
+a.add_section             { background: url('/images/indash_btn_add.png') rpx(91) rpx(-24) no-repeat; float: right; margin-right: rpx(12); }
+a:hover.add_section       { background: url('/images/indash_btn_add.png') rpx(91)  rpx(1) no-repeat; }
+
+a.section_create_student_link,
+a.section_del_link,
+a.section_edit_link {
+  display: block;
+}
+
+/* Sidebar Courses Menu */
+.course_navigation_wrapper {
+  margin-bottom: rpx(25);
+  width: rpx(300);
+  -webkit-box-shadow: rpx(4) rpx(4) rpx(6) rpx(0) #c8c8c8;
+  -moz-box-shadow: rpx(4) rpx(4) rpx(6) rpx(0) #c8c8c8;
+  box-shadow: rpx(4) rpx(4) rpx(6) rpx(0) #c8c8c8;
+}
+
+/* Grabber for drag & drop
+ * reordering of courses on dash. */
+.course-grabber {
+  background-image: image-url('gripper-icon.svg');
+  background-repeat: no-repeat;
+  background-position: rpx(12) rpx(12);
+  height: rpx(46);
+  width: rpx(36);
+  float: left;
+  cursor: crosshair;
+}
+
+.school_contents {
+  margin-bottom: rpx(50);
+}
+
+.school_classes {
+  height: rpx(46);
+  color: #565656;
+  font-size: rpx(11);
+  width: rpx(300);
+  margin-left: rpx(0);
+}
+
+.school_classes a.course_name {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 1em;
+  font-weight: bold;
+  color: #565656;
+  height: rpx(36);
+  padding-top: rpx(10);
+  width: rpx(215);
+}
+
+.school_classes a.course_name:hover {
+  text-decoration: none;
+}
+
+.school_classes.expanded {
+  width: rpx(300);
+  height: rpx(46);
+  margin-left: rpx(0);
+}
+
+.school_classes.expanded a.course_name {
+  color: #FFF;
+  display: block;
+  height: rpx(35);
+  width: rpx(216);
+  float: left;
+  position: relative;
+}
+
+.school_classes.expanded.neutral-header-bar a.course_name {
+  color:#565656;
+}
+
+
+.course_dates {
+  font-size: .8em;
+  padding: 0;
+  line-height: rpx(10);
+  font-weight: bold;
+  margin-left: rpx(0);
+  display: block;
+  position: absolute;
+  margin-top: rpx(0);
+}
+
+.course_buttons {
+  float: right;
+}
+
+.course_end {
+  background: #e7e7e7;
+  height: rpx(18);
+  font-size: 8pt;
+  padding: rpx(5);
+  text-align: right;
+}
+
+.no_courses {
+  background: url('/images/indash_sideend.png') no-repeat;
+  height: rpx(18);
+  font-size: 8pt;
+  padding: rpx(5);
+  text-align: left;
+  margin-bottom: rpx(2);
+  padding-right: rpx(10);
+  padding-left: rpx(35);
+}
+
+.create_new_course {
+  padding-left:rpx(30);
+}
+
+/* Sidebar Sections */
+
+.no_section.side {
+  height: rpx(18);
+  background: #f3f3f3;
+  font-size: 8pt;
+  padding: rpx(5) rpx(10) rpx(5) rpx(34);
+  text-align: left;
+  margin-bottom: rpx(0);
+  border-bottom: rpx(1) solid #c9c9c9;
+}
+
+.no_course.side {
+  font-size: 8pt;
+  padding: rpx(5) rpx(10) rpx(5) rpx(34);
+  text-align: left;
+  background: #f3f3f3;
+  width: rpx(256);
+  margin-right: rpx(5);
+  -webkit-box-shadow: rpx(4) rpx(4) rpx(6) rpx(0) #c8c8c8;
+  -moz-box-shadow: rpx(4) rpx(4) rpx(6) rpx(0) #c8c8c8;
+  box-shadow: rpx(4) rpx(4) rpx(6) rpx(0) #c8c8c8;
+}
+
+.no_section.side a, .no_course.side a {
+  color: #0083CB;
+}
+
+.no_section {
+  height: rpx(40);
+  padding: rpx(5);
+  margin-bottom: rpx(10);
+  color: #565656;
+}
+
+.no_section a {
+  padding: 0;
+  color: #565656;
+}
+
+/* Sidebar Menus */
+
+ul.section li {
+  border-bottom: rpx(2) solid #FFFFFF;
+  display: block;
+}
+
+ul.section li:hover {
+  cursor:default;
+}
+
+ul.section li a.section_name {
+  background: none;
+  display: inline-block;
+  vertical-align: top;
+  height: rpx(24);
+  width: rpx(216);
+  padding-top: rpx(6);
+  padding-left: rpx(34);
+  color: #565656;
+  font-size: rpx(12);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+ul.section li.expanded a.section_name {
+  color: #FFF;
+  font-weight: bold;
+}
+
+ul.section li a.section_name:hover {
+  text-decoration: none;
+}
+
+.expanded ul.section li.gear_option {
+  border-bottom: rpx(0);
+}
+
+.expanded ul.section li {
+  border-bottom: rpx(1) solid #c9c9c9;
+}
+
+
+/* Main Page Content */
+
+.no_courses_banner {
+  top: rpx(0);
+  left: rpx(50);
+}
+
+.main_course_wrapper {
+  box-shadow: rpx(4) rpx(4) rpx(6) rpx(0) #c8c8c8;
+  -moz-box-shadow: rpx(4) rpx(4) rpx(6) rpx(0) #c8c8c8;
+  -webkit-box-shadow: rpx(4) rpx(4) rpx(6) rpx(0) #c8c8c8;
+  margin-bottom: rpx(10);
+}
+
+.grading_task_section {
+  height: rpx(20);
+  padding: rpx(11) rpx(10) rpx(9) rpx(10);
+}
+
+.grading_task_section a:hover,
+.grading_task_section.expanded a:hover {
+  text-decoration: none;
+}
+
+.grading_task_section a h3 {
+  font-weight: bold;
+  font-size: rpx(14);
+  color: #FFF;
+}
+
+.neutral-header-bar.grading_task_section a h3 {
+  color:#565656;
+}
+
+
+.grading_task_section.expanded {
+  height: rpx(20);
+  padding: rpx(11) rpx(10) rpx(9) rpx(10);
+}
+
+
+.course_content.expanded {
+  background: #f2f2f2;
+  padding: rpx(0);
+}
+
+.course_content.expanded a {
+  color: #565656;
+  font-size: rpx(14);
+}
+
+.course_content.expanded .student_access_problems a {
+  color: #0083CB;
+  font-size: rpx(12);
+}
+
+.course_content.expanded .student_access_problems a:hover {
+  text-decoration: underline;
+}
+
+.main_course_section a.open.section_name:hover {
+  text-decoration: none;
+}
+
+.main_course_section {
+  background-image: url('/images/dots.png');
+  background-repeat: repeat-x;
+  background-position:bottom;
+  margin-bottom: rpx(10);
+  padding: rpx(10) rpx(10) rpx(10) rpx(20);
+}
+
+.js_section_wrapper.expanded .main_course_section {
+  border-top: rpx(0);
+  margin: rpx(0);
+  padding-left: rpx(10);
+  padding-top: rpx(12);
+}
+
+
+a.section_name:hover,
+a.section_name:hover {
+  text-decoration: none;
+}
+
+.js_section_wrapper.expanded .main_course_section a.section_name {
+  color: #FFF;
+  font-weight: bold;
+}
+
+/* Dashboard Announcement */
+.c-announcement-dismiss {
+  top: rpx(0);
+  right: rpx(0);
+}
+
+/*  Widget Blocks Closed */
+
+.widget_container {
+  border-bottom: rpx(2) solid #bcbcbc;
+  margin: rpx(10) 0 0 0;
+  padding: 0 0 rpx(10) 0;
+}
+
+.widget {
+  color: #565656;
+  width: rpx(89);
+  height: rpx(94);
+  text-align: center;
+  padding-top: rpx(10);
+}
+
+.widget_table_container{
+  float: left;
+  width: rpx(89);
+  border-right: rpx(1) solid #a9a9a9;
+  padding: rpx(6);
+  position: relative;
+}
+
+.widget_table_container .hlp {
+  border-right: rpx(0);
+}
+
+.widget .studentsimages {
+  background: url('/images/indash_icon_stud5.png') center no-repeat;
+  height: rpx(14);
+  margin-top: rpx(5);
+}
+
+.widget .activityimage {
+  background: url('/images/indash_icon_papers.png') bottom right no-repeat;
+  height: rpx(80);
+}
+
+.widget .helpimage {
+  background: url('/images/indash_icon_help.png') bottom center no-repeat;
+  height: rpx(80);
+}
+
+.widget .nextdue {
+  font-size: rpx(11);
+  margin-top: rpx(-2);
+  display: block;
+  line-height: rpx(13);
+}
+
+.widget .duedate {
+  background: url('/images/activity_calendar.png') center no-repeat;
+  display: block;
+  width: rpx(42);
+  height: rpx(49);
+  position: relative;
+  margin-left: rpx(22);
+  padding-top: rpx(10);
+  margin-top: rpx(-10);
+}
+
+.widget .duedate span {
+  display: block;
+}
+
+.widget .duedate span:first-child {
+  text-transform: uppercase;
+  color: white;
+  font-size: rpx(11);
+  line-height: rpx(15);
+}
+
+.widget .duedate span:last-child {
+  color: #969696;
+  font-size: rpx(18);
+  position: absolute;
+  top: rpx(25);
+  width: rpx(42);
+}
+
+.widget .dueday {
+  display: block;
+  font-size: rpx(14);
+}
+
+.widget .duetime {
+  display: block;
+  font-size: rpx(10);
+  line-height: rpx(12);
+  position: relative;
+}
+
+.time_offset {
+  background: #FFF;
+  border: rpx(1) solid #DDD;
+  left: rpx(80);
+  padding: rpx(5);
+  position: absolute;
+  top: rpx(-5);
+  width: rpx(70);
+}
+
+.widget h3 {
+  font-weight: normal;
+  font-size: rpx(12);
+  text-align: center;
+  width: rpx(86);
+  margin-bottom: .5em;
+}
+
+.widget h3.widget_title {
+  margin-bottom: 0;
+  line-height: 1.1em;
+}
+
+.course_content.expanded a.widget_numbers {
+  font-size: rpx(24);
+}
+
+a.gradebook_links {
+ font-size: rpx(11);
+}
+
+.hlp {
+  border-right: rpx(0);
+}
+
+.widget_link:hover{
+  background: #DFF09F;
+  cursor: pointer;
+}
+
+.sixth, .line {
+  display: none;
+}
+
+.dashalert {
+  background: url('/images/indash_icon_alert.png') no-repeat;
+  position: absolute;
+  margin-top: rpx(-12);
+  margin-left: rpx(-7);
+  width: rpx(22);
+  height: rpx(22);
+}
+
+.dashalert.first {
+  margin-left: rpx(-6);
+}
+
+.stds .dashalert {
+  margin-top: auto;
+  bottom: rpx(16);
+}
+
+
+.widget_open .dashalert {
+  margin-top: rpx(0);
+}
+
+
+.student_access_problems {
+  font-size: rpx(11);
+  line-height: rpx(13);
+  margin-top: rpx(10);
+}
+
+.student_access_header {
+  display: none;
+  font-size: rpx(13);
+  line-height: rpx(15);
+}
+
+.widget_open .student_access_header {
+  display: inline-block;
+}
+
+.widget_open .student_access_problems {
+  margin-top: rpx(0);
+  position: absolute;
+  width: rpx(157);
+}
+
+.student_access_content {
+  font-size: rpx(13);
+  line-height: rpx(15);
+  margin-bottom: rpx(5);
+}
+
+/* Widget Blocks Expanded */
+
+.widget.cumulative_grade:hover,
+.widget.num_students:hover,
+.widget.assignments:hover,
+.widget.activities_to_grade:hover,
+.widget.help_students:hover,
+.widget.sixth:hover
+{
+  background: #DFF09F;
+  cursor: pointer;
+}
+
+.js_section_wrapper.expanded {
+  background: #e6e6e6 url('/images/indash_wrapperbg.png') repeat-x;
+}
+
+.js_section_wrapper.expanded .widget_container {
+  border-bottom: rpx(0);
+}
+
+.widget_table_container.widget_open {
+  float: left;
+  width: rpx(157);
+  border-right: rpx(1) solid #dadada;
+  padding: rpx(6);
+  margin-bottom: rpx(10);
+  min-height: rpx(180);
+  color: #565656;
+}
+
+.widget_table_container.stds.widget_open .dashalert {
+  display: none;
+}
+
+.widget_open .widget {
+  width: rpx(157);
+  height: rpx(50);
+  border-bottom: rpx(1) solid #dadada;
+  padding-top: 8;
+  margin-bottom: rpx(5);
+}
+
+.widget_open .widget h3 {
+  width: rpx(157);
+}
+
+.section_widget_table {
+  display:none;
+  width: rpx(157);
+  border-style:none;
+  position: relative;
+}
+
+.js_section_wrapper.expanded .widget_container {
+  margin: rpx(0);
+}
+
+.course_content.expanded .section_widget_table a {
+  color: #0083CB;
+  font-size: rpx(12);
+}
+
+.widget_open .widget .duedate {
+  margin-left: rpx(6);
+  display: inline-block;
+  float: left;
+}
+
+.widget_open .widget .nextdue,
+.widget_open .widget .dueday {
+  text-align: left;
+  padding-left: rpx(54);
+}
+
+.widget_open .widget .studentsimages {
+  display: none;
+}
+
+.widget_table_container.sixth.widget_open,
+.widget_table_container.asgn.widget_open {
+  border-right: rpx(0);
+  width: rpx(157);
+}
+
+.widget_table_container.line.widget_open {
+  width: rpx(493);
+  float: left;
+  margin: 0 0 0 rpx(6);
+  border-top: rpx(2) solid #dadada;
+  border-right: rpx(0);
+  padding: 0;
+  min-height: rpx(10);
+  height: rpx(10);
+}
+
+.widget_open .duetime {
+  text-align: left;
+  padding-left: rpx(54);
+}
+
+.widget_open .time_offset {
+  left: rpx(125);
+}
+
+.widget_open .widget .activities_grade {
+  background: url('/images/indash_icon_papers.png') rpx(124) rpx(2) no-repeat;
+  display: block;
+  margin-top: rpx(-5);
+  padding-top: rpx(5);
+}
+
+.widget_open .widget .activityimage {
+  height: rpx(25);
+  background: url('/images/indash_icon_papers.png') rpx(124) rpx(-25) no-repeat;
+}
+
+.widget_open .widget .help_students {
+  background: url('/images/indash_icon_help.png') right rpx(6) no-repeat;
+  display: block;
+}
+
+.widget_open .widget .helpimage {
+  height: rpx(40);
+  background: url('/images/indash_icon_help.png') right rpx(-17) no-repeat;
+  display: inline-block;
+}
+
+.widget a:hover{text-decoration:none;}
+
+.course_content.expanded .section_widget_table a.student_tooltip {
+  font-size: rpx(11);
+}
+
+table.table_activities_to_grade,
+table.table_num_students,
+table.table_due_date,
+table.cumulative_grade_table {
+  margin-left: rpx(0);
+  width: rpx(156);
+}
+
+table.table_activities_to_grade td,
+table.table_num_students td,
+table.cumulative_grade_table td
+ {
+  padding: 0;
+  margin: 0;
+  font-size: rpx(11);
+}
+
+table.table_num_students td {
+  padding-left: rpx(17);
+}
+
+td.access_problems {
+  background: url('/images/icons/dash-alert-small.png') left center no-repeat;
+}
+
+
+table.table_due_date td {
+  padding: 0;
+  margin: 0;
+}
+
+.table_activities_to_grade thead tr {
+  font-weight: bold;
+  font-size: rpx(11);
+}
+
+.course_content.expanded a.todo_link,
+.course_content.expanded a.view_all_students,
+.course_content.expanded a.help_all_students {
+  font-size: rpx(11);
+}
+
+td.category_name {
+  width: rpx(100);
+}
+
+td.category_grade {
+  width: rpx(50);
+  text-align: right;
+}
+
+td.section_activity {
+  text-align: right;
+  font-size: rpx(12);
+}
+
+li.view_all {
+  margin-top: rpx(10);
+}
+
+table.table_due_date td.graph_number {
+  padding-left: rpx(6);
+  width: rpx(26);
+  text-align: left;
+}
+
+li.header {
+  font-size: rpx(11);
+  font-weight: bold;
+}
+
+li.header.review {
+  margin-top: rpx(10);
+}
+
+.course_content.expanded a.no_section {
+  color: #0083CB;
+  font-size: rpx(13);
+}
+
+
+div#spinner{
+  display: none;
+  position: absolute;
+  top: 15%;
+  left: 45%;
+}
+
+/* header bar overrides */
+.section_li.neutral-header-bar {
+  background-color: #f3f3f3;
+}

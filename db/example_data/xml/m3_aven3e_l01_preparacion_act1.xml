@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<activity activity_type="multiple_choice" title="Escoger" language="es">
+  <dl><span lang="en-US">Choose the word or phrase in each group that doesn't belong.</span></dl>
+  <items>
+    <style>
+     <item_numbers>show</item_numbers>
+    </style>
+    <item>
+      <prompt/>
+      <choices>
+        <distractor>Buenas tardes.</distractor>
+        <distractor>Buenos días.</distractor>
+        <distractor>Hola.</distractor>
+        <answer>Regular.</answer>
+      </choices>
+    </item>
+    <item>
+      <prompt/>
+      <choices>
+        <distractor>Adiós.</distractor>
+        <distractor>Hasta luego.</distractor>
+        <answer>Lo siento.</answer>
+        <distractor>Nos vemos.</distractor>
+      </choices>
+    </item>
+    <item>
+      <prompt/>
+      <choices>
+        <distractor>¿Cómo está usted?</distractor>
+        <distractor>¿Cómo estás?</distractor>
+        <answer>¿Cómo te llamas?</answer>
+        <distractor>¿Qué tal?</distractor>
+      </choices>
+    </item>
+    <item>
+      <prompt/>
+      <choices>
+        <distractor>Encantado.</distractor>
+        <distractor>Igualmente.</distractor>
+        <distractor>Mucho gusto.</distractor>
+        <answer>Soy de México.</answer>
+      </choices>
+    </item>
+    <item>
+      <prompt/>
+      <choices>
+        <distractor>Bien, gracias.</distractor>
+        <answer>Es la una.</answer>
+        <distractor>No muy bien.</distractor>
+        <distractor>Regular.</distractor>
+      </choices>
+    </item>
+  </items>
+</activity>

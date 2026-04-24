@@ -1,0 +1,9 @@
+<div class="ns-music-v1  u-pad-6">
+  <div class="u-mar-bot-12">
+    <%= link_to 'Return to activity preview', :back %>
+  </div>
+  <%= render(
+        'maestro_activity_engine/activities/partials/rubric_preview',
+        rubric: @activity.rubric
+      ) %>
+</div>

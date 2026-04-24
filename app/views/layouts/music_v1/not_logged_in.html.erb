@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<head>
+  <%= render('partials/google_tag_manager') %>
+  <%= stylesheet_link_tag "application", media: 'all' %>
+  <%= yield :css_head %>
+  </head>
+  <body class="ns-music-v1  <%= yield :body_classes %> <%= yield :theme_classes %>" >
+    <%= render 'layouts/flash', flash: flash %>
+    <div class="l-container-fluid">
+      <h1 class="c-heading--page-title">
+        <%= @page_title.html_safe if @page_title %>
+      </h1>
+      <main>
+        <%= yield %>
+      </main>
+    </div>
+  </body>
+</html>

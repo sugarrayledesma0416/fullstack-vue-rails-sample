@@ -1,0 +1,18 @@
+<% if @activity_presenter.unreviewed_notifications.present? %>
+  <div class="c-activity-context__notification  c-activity-context__notification--border-radius">
+    <details class="c-activity-context__notification-details  <%= test_class('notifications-content') %>" open>
+      <summary class="c-activity-context__notification-summary  <%= test_class('notifications-link') %>" lang="en">
+        Activity notifications
+        <%= feature_icon('music/icons/caret', ['c-embedded-icon--md  c-activity-context__notification-summary--icon'] ) %>
+      </summary>
+      <div class="<%= test_class('notification_listing') %>" lang="en">
+        <hr class="u-mar-top-10  u-mar-bot-10">
+        <%= render(
+              partial: 'notifications/activity_notifications',
+              collection: @activity_presenter.unreviewed_notifications,
+              as: :notification
+            ) %>
+      </div>
+    </details>
+  </div>
+<% end %>

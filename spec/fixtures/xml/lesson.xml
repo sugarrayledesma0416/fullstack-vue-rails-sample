@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<lesson>
+  <toc_entry title="PREPARACI&#xD3;N" background_color="#ED1C24" location="2146">
+    <toc_entry title="Basic greetings and farewells" location="214600000" page="2"/>
+    <toc_entry title="Courtesy expressions" location="" page="3"/>
+    <toc_entry title="PRONUNCIACI&#xD3;N: The Spanish Alphabet" location="214800000" page="7"/>
+  </toc_entry>
+  <toc_entry title="AVENTURAS" background_color="#007DC6" location="2147"/>
+  <toc_entry title="EXPLORACI&#xD3;N" background_color="#E0861B" location="2150">
+    <toc_entry title="BAJO LA LUPA: Saludos y besos en los pa&#xED;ses hispanos" location="" page="10"/>
+    <toc_entry title="FLASH CULTURA: Encuentros en la plaza" location="215000000" page="11"/>
+  </toc_entry>
+  <toc_entry title="GRAM&#xC1;TICA" background_color="#17A46A" location="2152">
+    <toc_entry title="1.1 Nouns and articles" location="215201523" page="12"/>
+    <toc_entry title="1.2 Numbers 0&amp;ndash;30" location="215201524" page="14"/>
+    <toc_entry title="1.3 Present tense of &lt;b&gt;&lt;i&gt;ser&lt;/i&gt;&lt;/b&gt;" location="215201525" page="16"/>
+    <toc_entry title="1.4 Telling time" location="215201526" page="18"/>
+    <toc_entry title="REPASO y VIDEOCLIP" location="" page="20"/>
+  </toc_entry>
+  <toc_entry title="LECTURA" background_color="#5B57A6" location="2153">
+    <toc_entry title="Tel&#xE9;fonos importantes y direcciones electr&#xF3;nicas" location="215300000" page="24"/>
+  </toc_entry>
+  <toc_entry title="VOCABULARIO" background_color="#FFD503" location="2156" page="26">
+    <toc_entry title="End of lesson vocabulary" location="215600000"/>
+  </toc_entry>
+</lesson>

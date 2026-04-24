@@ -1,0 +1,26 @@
+require_relative 'etl/common'
+
+class StrandSource < Source
+  def initialize(course_ids)
+    @records = ::Assignment.includes(:section).where("sections.course_id in (#{course_ids}) and assignments.assignable_type = 'Activity'").map do |assignment|
+      assignment.assignable.concept
+    end.uniq
+  end
+end
+
+class StrandTransform < Transform
+  def initialize(model)
+    @common_fields = %w(id name rank)
+    super(model)
+  end
+
+  def process(record)
+    super(record) do |r|
+      r.color = record.background_color
+    end
+  end
+end
+
+source StrandSource, ENV['COURSE_IDS']
+transform StrandTransform, GradebookEngine::Strand
+destination RecordDestination

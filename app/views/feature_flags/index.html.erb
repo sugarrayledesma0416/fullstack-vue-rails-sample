@@ -1,0 +1,136 @@
+<% content_for :title, "Feature Flags Status" %>
+
+<style>
+  .feature-flags-table {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  }
+  .feature-flags-table th {
+    background-color: #343a40;
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    letter-spacing: 0.5px;
+    border-color: #454d55;
+  }
+  .feature-flags-table td {
+    vertical-align: middle;
+    border-color: #dee2e6;
+  }
+  .feature-flags-table tbody tr:hover {
+    background-color: #f8f9fa;
+  }
+  .badge {
+    font-size: 0.875rem;
+    padding: 0.375rem 0.75rem;
+  }
+</style>
+
+<div class="container mt-4">
+  <h1>Feature Flags Status</h1>
+
+  <div class="row mb-4">
+    <div class="col-md-6">
+      <%= form_with url: feature_flags_path, method: :get, local: true do |f| %>
+        <div class="form-group">
+          <label for="program_id">Test with Program Context:</label>
+          <%= select_tag :program_id,
+              options_for_select([['No Program Selected', '']] + @programs, @selected_program_id),
+              class: 'form-control',
+              onchange: 'this.form.submit()' %>
+          <div class="mt-2 ml-3">
+            <small class="form-text text-muted">
+              <i class="fas fa-info-circle"></i> Select a program to test feature flags with program-specific constraints
+            </small>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="alert alert-info">
+    <strong>Environment:</strong> <%= Rails.env.capitalize %><br>
+    <strong>Current User:</strong> <%= current_user.email %> (<%= current_user.class.name %>)<br>
+    <% if defined?(::UNLEASH) %>
+      <strong>Status:</strong> <span class="badge badge-success">Connected to Unleash</span>
+    <% else %>
+      <strong>Status:</strong> <span class="badge badge-warning">Unleash not connected</span> - showing default values only
+    <% end %>
+  </div>
+
+  <% if @feature_flags.empty? %>
+    <div class="alert alert-warning">
+      No feature flags configured. Check config/feature_flags.yml
+    </div>
+  <% else %>
+    <table class="table table-striped table-bordered table-hover feature-flags-table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col" style="width: 25%;">Feature Flag</th>
+          <th scope="col" style="width: 30%;">Description</th>
+          <th scope="col" style="width: 10%;">Type</th>
+          <th scope="col" style="width: 10%;">Default</th>
+          <th scope="col" style="width: 10%;">Current Status</th>
+          <th scope="col" style="width: 15%;">Environments</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @feature_flags.each do |flag| %>
+          <tr>
+            <td>
+              <code><%= flag[:name] %></code>
+            </td>
+            <td><%= flag[:description] %></td>
+            <td>
+              <span class="badge badge-secondary"><%= flag[:type] || 'N/A' %></span>
+            </td>
+            <td class="text-center">
+              <span class="badge badge-pill badge-<%= flag[:default] ? 'success' : 'secondary' %>">
+                <%= flag[:default] ? 'ON' : 'OFF' %>
+              </span>
+            </td>
+            <td class="text-center">
+              <span class="badge badge-pill badge-<%= flag[:current_status] ? 'primary' : 'secondary' %>">
+                <%= flag[:current_status] ? 'ON' : 'OFF' %>
+              </span>
+            </td>
+            <td>
+              <% if flag[:environments] %>
+                <%= flag[:environments].map { |env| content_tag(:span, env, class: 'badge badge-info mr-1') }.join(' ').html_safe %>
+              <% else %>
+                <span class="text-muted">All</span>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <div class="card mt-4">
+      <div class="card-header">
+        <h5>Evaluation Context</h5>
+      </div>
+      <div class="card-body">
+        <p class="mb-1"><strong>Note:</strong> Feature flag status is evaluated for the current user context:</p>
+        <ul class="mb-0">
+          <li>User ID: <%= @feature_flags.first&.dig(:evaluated_for, :user_id) || 'N/A' %></li>
+          <li>Session ID: <%= @feature_flags.first&.dig(:evaluated_for, :session_id) || 'N/A' %></li>
+          <li>Environment: <%= @feature_flags.first&.dig(:evaluated_for, :environment) || Rails.env %></li>
+          <% if @selected_program_id.present? %>
+            <li class="text-primary"><strong>Program ID: <%= @selected_program_id %></strong> (testing constraint)</li>
+            <% if @selected_program %>
+              <li class="text-primary"><strong>Language Code: <%= @selected_program.language_code || 'N/A' %></strong></li>
+            <% end %>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-4">
+      <p class="text-muted">
+        <strong>Note:</strong> This page is read-only. Feature flags are managed in the
+        <a href="https://us.app.unleash-hosted.com/usll0023" target="_blank" rel="noopener">Unleash Dashboard</a>.
+      </p>
+    </div>
+  <% end %>
+</div>

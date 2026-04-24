@@ -1,0 +1,15 @@
+<div class="activity_type">
+  <% activity_type = activity.activity_type
+    if activity.activity_type == 'exam'
+      activity_type = strip_html_tags(activity.component_name)
+    end -%>
+  <%= Activity.humanize_activity_type(activity_type) %>
+</div>
+<div class="activity_title"><%= strip_html_tags(activity.title) %></div>
+<div class="activity_name"><%= strip_html_tags(activity.student_display_title) %></div>
+<div class="points_possible">Points possible: <%= activity.points_possible %></div>
+
+<%= render :partial => 'partials/activity_summary',
+           :locals => { total_number_of_questions: total_question_count(activity.question_summary),
+                        activity_question_summary: activity.question_summary,
+                        activity_word_list: activity.dictionary_words_list } %>

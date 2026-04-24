@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<activity language="es" title="Hotspots" activity_type="reference_activity">
+  <dl></dl>
+  <items>
+    <hotspot_image>
+      <reference type="image">
+        <image id="119938" />
+      </reference>
+
+      <hotspot>
+        <position x="97" y="270"/>
+          <dictionary_entry>
+            <id>1</id>
+            <image id="1"/>
+            <audio id="119960"/>
+            <target>confirma una reservación (confirmar)</target>
+            <annotated_target>annotated_target 1</annotated_target>
+            <descriptor>descriptor 1</descriptor>
+            <language>language 1</language>
+            <translation>to confirm a reservation</translation>
+            <exclusion_entry_ids></exclusion_entry_ids>
+          </dictionary_entry>
+      </hotspot>
+
+      <hotspot>
+        <position x="80" y="170"/>
+        <dictionary_entry>
+          <id>2</id>
+          <image id="1"/>
+          <audio id="119955"/>
+          <target>la agente de viajes</target>
+          <annotated_target>annotated_target 1</annotated_target>
+          <descriptor>descriptor 1</descriptor>
+          <language>language 1</language>
+          <translation>travel agent</translation>
+          <exclusion_entry_ids></exclusion_entry_ids>
+        </dictionary_entry>
+      </hotspot>
+
+      <hotspot>
+        <position x="350" y="240"/>
+        <dictionary_entry>
+          <id>2</id>
+          <image id="1"/>
+          <audio id="119976"/>
+          <target>el pasaporte</target>
+          <annotated_target>annotated_target 1</annotated_target>
+          <descriptor>descriptor 1</descriptor>
+          <language>language 1</language>
+          <translation>passport</translation>
+          <exclusion_entry_ids></exclusion_entry_ids>
+        </dictionary_entry>
+      </hotspot>
+
+      <hotspot>
+        <position x="350" y="435"/>
+      <dictionary_entry>
+          <id>3</id>
+          <image id="1"/>
+          <audio id="119964"/>
+          <target>la habatacion</target>
+          <annotated_target>annotated_target 1</annotated_target>
+          <descriptor>room</descriptor>
+          <language>language 1</language>
+          <translation>room</translation>
+          <exclusion_entry_ids></exclusion_entry_ids>
+        </dictionary_entry>
+      </hotspot>
+
+      <hotspot>
+        <position x="100" y="500"/>
+        <dictionary_entry>
+          <id>4</id>
+          <image id="1"/>
+          <audio id="119956"/>
+          <target>el ascensor</target>
+          <annotated_target>annotated_target 1</annotated_target>
+          <descriptor>descriptor 1</descriptor>
+          <language>language 1</language>
+          <translation>elevator</translation>
+          <exclusion_entry_ids></exclusion_entry_ids>
+        </dictionary_entry>
+      </hotspot>
+
+      <hotspot>
+        <position x="303" y="600"/>
+        <dictionary_entry>
+          <id>5</id>
+          <image id="1"/>
+          <audio id="119963"/>
+          <target>el empleado</target>
+          <annotated_target>annotated_target 1</annotated_target>
+          <descriptor>descriptor 1</descriptor>
+          <language>language 1</language>
+          <translation>employee</translation>
+          <exclusion_entry_ids></exclusion_entry_ids>
+        </dictionary_entry>
+      </hotspot>
+
+      <hotspot>
+        <position x="250" y="645"/>
+        <dictionary_entry>
+          <id>6</id>
+          <image id="1"/>
+          <audio id="119971"/>
+          <target>la llave</target>
+          <annotated_target>annotated_target 1</annotated_target>
+          <descriptor>descriptor 1</descriptor>
+          <language>key</language>
+          <translation>elevator</translation>
+          <exclusion_entry_ids></exclusion_entry_ids>
+        </dictionary_entry>
+      </hotspot>
+
+      <hotspot>
+        <position x="193" y="630"/>
+        <dictionary_entry>
+          <id>1</id>
+          <image id="1"/>
+          <audio id="119970"/>
+          <target>la huesped</target>
+          <annotated_target>annotated_target 1</annotated_target>
+          <descriptor>descriptor 1</descriptor>
+          <language>language 1</language>
+          <translation>guest</translation>
+          <exclusion_entry_ids></exclusion_entry_ids>
+        </dictionary_entry>
+      </hotspot>
+
+      <hotspot>
+        <position x="138" y="690"/>
+        <dictionary_entry>
+          <id>1</id>
+          <image id="1"/>
+          <audio id="119962"/>
+          <target>el hesped</target>
+          <annotated_target>annotated_target 1</annotated_target>
+          <descriptor>descriptor 1</descriptor>
+          <language>language 1</language>
+          <translation>guest</translation>
+          <exclusion_entry_ids></exclusion_entry_ids>
+        </dictionary_entry>
+      </hotspot>
+
+      <hotspot>
+        <position x="66" y="620"/>
+        <dictionary_entry>
+          <id>1</id>
+          <image id="1"/>
+          <audio id="119958"/>
+          <target>el botones</target>
+          <annotated_target>annotated_target 1</annotated_target>
+          <descriptor>descriptor 1</descriptor>
+          <language>language 1</language>
+          <translation>bellhop</translation>
+          <exclusion_entry_ids></exclusion_entry_ids>
+        </dictionary_entry>
+      </hotspot>
+
+      <hotspot>
+        <position x="510" y="109"/>
+        <dictionary_entry>
+          <id>1</id>
+          <image id="1"/>
+          <audio id="119983"/>
+          <target>Saca/Toma fotos. (sacar, tomar)</target>
+          <annotated_target>annotated_target 1</annotated_target>
+          <descriptor>descriptor 1</descriptor>
+          <language>language 1</language>
+          <translation>to take photos</translation>
+          <exclusion_entry_ids></exclusion_entry_ids>
+        </dictionary_entry>
+      </hotspot>
+
+      <hotspot>
+        <position x="700" y="120"/>
+        <dictionary_entry>
+          <id>1</id>
+          <image id="1"/>
+          <audio id="119957"/>
+          <target>el avion</target>
+          <annotated_target>annotated_target 1</annotated_target>
+          <descriptor>descriptor 1</descriptor>
+          <language>language 1</language>
+          <translation>plane</translation>
+          <exclusion_entry_ids></exclusion_entry_ids>
+        </dictionary_entry>
+      </hotspot>
+
+      <hotspot>
+        <position x="490" y="220"/>
+        <dictionary_entry>
+          <id>1</id>
+          <image id="1"/>
+          <audio id="119985"/>
+          <target>el viajero</target>
+          <annotated_target>annotated_target 1</annotated_target>
+          <descriptor>descriptor 1</descriptor>
+          <language>language 1</language>
+          <translation>traveler</translation>
+          <exclusion_entry_ids></exclusion_entry_ids>
+        </dictionary_entry>
+      </hotspot>
+
+      <hotspot>
+        <position x="650" y="205"/>
+        <dictionary_entry>
+          <id>1</id>
+          <image id="1"/>
+          <audio id="119965"/>
+          <target>la inspectora de aduanas</target>
+          <annotated_target>annotated_target 1</annotated_target>
+          <descriptor>descriptor 1</descriptor>
+          <language>language 1</language>
+          <translation>customs inspector</translation>
+          <exclusion_entry_ids></exclusion_entry_ids>
+        </dictionary_entry>
+      </hotspot>
+
+      <hotspot>
+        <position x="520" y="450"/>
+        <dictionary_entry>
+          <id>1</id>
+          <image id="1"/>
+          <audio id="119978"/>
+          <target>Pesca. (pescar)</target>
+          <annotated_target>annotated_target 1</annotated_target>
+          <descriptor>descriptor 1</descriptor>
+          <language>language 1</language>
+          <translation>to fish</translation>
+          <exclusion_entry_ids></exclusion_entry_ids>
+        </dictionary_entry>
+      </hotspot>
+
+      <hotspot>
+        <position x="700" y="500"/>
+        <dictionary_entry>
+          <id>1</id>
+          <image id="1"/>
+          <audio id="119974"/>
+          <target>Montar a caballo. (montar)</target>
+          <annotated_target>annotated_target 1</annotated_target>
+          <descriptor>descriptor 1</descriptor>
+          <language>language 1</language>
+          <translation>to ride a horse</translation>
+          <exclusion_entry_ids></exclusion_entry_ids>
+        </dictionary_entry>
+      </hotspot>
+
+      <hotspot>
+        <position x="520" y="550"/>
+        <dictionary_entry>
+          <id>1</id>
+          <image id="1"/>
+          <audio id="119990"/>
+          <target>Va en barco. (ir)</target>
+          <annotated_target>annotated_target 1</annotated_target>
+          <descriptor>I'm on a boat and</descriptor>
+          <language>I'm going fast and</language>
+          <translation>I've got a nautical themed pashmina afghan</translation>
+          <exclusion_entry_ids></exclusion_entry_ids>
+        </dictionary_entry>
+      </hotspot>
+
+      <hotspot>
+        <position x="470" y="600"/>
+        <dictionary_entry>
+          <id>1</id>
+          <image id="1"/>
+          <audio id="119972"/>
+          <target>el mar</target>
+          <annotated_target>annotated_target 1</annotated_target>
+          <descriptor>descriptor 1</descriptor>
+          <language>language 1</language>
+          <translation>sea</translation>
+          <exclusion_entry_ids></exclusion_entry_ids>
+        </dictionary_entry>
+      </hotspot>
+
+      <hotspot>
+        <position x="620" y="670"/>
+        <dictionary_entry>
+          <id>1</id>
+          <image id="1"/>
+          <audio id="119968"/>
+          <target>Juegan a las cartas. (jugar)</target>
+          <annotated_target>annotated_target 1</annotated_target>
+          <descriptor>descriptor 1</descriptor>
+          <language>language 1</language>
+          <translation>to play cards</translation>
+          <exclusion_entry_ids></exclusion_entry_ids>
+        </dictionary_entry>
+      </hotspot>
+
+      <hotspot>
+        <position x="520" y="800"/>
+        <dictionary_entry>
+          <id>1</id>
+          <image id="1"/>
+          <audio id="119980"/>
+          <target>la playa</target>
+          <annotated_target>annotated_target 1</annotated_target>
+          <descriptor>descriptor 1</descriptor>
+          <language>language 1</language>
+          <translation>beach</translation>
+          <exclusion_entry_ids></exclusion_entry_ids>
+        </dictionary_entry>
+      </hotspot>
+
+    </hotspot_image>
+  </items>
+</activity>

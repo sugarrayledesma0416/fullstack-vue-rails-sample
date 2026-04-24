@@ -1,0 +1,25 @@
+<%
+  content_for(
+    :js_head,
+    javascript_packs_with_chunks_tag('dictionary_flashcards/index')
+  )
+
+  content_for(
+    :css_head,
+    stylesheet_link_tag('music/features/flashcards/main')
+  )
+
+  content_for(
+    :body_classes,
+    '  ns-flashcards  ns-dictionary-flashcards'
+  )
+%>
+
+<div class="js-dictionary-flashcards-rails-data"
+     data-from-dom="<%= {
+       content_object: @activity.content_object.serialize,
+       language: current_program.language_name 
+    }.to_json %>">
+</div>
+
+<div class="ns-music-v1  js-dictionary-flashcards-app"></div>

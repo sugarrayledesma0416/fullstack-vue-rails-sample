@@ -1,0 +1,15 @@
+<%
+  comment_field = "comment_for_#{response_id}"
+-%>
+
+<div class="instructor_comment_area  js-accent_bar_container  u-txt-rt  u-mar-top-8"
+     style="display: none">
+  <textarea class="instructor_comment_input"
+            name="<%= comment_field %>"
+            id="<%= comment_field %>"
+            style="resize:vertical;"
+            autocorrect="off"
+            spellcheck="false"
+            autocomplete="off"
+            placeholder="comments"><%= feedback_item&.comment %></textarea>
+</div>

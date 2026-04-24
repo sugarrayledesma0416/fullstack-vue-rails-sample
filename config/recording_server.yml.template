@@ -1,0 +1,20 @@
+development:
+  fms_server_url: rtmp://ds-vista.uvault.com/m3arc/mediter
+  wowza_server_url:  rtmp://arc-staging.chat.vhlcentral.com/m3arc
+  load_balancer_url: http://arc-staging.chat.vhlcentral.com:1935/loadbalancer
+  video_host: arc-staging.chat.vhlcentral.com
+  video_application: vre
+
+test:
+  fms_server_url: rtmp://ds-vista.uvault.com/m3arc/mediter
+  wowza_server_url: rtmp://arc-staging.chat.vhlcentral.com/m3arc
+  load_balancer_url: http://arc-staging.chat.vhlcentral.com:1935/loadbalancer
+  video_host: arc-staging.chat.vhlcentral.com
+  video_application: vre
+
+production:
+  fms_server_url: rtmp://ds-vista.uvault.com/m3arc/mediter
+  wowza_server_url: rtmp://arc.chat.vhlcentral.com/m3arc
+  load_balancer_url: http://arc.chat.vhlcentral.com:1935/loadbalancer
+  video_host: arc.chat.vhlcentral.com
+  video_application: vre

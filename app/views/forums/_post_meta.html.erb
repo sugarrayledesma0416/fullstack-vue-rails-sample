@@ -1,0 +1,39 @@
+<div class="l-grid">
+  <div class="l-col-sm-6  flex-wrap">
+    <span class="c-forum-post__author"><%= post.user.full_name %></span>
+    <% if post.user.instructor? %>
+      <span class="c-forum-post__author-role">Instructor</span>
+    <% end %>
+  </div>
+  <div class="l-col-sm-6  c-forum-post__date_and_controls">
+    <time datetime="<%= post.created_at.to_json %>" class="c-forum-post__pub-date-time">
+      <%= format_date_time(post.created_at, :day_month_ordinal_with_time) %>
+    </time>
+    <% if post.user == current_user %>
+      <div class="u-dis-inline-block  u-float-rt">
+        <button class="c-no-button  u-mar-lt-8  js-start-edit"
+           aria-label="Edit"
+           aria-describedby="<%= post_level_describedby %>"
+           data-post-id="<%= post.id %>">
+          <%= Music::Components.icon(variant: 'edit', text: '', size: 'lg') %>
+        </button>
+        <% if post.original_post? %>
+          <button class="c-no-button  u-mar-lt-5  is-disabled"
+             aria-label="Delete"
+             aria-describedby="<%= post_level_describedby %>"
+             disabled>
+            <%= Music::Components.icon(variant: 'delete', text: '', size: 'lg') %>
+          </button>
+        <% else %>
+          <button class="c-no-button  u-mar-lt-5  js-delete-forum-or-post"
+              aria-label="Delete"
+              aria-describedby="<%= post_level_describedby %>"
+              data-delete-url="<%= forum_forum_post_path(current_program, current_section, @forum, post) %>"
+              data-object-type="post">
+            <%= Music::Components.icon(variant: 'delete', text: '', size: 'lg') %>
+          </button>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

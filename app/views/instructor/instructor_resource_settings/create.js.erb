@@ -1,0 +1,6 @@
+flash.discard
+
+resource_id = @instructor_resource_setting.resource_id
+
+onclick_action = "update_student_viewable('" + @instructor_resource_setting.id.to_s + "')"
+page["td_checkbox_#{resource_id.to_s}"].replace_html check_box_tag "student_viewable_#{resource_id.to_s}", 1, true, {:onclick => onclick_action} 

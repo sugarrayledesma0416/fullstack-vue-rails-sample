@@ -1,0 +1,25 @@
+<% if @activity.page_range.present? %>
+  <% 
+    if @activity.vtext_linker&.activity_linkable?(access_guardian)
+      klass = 'vtext_pages' 
+      aria_label = "Page #{@activity.page_range} in the book. Opens in a new window."
+      content = vtext_link(
+        @activity.page_range, 
+        @activity.vtext_linker.link, 
+        'vtext_reference_link  u-txt-under', 
+        'aria-label' => aria_label.sub('-', ' to ')
+      )
+    else 
+      klass = '' 
+      content = @activity.page_range
+    end
+  %>
+
+  <%= content_tag(
+        :div,
+        content,
+        id: 'vtext_reference',
+        class: "#{klass}  #{test_class('vtext_reference')}",
+        'data-helpable-type' => 'vtext_reference'
+      ) %>
+<% end %>

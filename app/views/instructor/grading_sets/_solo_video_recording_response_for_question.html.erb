@@ -1,0 +1,49 @@
+<% container_id = "solo_video_recording_container_#{solo_video_recording_view_manager.student.id}" %>
+<div class="grid  ns-beta">
+  <div class="col-7  <%= @presenter.has_rubric? ? 'col-student-answer' : '' %>">
+    <div class='answer_text'>
+      <div class="student_response_area"
+        id="<%= "student_#{solo_video_recording_view_manager.student.id}__partner_chat_container" %>">
+        <% unless solo_video_recording_url(results.response(question.label)).blank? %>
+          <%=
+              render 'maestro_activity_engine/activities/solo_video_recording/chat_widget',
+              mode: 'review',
+              student_id: solo_video_recording_view_manager.student.id
+            %>
+          <%= hidden_field_tag 'recording_file',
+            solo_video_recording_url(results.response(question.label)) %>
+        <% else %>
+          <p>There is no student answer</p>
+        <% end %>
+      </div>
+    </div>
+  </div> <!-- / main column -->
+  <div
+    class="col-5  <%= @presenter.has_rubric? ? 'col-rubric-grading' : '' %>"
+    id="solo_video_recording_container"
+    data-helpable-type="whole_question"
+    data-is-svr="true">
+    <div class="c-grading-sidebar  c-grading-sidebar--inline  c-grading-sidebar--plain">
+      <% if @presenter.has_rubric? %>
+        <%= render partial: 'instructor/grading_sets/comment_boxes_for_rubric_grading' %>
+        <div class="js-grading-controls-app"
+             data-rubric-column-headers="<%= @presenter.activity.rubric.header_row.header_columns.to_json %>"
+             data-rubric-criterias="<%= @presenter.activity.rubric.criterias_with_ordered_performances.to_json %>"
+             data-view-rubric-link="<%= @presenter.format_rubric_link('View').to_json %>"
+             data-rubric-graded="<%= @presenter.rubric_graded? %>"
+             data-grade-pending="<%= @presenter.grade_pending? %>"
+             data-user-scores="<%= @user_scores_json %>"
+             data-points-possible="<%= solo_video_recording_view_manager.question.points_possible %>">
+        </div>
+      <% else %>
+        <%= render partial: 'instructor/grading_sets/solo_video_recording_grading_form',
+                 locals: { presenter: presenter,
+                           question: question,
+                           results: results,
+                           student: solo_video_recording_view_manager.student,
+                           feedback: solo_video_recording_view_manager.student_feedback,
+          recording_path: solo_video_recording_view_manager.student_recording_path } %>
+      <% end %>
+    </div>
+  </div> <!-- / right column -->
+</div> <!-- / grid -->

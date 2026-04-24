@@ -1,0 +1,7 @@
+<activity activity_type="smart_book" language="es" title="Smart Book">
+  <items>
+    <learning_package
+      path="/487203_487203_ESHS1_U1_XAPI_NAC"
+    />
+  </items>
+</activity>

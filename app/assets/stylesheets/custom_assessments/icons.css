@@ -1,0 +1,55 @@
+/* TODO: Merge control-icon class with global icon class used by the application */
+
+.control-icon{
+  display: inline-block;
+  text-decoration: none;
+  vertical-align: middle;
+}
+
+.c-assessment-actions {
+  display: inline-block;
+  position: absolute;
+  right: 1rem;
+}
+
+.control-icon.align-top{
+  vertical-align: top;
+}
+
+.control-icon.absolute{
+  width: 18px;
+  margin: 0;
+  padding: 0;
+}
+
+.control-icon--ok{
+  background-image: url('/images/custom_assessment/ok.svg'),
+    linear-gradient(transparent, transparent);
+}
+
+.control-icon--save{
+  background-image: url('/images/custom_assessment/save.svg'),
+    linear-gradient(transparent, transparent);
+}
+
+.check-icon{
+  display: inline-block;
+  min-width: 18px;
+  height: 18px;
+  text-decoration: none;
+  vertical-align: middle;
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+  background-size: 18px 18px;
+  text-indent: 21px;
+
+  background-image: url('/images/custom_assessment/check_unchecked.png');
+  background-image: url('/images/custom_assessment/check_unchecked.svg'),
+    linear-gradient(transparent, transparent);
+}
+
+.check-icon--checked{
+  background-image: url('/images/custom_assessment/check_checked.png');
+  background-image: url('/images/custom_assessment/check_checked.svg'),
+    linear-gradient(transparent, transparent);
+}

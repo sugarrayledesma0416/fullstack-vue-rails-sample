@@ -1,0 +1,50 @@
+<% content_for(:body_classes, "standard_layout announcements  ns-communication") %>
+<% content_for( :css_head, stylesheet_link_tag("communication") ) %>
+<% content_for(:css_head, stylesheet_link_tag('music/features/communication/main')) %>
+
+<% content_for(:focus, render(:partial => 'instructor/focus/show')) %>
+<% content_for(:navigation, render(:partial => 'app_shell/navbar_program/main', :locals => {:program => current_program })) %>
+<div id="main_content">
+  <% if current_focus.has_atleast_one_actionable_section? %>
+    <div><%= link_to 'Create announcement', new_instructor_announcement_path(current_program) %></div>
+  <% else %>
+    <div>Create announcement</div>
+  <% end %>
+  <% if @announcements.present? %>
+    <ul data-page-element="announcements_list" class="announcements_list">
+      <% @announcements.each do |announcement| -%>
+        <li data-announcement-id="<%= announcement.id %>">
+
+          <span class="u-txt-bold">Title:   <span data-content-type="announcement_title"><%= announcement.title %></span></span>
+          <% if announcement.class_cancelled %>
+            <span class="c-tag  c-tag--sm  u-mar-lt-10  u-mar-rt-10  <%= test_class('class-cancelled') %>"> 
+              Class cancelled
+            </span>
+          <% end %>
+            <%= link_to 'edit', edit_instructor_announcement_path(current_program, announcement), class: 'u-txt-bold' %>
+          <p class="announcement_body">Body:
+            <span data-content-type="announcement_body"><%= simple_format announcement.body %></span>
+          </p>
+          <% if announcement.show_on.present? %>
+            <p class="announcement_visibility_date">On calendar: <span data-content-type="announcement_body"><%= format_date_time(announcement.show_on, :relative_weekday_month_ordinal) %></span></p>
+          <% end %>
+
+          <p class="announcement_section_desc">Section: <span data-content-type="announcement_section_desc"><%= format_announcement_section_name(announcement) %></span></p>
+
+          <p class="announcement_created_at">Posted on:
+            <span data-content-type="announcement_created_at"><%= format_date_time(announcement.created_at, :gradebook_cell) %></span>
+          </p>
+          <% if announcement.has_file? %>
+            <p data-content-type="announcement_download_link">
+              <%= link_to 'Download', download_announcement_attachment_path(current_focus.sections.first, announcement) %>
+            </p>
+          <% end %>
+        </li>
+      <% end -%>
+    </ul>
+  <% else %>
+    <div class="no_items_message">
+      <h3 data-content-type="no_items_message">You have no announcements.</h3>
+    </div>
+  <% end %>
+</div>

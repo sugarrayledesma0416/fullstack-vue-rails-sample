@@ -1,0 +1,16 @@
+<%
+  content_for(
+    :js_head,
+    javascript_packs_with_chunks_tag('portfolio/export')
+  )
+%>
+
+<% portfolio_on_submit_feature = @attempt&.current_view == :show %>
+<% artifact_shared = @portfolio_export_in_progress ? 'in_progress' : @attempt.artifact_sharing_status %>
+<%= content_tag(
+  :div,
+  '',
+  class: "js-export-portfolio",
+  'data-artifact-shared': artifact_shared,
+  'data-portfolio-on-submit-feature': portfolio_on_submit_feature
+) %>

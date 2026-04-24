@@ -1,0 +1,14 @@
+<% if !instance_variable_defined?(:@zendesk_snippet_rendering_included) && Rails.configuration.try(:zendesk).try(:[], :key).present? %>
+  <% @zendesk_snippet_rendering_included = true %>
+  <%= stylesheet_link_tag 'zendesk_chat_widget' %>
+
+  <div class='c-zendesk-chat-widget-icon  js-zendesk-chat-widget'>
+    <span class='c-unread-indicator  js-unread-indicator  u-dis-none'></span>
+    <button type='button' class='c-zendesk-question-annotation'>
+      <%= inline_svg_tag("zendesk-question-annotation.svg") %>
+    </button>
+  </div>
+
+  <%= javascript_include_tag('zendesk_settings.js') %>
+  <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=<%= Rails.configuration.zendesk[:key] %>"></script>
+<% end %>

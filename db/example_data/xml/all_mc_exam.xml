@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<activity activity_type="exam" title="MC Exam" assessment_type="exam" language="es">
+  <dl></dl>
+
+  <items>
+    <style>
+    <item_numbers>show</item_numbers>
+    </style>
+      
+    <activity activity_type="multiple_choice" title="Seleccionar" language="es">
+      <dl></dl>
+      <items>
+        <style>
+            <item_numbers>show</item_numbers>
+        </style>
+    
+        <reference type="exam">
+          <header>Seleccionar</header>
+          <body>Choose the answer that corresponds to the clue.</body>
+        </reference>
+
+        <item>
+          <prompt>husband of Penélope Cruz</prompt>
+          <choices>
+        
+            <distractor>Gael García Bernal </distractor>
+            <answer>Javier Bardem </answer>
+            <distractor>Diego Luna </distractor>
+        </choices>
+        </item>
+    
+        <item>
+          <prompt>lifelong friend of Gael García Bernal</prompt>
+          <choices>
+            <answer>Diego Luna</answer>
+            <distractor>Salma Hayek</distractor>
+            <distractor>Javier Bardem</distractor>
+        </choices>
+        </item>
+    
+        <item>
+          <prompt>town square in Salamanca, Spain</prompt>
+          <choices>
+            <distractor>ayuntamiento</distractor>
+            <distractor>Plaza de Armas</distractor>
+            <answer>Plaza Mayor</answer>
+        </choices>
+        </item>
+    
+    
+        <item>
+          <prompt>town festival</prompt>
+          <choices>
+        <distractor>ayuntamiento</distractor>
+            <answer>feria</answer>
+        <distractor>plaza</distractor>
+        </choices>
+        </item>
+    
+    
+        <item>
+          <prompt>city hall</prompt>
+          <choices>
+            <answer>ayuntamiento</answer>
+            <distractor>plaza</distractor>
+            <distractor>feria</distractor>
+        </choices>
+        </item>
+    
+      
+      </items>
+    </activity> 
+
+    <activity language="es" title="Identificar" activity_type="multiple_choice">
+      <dl></dl>
+      <items>
+        <style>
+          <item_numbers>show</item_numbers>
+        </style>
+            
+        <reference type="exam">
+          <header>Identificar</header>
+          <body>Identifica la palabra que no está relacionada con cada grupo.</body>
+        </reference>
+
+        <item>
+          <prompt/>
+          <choices>
+            <distractor>champiñón</distractor>
+            <distractor>cebolla</distractor>
+            <answer>dueña</answer>
+            <distractor>zanahoria</distractor>
+          </choices>
+        </item>
+        <item>
+          <prompt/>
+          <choices>
+            <distractor>camarones</distractor>
+            <answer>ajo</answer>
+            <distractor>atún</distractor>
+            <distractor>salmón</distractor>
+          </choices>
+        </item>
+        <item>
+          <prompt/>
+          <choices>
+            <answer>aceite</answer>
+            <distractor>leche</distractor>
+            <distractor>refresco</distractor>
+            <distractor>agua mineral</distractor>
+          </choices>
+        </item>
+        <item>
+          <prompt/>
+          <choices>
+            <distractor>jamón</distractor>
+            <distractor>chuleta de cerdo</distractor>
+            <answer>vinagre</answer>
+            <distractor>carne de res</distractor>
+          </choices>
+        </item>
+        <item>
+          <prompt/>
+          <choices>
+            <answer>cerveza</answer>
+            <distractor>lechuga</distractor>
+            <distractor>arvejas</distractor>
+            <distractor>frijoles</distractor>
+          </choices>
+        </item>
+        <item>
+          <prompt/>
+          <choices>
+            <distractor>carne</distractor>
+            <distractor>pescado</distractor>
+            <distractor>mariscos</distractor>
+            <answer>camarero</answer>
+          </choices>
+        </item>
+        <item>
+          <prompt/>
+          <choices>
+            <answer>pollo</answer>
+            <distractor>naranja</distractor>
+            <distractor>limón</distractor>
+            <distractor>uvas</distractor>
+          </choices>
+        </item>
+        <item>
+          <prompt/>
+          <choices>
+            <distractor>maíz</distractor>
+            <answer>queso</answer>
+            <distractor>papa</distractor>
+            <distractor>champiñón</distractor>
+          </choices>
+        </item>
+      </items>
+    </activity>
+
+    <activity activity_type="multiple_choice" title="Escoger" language="es">
+      <dl></dl>
+      <items>
+    
+        <style>
+            <item_numbers>show</item_numbers>
+        </style>
+    
+        <reference type="exam">
+          <header>Escoger</header>
+          <body>Escucha el audio para escoger la opción correcta para completar cada oración.</body>
+        </reference>
+        
+        <reference type="audio">
+        <audio id="111825"/>
+        </reference>
+    
+        <item>
+          <prompt>Dos de los mejores platos del restaurante son __.</prompt>
+          <choices>
+            <distractor>los entremeses del día y el cerdo</distractor>
+            <distractor>el salmón y el arroz con pollo</distractor>
+            <answer>la carne y el arroz con pollo</answer>
+        </choices>
+        </item>
+    
+        <item>
+          <prompt>La camarera __.</prompt>
+          <choices>
+            <distractor>los lleva a su mesa, les muestra el menú y les sirve el postre</distractor>
+            <answer>les habla de los especiales del día, les recomienda unos platos y ellos deciden qué van a comer</answer>
+            <distractor>les lleva unas bebidas, les recomienda unos platos y les sirve pan</distractor>
+        </choices>
+        </item>
+    
+        <item>
+          <prompt>Roberto va a comer __ Rosa.</prompt>
+          <choices>
+            <answer>tantos platos como</answer>
+            <distractor>más platos que</distractor>
+            <distractor>menos platos que</distractor>
+        </choices>
+        </item>
+      
+      </items>
+    </activity>
+  
+    <activity activity_type="multiple_choice" title="Superlativos" language="es">
+      <dl></dl>
+      
+      <items>
+    
+        <style>
+            <item_numbers>show</item_numbers>
+        </style>
+    
+        <reference type="exam">
+          <header>Superlativos</header>
+          <body>Listen and select the statements that express the correct superlatives.</body>
+        </reference>
+  
+        <reference type="audio">
+          <audio id="111962"/>
+        </reference>  
+      
+        <item>
+          <prompt></prompt>
+          <choices>
+            <distractor>Tus pantalones no son los más grandes de la tienda.</distractor>
+            <answer>Tus pantalones son los más grandes de la tienda.</answer>
+          </choices>
+        </item>
+    
+        <item>
+          <prompt></prompt>
+          <choices>
+            <answer>La camisa blanca es la más bonita del centro comercial.</answer>
+            <distractor>La camisa blanca no es tan bonita como otras camisas de la tienda.</distractor>
+          </choices>
+        </item>
+    
+        <item>
+          <prompt></prompt>
+          <choices>
+            <distractor>Las rebajas del centro comercial son peores que las rebajas de la tienda.</distractor>
+            <answer>En el centro comercial puedes encontrar las mejores rebajas.</answer>
+          </choices>
+        </item>
+    
+        <item>
+          <prompt></prompt>
+          <choices>
+            <answer>El vestido azul es el más caro de la tienda.</answer>
+            <distractor>El vestido azul es el más barato de la tienda.</distractor>
+          </choices>
+        </item>
+    
+        <item>
+          <prompt></prompt>
+          <choices>
+            <answer>Sebastián es el mejor vendedor de la tienda.</answer>
+            <distractor>Sebastián es el peor vendedor de la tienda.</distractor>
+          </choices>
+        </item>
+    
+      </items>
+    </activity>
+  
+    <activity activity_type="multiple_choice" title="Elegir" language="es">
+      <dl></dl>
+
+      <items>
+    
+        <style>
+            <item_numbers>show</item_numbers>
+        </style>
+    
+        <reference type="exam">
+          <header>Elegir</header>
+          <body>Elige la mejor respuesta para cada pregunta según el video clip.</body>
+        </reference>
+  
+        <reference type="video">
+          <video id="120249"/>
+        </reference>
+    
+        <item>
+          <prompt>¿Quién pidió jamón?</prompt>
+          <choices>
+            <distractor>Miguel</distractor>
+            <answer>Maru</answer>
+          </choices>
+        </item>
+    
+        <item>
+          <prompt>Según Felipe, ¿cómo están los espárragos?</prompt>
+          <choices>
+            <answer>sabrosísimos</answer>
+            <distractor>fríos</distractor>
+          </choices>
+        </item>
+    
+        <item>
+          <prompt>¿Qué pasa cuando el camarero entra corriendo?</prompt>
+          <choices>
+            <distractor>choca con (<i>he collides with</i>) el dueño del restaurante</distractor>
+            <answer>choca con Felipe</answer>
+          </choices>
+        </item>
+    
+        <item>
+          <prompt>Según el camarero, ¿qué pasó?</prompt>
+          <choices>
+            <distractor>le ayudaron con los platos</distractor>
+            <answer>le quitaron la comida</answer>
+          </choices>
+        </item>
+    
+        <item>
+          <prompt>Según Juan Carlos, ¿qué hicieron Felipe y él?</prompt>
+          <choices>
+            <answer>les sirvieron la comida a sus amigos</answer>
+            <distractor>reservaron una mesa para cuatro</distractor>
+          </choices>
+        </item>
+    
+        <item>
+          <prompt>¿Qué van a hacer Felipe y Juan Carlos para compensar (<i>to make up for</i>) los daños?</prompt>
+          <choices>
+            <distractor>van a invitar a Maru y a Miguel a otro restaurante</distractor>
+            <answer>van a pagar la comida y lavar los platos</answer>
+          </choices>
+        </item>
+      
+      </items>
+    </activity>
+  </items>
+</activity>
+

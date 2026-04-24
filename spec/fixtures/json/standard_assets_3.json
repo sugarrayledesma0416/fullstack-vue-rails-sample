@@ -1,0 +1,30 @@
+[
+    {
+        "id": 50,
+        "vendor_guid": "cb57aacb-aab3-4f3f-a096-8e0f9b4632b5",
+        "reference_id": 29,
+        "reference_type": "AssessmentItem",
+        "m3_publish_status": true
+    },
+    {
+        "id": 51,
+        "vendor_guid": "3f3f17d6-76e4-45ee-a6d7-95d5677b7668",
+        "reference_id": 30,
+        "reference_type": "AssessmentItem",
+        "m3_publish_status": true
+    },
+    {
+        "id": 52,
+        "vendor_guid": "9c0e1c83-0cd1-4d90-91aa-2949b2582bc0",
+        "reference_id": 31,
+        "reference_type": "AssessmentItem",
+        "m3_publish_status": true
+    },
+    {
+        "id": 53,
+        "vendor_guid": "241b68dd-1f96-4c19-b45a-62132670c88d",
+        "reference_id": 32,
+        "reference_type": "AssessmentItem",
+        "m3_publish_status": true
+    }
+]

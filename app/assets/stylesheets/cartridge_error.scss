@@ -1,0 +1,14 @@
+/* Used in Cartridge error pages to display debugging information, 
+ * these go inside a <code> block which uses a monospace font, but 
+ * it's also necessary to preserve indentation and newlines.
+ * However, using just a <pre> tag causes data containing long
+ * strings to either overflow the target area or blow up the 
+ * page width. */
+.cartridge_errors {
+  /* This allows breaking long strings in the middle to fit within the
+   * target area. */
+  overflow-wrap: break-word;
+  /* This simulates the behaviour that would occur if using the <pre> tag, 
+   * but allows long lines to be wrapped to fit inside the target area. */
+  white-space: pre-wrap; 
+}

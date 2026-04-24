@@ -1,0 +1,33 @@
+
+class YourModel < ActiveRecord::Base
+  include SomeModule # Modules should be included first, so we know what behavior we are adding to the class.
+  
+  default_scope :conditions => {:your_conditions} #Any default_scopes should then be declared.
+  
+  # Next associations are defined, in this order: has_many, has_one, has_and_belongs_to_many, belongs_to. 
+  has_many :friends
+  has_one  :enemy
+  has_and_belongs_to_many :groups
+  belongs_to :programs
+  
+  #Named scopes follow
+  named_scope :useful,   lambda { { :conditions => {:useful => true} } }
+  
+  # Then any callbacks, in the order they would be executed in the normal callback chain
+  after_find / after_initialize
+  before_validation
+  after_validation
+  before_save / before_create / before_update / before_destroy
+  after_save  / after_create  / after_update  / after_destroy
+  after_commit / after_rollback
+  
+  # Validations come next
+  validates_numericality_of :owner_id, :greater_than => 0, :only_integer => true
+  validate :start_date_is_before_end_date
+  
+  #Lastly any class-level macros (delegate, accepts_nested_attributes, alias_method, etc). 
+  
+  # attr_accessors etc? ?
+  
+  
+end

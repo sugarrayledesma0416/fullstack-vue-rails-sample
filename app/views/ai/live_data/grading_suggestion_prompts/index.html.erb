@@ -1,0 +1,107 @@
+<% content_for(:css_head, stylesheet_link_tag('ai/live_data/suggestion_prompt_comparison')) %>
+
+<h2>Comparing Grading Suggestion Prompts</h2>
+<% if @presenter.comparable_prompts.present? %>
+  <div class="c-box c-box--outlined">
+    <span class="u-txt-bold">
+      <% if @presenter.comparable_prompts.size > 3 %>
+        Select up to 3 prompts to compare with:
+      <% else %>
+        Select prompts to compare with:
+      <% end %>
+    </span>
+    <%= form_with(
+          url: ai_program_live_data_grading_suggestion_prompts_path(
+            program_id: @presenter.program.id
+          ),
+          method: :get
+        ) do |form| %>
+      <%= form.collection_check_boxes(
+            :comparison_prompt_ids,
+            @presenter.comparable_prompts,
+            :id,
+            ->(prompt) {
+              "Prompt #{prompt.id} (#{prompt.model.capitalize})"
+            }
+          ) do |prompt| %>
+          <div class="c-form-item">
+          <%= prompt.check_box(
+                checked: @presenter.comparison_prompts.include?(prompt.object),
+                class: 'c-form-item__checkbox'
+              ) %>
+          <%= prompt.label(class: 'c-form-item__label') %>
+        </div>
+      <% end %>
+      <div class="c-form-item">
+        <%= form.submit(
+              'Compare',
+              class: 'c-button  c-button--primary'
+            ) %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+
+<% if @presenter.activities.present? %>
+  <% @presenter.activities.each do |activity| %>
+    <% activity.questions.each do |question| %>
+      <div class="c-box  c-box--bubble-wrap  c-foil-panel">
+        <span class="u-txt-bold">Location:</span>
+        <a href="<%= activity.lesson_url %>"><%= activity.lesson_name %></a>
+        &rarr;
+        <a href="<%= activity.strand_url %>"><%= activity.strand_label %></a>
+        &rarr;
+        <%= content_tag(
+          :a,
+          activity.title.html_safe,
+          {
+            href: activity.activity_url
+          }
+        ) %>
+        <br>
+        <span class="u-txt-bold">Direction Line:</span> <%= activity.direction_line.html_safe %>
+        <br>
+        <div>
+          <div class="u-mar-bot-8">
+            <span class="u-txt-bold">Question <%= question.rank %>:</span> <%= question.html_friendly_prompt %>
+          </div>
+          <% question.inputs.each do |input| %>
+            <div class="c-box  c-box--bubble-wrap  c-suggestion-input">
+              <div class="c-box  c-box--bubble-wrap  c-student-response">
+                <span class="u-txt-bold">Student answer:</span>
+                <%= input.student_response.html_safe %>
+              </div>
+              <div class="u-dis-flex">
+                <% input.suggestions_by_prompt.each do |prompt, suggestions| %>
+                  <div class="c-box  c-box--bubble-wrap  c-prompt">
+                    <div class="c-box" %>
+                      Prompt <%= prompt.id %> (<%= prompt.model.capitalize %>)
+                    </div>
+                    <% if suggestions.present? %>
+                      <% suggestions.each do |suggestion| %>
+                        <div class="c-box  c-box--bubble-wrap  c-suggestion">
+                          <div>
+                            <span class="u-txt-bold">Incorrect text:</span>
+                            <%= suggestion.incorrect_text %>
+                          </div>
+                          <div>
+                            <span class="u-txt-bold">Error explanation:</span>
+                            <%= suggestion.error_explanation %>
+                          </div>
+                        </div>
+                      <% end %>
+                    <% else %>
+                      No grading suggestion.
+                    <% end %>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+<% else %>
+  There is nothing to compare.
+<% end %>

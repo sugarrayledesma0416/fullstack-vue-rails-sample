@@ -1,0 +1,754 @@
+#column_wrapper {
+  min-height:800px;
+}
+
+/* Program Checkbox */
+.checkbox_program {
+  display:inline-block;
+  width:13px;
+  height:13px;
+  background-color:#FFF;
+  border:1px solid #c6c6c6;
+  cursor:pointer;
+  margin:3px 7px 0 8px;
+  vertical-align: top;
+  padding: 0;
+}
+
+.wrap_table td {
+  position: relative;
+}
+
+/* Program Icons */
+.icon {
+  display: inline-block;
+}
+
+.toc {
+  color: #565656;
+}
+
+/* Only applies to instructor activities TOC */
+.toc_checkbox_wrapper.toc-checkbox-col {
+  width: 1%;
+  white-space: nowrap;
+  min-width: 7px;
+}
+
+.toc_checkbox {
+  padding: 0;
+}
+
+.toc_location_activity_list_entry .activity_link {
+  display: inline-block;
+  float: left;
+  max-width: 310px;
+  word-wrap: break-word;
+}
+
+.toc_location_activity_list_entry .icon {
+  float: left;
+  margin-left: 5px;
+}
+
+.c-premium-icon {
+  background-image: image-url('music/icons/premium.svg');
+  margin: 0 4px;
+}
+
+/* Need to remove the space that was for the checkbox now that it's in it's own column. */
+.unassignable_activity .c-premium-icon + .activity_link {
+  padding-left: 0;
+}
+
+
+/* activities table */
+
+#activities_list {
+  position: relative;
+}
+
+.assesment .wrap_table,
+.toc .wrap_table {
+  margin:10px 0px 0px 0px;
+}
+
+
+/* Activity table styles */
+
+#activities_list_column {
+  float: right;
+  width: 508px;
+  margin-bottom: 2em;
+}
+
+.activities h2 {
+  margin: 0; margin-bottom: .5em;
+}
+
+.activities .wrap table {
+  width: 100%;
+}
+
+.activities .wrap table thead tr th {
+  background: #efefef;
+  border: 0px solid green;
+}
+  .activities .wrap table tbody {
+}
+.activities .wrap table tbody tr.alt {
+  background-color: #f2f7fb;
+}
+.activities .wrap table tbody tr td {
+  border: 0px solid blue;
+}
+
+tr.toc_location_component td  {
+  font-weight: bold;
+}
+
+.toc_location_activity_list {
+  font-size: 11px;
+  margin: 0 0 20px 0;
+  border:none;
+  border-bottom:1px dotted #d7dbdf;
+  position: relative;
+}
+
+.assign_lesson {
+  float: right;
+  padding-right: 5px;
+}
+
+.toc_checkbox_wrapper {
+  height: 18px;
+  position: relative;
+  width: 405px;
+}
+
+.assesment .wrap_table table th.rightside,
+.toc .wrap_table table th.rightside {
+  text-align: right;
+  padding-right: 10px;
+  min-width: 77px;
+}
+
+.toc_location_activity_list th, .toc_location_activity_list td {
+  border: 0;
+  padding: 2px 9px 3px 9px;
+}
+.toc_location_activity_list th {
+  background-color: #eee;
+  font-weight: bold;
+  height:20px;
+  vertical-align:text-bottom;
+  padding-top:5px;
+}
+
+.toc_location_component {
+  font-size:14px;
+}
+
+.toc_location_activity_list th.page {
+  width: 40px;
+}
+.toc_location_activity_list th.due-date {
+  text-align: left;
+  width: 77px;
+}
+.toc_location_activity_list th.status {
+  text-align: center;
+  width: 50px;
+}
+
+.toc_activity_due_date {
+  display: block!important;
+  text-align: right;
+  margin-right: 8px;
+}
+
+.toc_activity_due_date_info {
+  float: left;
+}
+
+.toc_activity_due_date_info ul {
+  font-size:12px;
+  list-style-type: none;
+  line-height:17px;
+}
+
+.toc_activity_due_date_info ul li.section_name {
+  padding:0 0 0px 10px;
+  color: #000;
+}
+
+.toc_activity_due_date_info ul li.due_date {
+  color:#676767;
+  font-weight: bold;
+}
+
+.toc_location_activity_due_date img {
+  float: right;
+  top: 4px;
+  right: 1px;
+}
+
+
+#edit_activity_assignment .activity_label,
+#edit_activity_assignment .course_label,
+#edit_activity_assignment .sections_label {
+  font-weight: bold;
+  padding: 0 1em 0 0;
+}
+
+#edit_activity_assignment .input_aligned {
+  left: 6.5em;
+  position: absolute;
+}
+
+#edit_activity_assignment input,
+#edit_activity_assignment select {
+  position: relative;
+  top: -2px;
+}
+
+#edit_activity_assignment .ui-datepicker-trigger {
+  position: relative;
+  left: 2px;
+  cursor: pointer;
+}
+
+#assign_tab,
+#unassign_tab{
+  margin-bottom: 3px;
+}
+
+#assign_tab input,
+#unassign_tab input {
+  top: 3px;
+  padding: 3px;
+}
+
+#assign_tab label,
+#unassign_tab label{
+  padding-left: 1px;
+}
+
+
+#options_for_update_type_assign {
+  margin-left: 10px;
+  padding: 3px;
+}
+
+#spinner{
+  position:absolute;
+  left:450px;
+  top: 300px;
+}
+
+.release_date_time {
+  width:200px;
+}
+
+.toc_location_activity_list_entry {
+  max-width: 350px;
+  width: 350px;
+}
+
+.current_strand_lesson {
+  margin-right: 5px;
+  font-weight: bold;
+}
+
+.current_strand_additional {
+  font-weight: normal;
+  color: #676767;
+  font-size: 15px;
+}
+
+.assesment #current_strand_name,
+.instructor #current_strand_name {
+  width: 350px;
+}
+
+#current_strand_name {
+  font-size:15px;
+  margin-left: 3px;
+  display: inline-block;
+  width: 510px;
+}
+
+
+/* Styling for when the book is unreleased */
+.unreleased_activities {
+  margin-left: -360px;
+  position: absolute;
+  text-align: center;
+  width: 900px;
+}
+
+
+/*navigation*/
+.navigation {
+  position:relative;
+}
+
+.nav_frame {
+  position:absolute;
+  top:60px;
+  width:910px;
+  left:-10px;
+}
+
+
+.nav_frame.prev {
+  position: absolute;
+  top: 60px;
+  left: -10px;
+  width: 20px;
+}
+
+.nav_frame.next {
+  position: absolute;
+  top: 60px;
+  left: 880px;
+  width: 20px;
+}
+
+
+
+.nav_frame .next {
+  float:right;
+  display:block;
+  width:17px;
+  height:30px;
+  background:url(/images/toc-arrow-next.png) no-repeat 0 0;
+  text-indent:-9999em;
+}
+
+.nav_frame .prev {
+  float:left;
+  display:block;
+  width:40px;
+  height:30px;
+  background:url(/images/toc-arrow-prev.png) no-repeat 0 0;
+  text-indent:-9999em;
+}
+
+.nav_frame .next:hover {
+  background-position:0 -30px;
+}
+
+.nav_frame .prev:hover {
+  background-position:0 -30px;
+}
+
+
+
+/* Assessment Status/Release Formatting */
+
+.show_assessment,
+.show_grade,
+.show_answers {
+  float: left;
+  width: 400px;
+  margin-left: 35px;
+  font-size: 10px;
+}
+
+.assessment_show_status,
+.grade_availability,
+.answer_availability,
+.password-protected,
+.number-of-attempts-label,
+.time-limit {
+  float: left;
+  width: 110px;
+  font-weight: bold;
+}
+
+.release_date_time,
+.grade_availability_time,
+.answer_availability_time,
+.password-protected-value,
+.number-of-attempts-value,
+.time-limit-value {
+  float: left;
+}
+
+.answer_availability_time a.result_hidden,
+.grade_availability_time a.result_hidden,
+.release_date_time a.result_hidden {
+  background: url('/images/assess_arrows.png') right top no-repeat;
+}
+
+.answer_availability_time a.released,
+.grade_availability_time a.released,
+.release_date_time a.released {
+  background: url('/images/assess_arrows.png') right bottom no-repeat;
+}
+
+.available_pipe {
+  margin: 0px 2px;
+}
+
+.available_specifics {
+  display: block;
+}
+
+/*SS Plus Only Activities */
+/*TODO: delete this if we don't need it after passcode stuff is finished
+table.ssplus_only a {
+  color:#666;
+  font-style:italic;
+  margin-left: 33px;
+}
+
+table.ssplus_only th {
+  color:#999;
+  font-style:italic;
+}
+
+table.ssplus_only h3 {
+  margin-left: 33px;
+}
+
+.toc_location_component .ssplus_only {
+  font-size:12px;
+  font-weight:normal;
+}
+
+table.ssplus_only span.ssplus_only a {
+  color: #0083CB;
+  font-style: normal;
+  margin-left: 0px;
+}
+*/
+
+
+/* TOC specific hidden_helper */
+.set_date_link.hidden_helper {
+  display: none!important;
+}
+
+.set_date_link.disable_link_function {
+  color: #959595;
+}
+
+/* Carousel */
+.carousel {
+  width:852px;
+  margin-left:20px;
+}
+
+.carousel a {
+  color: #676767;
+}
+
+.item {
+  margin:0;
+  width:151px;
+  height:137px;
+  float:left;
+  border:1px #c4c4c4 solid;
+  margin-top:12px;
+  background: white;
+  border: 1px solid #ccc;
+  box-shadow: 3px 3px 6px #ccc;
+  -moz-box-shadow:    3px 3px 6px #ccc;
+  -webkit-box-shadow: 3px 3px 6px #ccc;
+  margin-left: -1px;
+}
+
+.current_unit {
+  width:177px;
+  height:162px;
+  margin-top:0;
+  margin-bottom: 10px;
+  margin-left: -1px;
+}
+
+.carousel .item {
+  padding-top: 6px;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+.carousel .item.course_units_link.current_unit {
+  padding-top: 8px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+
+/* Carousel 2 Lessons only */
+
+.carousel.units-2 {
+  padding-left:240px;
+}
+
+.slide_bracket_placeholder_l {
+  background: url(/images/toc_bracket_l.png) no-repeat top left;
+  float:left;
+  height:142px;
+  width:240px;
+}
+
+.slide_bracket_placeholder_r {
+  background: url(/images/toc_bracket_r.png) no-repeat top right;
+  float:right;
+  height:142px;
+  margin-right:20px;
+  width:15px;
+}
+
+
+/* Carousel Images */
+a.unit {
+  display:block;
+  font-size: 11px;
+}
+
+a.unit img {
+ width:150px;
+ height:92px;
+}
+
+.current_unit a.unit img {
+  width:177px;
+  height:109px;
+}
+
+.media_item {
+  display: block;
+  height: 97px;
+  text-align: center;
+  width: 100%;
+}
+
+.current_unit .media_item {
+  height: 121px;
+}
+
+.item.current_unit .unselected_lesson_title_link {
+display: none;
+}
+
+.item .selected_lesson_title_link {
+display: none;
+}
+
+.item.current_unit .selected_lesson_title_link {
+display: block;
+}
+
+.media_item a.unit {
+  padding: 0px;
+}
+
+/* Rewrite of Carousel Interior to account for Units and Lessons */
+.course_units_link .two_tier .unit_name,
+.course_units_link .two_tier .unit_lesson_divider,
+.course_units_link .unselected_unit_title_link a {
+  color: #c0c0c0;
+}
+
+.course_units_link.current_unit .unit_name,
+.course_units_link.current_unit .two_tier .unit_lesson_divider,
+.unit_lessons .selected_unit_title_link a {
+  color: #565656;
+}
+
+.unit_name,
+.unit_lesson_divider,
+.selected_unit_title_link a,
+.unselected_unit_title_link a {
+  font-size: 11px;
+  line-height: 15px;
+}
+
+
+/* Two Tier Specifics */
+.two_tier .unselected_unit_title_link,
+.two_tier .selected_unit_title_link {
+  display: inline-block;
+  float: left;
+  text-align: left;
+  vertical-align: bottom;
+}
+
+.two_tier .selected_unit_title_link.current_lesson a.unit {
+  background: #e7e7e7;
+  font-weight: bold;
+  margin: 1px;
+  padding: 3px;
+}
+
+.course_units_link .two_tier .unit_name {
+  padding-left: 4px;
+}
+
+.course_units_link.current_unit .two_tier .unit_name {
+  padding-left: 0px;
+}
+
+.two_tier .unselected_unit_title_link a.unit,
+.two_tier .selected_unit_title_link a.unit {
+  padding: 4px;
+}
+
+.unit_lesson_divider {
+  float: left;
+  padding: 4px;
+}
+
+/* Single Unit Specifics */
+.one_tier .selected_unit_title_link a {
+  font-weight: bold;
+}
+
+
+/* Carousel Shadowing */
+.unitsAndLessons {
+ margin-bottom:30px;
+}
+
+.show_bracket_l {
+  background: none;
+  border-color:transparent !important;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+.show_bracket_l, .item#unit_rank_-2 {
+  background:url(/images/toc_bracket_l.png) no-repeat top left;
+  border-color:transparent !important;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+.show_bracket_l, .item#unit_rank_-1 {
+  border-color: transparent!important;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+.show_bracket_sec {
+  background:url(/images/toc_bracket_l.png) no-repeat top left;
+  border-color:transparent !important;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+.show_bracket_last {
+  background:url(/images/toc_bracket_r.png) no-repeat top right;
+  border-color: transparent!important;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+.show_bracket_pent {
+  background: none;
+  border-color:transparent !important;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+/* Carousel Links */
+#course_units_link_front, #course_units_link_back {
+  background:url(/images/toc_sm_showmore.png) no-repeat top center;
+  display:block;
+  width:100%;
+  height:65px;
+  margin:30px auto 0px auto;
+  text-transform:uppercase;
+  text-align:center;
+  font-size:10px;
+  padding-top: 50px;
+  font-size:.8em;
+  color:#959595;
+}
+
+#course_units_link_front:hover, #course_units_link_back:hover {
+  text-decoration:none;
+}
+
+/* assignment dialog */
+
+.use_date {
+  margin-left:15px;
+}
+
+
+/* no access student msg */
+#unassignable-msg {
+  display: none;
+}
+
+/* overrides toc instructor hover from application.css */
+.unassignable_activity_msg_student {
+  bottom:-25px;
+}
+
+.unassignable_activity_msg_student .results_table_hover_arrow {
+  bottom:-17px;
+}
+
+/* TOC Library */
+.toc_gear {
+  float: right;
+}
+
+.toc_gear .gear_menu.open {
+  right: -28px;
+  top: 19px;
+}
+
+.toc_gear .gear_menu li a {
+  color: #0083CB;
+  font-style: normal;
+  padding-left: 0px;
+}
+
+.edit-created-activity,
+.delete-created-activity,
+.unassignable_activity a.edit-created-activity,
+.unassignable_activity a.delete-created-activity {
+  background: url('/images/toc_activity_controls.png') 0px 0px no-repeat;
+  display: inline-block;
+  float: right;
+  margin-right: 5px;
+  padding-left: 0px;
+  text-indent: -9999em;
+  width: 16px;
+}
+
+.my-content-controls {
+  background: url('/images/my_content_activity_controls.png') 0px 0px no-repeat;
+}
+
+
+.delete-created-activity,
+.unassignable_activity a.delete-created-activity {
+  background-position: -31px 0px;
+}
+
+.delete-created-activity.linked-to-a-course {
+  background-position: -66px 0px;
+}
+
+/* overrides div.communication padding and margin
+ * from application.css. Is necessary to prevent
+ * a huge checkbox from appearing the a communication
+ * component. */
+.toc div.communication {
+  padding:0;
+  margin-bottom:0;
+  background-color:#FFF;
+}

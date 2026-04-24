@@ -1,0 +1,271 @@
+/* Pop Ups for Sending / Requesting a Chat */
+.chat_request_receive {
+  display: block;
+  border: 10px solid rgba(0,0,0,.5);
+  height: 230px;
+  width: 150px;
+  z-index: 1000;
+}
+
+.chat_request_send,
+.chat_status_message {
+  display: block;
+  right: 0px;
+  position: absolute;
+  top: 0px;
+  z-index: 100;
+}
+
+.chat_request_send {
+  border: 5px solid #FFC222;
+  height: 230px;
+  width: 140px;
+}
+
+.chat_status_message {
+  border: 5px solid #C0161C;
+  height: 230px;
+  width: 140px;
+}
+
+.request_inner {
+  background: #FFF;
+  display: block;
+  height: 100%;
+  text-align: center;
+  width: 100%;
+}
+
+.chat_status_header,
+.chat_sending {
+  color: #565656;
+  display: block;
+  font-size: 12px;
+  font-weight: bold;
+  height: 70px;
+  line-height: 1.3em;
+  margin: 0px 7px 5px 7px;
+  padding-top: 5px;
+}
+
+.chat_status_header {
+  height: 20px;
+}
+
+.chat_message {
+  margin-left: 10px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.user_request {
+  color: #565656;
+  display: block;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1.3em;
+  margin: 0px 7px 5px 15px;
+  padding-top: 5px;
+}
+
+.chat_avatar {
+  height: 115px;
+  padding-top: 5px;
+}
+
+.user_avatar {
+  background: url('/images/default-avatar.gif') center top no-repeat;
+  background-size: cover;
+  display: block;
+  height: 89px;
+  margin: 0 auto;
+  width: 89px;
+}
+
+.chat_request_receive .student_name,
+.chat_request_send .student_name {
+  color: #737373;
+  display: block;
+  font-size: 11px;
+  font-weight: bold;
+  line-height: 1.3em;
+  padding-top: 4px;
+  position: relative;
+}
+
+.student_program,
+.student_section {
+  color: #787878;
+  display: block;
+  font-size: 11px;
+  line-height: 1.3em;
+  text-align: center;
+}
+
+.request_controls {
+  display: block;
+  height: 23px;
+}
+
+.cancel_request {
+  font-size: 13px;
+  float: left;
+  padding-left: 10px;
+  padding-top: 3px;
+  text-align: left;
+}
+
+.accept_request {
+  float: right;
+  padding-right: 10px;
+}
+
+.accept_request .red-button {
+  color: #FFF;
+  padding: 2px 10px;
+}
+
+.request_video {
+  display: block;
+  font-size: 10px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  padding-right: 10px;
+  position: relative;
+  text-align: right;
+}
+
+.request_video .checkbox {
+  display: inline-block;
+  background: url('/images/small_check.png') -1px 5px no-repeat;
+  border: 0px;
+  height: 20px;
+  margin: 0px;
+  width: 10px;
+  vertical-align: bottom;
+}
+
+.request_video .checkbox.show_check {
+  background-position: -17px 5px;
+}
+
+.spinner_image {
+  display: block;
+  margin-top: 5px;
+}
+
+/* Course / Section Info Hovers */
+.chat_request_receive .student_info,
+.chat_request_send .student_info {
+  background: url('/images/partner_chat_info_icon.png') 0px 0px no-repeat;
+  display: inline-block;
+  height: 15px;
+  position: absolute;
+  width: 15px;
+}
+
+.request_inner .student_info {
+  left: 5px;
+  top: 8px;
+}
+
+.student_name .student_info {
+  left: auto;
+  top: auto;
+}
+
+
+.chat_request_receive:hover .student_info,
+.chat_request_send:hover .student_info {
+  background: url('/images/partner_chat_info_icon.png') -17px 0px no-repeat;
+}
+
+.student_name {
+  position: relative;
+}
+
+/* Explanation Hovers */
+.tutorial_hover {
+  background-color: #FFF0D1;
+  border: 1px solid #BEBEBE;
+  color: #565656;
+  font-size: 11px;
+  font-weight: normal;
+  line-height: 15px;
+  padding: 10px;
+  position: absolute;
+  text-align: left;
+  box-shadow: 1px 1px 1px #ccc;
+  -moz-box-shadow: 1px 1px 1px #ccc;
+  -webkit-box-shadow: 1px 1px 1px #ccc;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  z-index: 5;
+}
+
+/* Arrow Positions */
+.tutorial_arrow_top {
+  background: url('/images/tutorial_arrows_horz.png') 50% bottom no-repeat;
+  display: block;
+  height: 10px;
+  position: absolute;
+  left: 0px;
+  top: -10px;
+  width: 100%;
+}
+
+.tutorial_arrow_bottom {
+  background: url('/images/tutorial_arrows_horz.png') 50% top no-repeat;
+  bottom: -10px;
+  display: block;
+  height: 10px;
+  position: absolute;
+  left: 0px;
+  width: 100%;
+}
+
+.tutorial_arrow_right {
+  background: url('/images/tutorial_arrows_vert.png') left 50% no-repeat;
+  display: block;
+  height: 100%;
+  margin-top: -7px;
+  position: absolute;
+  right: -10px;
+  width: 10px;
+}
+
+.tutorial_arrow_left {
+  background: url('/images/tutorial_arrows_vert.png') right 50% no-repeat;
+  display: block;
+  height: 100%;
+  margin-top: -9px;
+  position: absolute;
+  left: -9px;
+  width: 9px;
+}
+
+/* Hover Positions */
+#invitee_course {
+  left: -190px;
+  position: absolute;
+  right: auto;
+  top: -20px;
+  width: 170px;
+}
+
+
+#inviter_course {
+  left: -215px;
+  position: absolute;
+  top: -25px;
+  width: 185px;
+}
+
+#inviter_course .show_practice {
+  font-weight: bold;
+}
+
+#inviter_course .hide_practice {
+  display: none;
+}

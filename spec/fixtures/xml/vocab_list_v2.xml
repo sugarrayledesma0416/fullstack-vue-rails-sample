@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<activity activity_type="vocab_list_v2" title="Vocabulary list: 4A" language="fr">
+  <dl>Click on each word to hear its pronunciation.</dl>
+  <items>
+    <vocab_chart title="Dans la ville" column_hint="1" show_l1_first="false">
+      <title color="#007DC5">Dans la ville</title>
+      <title_audio id="1"/>
+      <vocab_group>
+        <dictionary_entry>
+          <id>13913</id>
+          <language>fr</language>
+          <target>une boîte de nuit</target>
+          <annotated_target>une boîte de nuit</annotated_target>
+          <descriptor/>
+          <translation>nightclub</translation>
+          <image id="5"/>
+          <audio id="1"/>
+          <exclusion_entry_ids/>
+          <definition/>
+          <target_for_speech_rec/>
+        </dictionary_entry>
+        <target>une boîte (de nuit)</target>
+        <translation>nightclub</translation>
+      </vocab_group>
+      <vocab_group>
+        <hint>some hint</hint>
+        <dictionary_entry>
+          <id>12027</id>
+          <language>fr</language>
+          <target>un bureau</target>
+          <annotated_target>un <false_cognate>bureau</false_cognate></annotated_target>
+          <descriptor>office</descriptor>
+          <translation>office</translation>
+          <image id="6"/>
+          <audio id="2"/>
+          <exclusion_entry_ids/>
+          <definition/>
+          <target_for_speech_rec>UN BUREAU</target_for_speech_rec>
+        </dictionary_entry>
+        <translation>office; desk</translation>
+      </vocab_group>
+      <vocab_group>
+        <dictionary_entry>
+          <id>6811</id>
+          <language>fr</language>
+          <target>un cinéma</target>
+          <annotated_target>un cinéma=</annotated_target>
+          <descriptor/>
+          <translation>movie theater</translation>
+          <image id="7"/>
+          <audio id="3"/>
+          <exclusion_entry_ids/>
+          <definition/>
+          <target_for_speech_rec>UN CINÉMA</target_for_speech_rec>
+        </dictionary_entry>
+        <dictionary_entry>
+          <id>13915</id>
+          <language>fr</language>
+          <target>un ciné</target>
+          <annotated_target>un ciné</annotated_target>
+          <descriptor/>
+          <translation>movie theater, movies</translation>
+          <image id=""/>
+          <audio id="4"/>
+          <exclusion_entry_ids/>
+          <definition/>
+          <target_for_speech_rec/>
+        </dictionary_entry>
+        <target>un cinéma (ciné)</target>
+        <translation>movie theater, movies</translation>
+      </vocab_group>
+    </vocab_chart>
+    <vocab_chart title="Activités" column_hint="1" show_l1_first="false">
+      <title color="#83428F">Activités</title>
+      <title_audio id="2"/>
+      <vocab_group>
+        <dictionary_entry>
+          <id>7754</id>
+          <language>fr</language>
+          <target>bavarder</target>
+          <annotated_target>bavarder</annotated_target>
+          <descriptor/>
+          <translation>to chat</translation>
+          <image id="7"/>
+          <audio id="3"/>
+          <exclusion_entry_ids/>
+          <definition/>
+          <target_for_speech_rec/>
+        </dictionary_entry>
+        <translation>to chat</translation>
+      </vocab_group>
+      <vocab_group>
+        <dictionary_entry>
+          <id>13945</id>
+          <language>fr</language>
+          <target>danser</target>
+          <annotated_target>danser=</annotated_target>
+          <descriptor/>
+          <translation>to dance</translation>
+          <image id="5"/>
+          <audio id="4"/>
+          <exclusion_entry_ids/>
+          <definition/>
+          <target_for_speech_rec>DANSER</target_for_speech_rec>
+        </dictionary_entry>
+        <translation>to dance</translation>
+      </vocab_group>
+    </vocab_chart>
+    <vocab_chart title="Verbes" column_hint="1" show_l1_first="false">
+      <title color="#F58220">Verbes</title>
+      <title_audio id="4"/>
+      <vocab_group>
+        <dictionary_entry>
+          <id>13954</id>
+          <language>fr</language>
+          <target>aller</target>
+          <annotated_target>aller</annotated_target>
+          <descriptor/>
+          <translation>to go</translation>
+          <image id=""/>
+          <audio id="1"/>
+          <exclusion_entry_ids/>
+          <definition/>
+          <target_for_speech_rec/>
+        </dictionary_entry>
+        <translation>to go</translation>
+      </vocab_group>
+    </vocab_chart>
+  </items>
+</activity>

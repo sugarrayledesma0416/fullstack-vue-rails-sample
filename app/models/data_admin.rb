@@ -1,0 +1,2 @@
+class DataAdmin < InstitutionAdmin
+end

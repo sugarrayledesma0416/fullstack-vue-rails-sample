@@ -1,0 +1,18 @@
+<activity activity_type="reference_activity" title="sample_reference_activity_title" language="es">
+  <dl>instructions_go_here</dl>
+
+  <items>
+    <headline level="1" number="4.2">Stem changing verbs:</headline>
+    <headline level="2"> e -> ie, o -> ue</headline>
+    <headline level="3">TBD</headline>
+    <paragraph starting_point="ANTE TODO" sidebar_ref="1">
+      Stem changing verbs deviate from the normal pattern of regular verbs. When stem changing verbs are conjugated, they have a vowel change in the last syllable of the stem
+    </paragraph>
+    <paragraph bullet="true">
+      <attention /> In many verbs, such as <b>empezar</b> <i>(to begin)</i>, the stem vowel changes from <b>e</b> to <b>ie</b>.
+      Note that the <b>nosotros/as</b> and <b>vosotros/as</b> forms don't have a stem change.
+    </paragraph>
+    <citation>This <b>is</b> a citation.</citation>
+  </items>
+
+</activity>

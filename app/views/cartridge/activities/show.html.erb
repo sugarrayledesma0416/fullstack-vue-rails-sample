@@ -1,0 +1,49 @@
+<%= render 'activities/include' %>
+
+<% content_for(:js_head, javascript_include_tag('maestro_activity_engine/audio_speed.js')) %>
+<% content_for(:js_head, javascript_include_tag('maestro_activity_engine/speech_rec_listen_and_repeat/bootstrap.js')) %>
+<% content_for(:js_head, javascript_include_tag('record_view_time_spent.js')) %>
+<% content_for(:js_head, javascript_include_tag('ckeditor_basepath_override.js')) %>
+
+<% if @activity.activity_type == 'virtual_chat' || @activity.activity_type == 'video_virtual_chat' %>
+  <% content_for :current_user_data do %>
+    <%= hidden_field_tag :user_gender, current_user.gender %>
+    <%= hidden_field_tag :current_user_id, current_user.id %>
+  <% end %>
+<% end %>
+
+<% if @activity.composition? || @activity.has_composition_activities? %>
+  <% content_for(:js_head, javascript_include_tag('composition_activity')) %>
+<% end %>
+
+<% content_for :hidden_form_fields do %>
+  <input type="hidden" id="user_id" name="user_id" value="<%= current_user.id %>" />
+  <input type="hidden" id="partner_id" name="partner_id" value="" />
+  <input type="hidden" id="user_section_id" name="user_section_id" value="<%= current_section.id %>" />
+  <input type="hidden" id="partner_section_id" name="partner_section_id" value="" />
+  <input type="hidden" id="recording_path" name="recording_path" value="" />
+  <input type="hidden" id="recording_token" name="recording_token" value="" />
+<% end %>
+
+<% content_for :submit_buttons do %>
+  <% buttons = get_current_button_tag(@activity, @attempt_track, @workset) -%>
+  <%= render 'cartridge/activities/activity_footer',
+              disabled: @read_only,
+              buttons: buttons,
+              return_url: @return_url,
+              return_label: @return_label,
+              activity_id: @activity.id,
+              section_id: current_section.id,
+              activity_content: @activity.content_object,
+              activity_allows_reference_links: !@activity.assessment?,
+              blank_submission_protection_enabled: true,
+              requires_ajax_submission: @activity_presenter.requires_ajax_submission?,
+              enable_accentbar: true,
+              instructor_practice: true
+  %>
+  <%= hidden_field_tag('practice', 'yes') if !@activity.preview? && @attempt_track.practice? %>
+<% end %>
+
+<%= render 'cartridge/activities/show_header_content', disabled_alerts: @is_popup %>
+<div class="u-hidden  js-mobile-tabset-container"></div>
+<%= render 'cartridge/activities/show_main_content' %>

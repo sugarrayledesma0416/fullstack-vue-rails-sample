@@ -1,0 +1,6 @@
+group_topic_id,group_topic_name,bank_name,direction_line,item_type,dl_lang,prompt_lang,choice_lang,prompt,correct_answer,distractor_1,distractor_2
+,University and school,Completar - Drop Down,Complete each sentence with the correct option.,dd_3,en,es,es,A Pedro @@menu@@,le gustan los cómics,nos gustan los cómics,me gustan los cómics
+,,,,,,,,Daniel y yo @@menu@@,tomamos el curso de historia este semestre,toman el curso de historia este semestre,tomo el curso de historia este semestre
+,,,,,,,,El curso de sociología @@menu@@,empieza mañana,empiezas mañana,empiezan mañana
+,,,,,,,,Yo siempre @@menu@@,hablo con Carlos al final de la clase,habláis con Carlos al final de la clase,habla con Carlos al final de la clase
+,,,,,,,,Juana @@menu@@,espera el autobús a la universidad,esperas el autobús a la universidad,esperamos el autobús a la universidad

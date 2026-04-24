@@ -1,0 +1,27 @@
+<activity activity_type="fill_in_the_blanks" language="es" title="activity title">
+  <dl>Instructions</dl>
+  <items>
+    <style>
+      <wol_size>words_standard</wol_size>
+       <item_numbers>show</item_numbers>
+    </style>
+    <item>
+      <prompt>What is the answer to question 1? <wol ref="1"/></prompt>
+      <answers ref="1">
+        <answer>answer text 1</answer>
+      </answers>
+    </item>
+    <reference type="model">
+      <header>Prompts</header>
+      <body>
+        This is the body of the model.
+      </body>
+    </reference>
+    <item>
+      <prompt>What is the answer to question 2? <wol/></prompt>
+      <answers>
+        <answer>answer text 2</answer>
+      </answers>
+    </item>
+  </items>
+</activity>

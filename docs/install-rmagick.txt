@@ -1,0 +1,36 @@
+# 1. install imagemagick package dependencies
+yum install freetype
+yum install libjpeg
+yum install libpng
+yum install libwmf
+yum install ghostscript
+
+# 2. insteal jpeglib headers
+wget http://www.ijg.org/files/jpegsrc.v8.tar.gz
+tar xvfz jpegsrc.v8.tar.gz
+cd jpeg-8
+./configure
+make
+sudo make install
+
+# 3. download imagemagick package
+wget ftp://ftp.fifi.org/pub/ImageMagick/ImageMagick-6.5.8-10.tar.gz
+
+# 4. install imagemagick
+tar xvfz ImageMagick-6.5.8-10.tar.gz
+cd ImageMagick-6.5.8-10
+./configure --with-jpeg=yes
+make
+sudo make install
+
+# 5. install rmagick
+gem install rmagick
+
+# 6. test rmagick
+irb
+require 'rubygems'
+require 'RMagick'
+Magick::Image.new(110, 30){self.background_color = 'white'}.write('test.jpg')
+
+# install failed if you get "Magick::ImageMagickError: no encode delegate for this image format"
+# expected output like 110x30 DirectClass 16-bit

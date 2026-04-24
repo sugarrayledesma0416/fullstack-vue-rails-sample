@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<activity activity_type="short_clips" language="es" title="Short clips activity">
+  <dl>Watch each video.</dl>
+  <items>
+    <episode_synopsis sidebar_ref="1">Felipe plays a practical joke on Miguel, and the friends take a trip to the coast. They check in to their hotel and go to the beach, where Miguel gets his revenge.</episode_synopsis>
+    <video_clip>
+      <image id="137856" />
+      <video id="137846" />
+      <transcript>
+        <turn>
+          <speaker>TÍA ANA MARÍA</speaker>
+          <dialog>¿Están listos para su viaje a la playa?</dialog>
+        </turn>
+        <turn>
+          <speaker>TODOS</speaker>
+          <dialog>Sí.</dialog>
+        </turn>
+        <turn>
+          <speaker>TÍA ANA MARÍA</speaker>
+          <dialog>Excelente... ¡A la estación de autobuses!</dialog>
+        </turn>
+        <turn>
+          <speaker>MARU</speaker>
+          <dialog>¿Dónde está Miguel?</dialog>
+        </turn>
+        <turn>
+          <speaker>FELIPE</speaker>
+          <dialog>Yo lo traigo.</dialog>
+        </turn>
+      </transcript>
+    </video_clip>
+    <video_clip>
+      <image id="137857" />
+      <video id="137847" />
+      <transcript>
+        <stage_directions>(se escucha un grito de Miguel)</stage_directions>
+        <turn>
+          <speaker>FELIPE</speaker>
+          <dialog>Ya está listo. Y tal vez enojado. Ahorita vamos.</dialog>
+        </turn>
+      </transcript>
+    </video_clip>
+    <video_clip>
+      <image id="137858" />
+      <video id="137848" />
+      <transcript>
+        <turn>
+          <speaker>EMPLEADO</speaker>
+          <dialog>Bienvenidas. ¿En qué puedo servirles? </dialog>
+        </turn>
+        <turn>
+          <speaker>MARU</speaker>
+          <dialog>Hola. Tenemos una reservación para seis personas para esta noche.</dialog>
+        </turn>
+        <turn>
+          <speaker>EMPLEADO</speaker>
+          <dialog>¿A nombre de quién?</dialog>
+        </turn>
+        <turn>
+          <speaker>JIMENA</speaker>
+          <dialog>¿Díaz? ¿López? No estoy segura.</dialog>
+        </turn>
+      </transcript>
+    </video_clip>
+    <video_clip>
+      <image id="137859" />
+      <video id="137849" />
+      <transcript>
+        <turn>
+          <speaker>EMPLEADO</speaker>
+          <dialog>No encuentro su nombre. Ah, no, ahora sí lo veo, aquí está. Díaz. Dos habitaciones en el primer piso para seis huéspedes.</dialog>
+        </turn>
+      </transcript>
+    </video_clip>
+    <video_clip>
+      <image id="137860" />
+      <video id="137850" />
+      <transcript>
+        <turn>
+          <speaker>FELIPE</speaker>
+          <dialog>No está nada mal el hotel, ¿verdad? Limpio, cómodo... ¡Oye, Miguel! ¿Todavía estás enojado conmigo? Miguel está de mal humor. No me habla.</dialog>
+        </turn>
+        <turn>
+          <speaker>JUAN CARLOS</speaker>
+          <dialog>¿Todavía?</dialog>
+        </turn>
+      </transcript>
+    </video_clip>
+    <video_clip>
+      <image id="137861" />
+      <video id="137851" />
+      <transcript>
+        <turn>
+          <speaker>EMPLEADO</speaker>
+          <dialog>Aquí están las llaves de sus habitaciones.</dialog>
+        </turn>
+        <turn>
+          <speaker>MARU</speaker>
+          <dialog>Gracias. Una cosa más. Mi novio y yo queremos hacer windsurf, pero no tenemos tablas.</dialog>
+        </turn>
+        <turn>
+          <speaker>EMPLEADO</speaker>
+          <dialog>El botones las puede conseguir para ustedes.</dialog>
+        </turn>
+      </transcript>
+    </video_clip>
+    <video_clip>
+      <image id="137862" />
+      <video id="137852" />
+      <transcript>
+        <turn>
+          <speaker>JUAN CARLOS</speaker>
+          <dialog>¿Qué hace este libro aquí? ¿Estás estudiando en la playa?</dialog>
+        </turn>
+        <turn>
+          <speaker>JIMENA</speaker>
+          <dialog>Sí, es que tengo un examen la próxima semana.</dialog>
+        </turn>
+      </transcript>
+    </video_clip>
+    <video_clip>
+      <image id="137863" />
+      <video id="137853" />
+      <transcript>
+        <turn>
+          <speaker>JUAN CARLOS</speaker>
+          <dialog>Ay, Jimena. ¡No! ¿Vamos a nadar?</dialog>
+        </turn>
+        <turn>
+          <speaker>JIMENA</speaker>
+          <dialog>Bueno, como estudiar es tan aburrido y el tiempo está tan bonito...</dialog>
+        </turn>
+      </transcript>
+    </video_clip>
+    <video_clip>
+      <image id="137864" />
+      <video id="137854" />
+      <transcript>
+        <turn>
+          <speaker>MARISSA</speaker>
+          <dialog>Yo estoy un poco cansada. ¿Y tú? ¿Por qué no estás nadando?</dialog>
+        </turn>
+        <turn>
+          <speaker>FELIPE</speaker>
+          <dialog>Es por causa de Miguel.</dialog>
+        </turn>
+      </transcript>
+    </video_clip>
+    <video_clip>
+      <image id="137865" />
+      <video id="137855" />
+      <transcript>
+        <turn>
+          <speaker>MARISSA</speaker>
+          <dialog>Hmm, estoy confundida. </dialog>
+        </turn>
+        <turn>
+          <speaker>FELIPE</speaker>
+          <dialog>Esta mañana. ¡Sigue enojado conmigo!</dialog>
+        </turn>
+        <turn>
+          <speaker>MARISSA</speaker>
+          <dialog>No puede seguir enojado tanto tiempo.</dialog>
+        </turn>
+      </transcript>
+    </video_clip>
+  </items>
+  <sidebar ref="1">
+    <title>Character List</title>
+    <reference type="character_list">
+      <character>
+        <image id="137738"/>
+        <name>Ana María</name>
+      </character>
+      <character>
+        <image id="137739"/>
+        <name>Empleado</name>
+      </character>
+      <character>
+        <image id="137740"/>
+        <name>Felipe</name>
+      </character>
+      <character>
+        <image id="137741"/>
+        <name>Jimena</name>
+      </character>
+      <character>
+        <image id="137742"/>
+        <name>Juan Carlos</name>
+      </character>
+      <character>
+        <image id="137743"/>
+        <name>Marie Fientes</name>
+      </character>
+      <character>
+        <image id="137744"/>
+        <name>Marisa</name>
+      </character>
+      <character>
+        <image id="137745"/>
+        <name>Maru</name>
+      </character>
+      <character>
+        <image id="137746"/>
+        <name>Miguel</name>
+      </character>
+    </reference>
+  </sidebar>
+  <sidebar ref="1">
+    <title>Expresiones útiles</title>
+    <reference type="phrase_chart">
+      <phrase_group>
+        <header>Talking with hotel personnel</header>
+        <phrase>
+          <foreign>¿En qué puedo servirles?</foreign>
+          <english>How can I help you?</english>
+          <audio id="137819"/>
+        </phrase>
+        <phrase>
+          <foreign>Tenemos una reservación.</foreign>
+          <english>We have a reservation.</english>
+          <audio id="137813"/>
+        </phrase>
+        <phrase>
+          <foreign>¿A nombre de quién?</foreign>
+          <english>In whose name?</english>
+          <audio id="137790"/>
+        </phrase>
+        <phrase>
+          <foreign>¿Quizás López? ¿Tal vez Díaz?</foreign>
+          <english>Maybe López? Maybe Díaz?</english>
+          <audio id="137820"/>
+        </phrase>
+        <phrase>
+          <foreign>Ahora lo veo, aquí está. Díaz.</foreign>
+          <english>Now I see it. Here it is. Díaz.</english>
+          <audio id="137796"/>
+        </phrase>
+        <phrase>
+          <foreign>Dos habitaciones en el primer piso para seis huéspedes.</foreign>
+          <english>Two rooms on the first floor for six guests.</english>
+          <audio id="137804"/>
+        </phrase>
+        <phrase>
+          <foreign>Aquí están las llaves.</foreign>
+          <english>Here are the keys.</english>
+          <audio id="137800"/>
+        </phrase>
+      </phrase_group>
+      <phrase_group>
+        <header>Describing a hotel</header>
+        <phrase>
+          <foreign>No está nada mal el hotel.</foreign>
+          <english>The hotel isn’t bad at all.</english>
+          <audio id="137801"/>
+        </phrase>
+        <phrase>
+          <foreign>Todo está tan limpio y cómodo.</foreign>
+          <english>Everything is so clean and comfortable.</english>
+          <audio id="137812"/>
+        </phrase>
+        <phrase>
+          <foreign>Es excelente.</foreign>
+          <english>It’s excellent.</english>
+          <audio id="137809"/>
+        </phrase>
+        <phrase>
+          <foreign>Es estupendo.</foreign>
+          <english>It's stupendous.</english>
+          <audio id="137799"/>
+        </phrase>
+        <phrase>
+          <foreign>Es fabuloso.</foreign>
+          <english>It's fabulous.</english>
+          <audio id="137791"/>
+        </phrase>
+        <phrase>
+          <foreign>Es fenomenal.</foreign>
+          <english>It's phenomenal.</english>
+          <audio id="137802"/>
+        </phrase>
+        <phrase>
+          <foreign>Es increíble.</foreign>
+          <english>It's incredible.</english>
+          <audio id="137816"/>
+        </phrase>
+        <phrase>
+          <foreign>Es magnífico.</foreign>
+          <english>It's magnificent.</english>
+          <audio id="137822"/>
+        </phrase>
+        <phrase>
+          <foreign>Es maravilloso.</foreign>
+          <english>It's marvelous.</english>
+          <audio id="137805"/>
+        </phrase>
+        <phrase>
+          <foreign>Es perfecto.</foreign>
+          <english>It's perfect.</english>
+          <audio id="137815"/>
+        </phrase>
+      </phrase_group>
+      <phrase_group>
+        <header>Talking about how you feel</header>
+        <phrase>
+          <foreign>Yo estoy un poco cansado.</foreign>
+          <english>I am a little tired.</english>
+          <audio id="137810"/>
+        </phrase>
+        <phrase>
+          <foreign>Yo estoy un poco cansada.</foreign>
+          <english>I am a little tired.</english>
+          <audio id="137795"/>
+        </phrase>
+        <phrase>
+          <foreign>Estoy confundido.</foreign>
+          <english>I’m confused.</english>
+          <audio id="137818"/>
+        </phrase>
+        <phrase>
+          <foreign>Estoy confundida.</foreign>
+          <english>I’m confused.</english>
+          <audio id="137793"/>
+        </phrase>
+        <phrase>
+          <foreign>Todavía estoy enojada contigo.</foreign>
+          <english>I’m still angry with you.</english>
+          <audio id="137807"/>
+        </phrase>
+        <phrase>
+          <foreign>Todavía estoy enojado contigo.</foreign>
+          <english>I’m still angry with you.</english>
+          <audio id="137823"/>
+        </phrase>
+        <phrase>
+          <foreign>Sigo enojado contigo.</foreign>
+          <english>I’m still angry with you.</english>
+          <audio id="137792"/>
+        </phrase>
+        <phrase>
+          <foreign>Sigo enojada contigo.</foreign>
+          <english>I’m still angry with you.</english>
+          <audio id="137808"/>
+        </phrase>
+      </phrase_group>
+      <phrase_group>
+        <header>Additional vocabulary</header>
+        <phrase>
+          <foreign>el frente frío</foreign>
+          <english>cold front</english>
+          <audio id="137821"/>
+        </phrase>
+        <phrase>
+          <foreign>el frente</foreign>
+          <english>front</english>
+          <audio id="137814"/>
+        </phrase>
+        <phrase>
+          <foreign>es igual</foreign>
+          <english>it’s the same</english>
+          <audio id="137806"/>
+        </phrase>
+        <phrase>
+          <foreign>entonces</foreign>
+          <english>so, then</english>
+          <audio id="137797"/>
+        </phrase>
+        <phrase>
+          <foreign>la crema de afeitar</foreign>
+          <english>shaving cream</english>
+          <audio id="137803"/>
+        </phrase>
+        <phrase>
+          <foreign>el balde</foreign>
+          <english>bucket</english>
+          <audio id="137811"/>
+        </phrase>
+        <phrase>
+          <foreign>afuera</foreign>
+          <english>outside</english>
+          <audio id="137824"/>
+        </phrase>
+        <phrase>
+          <foreign>el grito</foreign>
+          <english>scream</english>
+          <audio id="137798"/>
+        </phrase>
+        <phrase>
+          <foreign>la temporada</foreign>
+          <english>period of time</english>
+          <audio id="137817"/>
+        </phrase>
+      </phrase_group>
+    </reference>
+  </sidebar>
+</activity>

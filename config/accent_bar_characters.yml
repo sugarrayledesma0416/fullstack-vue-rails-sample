@@ -1,0 +1,153 @@
+# Spanish
+es:
+  - lower_case: á
+    upper_case: Á
+    target_text: A acento agudo
+    english_reference: A acute accent
+  - lower_case: é
+    upper_case: É
+    target_text: E acento agudo
+    english_reference: E acute accent
+  - lower_case: í
+    upper_case: Í
+    target_text: I acento agudo
+    english_reference: I acute accent
+  - lower_case: ñ
+    upper_case: Ñ
+    target_text: eñe
+    english_reference: N tilde
+  - lower_case: ó
+    upper_case: Ó
+    target_text: O acento agudo
+    english_reference: O acute accent
+  - lower_case: ú
+    upper_case: Ú
+    target_text: U acento agudo
+    english_reference: U acute accent
+  - lower_case: ü
+    upper_case: Ü
+    target_text: U diéresis
+    english_reference: U diaeresis
+  - lower_case: "¿"
+    upper_case: "¿"
+    target_text: signo de interrogación inicial
+    english_reference: Inverted question mark
+  - lower_case: "¡"
+    upper_case: "¡"
+    target_text: signo de exclamación inicial
+    english_reference: Inverted exclamation point
+
+# French
+fr:
+  - lower_case: à
+    upper_case: À
+    target_text: A accent grave
+    english_reference: A grave
+  - lower_case: â
+    upper_case: Â
+    target_text: A accent circonflexe
+    english_reference: A circumflex
+  - lower_case: ç
+    upper_case: Ç
+    target_text: C cédille
+    english_reference: C cedilla
+  - lower_case: è
+    upper_case: È
+    target_text: E accent grave
+    english_reference: E grave
+  - lower_case: é
+    upper_case: É
+    target_text: E accent aigu
+    english_reference: E acute
+  - lower_case: ê
+    upper_case: Ê
+    target_text: E accent circonflexe
+    english_reference: E circumflex
+  - lower_case: ë
+    upper_case: Ë
+    target_text: E tréma
+    english_reference: E diaeresis
+  - lower_case: î
+    upper_case: Î
+    target_text: I accent circonflexe
+    english_reference: I circumflex
+  - lower_case: ï
+    upper_case: Ï
+    target_text: I tréma
+    english_reference: I diaeresis
+  - lower_case: ô
+    upper_case: Ô
+    target_text: O accent circonflexe
+    english_reference: O circumflex
+  - lower_case: œ
+    upper_case: Œ
+    target_text: O E entrelacé
+    english_reference: OE ligature
+  - lower_case: ù
+    upper_case: Ù
+    target_text: U accent grave
+    english_reference: U grave
+  - lower_case: û
+    upper_case: Û
+    target_text: U accent circonflexe
+    english_reference: U circumflex
+  - lower_case: ü
+    upper_case: Ü
+    target_text: U tréma
+    english_reference: U diaeresis
+
+# Italian
+it:
+  - lower_case: à
+    upper_case: À
+    target_text: A accento grave
+    english_reference: A grave accent
+  - lower_case: è
+    upper_case: È
+    target_text: E accento grave
+    english_reference: E grave accent
+  - lower_case: é
+    upper_case: É
+    target_text: A accento acuto
+    english_reference: E acute accent
+  - lower_case: ì
+    upper_case: Ì
+    target_text: I accento grave
+    english_reference: I grave accent
+  - lower_case: ò
+    upper_case: Ò
+    target_text: O accento grave
+    english_reference: O grave accent
+  - lower_case: ó
+    upper_case: Ó
+    target_text: O accento acuto
+    english_reference: O acute accent
+  - lower_case: ù
+    upper_case: Ù
+    target_text: U accento grave
+    english_reference: U grave accent
+
+# German
+de:
+  - lower_case: ä
+    upper_case: Ä
+    target_text: a Umlaut
+    english_reference: a umlaut
+  - lower_case: ö
+    upper_case: Ö
+    target_text: o Umlaut
+    english_reference: o umlaut
+  - lower_case: ü
+    upper_case: Ü
+    target_text: u Umlaut
+    english_reference: u umlaut
+  - lower_case: ß
+    upper_case: ß
+    target_text: scharfes s
+    english_reference: sharp s
+
+# English
+en: []
+
+# Russian
+ru: []

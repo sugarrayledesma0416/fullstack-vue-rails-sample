@@ -1,0 +1,78 @@
+original_rank,component_name,book_id,license_group_name,license_group_id
+4,Presentations and Tutorials,52,01-Supersite,1
+6,Practice Activities,52,01-Supersite,1
+7,Communication Activities,52,02-Supersite_Plus,2
+8,Workbook,52,WebSAM,3
+9,Lab Manual,52,WebSAM,3
+10,Video Manual,52,WebSAM,3
+11,Assessment,52,01-Supersite,1
+15,Presentations and Tutorials,53,01-Supersite,1
+16,Games,53,01-Supersite,1
+17,Practice Activities,53,01-Supersite,1
+18,Communication Activities,53,02-Supersite_Plus,2
+19,Workbook,53,WebSAM,3
+20,Lab Manual,53,WebSAM,3
+21,Video Manual,53,WebSAM,3
+22,Assessment,53,01-Supersite,1
+25,Presentations,51,01-Supersite,1
+28,Practice Activities,51,01-Supersite,1
+29,Communication Activities,51,02-Supersite_Plus,2
+30,Workbook,51,WebSAM,3
+31,Lab Manual,51,WebSAM,3
+32,Video Manual,51,WebSAM,3
+33,Assessment,51,01-Supersite,1
+35,Preparation Activities,55,01-Supersite,1
+36,Presentations,55,01-Supersite,1
+39,Practice Activities,55,01-Supersite,1
+41,Workbook,55,02-Supersite_Plus,2
+42,Lab Manual,55,02-Supersite_Plus,2
+44,Assessment,55,01-Supersite,1
+46,Preparation Activities,58,01-Supersite,1
+47,Presentations,58,01-Supersite,1
+50,Practice Activities,58,01-Supersite,1
+55,Assessment,58,01-Supersite,1
+60,Presentations and Tutorials,56,01-Supersite,1
+61,Games,56,01-Supersite,1
+62,Practice Activities,56,01-Supersite,1
+63,Communication Activities,56,01-Supersite,1
+64,Cuaderno de práctica,56,WebSAM,3
+65,Cuaderno de actividades comunicativas,56,WebSAM,3
+69,Assessment,56,01-Supersite,1
+102,Presentations and Tutorials,57,01-Supersite,1
+103,Games,57,01-Supersite,1
+104,Practice Activities,57,01-Supersite,1
+105,Communication Activities,57,01-Supersite,1
+106,Cuaderno de práctica,57,WebSAM,3
+107,Cuaderno de actividades comunicativas,57,WebSAM,3
+111,Assessment,57,01-Supersite,1
+113,Preparation Activities,54,01-Supersite,1
+115,Presentations,54,01-Supersite,1
+118,Practice Activities,54,01-Supersite,1
+119,Communication Activities,54,01-Supersite,1
+120,Cuaderno de práctica,54,WebSAM,3
+121,Cuaderno de actividades comunicativas,54,WebSAM,3
+125,Assessment,54,01-Supersite,1
+129,Presentations,59,01-Supersite,1
+132,Practice Activities,59,01-Supersite,1
+133,Communication Activities,59,01-Supersite,1
+136,Workbook,59,WebSAM,3
+137,Lab Manual,59,WebSAM,3
+138,Video Manual,59,WebSAM,3
+139,Assessment,59,01-Supersite,1
+170,Selections,60,01-Supersite,1
+174,Activities,60,01-Supersite,1
+183,Preparation Activities,61,01-Supersite,1
+184,Selections,61,01-Supersite,1
+188,Practice Activities,61,01-Supersite,1
+198,Presentations and Tutorials,40,01-Supersite,1
+199,Practice Activities,40,01-Supersite,1
+200,Workbook,40,02-Supersite_Plus,2
+201,Lab Manual,40,02-Supersite_Plus,2
+202,Video Manual,40,02-Supersite_Plus,2
+203,Assessment,40,01-Supersite,1
+206,Presentations and Tutorials,48,01-Supersite,1
+207,Practice Activities,48,01-Supersite,1
+208,Workbook,48,02-Supersite_Plus,2
+209,Lab Manual,48,02-Supersite_Plus,2
+210,Video Manual,48,02-Supersite_Plus,2
+211,Assessment,48,01-Supersite,1

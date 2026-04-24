@@ -1,0 +1,67 @@
+<% content_for(:navigation, render(:partial => 'app_shell/navbar_program/main')) %>
+<% content_for(:focus, render(:partial => 'instructor/focus/show')) %>
+<% content_for(:js_head, javascript_include_tag("jquery.vhl-checkboxes.js")) %>
+<% content_for(:js_head, javascript_include_tag("activity_shell.js") ) %>
+<% content_for(:js_head, javascript_include_tag("assignment_wizard.js")) %>
+<% content_for(:js_head, javascript_include_tag('assessment')) %>
+<% content_for(:js_head, javascript_packs_with_chunks_tag('instructor/standards_assigning/index')) %>
+<% content_for(:css_head, stylesheet_packs_with_chunks_tag('instructor/standards_assigning/index')) %>
+<% content_for(:css_head, stylesheet_link_tag("instructor/standards_assigning/index")) %>
+<% content_for(:body_classes, "  ns-music-v1  ns-full-width  ns-responsive    ns-assess-to-learn  activities_page  instructor") %>
+
+<div class="ns-music-v3  standards-assign-search  c-panel  c-panel--padded  u-bord-0  u-bord-gray-c <%= test_class('standards-assign-search') %>">
+  <div class="c-panel__header">
+    <h3 class="c-heading--panel  u-txt-gray-6  u-pad-16  u-txt-20  u-txt-reg">
+      Find Standards
+    </h3>
+  </div>
+  <div class="l-container-fluid  u-pad-top-0">
+    <div class="u-hidden">
+      <div data-modal="assignment_wizard" class="assignables_dialog"></div>
+      <div data-modal="content_library" class="assignables_dialog">
+        <div class="notice"></div>
+      </div>
+    </div>
+    <div id="focus-warning" class="ui-dialog  ui-widget  ui-widget-content  u-hidden  u-width-half  u-pos-fix" role="dialog">
+      <div class="dialog-content">
+        <div class="ui-dialog-titlebar  ui-widget-header  ui-helper-clearfix">
+          <span>Course/Section Focus change</span>
+          <button id="close-btn" type="button" class="ui-corner-all  ui-button-icon-only  ui-dialog-titlebar-close">
+            <span class="ui-button-icon-primary  ui-icon  ui-icon-closethick"></span>
+            <span class="ui-button-text">Close</span>
+          </button>
+        </div>
+        <p class="u-pad-32">Switching courses or sections will cause the currently displayed search to reset. Please confirm to continue.</p>
+        <div class="c-button-group  u-mar-0  u-pad-20  u-txt-rt">
+          <button id="cancel-btn" class="c-button">Cancel</button>
+          <button id="confirm-btn" class="c-button  c-button--primary">Confirm</button>
+        </div>
+      </div>
+    </div>
+    <div class="js-disable-background  ui-widget-overlay ui-front  u-dis-none"></div>
+    <div class="js-standards-assigning"
+         data-preload-standards-filter="<%= @presenter.preload_standards_filter %>"
+         data-available-browse-standard-sets="<%= @presenter.available_browse_std_sets.to_json %>"
+         data-available-grade-levels="<%= @presenter.available_grades_for_browse.to_json %>"
+         data-available-sets-json="<%= @presenter.available_sets %>"
+         data-browse-standard-url="<%= instructor_browse_standards_path(@presenter.current_program.id) %>"
+         data-course-settings-url="<%= edit_instructor_course_path(@presenter.current_program.id, @presenter.current_course.id) %>"
+         data-due-date-link-base-url="<%= instructor_assignables_path(program_id: @presenter.current_program.id, source: 'standards')%>"
+         data-individual-assigning-url="<%= instructor_individual_assignments_path(program_id: @presenter.current_program.id)%>"
+         data-program-toc-type="<%= @presenter.program_toc_type.capitalize %>"
+         data-search-assets-endpoint="<%= instructor_search_standard_assets_path(current_program.id) %>"
+         data-search-standards-endpoint="<%= instructor_search_standards_path(current_program.id) %>"
+         data-selected-unit="<%= @selected_unit %>"
+         data-standards-for-init="<%= @presenter.standard_guids_for_init.to_json %>"
+         data-toc-json="<%= @presenter.toc %>"
+         data-instructor-search-standards-by-asset-path="<%= instructor_search_standards_by_asset_path(asset_id:'') %>"
+         data-instructor-standards-assigning-path="<%= instructor_standards_assigning_path(current_program.id) %>"
+         data-data-for-assigned-item-endpoint="<%= instructor_data_for_assigned_item_path(id:'') %>"
+         data-show-skills-and-refinement-filters="<%= @presenter.current_program.show_skills_and_refinement_filters? %>">
+    </div>
+  </div>
+  <%= hidden_field_tag(
+    :show_assessments_url,
+    instructor_update_assessment_path(@presenter.current_program.id)
+  ) %>
+</div>

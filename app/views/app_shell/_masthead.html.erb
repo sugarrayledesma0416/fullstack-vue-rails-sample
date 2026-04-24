@@ -1,0 +1,60 @@
+<%= javascript_include_tag 'chat_logger' %>
+<script>
+  /* 
+      Skip to main moves focus, rather than using a fragment identifier, in order
+      to avoid interfering with Vue Router:
+   */
+  window.addEventListener('DOMContentLoaded', (evt) => {
+    document.querySelector('.js-skip-to-main').addEventListener('click', () => {
+      const candidates = document.querySelectorAll('.js-page-container, .js-activity-title');
+      if (!candidates.length === 0) {
+        throw 'No skip to main destination element.';
+      } else {
+        const destination = candidates[candidates.length - 1];
+        destination.setAttribute('tabindex', '-1');
+        requestAnimationFrame(() => {
+          destination.focus();
+        });
+      }
+    });
+  });
+</script>
+<header class="<%= masthead_css_class %>  c-main-header  c-mobile-chat-activity-hidden-when-call-ongoing  js-masthead">
+  <span class="ns-newcsslib">
+      <a href="javascript://" class="c-pop-down-link  c-pop-down-link--main  js-skip-to-main">Skip to main content</a>
+  </span>
+  <div class="c-banner-group">
+    <%= render 'app_shell/banners/trial_banner'%>
+    <%= render 'app_shell/banners/return_banner'%>
+  </div>
+
+  <div class="c-masthead  <%= supersite_junior? ? 'ns-supersites-jr' : '' %>">
+    <% if (@presenter.nil? ||
+          !@presenter.respond_to?(:lti_deep_link_enabled?) ||
+          !@presenter.lti_deep_link_enabled?) && 
+          !current_user.cartridge?
+        %>
+      <%= render 'app_shell/navbar_account/main',
+                 section_header: @section_header,
+                 course: @course,
+                 section: @section %>
+      <%= render 'app_shell/navbar',
+                 section_header: @section_header,
+                 course: @course,
+                 section: @section %>
+    <% end %>
+    <% if @show_templates_return_bar %>
+      <%= render '/institution_admin/dashboard/return_bar'%>
+    <% end %>
+
+    <%= render 'layouts/flash', { flash: flash } %>
+
+    <div class="c-subnav-wrapper">
+      <div class="l-container-fluid">
+        <%= yield :subnav %>
+      </div>
+    </div>
+
+  </div>
+
+</header>

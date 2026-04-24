@@ -1,0 +1,70 @@
+# path to parent directory of src_files
+# relative path from Rails.root
+# defaults to app/assets/javascripts
+src_dir: "app/assets/javascripts"
+
+# list of file expressions to include as source files
+# relative path from src_dir
+
+#NOTE: Sometimes when modifying this file, the changes will not be seen in the
+#browser when running specs. To fix this, do:
+#   rm -rf tmp/cache/
+#from within your rails app. This will clear the asset pipeline cache,
+#and make sure everything is reloaded.
+
+# If you are ahaving problems with files not getting detected runnning the folowing might solve it:
+#   rake assets:clean
+src_files:
+  - "application.{js.coffee,js,coffee}"
+  - "assessment_timer.js"
+  - "masthead.js"
+  - "gradebook.js"
+  - "toastr.js"
+  - "partner_chat/chat_ui.js"
+  - "partner_chat/chat_ui_loader.js"
+  - "partner_chat/presence.js"
+  - "table_of_contents.js"
+  - "section_classdays.js"
+  - "vocab_words/vocab_words_app_bootstrap.js"
+  - "live_chat.js"
+  - "category_wizard.js"
+  - "activity_shell.js"
+  - "activity_submission.js"
+  - "restangular.min.js"
+  - "assessment.js"
+  - "instructor_notes/instructor_notes_app_bootstrap.js"
+  - "instructor_created_activities/instructor_created_activities_app_bootstrap.js"
+  - "get_help/get_help_app_bootstrap.js"
+  - "assignment_wizard_bootstrap.js"
+  - "student_dashboard/bootstrap.js"
+  - "arc/errors.js"
+  - "vhl_ng/bootstrap.js"
+  - "dashboard.js"
+  - "jquery.fineuploader-4.4.0.min.js"
+  - "fine_uploader/fine_uploader_directive.js"
+  - "composition_activity.js"
+  - "assignment_wizard.js"
+  - "assignment_rank_list.js"
+  - "vocab_tools_bootstrap.js"
+
+# path to parent directory of spec_files
+# relative path from Rails.root
+# defaults to spec/javascripts
+spec_dir: spec/javascripts
+
+# list of file expressions to include as helpers into spec runner
+# relative path from spec_dir
+helpers:
+  - "helpers/jasmine-jquery-1.4.2.js"
+  - "helpers/fixtures.js"
+  - "helpers/**/*.{js.coffee,js,coffee}"
+
+# list of file expressions to include as specs into spec runner
+# relative path from spec_dir
+spec_files:
+  - "**/*[Ss]pec.{js.coffee,js,coffee}"
+
+# path to directory of temporary files
+# (spec runner and asset cache)
+# defaults to tmp/jasmine
+tmp_dir: "tmp/jasmine"

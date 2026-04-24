@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<activity title="1 - ¡Bingo!" language="es" activity_type="fill_in_the_blanks">
+  <dl>You are going to play two games (<i>juegos</i>) of bingo. Fill in the blanks with <b>X</b> for the numbers you hear and <b>#</b> for the numbers you don't. When you've filled in a row or column on your card, you will hear "&#xA1;Bingo!". </dl>
+      <external_references>
+        <external_reference>
+            <title>Grammar presentation</title>
+            <activity id="20939"/>
+        </external_reference>
+  <external_reference>
+  <title>Tutorial</title>
+  <activity id="20929"/>
+  </external_reference>
+    </external_references>
+
+  <items>
+    <style>
+      <wol_size>words_small</wol_size>
+      <item_numbers>hide</item_numbers>
+    </style>
+  
+  <reference type="audio">
+  <!-- Insert media ID in quotes.-->
+  <audio id="111884"/>
+</reference>
+  
+  <reference type="image">
+  <!-- Insert media ID in quotes.-->
+  <image id="2182"/>
+</reference>
+
+    <item>
+      <prompt>
+        <table class="basictable">
+<thead>
+<tr>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>1</th>
+<th>3</th>
+<th>5</th>
+</tr>
+<tr>
+<td> <wol ref="1"/> </td>
+<td> <wol ref="2"/> </td>
+<td> <wol ref="3"/> </td>
+</tr>
+<tr>
+<th>29</th>
+<th>25</th>
+<th>6</th>
+</tr>
+<tr>
+<td> <wol ref="4"/> </td>
+<td> <wol ref="5"/> </td>
+<td> <wol ref="6"/> </td>
+</tr>
+<tr>
+<th>14</th>
+<th>18</th>
+<th>17</th>
+</tr>
+<tr>
+<td><wol ref="7"/> </td>
+<td><wol ref="8"/> </td>
+<td><wol ref="9"/> </td>
+</tr>
+<tr>
+<th>9</th>
+<th>12</th>
+<th>21</th>
+</tr>
+<tr>
+<td><wol ref="10"/> </td>
+<td><wol ref="11"/> </td>
+<td><wol ref="12"/> </td>
+</tr>
+</tbody>
+</table>
+      </prompt>
+      <answers ref="1">
+        <answer>#</answer>
+      </answers>
+      <answers ref="2">
+        <answer>X</answer>
+        <answer>x</answer>    
+      </answers>
+      <answers ref="3">
+        <answer>X</answer>
+        <answer>x</answer>      
+      </answers>
+      <answers ref="4">
+        <answer>#</answer>
+      </answers>
+      <answers ref="5">
+        <answer>X</answer>
+        <answer>x</answer>      
+      </answers>
+      <answers ref="6">
+        <answer>X</answer>
+        <answer>x</answer>      
+      </answers>
+      <answers ref="7">
+        <answer>#</answer>
+      </answers>
+      <answers ref="8">
+        <answer>#</answer>
+      </answers>
+      <answers ref="9">
+        <answer>X</answer>
+        <answer>x</answer>      
+      </answers>
+      <answers ref="10">
+        <answer>#</answer>
+      </answers>
+      <answers ref="11">
+        <answer>X</answer>
+        <answer>x</answer>      
+      </answers>
+      <answers ref="12">
+        <answer>X</answer>
+        <answer>x</answer>      
+      </answers>
+    </item>
+  
+  <reference type="image">
+  <!-- Insert media ID in quotes.-->
+  <image id="2183"/>
+</reference>
+    <item>
+      <prompt>
+        <table class="basictable">
+<thead>
+<tr>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<th>30</th>
+<th>27</th>
+</tr>
+<tr>
+<td><wol ref="13"/> </td>
+<td><wol ref="14"/> </td>
+<td><wol ref="15"/> </td>
+</tr>
+<tr>
+<th>10</th>
+<th>3</th>
+<th>2</th>
+</tr>
+<tr>
+<td><wol ref="16"/> </td>
+<td><wol ref="17"/> </td>
+<td><wol ref="18"/> </td>
+</tr>
+<tr>
+<th>16</th>
+<th>19</th>
+<th>4</th>
+</tr>
+<tr>
+<td><wol ref="19"/> </td>
+<td><wol ref="20"/> </td>
+<td><wol ref="21"/> </td>
+</tr>
+<tr>
+<th>28</th>
+<th>22</th>
+<th>20</th>
+</tr>
+<tr>
+<td><wol ref="22"/> </td>
+<td><wol ref="23"/> </td>
+<td><wol ref="24"/> </td>
+</tr>
+</tbody>
+</table>
+      </prompt>
+      <answers ref="13">
+        <answer>X</answer>
+        <answer>x</answer>      
+      </answers>
+      <answers ref="14">
+        <answer>X</answer>
+        <answer>x</answer>      
+      </answers>
+      <answers ref="15">
+        <answer>#</answer>
+      </answers>
+      <answers ref="16">
+        <answer>X</answer>
+        <answer>x</answer>      
+      </answers>
+      <answers ref="17">
+        <answer>#</answer>
+      </answers>
+      <answers ref="18">
+        <answer>X</answer>
+        <answer>x</answer>      
+      </answers>
+      <answers ref="19">
+        <answer>X</answer>
+        <answer>x</answer>      
+      </answers>
+      <answers ref="20">
+        <answer>X</answer>
+        <answer>x</answer>      
+      </answers>
+      <answers ref="21">
+        <answer>#</answer>
+      </answers>
+      <answers ref="22">
+        <answer>X</answer>
+        <answer>x</answer>      
+      </answers>
+      <answers ref="23">
+        <answer>X</answer>
+        <answer>x</answer>      
+      </answers>
+      <answers ref="24">
+        <answer>#</answer>
+      </answers>
+
+    </item>
+  </items>  
+</activity>

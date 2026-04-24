@@ -1,0 +1,12 @@
+<%
+  content_for(
+    :js_head,
+    javascript_packs_with_chunks_tag('activities/submit_confirmation')
+  )
+%>
+
+<%= content_tag(
+  :div,
+  '',
+  class: "js-submit-confirmation"
+) %>

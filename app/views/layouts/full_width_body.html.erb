@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <%= render('partials/google_tag_manager') %>
+    <%= render 'layouts/common_header' %>
+    <%= stylesheet_link_tag "full_width_content" %>
+  </head>
+
+  <body
+    <%= %(data-rendered-at="#{Time.now.to_f.to_s}") if Rails.env.test? %>
+    class="notranslate <%= yield :body_classes %>  <%= yield :theme_classes %>  single_column  index">
+
+    <div class="ns-masthead  ns-music-v1  <%= yield :theme_classes %>">
+      <%= render 'app_shell/masthead',
+                  section_header: @section_header,
+                  course: @course,
+                  section: @section,
+                  flash: flash
+      %>
+    </div>
+
+    <div id="page_container" class="c-page-container  js-page-container">
+      <div id="column_wrapper">
+
+        <div id="main_content">
+          <div id="full_width_header">
+            <h2><%= @page_header.html_safe if @page_header %></h2>
+            <% if @page_header_partial %>
+              <%= render :partial => @page_header_partial , :locals => @page_header_partial_locals || {} %>
+            <% end %>
+          </div>
+          <div id="full_width_body">
+            <%= yield %>
+            <h1 class="page_title"><%= @page_title if @page_title %></h1>
+          </div>
+        </div>
+      </div><!-- end column_wrapper -->
+      <%= render :partial => 'partials/footer' %>
+    </div>
+    <%= render 'layouts/inactivity_timeout' %>
+  </body>
+</html>

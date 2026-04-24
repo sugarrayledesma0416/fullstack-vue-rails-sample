@@ -1,0 +1,46 @@
+<activity activity_type="recording_v2" title="Sample ARC Activity" language="es">
+  <dl>Direction Line</dl>
+  <items>
+    <style>
+      <layout>word</layout>
+      <column_fill>equalize</column_fill>
+      <row_fill>normal</row_fill>
+      <transcript_display>show</transcript_display>
+      <compare_button_display>show</compare_button_display> 
+    </style>
+    <reference type="wordbank">
+      <body sorted="yes">
+        <word>Mucho gusto.</word>
+        <word>Chau.</word>
+        <word>Nada.</word>
+        <word>Lo siento.</word>
+        <word>Bien, gracias.</word>
+        <word>Soy de los Estados Unidos.</word>
+      </body>
+    </reference>
+    <question>
+      <prompt>
+        <body>Question 1</body>
+        <audio id="1" transcript="blah"/>
+      </prompt>
+      <answer>
+        <audio id="2"/>
+      </answer>
+    </question>
+    <question>
+      <answer>
+        <audio id="2"/>
+      </answer>
+    </question>
+    <question>
+      <prompt>
+        <body>Question 3</body>
+        <audio id="1"/>
+        <image/>
+      </prompt>
+      <answer>
+        <audio id="2"/>
+      </answer>
+    </question>
+  </items>
+</activity>

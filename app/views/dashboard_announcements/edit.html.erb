@@ -1,0 +1,11 @@
+<% enable_unsaved_changes_protection %>
+
+<% #The 'main' class triggers the JS for enable_unsaved_changes_protection %>
+<div class="ns-music-v1">
+  <%= form_for(@dashboard_announcement,
+               method: 'put',
+               url: {action: 'update', id: @dashboard_announcement.id},
+               html: { class: 'main  js-dashboard-announcement-form' }) do |form| %>
+               <%= render 'form', form: form %>
+             <% end %>
+</div>

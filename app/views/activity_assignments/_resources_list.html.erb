@@ -1,0 +1,20 @@
+<div class="activity ui-helper-clearfix">
+  <div data-page-element="list_title" class="activity_label"> Resource(s): </div>
+  <div class="activity_title">
+    <% selected_resources.each do |resource| -%>
+      <% when_unique('resource_component', resource.component_name) do -%>
+          <h2 data-content-type="component_name"><%= resource.component_name.html_safe %></h2>
+      <% end -%>
+      <dl class="activity_assignment_counts">
+        <dd data-content-type="resource_title" class="activity_name">
+          <%= resource.title %>
+        </dd>
+      </dl>
+    <% end -%>
+  </div>
+  <%= hidden_field_tag(:selected_resources, selected_resources.collect(&:id).join(',')) %>
+  <%= hidden_field_tag(:page, params[:page]) %>
+  <%= hidden_field_tag(:start_unit_id, params[:start_unit_id]) %>
+  <%= hidden_field_tag(:component_id, params[:component_id]) %>
+  <%= hidden_field_tag(:return_to, params[:return_to]) %>
+</div>

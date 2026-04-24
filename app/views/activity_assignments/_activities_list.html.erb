@@ -1,0 +1,27 @@
+<div class="activity ui-helper-clearfix">
+  <div class="activity_label"> <%= pluralize_without_count(selected_activities.count, 'Activity') %>: </div>
+  <div class="activity_title">
+    <% activities_by_component(selected_activities) do |component_name, component_language, component_activities| -%>
+      <% when_unique('lesson_name', component_activities.first.lesson.name) do -%>
+          <h2><%= component_activities.first.lesson.name.html_safe %></h2>
+      <% end -%>
+      <dl class="activity_assignment_counts">
+        <dt 
+          lang="<%= component_language %>"
+          class="<%= 'component_block' if selected_activities.size == 1 %>">
+          <%= component_name.html_safe %>
+        </dt>
+      <% if selected_activities.size > 1 -%>
+        <dd>
+          <%= pluralize(component_activities.count, "activity") %>
+        </dd>
+      <% else -%>
+        <dd class="activity_name">
+          <%= format_activity_label_with_icons("activity_#{component_activities.first.id}", component_activities.first) %>
+        </dd>
+      <% end -%>
+      </dl>
+    <% end -%>
+  </div>
+  <%= hidden_field_tag(:selected_activities, selected_activities.collect(&:id).join(',')) %>
+</div>

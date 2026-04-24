@@ -1,0 +1,26 @@
+<!-- vanillify vhlModal jQuery plugin ? -->
+<%= render layout: 'modal', locals: { js_class: 'confirm-modal' } do %>
+  <div class="c-panel  c-panel--padded  u-mar-0">
+    <div class="c-panel__header">
+      <h3 class="c-heading--md  modal-header-text"></h3>
+    </div>
+    <div class="l-container-fluid  c-panel__body">
+      <div class="l-grid">
+        <div class="l-col  modal-body-text"></div>
+        <div class="l-col">
+          <input class="c-form-item__checkbox  js-shared-activity-queue-allow-copy"
+                 type="checkbox"
+                 id=<%= "checkbox"%> >
+                 <label class="u-mar-top-neg-16  c-form-item__label" for=<%= "checkbox"%> ></label>
+        </div>
+      </div>
+    </div>
+    <div class="c-panel__footer">
+      <div class="c-button-group  u-mar-0  u-txt-rt">
+        <button type="button" class="c-button  js-modal-close">Cancel</button>
+        <button type="button"
+                class="c-button  c-button--primary  js-confirm  <%= test_class('confirm-button') %>">Approve</button>
+      </div>
+    </div>
+  </div>
+<% end %>

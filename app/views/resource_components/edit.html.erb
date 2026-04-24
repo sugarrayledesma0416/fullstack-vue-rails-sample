@@ -1,0 +1,22 @@
+<%= render :partial => 'form', :locals => {:action=> 'update' } %>
+
+<% unless @resource_component.resources.exists? %>
+<div>
+    <br />
+    <%= link_to(
+          'Delete?',
+          resource_component_path(current_program, @resource_component),
+          data: { confirm: 'Are you sure?' },
+          method: :delete
+        ) %>
+</div>
+<% end %>
+<div>
+  <br />
+  <%= link_to 'Cancel', :action => 'index'%>
+</div>
+
+<div>
+  <br />
+<%= link_to( 'Back to Resources', instructor_program_resources_path(current_program) ) %>
+</div>

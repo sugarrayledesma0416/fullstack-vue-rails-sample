@@ -1,0 +1,94 @@
+<% content_for(:css_head, stylesheet_link_tag('music/features/toc/main') )%>
+<% content_for(:js_head, javascript_packs_with_chunks_tag('ai/instructor_grading/suggestion_rating_reports/index')) %>
+<% content_for(:body_classes, "ns-newcsslib  ns-my-content  ns-full-width  ns-music-v1  toc activities_page standard_layout instructor  u-bg-gray-f5") %>
+<% content_for( :css_head, stylesheet_link_tag("my_content.css") ) %>
+<% content_for( :css_head, stylesheet_link_tag("my_content_pagination.css")  ) %>
+<% content_for( :css_head, stylesheet_link_tag("my_content_buttons.css") ) %>
+<% content_for( :css_head, stylesheet_link_tag("shared_content") ) %>
+
+<div id="main_content" class="u-mar-0">
+  <div id ="modal_box"></div>
+  <div id="toc" class="ns-toc">
+    <div class="ns-music-v1">
+      <div class="js-ai-flagged-suggestions-filter-app"></div>
+      <div
+        class="js-ai-flagged-suggestions-filter-data"
+        data-from-dom="<%= {
+          program_id: @presenter.program.id,
+          lessons: @presenter.lessons,
+          strands_by_lesson: @presenter.strands_by_lesson,
+          types: @presenter.hash_activity_keys,
+          instructors: @presenter.instructors_with_grading_suggestion,
+        }.to_json  %>">
+
+        <div class="u-pad-top-16">
+          <% if @presenter.entries.present? %>
+            <table class="c-table c-table--content u-width-full">
+              <thead>
+                <tr>
+                  <th scope="col" class="u-bord-bot-0"></th>
+                  <th scope="col" class="u-pad-lt-64 u-bord-bot-0">Instructor</th>
+                  <th scope="col" class="u-txt-ctr  u-bord-bot-0">AI Suggestions</th>
+                  <th scope="col" class="u-txt-ctr">Applied Comments</th>
+                  <th scope="col" class="u-txt-ctr">Rejected Comments</th>
+                  <th scope="col" class="u-txt-ctr"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @presenter.entries.each do |entry| %>
+                  <tr class="c-row u-bord-lt-4" style="border-left-color: <%= entry[:activity].strand.background_color %>;">
+                    <td>
+                      <div class="u-mar-lt-8">
+                        <span class="u-txt-bold">
+                          <%= link_to entry[:activity].title, activity_path(entry[:activity]), class: 'u-txt-black' %>
+                        </span><br>
+                        <span><%= entry[:activity].lesson_and_strand_label %> </span>
+                        <span class="u-mar-lt-6"><%= @presenter.format_activity_icons(entry[:activity]) %></span>
+                      </div>
+                    </td>
+                    <td class="u-txt-ctr  u-pad-lt-64">
+                      <div class="ns-shared-content">
+                        <div class="c-content-container  u-dis-flex  u-mar-rt-32">
+                          <div class="c-avatar  u-bg-gray-c">
+                            <%= image_tag(entry[:rated_by_instructor].avatar_thumb_url, role: 'presentation', class: 'c-avatar') %>
+                          </div>
+                          <div class="u-mar-lt-10">
+                            <div class="u-txt-gray-3  u-txt-16">
+                              <%= entry[:rated_by_instructor].full_name %>
+                            </div>
+                            <div class="u-txt-lt">
+                              <%= entry[:activity].created_at.strftime("%m/%d/%y") %>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="u-txt-ctr"><%= entry[:grading_suggestions_count] %></td>
+                    <td class="u-txt-ctr"><%= @presenter.accepted_comments_by_activity(entry[:activity].id) %></td>
+                    <td class="u-txt-ctr"><%= @presenter.rejected_comments_by_activity(entry[:activity].id) %></td>
+                    <td class="u-txt-rt">
+                      <%= content_tag(
+                          :a,
+                          class: "c-button c-button--icon",
+                          href: entry[:details_path]
+                        ) do %>
+                      <music-icon-arrow-up-right style='width: 1.5em;'></music-icon-arrow-up-right>
+                    <% end %>
+                    </td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+            <%= pagination(@presenter.entries) %>
+          <% else %>
+        <div class="u-pad-16  u-txt-default-size">
+          <p>
+            There is no activity with grading suggestions or overall comments.
+            flagged by instructors matching these filters in this lesson and strand.
+          </p>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

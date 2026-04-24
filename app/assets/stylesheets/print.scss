@@ -1,0 +1,49 @@
+@import 'music/library/v1/base/settings/colors';
+
+body {
+  font-family: Tahoma, "Helvetica Neue", Arial, Sans-serif;
+}
+
+
+
+/*
+
+    Tables
+
+*/
+table {
+  width: auto;
+  border-collapse: collapse;
+}
+
+td,
+th {
+  padding: 4px 16px 4px 0;
+  border-bottom: 1px solid $gray-9;
+}
+
+td:last-child,
+th:last-child {
+  padding-right: 0;
+}
+
+th {
+  text-align: left;
+  border-bottom: 2px solid $gray-9;
+}
+
+.add-zone--print {
+  display: none;
+}
+
+button,
+iframe,
+.no-print,
+.c-icon,
+.c-icon-link,
+input[type="text"],
+.c-table__form-row,
+.c-table__actions * {
+  display: none;
+}
+

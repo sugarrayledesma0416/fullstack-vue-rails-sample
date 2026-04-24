@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<activity activity_type="open_ended" title="1 - ¿Qué tal?" language="es">
+	<dl>In this video segment, Álex, Javier, Maite, and Inés are meeting for the first time as they prepare to leave for a hiking trip. Look at the video still and write what you think Álex and Javier are saying to each other. Be sure to write your description in Spanish.</dl>
+	<items>
+    <style>
+    	<item_numbers>hide</item_numbers>
+    </style>
+    <item>
+      <prompt />
+    </item>    
+	</items>
+</activity>

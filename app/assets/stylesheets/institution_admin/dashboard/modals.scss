@@ -1,0 +1,41 @@
+.c-modal__body--margin {
+  margin: 38px;
+}
+
+.c-modal__box--radius {
+  border-radius: 20px !important;
+}
+
+.c-modal__header {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 38px;
+}
+
+.c-modal__paragraph {
+  color: var(--music-true-gray-900);
+  /* Body Text 2/Regular */
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.c-modal__paragraph_bold {
+  color: var(--music-true-gray-900);
+  /* Body Text 2/Regular */
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+.c-modal__paragraph_bold_red {
+  color: var(--music-util-error);
+  /* Body Text 2/Bold */
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+}

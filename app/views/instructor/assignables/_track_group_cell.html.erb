@@ -1,0 +1,16 @@
+<div class="variable_track_group">
+  <%
+    varies_class = "varies_text"
+    varies_click = ""
+    if assignable.assignments_vary_by_track_group_name?
+      varies_class << "varies_arrow"
+      varies_click = "$(this).assignment_wizard('toggleDetails');"
+    end
+  -%>
+  <div class="<%= varies_class %>" onClick="<%= varies_click %>">
+    <%= assignable.track_group_name %>
+  </div>
+  <% if assignable.assignments_vary_by_track_group_name? -%>
+    <%= render partial: 'assignments_by_section', locals: { assignable: assignable, vol_program: presenter.for_vista_online_learning?  } %>
+  <% end -%>
+</div>

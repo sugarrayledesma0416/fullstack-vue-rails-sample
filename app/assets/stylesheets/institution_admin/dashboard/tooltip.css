@@ -1,0 +1,50 @@
+.c-enterprise-tooltip-container {
+  position: relative;
+  display: inline-block;
+}
+
+.c-enterprise-tooltip-container .tooltip-text {
+  visibility: hidden;
+  margin: 1em;
+  background-color: #333;
+  color: #fff;
+  border-radius: 4px;
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -100px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.c-enterprise-tooltip-container .tooltip-text::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
+}
+
+.c-enterprise-tooltip-container:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+.tippy-content > .js-bubble {
+  border-color: #2D2D2D;
+  background-color: #2D2D2D;
+  color: #FFF;
+}
+
+music-bubble-alert-v3 .c-svg-icon[title] {
+  pointer-events: none;
+}
+
+music-bubble-alert-v3 .c-svg-icon::after {
+  content: attr(title);
+  display: none;
+}

@@ -1,0 +1,61 @@
+<% content_for(:js_head, javascript_packs_with_chunks_tag('jr/lessons/show')) %>
+
+<% content_for(:navigation) do %>
+  <% render('app_shell/navbar_program/supersite_junior') %>
+<% end %>
+
+<% namespace = 'jr-lessons-show' %>
+
+<% content_for(:body_classes, '  has-vhl-return-link') %>
+
+<% content_for(:left_of_page_title) do %>
+  <div class="c-return-link-container">
+    <vhl-return-link
+      class="<%= test_class('return-link-root') %>"
+      href="<%= jr_section_program_lessons_path(
+                  program_id: current_program.id,
+                  section_id: current_section.id )%>"
+      linktestclass="<%= test_class('return-link') %>">
+      Return
+    </vhl-return-link>
+  </div>
+<% end %>
+
+<div id="main_content" class="ns-<%= namespace %>">
+  <ul class="c-plain-list l-<%= namespace %>__strands">
+    <% @lesson.ordered_non_assessment_concepts.each do |concept| %>
+      <li class="l-<%= namespace %>__strand  <%= test_class("strand-id-#{concept.id}") %>">
+        <div class="<%= test_class('strand-name') %>">
+          <%= link_to(
+                jr_section_program_strand_path(
+                  id: concept.id,
+                  program_id: current_program.id,
+                  section_id: current_section.id
+                ),
+                class: [
+                  "c-#{namespace}__strand-link",
+                  test_class('strand-name')
+                ]
+              ) do %>
+            <% if (media_item = concept.media_item) %>
+              <%= image_tag(
+                    media_item.public_filename,
+                    alt: media_item.alt_text,
+                    class: "c-#{namespace}__strand-icon"
+                  ) %>
+            <% else %>
+              <%= image_tag(
+                    'jr/icons/strand_default.svg',
+                    'aria-hidden': true,
+                    class: "c-#{namespace}__strand-icon"
+                  ) %>
+            <% end %>
+            <div class="c-<%= namespace %>__strand-label">
+              <%= concept.name.html_safe %>
+            </div>
+          <% end %>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>

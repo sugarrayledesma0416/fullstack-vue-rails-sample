@@ -1,0 +1,49 @@
+<%# configuration for multimedia audio %>
+<%= javascript_tag do %>
+  var VHL = VHL || {};
+  VHL.multimediaConfig = {
+    andromeda: {
+      recording_endpoint: "<%= Rails.application.config.multimedia.andromeda.recording_endpoint %>",
+      recognition_host: "<%= Rails.application.config.multimedia.andromeda.recognition_host %>"
+    },
+    listen_repeat_sr: {
+      recording_endpoint: "<%= Rails.application.config.multimedia.listen_repeat_sr.recording_endpoint %>",
+      cdn_prefix: "<%= Rails.application.config.multimedia.listen_repeat_sr.cdn_prefix %>"
+    },
+    listen_repeat_no_sr: {
+      recording_endpoint: "<%= Rails.application.config.multimedia.listen_repeat_no_sr.recording_endpoint %>",
+      cdn_prefix: "<%= Rails.application.config.multimedia.listen_repeat_no_sr.cdn_prefix %>",
+      base_dir: 'listen_repeat/'
+    },
+    recording_v2: {
+       cdn_prefix: "<%= Rails.application.config.multimedia.recording_v2.cdn_prefix %>",
+       recording_endpoint: "<%= Rails.application.config.multimedia.recording_v2.recording_endpoint %>"
+    },
+    instructor_notes: {
+      cdn_prefix: "<%= Rails.application.config.multimedia.instructor_notes.cdn_prefix %>",
+      recording_endpoint: "<%= Rails.application.config.multimedia.instructor_notes.recording_endpoint %>",
+      base_dir: 'instructor_notes/'
+    },
+    virtual_chat: {
+       cdn_prefix: "<%= Rails.application.config.multimedia.virtual_chat.cdn_prefix %>",
+       recording_endpoint: "<%= Rails.application.config.multimedia.virtual_chat.recording_endpoint %>",
+       manual_mode_only: "<%= supersite_junior? ? true : false %>"
+    },
+    instructor_created_activities: {
+      cdn_prefix: "<%= Rails.application.config.multimedia.instructor_created_activities.cdn_prefix %>",
+      recording_endpoint: "<%= Rails.application.config.multimedia.instructor_created_activities.recording_endpoint %>",
+      base_dir: 'instructor_created_activities/'
+    },
+    instructor_grading_comments: {
+      cdn_prefix: "<%= Rails.application.config.multimedia.instructor_grading_comments.cdn_prefix %>",
+      recording_endpoint: "<%= Rails.application.config.multimedia.instructor_grading_comments.recording_endpoint %>"
+    },
+    smartbook: {
+      recording_endpoint: "<%= Rails.application.config.smartbook_recording_endpoint %>"
+    },
+    ai_virtual_chat: {
+      cdn_prefix: "<%= Rails.application.config.multimedia.ai_virtual_chat.cdn_prefix %>",
+      recording_endpoint: "<%= Rails.application.config.multimedia.ai_virtual_chat.recording_endpoint %>"
+    }
+  };
+<% end %>

@@ -1,0 +1,6 @@
+<% unless url.blank? -%>
+<%= link_to(local_assigns[:link_text].nil? ? 'Help for this page' : link_text,
+            url,
+            class: 'help_this_page  c-menu__item  js-nav-system__subnav__link',
+            target: '_blank', 'role': 'menuitem') -%>
+<% end -%>

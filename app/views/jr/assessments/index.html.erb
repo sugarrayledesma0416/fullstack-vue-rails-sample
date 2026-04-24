@@ -1,0 +1,28 @@
+<% content_for(:js_head, javascript_packs_with_chunks_tag('jr/assessments/index')) %>
+
+<% content_for(:navigation) do %>
+  <% render('app_shell/navbar_program/supersite_junior') %>
+<% end %>
+
+<% content_for(:body_classes, '  has-vhl-return-link') %>
+
+<% content_for(:left_of_page_title) do %>
+  <div class="c-return-link-container">
+    <vhl-return-link
+      href="<%= jr_section_program_content_path(
+                  program_id: current_program.id,
+                  section_id: current_section.id
+                ) %>">
+      Return
+    </vhl-return-link>
+  </div>
+<% end %>
+
+<div id="main_content">
+  <div 
+    id="assessments_app"
+    data-assessments-data="<%= @assessments_data.to_json %>"
+    data-finished-icon-path="<%= asset_path('jr/rocket.svg') %>"
+    data-workset-icon-path="<%= asset_path('jr/assessment_3.svg') %>">
+  </div>
+</div>

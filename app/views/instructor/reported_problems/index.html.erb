@@ -1,0 +1,54 @@
+<% content_for(:focus, render(:partial => 'instructor/focus/show')) %>
+<% content_for(:navigation, render(:partial => 'app_shell/navbar_program/main')) %>
+<% content_for(:body_classes, "standard_layout wizard reported_problems") %>
+<% content_for(:css_head, stylesheet_link_tag("wizard")) %>
+
+<div id="main_content">
+<div class="ns-music-v1">
+  <div class="u-mar-bot-16  u-mar-top-neg-12">
+    <%= link_to instructor_dashboard_path(current_program.id),
+                class: "u-mar-bot-16" do %>
+      <%= Music::Components.icon(variant: 'return',text: '') %>
+      Return to Dashboard
+    <% end %>
+  </div>
+</div>
+  <% if @reported_problems.blank? %>
+    <p class="u-mar-top-12">There are currently no student technical requests for this course.</p>
+  <% elsif current_focus.has_atleast_one_actionable_section? %>
+    <div class="wrap_table">
+      <table id="reported_problems" class="large_table" data-page-element="reported_problems">
+        <thead>
+          <th>Student</th>
+          <th>Location</th>
+          <th>Comment</th>
+          <th>Created</th>
+          <th>Updated</th>
+        </thead>
+        <tbody>
+          <% @reported_problems.each do |reported_problem| -%>
+            <tr class="reported_problem" data-reported-problem-id="<%= reported_problem.id %>" data-reported-problem-type="<%= reported_problem.request_type %>">
+              <td data-container="student_name">
+                <%= reported_problem.student_name %>
+              </td>
+              <td data-container="activity">
+                <span><%= format_lesson_strand_label(reported_problem.activity) %> | <%= reported_problem.activity.title %></span>
+              </td>
+              <td data-container="comment" class="request_comment">
+                <%= reported_problem.student_comment.html_safe %>
+              </td>
+              <td data-container="creation_date" class="creation_date">
+                <%= format_date_time(reported_problem.created_at, :gradebook_cell) %>
+              </td>
+              <td data-container="update_date" class="creation_date">
+                <%= format_date_time(reported_problem.updated_at, :gradebook_cell) %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  <% else %>
+    <%= render :partial => 'instructor/partials/no_actionable_course_or_section' %>
+  <% end -%>
+</div> <!-- /#main_content -->

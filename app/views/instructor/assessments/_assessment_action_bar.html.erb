@@ -1,0 +1,8 @@
+<% content_for(:js_head, javascript_include_tag('course_library.js') ) %>
+
+<% if presenter.is_a?(InstructorAssessmentTocPresenter) %>
+  <%= render 'partials/new_activity_create_links', presenter: presenter.new_activity_link_presenter(self) %>
+  <div class="hidden_helper">
+    <div data-container="content_wizard" class="assignables_wizard  js-my-content-container" data-modal="import_content"></div>
+  </div>
+<% end %>

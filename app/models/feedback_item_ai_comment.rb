@@ -1,0 +1,2 @@
+class FeedbackItemAIComment < ApplicationRecord
+end

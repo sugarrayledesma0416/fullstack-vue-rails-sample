@@ -1,0 +1,49 @@
+<% content_for(:css_head, stylesheet_link_tag("music/features/forums/main")) %>
+<%= render 'forums/js_config' %>
+<% content_for(:js_head, javascript_include_tag('jquery_common/deletion_modal')) %>
+<% content_for(:js_head, javascript_include_tag('forums')) %>
+<% content_for(:body_classes, "ns-forums") %>
+
+<% if accent_bar_enabled? %>
+  <div class="u-mar-0  js-accent-bar-container--activity">
+    <%= render 'music/partials/accent_bar_component', {language: current_program.language_code} %>
+  </div>
+<% end %>
+
+<div class="c-forum-container">
+  <div class="c-forum-toolbar">
+    <%= link_to(forums_path(current_program.id, current_section)) do %>
+      <%= Music::Components.icon(variant: 'return', text: 'Return to Forums') %>
+    <% end %>
+
+    <% if current_user.instructor? && current_user.sections.include?(@forum.section) %>
+        <%= link_to(edit_forum_path(current_program, current_section, @forum), class:'c-edit-forum-button') do %>
+            <%= Music::Components.icon(variant: 'edit', text: 'Edit Forum', classes: ['c-embedded-icon--lg']) %>
+        <% end %>
+        <a href="javascript://"
+          class="c-delete-forum-button  js-delete-forum-or-post"
+          data-delete-url="<%= forum_path(current_program, current_section, @forum) %>"
+          data-object-type="forum">
+          <%= Music::Components.icon(variant: 'delete', text: 'Delete Forum', classes: ['c-embedded-icon--lg']) %>
+        </a>
+    <% end %>
+  </div> <!-- / c-title-actions -->
+
+  <% if current_user.instructor? %>
+    <%= hidden_field_tag 'instructor_id', current_user.id %>
+    <% content_for(:navigation, render('app_shell/navbar_program/main')) %>
+  <% elsif current_user.student? -%>
+    <% unless current_section && current_section.non_zero? %>
+      <% content_for(:body_classes, ' no_section_student') %>
+    <% end %>
+    <% content_for(:navigation, render('app_shell/navbar_section/main',
+                                      section: current_section)) %>
+  <% end %>
+
+
+  <article class="c-forum  c-forum--view  u-txt-16">
+    <span id="a11y_level_1_main_post" class="u-screen-reader-only">for Level 1, Post 1 of 1</span>
+    <%= render 'forums/post', node: @forum.posts_tree, post: @forum.posts_tree.object, level: 2, post_level_describedby: 'a11y_level_1_main_post' %>
+  </article>
+</div>
+<%= render 'jquery_common/deletion_modal' %>

@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      lang="en"
+      class="<%= '  ns-supersites-jr  ' if ssjr_student? %>  <%= yield :html_classes %>">
+  <head>
+    <%= render('partials/google_tag_manager') %>
+    <%= render 'layouts/common_header', layout_version: 'v1', no_app_shell: @no_app_shell %>
+  </head>
+  <body class="ns-music-v1  <%= yield :body_classes %> <%= yield :theme_classes %>" >
+    <%= render 'layouts/flash', flash: flash %>
+    <div class="l-container-fluid">
+      <h1 class="c-heading--page-title">
+        <%= @page_title.html_safe if @page_title %>
+      </h1>
+      <main>
+        <%= yield %>
+      </main>
+    </div>
+    <%= render 'layouts/inactivity_timeout' %>
+  </body>
+</html>

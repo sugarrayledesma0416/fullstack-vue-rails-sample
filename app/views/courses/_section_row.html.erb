@@ -1,0 +1,73 @@
+<% section_id = section.id || 'new'%>
+<% if section.id %>
+    <% section_name = section.name %>
+<% else %>
+    <% section_name = "Section 1" %>
+<% end %>
+<% editable_section_indicator = is_current ? 'current_section' : ''  %>
+
+<tr id="<%= section_id %>" class="section_row join_course_section_row program_<%= program_id %> <%= course_row_class %> <%= cycle('odd', 'even') %> <%= editable_section_indicator %>">
+  <td class="instructor">
+    <div style="position:relative;">
+      <div id="popUp_<%=section_id%>" class="popUp" type ='popup'>
+        <div class="popUpinner">
+          <p>
+            <span class="course_name_line">
+              <span class="course_name_label">Course Name:</span>
+              <span class="course_name"><%= section.course.name %></span>
+            </span>
+            <br/>
+
+            <span class="section_name_line">
+              <span class="section_name_label">Section Name:</span>
+              <span class="section_name" id=<%="section_name_#{section_id}_detailed"%>>
+                  <%= section_name %>
+              </span>
+            </span>
+            <br/>
+            <% if section.instructor.present? -%>
+              <span class="section_instructors_line">
+                <span class="section_instructors_label">
+                  <%= ((section.instructor_team_ids.blank?) ? 'Instructor:' : 'Instructors:') %>
+                </span>
+                <span class="section_instructors"><%= section.instructor_last_names.to_sentence %></span>
+              </span>
+              <br/>
+            <% end -%>
+
+            <% unless section.additional_info.blank? && display_only %>
+              <span class="section_info_line">
+                <span class="section_info_label">Additional information:</span>
+                <span id=<%="section_additional_info_#{section_id}"%> class="section_location"><%= section.additional_info %></span>
+              </span>
+              <br/>
+            <% end -%>
+
+            <% unless section.location.blank? -%>
+              <span class="section_location_line">
+                <span class="section_location_label">Section Location:</span>
+                <span class="section_location"><%= section.location %></span>
+              </span>
+              <br/>
+            <% end -%>
+
+            <% unless section.schedule.blank? -%>
+              <span class="section_schedule_line">
+                <span class="section_schedule_label">Section Meeting Time:</span>
+                <span class="section_schedule"><%= section.schedule %></span>
+              </span>
+            <% end -%>
+          </p>
+        </div>
+        <div class="popUp_hoverArrow"></div>
+      </div>
+    </div>
+    <%= radio_button_tag(:user, :section_id, section_id, :disabled => display_only) %>
+    <%= label(:user, :section_id, format_instructor_last_names(section), :value => section_id, :id => "section_instructors_#{section_id}", "data-owner-name" => section.course.owner.last_name, :style => "display:inline;") if section.instructor.present? %>
+   </td>
+  <td class="course"><%= label(:user, :section_id, hoverize(section.course.name.shorten(18), section.course.name), :value => section_id) %></td>
+  <td class="section"><%= label(:user, :section_id, hoverize(section_name.shorten(10), section_name), :value => section_id ,:id => "section_name_#{section_id}") %>
+    <img src="/images/icon-info.png" alt="More information" class="moreInfo" rel="" data-js-section="<%= section_id %>" />
+  </td>
+</tr>
+

@@ -1,0 +1,9 @@
+# Ask pubnub administrator for keyset.
+development:
+  pub_key:
+  sub_key:
+  sec_key:
+test:
+  pub_key:
+  sub_key:
+  sec_key:

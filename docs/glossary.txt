@@ -1,0 +1,48 @@
+access		A boolean property of privileges indicating whether a feature or piece of content is available given certain conditions.
+
+front page	The page you see before logging in when you enter the site's base url.
+
+home page	The page you see immediately after logging in, containing data relevant to your account.
+
+privileges	Model representing the access granted by a passcode.
+
+maestro_2	The current version of the Maestro application, written in PHP/mysql.
+
+maestro_3	The development version of the Maestro application, written in ruby on rails.
+
+ARC		A type of activity where the student records themselves speaking to practice their pronunciation of the language. These activities use a special flash engine.
+
+program		A book that a student has access to. It is called a program rather than a book because some programs have multiple books (eg. Adelante123 and Descubre123) and other programs do not use a specific book (eg. En Linea).
+
+courses		Courses in our system map to the courses students take at a school. Eg. you may see courses like "Spanish 101" or "Intro Spanish".
+
+section		Sections are subsets of courses, and map to the section of a course a student would enroll in at a school. At larger schools, a given course may contain hundreds of students, so they are broken up into sections so the instructors and teaching assisstants can deal with a managable number of students at a time.
+
+activity	A set of questions the student answers in order to practice the target language. These questions can be multiple choice, fill-in-the-blanks, open-ended essays, etc.
+
+Site License Roles
+
+sales_rep	A VHL employee who interacts directly with instructors at schools. the sales rep is responsible for creating a site license for a given school and creating packages for a specific number of seats and years for a given program to go with those licenses.
+
+site_license_manager	An instructor at a school who is responsible for printing out and distributing passcodes that are allocated by the site license.
+
+site_license_viewer	A VHL employee such as someone in tech support who needs to be able to view site licenses but not make any changes to them, usually to help sales reps learn to use the system or to diagnose problems.
+
+sales_manager	A VHL employee who all sales reps report to. The sales manager has full access to all site licenses.
+
+
+
+head		Head (or "The Head Server") is the webserver that is always running the latest build of the application in the repository.
+
+iteration	Iteration (or "The Iteration Server") is the webserver that is running the latest stable build of the application. The build is updated manually. Our iteration review meeting uses this webserver to demo the week's iteration. Also, QA is done on this server.
+
+
+Note: For Maestro 3, we should refrain from using internal development terms like "recital", "strand" and their ilk
+as it only contributes to confusion among those outside Tech Dev.
+
+Legacy Terms
+------------------
+
+recital		An activity stored in the Maestro 2 system. We now call recitals "Activities".
+
+roster		A section in the Maestro 2 system. We now call rosters "Sections".

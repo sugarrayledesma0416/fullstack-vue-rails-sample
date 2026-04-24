@@ -1,0 +1,123 @@
+staging: &STAGE
+  lossless_base_url: https://lossless.ms.vhlcentral.com
+  andromeda:
+    recognition_host: andromeda.ms.vhlcentral.com
+    recording_endpoint: https://lossless.ms.vhlcentral.com/
+  listen_repeat_sr:
+    cdn_prefix: https://arcaudio.ms.vhlcentral.com/listen_repeat/
+    recording_endpoint: https://lossless.ms.vhlcentral.com/listen_repeat_sr
+  listen_repeat_no_sr:
+    cdn_prefix: https://arcaudio.ms.vhlcentral.com/listen_repeat/
+    recording_endpoint: https://lossless.ms.vhlcentral.com/listen_repeat_no_sr
+  forums:
+    cdn_prefix: https://arcaudio.ms.vhlcentral.com/forums/
+    recording_endpoint: https://lossless.ms.vhlcentral.com/forums
+  recording_v2:
+    cdn_prefix: https://arcaudio.ms.vhlcentral.com/
+    recording_endpoint: https://lossless.ms.vhlcentral.com/recording_v2
+  cygnus:
+    recording_endpoint: https://cygnus.ms.vhlcentral.com/
+  instructor_notes:
+    cdn_prefix: https://arcaudio.ms.vhlcentral.com/
+    recording_endpoint: https://lossless.ms.vhlcentral.com/instructor_notes
+  virtual_chat:
+    cdn_prefix: https://arcaudio.ms.vhlcentral.com/
+    recording_endpoint: https://lossless.ms.vhlcentral.com/virtual_chat
+  instructor_created_activities:
+    cdn_prefix: https://arcaudio.ms.vhlcentral.com/
+    recording_endpoint: https://lossless.ms.vhlcentral.com/instructor_created_activities
+  instructor_grading_comments:
+    cdn_prefix: https://arcaudio.ms.vhlcentral.com/
+    recording_endpoint: https://lossless.ms.vhlcentral.com/instructor_grading_comments
+  instructor_media_items:
+    recording_endpoint: https://lossless.ms.vhlcentral.com/instructor_media_items
+  ai_virtual_chat:
+    cdn_prefix: https://arcaudio.ms.vhlcentral.com/
+    recording_endpoint: https://lossless.ms.vhlcentral.com/ai_virtual_chat
+
+qa: &STAGE
+  lossless_base_url: https://lossless.qa.vhlcentral.com
+  andromeda:
+    recognition_host: andromeda.qa.vhlcentral.com
+    recording_endpoint: https://lossless.qa.vhlcentral.com/
+  listen_repeat_sr:
+    cdn_prefix: https://arcaudio.qa.vhlcentral.com/listen_repeat/
+    recording_endpoint: https://lossless.qa.vhlcentral.com/listen_repeat_sr
+  listen_repeat_no_sr:
+    cdn_prefix: https://arcaudio.qa.vhlcentral.com/listen_repeat/
+    recording_endpoint: https://lossless.qa.vhlcentral.com/listen_repeat_no_sr
+  forums:
+    cdn_prefix: https://arcaudio.qa.vhlcentral.com/forums/
+    recording_endpoint: https://lossless.qa.vhlcentral.com/forums
+  recording_v2:
+    cdn_prefix: https://arcaudio.qa.vhlcentral.com/
+    recording_endpoint: https://lossless.qa.vhlcentral.com/recording_v2
+  cygnus:
+    recording_endpoint: https://cygnus.qa.vhlcentral.com/
+  instructor_notes:
+    cdn_prefix: https://arcaudio.qa.vhlcentral.com/
+    recording_endpoint: https://lossless.qa.vhlcentral.com/instructor_notes
+  virtual_chat:
+    cdn_prefix: https://arcaudio.qa.vhlcentral.com/
+    recording_endpoint: https://lossless.qa.vhlcentral.com/virtual_chat
+  instructor_created_activities:
+    cdn_prefix: https://arcaudio.qa.vhlcentral.com/
+    recording_endpoint: https://lossless.qa.vhlcentral.com/instructor_created_activities
+  instructor_grading_comments:
+    cdn_prefix: https://arcaudio.qa.vhlcentral.com/
+    recording_endpoint: https://lossless.qa.vhlcentral.com/instructor_grading_comments
+  instructor_media_items:
+    recording_endpoint: https://lossless.qa.vhlcentral.com/instructor_media_items
+  ai_virtual_chat:
+    recording_endpoint: https://lossless.qa.vhlcentral.com/ai_virtual_chat
+
+development:
+  <<: *STAGE
+  lossless_base_url: https://lossless.dev.vhlcentral.com
+  instructor_media_items:
+    recording_endpoint: https://lossless.dev.vhlcentral.com/instructor_media_items
+  ai_virtual_chat:
+    recording_endpoint: https://lossless.dev.vhlcentral.com/ai_virtual_chat
+
+test:
+  <<: *STAGE
+
+production: &PROD
+  lossless_base_url: https://lossless.maestro.vhlcentral.com
+  andromeda:
+    recognition_host: andromeda.maestro.vhlcentral.com
+    recording_endpoint: https://lossless.maestro.vhlcentral.com/
+  listen_repeat_sr:
+    cdn_prefix: https://arcaudio.maestro.vhlcentral.com/listen_repeat/
+    recording_endpoint: https://lossless.maestro.vhlcentral.com/listen_repeat_sr
+  listen_repeat_no_sr:
+    cdn_prefix: https://arcaudio.maestro.vhlcentral.com/listen_repeat/
+    recording_endpoint: https://lossless.maestro.vhlcentral.com/listen_repeat_no_sr
+  forums:
+    cdn_prefix: https://arcaudio.maestro.vhlcentral.com/forums/
+    recording_endpoint: https://lossless.maestro.vhlcentral.com/forums
+  recording_v2:
+    cdn_prefix: https://arcaudio.maestro.vhlcentral.com/
+    recording_endpoint: https://lossless.maestro.vhlcentral.com/recording_v2
+  cygnus:
+    recording_endpoint: https://cygnus.maestro.vhlcentral.com/
+  instructor_notes:
+    cdn_prefix: https://arcaudio.maestro.vhlcentral.com/
+    recording_endpoint: https://lossless.maestro.vhlcentral.com/instructor_notes
+  virtual_chat:
+    cdn_prefix: https://arcaudio.maestro.vhlcentral.com/
+    recording_endpoint: https://lossless.maestro.vhlcentral.com/virtual_chat
+  instructor_created_activities:
+    cdn_prefix: https://arcaudio.maestro.vhlcentral.com/
+    recording_endpoint: https://lossless.maestro.vhlcentral.com/instructor_created_activities
+  instructor_grading_comments:
+    cdn_prefix: https://arcaudio.maestro.vhlcentral.com/
+    recording_endpoint: https://lossless.maestro.vhlcentral.com/instructor_grading_comments
+  instructor_media_items:
+    recording_endpoint: https://lossless.maestro.vhlcentral.com/instructor_media_items
+  ai_virtual_chat:
+    cdn_prefix: https://arcaudio.maestro.vhlcentral.com/
+    recording_endpoint: https://lossless.maestro.vhlcentral.com/ai_virtual_chat
+
+live:
+  <<: *PROD

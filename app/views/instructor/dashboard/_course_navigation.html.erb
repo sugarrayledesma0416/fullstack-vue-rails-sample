@@ -1,0 +1,121 @@
+<li
+     id="js_course_<%= course.id %>"
+  class="js-course-navigation-wrapper <%= format_dashboard_selected_course(current_focus, [course], course)%>
+         <%= test_class('course-navigation-wrapper') %>  <%= test_class("course-#{course.id}-wrapper") %>"
+  data-course-listing="course_<%= course.id -%>"
+  data-course-id="<%= course.id %>"
+  draggable="true"
+  aria-controls="courseControls">
+  <div data-hover-container="<%= 'js_' + dom_id(course) %>" class="hidden_helper"></div>
+  <div
+    class="
+      c-school-course
+      neutral-header-bar
+      bar-hover
+      <%= course.editable? ? 'open' : 'closed' %>
+      <%= format_dashboard_selected_course(current_focus, [course], course)%>
+      <%= course.id == current_focus.course.try(:id) ? 'is-active' : '' %>
+      js-course-information">
+    <span class="c-icon-drag-and-drop">
+      <%= inline_svg_tag("instructor_dashboard/icons/drag_and_drop.svg") %>
+    </span>
+    <div
+      id="js_course_<%= course.id %>"
+      class="c-school-course__link  js-course-name
+              <%= test_class("course-name-#{course.id}") %>  <%= test_class("course-name") %>"
+      data-course-name="<%= course.name %>"
+      data-hover-url="<%= instructor_course_path(presenter.program, course) %>"
+      onClick="VHL.focus.update_focus(this)">
+      <%= inline_svg_tag("instructor_dashboard/icons/book_course.svg") %>
+      <span class="c-school-course-info">
+        <span class="c-school-course-info__name">
+          <%= course.name.shorten(36) %>
+        </span>
+        <span class="c-school-course-info__dates">
+          <%= course.start_date.strftime('%b %d') %><%= course.start_date.strftime('%Y') != course.end_date.strftime('%Y') ? course.start_date.strftime(', %Y') : '' %> - <%= course.end_date.strftime('%b %d, %Y') %>
+        </span>
+      <span>
+    </div>
+    <div class="c-menu__item  c-gear-menu-wraper  c-gear-menu-wraper--mobile">
+      <%= Music::Components.icon(
+            variant: 'caret',
+            size: 'lg',
+            classes: ['c-course--mobile-arrow']) %>
+
+    </div>
+    <div class="c-menu__item  c-gear-menu-wraper  c-gear-menu-wraper--destkop  js-gear-wrapper  <%= test_class('course-gear') %>
+                test-course-gear  <%= test_class("course-gear-#{course.id}") %>">
+      <a
+        href="javascript://"
+        aria-haspopup="true"
+        aria-expanded="false"
+        class="c-menu__title  c-icon-gear  js-gear  <%= test_class('gear') %>  <%= test_class("course-gear-icon") %>"
+        data-course-name="<%= course.name %>">
+        <span class="u-screen-reader-only">Course Settings for <%= course.name %></span>
+        <%= inline_svg_tag("instructor_dashboard/icons/gear.svg") %>
+      </a>
+      <ul class="c-menu__inner  c-menu__inner--instructor  js-gear-menu"
+            role="menu" data-visually-hidden="true">
+        <li class="c-menu__subitem  <%= test_class('gear-option') %>" role="none">
+          <% if course.editable? && course.owned_by?(current_user) && course_create_edit_policy.permit?(course.school) %>
+            <%= link_to(
+                  'Edit Course',
+                  edit_instructor_course_path(presenter.program, course),
+                  class: "course_edit_link  #{test_class("course-edit-link")}  #{test_class("course-edit-link-#{ course.id }")}  js-gear-menu-link",
+                  'data-link-type': 'edit course'
+                )  %>
+          <% else %>
+            <% if !course.editable? && course_create_edit_policy.permit?(course.school) %>
+              <span
+                class="c-gear-del-link--disabled  js-tooltip-auto  test-edit-course-closed-course-message"
+                title="You cannot edit a closed course.">
+                Edit Course
+              </span>
+            <% elsif course_create_edit_policy.permit?(course.school) %>
+              <span
+                class="c-gear-del-link--disabled  js-tooltip-auto  test-edit-course-asst-message"
+                title="You must be the owner of the course to make changes.">
+                Edit Course
+              </span>
+            <% else %>
+              <span
+                class="c-gear-del-link--disabled  js-tooltip-auto  test-edit-course-asst-message"
+                title="This course cannot be edited.">
+                Edit Course
+              </span>
+            <% end %>
+          <% end %>
+        </li>
+        <li class="c-menu__subitem  <%= test_class('gear-option') %>" role="none">
+          <% if course.editable? && course.owned_by?(current_user) %>
+            <% if enable_links && (!current_user.lti_rostering? && !current_user.one_roster_rostering?) %>
+              <%= link_to(
+                    'Add section',
+                    new_instructor_course_section_path(course.program.id, course.id),
+                    class: "c-add-link #{test_class('section-add-link')}  js-gear-menu-link",
+                    'data-link-type' => 'add section') -%>
+            <% end %>
+          <% end %>
+        </li>
+        <li class="c-menu__subitem  c-menu__subitem--delete  <%= test_class('gear-option') %>" role="none">
+          <% if deletion_policy.permit? -%>
+            <%= button_to('Delete Course',
+                        instructor_course_path(presenter.program, course),
+                        class: "c-no-button c-course-del-link  js-delete-link  #{test_class('course-del-link')} js-gear-menu-link",
+                        form_class: "js-delete-course-#{course.id}",
+                        'data-link-type': 'course',
+                        'data-item-id': course.id,
+                        method: :delete) %>
+            <%= render 'delete_confirmation_modal', item: course %>
+          <% else %>
+            <span
+              class="c-gear-del-link--disabled   <%= test_class('test-course-del-disable') %> js-tooltip-auto"
+              title="<%= deletion_policy.denied_message %>">
+              Delete Course
+            </span>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</li>

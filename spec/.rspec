@@ -1,0 +1,6 @@
+--require spec/support/instafail
+--format Instafail
+--loadby mtime
+--reverse
+--color
+--profile

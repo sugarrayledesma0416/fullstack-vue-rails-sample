@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" class="<%= yield :html_classes %>">
+  <head>
+    <%= render('partials/google_tag_manager') %>
+    <%= render 'layouts/common_header', layout_version: 'v3' %>
+    <%= stylesheet_link_tag "application_v3_layout" %>
+
+     <% unless @no_app_shell %>
+      <% if current_user.enterprise_admin? && @no_program_bar %>
+        <%= content_for(:navigation, render('app_shell/navbar_account/main')) %>
+      <% elsif current_user.instructor? %>
+        <%= content_for(:focus, render('instructor/focus/show')) %>
+        <%= content_for(:navigation, render('app_shell/navbar_program/main')) %>
+      <% else %>
+        <% unless @no_section_navigation %>
+          <%= content_for(
+                :navigation,
+                render('app_shell/navbar_section/main', section: current_section)
+              ) %>
+        <% end %>
+      <% end %>
+    <% end %>
+  </head>
+
+  <body class="notranslate">
+    <div class="l-application-v3">
+      <% #query_review_output %>
+
+      <div class="ns-music-v1 ns-masthead ns-full-width l-header <%= yield :theme_classes %>">
+        <%= render 'app_shell/masthead',
+          section_header: @section_header,
+          course: @course,
+          section: @section,
+          flash: flash
+        %>
+      </div>
+
+      <div class="ns-music-v3 l-content js-page-container">
+        <%= yield %>
+      </div>
+
+      <div class="ns-music-v3 l-footer">
+        <% unless @no_app_shell || @no_footer || current_user.cartridge? %>
+          <%= render 'layouts/footer_v3' %>
+        <% end %>
+        <%= render 'layouts/inactivity_timeout' %>
+      </div>
+    </div>
+  </body>
+</html>

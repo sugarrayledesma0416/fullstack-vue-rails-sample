@@ -1,0 +1,79 @@
+<% unless @no_focus %>
+
+<% content_for(:js_head, javascript_include_tag('focus')) %>
+
+<div id="focus_wrapper" class="c-course-focus">
+
+  <div id="focus_indicator"
+       class="c-course-focus__indicator  focus_indicator
+              <%= current_focus.type %>
+              <%= 'old' if current_focus.course_closed? %>"
+       data-js-course-closed="<%= current_focus.course_closed? %>"
+       data-js-old-year-path="<%= main_app.instructor_old_course_year_path(
+                                    program_id: current_program.id,
+                                    id: current_focus.course_start_date.year
+                                  ) unless !current_focus.course_start_date %>"
+       data-js-focus="<%= focus_json %>">
+
+
+    <button
+      class="c-course-focus__header  focus_indicator_names
+             c-no-button  u-txt-rt  js-focus-indicator-button
+             <%= test_class('course-focus__header') %>"
+      type="button">
+
+      <% if current_focus.course_closed? -%>
+        <span class="c-course-focus__old-course">
+          old
+        </span>
+      <% end -%>
+
+      <span class="c-course-focus__course  focus_indicator_course">
+        <%= truncate(current_focus.course_name, length: 30) %>
+      </span>
+
+      <% if current_focus.type == 'section' -%>
+        <span class="c-course-focus__section  focus_indicator_section">
+          <%= truncate(current_focus.section_name, length: 16) %>
+        </span>
+      <% end -%>
+
+      <% if current_focus.type == 'course' -%>
+        <% if !current_focus.course_name.present? %>
+          <span class="c-course-focus__none  focus_indicator_no_course">No course selected</span>
+        <% else %>
+          <span class="c-course-focus__section  focus_indicator_all_sections">All sections</span>
+        <% end %>
+      <% end -%>
+
+      <span class="c-icon  c-icon--sm  c-icon--circle-arrow-down"></span>
+
+    </button>
+    <%= form_tag(main_app.instructor_focus_path(current_program),
+                 method: :put,
+                 id: 'update_focus') do -%>
+      <%= hidden_field_tag :focus %>
+      <% if request.xhr? %>
+        <%= hidden_field_tag :return_to, session[:stashed_return_to] %>
+      <% elsif controller.class == Lti::InstructorDashboardController %>
+        <%= hidden_field_tag :return_to, instructor_dashboard_path(program_id: current_program.id) %>
+      <% else %>
+        <%= hidden_field_tag :return_to, request.fullpath %>
+      <% end %>
+      <%= submit_tag 'Go',
+                     id: 'update_focus_button',
+                     name: 'update_focus',
+                     style: 'display: none;'
+      %>
+    <% end -%>
+  </div><!-- focus_indicator -->
+  <%=
+  render 'instructor/focus/index',
+         courses_and_sections:
+           current_user.courses_and_sections_for_focus(current_program),
+         focused: current_focus.css_type_and_id,
+         current_focused_course_closed: current_focus.course_closed?
+  %>
+</div><!-- / .c-course-focus #focus_wrapper -->
+
+<% end %>

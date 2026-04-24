@@ -1,0 +1,7 @@
+---
+:verbose: false
+:queues:
+  - [highest_priority, 30]
+  - [high_priority, 20]
+  - [medium_priority, 15]
+  - [default, 5]

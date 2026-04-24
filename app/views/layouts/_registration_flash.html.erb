@@ -1,0 +1,7 @@
+<% if flash[:notice].present? || flash[:error].present? %>
+  <% flash.each do |key, value| -%>
+  <div id="flash_<%= key %>">
+    <p><%= value %></p>
+  </div>
+  <% end -%>
+<% end -%>

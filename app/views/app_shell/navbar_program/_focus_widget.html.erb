@@ -1,0 +1,6 @@
+<!-- display focus if the user is an instructor with any courses in the current program -->
+<% unless @hide_header %>
+  <% if any_courses_in_current_program? %>
+      <%= yield :focus -%>
+  <% end %>
+<% end %>

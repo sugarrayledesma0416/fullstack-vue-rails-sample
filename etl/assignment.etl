@@ -1,0 +1,60 @@
+require_relative 'etl/common'
+
+class AssignmentSource < Source
+  def initialize(course_ids)
+    @records = ::Assignment.includes(:section).where("sections.course_id in (#{course_ids})")
+      .where("assignable_type != 'ExternalActivity'")
+  end
+end
+
+class AssignmentTransform < Transform
+  def initialize(model)
+    @common_fields = %w(section_id category_id)
+    super(model)
+  end
+
+  def add_optional_fields(fields_hash, record, fields_to_add)
+    fields_hash.tap do |h|
+      # Each field to add is expected to have a lambda
+      #   to transform it to the expected format.
+      #
+      # This is a hack to get custom_due_time to work.
+      fields_to_add.each do |field, transform|
+        if record.attributes[field]
+          h[field.to_sym] = transform.call record.attributes[field]
+        end
+      end
+    end
+  end
+
+  def concept_id(record)
+    if record.assignable_type == 'Activity'
+      record.assignable.concept_id
+    else
+      nil
+    end
+  end
+
+  def process(record)
+    super(record) do |r|
+      r.activity_id = record.assignable_id
+      r.strand_id = concept_id(record)
+      r.lesson_id = record.assignable.lesson_id
+      r.day_id = record.due_date
+      r.week_id = ::Week.week_containing(record.due_date)
+
+      details = {}
+
+      # Postgresql expects the custom due time to be in HH:MM:SS format
+      #   so that it can cast it to an `interval`.
+
+      r.details = add_optional_fields(details,
+                                      record,
+                                      { 'custom_due_time' => lambda do |x| x.strftime('%H:%M:%S') end })
+    end
+  end
+end
+
+source AssignmentSource, ENV['COURSE_IDS']
+transform AssignmentTransform, GradebookEngine::Assignment
+destination RecordDestination

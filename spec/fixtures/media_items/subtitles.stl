@@ -1,0 +1,110 @@
+$Fontname = Arial		
+$FontSize = 24			
+// check the exact spelling of the font name or it won't import in DVDSP
+
+$Bold = FALSE
+$UnderLined = FALSE
+$Italic = FALSE
+$ForceDisplay = FALSE
+$TapeOffset = FALSE
+// TRUE of FALSE
+
+$HorzAlign = Center
+$VertAlign = Bottom
+// Left, Right, Center, Top, Bottom
+					
+$XOffset = 0
+$YOffset = 0
+// pixels
+
+$TextContrast = 15
+$Outline1Contrast = 8
+$Outline2Contrast = 0
+$BackgroundContrast = 0
+// 0 = transparant; 15 = max
+
+$FadeIn = 0
+$FadeOut = 0
+// value in frames
+
+$SetFilePathToken = <<Graphic>>
+// any unique string, place before filename of graphic				
+$ColorIndex1 = 0
+// text color; 0 = white
+$ColorIndex2 = 1
+// outline 1 color; 1 = black
+$ColorIndex3 = 2
+// outline 2 color; 2 = light gray
+$ColorIndex4 = 3
+// background color; 3 = dark gray
+// additional note: mapping type should be Chroma, not Grayscale!						
+						
+// start of subtitles created by SDI Media USA						
+
+00:00:26.23 , 00:00:29.19 , Hello! Welcome, I'm Sabite's mother.
+00:00:29.25 , 00:00:33.20 , Pleased to meet you, Mrs. Yilmaz. | I'm George Bachmann.
+00:00:42.04 , 00:00:46.25 , George, hello, | that's my younger sister, Zeynep.
+00:00:47.01 , 00:00:49.05 , -Hello, Zeynep, nice to meet you. | -Hello!
+00:00:49.11 , 00:00:51.06 , And this is our father.
+00:00:52.18 , 00:00:54.03 , Mr. Yilmaz, it's a pleasure.
+00:00:54.09 , 00:00:58.19 , Welcome, George. | Nice to meet you. Please!
+00:00:59.23 , 00:01:03.27 , Those are Faik's grandmother's | Patatesli Sigara Boregi.
+00:01:04.11 , 00:01:08.02 , Mr. Yilmaz, | your family comes from Turkey?
+00:01:08.08 , 00:01:13.04 , Yes. I'm from Ankara. | I have cousins there and an uncle.
+00:01:17.13 , 00:01:18.25 , Do you have any siblings?
+00:01:19.17 , 00:01:21.07 , I have three older sisters.
+00:01:21.13 , 00:01:25.27 , One is married, one is separated, | and one is engaged.
+00:01:26.03 , 00:01:28.20 , I also have a niece. | Her name is Ava and she's twelve.
+00:01:28.26 , 00:01:31.24 , Very nice. Please!
+00:01:33.06 , 00:01:34.17 , And you, George?
+00:01:37.24 , 00:01:39.07 , My parents are divorced.
+00:01:39.13 , 00:01:42.13 , I have an older brother | and a younger half-sister.
+00:01:42.19 , 00:01:45.09 , She's five. Her name is Olivia.
+00:01:45.20 , 00:01:46.21 , Where is Hans?
+00:01:46.27 , 00:01:48.22 , He's coming from the university.
+00:01:49.16 , 00:01:51.24 , My great-grandparents | come from Heidelberg.
+00:01:52.16 , 00:01:56.03 , My uncle lives in Heidelberg.
+00:01:56.08 , 00:02:00.05 , He's a professor. It's a beautiful city.
+00:02:08.08 , 00:02:11.05 , -Hans! Hello, Hans. | -I'm sorry I'm late.
+00:02:11.22 , 00:02:12.23 , Come in.
+00:02:15.21 , 00:02:17.00 , Hello!
+00:02:17.05 , 00:02:19.29 , Hans, these are my parents, | Anke and Faik.
+00:02:20.04 , 00:02:21.22 , -Good evening, Mr. Yilmaz. | -Good evening.
+00:02:21.27 , 00:02:23.22 , -Good evening, Mrs. Yilmaz. | -Good evening.
+00:02:23.27 , 00:02:26.01 , -For you. | -Thank you.
+00:02:28.28 , 00:02:30.19 , Are you her brother?
+00:02:32.14 , 00:02:35.19 , No. Sabite is my girlfriend. I'm Torsten.
+00:02:37.12 , 00:02:39.05 , Nice to meet you.
+00:02:39.22 , 00:02:41.01 , My pleasure.
+00:02:41.26 , 00:02:43.01 , Borek?
+00:02:43.07 , 00:02:44.20 , No, thank you.
+00:02:51.24 , 00:02:53.23 , Dinner's ready.
+00:02:57.23 , 00:02:59.28 , Mrs. Yilmaz, | your sauerbraten is delicious.
+00:03:01.01 , 00:03:03.28 , -Thanks, Meline. Hans? | -Hmm?
+00:03:04.03 , 00:03:05.20 , Everything ok?
+00:03:07.08 , 00:03:08.17 , You're not eating anything.
+00:03:09.09 , 00:03:10.23 , Yeah, thanks.
+00:03:13.25 , 00:03:17.13 , Hans, your family comes from Bavaria?
+00:03:17.18 , 00:03:18.22 , Yes.
+00:03:18.27 , 00:03:22.06 , I have an aunt in Munich.
+00:03:23.09 , 00:03:25.24 , Do you have any siblings, Hans?
+00:03:26.13 , 00:03:30.18 , My brother Max is 18. | He's athletic and likes to play soccer.
+00:03:31.06 , 00:03:33.23 , -Does he have a girlfriend? | -What's the deal with Lukas?
+00:03:34.16 , 00:03:37.10 , We're not together anymore. | He's studying in Salzburg.
+00:03:38.21 , 00:03:43.18 , My sister and my brother-in-law | live in Salzburg.
+00:03:43.27 , 00:03:45.13 , Hans, everything ok?
+00:03:53.12 , 00:03:54.27 , -Sabite! | -What?
+00:03:55.12 , 00:03:57.15 , -Hans. | -What's up with Hans?
+00:04:08.03 , 00:04:09.24 , We have strudel!
+00:04:18.11 , 00:04:21.21 , In this episode, | you heard the characters...
+00:04:25.10 , 00:04:27.07 , talk about family,
+00:04:28.08 , 00:04:29.21 , Haben Sie Geschwister?
+00:04:30.09 , 00:04:32.00 , Ich habe drei Šltere Schwestern.
+00:04:32.05 , 00:04:36.21 , Eine ist verheiratet, eine ist getrennt, | eine ist verlobt.
+00:04:44.04 , 00:04:46.13 , use possesive adjectives,
+00:04:47.25 , 00:04:50.22 , Frau Yilmaz, Ihr Sauerbraten ist kšstlich.
+00:04:51.24 , 00:04:53.16 , Ihre Familie kommt aus Bayern?
+00:04:55.04 , 00:04:57.11 , use adjective agreement,
+00:04:58.10 , 00:05:00.23 , Es ist eine schšne Stadt.
+00:05:01.07 , 00:05:04.27 , and use the expressions | gern and nicht gern.
+00:05:05.04 , 00:05:09.12 , Mein Bruder Max ist 18. | Er ist sportlich und spielt gern Fu§ball.

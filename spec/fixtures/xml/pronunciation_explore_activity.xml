@@ -1,0 +1,134 @@
+<?xml version="1.0"?>
+<activity activity_type="pronunciation_explore" title="Pronunciation explore example" language="es">
+  <dl>Click on the words to hear audio.</dl>
+  <items>
+
+    <reference type="text">
+      <body>Text reference is here</body>
+    </reference>
+
+    <reference type="image">
+      <image id="2182"/>
+    </reference>
+
+    <reference type="audio">
+      <audio id="111884"/>
+    </reference>
+
+    <reference type="pronunciation_example_group">
+      <pronunciation_examples>
+        <pronunciation_example>
+          <audio id="1" />
+          <example_text>
+            <color2>c</color2>ereales
+          </example_text>
+        </pronunciation_example>
+        <pronunciation_example>
+          <audio id="2" />
+          <example_text>
+            deli<color2>c</color2>ioso
+          </example_text>
+        </pronunciation_example>
+        <pronunciation_example>
+          <audio id="3" />
+          <example_text>
+            <color1>c</color1>ondu<color2>c</color2>ir
+          </example_text>
+        </pronunciation_example>
+        <pronunciation_example>
+          <audio id="4" />
+          <example_text>
+            <color1>c</color1>ono<color2>c</color2>er
+          </example_text>
+        </pronunciation_example>
+      </pronunciation_examples>
+      <pronunciation_explanation>Before <b>e</b> or <b>i</b>, the Spanish <b>c</b> is pronounced like the <i>s</i> in <i>sit</i>. (In parts of Spain, <b>c</b> before <b>e</b> or <b>i</b> is pronounced like the <i>th</i> in <i>think</i>.)</pronunciation_explanation>
+    </reference>
+
+    <reference type="pronunciation_example_group">
+      <pronunciation_examples cols="1">
+        <pronunciation_example>
+          <audio id="1" />
+          <example_text>
+            <color1>V</color1>erónica y su esposo canta<color1>n<ligature />b</color1>oleros
+          </example_text>
+        </pronunciation_example>
+      </pronunciation_examples>
+    </reference>
+
+    <reference type="pronunciation_example_group">
+      <pronunciation_examples cols="3">
+        <pronunciation_example>
+          <audio id="1" />
+          <example_text>
+            este <annotation>(adjective)</annotation>
+          </example_text>
+        </pronunciation_example>
+        <pronunciation_example>
+          <audio id="2" />
+          <example_text>
+            <color1>é</color1>ste
+            <annotation>(pronoun)</annotation>
+          </example_text>
+        </pronunciation_example>
+        <pronunciation_example>
+          <audio id="3" />
+          <example_text>
+            est<color1>é</color1>
+            <annotation>(verb)</annotation>
+          </example_text>
+        </pronunciation_example>
+      </pronunciation_examples>
+      <pronunciation_explanation>The demonstrative adjectives <b>esta</b> and <b>este</b> do not have an accent mark. The demonstrative pronouns <b>ésta</b> and <b>éste</b> have an accent mark on the first syllable. The verb forms <b>está</b> (present indicative) and <b>esté</b> (present subjunctive) have an accent mark on the last syllable.</pronunciation_explanation>
+    </reference>
+
+    <reference type="pronunciation_example_group">
+      <pronunciation_examples>
+        <pronunciation_example>
+          <audio id="1" />
+          <example_text>
+            <color1>c</color1>ono<color2>c</color2>er
+          </example_text>
+        </pronunciation_example>
+        <pronunciation_example>
+          <audio id="2" />
+          <example_text>
+            <color1>B</color1>enito
+          </example_text>
+        </pronunciation_example>
+        <pronunciation_example>
+          <audio id="3" />
+          <example_text>
+            e<color1>n<color2><ligature /></color2>V</color1>ictoria.
+          </example_text>
+        </pronunciation_example>
+        <pronunciation_example>
+          <audio id="4" />
+          <example_text>
+            es d<color2>e<ligature />B</color2>oquerón
+          </example_text>
+        </pronunciation_example>
+      </pronunciation_examples>
+      <pronunciation_explanation>Before <b>e</b> or <b>i</b>, the Spanish <b>c</b> is pronounced like the <i>s</i> in <i>sit</i>. (In parts of Spain, <b>c</b> before <b>e</b> or <b>i</b> is pronounced like the <i>th</i> in <i>think</i>.)</pronunciation_explanation>
+    </reference>
+
+    <reference type="pronunciation_example_group">
+      <pronunciation_examples cols="2">
+        <pronunciation_example>
+          <audio id="1" />
+          <example_text>
+            usted <right_arrow /> <color1>Ud.</color1>
+          </example_text>
+        </pronunciation_example>
+        <pronunciation_example>
+          <audio id="2" />
+          <example_text>
+            Ustedes <right_arrow /> <color1>Uds.</color1>
+          </example_text>
+        </pronunciation_example>
+      </pronunciation_examples>
+      <pronunciation_explanation>As you have already learned, the subject pronouns <b>usted</b> and <b>ustedes</b> are often abbreviated.</pronunciation_explanation>
+    </reference>
+
+  </items>
+</activity>

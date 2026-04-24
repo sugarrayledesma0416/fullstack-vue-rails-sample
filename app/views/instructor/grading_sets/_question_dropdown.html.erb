@@ -1,0 +1,8 @@
+<label class="ac-no-visual" id="ac-q-by-q-dropdown-label">Questions: </label>
+<select class="c-select  js-jump-to" aria-labelledby="ac-q-by-q-dropdown-label">
+  <% view_manager.questions_to_grade.each do |question| %>
+    <%= render 'dropdown_select_option', question_or_student: question, view_manager: view_manager %>
+  <% end %>
+</select>
+
+

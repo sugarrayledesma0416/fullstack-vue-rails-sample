@@ -1,0 +1,52 @@
+@import 'music/library/v1/base/main';
+/* ================================================================== *
+    
+    VText links
+
+* =================================================================== */
+:root {
+  --vtext-link-color: #0083CB;
+}
+
+
+#vtext_reference {
+  color: #969696;
+  font-size: var(--font-1, #{rpx(10)});
+  padding-left: 0;
+  padding-right: rpx(10);
+
+  .vtext_reference_link {
+    background: url(/images/v-text.png) no-repeat 0 center;
+    color: var(--vtext-link-color);
+    display: inline-block;
+    padding-left: rpx(20);
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.open_vtext {
+  color: var(--vtext-link-color);
+}
+
+.open_vtext:hover {
+  text-decoration: underline;
+}
+
+.vtext_pages a {
+  color:#969696;
+}
+
+.vtext_pages:hover a {
+  text-decoration: none;
+}
+
+.vtext_pages {
+  cursor: pointer;
+}
+
+.helpable .vtext_reference {
+  height: rpx(88);
+  width: rpx(75);
+}

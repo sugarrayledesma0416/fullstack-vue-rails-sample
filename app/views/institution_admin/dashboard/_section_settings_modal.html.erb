@@ -1,0 +1,13 @@
+<%= form_tag('/institution_admin/edit_section', class: 'c-form  js-edit-section-form') do %>
+<music-dialog-v3 class="hide-overflow  js-edit-section-settings" heading="Edit Section">
+  <div class="ns-music-v3  u-bg-white">
+    <div style="width:654px">
+      <%= render 'section_modal'%>
+    </div>
+  </div>
+  <div slot="footer">
+    <button type="button" class="c-button-v3  c-button-v3--secondary  js-edit-section-cancel">Cancel</button>
+    <button class="c-button-v3  c-button-v3--primary  u-float-rt  u-width-80  js-edit-section-submit">Save</button>
+  </div>
+</music-dialog-v3>
+<% end %>

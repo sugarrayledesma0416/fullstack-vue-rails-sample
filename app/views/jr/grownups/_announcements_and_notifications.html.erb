@@ -1,0 +1,50 @@
+<% content_for(
+    :js_head,
+    javascript_packs_with_chunks_tag('jr/grownups/announcements_and_notifications')
+  ) %>
+
+<div class="l-center-block  u-mar-bot-64  <%= test_class('announcements-panel') %>">
+  <vhl-panel variant="supersites-jr">
+    <span slot="icon">
+      <span class="c-embedded-icon  c-embedded-icon--lg" role="presentation">
+        <%= inline_svg('jr/notification.svg') %>
+      </span>
+    </span>
+    <h2 slot="header">
+      Teacher Announcements
+    </h2>
+    <div slot="body" class="u-oflow-x-auto">
+      <%= render(
+            'partials/communications_content',
+            communication_type: 'announcements',
+            page_size: 5,
+            variant: 'supersites-jr',
+          ) %>
+    </div>
+  </vhl-panel>
+</div>
+
+<div class="l-center-block  u-mar-bot-64  <%= test_class('notifications-panel') %>">
+  <vhl-panel variant="supersites-jr">
+    <span slot="icon">
+      <span class="c-embedded-icon  c-embedded-icon--lg" role="presentation">
+        <%= inline_svg('jr/notification.svg') %>
+      </span>
+    </span>
+    <h2 slot="header">
+      Assignment Updates
+    </h2>
+    <div slot="body" class="u-oflow-x-auto">
+      <%= render(
+            'partials/communications_content',
+            communication_type: 'notifications',
+            page_size: 5,
+            variant: 'supersites-jr',
+          ) %>
+    </div>
+  </vhl-panel>
+  <%= link_to 'Accessibility Features',
+        "https://support.vhlcentral.com/hc/en-us/articles/33661741818775-vhlcentral-Platform-Content-Accessibility-Features-Student-Guide",
+        "class": "u-mar-lt-32",
+        "target": "_blank" %>
+</div>

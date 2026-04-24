@@ -1,0 +1,85 @@
+
+/*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*
+	resetting styles
+*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*/
+
+html{color:#000;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}
+table{border-collapse:collapse;border-spacing:0;font-size:inherit;font:100%;}
+fieldset,img{border:0;}
+address,caption,cite,code,dfn,th,var{font-style:normal;font-weight:normal;}
+del,ins{text-decoration:none;}ul{list-style:none;}
+caption,th{text-align:left;}caption,th{text-align:left;}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
+q:before,q:after{content:'';}
+abbr,acronym{border:0;font-variant:normal;}
+sub{vertical-align:text-bottom;}
+input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}
+input,button,textarea,select{*font-size:100%;}
+select { background-color: #fff; }
+legend{color:#000;}
+pre,code,kbd,samp,tt{font-family:monospace;*font-size:108%;line-height:100%;}
+
+/*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*
+	base styles
+*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*/
+
+a, a:link { color: #0083CB; }
+a:visited {  }
+a:hover { text-decoration: underline; }
+a:active {  }
+a label { color: #333; }
+a { outline:0 }
+hr { border: 1px solid #ccc; clear: both; width: 100%; margin: 1em 0;}
+h1, h2, h3, h4, h5, h6 { margin-bottom: 1em; font-weight: bold;  }
+h1 { font-size: 2em; }
+h2 {  }
+h3 { /*font-style: italic;*/ }
+
+pre {
+	background-color: #eee;
+	padding: 1em;
+	font-size: 0.917em;
+}
+
+input {
+}
+
+input[type="submit"] {
+  cursor:pointer;
+}
+
+input:disabled {
+ cursor:default;
+}
+
+select {
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+table caption {
+	font-weight: bold;
+	text-align: left;
+}
+table th, table td {
+	border: 0;
+	padding: 3px;
+}
+table tr.odd {  }
+table tr.even {  }
+.clear { clear: both; height: 0; overflow: hidden; }
+.left { float: left; }
+.right { float: right; }
+.error {
+	display: none;
+	border: 1px solid red;
+	margin: 1em;
+	padding: 1em;
+}
+
+button {
+  cursor: pointer;
+}
+

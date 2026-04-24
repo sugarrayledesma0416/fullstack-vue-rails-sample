@@ -1,0 +1,59 @@
+#sessions_list{
+  margin-top: 20px;
+}
+#sessions_list .session_type{
+  margin-bottom: 28px;
+  margin-top: 27px;
+  text-align: left;
+  width: 100%;
+}
+
+#sessions_list .session_info{
+  margin: 0 0 4px 10px;
+  list-style: disc inside none;
+}
+
+#sessions_list .session_date{
+  padding: 20px 0 0;
+}
+
+#session_steps li{
+  list-style-type: decimal !important;
+  margin-left: 40px;
+  padding: 10px;
+}
+
+div.column {
+    float: left;
+}
+
+.column {
+    margin: 40px 10px 0 0;
+    width: 195px;
+}
+
+.column.last {
+    margin: 40px 0 0 0;
+}
+
+.inservice_sessions_list{
+  width: 100%;
+  border-style: none;
+}
+
+.inservice_sessions_list .session_type{
+  font-size: 1.2em;
+  height: 50px;
+}
+
+.session_date_label{
+  font-weight: bold;
+}
+
+.session_time_label{
+  font-weight: bold;
+}
+
+.session_type_label{
+  font-weight: bold;
+}

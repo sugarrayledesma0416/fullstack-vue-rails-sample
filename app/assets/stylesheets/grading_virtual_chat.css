@@ -1,0 +1,205 @@
+/* Page Structure Adjustments */
+.chat_container.vchat {
+  margin-left: 30px;
+  margin-right: 30px;
+  padding-top: 10px;
+  width: 500px;
+}
+
+.virtual_partner_container {
+  display: block;
+  min-height: 5px;
+  width: 150px;
+}
+
+.virtual_user_container {
+  display: block;
+  min-height: 5px;
+  width: 150px;
+}
+
+.user_name,
+.user_name .student_name,
+.user_name .student_number {
+  color: #868686;
+  display: block;
+  font-size: 13px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  padding: 5px;
+  width: 140px;
+}
+
+/* Check out By Question */
+.by_question.virtual_chat .box-frame,
+.by_student.virtual_chat .box-frame {
+  margin-left: 0px;
+  width: 900px;
+}
+
+
+/* Review Work Specifics, due to Page Width Differences */
+.review_work .box-frame,
+.review_work .box-frame-inner
+{
+  width: 870px;
+}
+
+.review_work .virtual_instructor_comments {
+  width: 421px;
+}
+
+/* References */
+.chat_references.vchat {
+  float: none;
+  margin-top: 0px;
+  width: 100%;
+}
+
+/* Hide all of the captions and buttons that we don't use in this state. */
+.virtual_chat_turns .record.btn,
+.virtual_chat_turns .play.btn,
+.virtual_chat_captions .vc_caption_record,
+.virtual_chat_captions .vc_caption_listen,
+.virtual_chat_captions .vc_caption_review,
+.virtual_chat_turns .vc_dots,
+.virtual_chat_turns .item_player,
+.virtual_chat_turns .recorder {
+  display: none;
+  visibility: hidden;
+}
+
+/* Overrides for the remaining buttons and captions */
+.virtual_chat_prompts {
+  margin-left: 0px;
+  padding-bottom: 15px;
+}
+
+.virtual_chat_playback_button_container {
+  left: 0px;
+  margin-left: 0px;
+  padding-left: 0px;
+  padding-top: 8px;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  z-index: 100;
+}
+
+
+.virtual_chat_playback_button_container .c-media-button-wrapper {
+  margin: 0px auto;
+}
+
+.virtual_chat_turns {
+  padding-top: 8px;
+}
+
+.virtual_chat_players_block {
+  height: 60px;
+}
+
+.virtual_chat_prompts .recorder {
+  float: right;
+  margin-right: -66px;
+  padding-left: 0px;
+}
+
+.virtual_chat_prompts .item_player {
+  float: right;
+  margin-right: 0px;
+  padding-left: 0px;
+}
+
+.vc_caption_counter {
+  padding-left: 0px;
+  width: 100%;
+}
+
+.virtual_chat_prompts .review_button {
+  width: 38px;
+}
+
+.review_work .student_number {
+  display: none;
+}
+
+/* Instructor Grading Sections */
+.score_controls {
+  border-left: 0px;
+  margin-right: 0px;
+  padding-left: 10px;
+}
+
+.vc_caption {
+  color: #868686;
+}
+
+.vc_caption_grading {
+  bottom: 9px;
+  color: #868686;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+}
+
+.virtual_instructor_comments {
+  background: url('/images/dots_pc_vert.png') top left repeat-y;
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding-left: 20px;
+  padding-bottom: 0px;
+  width: 450px;
+}
+
+.instructor_comment_area.recorded_comment {
+  margin-right: 0px;
+  padding-bottom: 5px;
+  width: 115px;
+}
+
+/* Changes to the Avatars Section */
+.avatar_resize_container {
+  width: 250px;
+  height: 190px;
+}
+
+.avatar_resize_container img {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.virtual_chat_image {
+  float: left;
+  height: 190px;
+  margin-left: 0px;
+}
+
+.my_avatar {
+  bottom: 0px;
+  height: 190px;
+  left: 250px;
+  width: 250px;
+}
+
+.avatar_border {
+  display: none;
+  height: 170px;
+  width: 230px;
+  border: 10px solid #DFF09F;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  opacity: 0.6;
+}
+
+.currently_speaking .avatar_resize_container .avatar_border,
+.my_avatar.currently_speaking .avatar_border {
+  display: block;
+}
+
+.virtual_chat_image,
+.my_avatar {
+  border: 0px!important;
+}

@@ -1,0 +1,51 @@
+[
+    {
+        "id": 43,
+        "vendor_guid": "69d489ed-95fd-4411-a949-f6785c95be49",
+        "reference_id": 22,
+        "reference_type": "AssessmentItem",
+        "m3_publish_status": true
+    },
+    {
+        "id": 44,
+        "vendor_guid": "16f72018-ebf0-4b9d-b15f-78e1b2a06d90",
+        "reference_id": 23,
+        "reference_type": "AssessmentItem",
+        "m3_publish_status": true
+    },
+    {
+        "id": 45,
+        "vendor_guid": "a365d87f-1521-4733-a3fe-97f8b40f3236",
+        "reference_id": 24,
+        "reference_type": "AssessmentItem",
+        "m3_publish_status": true
+    },
+    {
+        "id": 46,
+        "vendor_guid": "a46ad2c1-d8fc-4da6-8315-5370891e88e1",
+        "reference_id": 25,
+        "reference_type": "AssessmentItem",
+        "m3_publish_status": true
+    },
+    {
+        "id": 47,
+        "vendor_guid": "81279b26-19cc-42f4-94ed-d18a1dac6bc9",
+        "reference_id": 26,
+        "reference_type": "AssessmentItem",
+        "m3_publish_status": true
+    },
+    {
+        "id": 48,
+        "vendor_guid": "9e792bf5-74f7-426d-a5d6-103ddbcf1d38",
+        "reference_id": 27,
+        "reference_type": "AssessmentItem",
+        "m3_publish_status": true
+    },
+    {
+        "id": 49,
+        "vendor_guid": "d80b6ed2-264f-4917-bb01-5107275e97c6",
+        "reference_id": 28,
+        "reference_type": "AssessmentItem",
+        "m3_publish_status": true
+    }
+]

@@ -1,0 +1,10 @@
+<li class="notification ui-helper-clearfix" data-notification-id="<%= announcement.id %>">
+  <div>
+    <div class="notification_link">
+	    <%= link_to(html_string_shorten(announcement.message, 36), announcement.path, :title => announcement.message) %>
+    </div>
+    <div class="notification_date">
+      <%= time_ago_in_words(announcement.created_at)%> ago
+    </div>
+  </div>
+</li>

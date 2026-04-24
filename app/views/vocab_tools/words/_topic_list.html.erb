@@ -1,0 +1,87 @@
+<li list-disclosure
+    class="u-mar-bot-8"
+    item-type="topic"
+    parent-id="{{ lesson.id }}"
+    ng-repeat="lesson in unit.lessons"
+    ng-show="show_lesson(lesson)">
+  <div class="c-disclosure  c-disclosure--start
+              flex-align-ctr  flex-justify-between
+              js-topic-list-disclosure-{{ lesson.id }}">
+    <button ng-click="retrieveTopicsAndLessons($event, lesson)"
+            aria-controls="disclosure-body-{{ lesson.id }}-{{ $index }}"
+            aria-expanded="{{ lesson.expanded }}"
+            aria-describedby="a11y-lesson-extra-info-{{ lesson.id }}"
+            lang="{{ target_language_code }}"
+            role="button status"
+            type="button"
+            class="c-disclosure__header  c-disclosure__header--vocab
+                   c-no-button  flex-order-0  u-txt-nodec">
+      <div class="c-disclosure__marker  c-disclosure__marker--reverse"></div>
+      <h3 class="u-txt-white  u-dis-inline  u-pad-rt-8">
+        <%= sanitize(lesson.display_name, tags: %w[span], attributes: %w[lang]) %>
+      </h3>
+    </button>
+    <span id="a11y-lesson-extra-info-{{ lesson.id }}">
+      <span ng-show="lesson.word_count() > 0"
+            class="u-txt-white  u-mar-rt-8">
+        <span class="u-screen-reader-only">
+          {{ lesson.selected_words().length }} out of {{ lesson.word_count() }} words selected
+        </span>
+        <span aria-hidden="true">
+          {{ lesson.selected_words().length }}/{{ lesson.word_count() }}
+        </span>
+      </span>
+      <span class="u-screen-reader-only"
+            id="a11y-level-<%= level %>">
+            Level <%= level %>
+      </span>
+    </span>
+
+    <ul id="disclosure-body-{{ lesson.id }}-{{ $index }}"
+        class="checklist c-vocab-tree-list c-vocab-tree-list__topic
+               c-disclosure__body  u-pad-0  u-mar-0
+               <%= test_class('disclosure-body-lesson-{{ lesson.id }}') %>">
+      <li class="c-form-item  u-pad-8  u-bg-gray-f5
+                 js-lesson-{{ lesson.id }}-select-all">
+        <input ng-checked="lessonSelectedOrAllTopicsChecked(lesson)"
+               ng-click="toggleAll($event, lesson); assign_deck()"
+               type="checkbox"
+               aria-describedby="a11y-level-<%= level + 1 %>"
+               id="lesson-{{ lesson.id }}-checkbox"
+               class="c-form-item__checkbox
+                      <%= test_class('lesson-{{ lesson.id }}-name') %>" />
+        <label for="lesson-{{ lesson.id }}-checkbox"
+               class="c-form-item__label  u-mar-0  u-txt-gray-3">Select all</label>
+        <span class="u-screen-reader-only"
+              id="a11y-level-<%= level + 1 %>">
+              Level <%= level + 1 %>
+        </span>
+      </li>
+      <li ng-repeat="topic in lesson.topics | filter:filterEmptyTopics"
+          ng-class="{'u-bg-selected' : topic.selected}"
+          class="c-form-item  u-pad-8
+                 <%= test_class('topic-{{ lesson.id }}-{{ $index }}') %>">
+          <input ng-change="assign_deck()"
+                 ng-model="topic.selected"
+                 type="checkbox"
+                 aria-describedby="a11y-level-<%= level + 1 %>"
+                 id="topic-{{ lesson.id }}-{{ $index }}-checkbox"
+                 class="c-form-item__checkbox
+                        <%= test_class('topic-{{ topic.name }}-checkbox') %>" />
+          <label for="topic-{{ lesson.id }}-{{ $index }}-checkbox"
+                 class="c-form-item__label  l-splitter  u-dis-flex  flex-align-start  u-mar-0  u-txt-gray-3">
+            <span ng-bind-html="topic.name"
+                  class="<%= test_class('topic-name') %>"
+                  lang="{{ target_language_code }}">
+            </span>
+          <span class="c-lesson-selector__word-count  u-mar-lt-3">
+            {{ topic.word_count() }}
+            <span class="u-screen-reader-only">
+              word{{ topic.word_count() > 1 ? 's' : '' }}
+            </span>
+          </span>
+        </label>
+      </li>
+    </ul>
+  </div>
+</li>

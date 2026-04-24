@@ -1,0 +1,20 @@
+<activity activity_type="recording_v2" title="Sample ARC Activity" language="es">
+  <dl>Direction Line</dl>
+  <items>
+    <style>
+      <layout>word</layout>
+      <column_fill>equalize</column_fill>
+      <row_fill>normal</row_fill>
+      <transcript_display>hide</transcript_display>
+      <compare_button_display>show</compare_button_display> 
+    </style>
+    
+    <!--This template has 4 items. Copy and paste or delete ITEM tags as needed.-->
+    <question>
+      <!--Type prompt/question.-->
+      <prompt></prompt>
+      <!--Delete ANSWER tag if a sample answer does not exist for the prompt/question.-->
+      <answer></answer>
+    </question>
+  </items>
+</activity>

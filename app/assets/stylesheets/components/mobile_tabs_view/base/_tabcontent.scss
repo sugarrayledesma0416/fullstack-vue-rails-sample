@@ -1,0 +1,54 @@
+/* ======================================================================= *
+
+    Mobile Tabs View component
+
+ * ======================================================================= */
+
+@mixin hide-by-vis() {
+  height: 0;
+  margin: 0;
+  max-width: 0;
+  overflow: hidden;
+  padding: 0;
+  visibility: hidden;
+  width: 0;
+}
+
+@mixin show-by-vis() {
+  visibility: visible;
+}
+
+.c-mobile-tabs-view {}
+
+/* applying component css only for mobile view */
+@include viewport-max('sm') {
+
+  /* 'INACTIVE' state related CSS */
+  &.c-mobile-tabs-view.c-mobile-tabs-view--inactive {}
+
+  /* 'TABSET_HIDDEN' state related CSS */
+  &.c-mobile-tabs-view.c-mobile-tabs-view--active-with-tabset-hidden.c-mobile-tabs-view--show-primary-content .c-mobile-tabs-view__reference-content,
+  &.c-mobile-tabs-view.c-mobile-tabs-view--active-with-tabset-hidden.c-mobile-tabs-view--show-primary-content .c-mobile-tabs-view__other-content,
+  &.c-mobile-tabs-view.c-mobile-tabs-view--active-with-tabset-hidden.c-mobile-tabs-view--show-reference-content .c-mobile-tabs-view__primary-content,
+  &.c-mobile-tabs-view.c-mobile-tabs-view--active-with-tabset-hidden.c-mobile-tabs-view--show-reference-content .c-mobile-tabs-view__other-content,
+  &.c-mobile-tabs-view.c-mobile-tabs-view--active-with-tabset-hidden.c-mobile-tabs-view--show-other-content .c-mobile-tabs-view__primary-content,
+  &.c-mobile-tabs-view.c-mobile-tabs-view--active-with-tabset-hidden.c-mobile-tabs-view--show-other-content .c-mobile-tabs-view__reference-content {
+    @include hide-by-vis();
+  } 
+
+  /* 'TABSET_VISIBLE' state related CSS */
+  &.c-mobile-tabs-view.c-mobile-tabs-view--active-with-tabset-visible.c-mobile-tabs-view--show-primary-content .c-mobile-tabs-view__reference-content,
+  &.c-mobile-tabs-view.c-mobile-tabs-view--active-with-tabset-visible.c-mobile-tabs-view--show-primary-content .c-mobile-tabs-view__other-content,
+  &.c-mobile-tabs-view.c-mobile-tabs-view--active-with-tabset-visible.c-mobile-tabs-view--show-reference-content .c-mobile-tabs-view__primary-content,
+  &.c-mobile-tabs-view.c-mobile-tabs-view--active-with-tabset-visible.c-mobile-tabs-view--show-reference-content .c-mobile-tabs-view__other-content,
+  &.c-mobile-tabs-view.c-mobile-tabs-view--active-with-tabset-visible.c-mobile-tabs-view--show-other-content .c-mobile-tabs-view__primary-content,
+  &.c-mobile-tabs-view.c-mobile-tabs-view--active-with-tabset-visible.c-mobile-tabs-view--show-other-content .c-mobile-tabs-view__reference-content {
+    @include hide-by-vis();
+  } 
+
+  /* For element whose parent element is hidden by Mobile Tabs View component */
+  &.c-mobile-tabs-view.c-mobile-tabs-view--active-with-tabset-hidden .c-mobile-tabs-view__always-visible-content,
+  &.c-mobile-tabs-view.c-mobile-tabs-view--active-with-tabset-visible .c-mobile-tabs-view__always-visible-content {
+      @include show-by-vis();
+  }
+}

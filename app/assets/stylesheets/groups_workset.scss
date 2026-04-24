@@ -1,0 +1,179 @@
+
+dl, dd, dt {
+  margin:0;
+  padding:0;
+}
+
+/* spacing note:
+ * space between groups is 16px.
+ * space between each box is 5px.
+ * To achieve 16 px between groups:
+ * 5px (right margin previous box), 2px (right padding previous group) + 9px (left padding next group, includes background image)
+*/
+
+.group {
+  padding-left: 9px;
+  padding-right:2px;
+  height: 30px;
+  background: url("/images/workset_bg.png") no-repeat 0 -61px;
+  display: inline-block;
+  vertical-align: top;
+}
+.group:first-of-type {
+  padding-left:0px; /* no space on very first group */
+  background:none;
+}
+.group-name {
+  font-weight:normal;
+  font-size:9px;
+  color:#5C6C7E;
+  padding-bottom:2px;
+  margin-top:-2px;
+}
+#toolbar {
+  margin-top:6px;
+  padding-top:10px;
+  border-top:1px solid #CCC;
+}
+#slideshow_holder {
+  white-space: nowrap;
+  /* remove space between inline-block children: */
+  font-size: 0;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.assignment-group {
+    white-space: nowrap;
+    /* remove space between inline-block children: */
+    font-size: 0;
+  dt {
+    width:25px;
+    height:18px;
+    margin-right:5px;
+    background-color:#E6E7E8;
+    display: inline-block;
+    vertical-align: top;
+    a, span {
+      display:block;
+      height:18px;
+    }
+    /* position off page for eyes, but still there for accessibility
+       (text content only, not element itself) */
+    text-indent:-99999em;
+  }
+
+  .current, .current.completed {
+    background:url('/images/workset_bg.png') no-repeat -25px 0px;
+    height:35px;
+  }
+
+  .completed {
+    background:url('/images/workset_bg.png') no-repeat -50px 0px;
+  }
+
+  .current.completed {
+    height:35px;
+  }
+}
+
+/* Workset Scrolling */
+#slideshow_container {
+  position: relative;
+}
+
+#slideshow_area, #slideshow_scroller {
+  height: 48px;
+  position: relative;
+}
+
+#slideshow_scroller {
+  overflow: hidden;
+}
+
+#slideshow_area {
+  width: auto;
+  border-bottom: 4px solid #d7d7d7;
+}
+
+#slideshow_holder {
+  height: 30px;
+}
+
+#slideshow_previous, #slideshow_next {
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: 13px;
+  display: none;
+  cursor: pointer;
+  /* Prevent quick clicks of buttons from
+     selecting (highlighting) parts of slideshow: */
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+       -o-user-select: none;
+ }
+
+#slideshow_previous {
+  left: -14px;
+  background: transparent url('/images/workset-arrows.png') no-repeat 0px 0;
+}
+
+#slideshow_previous:hover {
+  background-position: 0px -17px;
+}
+
+#slideshow_next {
+  display: block;
+  background: transparent url("/images/workset-arrows.png") no-repeat -15px 0;
+  right: -14px;
+}
+
+#slideshow_next:hover {
+  background-position: -15px -17px;
+}
+
+/* Hovers */
+#hover_holder {
+  position: relative;
+}
+
+.workset_activity_hover {
+  background: #2A3A4A;
+  color: #FFF;
+  font-size: 9px;
+  position: absolute;
+  z-index: 40;
+  padding: 10px;
+  border-radius:5px;
+  white-space:nowrap;
+  &:after {
+    content:"";
+    background:url('/images/activity_hover_arrow.png') no-repeat 0 0;
+    width:20px;
+    height:18px;
+    position: absolute;
+    bottom: -17px;
+    left: 12px;
+   }
+ }
+
+.workset_activity_hover.on_hover {
+  margin-top: -49px;
+}
+
+/* Variant for c-pop-down-link defined in links.css */
+.ns-music-v1 .c-pop-down-link--workset {
+  border-radius: 0.5rem;
+  position: absolute;
+  transform: translateY(-100%);
+  pointer-events: none;
+  opacity: 0;
+
+  &:focus {
+    opacity: 1;
+    pointer-events: all;
+  }
+}
+  

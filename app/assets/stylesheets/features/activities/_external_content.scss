@@ -1,0 +1,17 @@
+@import 'music/library/v1/base/main';
+/* ============================================== *
+
+   External content
+
+   For content contained in an iframe within the
+   Activity Shell.
+
+ * ============================================== */
+
+// Same element as ns-activity (body element):
+&.ns-smart-book {
+  [id="testFrame"] {
+    // Avoid pushing the new activity footer offscreen:
+    padding-bottom: 0.25rem;
+  }
+}

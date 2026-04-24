@@ -1,0 +1,15 @@
+<div class="variable_category">
+  <div
+    <% if assignable.assignments_vary_by_category? -%>
+      class="varies_text varies_arrow"
+      onClick="$(this).assignment_wizard('toggleDetails');" 
+    <% else -%>
+      class="varies_text"
+    <% end -%> 
+  > <%= assignable.category_name %>
+  </div>
+  <% if assignable.assignments_vary_by_category? -%>
+    <%= render partial: 'assignments_by_section',
+      locals: { assignable: assignable, vol_program: presenter.for_vista_online_learning? } %>
+  <% end -%>
+</div>

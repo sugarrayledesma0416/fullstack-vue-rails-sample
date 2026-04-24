@@ -1,0 +1,27 @@
+<% if presenter.lti_deep_link_enabled? %>
+  <div class="c-flash-banner-group  c-flash-banner-group--embedded  
+              u-no-max-width  <%= container_classes %>">
+    <div class="c-flash-banner  c-flash-banner--embedded  
+                c-flash-banner--embedded--warning  u-no-max-width" 
+         role="alert">
+      <div class="l-media  flex-align-ctr">
+        <div class="l-media__img">
+          <span class="c-flash-banner__icon  c-flash-banner__icon--warning"></span>
+          <span class="u-screen-reader-only">warning</span>
+        </div>
+        <div class="l-media__body  test-flash-message">
+          In this view, you can only link to <%= link_type %>. To manage 
+          assignments, log in to VHLCentral via the home page or
+          <%= link_to(
+                'Exit Linking mode',
+                lti_terminate_deep_link_session_path(
+                  program_id: params[:program_id],
+                  return_to: request.fullpath
+                ),
+                target: '_top'
+              ) %>.
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

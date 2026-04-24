@@ -1,0 +1,34 @@
+<div class="c-modal  c-modal--md  js-modal  js-create-deep-link-modal  u-hidden 
+            <%= test_class('deep-link-modal') %>">
+  <div role="dialog" aria-label="Dialog with a panel" class="c-modal__box  js-modal-box">
+    <button class="c-modal__close-button  c-no-button  js-x-close  js-modal-close">
+      <span class="c-icon  c-icon--md  c-icon--close"></span>
+      <span class="u-screen-reader-only">Close dialog</span>
+    </button>
+    <%= form_tag(presenter.lti_deep_link_return_url, method: :post) do %>
+      <div role="document" class="js-modal-content">
+        <div class="c-modal__body">
+          <h3 class="<%= test_class('deep-link-modal-header') %>
+                     c-heading--md">Create Link</h3>
+          <%= hidden_field_tag(
+                :lti_launch_guid,
+                presenter.launch_guid,
+                class: 'js-deep-link-launch-guid'
+              ) %>
+          <%= hidden_field_tag(:JWT, '', class: 'js-deep-link-jwt-field') %>
+
+          <div class="js-deep-link-info
+                      <%= test_class('deep-link-activity-label') %>"></div>
+
+          <div class="c-panel__footer">
+            <div class="c-button-group  u-mar-0  u-txt-rt">
+              <button type="button" class="c-button  js-modal-close">Cancel</button>
+              <%= submit_tag('Create', class: "c-button  c-button--primary") %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    <button class="u-screen-reader-only" tabindex="-1">Dialog end</button>
+  </div>
+</div>

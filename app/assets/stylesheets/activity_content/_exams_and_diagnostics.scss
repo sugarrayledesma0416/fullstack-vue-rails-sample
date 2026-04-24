@@ -1,0 +1,28 @@
+@import 'music/library/v1/base/main';
+/* ================================================================== *
+
+    Exams and Diagnostics
+
+* =================================================================== */
+
+.exam li table, .exam li th, .exam li td {
+  border: rpx(1) solid #969696;
+}
+
+/* Overrides the li.answer_correction span color
+ * when in anwer key view */
+li.answer_correction span.diag_tag {
+  color:white;
+}
+
+.exam li table.correction_feedback,
+.exam li table.correction_feedback th,
+.exam li table.correction_feedback td {
+  border: none;
+}
+
+/* Hide book when on Assessment */
+.exam li.book_pages {
+  display: none;
+  visibility: hidden;
+}

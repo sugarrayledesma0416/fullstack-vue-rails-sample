@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <%= render('partials/google_tag_manager') %>
+    <%= render :partial => 'layouts/common_header' %>
+    <%= stylesheet_link_tag "flash" %>
+    <%= stylesheet_link_tag "popup" %>
+  </head>
+  <body class="notranslate popup">
+    <div id="page_container">
+      <h1 class="page_title"><%= @page_title if @page_title -%></h1>
+      <h2><%= @page_header.html_safe %></h2>
+      <%= yield %>
+  	</div>
+    <%= render 'layouts/inactivity_timeout' %>
+  </body>
+</html>

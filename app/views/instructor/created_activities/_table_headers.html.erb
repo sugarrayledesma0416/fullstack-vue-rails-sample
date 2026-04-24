@@ -1,0 +1,29 @@
+<thead>
+  <tr>
+    <th scope="col" class="u-bord-bot-0"></th>
+    <%=
+      render(
+        'music/partials/sorted_column_header',
+        column_label: 'Last Modified',
+        header_class: 'u-txt-ctr  u-bord-bot-0  u-txt-nodec',
+        next_sort_link: @presenter.sort_link(:last_modified),
+        sort_direction: @presenter.sort_link_direction(:last_modified)
+      )
+    %>
+    <% if controller.action_name == 'index' %>
+      <th scope="col" class="u-txt-ctr  u-bord-bot-0">
+        Assigned In <music-icon-info
+                      class="u-mar-bot-8  js-tooltip-auto"
+                      title="Courses this content is currently assigned in."
+                      data-tippy-placement="top">
+                    </music-icon-info>
+      </th>
+      <th scope="col" class="u-txt-ctr  u-bord-bot-0">Shared</th>
+    <% else %>
+      <th scope="col" class="u-pad-lt-64">
+        Created by
+      </th>
+    <% end %>
+    <th scope="col" class="u-bord-bot-0"></th>
+  </tr>
+</thead>

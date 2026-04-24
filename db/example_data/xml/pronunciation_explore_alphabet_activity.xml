@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<activity activity_type="pronunciation_explore" title="Pronunciation explore: Alphabet " language="es" pronunciation_style="alphabet">
+  <dl>Click on word of the third column to hear audio.</dl>
+  <items>
+
+    <reference type="pronunciation_example_group">
+      <pronunciation_examples cols="3">
+        <pronunciation_example align="center">
+          <example_text>
+            <color1>Letra</color1>
+          </example_text>
+        </pronunciation_example>
+        <pronunciation_example align="center">
+          <example_text>
+            Nombre(s)
+          </example_text>
+        </pronunciation_example>
+        <pronunciation_example>
+          <example_text>
+            Ejemplos
+          </example_text>
+        </pronunciation_example>
+      </pronunciation_examples>
+    </reference>
+
+    <reference type="pronunciation_example_group">
+      <pronunciation_examples cols="3">
+        <pronunciation_example align="center">
+          <example_text>
+            <b>a</b>
+          </example_text>
+          <audio id="140390" />
+        </pronunciation_example>
+        <pronunciation_example align="center">
+          <example_text>
+            a
+          </example_text>
+          <audio id="140390" />
+        </pronunciation_example>
+        <pronunciation_example>
+          <audio id="140365" />
+          <example_text>
+            <b>a</b>dios
+          </example_text>
+        </pronunciation_example>
+      </pronunciation_examples>
+    </reference>
+
+    <reference type="pronunciation_example_group">
+      <pronunciation_examples cols="3">
+        <pronunciation_example align="center">
+          <example_text>
+            <b>b</b>
+          </example_text>
+          <audio id="140372" />
+        </pronunciation_example>
+        <pronunciation_example align="center">
+          <example_text>
+            be
+          </example_text>
+          <audio id="140372" />
+        </pronunciation_example>
+        <pronunciation_example>
+          <audio id="140352" />
+          <example_text>
+            <b>b</b>ien, pro<b>b</b>lema
+          </example_text>
+        </pronunciation_example>
+      </pronunciation_examples>
+    </reference>
+
+    <reference type="pronunciation_example_group">
+      <pronunciation_examples cols="3">
+        <pronunciation_example align="center">
+          <example_text>
+            <b>c</b>
+          </example_text>
+          <audio id="140358" />
+        </pronunciation_example>
+        <pronunciation_example align="center">
+          <example_text>
+            ce
+          </example_text>
+          <audio id="140358" />
+        </pronunciation_example>
+        <pronunciation_example>
+          <audio id="140357" />
+          <example_text>
+            <b>c</b>osa, <b>c</b>ero
+          </example_text>
+        </pronunciation_example>
+      </pronunciation_examples>
+    </reference>
+
+    <reference type="pronunciation_example_group">
+      <pronunciation_examples cols="3">
+        <pronunciation_example align="center">
+          <example_text>
+            <b><color2>ch</color2></b>
+          </example_text>
+          <audio id="140340" />
+        </pronunciation_example>
+        <pronunciation_example align="center">
+          <example_text>
+            che
+          </example_text>
+          <audio id="140340" />
+        </pronunciation_example>
+        <pronunciation_example>
+          <audio id="140339" />
+          <example_text>
+            <b>ch</b>ico
+          </example_text>
+        </pronunciation_example>
+      </pronunciation_examples>
+    </reference>
+
+    <reference type="pronunciation_example_group">
+      <pronunciation_examples cols="3">
+        <pronunciation_example align="center">
+          <example_text>
+            <b>d</b>
+          </example_text>
+          <audio id="140337" />
+        </pronunciation_example>
+        <pronunciation_example align="center">
+          <example_text>
+            de
+          </example_text>
+          <audio id="140337" />
+        </pronunciation_example>
+        <pronunciation_example>
+          <audio id="140375" />
+          <example_text>
+            <b>d</b>iario, na<b>d</b>a
+          </example_text>
+        </pronunciation_example>
+      </pronunciation_examples>
+    </reference>
+
+    <reference type="pronunciation_example_group">
+      <pronunciation_examples cols="3">
+        <pronunciation_example align="center">
+          <example_text>
+            <b>e</b>
+          </example_text>
+          <audio id="140381" />
+        </pronunciation_example>
+        <pronunciation_example align="center">
+          <example_text>
+            e
+          </example_text>
+          <audio id="140381" />
+        </pronunciation_example>
+        <pronunciation_example>
+          <audio id="140367" />
+          <example_text>
+            <b>e</b>studiante
+          </example_text>
+        </pronunciation_example>
+      </pronunciation_examples>
+    </reference>
+
+    <reference type="pronunciation_example_group">
+      <pronunciation_examples cols="3">
+        <pronunciation_example align="center">
+          <example_text>
+            <b>f</b>
+          </example_text>
+          <audio id="140362" />
+        </pronunciation_example>
+        <pronunciation_example align="center">
+          <example_text>
+            efe
+          </example_text>
+          <audio id="140362" />
+        </pronunciation_example>
+        <pronunciation_example>
+          <audio id="140389" />
+          <example_text>
+            <b>f</b>oto
+          </example_text>
+        </pronunciation_example>
+      </pronunciation_examples>
+    </reference>
+
+    <reference type="pronunciation_example_group">
+      <pronunciation_examples cols="3">
+        <pronunciation_example align="center">
+          <example_text>
+            <b>g</b>
+          </example_text>
+          <audio id="140344" />
+        </pronunciation_example>
+        <pronunciation_example align="center">
+          <example_text>
+            ge
+          </example_text>
+          <audio id="140344" />
+        </pronunciation_example>
+        <pronunciation_example>
+          <audio id="140383" />
+          <example_text>
+            <b>g</b>racias, <b>G</b>erardo, re<b>g</b>ular
+          </example_text>
+        </pronunciation_example>
+      </pronunciation_examples>
+    </reference>
+
+    <reference type="pronunciation_example_group">
+      <pronunciation_examples cols="3">
+        <pronunciation_example align="center">
+          <example_text>
+            <b>h</b>
+          </example_text>
+          <audio id="140385" />
+        </pronunciation_example>
+        <pronunciation_example align="center">
+          <example_text>
+            hache
+          </example_text>
+          <audio id="140385" />
+        </pronunciation_example>
+        <pronunciation_example>
+          <audio id="140346" />
+          <example_text>
+            <b>h</b>ola
+          </example_text>
+        </pronunciation_example>
+      </pronunciation_examples>
+    </reference>
+
+    <reference type="pronunciation_example_group">
+      <pronunciation_examples cols="3">
+        <pronunciation_example align="center">
+          <example_text>
+            <b>i</b>
+          </example_text>
+          <audio id="140355" />
+        </pronunciation_example>
+        <pronunciation_example align="center">
+          <example_text>
+            i
+          </example_text>
+          <audio id="140355" />
+        </pronunciation_example>
+        <pronunciation_example>
+          <audio id="140334" />
+          <example_text>
+            <b>i</b>gualmente
+          </example_text>
+        </pronunciation_example>
+      </pronunciation_examples>
+    </reference>
+
+    <reference type="pronunciation_example_group">
+      <pronunciation_examples cols="3">
+        <pronunciation_example align="center">
+          <example_text>
+            <b>j</b>
+          </example_text>
+          <audio id="140355" />
+        </pronunciation_example>
+        <pronunciation_example align="center">
+          <example_text>
+            jota
+          </example_text>
+          <audio id="140355" />
+        </pronunciation_example>
+        <pronunciation_example>
+          <audio id="140370" />
+          <example_text>
+            <b>J</b>avier
+          </example_text>
+        </pronunciation_example>
+      </pronunciation_examples>
+    </reference>
+
+    <reference type="pronunciation_example_group">
+      <pronunciation_examples cols="3">
+        <pronunciation_example align="center">
+          <example_text>
+            <b>k</b>
+          </example_text>
+          <audio id="140391" />
+        </pronunciation_example>
+        <pronunciation_example align="center">
+          <example_text>
+            ka, ca
+          </example_text>
+          <audio id="140391" />
+        </pronunciation_example>
+        <pronunciation_example>
+          <audio id="140349" />
+          <example_text>
+            <b>k</b>ilometro
+          </example_text>
+        </pronunciation_example>
+      </pronunciation_examples>
+    </reference>
+
+  </items>
+</activity>

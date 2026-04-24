@@ -1,0 +1,72 @@
+<activity activity_type="multi_type" language="es" title="MultiType Title">
+  <dl>Master dl</dl>
+  <items>
+    <style>
+      <item_numbers>show</item_numbers>
+    </style>
+    <activity activity_type="multiple_choice" language="es" title="title text">
+      <dl>Instructions</dl>
+      <items>
+        <style>
+            <item_numbers>show</item_numbers>
+        </style>
+	<reference type="video">
+	  <title>This is a video title</title>
+	  <video id="5"/>
+	  <video type="descriptive" id="2"/>
+	  <subtitles>
+            <foreign_subtitles id='3' />
+            <english_subtitles id='14' />
+	  </subtitles>
+	</reference>
+        <item>
+          <prompt>prompt_for_question_1</prompt>
+          <choices>
+            <distractor>wrong answer 1</distractor>
+            <answer>right answer</answer>
+            <distractor>wrong answer 3</distractor>
+          </choices>
+        </item>
+        <item>
+          <prompt>prompt_for_question_2</prompt>
+          <choices>
+            <answer>right answer</answer>
+            <distractor>wrong answer 2</distractor>
+            <distractor>wrong answer 3</distractor>
+          </choices>
+        </item>
+        <item>
+          <prompt>prompt_for_question_3</prompt>
+          <choices>
+            <distractor>wrong answer 1</distractor>
+            <distractor>wrong answer 2</distractor>
+            <answer>right answer</answer>
+          </choices>
+        </item>
+      </items>
+    </activity>
+    <activity activity_type="open_ended" title="sample_open_ended_title">
+      <dl>instructions_go_here</dl>
+      <items>
+        <style>
+            <item_numbers>show</item_numbers>
+            <answer_size>medium</answer_size>
+        </style>
+        <item>
+          <prompt>prompt_for_oe_question_1</prompt>
+          <sample_answer>Sample answer</sample_answer>
+        </item>
+        <item>
+          <prompt>prompt_for_oe_question_2</prompt>
+          <sample_answer>optional_sample_answer_text</sample_answer>
+        </item>
+        <item>
+          <prompt answer_size="11">prompt_for_oe_question_3</prompt>
+        </item>
+        <item>
+          <prompt />
+        </item>
+      </items>
+    </activity>
+  </items>
+</activity>

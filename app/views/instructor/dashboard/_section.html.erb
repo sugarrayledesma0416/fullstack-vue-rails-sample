@@ -1,0 +1,449 @@
+<%
+  student_count = section.current_students_base.count
+  show_section_average = show_section_average?(student_count)
+  gradebook_label = show_section_average ? 'Section average' : 'Gradebook'
+%>
+<tr
+  class="c-row--summary  js-main-course-section
+         js-widget-container-section_<%= section.id %>-summary  js-section-wrapper  js-section-wrapper-summary
+         js-section-<%= section.id %>  <%= test_class("section-#{section.id}") %>
+         <%= test_class("widget-container-section_#{section.id}")%>"
+  data-section-id="<%= section.id %>"
+  tabindex="0">
+  <th
+    class="c-row--summary-section-name  js-section-name  <%= test_class('section-name')%>
+           <%= format_dashboard_selected_section(presenter.focus, section.course.sections, section)%>"
+    data-section-id="<%= section.id %>"
+    id="container_section_<%= section.id %>">
+    <span
+     id="label_section_<%= section.id %>"
+     class="u-hidden js-section-name-<%= section.id %>"></span>
+    <div
+      class="u-mar-0"
+      data-section-id="<%= section.id %>">
+        <span
+          data-hover-url="<%= instructor_course_section_path(presenter.program, section.course, section) %>"
+          class="c-heading--md  c-section-name  <%= section.course.open? ? 'open' : 'closed' %>">
+            <span aria-hidden="true">
+              <%= Music::Components.icon(
+                    variant: 'caret',
+                    size: 'lg',
+                    classes: ['c-section-summary__button-arrow']) %>
+            </span>
+            <%= section.name %>
+          </span>
+    </div>
+  </th>
+  <!-- Individual Widgets -->
+  <td class="c-row-header--icons">
+    <div class="js-widget-table-container">
+      <div 
+        class="js-widget
+               js-dashboard-section-<%= section.id %>
+               <%= test_class('widget') %>
+               <%= test_class('cumulative-grade') %>"
+        data-show-section-average="<%= show_section_average %>">
+        <% if show_section_average %>
+          <div class="ns-chat  js-section-average-pulser-<%= section.id %>">
+            <%= render 'chat/pulser', size: 'md', classes: 'u-mar-auto' %>
+          </div>
+          <%= link_to(
+                "",
+                gradebook_link(section.id),
+                class: "js-widget-numbers
+                       #{test_class('widget-numbers')}
+                       js-section-#{section.id}-average
+                       #{test_class("section-#{section.id}-average")}"
+              ) %>
+        <% end %>
+      </div>
+    </div>
+  </td>
+  <td class="c-row-header--icons">
+    <div class="js-widget-table-container">
+      <div class="js-widget  <%= test_class('widget') %>">
+        <% num_to_grade = presenter.activity_count_by_section(section) %>
+        <%= link_to(
+              num_to_grade,
+              instructor_grading_tasks_assignments_path(presenter.program),
+              class: "js-widget-numbers  #{test_class('widget-numbers')}  #{test_class(:assignments_to_grade)}"
+            ) %>
+      </div>
+    </div>
+  </td>
+  <% unless supersite_junior? %>
+    <td class="c-row-header--icons  c-row-header--icons-help">
+      <div class="js-widget-table-container">
+        <div class="c-row-header--icons-help-wrapper  js-widget  <%= test_class('widget') %>">
+          <%= link_to(
+                presenter.needy_student_count(section.id),
+                instructor_help_requests_path(current_program),
+                class: "js-widget-numbers  #{test_class('widget-numbers')}"
+              ) -%>
+        </div>
+      </div>
+    </td>
+  <% end %>
+  <td class="c-row-header--icons">
+    <div class="js-widget-table-container">
+      <% num_problems = presenter.student_access_problem_count(section) %>
+      <div class="js-widget  <%= test_class('widget') %>">
+        <%= link_to(
+            student_count,
+            roster_link(section.id),
+            class: "js-widget-numbers  #{test_class('widget-numbers')}"
+          )-%>
+        <% if num_problems > 0 %>
+          <span class="c-student-access-error">
+            <%= inline_svg_tag("instructor_dashboard/icons/error_acess.svg") %>
+          </span>
+        <% end %>
+      </div>
+    </div>
+  </td>
+  <td class="c-row-header--icons">
+    <div class="c-section-next-assignments--summary  js-widget-table-container">
+      <%= render partial: 'section_next_assignments',
+                 locals: {
+                    section: presenter.sections_data(section),
+                    item_position: 'summary'
+                  }%>
+    </div>
+  </td>
+  <td class="c-row-header--icons  c-icon-gear--wrapper">
+    <%= render partial: 'section_gears',
+              locals: {
+               presenter: presenter,
+               section: section,
+               course: course }%>
+  </td>
+</tr>
+<tr
+  aria-expanded="false"
+  data-section-id="<%= section.id %>"
+  class="js-section_<%= section.id %>-wrapper  js-section-wrapper  u-hidden
+         js-section-wrapper-detail  js-widget-container-section_<%= section.id %>-detail
+         <%= test_class("widget-container-section_#{section.id}-detail")%>">
+  <td
+    class="c-section-detail-container"
+    colspan="7">
+  <div class="c-section-detail-wrapper">
+
+    <div class="c-section-detail__item  js-widget-table-container">
+      <div class="c-widget  js-widget  <%= test_class('widget') %>  <%= test_class('cumulative-grade') %>">
+        <% if show_section_average %>
+          <div class="ns-chat  js-section-average-pulser-<%= section.id %>">
+            <%= render 'chat/pulser', size: 'md', classes: 'u-mar-auto' %>
+          </div>
+        <% end %>
+        <div class="c-cumulative-item">
+          <span aria-hidden="true" class="c-section-detail__item-icon">
+            <%= inline_svg_tag("instructor_dashboard/icons/gradebook.svg") %>
+          </span>
+          <%= link_to(
+              gradebook_label,
+              gradebook_link(section.id),
+              class: "c-section-detail__item-button--mobile"
+            ) %>
+          <% if show_section_average %>
+            <%= link_to(
+                  "",
+                  gradebook_link(section.id),
+                  class: "c-section-average--number
+                         js-widget-numbers
+                         #{test_class('widget-numbers')}
+                         js-section-#{section.id}-average
+                         #{test_class("section-#{section.id}-average")}"
+                ) %>
+          <% end %>
+        </div>
+        <%= link_to(
+              gradebook_label,
+              gradebook_link(section.id),
+              class: "c-button  c-button--border  c-section-detail__item-button  is-navigable"
+            ) %>
+        <%= render partial: 'section_category_grades' ,
+                   locals: {
+                      section: section,
+                      program: presenter.program,
+                      show_category_averages: show_section_average
+                    } %>
+      </div>
+    </div>
+    <div class="c-section-detail__item  js-widget-table-container">
+      <div class="js-widget <%= test_class('widget') %>  <%= test_class('activities-to-grade')%>">
+        <% num_to_grade = presenter.activity_count_by_section(section) %>
+        <div class="c-cumulative-item">
+          <span aria-hidden="true" class="c-section-detail__item-icon">
+            <%= inline_svg_tag("instructor_dashboard/icons/grading.svg") %>
+          </span>
+          <%= link_to(
+              "#{pluralize_without_count(num_to_grade, 'Assignment')} to Grade",
+              instructor_grading_tasks_assignments_path(presenter.program),
+              class: "c-section-detail__item-button--mobile") %>
+          <span class="u-screen-reader-only">
+            <%= num_to_grade %> <%= pluralize_without_count(num_to_grade, 'Assignment') %> to Grade
+          </span>
+          <%= link_to(
+                num_to_grade,
+                instructor_grading_tasks_assignments_path(presenter.program),
+                class: "c-section-average--number  js-widget-numbers
+                        #{test_class('widget-numbers')}  #{test_class(:assignments_to_grade)}") %>
+        </div>
+        <%= link_to(
+              "#{pluralize_without_count(num_to_grade, 'Assignment')} to grade",
+              instructor_grading_tasks_assignments_path(presenter.program),
+              class: "c-button  c-button--border  c-section-detail__item-button  is-navigable") %>
+      </div>
+      <div class="js-section-widget-table  <%= test_class('activities-to-grade-table')%>">
+        <table class="c-section_widget_table">
+          <thead>
+            <tr>
+              <th>Assignments</th>
+              <th class="u-txt-rt">Submissions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% if num_to_grade == 0 %>
+              <tr>
+                <th>- -</th>
+                <th class="u-txt-rt">- -</th>
+              </tr>
+            <% else %>
+              <% presenter.first_three_activity_scores(section).each do |score| -%>
+              <tr data-activity-id="<%= score.activity_id %>" >
+                <td>
+                  <%= link_to(
+                        html_string_shorten(score.activity_title, 15),
+                        instructor_grading_tasks_grade_activity_path(presenter.program.id, score.activity_id, task_type: GradingTask::NEEDS_GRADING ),
+                      ) -%>
+                </td>
+                <td class="section_activity  u-txt-rt"><%= presenter.score_count_by_section_and_activity_id(section, score.activity_id) %></td>
+              </tr>
+              <% end -%>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <% unless supersite_junior? %>
+      <div class="c-section-detail__item  js-widget-table-container">
+        <div class="js-widget  <%= test_class('widget') %>">
+          <div class="c-cumulative-item">
+            <span aria-hidden="true" class="c-section-detail__item-icon">
+              <%= inline_svg_tag("instructor_dashboard/icons/questions.svg") %>
+            </span>
+            <%= link_to(
+                "#{pluralize_without_count(presenter.needy_student_count(section.id), 'Student')}
+                #{presenter.needy_student_count(section.id) == 1 ? 'needs' : 'need' } help",
+                instructor_help_requests_path(current_program),
+                class: 'c-section-detail__item-button--mobile') %>
+            <%= link_to(
+                  presenter.needy_student_count(section.id),
+                  instructor_help_requests_path(current_program),
+                  class: "c-section-average--number  js-widget-numbers  #{test_class('widget-numbers')}"
+                )-%>
+          </div>
+          <%= link_to(
+                "#{pluralize_without_count(presenter.needy_student_count(section.id), 'Student')}
+                #{presenter.needy_student_count(section.id) == 1 ? 'needs' : 'need' } help",
+                instructor_help_requests_path(current_program),
+                class: "c-button  c-button--border  c-section-detail__item-button  is-navigable") %>
+        </div>
+        <table class="c-section_widget_table  js-section-widget-table">
+          <tbody>
+            <tr>
+              <td>Help Requests Pending</td>
+              <td class="u-txt-rt">
+                <%= link_to(
+                      "#{presenter.help_request_count(section.id)}",
+                      instructor_help_requests_path(presenter.program, expand: 'help_requests')
+                    )%>
+              </td>
+            </tr>
+            <tr>
+              <td>Score Reviews Pending</td>
+              <td class="u-txt-rt">
+                <%= link_to(
+                  "#{presenter.review_request_count(section.id)}",
+                  instructor_help_requests_path(presenter.program, expand: 'review_requests')
+                  ) %>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    <% end %>
+    <div class="c-section-detail__item  js-widget-table-container">
+      <% num_problems = presenter.student_access_problem_count(section) %>
+      <div class="js-widget  <%= test_class('widget') %>">
+        <div class="c-cumulative-item">
+          <span aria-hidden="true" class="c-section-detail__item-icon">
+            <%= inline_svg_tag("instructor_dashboard/icons/students.svg") %>
+          </span>
+          <%= link_to(
+              "#{pluralize_without_count(student_count, 'Student')}",
+              roster_link(section.id),
+              class: "c-section-detail__item-button--mobile") %>
+          <%= link_to(
+                section.current_active_students_base.count,
+                roster_link(section.id),
+                class: "c-section-average--number  js-widget-numbers  #{test_class('widget-numbers')}"
+              )-%>
+        </div>
+        <%= link_to(
+              "#{pluralize_without_count(student_count, 'Student')}",
+              roster_link(section.id),
+              class: "c-button  c-button--border  c-section-detail__item-button  is-navigable") %>
+      </div>
+      <table class="c-section_widget_table  js-section-widget-table">
+        <% students_access_problems =
+            presenter.first_five_active_students(section).filter { |student| student.access_problems? }
+            students_no_access_problems =
+            presenter.first_five_active_students(section).filter {  |student| !student.access_problems? }
+        %>
+        <tbody>
+          <% students_no_access_problems.each do |student| %>
+            <tr>
+              <td><%= student.last_name_first %></td>
+            </tr>
+          <% end -%>
+          <% if students_access_problems.count > 0 %>
+            <tr>
+              <td class="u-txt-bold">No Access</td>
+            </tr>
+            <% students_access_problems.each do |student| %>
+              <tr>
+                <td><%= student.last_name_first %></td>
+              </tr>
+            <% end -%>
+          <% end -%>
+        </tbody>
+      </table>
+    </div>
+    <div class="c-section-detail__item  js-widget-table-container">
+      <%= render partial: 'section_next_assignments',
+                locals: {
+                  section: presenter.sections_data(section),
+                  item_position: 'detail'
+                }%>
+      <% if presenter.sections_data(section).next_assignment_due %>
+        <table class="c-section_widget_table  assignments_due_table  js-section-widget-table">
+          <tr>
+            <td class="<%= test_class('graph-number') %>">Completed</td>
+            <td class="<%= test_class('graph-number') %>"><%= presenter.finished_upcoming_assignments_by_section(section) %></td>
+          </tr>
+          <tr>
+            <td class="<%= test_class('graph-number') %>">Incomplete</td>
+            <td class="<%= test_class('graph-number') %>"><%= presenter.partially_finished_upcoming_assignments_by_section(section) %></td>
+          </tr>
+          <tr>
+            <td class="<%= test_class('graph-number') %>">Not yet started</td>
+            <td class="<%= test_class('graph-number') %>"><%= presenter.unfinished_upcoming_assignments_by_section(section) %></td>
+          </tr>
+        </table>
+      <% end -%>
+    </div>
+    <div class="c-section-detail__item  js-widget-table-container">
+      <div class="c-cumulative-item">
+        <span aria-hidden="true" class="c-section-detail__item-icon">
+          <%= inline_svg_tag("instructor_dashboard/icons/glasses.svg") %>
+        </span>
+        <% if course.editable? %>
+          <%= link_to(
+                'View as sample student',
+                ua_host_url(:login_as_with_redirect, section: section, return_to: "//#{request.host}#{request.original_fullpath}"),
+                class: 'c-section-detail__item-button--mobile'
+              ) %>
+        <% else %>
+          <span
+            class="c-section-detail__item-button--mobile  u-txt-disabled-gray  js-tooltip-auto"
+            title="You cannot have a Sample Student for a closed section.">
+                View as sample student
+          </span>
+        <% end %>
+      </div>
+      <% if course.editable? %>
+        <%= link_to(
+              'view as Sample Student',
+              ua_host_url(:login_as_with_redirect, section: section, return_to: "//#{request.host}#{request.original_fullpath}"),
+              'data-content-type': 'sample_student_login_as_link',
+              class: 'c-button  c-button--border  c-section-detail__item-button
+                      is-navigable',
+              id: defined?(sample_student_button_id) ? sample_student_button_id : ''
+            ) %>
+      <% else %>
+        <span
+          class="c-button  c-button--border  c-section-detail__item-button
+                 is-disabled  js-tooltip-auto"
+          title="You cannot have a Sample Student for a closed section.">
+                View as sample student
+        </span>
+      <% end %>
+      <span class="c-section-detail__item-sample-student">View this section to see the course as a student would see it.</span>
+    </div>
+  </div>
+
+  <% if block_enrollment_policy.can? %>
+    <div class="js-main-course-section  c-section-meta">
+      <% if block_enrollment_policy.permit? %>
+        <div class="c-form-item">
+          <input
+            <%= section.open_to_students? ? 'checked' : '' %>
+            type="checkbox"
+            class="c-toggle  js-block-enrollment-section-link  js-open-section-possibility"
+            id="enrollment-section-<%= section.id %>"
+            data-section-id="<%= section.id %>"
+            data-course-id="<%= section.course_id %>"
+            data-program-id="<%= section.program_id %>"
+            data-open-to-students="<%= section.open_to_students %>" />
+          <label class="c-label" for="enrollment-section-<%= section.id %>">
+            <span class="c-toggle__on-label">Open Student Enrollment</span>
+            <span class="c-toggle__off-label">Closed Student Enrollment</span>
+          </label>
+        </div>
+        <%= render 'enrollment_blocked_confirmation_modal', section: section %>
+      <% else %>
+        <div class="c-form-item">
+          <input
+            disabled
+            <%= section.open_to_students? ? 'checked' : '' %>
+            type="checkbox"
+            class="c-toggle"
+            id="enrollment-section-<%= section.id %>" />
+          <label class="c-label" for="enrollment-section-<%= section.id %>">
+            <span class="c-toggle__on-label">Open Student Enrollment</span>
+            <span class="c-toggle__off-label">Closed Student Enrollment</span>
+          </label>
+        </div>
+        <span class="disable_link_function">
+          <span class="disabled_hover_info  hidden_helper">
+            Only the section owner can change enrollment settings.
+          </span>
+        </span>
+      <% end %>
+    </div>
+  <% end %>
+  <% if section.school.rostering? && current_user.clever? %>
+    <div class="js-main-course-section  c-section-meta   c-section-meta--clever">
+      <% unless presenter.clever_section_error?(section) %>
+        <% if section.closed? && !presenter.clever_section_linked?(section) -%>
+          Sections within closed courses may not accept new enrollments.
+        <% else -%>
+          <% link_classes = ['c-link', 'c-section-meta__link'] -%>
+          <%= link_to(
+                "Manage student enrollments",
+                ua_host_url(:partner_integration_section_link_manager,
+                section_guid: section.guid),
+                class: link_classes.join('  ')
+              ) %>
+          <% if presenter.clever_section_linked?(section) %>
+            (Linked to <%= presenter.clever_section_for(section) %>)
+          <% end %>
+        <% end -%>
+      <% end %>
+    </div>
+  <% end %>
+  <!-- Expanded Widget Tables -->
+  </td>
+</tr><!-- end section_id_wrapper -->

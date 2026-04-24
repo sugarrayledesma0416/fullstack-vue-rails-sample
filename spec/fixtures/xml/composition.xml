@@ -1,0 +1,11 @@
+<activity activity_type="composition" title="sample_composition_title" language="es">
+	<dl>instructions_go_here</dl>
+	<items>
+		<style> 
+			<item_numbers>hide</item_numbers> 
+		</style>
+    <item>
+      <prompt />
+    </item>    
+	</items>
+</activity>

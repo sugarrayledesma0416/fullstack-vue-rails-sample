@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  </head>
+
+  <body class="notranslate  ns-responsive  ns-activity  activities  ns-portfolio-artifact
+                <%= yield :body_classes %>
+                <%= yield :theme_classes %>
+                <%= '  u-jr-theme-background-color' if supersite_junior? %>">
+    <div id="page_container" class="c-page-container  ui-helper-clearfix  js-page-container">
+      <div id="column_wrapper">
+        <% if @page_title %>
+          <h1 class="page_title  c-mobile-tabs-view__reference-content"><%= @page_title %></h1>
+        <% end %>
+        <%= yield %>
+      </div>
+      <!-- end column_wrapper -->
+    </div>
+  </body>
+</html>

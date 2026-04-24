@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+  <%= render('partials/google_tag_manager') %>
+  <meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+  <style type="text/css">
+    body {
+      margin:0px;
+      padding:0px;
+    }
+  </style>
+  <title>Vocabulary Tutorial</title>
+</head>
+<body>
+    <center>
+      <object align="middle" height="570" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="615" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0">
+        <param name="flashvars" value="tutorial_id=<%= @activity.content_object.tutorial_id %>">
+        <param name="allowScriptAccess" value="sameDomain">
+        <param name="movie" value="cloader.swf">
+        <param name="quality" value="high">
+        <param name="bgcolor" value="#ffffff">
+        <param name="swLiveConnect" value="true">
+        <param name="wmode" value="opaque">
+        <embed name="tutorial" pluginspage="http://www.macromedia.com/go/getflashplayer" allowScriptAccess="sameDomain" src="cloader.swf" align="middle" height="570" flashvars="tutorial_id=<%= @activity.content_object.tutorial_id %>" quality="high" width="615" bgcolor="#ffffff" wmode="opaque"></embed>
+    </object>
+  </center>
+</body>
+</html>

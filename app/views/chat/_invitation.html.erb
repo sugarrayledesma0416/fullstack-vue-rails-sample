@@ -1,0 +1,30 @@
+<script id="chat-invitation-template" type="text/x-handlebars-template">
+  <div class="c-chat-invitation  u-dis-sm-flex  u-txt-ctr  flex-align-ctr  js-invitation"
+       id="chat-invitation"
+       tabindex="-1"
+       aria-label="Incoming call"
+       role="dialog"
+       aria-describedby="chat-invitation-description"
+       data-from-user="{{ fromUserId }}"
+       data-from-section="{{ fromSectionId }}">
+      <div id="chat-invitation-description" class="c-chat-invitation__text  flex-grow-9">
+        <div class="c-chat-invitation__user-name  u-dis-inline  u-txt-bold">{{ name }}</div>
+        <div class="c-chat-invitation__message">{{ msg }}</div>
+        <div class="u-float-rt">
+          <input type="checkbox" checked class="js-share-video-on-accept"
+                 id="share_video_on_accept"/>
+          <label class="c-label  js-share-video-on-accept-label" for="share_video_on_accept">
+                <span>Share video</span>
+          </label>
+         </div>
+      </div>
+        <button type="button" class="c-circle-button  c-circle-button--xl  u-mar-rt-10  u-mar-top-10 js-accept-invitation">
+          <span class="c-icon  c-icon--xl  c-icon--start-call"></span>
+          <span class="u-screen-reader-only">Accept</span>
+        </button>
+        <button type="button" class="c-circle-button  c-circle-button--xl  c-circle-button--end-call   u-mar-top-10  js-decline-invitation">
+          <span class="c-icon  c-icon--xl  c-icon--end-call"></span>
+          <span class="u-screen-reader-only">Decline</span>
+        </button>
+    </div>
+</script>

@@ -1,0 +1,111 @@
+{
+  "properties": {
+    "standard_asset_id": {
+      "type": "integer"
+    },
+    "reference_type": {
+      "type": "keyword"
+    },
+    "reference_id": {
+      "type": "integer"
+    },
+    "domain": {
+      "type": "keyword"
+    },
+    "subdomain": {
+      "type": "keyword"
+    },
+    "programs": {
+      "properties": {
+        "program_id": {
+          "type": "keyword"
+        },
+        "lesson_id": {
+          "type": "keyword"
+        },
+        "unit_id": {
+          "type": "keyword"
+        }
+      }
+    },
+    "standard_alignments": {
+      "properties": {
+        "alignment_id": {
+          "type": "integer"
+        },
+        "alignment_status": {
+          "type": "keyword"
+        },
+        "vendor_guid": {
+          "type": "keyword"
+        },
+        "label": {
+          "type": "text"
+        },
+        "name": {
+          "type": "text"
+        },
+        "number": {
+          "type": "text"
+        },
+        "description": {
+          "type": "text"
+        },
+        "vendor_standard_set_guid": {
+          "type": "keyword"
+        },
+        "parent": {
+          "properties": {
+            "vendor_guid": {
+              "type": "keyword"
+            },
+            "label": {
+              "type": "text"
+            },
+            "name": {
+              "type": "text"
+            },
+            "number": {
+              "type": "text"
+            },
+            "description": {
+              "type": "text"
+            },
+            "vendor_standard_set_guid": {
+              "type": "keyword"
+            }
+          }
+        },
+        "grade_levels": {
+          "properties": {
+            "grade_level": {
+              "type": "keyword"
+            }
+          }
+        },
+        "ancestors": {
+          "properties": {
+            "vendor_guid": {
+              "type": "keyword"
+            },
+            "name": {
+              "type": "text"
+            },
+            "label": {
+              "type": "text"
+            },
+            "number": {
+              "type": "text"
+            },
+            "description": {
+              "type": "text"
+            },
+            "vendor_standard_set_guid": {
+              "type": "keyword"
+            }
+          }
+        }
+      }
+    }
+  }
+}

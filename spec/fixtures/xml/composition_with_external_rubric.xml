@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<activity activity_type="composition" title="Resumir" language="es">
+  <!--Enter the proper code in quotes after language attribute: es - Spanish, fr - French, it - Italian, de - German.-->
+  <dl lang="en">Write a summary of this episode in English.</dl>
+  <external_rubric>  
+    <rubric id="1" rubric_revision_id="2">
+      <style>
+        <show_score>true</show_score>
+      </style>
+      <header_row>
+        <header_column id="1">col_header</header_column>
+      </header_row>
+      <criteria>
+        <title>old_criteria_title</title>
+        <performance header_id="1">
+          <description>old_description</description>
+          <score>30</score>
+        </performance>
+      </criteria>
+    </rubric>
+  </external_rubric>
+  <external_references>
+    <external_reference>
+      <title>Vocabulary list</title>
+      <activity id="252291"/>
+    </external_reference>
+    <external_reference>
+      <title>Video</title>
+      <activity id="251928"/>
+    </external_reference>
+  </external_references>
+  <items>
+    <style>
+      <item_numbers>hide</item_numbers>
+    </style>
+    <item>
+      <prompt/>
+    </item>
+  </items>
+</activity>

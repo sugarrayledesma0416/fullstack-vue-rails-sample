@@ -1,0 +1,98 @@
+<div class="l-grid  c-box  c-box--lozenge
+            <%= test_class('announcement-' + @announcement.id.to_s) %>">
+  <div class="l-col-8">
+    <dl role="none">
+      <dt class="c-heading--caps  u-mar-bot-0  u-txt-reg">
+        Title
+      </dt>
+      <% if @announcement.class_cancelled %>
+        <span class="c-tag  c-tag--sm">
+          Class cancelled
+        </span>
+      <% end %>
+      <dd
+        data-content-type="announcement_title"
+        class="u-mar-bot-16  <%= test_class('announcement-title') %>">
+        <%= @announcement.title %>
+      </dd>
+
+      <% if @announcement.show_on.present? %>
+        <dt class="c-heading--caps  u-mar-bot-0  u-txt-reg">
+          On Calendar
+        </dt>
+        <dd
+          data-content-type="announcement_show_on"
+          class="u-mar-bot-16  <%= test_class('announcement-show-on') %>">
+          <%= format_date_time(
+                @announcement.show_on,
+                :relative_weekday_month_ordinal
+              ) %>
+        </dd>
+      <% end %>
+
+      <dt class="c-heading--caps  u-mar-bot-0  u-txt-reg">
+        Body
+      </dt>
+      <dd
+        data-content-type="announcement_body"
+        class="u-mar-bot-16  <%= test_class('announcement-body') %>">
+        <%= simple_format @announcement.body %>
+      </dd>
+    </dl>
+  </div>
+  <div class="l-col-4  c-announcement-detail-right-column">
+    <dl role="none">
+      <% if @announcement.external_link_url.present? %>
+        <dt
+          id="a11y-external-link"
+          class="c-heading--caps  u-mar-bot-0  u-txt-reg">
+          External link
+          <span class="u-screen-reader-only">
+            <%= @announcement.external_link_title %>
+          </span>
+        </dt>
+        <dd data-content-type="announcement_external_link">
+          <%= link_to(
+                @announcement.external_link_title.presence ||@announcement.external_link_url,
+                @announcement.external_link_url,
+                class: 'u-mar-bot-16',
+                'aria-labelledby' => 'a11y-external-link',
+                target: '_blank'
+              ) %>
+        </dd>
+      <% end %>
+
+      <% if @announcement.has_file? %>
+        <dt class="c-heading--caps  u-mar-bot-0  u-txt-reg">
+          Attached File
+        </dt>
+        <dd data-content-type="announcement_file_download">
+          <%= link_to(
+                @announcement.file_name,
+                download_announcement_attachment_path(@section.id, @announcement.id),
+                class: 'u-mar-bot-16',
+                target: '_blank'
+              ) %>
+        </dd>
+      <% end %>
+
+      <dt class="c-heading--caps  u-mar-bot-0  u-txt-reg">
+        Posted On
+      </dt>
+      <dd
+        data-content-type="announcement_date_posted"
+        class="u-mar-bot-16  <%= test_class('announcement-date-posted') %>">
+        <%= format_date_time(@announcement.created_at, :gradebook_cell) %>
+      </dd>
+
+      <dt class="c-heading--caps  u-mar-bot-0  u-txt-reg">
+        Updated On
+      </dt>
+      <dd
+        data-content-type="announcement_date_update"
+        class="u-mar-bot-16  <%= test_class('announcement-date-update') %>">
+        <%= format_date_time(@announcement.updated_at, :gradebook_cell) %>
+      </dd>
+    </dl>
+  </div>
+</div>

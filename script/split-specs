@@ -1,0 +1,20 @@
+#!/usr/bin/env ruby
+
+require 'find'
+
+group_count = ENV['RSPEC_GROUPS'].to_i
+group_index = ARGV[0].to_i
+
+files = Find.find('spec').select do |file_name|
+  next if ENV['GIT_BRANCH'] == 'release' && file_name.include?('spec/features/')
+
+  file_name.end_with?('_spec.rb')
+end.sort
+
+target_files = files.map.with_index do |file_name, i|
+  file_name if i % group_count == group_index
+end.compact
+
+File.write('/tmp/split-specs-output', target_files.join(' '))
+
+target_files.each { |file_name| puts file_name }

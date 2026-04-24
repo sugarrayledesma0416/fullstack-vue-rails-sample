@@ -1,0 +1,25 @@
+
+av3e:
+  package_id: 1
+  privilege_id: 1
+  months_duration: 36
+
+prom1e:
+  package_id: 2
+  privilege_id: 2
+  months_duration: 36
+
+ven2e:
+  package_id: 3
+  privilege_id: 3
+  months_duration: 36
+
+sent1e:
+  package_id: 4
+  privilege_id: 4
+  months_duration: 36
+
+m3tar:
+  package_id: 5
+  privilege_id: 5
+  months_duration: 36

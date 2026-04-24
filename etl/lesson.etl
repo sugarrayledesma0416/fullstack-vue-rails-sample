@@ -1,0 +1,27 @@
+require_relative 'etl/common'
+
+class LessonSource < Source
+  def initialize(course_ids)
+    # TODO: Find a safer way to handle the interpolation
+    @records = ::Assignment.includes(:section).where("sections.course_id in (#{course_ids})").map do |assignment|
+      assignment.assignable.lesson
+    end.uniq
+  end
+end
+
+class LessonTransform < Transform
+  def initialize(model)
+    @common_fields = %w(id name rank)
+    super(model)
+  end
+
+  def process(record)
+    super(record) do |r|
+      r.unit_rank = record.unit.rank
+    end
+  end
+end
+
+source LessonSource, ENV['COURSE_IDS']
+transform LessonTransform, GradebookEngine::Lesson
+destination RecordDestination

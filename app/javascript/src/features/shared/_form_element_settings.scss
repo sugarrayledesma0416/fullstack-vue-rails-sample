@@ -1,0 +1,117 @@
+/* 
+
+  Shared Settings for Form Element Components
+
+  TODO @Since 2022-06-30 There are a couple feature components here that
+                    could be lightly refectored to use these and
+                    remove duplicate styles. Out of scope for mae-62199.
+  
+  Contents 
+
+  - Settings
+  - Mixins:
+    - input-base
+    - input-with-icon
+  - Classes:
+    - text-input
+    - form-item-label
+    - form-item-hint
+*/
+
+@import '~MusicAssets/stylesheets/music/library/v1/base/main';
+
+/* Settings */
+
+$form-input-padding: mod(0.5);
+$form-input-border-width: rpx(1);
+$form-input-border-radius: rpx(3);
+$form-input-height: mod(1.5);
+$form-input-fade: 0.2s ease-in-out;
+$form-input-spacing-md: mod(0.5);
+$input-box-height: mod(2.5);
+
+/* Mixins */
+
+/* Shared by all single-line text fields and select menus: */
+@mixin input-base() {
+  --default-font-size: var(--font-3, #{$font-size-16}); 
+
+  display: inline-block;
+  width: auto;
+  min-width: mod(8);
+  background: $white;
+  padding: $form-input-padding;
+  margin: 0;
+  border-radius: $form-input-border-radius;
+  line-height: $form-input-height;
+  box-sizing: border-box;
+  border: rpx(1) solid $gray-d;
+  box-shadow: $box-inset-1;
+  font-size: var(--default-font-size);
+  transition: color $form-input-fade,
+              border-color $form-input-fade,
+              background-color $form-input-fade,
+              box-shadow $form-input-fade;
+
+  &[disabled] {
+    opacity: 0.5;
+    box-shadow: none;
+    border: rpx(1) solid $gray-c;
+    background-color: $gray-f5;
+
+    &:hover {
+      background-color: $gray-f5;
+      border-color: $gray-d;
+    }
+  }
+
+  &:hover {
+    background-color: $gray-f8;
+  }
+
+  &:active {
+    border-color: $orange;
+    background-color: $white;
+    outline: none;
+  }
+}
+
+@mixin input-with-icon($url) {
+  background-image: image-url($url);
+  background-repeat: no-repeat;
+  background-position: rpx(10) rpx(8);
+  background-size: 1.25rem;
+  padding-left: 2.5rem;
+}
+
+
+/* Classes */
+
+.text-input {
+  @include input-base();
+  height: $input-box-height;
+}
+
+.text-input--sm {
+  min-width: 0;
+  width: mod(4);
+}
+
+/* States */
+
+.has-error {
+  color: val(--ui-error-color, $error);
+  padding-right: mod(2);
+  border: rpx(2) solid $light-red;
+  background: image-url('/music/icons/circle-exclamation.svg') right mod(0.25) center no-repeat;
+  background-size: mod(1.5) mod(1.5);
+}
+
+.has-success {
+  color: val(--ui-success-color, $success);
+  padding-right: 2rem;
+  border: rpx(2) solid $green;
+  background: image-url('/music/icons/check.svg') right mod(0.25) center no-repeat;
+  background-size: mod(1.5) mod(1.5);
+}
+
